@@ -1,0 +1,126 @@
+{
+  "source": "_demo_pipeline.musicxml",
+  "transpose_chromatic": -2,
+  "events": [
+    {
+      "measure": 1,
+      "written_midi": 65,
+      "written_name": "F4",
+      "concert_midi": 63,
+      "concert_name": "Eb4",
+      "fingering": "1",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 1,
+      "written_midi": 69,
+      "written_name": "A4",
+      "concert_midi": 67,
+      "concert_name": "G4",
+      "fingering": "12",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 1,
+      "written_midi": 72,
+      "written_name": "C5",
+      "concert_midi": 70,
+      "concert_name": "Bb4",
+      "fingering": "0",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 1,
+      "written_midi": 69,
+      "written_name": "A4",
+      "concert_midi": 67,
+      "concert_name": "G4",
+      "fingering": "12",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 2,
+      "written_midi": 69,
+      "written_name": "A4",
+      "concert_midi": 67,
+      "concert_name": "G4",
+      "fingering": "12",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 2,
+      "written_midi": 70,
+      "written_name": "Bb4",
+      "concert_midi": 68,
+      "concert_name": "Ab4",
+      "fingering": "1",
+      "dur_beats": 1.0,
+      "tie": null
+    },
+    {
+      "measure": 2,
+      "written_midi": 69,
+      "written_name": "A4",
+      "concert_midi": 67,
+      "concert_name": "G4",
+      "fingering": "12",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 3,
+      "written_midi": 65,
+      "written_name": "F4",
+      "concert_midi": 63,
+      "concert_name": "Eb4",
+      "fingering": "1",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 3,
+      "written_midi": 67,
+      "written_name": "G4",
+      "concert_midi": 65,
+      "concert_name": "F4",
+      "fingering": "0",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 3,
+      "written_midi": 69,
+      "written_name": "A4",
+      "concert_midi": 67,
+      "concert_name": "G4",
+      "fingering": "12",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 3,
+      "written_midi": 70,
+      "written_name": "Bb4",
+      "concert_midi": 68,
+      "concert_name": "Ab4",
+      "fingering": "1",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 4,
+      "written_midi": 65,
+      "written_name": "F4",
+      "concert_midi": 63,
+      "concert_name": "Eb4",
+      "fingering": "1",
+      "dur_beats": 2.0,
+      "tie": null
+    }
+  ]
+}

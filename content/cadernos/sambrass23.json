@@ -3,7 +3,7 @@
   "nome": "Caderno de naipe Sambrass23",
   "instrumento_padrao": "trumpet_bb",
   "total_caderno": 110,
-  "catalogadas": 30,
+  "catalogadas": 32,
   "ordem": [
     "sb-001",
     "sb-002",
@@ -14,6 +14,8 @@
     "sb-008",
     "sb-009",
     "sb-010",
+    "sb-011",
+    "sb-012",
     "sb-013",
     "sb-017",
     "sb-022",

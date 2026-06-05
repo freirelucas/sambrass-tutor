@@ -1,0 +1,26 @@
+[
+  {
+    "num": 10, "titulo": "Peito Vazio", "compositor": "Cartola / Elton Medeiros",
+    "tom_escrito": "G", "compasso": "2/4", "densidade": "média-alta",
+    "forma": ["intro", "A", "B"], "celulas": ["C1", "C5", "C2"], "arpejos": ["A1"],
+    "dificuldade": 5, "requisitos": ["tonalidade-1-sustenido", "tercina", "forma-longa"],
+    "verificada": true,
+    "obs": "Sol (1 sustenido); intro + A/B; colcheias em grupo com tercinas e cromatismo de passagem. (Corrige o legado, que fundia esta com a 011.)"
+  },
+  {
+    "num": 11, "titulo": "Preciso Me Encontrar", "compositor": "Candeia",
+    "tom_escrito": "G", "compasso": "2/4", "densidade": "média-alta",
+    "forma": ["A", "B"], "celulas": ["C1", "C2", "C5"], "arpejos": ["A1"],
+    "dificuldade": 5, "requisitos": ["tonalidade-1-sustenido", "síncope", "tercina"],
+    "verificada": true,
+    "obs": "Sol (1 sustenido); síncope e tercinas; forma A/B com repetições. (Era confundida com 'Peito Vazio' no legado.)"
+  },
+  {
+    "num": 12, "titulo": "Tive Sim", "compositor": "Cartola",
+    "tom_escrito": "G", "compasso": "2/4", "densidade": "alta",
+    "forma": ["A", "B"], "celulas": ["C1", "C2"], "arpejos": ["A1"],
+    "dificuldade": 6, "requisitos": ["forma-longa", "colcheias-densas", "síncope"],
+    "verificada": true,
+    "obs": "Sol (1 sustenido); longa e densa em colcheias com síncope. Forma a confirmar (parece A/B com volta)."
+  }
+]

@@ -54,6 +54,22 @@ Coleção/naipe: ordem das peças + instrumento padrão.
 ### `curriculum` — `curriculum/<id>.json`
 A jornada: rotina diária + semanas, referenciando `piece.id` e `cell.id`.
 
+## Camada de notas — MusicXML → JSON de eventos
+
+A fonte canônica das **notas** é **MusicXML por peça** (`content/notes/sb-NNN.musicxml`),
+fiel ao PDF: notas **escritas em Si bemol** (parte do trompete) + `<transpose>`
+(`chromatic -2`). Nada é guardado em concerto — o concerto é **derivado**.
+
+`build_notes.py` compila cada MusicXML para `content/notes_runtime/sb-NNN.json`
+(formato de runtime do app), com, por nota: `written_midi`/`written_name` (como o
+trompetista lê), `concert_midi`/`concert_name` (sounding = escrito + transpose),
+`fingering` (do mapa de `instruments/trumpet_bb.json`), `dur_beats`, `measure`, `tie`.
+
+Esse JSON é o que o app usa para **tocar, transpor p/ outros instrumentos (a partir do
+concerto), comparar com o microfone e desenhar com highlight da nota atual**.
+Transcrições reais entram via OMR (Audiveris → MusicXML) + correção, ou à mão;
+`notes/_demo_pipeline.musicxml` é apenas a prova do pipeline.
+
 ## Geração e validação
 - `build_content.py` deriva `pieces.json`, `cadernos/…` e `curriculum/…` a partir do
   curso legado (zip), convertendo escrito→concert e **validando o round-trip**
