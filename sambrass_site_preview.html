@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Caminho do Sambrass — Trompete</title>
+<style>
+:root{--tinta:#1a1a1a;--papel:#fbfaf7;--linha:#d8d2c4;--destaque:#7a1f1f;--suave:#6b6456;--caixa:#f2efe6;--verde:#2e6b4f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.5;padding:0 16px}
+.wrap{max-width:920px;margin:0 auto}
+header.capa{text-align:center;padding:52px 0 32px;border-bottom:3px double var(--tinta)}
+header.capa .sub{font-family:Helvetica,Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;font-size:12px;color:var(--suave)}
+header.capa h1{font-size:32px;margin:10px 0 4px}
+header.capa .faixa{font-style:italic;color:var(--destaque)}
+nav.toc{background:var(--caixa);border:1px solid var(--linha);border-radius:6px;padding:14px 20px;margin:24px 0}
+nav.toc a{color:var(--tinta);text-decoration:none;margin-right:14px;display:inline-block;padding:6px 0;min-height:36px;line-height:24px}
+nav.toc a:hover{color:var(--destaque)}
+h2.sec{font-family:Helvetica,Arial,sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--destaque);border-bottom:1px solid var(--linha);padding-bottom:6px;margin:40px 0 14px}
+ul.rotina{list-style:none;padding:0}ul.rotina li{padding:9px 12px;border:1px solid var(--linha);border-radius:5px;margin-bottom:7px;background:#fff}
+.rmin{display:inline-block;min-width:52px;font-family:Helvetica,Arial,sans-serif;font-weight:bold;color:var(--verde)}
+.semana{margin:22px 0;padding:18px;border:1px solid var(--linha);border-radius:8px;background:#fff}
+.shead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.snum{font-family:Helvetica,Arial,sans-serif;font-weight:bold;color:#fff;background:var(--destaque);border-radius:4px;padding:3px 10px;font-size:13px}
+.shead h3{margin:0;font-size:21px}
+.sgrid{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0;font-size:14px}
+.sgrid div{background:var(--caixa);border-radius:5px;padding:7px 11px}.sgrid b{display:block;font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--suave)}
+.licao{font-size:15px}
+.cols{display:flex;gap:24px;flex-wrap:wrap}.cols>div{flex:1;min-width:240px}
+.cols h5{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--suave);margin:8px 0 4px}
+.cols ul{margin:0;padding-left:18px}.cols a{color:var(--destaque);text-decoration:none}
+.vocab{display:flex;gap:24px;flex-wrap:wrap}.vocab>div{flex:1;min-width:260px}
+.vocab ul{list-style:none;padding:0}.vocab li{padding:5px 0;font-size:15px;border-bottom:1px dotted var(--linha)}
+.vocab code{background:var(--caixa);padding:2px 7px;border-radius:4px;font-weight:bold;color:var(--destaque);margin-right:6px}
+.musica{border:1px solid var(--linha);border-radius:8px;padding:14px;margin:14px 0;background:#fff;scroll-margin-top:14px}
+.mhead{display:flex;align-items:center;gap:12px}
+.mnum{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:18px;color:var(--destaque);min-width:40px}
+.mhead h4{margin:0;font-size:18px}.comp{font-size:13px;color:var(--suave)}
+.dif{margin-left:auto;font-family:Helvetica,Arial,sans-serif;font-size:12px;font-weight:bold;padding:3px 9px;border-radius:12px;color:#fff}
+.d3{background:#2e6b4f}.d4{background:#5a7a1f}.d5{background:#8a5a1f}.d6{background:#a3431f}.d7{background:#7a1f1f}.dna{background:#999}
+.mmeta{font-size:13px;color:var(--suave);margin:7px 0}
+.reqs .req{display:inline-block;font-size:11px;background:var(--caixa);border:1px solid var(--linha);border-radius:10px;padding:2px 8px;margin:2px 3px 2px 0;font-family:Helvetica,Arial,sans-serif}
+.cels{font-family:Helvetica,Arial,sans-serif;font-size:12px;color:var(--verde);margin:4px 0}
+.musica img{width:100%;height:auto;border:1px solid var(--linha);border-radius:5px;margin-top:8px;background:#fff}
+.obs{font-size:14px;color:var(--suave);font-style:italic}
+footer{margin:56px 0 40px;padding-top:22px;border-top:3px double var(--tinta);font-size:13px;color:var(--suave);text-align:center}
+</style></head><body><div class="wrap">
+
+<header class="capa">
+  <div class="sub">Estudo pessoal · caderno de naipe Sambrass23</div>
+  <h1>O Caminho do Sambrass</h1>
+  <div class="faixa">Trompete · jornada de 6 semanas para dominar o repertório</div>
+</header>
+
+<nav class="toc">
+  <a href="#rotina">Rotina diária</a>
+  <a href="#vocab">Vocabulário</a>
+  <a href="#jornada">As 6 semanas</a>
+  <a href="#banco">Banco de músicas</a>
+</nav>
+
+<h2 class="sec" id="rotina">A rotina de 1h30, todos os dias (90 min)</h2>
+<ul class="rotina"><li><span class="rmin">15min</span> <b>Aquecimento</b> — Notas longas (som) + lip slurs + escala do tom da semana. Igual todo dia.</li><li><span class="rmin">20min</span> <b>Célula do dia</b> — Snippet que isola a dificuldade-alvo da semana, em loop com metrônomo lento subindo aos poucos.</li><li><span class="rmin">35min</span> <b>Música em foco</b> — Decompor a peça da semana seção por seção: ler lento, isolar o compasso difícil, montar.</li><li><span class="rmin">15min</span> <b>Leitura à primeira vista</b> — Uma peça NOVA do caderno (nunca vista), lenta, sem parar — treina o objetivo 3.</li><li><span class="rmin">5min</span> <b>Revisão / roda</b> — Tocar de cór uma peça já dominada, em andamento de roda.</li></ul>
+
+<h2 class="sec" id="vocab">O vocabulário do caderno</h2>
+<p>O Sambrass é homogêneo: quase tudo é 2/4 em Fá, Sol ou Ré, feito de poucas células rítmicas e arpejos que reaparecem em todas as peças. Dominar este vocabulário <b>é</b> aprender a ler o caderno à primeira vista.</p>
+<div class="vocab">
+  <div><h5 style="font-family:Helvetica,Arial,sans-serif;color:var(--suave);font-size:12px;letter-spacing:1px;text-transform:uppercase">Células rítmicas</h5><ul><li><code>C1</code> colcheia-colcheia (par ligado, base do andamento)</li><li><code>C2</code> síncope clássica: colcheia / semínima / colcheia (acento no contratempo)</li><li><code>C3</code> colcheia pontuada + semicolcheia</li><li><code>C4</code> quatro semicolcheias (passagem rápida)</li><li><code>C5</code> tercina de colcheias (3 por tempo)</li><li><code>C6</code> semínima-pausa / contratempo (ataque no &#x27;e&#x27;)</li><li><code>C7</code> anacruse (nota de levada antes do 1)</li></ul></div>
+  <div><h5 style="font-family:Helvetica,Arial,sans-serif;color:var(--suave);font-size:12px;letter-spacing:1px;text-transform:uppercase">Arpejos &amp; intervalos</h5><ul><li><code>A1</code> tríade maior ascendente (1-3-5)</li><li><code>A2</code> tríade maior descendente (5-3-1)</li><li><code>A3</code> arpejo com 7ª (1-3-5-7, dominante)</li><li><code>A4</code> bordadura cromática (nota-vizinha cromática-nota)</li></ul></div>
+</div>
+
+<h2 class="sec" id="jornada">A jornada — 6 semanas</h2>
+<section class="semana" id="s1">
+      <div class="shead"><span class="snum">Semana 1</span><h3>Som, Fá maior e a célula básica do samba</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>Fá</span></div>
+        <div><b>Célula-alvo</b><span>C1</span></div>
+        <div><b>Requisito novo</b><span>colcheia-em-grupo estável + síncope leve</span></div>
+      </div>
+      <p class="licao">O tecido de quase todo o caderno é a colcheia em grupo (C1) e a síncope (C2). A semana 1 fixa o som em Fá maior (a tonalidade mais comum) e ensina a sentir a síncope sem perder a pulsação. 009 e 035 são as duas mais respiráveis do caderno — começo ideal.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m009">009 — O Sol Nascerá</a> <small>(dif 3)</small></li><li><a href="#m035">035 — Tristeza</a> <small>(dif 3)</small></li><li><a href="#m025">025 — Alguém Me Avisou</a> <small>(dif 4)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m001">001 — Até Amanhã</a></li><li><a href="#m006">006 — As Rosas Não Falam</a></li></ul></div>
+      </div>
+    </section><section class="semana" id="s2">
+      <div class="shead"><span class="snum">Semana 2</span><h3>Síncope clássica e casas de repetição</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>Fá</span></div>
+        <div><b>Célula-alvo</b><span>C2</span></div>
+        <div><b>Requisito novo</b><span>síncope acentuada no contratempo + casas 1ª/2ª</span></div>
+      </div>
+      <p class="licao">A síncope (C2: colcheia-semínima-colcheia) é o coração do samba. Esta semana ela deixa de ser &#x27;leve&#x27; e passa a ser o acento principal. 001 e 044 trazem casas 1ª/2ª — a primeira estrutura formal a dominar.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m001">001 — Até Amanhã</a> <small>(dif 4)</small></li><li><a href="#m025">025 — Alguém Me Avisou</a> <small>(dif 4)</small></li><li><a href="#m044">044 — Não Deixe o Samba Morrer</a> <small>(dif 5)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m068">068 — Pra Que Chorar</a></li><li><a href="#m006">006 — As Rosas Não Falam</a></li></ul></div>
+      </div>
+    </section><section class="semana" id="s3">
+      <div class="shead"><span class="snum">Semana 3</span><h3>Novas tonalidades: Sol e Sib</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>Sol e Sib</span></div>
+        <div><b>Célula-alvo</b><span>C1+C2</span></div>
+        <div><b>Requisito novo</b><span>ler em 1 sustenido e em 2 bemóis</span></div>
+      </div>
+      <p class="licao">O eixo agora é a TONALIDADE, não o ritmo. Sol maior (1 sustenido) e Sib maior (2 bemóis) ampliam o caderno acessível. 004 (Sib) tem intro de 7 compassos — primeiro desafio de contagem de entrada.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m035">035 — Tristeza</a> <small>(dif 3)</small></li><li><a href="#m068">068 — Pra Que Chorar</a> <small>(dif 5)</small></li><li><a href="#m004">004 — Fita Amarela</a> <small>(dif 4)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m034">034 — Se Você Jurar</a></li><li><a href="#m005">005 — Acontece</a></li></ul></div>
+      </div>
+    </section><section class="semana" id="s4">
+      <div class="shead"><span class="snum">Semana 4</span><h3>Tercina e cromatismo de passagem</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>Fá e Ré</span></div>
+        <div><b>Célula-alvo</b><span>C5</span></div>
+        <div><b>Requisito novo</b><span>tercina de colcheias + notas cromáticas fora da armadura</span></div>
+      </div>
+      <p class="licao">A tercina (C5: três por tempo) e o cromatismo de passagem (A4: bordadura cromática) aparecem juntos nas peças de Cartola. 008 estreia Ré maior (2 sustenidos) + tercina + forma longa ABCD: o maior salto de fôlego até aqui.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m006">006 — As Rosas Não Falam</a> <small>(dif 4)</small></li><li><a href="#m005">005 — Acontece</a> <small>(dif 4)</small></li><li><a href="#m008">008 — O Mundo é um Moinho</a> <small>(dif 5)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m027">027 — Sonho Meu</a></li><li><a href="#m064">064 — A Felicidade</a></li></ul></div>
+      </div>
+    </section><section class="semana" id="s5">
+      <div class="shead"><span class="snum">Semana 5</span><h3>Forma longa e fôlego (A/B/C/D)</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>Ré e Fá</span></div>
+        <div><b>Célula-alvo</b><span>C2+C5</span></div>
+        <div><b>Requisito novo</b><span>decorar e sustentar 4 seções; respiração estratégica</span></div>
+      </div>
+      <p class="licao">O desafio deixa de ser a nota e passa a ser a RESISTÊNCIA e a MEMÓRIA. Peças de 40+ compassos (064, 027) exigem mapa de respiração. Aqui a meta 1 (tocar inteira) encontra seu teste real.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m027">027 — Sonho Meu</a> <small>(dif 5)</small></li><li><a href="#m064">064 — A Felicidade</a> <small>(dif 5)</small></li><li><a href="#m008">008 — O Mundo é um Moinho</a> <small>(dif 5)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m028">028 — Casa de Bamba</a></li><li><a href="#m013">013 — A Flor e o Espinho</a></li></ul></div>
+      </div>
+    </section><section class="semana" id="s6">
+      <div class="shead"><span class="snum">Semana 6</span><h3>Semicolcheia, staccato duplo e o ápice</h3></div>
+      <div class="sgrid">
+        <div><b>Tom</b><span>todas</span></div>
+        <div><b>Célula-alvo</b><span>C3+C4</span></div>
+        <div><b>Requisito novo</b><span>semicolcheias contínuas com tu-ku + cromatismo denso</span></div>
+      </div>
+      <p class="licao">A semana do ápice. Semicolcheias densas (C4) pedem staccato duplo (tu-ku) para a velocidade; o cromatismo denso de 013 (&#x27;A Flor e o Espinho&#x27;, a peça mais difícil do caderno) reúne tudo. Quem fecha a semana 6 lê o caderno inteiro à primeira vista e toca as 30 de cór.</p>
+      <div class="cols">
+        <div><h5>Músicas em foco</h5><ul><li><a href="#m028">028 — Casa de Bamba</a> <small>(dif 6)</small></li><li><a href="#m013">013 — A Flor e o Espinho</a> <small>(dif 7)</small></li><li><a href="#m064">064 — A Felicidade</a> <small>(dif 5)</small></li></ul></div>
+        <div><h5>Leitura à primeira vista</h5><ul><li><a href="#m008">008 — O Mundo é um Moinho</a></li><li><a href="#m044">044 — Não Deixe o Samba Morrer</a></li></ul></div>
+      </div>
+    </section>
+
+<h2 class="sec" id="banco">Banco de músicas (30 catalogadas)</h2>
+<p>Partituras do caderno (recortadas sem a letra, que é protegida). Dificuldade 1–10 por análise da partitura; as marcadas "a verificar" têm a estrutura pronta e aguardam leitura.</p>
+<article class="musica" id="m001">
+      <div class="mhead"><span class="mnum">001</span>
+        <div><h4>Até Amanhã</h4><div class="comp">Noel Rosa</div></div>
+        <span class="dif d4">dif 4</span></div>
+      <div class="mmeta">Fá · 2/4 · média · forma A/B</div>
+      <div class="reqs"><span class="req">síncope</span><span class="req">casas-1-2</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-001.png" alt="Partitura Até Amanhã">
+      <p class="obs">Síncope clássica do samba + casas 1ª/2ª.</p>
+    </article><article class="musica" id="m002">
+      <div class="mhead"><span class="mnum">002</span>
+        <div><h4>Com Que Roupa</h4><div class="comp">Noel Rosa</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Sol · 2/4 · média-alta · forma intro/A/B</div>
+      <div class="reqs"><span class="req">tonalidade-1-sustenido</span><span class="req">cromatismo-passagem</span><span class="req">casas</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-002.png" alt="Partitura Com Que Roupa">
+      <p class="obs">Sol maior; colcheias densas com sustenidos de passagem; intro + A/B com casas.</p>
+    </article><article class="musica" id="m003">
+      <div class="mhead"><span class="mnum">003</span>
+        <div><h4>Feitiço da Vila</h4><div class="comp">Noel Rosa / Vadico</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Fá · 2/4 · média-alta · forma A/B</div>
+      <div class="reqs"><span class="req">colcheias-densas</span><span class="req">cromatismo-leve</span><span class="req">casa-1</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-003.png" alt="Partitura Feitiço da Vila">
+      <p class="obs">Colcheias em grupo movimentadas; bemóis de passagem; forma A/B.</p>
+    </article><article class="musica" id="m004">
+      <div class="mhead"><span class="mnum">004</span>
+        <div><h4>Fita Amarela</h4><div class="comp">Noel Rosa</div></div>
+        <span class="dif d4">dif 4</span></div>
+      <div class="mmeta">Sib · 2/4 · média · forma A/B</div>
+      <div class="reqs"><span class="req">tonalidade-2-bemóis</span><span class="req">intro-7c</span><span class="req">casas</span></div>
+      <div class="cels">C1 C7</div>
+      <img loading="lazy" src="scores/sb-004.png" alt="Partitura Fita Amarela">
+      <p class="obs">Sib (2 bemóis). Intro de 7 compassos; seção B respirável.</p>
+    </article><article class="musica" id="m005">
+      <div class="mhead"><span class="mnum">005</span>
+        <div><h4>Acontece</h4><div class="comp">Cartola</div></div>
+        <span class="dif d4">dif 4</span></div>
+      <div class="mmeta">Ré · 4/4 · média · forma A/B/C</div>
+      <div class="reqs"><span class="req">tonalidade-2-sustenidos</span><span class="req">tercina</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-005.png" alt="Partitura Acontece">
+      <p class="obs">A longa em valores médios; depois entram tercinas.</p>
+    </article><article class="musica" id="m006">
+      <div class="mhead"><span class="mnum">006</span>
+        <div><h4>As Rosas Não Falam</h4><div class="comp">Cartola</div></div>
+        <span class="dif d4">dif 4</span></div>
+      <div class="mmeta">Fá · 2/4 · média · forma A/B/C/D</div>
+      <div class="reqs"><span class="req">forma-longa-ABCD</span><span class="req">tercina</span><span class="req">cromatismo-passagem</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-006.png" alt="Partitura As Rosas Não Falam">
+      <p class="obs">Forma longa; colcheias com tercinas e bemóis de passagem.</p>
+    </article><article class="musica" id="m008">
+      <div class="mhead"><span class="mnum">008</span>
+        <div><h4>O Mundo é um Moinho</h4><div class="comp">Cartola</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Ré · 4/4 · média-alta · forma A/B/C/D</div>
+      <div class="reqs"><span class="req">tonalidade-2-sustenidos</span><span class="req">tercina</span><span class="req">forma-longa-ABCD</span><span class="req">cromatismo</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-008.png" alt="Partitura O Mundo é um Moinho">
+      <p class="obs">Ré maior; tercinas e cromatismo; forma muito longa.</p>
+    </article><article class="musica" id="m009">
+      <div class="mhead"><span class="mnum">009</span>
+        <div><h4>O Sol Nascerá</h4><div class="comp">Cartola / Elton Medeiros</div></div>
+        <span class="dif d3">dif 3</span></div>
+      <div class="mmeta">Fá · 2/4 · baixa · forma A/B</div>
+      <div class="reqs"><span class="req">frases-curtas</span><span class="req">tercina-leve-secao-B</span></div>
+      <div class="cels">C1 C2 C5</div>
+      <img loading="lazy" src="scores/sb-009.png" alt="Partitura O Sol Nascerá">
+      <p class="obs">Mais acessível do caderno. A em valores longos; B traz tercinas e cromatismo pontual.</p>
+    </article><article class="musica" id="m010">
+      <div class="mhead"><span class="mnum">010</span>
+        <div><h4>Preciso Me Encontrar (Peito Vazio)</h4><div class="comp">Candeia</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Lá · 2/4 · alta · forma intro/A/B</div>
+      <div class="reqs"><span class="req">tonalidade-3-sustenidos</span><span class="req">tercina-contínua</span><span class="req">forma-longa</span><span class="req">cromatismo</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-010.png" alt="Partitura Preciso Me Encontrar (Peito Vazio)">
+      <p class="obs">Lá maior (3 sustenidos) + tercinas densas e contínuas + forma longa. Das mais duras do caderno.</p>
+    </article><article class="musica" id="m013">
+      <div class="mhead"><span class="mnum">013</span>
+        <div><h4>A Flor e o Espinho</h4><div class="comp">Nelson Cavaquinho / Guilherme de Brito / Alcides Caminha</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Sol · 2/4 · alta · forma A/B/C</div>
+      <div class="reqs"><span class="req">semicolcheias</span><span class="req">cromatismo-denso</span><span class="req">forma-larga</span></div>
+      <div class="cels">C1 C2 C4</div>
+      <img loading="lazy" src="scores/sb-013.png" alt="Partitura A Flor e o Espinho">
+      <p class="obs">A mais difícil das vistas: semicolcheias + cromatismo.</p>
+    </article><article class="musica" id="m017">
+      <div class="mhead"><span class="mnum">017</span>
+        <div><h4>A Voz do Morro</h4><div class="comp">Zé Kéti</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Ré · 2/4 · média-alta · forma intro/A/B</div>
+      <div class="reqs"><span class="req">tonalidade-2-sustenidos</span><span class="req">andamento-rápido-240</span><span class="req">cromatismo</span><span class="req">casas</span></div>
+      <div class="cels">C1 C6</div>
+      <img loading="lazy" src="scores/sb-017.png" alt="Partitura A Voz do Morro">
+      <p class="obs">Ré maior, ♩=240 (veloz); colcheias e semínimas com bequadros de passagem; forma longa.</p>
+    </article><article class="musica" id="m022">
+      <div class="mhead"><span class="mnum">022</span>
+        <div><h4>Trem das Onze</h4><div class="comp">Adoniran Barbosa</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Fá · 2/4 · média-alta · forma intro/A/B</div>
+      <div class="reqs"><span class="req">colcheias-em-grupo</span><span class="req">cromatismo-passagem</span><span class="req">forma-longa</span><span class="req">casas</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-022.png" alt="Partitura Trem das Onze">
+      <p class="obs">Fá maior; colcheias densas com sustenidos de passagem; intro + A/B com casas.</p>
+    </article><article class="musica" id="m025">
+      <div class="mhead"><span class="mnum">025</span>
+        <div><h4>Alguém Me Avisou</h4><div class="comp">Dona Ivone Lara</div></div>
+        <span class="dif d4">dif 4</span></div>
+      <div class="mmeta">Fá · 2/4 · média · forma A/B</div>
+      <div class="reqs"><span class="req">síncope-leve</span><span class="req">colcheias-em-grupo</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-025.png" alt="Partitura Alguém Me Avisou">
+      <p class="obs">Colcheias em grupo com síncope leve.</p>
+    </article><article class="musica" id="m027">
+      <div class="mhead"><span class="mnum">027</span>
+        <div><h4>Sonho Meu</h4><div class="comp">Dona Ivone Lara / Délcio Carvalho</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Ré · 2/4 · média-alta · forma A/B/C/D</div>
+      <div class="reqs"><span class="req">tonalidade-2-sustenidos</span><span class="req">colcheias-densas</span><span class="req">forma-longa-ABCD</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-027.png" alt="Partitura Sonho Meu">
+      <p class="obs">Colcheias densas; forma longa.</p>
+    </article><article class="musica" id="m028">
+      <div class="mhead"><span class="mnum">028</span>
+        <div><h4>Casa de Bamba</h4><div class="comp">Martinho da Vila</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Fá · 2/4 · alta · forma A/B/C</div>
+      <div class="reqs"><span class="req">semicolcheias</span><span class="req">forma-longa</span><span class="req">articulação-rápida</span></div>
+      <div class="cels">C1 C2 C4</div>
+      <img loading="lazy" src="scores/sb-028.png" alt="Partitura Casa de Bamba">
+      <p class="obs">Semicolcheias densas; exige articulação e fôlego.</p>
+    </article><article class="musica" id="m033">
+      <div class="mhead"><span class="mnum">033</span>
+        <div><h4>Andança</h4><div class="comp">Edmundo Souto / Paulinho Tapajós / Danilo Caymmi</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Dó · 2/4 · média-alta · forma A/B</div>
+      <div class="reqs"><span class="req">cromatismo-intenso-seção-A</span><span class="req">tercina</span><span class="req">casas</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-033.png" alt="Partitura Andança">
+      <p class="obs">Dó maior; seção A com cromatismo intenso (muitos sustenidos) e tercinas; B mais lírica.</p>
+    </article><article class="musica" id="m034">
+      <div class="mhead"><span class="mnum">034</span>
+        <div><h4>Se Você Jurar</h4><div class="comp">Francisco Alves / Ismael Silva / Nilton Bastos</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Sol · 2/4 · média · forma A/B/B'</div>
+      <div class="reqs"><span class="req">cromatismo-sustenidos</span><span class="req">forma-longa</span><span class="req">casas</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-034.png" alt="Partitura Se Você Jurar">
+      <p class="obs">Cromatismo de passagem (sustenidos); forma longa com casas.</p>
+    </article><article class="musica" id="m035">
+      <div class="mhead"><span class="mnum">035</span>
+        <div><h4>Tristeza</h4><div class="comp">Haroldo Lobo / Niltinho</div></div>
+        <span class="dif d3">dif 3</span></div>
+      <div class="mmeta">Sol · 2/4 · baixa-média · forma A/B/C</div>
+      <div class="reqs"><span class="req">frases-repetitivas-respiráveis</span><span class="req">D.S.</span></div>
+      <div class="cels">C1 C6</div>
+      <img loading="lazy" src="scores/sb-035.png" alt="Partitura Tristeza">
+      <p class="obs">Frases curtas e repetitivas, muito respirável. Tem dal segno.</p>
+    </article><article class="musica" id="m036">
+      <div class="mhead"><span class="mnum">036</span>
+        <div><h4>Vou Festejar</h4><div class="comp">Jorge Aragão / Dida / Neoci</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Sol→Lá · 2/4 · média-alta · forma A/B/C</div>
+      <div class="reqs"><span class="req">modulação-armadura</span><span class="req">tercina</span><span class="req">forma-longa</span><span class="req">casas</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-036.png" alt="Partitura Vou Festejar">
+      <p class="obs">Modula: A em Sol (1#), B/C em Lá (3#). Tercinas; forma longa com casas.</p>
+    </article><article class="musica" id="m044">
+      <div class="mhead"><span class="mnum">044</span>
+        <div><h4>Não Deixe o Samba Morrer</h4><div class="comp">Aloísio / Edson Conceição</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Fá · 2/4 · média-alta · forma A/B/C</div>
+      <div class="reqs"><span class="req">síncope</span><span class="req">contratempo</span><span class="req">forma-longa</span></div>
+      <div class="cels">C1 C2 C6</div>
+      <img loading="lazy" src="scores/sb-044.png" alt="Partitura Não Deixe o Samba Morrer">
+      <p class="obs">Síncope + contratempo; forma longa.</p>
+    </article><article class="musica" id="m049">
+      <div class="mhead"><span class="mnum">049</span>
+        <div><h4>Vai Vadiar</h4><div class="comp">?</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Sol · 2/4 · alta · forma A/refrão/B/C</div>
+      <div class="reqs"><span class="req">tercina-contínua</span><span class="req">ornamentos</span><span class="req">forma-muito-longa</span><span class="req">casas</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-049.png" alt="Partitura Vai Vadiar">
+      <p class="obs">Tercinas densas e contínuas + apojaturas; refrão + A/B/C com casas e volta.</p>
+    </article><article class="musica" id="m054">
+      <div class="mhead"><span class="mnum">054</span>
+        <div><h4>Dança da Solidão</h4><div class="comp">Paulinho da Viola</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Lá · 2/4 · alta · forma A/B/C</div>
+      <div class="reqs"><span class="req">tonalidade-3-sustenidos</span><span class="req">cromatismo-denso</span><span class="req">tercina</span><span class="req">DS-al-coda</span></div>
+      <div class="cels">C1 C5</div>
+      <img loading="lazy" src="scores/sb-054.png" alt="Partitura Dança da Solidão">
+      <p class="obs">Lá maior; cromatismo intenso e contínuo + tercinas; forma longa com D.S. al Coda.</p>
+    </article><article class="musica" id="m055">
+      <div class="mhead"><span class="mnum">055</span>
+        <div><h4>Foi um Rio Que Passou em Minha Vida</h4><div class="comp">Paulinho da Viola</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Sol · 2/4 · alta · forma A/B/C/D</div>
+      <div class="reqs"><span class="req">forma-extensa-101c</span><span class="req">resistência</span><span class="req">cromatismo</span><span class="req">ornamentos</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-055.png" alt="Partitura Foi um Rio Que Passou em Minha Vida">
+      <p class="obs">Uma das maiores do caderno (101+ compassos). Resistência e memória são o desafio dominante.</p>
+    </article><article class="musica" id="m061">
+      <div class="mhead"><span class="mnum">061</span>
+        <div><h4>Quem Te Viu, Quem Te Vê</h4><div class="comp">Chico Buarque</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Fá→Ré · 2/4 · média-alta · forma A/B</div>
+      <div class="reqs"><span class="req">modulação-armadura</span><span class="req">colcheias-densas</span><span class="req">cromatismo</span><span class="req">casa</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-061.png" alt="Partitura Quem Te Viu, Quem Te Vê">
+      <p class="obs">Modula de Fá (1b) para Ré (2#) no final; colcheias densas com cromatismo.</p>
+    </article><article class="musica" id="m064">
+      <div class="mhead"><span class="mnum">064</span>
+        <div><h4>A Felicidade</h4><div class="comp">Tom Jobim / Vinicius de Moraes</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Fá · 2/4 · média-alta · forma A/B</div>
+      <div class="reqs"><span class="req">colcheias-densas</span><span class="req">cromatismo-leve</span><span class="req">fôlego-forma-larga</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-064.png" alt="Partitura A Felicidade">
+      <p class="obs">Lírica e longa (40+ compassos); colcheias densas.</p>
+    </article><article class="musica" id="m067">
+      <div class="mhead"><span class="mnum">067</span>
+        <div><h4>O Morro Não Tem Vez</h4><div class="comp">Tom Jobim / Vinicius de Moraes</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Sol · 2/4 · média · forma A/B</div>
+      <div class="reqs"><span class="req">colcheia-pontuada</span><span class="req">cromatismo-passagem</span><span class="req">casas</span><span class="req">DS</span></div>
+      <div class="cels">C1 C3</div>
+      <img loading="lazy" src="scores/sb-067.png" alt="Partitura O Morro Não Tem Vez">
+      <p class="obs">Sol maior; colcheia-pontuada + bemóis de passagem; forma A/B com casas e D.S.</p>
+    </article><article class="musica" id="m068">
+      <div class="mhead"><span class="mnum">068</span>
+        <div><h4>Pra Que Chorar</h4><div class="comp">Baden Powell / Vinicius de Moraes</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Sol · 2/4 · média · forma A/B/C</div>
+      <div class="reqs"><span class="req">tonalidade-1-sustenido</span><span class="req">fraseado-lírico</span><span class="req">casas</span></div>
+      <div class="cels">C1 C2</div>
+      <img loading="lazy" src="scores/sb-068.png" alt="Partitura Pra Que Chorar">
+      <p class="obs">Lírica; colcheias em grupo, forma com casas.</p>
+    </article><article class="musica" id="m084">
+      <div class="mhead"><span class="mnum">084</span>
+        <div><h4>Flor de Lis</h4><div class="comp">Djavan</div></div>
+        <span class="dif d7">dif 7</span></div>
+      <div class="mmeta">Lá · 2/4 · alta · forma A/B</div>
+      <div class="reqs"><span class="req">tonalidade-3-sustenidos</span><span class="req">contratempo-intenso</span><span class="req">tercina</span><span class="req">casas</span></div>
+      <div class="cels">C6 C5</div>
+      <img loading="lazy" src="scores/sb-084.png" alt="Partitura Flor de Lis">
+      <p class="obs">Lá maior; contratempo constante (suingue difícil) + tercinas; forma A/B com casas.</p>
+    </article><article class="musica" id="m085">
+      <div class="mhead"><span class="mnum">085</span>
+        <div><h4>Mas Que Nada</h4><div class="comp">Jorge Ben Jor</div></div>
+        <span class="dif d6">dif 6</span></div>
+      <div class="mmeta">Dó · 2/4 · alta · forma intro/A</div>
+      <div class="reqs"><span class="req">semicolcheias-contínuas</span><span class="req">síncope-marcante</span><span class="req">articulação-rápida</span></div>
+      <div class="cels">C4 C2</div>
+      <img loading="lazy" src="scores/sb-085.png" alt="Partitura Mas Que Nada">
+      <p class="obs">Dó maior (fácil) + forma curta compensam as semicolcheias densas e síncope marcante.</p>
+    </article><article class="musica" id="m087">
+      <div class="mhead"><span class="mnum">087</span>
+        <div><h4>Maracangalha</h4><div class="comp">Dorival Caymmi</div></div>
+        <span class="dif d5">dif 5</span></div>
+      <div class="mmeta">Lá · 2/4 · média · forma A/B</div>
+      <div class="reqs"><span class="req">tonalidade-3-sustenidos</span><span class="req">síncope</span><span class="req">forma-curta-repetitiva</span></div>
+      <div class="cels">C1 C3 C2</div>
+      <img loading="lazy" src="scores/sb-087.png" alt="Partitura Maracangalha">
+      <p class="obs">Lá maior, mas melodia curta, simples e repetitiva; colcheia-pontuada e síncope.</p>
+    </article>
+
+<footer>
+  O Caminho do Sambrass — Trompete · material de estudo pessoal<br>
+  Partituras referenciadas ao caderno de naipe Sambrass23. Letras não reproduzidas (direito autoral).<br>
+  Banco e site gerados a partir de <code>data/*.json</code> · pronto para expansão no Claude Code.
+</footer>
+</div></body></html>
