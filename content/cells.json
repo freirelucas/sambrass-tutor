@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "sobre": "Vocabulário abstrato do Sambrass: células rítmicas (C) e arpejos (A). Genérico e sem direito autoral — alturas/tom entram só no render. dur: 4=semínima, 8=colcheia, '8.'=colcheia pontuada, 16=semicolcheia. tuplet '3:2' = tercina."
+  },
+  "celulas_ritmicas": [
+    {"id": "C1", "nome": "colcheias em grupo", "descricao": "par de colcheias ligadas — base do andamento", "span_tempos": 1, "pattern": [{"dur": 8}, {"dur": 8}]},
+    {"id": "C2", "nome": "síncope clássica", "descricao": "colcheia / semínima / colcheia — acento no contratempo (coração do samba)", "span_tempos": 2, "pattern": [{"dur": 8}, {"dur": 4}, {"dur": 8}]},
+    {"id": "C3", "nome": "colcheia pontuada + semicolcheia", "descricao": "ritmo pontuado curto", "span_tempos": 1, "pattern": [{"dur": "8."}, {"dur": 16}]},
+    {"id": "C4", "nome": "quatro semicolcheias", "descricao": "passagem rápida — pede staccato duplo", "span_tempos": 1, "pattern": [{"dur": 16}, {"dur": 16}, {"dur": 16}, {"dur": 16}]},
+    {"id": "C5", "nome": "tercina de colcheias", "descricao": "três por tempo", "span_tempos": 1, "tuplet": "3:2", "pattern": [{"dur": 8}, {"dur": 8}, {"dur": 8}]},
+    {"id": "C6", "nome": "contratempo", "descricao": "ataque no 'e' — pausa no tempo, nota no contratempo", "span_tempos": 1, "pattern": [{"dur": 8, "rest": true}, {"dur": 8}]},
+    {"id": "C7", "nome": "anacruse", "descricao": "nota de levada antes do tempo 1", "span_tempos": 1, "anacruse": true, "pattern": [{"dur": 8}]}
+  ],
+  "arpejos": [
+    {"id": "A1", "nome": "tríade maior ascendente", "graus": [1, 3, 5]},
+    {"id": "A2", "nome": "tríade maior descendente", "graus": [5, 3, 1]},
+    {"id": "A3", "nome": "arpejo com 7ª (dominante)", "graus": [1, 3, 5, "b7"]},
+    {"id": "A4", "nome": "bordadura cromática", "descricao": "nota → vizinha cromática → nota", "pattern_semitons": [0, -1, 0]}
+  ]
+}

@@ -1,0 +1,986 @@
+{
+  "pieces": [
+    {
+      "id": "sb-001",
+      "num": 1,
+      "titulo": "Até Amanhã",
+      "compositor": "Noel Rosa",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "síncope",
+        "casas-1-2"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Síncope clássica do samba + casas 1ª/2ª.",
+      "score": "sb-001.jpg"
+    },
+    {
+      "id": "sb-002",
+      "num": 2,
+      "titulo": "Com Que Roupa",
+      "compositor": "Noel Rosa",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "cromatismo-passagem",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol maior; colcheias densas com sustenidos de passagem; intro + A/B com casas.",
+      "score": "sb-002.jpg"
+    },
+    {
+      "id": "sb-003",
+      "num": 3,
+      "titulo": "Feitiço da Vila",
+      "compositor": "Noel Rosa / Vadico",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "colcheias-densas",
+        "cromatismo-leve",
+        "casa-1"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Colcheias em grupo movimentadas; bemóis de passagem; forma A/B.",
+      "score": "sb-003.jpg"
+    },
+    {
+      "id": "sb-004",
+      "num": 4,
+      "titulo": "Fita Amarela",
+      "compositor": "Noel Rosa",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C7"
+      ],
+      "arpejos": [
+        "A1",
+        "A2"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "tonalidade-2-bemóis",
+        "intro-7c",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sib (2 bemóis). Intro de 7 compassos; seção B respirável.",
+      "score": "sb-004.jpg"
+    },
+    {
+      "id": "sb-005",
+      "num": 5,
+      "titulo": "Acontece",
+      "compositor": "Cartola",
+      "compasso": "4/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "tercina"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "A longa em valores médios; depois entram tercinas.",
+      "score": "sb-005.jpg"
+    },
+    {
+      "id": "sb-006",
+      "num": 6,
+      "titulo": "As Rosas Não Falam",
+      "compositor": "Cartola",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "forma-longa-ABCD",
+        "tercina",
+        "cromatismo-passagem"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Forma longa; colcheias com tercinas e bemóis de passagem.",
+      "score": "sb-006.jpg"
+    },
+    {
+      "id": "sb-008",
+      "num": 8,
+      "titulo": "O Mundo é um Moinho",
+      "compositor": "Cartola",
+      "compasso": "4/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "tercina",
+        "forma-longa-ABCD",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré maior; tercinas e cromatismo; forma muito longa.",
+      "score": "sb-008.jpg"
+    },
+    {
+      "id": "sb-009",
+      "num": 9,
+      "titulo": "O Sol Nascerá",
+      "compositor": "Cartola / Elton Medeiros",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "baixa",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 3,
+      "requisitos": [
+        "frases-curtas",
+        "tercina-leve-secao-B"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Mais acessível do caderno. A em valores longos; B traz tercinas e cromatismo pontual.",
+      "score": "sb-009.jpg"
+    },
+    {
+      "id": "sb-010",
+      "num": 10,
+      "titulo": "Preciso Me Encontrar (Peito Vazio)",
+      "compositor": "Candeia",
+      "compasso": "2/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "tercina-contínua",
+        "forma-longa",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá maior (3 sustenidos) + tercinas densas e contínuas + forma longa. Das mais duras do caderno.",
+      "score": "sb-010.jpg"
+    },
+    {
+      "id": "sb-013",
+      "num": 13,
+      "titulo": "A Flor e o Espinho",
+      "compositor": "Nelson Cavaquinho / Guilherme de Brito / Alcides Caminha",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "semicolcheias",
+        "cromatismo-denso",
+        "forma-larga"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "A mais difícil das vistas: semicolcheias + cromatismo.",
+      "score": "sb-013.jpg"
+    },
+    {
+      "id": "sb-017",
+      "num": 17,
+      "titulo": "A Voz do Morro",
+      "compositor": "Zé Kéti",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C6"
+      ],
+      "arpejos": [
+        "A1",
+        "A2"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "andamento-rápido-240",
+        "cromatismo",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré maior, ♩=240 (veloz); colcheias e semínimas com bequadros de passagem; forma longa.",
+      "score": "sb-017.jpg"
+    },
+    {
+      "id": "sb-022",
+      "num": 22,
+      "titulo": "Trem das Onze",
+      "compositor": "Adoniran Barbosa",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "colcheias-em-grupo",
+        "cromatismo-passagem",
+        "forma-longa",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá maior; colcheias densas com sustenidos de passagem; intro + A/B com casas.",
+      "score": "sb-022.jpg"
+    },
+    {
+      "id": "sb-025",
+      "num": 25,
+      "titulo": "Alguém Me Avisou",
+      "compositor": "Dona Ivone Lara",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "síncope-leve",
+        "colcheias-em-grupo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Colcheias em grupo com síncope leve.",
+      "score": "sb-025.jpg"
+    },
+    {
+      "id": "sb-027",
+      "num": 27,
+      "titulo": "Sonho Meu",
+      "compositor": "Dona Ivone Lara / Délcio Carvalho",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "colcheias-densas",
+        "forma-longa-ABCD"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Colcheias densas; forma longa.",
+      "score": "sb-027.jpg"
+    },
+    {
+      "id": "sb-028",
+      "num": 28,
+      "titulo": "Casa de Bamba",
+      "compositor": "Martinho da Vila",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "semicolcheias",
+        "forma-longa",
+        "articulação-rápida"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Semicolcheias densas; exige articulação e fôlego.",
+      "score": "sb-028.jpg"
+    },
+    {
+      "id": "sb-033",
+      "num": 33,
+      "titulo": "Andança",
+      "compositor": "Edmundo Souto / Paulinho Tapajós / Danilo Caymmi",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "cromatismo-intenso-seção-A",
+        "tercina",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó maior; seção A com cromatismo intenso (muitos sustenidos) e tercinas; B mais lírica.",
+      "score": "sb-033.jpg"
+    },
+    {
+      "id": "sb-034",
+      "num": 34,
+      "titulo": "Se Você Jurar",
+      "compositor": "Francisco Alves / Ismael Silva / Nilton Bastos",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B",
+        "B'"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "cromatismo-sustenidos",
+        "forma-longa",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Cromatismo de passagem (sustenidos); forma longa com casas.",
+      "score": "sb-034.jpg"
+    },
+    {
+      "id": "sb-035",
+      "num": 35,
+      "titulo": "Tristeza",
+      "compositor": "Haroldo Lobo / Niltinho",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "baixa-média",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C6"
+      ],
+      "arpejos": [
+        "A1",
+        "A2"
+      ],
+      "dificuldade": 3,
+      "requisitos": [
+        "frases-repetitivas-respiráveis",
+        "D.S."
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Frases curtas e repetitivas, muito respirável. Tem dal segno.",
+      "score": "sb-035.jpg"
+    },
+    {
+      "id": "sb-036",
+      "num": 36,
+      "titulo": "Vou Festejar",
+      "compositor": "Jorge Aragão / Dida / Neoci",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": "G",
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "modulação-armadura",
+        "tercina",
+        "forma-longa",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Modula: A em Sol (1#), B/C em Lá (3#). Tercinas; forma longa com casas.",
+      "score": "sb-036.jpg"
+    },
+    {
+      "id": "sb-044",
+      "num": 44,
+      "titulo": "Não Deixe o Samba Morrer",
+      "compositor": "Aloísio / Edson Conceição",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "síncope",
+        "contratempo",
+        "forma-longa"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Síncope + contratempo; forma longa.",
+      "score": "sb-044.jpg"
+    },
+    {
+      "id": "sb-049",
+      "num": 49,
+      "titulo": "Vai Vadiar",
+      "compositor": "?",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "refrão",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tercina-contínua",
+        "ornamentos",
+        "forma-muito-longa",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Tercinas densas e contínuas + apojaturas; refrão + A/B/C com casas e volta.",
+      "score": "sb-049.jpg"
+    },
+    {
+      "id": "sb-054",
+      "num": 54,
+      "titulo": "Dança da Solidão",
+      "compositor": "Paulinho da Viola",
+      "compasso": "2/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "cromatismo-denso",
+        "tercina",
+        "DS-al-coda"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá maior; cromatismo intenso e contínuo + tercinas; forma longa com D.S. al Coda.",
+      "score": "sb-054.jpg"
+    },
+    {
+      "id": "sb-055",
+      "num": 55,
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "compositor": "Paulinho da Viola",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "forma-extensa-101c",
+        "resistência",
+        "cromatismo",
+        "ornamentos"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Uma das maiores do caderno (101+ compassos). Resistência e memória são o desafio dominante.",
+      "score": "sb-055.jpg"
+    },
+    {
+      "id": "sb-061",
+      "num": 61,
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "compositor": "Chico Buarque",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": "C",
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "modulação-armadura",
+        "colcheias-densas",
+        "cromatismo",
+        "casa"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Modula de Fá (1b) para Ré (2#) no final; colcheias densas com cromatismo.",
+      "score": "sb-061.jpg"
+    },
+    {
+      "id": "sb-064",
+      "num": 64,
+      "titulo": "A Felicidade",
+      "compositor": "Tom Jobim / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "colcheias-densas",
+        "cromatismo-leve",
+        "fôlego-forma-larga"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lírica e longa (40+ compassos); colcheias densas.",
+      "score": "sb-064.jpg"
+    },
+    {
+      "id": "sb-067",
+      "num": 67,
+      "titulo": "O Morro Não Tem Vez",
+      "compositor": "Tom Jobim / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C3"
+      ],
+      "arpejos": [
+        "A1",
+        "A2"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "colcheia-pontuada",
+        "cromatismo-passagem",
+        "casas",
+        "DS"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol maior; colcheia-pontuada + bemóis de passagem; forma A/B com casas e D.S.",
+      "score": "sb-067.jpg"
+    },
+    {
+      "id": "sb-068",
+      "num": 68,
+      "titulo": "Pra Que Chorar",
+      "compositor": "Baden Powell / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A2"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "fraseado-lírico",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lírica; colcheias em grupo, forma com casas.",
+      "score": "sb-068.jpg"
+    },
+    {
+      "id": "sb-084",
+      "num": 84,
+      "titulo": "Flor de Lis",
+      "compositor": "Djavan",
+      "compasso": "2/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C6",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "contratempo-intenso",
+        "tercina",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá maior; contratempo constante (suingue difícil) + tercinas; forma A/B com casas.",
+      "score": "sb-084.jpg"
+    },
+    {
+      "id": "sb-085",
+      "num": 85,
+      "titulo": "Mas Que Nada",
+      "compositor": "Jorge Ben Jor",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "intro",
+        "A"
+      ],
+      "celulas": [
+        "C4",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "semicolcheias-contínuas",
+        "síncope-marcante",
+        "articulação-rápida"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó maior (fácil) + forma curta compensam as semicolcheias densas e síncope marcante.",
+      "score": "sb-085.jpg"
+    },
+    {
+      "id": "sb-087",
+      "num": 87,
+      "titulo": "Maracangalha",
+      "compositor": "Dorival Caymmi",
+      "compasso": "2/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C3",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "síncope",
+        "forma-curta-repetitiva"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá maior, mas melodia curta, simples e repetitiva; colcheia-pontuada e síncope.",
+      "score": "sb-087.jpg"
+    }
+  ]
+}
