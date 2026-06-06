@@ -1,0 +1,87 @@
+name: OMR (Audiveris)
+
+# Processa as partituras do caderno com Audiveris (OMR) e exporta MusicXML.
+# Offload de compute: builda o Audiveris do código, pré-processa a pauta, transcreve
+# em lote e commita os MusicXML no branch omr/audiveris-raw para conferência.
+# Dispare manualmente (Actions > OMR > Run) escolhendo as peças.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pieces:
+        description: "Números das peças (espaço-separado). Vazio = piloto de 5."
+        default: "9 35 13 25 1"
+        required: false
+  # workflow_dispatch só vale na branch padrão; gatilho push permite rodar daqui.
+  push:
+    branches: ["claude/busy-cori-QXkHR"]
+    paths: [".github/workflows/omr.yml", "content/omr_prep.py"]
+
+permissions:
+  contents: write
+
+jobs:
+  omr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Java 21 (Temurin)
+        uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+
+      - name: Dependências do sistema (Tesseract)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-por tesseract-ocr-eng python3-pip
+          echo "TESSDATA_PREFIX=$(dirname $(find /usr/share -name eng.traineddata | head -1))" >> "$GITHUB_ENV"
+
+      - name: Trazer o PDF-fonte (do branch main)
+        run: git show origin/main:"Sambrass23 trompete.pdf" > "Sambrass23 trompete.pdf"
+
+      - name: Pré-processar a pauta (PyMuPDF)
+        run: |
+          python3 -m pip install --quiet PyMuPDF
+          PIECES="${{ github.event.inputs.pieces }}"
+          python3 content/omr_prep.py --dpi 300 ${PIECES:-9 35 13 25 1}
+          ls -la omr/input
+
+      - name: Cache do build do Audiveris
+        id: cache-aud
+        uses: actions/cache@v4
+        with:
+          path: audiveris/app/build/install
+          key: audiveris-installdist-v1
+
+      - name: Build do Audiveris (se não cacheado)
+        if: steps.cache-aud.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 https://github.com/Audiveris/audiveris.git
+          cd audiveris && ./gradlew --no-daemon :app:installDist
+
+      - name: Localizar o binário do Audiveris
+        run: |
+          AUD=$(find audiveris -path '*/install/*/bin/Audiveris' | head -1)
+          echo "AUD=$AUD" >> "$GITHUB_ENV"
+          echo "binário: $AUD"; "$AUD" -help || true
+
+      - name: Transcrever (batch → MusicXML)
+        run: |
+          mkdir -p omr/out
+          "$AUD" -batch -transcribe -export -output omr/out omr/input/*.png || true
+          echo "--- saídas ---"; find omr/out -type f | sort
+
+      - name: Commitar MusicXML no branch omr/audiveris-raw
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout -B omr/audiveris-raw
+          git add -f omr/out
+          git commit -m "OMR Audiveris: MusicXML de ${{ github.event.inputs.pieces }}" || echo "(nada a commitar)"
+          git push -f origin omr/audiveris-raw
+
+      - name: Artefato (MusicXML)
+        uses: actions/upload-artifact@v4
+        with: { name: musicxml, path: omr/out/**, if-no-files-found: warn }
