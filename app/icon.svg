@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#7a1f1f"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#fbfaf7" stroke-width="14"/>
+  <text x="256" y="312" font-family="Helvetica,Arial,sans-serif" font-size="190" font-weight="bold"
+        fill="#fbfaf7" text-anchor="middle">S</text>
+  <text x="256" y="430" font-family="Helvetica,Arial,sans-serif" font-size="46" letter-spacing="4"
+        fill="#fbfaf7" text-anchor="middle">SAMBRASS</text>
+</svg>

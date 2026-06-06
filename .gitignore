@@ -13,3 +13,6 @@ content/scores/
 # Cache do Python e runtime de notas regenerável (build_notes.py recria dos .musicxml)
 __pycache__/
 content/notes_runtime/sb-*.json
+
+# Site montado p/ deploy (gerado por app/build_site.py)
+_site/
