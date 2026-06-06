@@ -174,7 +174,8 @@ function renderPlayer(transpose) {
   if (!ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
   SYNTH = new ABCJS.synth.SynthController();
   SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true, displayLoop: true, displayRestart: true });
-  SYNTH.setTune(visual, false, { program: 56 }).catch(() => {});
+  SYNTH.setTune(visual, false, { program: 56, soundFontUrl: './vendor/soundfont/' })
+    .catch(e => { const a = $('#audio'); if (a) a.insertAdjacentHTML('beforeend', `<p class="meta">não consegui carregar o som (${e}). Tente recarregar.</p>`); });
 }
 function cursorCtl() {
   const clear = () => document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight'));
