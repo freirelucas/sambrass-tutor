@@ -58,3 +58,15 @@ Tudo no branch `claude/busy-cori-QXkHR`, validado e pushado:
 
 ### Fora de escopo nesta sessão (por decisão)
 - Deploy/GitHub Pages; app Flutter; transcrição MusicXML das 110 músicas.
+
+## Madrugada — OMR + analytics + curadoria (no main)
+- **OMR FUNCIONA** via GitHub Actions + Audiveris (Java 25). Piloto: 5 peças → MusicXML;
+  validação contra o catálogo: **4/5 armaduras OK**, 5/5 compassos. Saídas brutas no
+  branch `omr/audiveris-raw`; `content/omr_check.py` + `omr_report.csv`; importador
+  `content/omr_import.py` (injeta transpose -2 → notas provisórias). Run das 110 disparado.
+- **Analytics**: `content/analise.html` (dashboard único) + `analytics.json`. Síncope em 98/110.
+- **Curadoria**: dificuldade recalibrada 1–10 (`dificuldade.json`), habilidades por peça,
+  **trilha mestra** (1 habilidade nova/passo), trilhas por habilidade, escada de leitura,
+  **currículo de 13 módulos**. Doc em `content/CURADORIA.md`.
+- Trabalhando no **main** (autorizado). OMR-bruto fora do main (branch/artefato).
+
