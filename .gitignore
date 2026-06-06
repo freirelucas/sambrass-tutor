@@ -7,5 +7,9 @@ Sambrass23 trompete.pdf
 # Scores recortados (29 MB, regeneráveis com content/recortar.py a partir do PDF)
 content/scores/
 
-# Entradas/saídas locais de OMR (geradas; o workflow as recria no runner)
-omr/
+# Entradas/saídas locais de OMR na RAIZ (geradas; o workflow as recria no runner)
+/omr/
+
+# Cache do Python e runtime de notas regenerável (build_notes.py recria dos .musicxml)
+__pycache__/
+content/notes_runtime/sb-*.json
