@@ -3,7 +3,7 @@
 _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
 
 ## Progresso
-- **Catalogadas: 68 / 110** (meta: 110)
+- **Catalogadas: 86 / 110** (meta: 110)
 - Notas MusicXML semeadas: 0 / ~5 (meta da sessão)
 
 ## Pronto e versionado
@@ -27,3 +27,7 @@ _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
 - 68/110. + batches 4–6: 040–043,045–048,050–053,056–060,062 (Jorge Aragão,
   Alcione/Marrom, Zeca/Monarco, Paulinho da Viola, Chico Buarque). Achados: 045
   'Sufoco' modula Sib→Ré; vários 4/4 (041,046,051,056,060).
+- 86/110. + batches 7–9: 063,065–066,069–083 (Vinicius, bloco Sambrass,
+  Aldir Blanc/João Bosco, Gonzaguinha). Achados: 073 modula Fá→Sol, 074 Fá→Lá;
+  índice volta a divergir a partir de 077 (rodapé 077='Desde Que o Samba é Samba',
+  078='Cicatrizes') — catalogado pelo rodapé.

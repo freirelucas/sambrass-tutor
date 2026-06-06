@@ -2058,6 +2058,39 @@
       "score": "sb-062.jpg"
     },
     {
+      "id": "sb-063",
+      "num": 63,
+      "titulo": "Sem Compromisso",
+      "compositor": "Geraldo Pereira / Nelson Trigueiro",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-bemóis",
+        "colcheias-densas",
+        "casas",
+        "síncope"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Si bemol (2 bemóis), q=100; A/B densa com casas.",
+      "score": "sb-063.jpg"
+    },
+    {
       "id": "sb-064",
       "num": 64,
       "titulo": "A Felicidade",
@@ -2088,6 +2121,71 @@
       "verificada": true,
       "obs": "Lírica e longa (40+ compassos); colcheias densas.",
       "score": "sb-064.jpg"
+    },
+    {
+      "id": "sb-065",
+      "num": 65,
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "compositor": "Toquinho / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "semicolcheias-contínuas",
+        "colcheias-densas",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá (3 sustenidos); muito densa (semicolcheias contínuas); A/B com casas.",
+      "score": "sb-065.jpg"
+    },
+    {
+      "id": "sb-066",
+      "num": 66,
+      "titulo": "Consolação",
+      "compositor": "Baden Powell / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "colcheias-densas",
+        "forma-longa",
+        "síncope"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura); intro/A/B longa e densa em colcheias.",
+      "score": "sb-066.jpg"
     },
     {
       "id": "sb-067",
@@ -2154,6 +2252,499 @@
       "verificada": true,
       "obs": "Lírica; colcheias em grupo, forma com casas.",
       "score": "sb-068.jpg"
+    },
+    {
+      "id": "sb-069",
+      "num": 69,
+      "titulo": "Regra Três",
+      "compositor": "Toquinho / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "cromatismo",
+        "forma-longa-ABC",
+        "casas",
+        "tercina"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); A/B/C com cromatismo e tercinas; casas.",
+      "score": "sb-069.jpg"
+    },
+    {
+      "id": "sb-070",
+      "num": 70,
+      "titulo": "Samba de Orly",
+      "compositor": "Chico Buarque / Toquinho / Vinicius de Moraes",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "cromatismo-denso",
+        "colcheias-densas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); muito cromática e densa; A/B.",
+      "score": "sb-070.jpg"
+    },
+    {
+      "id": "sb-071",
+      "num": 71,
+      "titulo": "Ronda",
+      "compositor": "Paulo Vanzolini",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C5",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "tercina-contínua",
+        "forma-longa-ABC"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol (1 sustenido), q=80; tercinas contínuas; A/B/C.",
+      "score": "sb-071.jpg"
+    },
+    {
+      "id": "sb-072",
+      "num": 72,
+      "titulo": "Naquela Mesa",
+      "compositor": "Sérgio Bittencourt",
+      "compasso": "4/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "compasso-4-4",
+        "colcheias-densas",
+        "casas",
+        "cromatismo-passagem"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura), 4/4; A/B densa com casas.",
+      "score": "sb-072.jpg"
+    },
+    {
+      "id": "sb-073",
+      "num": 73,
+      "titulo": "Retalhos de Cetim",
+      "compositor": "Benito di Paula",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": "F",
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "modulação-armadura",
+        "colcheias-densas",
+        "casas",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Modula: A em Fá (1 bemol), B termina em Sol (1 sustenido); densa com casas.",
+      "score": "sb-073.jpg"
+    },
+    {
+      "id": "sb-074",
+      "num": 74,
+      "titulo": "Você Abusou",
+      "compositor": "Antônio Carlos / Jocafi",
+      "compasso": "4/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": "G",
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "modulação-armadura",
+        "compasso-4-4",
+        "tonalidade-3-sustenidos",
+        "colcheias-densas",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Modula: A em Fá (1 bemol), B em Lá (3 sustenidos), 4/4; densa e cromática.",
+      "score": "sb-074.jpg"
+    },
+    {
+      "id": "sb-075",
+      "num": 75,
+      "titulo": "Me Deixe em Paz",
+      "compositor": "Monsueto / Marino Pinto",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "colcheias-em-grupo",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); A/B com casas; colcheias em grupo.",
+      "score": "sb-075.jpg"
+    },
+    {
+      "id": "sb-076",
+      "num": 76,
+      "titulo": "É Preciso Perdoar",
+      "compositor": "Alcivando Luz / Carlos Coqueijo",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 4,
+      "requisitos": [
+        "colcheias-em-grupo",
+        "DC",
+        "fraseado-lírico"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura); lírica; A/B com D.C.",
+      "score": "sb-076.jpg"
+    },
+    {
+      "id": "sb-077",
+      "num": 77,
+      "titulo": "Desde Que o Samba é Samba",
+      "compositor": "Caetano Veloso / Gilberto Gil",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "colcheias-densas",
+        "forma-longa",
+        "casas",
+        "síncope"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol); muito densa em colcheias; A/B longa com casas. (Rodapé difere do índice, que traz 'Cicatrizes'.)",
+      "score": "sb-077.jpg"
+    },
+    {
+      "id": "sb-078",
+      "num": 78,
+      "titulo": "Cicatrizes",
+      "compositor": "Paulo César Pinheiro / Miltinho",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "colcheias-densas",
+        "casas",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); A/B densa com casas.",
+      "score": "sb-078.jpg"
+    },
+    {
+      "id": "sb-079",
+      "num": 79,
+      "titulo": "De Mais Ninguém",
+      "compositor": "Arnaldo Antunes / Marisa Monte",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-2-bemóis",
+        "semicolcheias",
+        "forma-curta"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Si bemol (2 bemóis); curta com semicolcheias densas.",
+      "score": "sb-079.jpg"
+    },
+    {
+      "id": "sb-080",
+      "num": 80,
+      "titulo": "O Bêbado e o Equilibrista",
+      "compositor": "Aldir Blanc / João Bosco",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-2-bemóis",
+        "forma-extensa",
+        "cromatismo",
+        "colcheias-densas",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Si bemol (2 bemóis); A/B muito longa, cromática; casas.",
+      "score": "sb-080.jpg"
+    },
+    {
+      "id": "sb-081",
+      "num": 81,
+      "titulo": "De Frente pro Crime",
+      "compositor": "Aldir Blanc / João Bosco",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "colcheias-densas",
+        "casas",
+        "semicolcheias"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol (1 sustenido); A/B densa com casas.",
+      "score": "sb-081.jpg"
+    },
+    {
+      "id": "sb-082",
+      "num": 82,
+      "titulo": "Linha de Passe",
+      "compositor": "Aldir Blanc / João Bosco / Paulo Emílio",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "forma-extensa",
+        "colcheias-densas",
+        "casas",
+        "DC"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol (1 sustenido); A/B/C com 'final', casas e D.C. (4x); densa.",
+      "score": "sb-082.jpg"
+    },
+    {
+      "id": "sb-083",
+      "num": 83,
+      "titulo": "Comportamento Geral",
+      "compositor": "Gonzaguinha",
+      "compasso": "4/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "compasso-4-4",
+        "colcheias-densas",
+        "tercina",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura), 4/4; densa com semicolcheias e tercinas; A/B com casas.",
+      "score": "sb-083.jpg"
     },
     {
       "id": "sb-084",

@@ -1144,5 +1144,524 @@
   ],
   "verificada": true,
   "obs": "Ré (2 sustenidos); muito densa (colcheias contínuas); A/B longa."
+ },
+ {
+  "num": 63,
+  "titulo": "Sem Compromisso",
+  "compositor": "Geraldo Pereira / Nelson Trigueiro",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "colcheias-densas",
+   "casas",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis), q=100; A/B densa com casas."
+ },
+ {
+  "num": 65,
+  "titulo": "A Tonga da Mironga do Kabuletê",
+  "compositor": "Toquinho / Vinicius de Moraes",
+  "tom_escrito": "A",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "semicolcheias-contínuas",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos); muito densa (semicolcheias contínuas); A/B com casas."
+ },
+ {
+  "num": 66,
+  "titulo": "Consolação",
+  "compositor": "Baden Powell / Vinicius de Moraes",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "colcheias-densas",
+   "forma-longa",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); intro/A/B longa e densa em colcheias."
+ },
+ {
+  "num": 69,
+  "titulo": "Regra Três",
+  "compositor": "Toquinho / Vinicius de Moraes",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "cromatismo",
+   "forma-longa-ABC",
+   "casas",
+   "tercina"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B/C com cromatismo e tercinas; casas."
+ },
+ {
+  "num": 70,
+  "titulo": "Samba de Orly",
+  "compositor": "Chico Buarque / Toquinho / Vinicius de Moraes",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "cromatismo-denso",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); muito cromática e densa; A/B."
+ },
+ {
+  "num": 71,
+  "titulo": "Ronda",
+  "compositor": "Paulo Vanzolini",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C5",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "tercina-contínua",
+   "forma-longa-ABC"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido), q=80; tercinas contínuas; A/B/C."
+ },
+ {
+  "num": 72,
+  "titulo": "Naquela Mesa",
+  "compositor": "Sérgio Bittencourt",
+  "tom_escrito": "C",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "compasso-4-4",
+   "colcheias-densas",
+   "casas",
+   "cromatismo-passagem"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), 4/4; A/B densa com casas."
+ },
+ {
+  "num": 73,
+  "titulo": "Retalhos de Cetim",
+  "compositor": "Benito di Paula",
+  "tom_escrito": "F->G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "modulação-armadura",
+   "colcheias-densas",
+   "casas",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Fá (1 bemol), B termina em Sol (1 sustenido); densa com casas."
+ },
+ {
+  "num": 74,
+  "titulo": "Você Abusou",
+  "compositor": "Antônio Carlos / Jocafi",
+  "tom_escrito": "F->A",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "modulação-armadura",
+   "compasso-4-4",
+   "tonalidade-3-sustenidos",
+   "colcheias-densas",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Fá (1 bemol), B em Lá (3 sustenidos), 4/4; densa e cromática."
+ },
+ {
+  "num": 75,
+  "titulo": "Me Deixe em Paz",
+  "compositor": "Monsueto / Marino Pinto",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "colcheias-em-grupo",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B com casas; colcheias em grupo."
+ },
+ {
+  "num": 76,
+  "titulo": "É Preciso Perdoar",
+  "compositor": "Alcivando Luz / Carlos Coqueijo",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "média",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 4,
+  "requisitos": [
+   "colcheias-em-grupo",
+   "DC",
+   "fraseado-lírico"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); lírica; A/B com D.C."
+ },
+ {
+  "num": 77,
+  "titulo": "Desde Que o Samba é Samba",
+  "compositor": "Caetano Veloso / Gilberto Gil",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "colcheias-densas",
+   "forma-longa",
+   "casas",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); muito densa em colcheias; A/B longa com casas. (Rodapé difere do índice, que traz 'Cicatrizes'.)"
+ },
+ {
+  "num": 78,
+  "titulo": "Cicatrizes",
+  "compositor": "Paulo César Pinheiro / Miltinho",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "colcheias-densas",
+   "casas",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B densa com casas."
+ },
+ {
+  "num": 79,
+  "titulo": "De Mais Ninguém",
+  "compositor": "Arnaldo Antunes / Marisa Monte",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "semicolcheias",
+   "forma-curta"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis); curta com semicolcheias densas."
+ },
+ {
+  "num": 80,
+  "titulo": "O Bêbado e o Equilibrista",
+  "compositor": "Aldir Blanc / João Bosco",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "forma-extensa",
+   "cromatismo",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis); A/B muito longa, cromática; casas."
+ },
+ {
+  "num": 81,
+  "titulo": "De Frente pro Crime",
+  "compositor": "Aldir Blanc / João Bosco",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "colcheias-densas",
+   "casas",
+   "semicolcheias"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); A/B densa com casas."
+ },
+ {
+  "num": 82,
+  "titulo": "Linha de Passe",
+  "compositor": "Aldir Blanc / João Bosco / Paulo Emílio",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "forma-extensa",
+   "colcheias-densas",
+   "casas",
+   "DC"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); A/B/C com 'final', casas e D.C. (4x); densa."
+ },
+ {
+  "num": 83,
+  "titulo": "Comportamento Geral",
+  "compositor": "Gonzaguinha",
+  "tom_escrito": "C",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "compasso-4-4",
+   "colcheias-densas",
+   "tercina",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), 4/4; densa com semicolcheias e tercinas; A/B com casas."
  }
 ]
