@@ -1,26 +1,620 @@
 [
-  {
-    "num": 10, "titulo": "Peito Vazio", "compositor": "Cartola / Elton Medeiros",
-    "tom_escrito": "G", "compasso": "2/4", "densidade": "média-alta",
-    "forma": ["intro", "A", "B"], "celulas": ["C1", "C5", "C2"], "arpejos": ["A1"],
-    "dificuldade": 5, "requisitos": ["tonalidade-1-sustenido", "tercina", "forma-longa"],
-    "verificada": true,
-    "obs": "Sol (1 sustenido); intro + A/B; colcheias em grupo com tercinas e cromatismo de passagem. (Corrige o legado, que fundia esta com a 011.)"
-  },
-  {
-    "num": 11, "titulo": "Preciso Me Encontrar", "compositor": "Candeia",
-    "tom_escrito": "G", "compasso": "2/4", "densidade": "média-alta",
-    "forma": ["A", "B"], "celulas": ["C1", "C2", "C5"], "arpejos": ["A1"],
-    "dificuldade": 5, "requisitos": ["tonalidade-1-sustenido", "síncope", "tercina"],
-    "verificada": true,
-    "obs": "Sol (1 sustenido); síncope e tercinas; forma A/B com repetições. (Era confundida com 'Peito Vazio' no legado.)"
-  },
-  {
-    "num": 12, "titulo": "Tive Sim", "compositor": "Cartola",
-    "tom_escrito": "G", "compasso": "2/4", "densidade": "alta",
-    "forma": ["A", "B"], "celulas": ["C1", "C2"], "arpejos": ["A1"],
-    "dificuldade": 6, "requisitos": ["forma-longa", "colcheias-densas", "síncope"],
-    "verificada": true,
-    "obs": "Sol (1 sustenido); longa e densa em colcheias com síncope. Forma a confirmar (parece A/B com volta)."
-  }
+ {
+  "num": 7,
+  "titulo": "Corra e Olhe o Céu",
+  "compositor": "Cartola",
+  "tom_escrito": "Eb",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-3-bemóis",
+   "cromatismo-passagem",
+   "colcheias-densas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Mi♭ (3 bemóis); colcheias em grupo com cromatismo de passagem; forma A/B longa."
+ },
+ {
+  "num": 10,
+  "titulo": "Peito Vazio",
+  "compositor": "Cartola / Elton Medeiros",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "intro",
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C5",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "tercina",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); intro + A/B; colcheias em grupo com tercinas e cromatismo. (Corrige o legado, que fundia esta com a 011.)"
+ },
+ {
+  "num": 11,
+  "titulo": "Preciso Me Encontrar",
+  "compositor": "Candeia",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "síncope",
+   "tercina"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); síncope e tercinas; forma A/B com repetições. (Era confundida com 'Peito Vazio' no legado.)"
+ },
+ {
+  "num": 12,
+  "titulo": "Tive Sim",
+  "compositor": "Cartola",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-longa",
+   "colcheias-densas",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); longa e densa em colcheias com síncope. Forma a confirmar (parece A/B com volta)."
+ },
+ {
+  "num": 14,
+  "titulo": "Folhas Secas",
+  "compositor": "Nelson Cavaquinho / Guilherme de Brito",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C3",
+   "C2"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "cromatismo-denso",
+   "colcheias-densas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); muito cromática (bequadros/sustenidos de passagem); longa e densa (40+ compassos). Forma A/B a confirmar."
+ },
+ {
+  "num": 15,
+  "titulo": "Juízo Final",
+  "compositor": "Nelson Cavaquinho / Élcio Soares",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "cromatismo-passagem",
+   "tercina"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); cromatismo de passagem e tercina; forma A/B."
+ },
+ {
+  "num": 16,
+  "titulo": "Vou Partir",
+  "compositor": "Nelson Cavaquinho / Jair do Cavaquinho",
+  "tom_escrito": "Eb",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-3-bemóis",
+   "colcheias-em-grupo",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Mi♭ (3 bemóis); colcheias em grupo; forma A/B."
+ },
+ {
+  "num": 18,
+  "titulo": "Diz Que Fui por Aí",
+  "compositor": "Zé Kéti / Hortêncio Rocha",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "síncope",
+   "colcheias-densas",
+   "casas-1-2",
+   "tercina"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); densa e sincopada com tercinas; forma A/B com casas 1ª/2ª."
+ },
+ {
+  "num": 19,
+  "titulo": "Mascarada",
+  "compositor": "Zé Kéti / Elton Medeiros",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C5",
+   "C2"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "tercina-contínua",
+   "cromatismo",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Si♭ (2 bemóis); tercinas contínuas e cromatismo; forma A/B."
+ },
+ {
+  "num": 20,
+  "titulo": "Tiro ao Álvaro",
+  "compositor": "Adoniran Barbosa / Oswaldo Molles",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "cromatismo",
+   "casas-1-2"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); colcheias com cromatismo de passagem; A/B com casas 1ª/2ª."
+ },
+ {
+  "num": 21,
+  "titulo": "Samba do Arnesto",
+  "compositor": "Adoniran Barbosa / Alocin",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "colcheias-densas",
+   "casas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); intro + A/B com casas; densa, com semicolcheias e tercina."
+ },
+ {
+  "num": 23,
+  "titulo": "Saudosa Maloca",
+  "compositor": "Adoniran Barbosa",
+  "tom_escrito": "D",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "forma-extensa",
+   "colcheias-densas",
+   "tercina",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos), 4/4; intro/A/B/C muito longa e densa, com tercinas. Das mais extensas."
+ },
+ {
+  "num": 24,
+  "titulo": "Acreditar",
+  "compositor": "Dona Ivone Lara / Délcio de Carvalho",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "forma-longa-ABC",
+   "DS",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B/C com casas e D.S. (segno); colcheias densas."
+ },
+ {
+  "num": 26,
+  "titulo": "Enredo do Meu Samba",
+  "compositor": "Dona Ivone Lara / Jorge Aragão",
+  "tom_escrito": "F",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "compasso-4-4",
+   "tercina-contínua",
+   "forma-longa-ABC",
+   "DC",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol), 4/4; tercinas contínuas e cromatismo; A/B/C com casas e D.C."
+ },
+ {
+  "num": 29,
+  "titulo": "Ex Amor",
+  "compositor": "Martinho da Vila",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C3"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-extensa",
+   "colcheias-densas",
+   "casas",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); muito longa (60+ compassos); colcheias densas; A/B com casas."
+ },
+ {
+  "num": 30,
+  "titulo": "Madalena do Jucu",
+  "compositor": "Martinho da Vila",
+  "tom_escrito": "A",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C3",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "colcheia-pontuada",
+   "casas",
+   "DC"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos); A/B com casas e D.C.; colcheia-pontuada e síncope."
+ },
+ {
+  "num": 31,
+  "titulo": "Renascer das Cinzas",
+  "compositor": "Martinho da Vila",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "semicolcheias",
+   "colcheias-densas",
+   "forma-longa",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); densa com semicolcheias; A/B longa com casas."
+ },
+ {
+  "num": 32,
+  "titulo": "Água de Chuva no Mar",
+  "compositor": "Wanderley Monteiro / Carlos Caetano / Gerson Gomes",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "cromatismo-passagem",
+   "tercina",
+   "casas-1-2"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); colcheias com tercinas; A/B com casas 1ª/2ª."
+ },
+ {
+  "num": 37,
+  "titulo": "Conselho",
+  "compositor": "Adilson Bispo / Zé Roberto",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "colcheias-densas",
+   "forma-longa-ABC",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido), q=80; A/B/C longa e densa com cromatismo."
+ },
+ {
+  "num": 38,
+  "titulo": "Do Fundo do Nosso Quintal",
+  "compositor": "Jorge Aragão / Alberto Souza",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "colcheias-densas",
+   "forma-longa",
+   "casas",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); A/B longa e densa com cromatismo; casas e D.S."
+ },
+ {
+  "num": 39,
+  "titulo": "Eu e Você Sempre",
+  "compositor": "Jorge Aragão / Flávio Cardoso",
+  "tom_escrito": "F#",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-6-sustenidos",
+   "compasso-4-4",
+   "forma-longa-ABC",
+   "DS",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Fá# (6 sustenidos!), 4/4, q=90; tom dificílimo (concert Mi); A/B/C com D.S."
+ }
 ]
