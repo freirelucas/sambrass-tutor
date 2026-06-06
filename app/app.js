@@ -30,6 +30,9 @@ function telaHoje() {
       <div style="margin-top:10px" class="prog"><b>Módulo:</b> ${mods.map((_, i) => `<button class="${i === m.modulo - 1 ? 'sel' : ''}" onclick="localStorage.setItem('sambrass_mod',${i});ir('hoje')">${i + 1}</button>`).join('')}</div></div>`;
     h += `<h2 class="sec">A rotina (90 min)</h2><ul class="lista rotina">` +
       (DB.rotina || []).map(b => `<li><span class="rmin">${b.min}min</span> <b>${b.bloco}</b> — ${b.conteudo}</li>`).join('') + `</ul>`;
+    const cellsHoje = [...new Set((m.foco || []).flatMap(f => DB.byNum[f.num]?.celulas || []))].sort();
+    if (cellsHoje.length)
+      h += `<h2 class="sec">Células de hoje</h2><div class="card"><p class="meta">Isole cada uma (▶, com cursor), suba o andamento no metrônomo, depois aplique nas peças.</p>${cellsHoje.map(c => `<button class="prog" onclick="tocarCell('${c}')">▶ ${c}</button>`).join(' ')}</div>`;
     h += `<h2 class="sec">Em foco</h2><ul class="lista">` + (m.foco || []).map(f => linhaPeca(f.num)).join('') + `</ul>`;
     if (m.leitura_1avista?.length)
       h += `<h2 class="sec">Leitura à 1ª vista</h2><ul class="lista">` + m.leitura_1avista.map(f => linhaPeca(f.num)).join('') + `</ul>`;
