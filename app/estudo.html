@@ -154,7 +154,9 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
 async function playOnce(abc){
   if(!abc || !window.ABCJS?.synth?.supportsAudio()) return;
   try{
-    const v = ABCJS.renderAbc('*', abc)[0];
+    let sc = document.getElementById('scratch');
+    if(!sc){ sc = document.createElement('div'); sc.id='scratch'; sc.style.display='none'; document.body.appendChild(sc); }
+    const v = ABCJS.renderAbc('scratch', abc)[0];
     const s = new ABCJS.synth.CreateSynth();
     await s.init({ visualObj:v, options:{ soundFontUrl:'./vendor/soundfont/', program:56 } });
     await s.prime(); s.start();
