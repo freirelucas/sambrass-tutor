@@ -1,0 +1,2098 @@
+{
+  "_meta": {
+    "metodo": "raw = 1 + 0.6*acidentes + densidade + cromatismo + 0.5*(seções-2) + 1.5*extensa + 1.5*semicolcheia + 0.7*tercina + 0.3*contratempo + modulação; depois normalizado min-max para 1–10.",
+    "uso": "comparar com a manual; adotar/mesclar a gosto. Não sobrescreve pieces.json."
+  },
+  "pieces": [
+    {
+      "num": 1,
+      "titulo": "Até Amanhã",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 2,
+      "raw": 2.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 2,
+      "titulo": "Com Que Roupa",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 5.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 3,
+      "titulo": "Feitiço da Vila",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 4,
+      "titulo": "Fita Amarela",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 2,
+      "raw": 3.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 5,
+      "titulo": "Acontece",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 4,
+      "raw": 4.4,
+      "features": {
+        "acidentes": 2,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 6,
+      "titulo": "As Rosas Não Falam",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 7,
+      "raw": 6.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 1,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 7,
+      "titulo": "Corra e Olhe o Céu",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 8,
+      "titulo": "O Mundo é um Moinho",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 9,
+      "raw": 8.4,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 9,
+      "titulo": "O Sol Nascerá",
+      "dificuldade_manual": 3,
+      "dificuldade_calc": 1,
+      "raw": 2.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 0.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 10,
+      "titulo": "Peito Vazio",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 11,
+      "titulo": "Preciso Me Encontrar",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 12,
+      "titulo": "Tive Sim",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 4.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 13,
+      "titulo": "A Flor e o Espinho",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 9,
+      "raw": 8.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 14,
+      "titulo": "Folhas Secas",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 15,
+      "titulo": "Juízo Final",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.7,
+      "features": {
+        "acidentes": 0,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 16,
+      "titulo": "Vou Partir",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 17,
+      "titulo": "A Voz do Morro",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.0,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 18,
+      "titulo": "Diz Que Fui por Aí",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 19,
+      "titulo": "Mascarada",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 20,
+      "titulo": "Tiro ao Álvaro",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 5.5,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 21,
+      "titulo": "Samba do Arnesto",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 8,
+      "raw": 7.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 22,
+      "titulo": "Trem das Onze",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 5.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 23,
+      "titulo": "Saudosa Maloca",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 9,
+      "raw": 8.4,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 24,
+      "titulo": "Acreditar",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 25,
+      "titulo": "Alguém Me Avisou",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 2,
+      "raw": 2.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 26,
+      "titulo": "Enredo do Meu Samba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 27,
+      "titulo": "Sonho Meu",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 7,
+      "raw": 6.7,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 28,
+      "titulo": "Casa de Bamba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 29,
+      "titulo": "Ex Amor",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.8,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 30,
+      "titulo": "Madalena do Jucu",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 4,
+      "raw": 4.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 31,
+      "titulo": "Renascer das Cinzas",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.7,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 32,
+      "titulo": "Água de Chuva no Mar",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 5.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 33,
+      "titulo": "Andança",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 4,
+      "raw": 4.7,
+      "features": {
+        "acidentes": 0,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 34,
+      "titulo": "Se Você Jurar",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 35,
+      "titulo": "Tristeza",
+      "dificuldade_manual": 3,
+      "dificuldade_calc": 2,
+      "raw": 2.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 0.5,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 36,
+      "titulo": "Vou Festejar",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.0,
+      "features": {
+        "acidentes": 3,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 37,
+      "titulo": "Conselho",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 38,
+      "titulo": "Do Fundo do Nosso Quintal",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 4.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 39,
+      "titulo": "Eu e Você Sempre",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 9,
+      "raw": 8.4,
+      "features": {
+        "acidentes": 6,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 40,
+      "titulo": "Falsa Consideração",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.5,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 41,
+      "titulo": "Identidade",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 42,
+      "titulo": "Lucidez",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 9,
+      "raw": 8.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 5,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 43,
+      "titulo": "Malandro",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 8,
+      "raw": 8.0,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 44,
+      "titulo": "Não Deixe o Samba Morrer",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.4,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 45,
+      "titulo": "Sufoco",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 7,
+      "raw": 6.9,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 46,
+      "titulo": "Você Me Vira a Cabeça",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 47,
+      "titulo": "Coração em Desalinho",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 7,
+      "raw": 7.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 48,
+      "titulo": "Jura",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 2,
+      "raw": 3.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 1.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 49,
+      "titulo": "Vai Vadiar",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 50,
+      "titulo": "Verdade",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 51,
+      "titulo": "Vivo Isolado do Mundo",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 52,
+      "titulo": "Ainda Mais",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 4.9,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 53,
+      "titulo": "Coração Leviano",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 54,
+      "titulo": "Dança da Solidão",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 10,
+      "raw": 9.0,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 55,
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 9,
+      "raw": 8.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 56,
+      "titulo": "Pecado Capital",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 8,
+      "raw": 7.5,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 57,
+      "titulo": "A Volta do Malandro",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 3,
+      "raw": 4.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 0,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 58,
+      "titulo": "De Volta ao Samba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 59,
+      "titulo": "Homenagem ao Malandro",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 60,
+      "titulo": "Partido Alto",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 8,
+      "raw": 7.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 61,
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 62,
+      "titulo": "Samba do Grande Amor",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.7,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 63,
+      "titulo": "Sem Compromisso",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.5,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 64,
+      "titulo": "A Felicidade",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 2.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 65,
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 66,
+      "titulo": "Consolação",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 4,
+      "raw": 4.8,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 67,
+      "titulo": "O Morro Não Tem Vez",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 3,
+      "raw": 3.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 68,
+      "titulo": "Pra Que Chorar",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 2,
+      "raw": 3.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 69,
+      "titulo": "Regra Três",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.4,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 70,
+      "titulo": "Samba de Orly",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 2,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 71,
+      "titulo": "Ronda",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 72,
+      "titulo": "Naquela Mesa",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 5,
+      "raw": 5.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 73,
+      "titulo": "Retalhos de Cetim",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 6.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 74,
+      "titulo": "Você Abusou",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 75,
+      "titulo": "Me Deixe em Paz",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 76,
+      "titulo": "É Preciso Perdoar",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 1,
+      "raw": 2.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 77,
+      "titulo": "Desde Que o Samba é Samba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 4.9,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 78,
+      "titulo": "Cicatrizes",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 79,
+      "titulo": "De Mais Ninguém",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 7,
+      "raw": 6.7,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 1,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 80,
+      "titulo": "O Bêbado e o Equilibrista",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 8.0,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 2,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 81,
+      "titulo": "De Frente pro Crime",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 82,
+      "titulo": "Linha de Passe",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 7,
+      "raw": 6.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 83,
+      "titulo": "Comportamento Geral",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.2,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 84,
+      "titulo": "Flor de Lis",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 7,
+      "raw": 6.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 85,
+      "titulo": "Mas Que Nada",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.8,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 86,
+      "titulo": "Eu Bebo Sim",
+      "dificuldade_manual": 4,
+      "dificuldade_calc": 3,
+      "raw": 3.3,
+      "features": {
+        "acidentes": 0,
+        "densidade": 2.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 87,
+      "titulo": "Maracangalha",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.1,
+      "features": {
+        "acidentes": 3,
+        "densidade": 1.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 88,
+      "titulo": "Leva Meu Samba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 89,
+      "titulo": "Na Cadência do Samba",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 90,
+      "titulo": "Pimenta no Vatapá",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 8,
+      "raw": 7.8,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 91,
+      "titulo": "Do Jeito Que o Rei Mandou",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.3,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 1,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 92,
+      "titulo": "Canto das Três Raças",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 7,
+      "raw": 7.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 93,
+      "titulo": "Tristeza, Pé no Chão",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 94,
+      "titulo": "A Batucada dos Nossos Tantãs",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 95,
+      "titulo": "Agamamou",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 8.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 4,
+        "extensa": 1,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 96,
+      "titulo": "Caçamba",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 10,
+      "raw": 9.1,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 5,
+        "extensa": 1,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 97,
+      "titulo": "Cheia de Manias",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.5,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 98,
+      "titulo": "Cilada",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.5,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 1,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 99,
+      "titulo": "Cigana",
+      "dificuldade_manual": 5,
+      "dificuldade_calc": 4,
+      "raw": 4.3,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 1,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 100,
+      "titulo": "Coração Radiante",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 101,
+      "titulo": "Deixa Acontecer",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 5.7,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 102,
+      "titulo": "Domingo",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 5,
+      "raw": 5.6,
+      "features": {
+        "acidentes": 1,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 2,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 103,
+      "titulo": "Essa Tal Liberdade",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 1,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 104,
+      "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.0,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 105,
+      "titulo": "Inaraí",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 6,
+      "raw": 6.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 1
+      }
+    },
+    {
+      "num": 106,
+      "titulo": "Pé na Areia",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 4,
+      "raw": 4.5,
+      "features": {
+        "acidentes": 0,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 107,
+      "titulo": "Ta Escrito",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 10,
+      "raw": 9.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 1,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 108,
+      "titulo": "É Tarde Demais",
+      "dificuldade_manual": 7,
+      "dificuldade_calc": 8,
+      "raw": 7.8,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 109,
+      "titulo": "Telegrama",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 6,
+      "raw": 6.3,
+      "features": {
+        "acidentes": 3,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 0,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    },
+    {
+      "num": 110,
+      "titulo": "Temporal",
+      "dificuldade_manual": 6,
+      "dificuldade_calc": 7,
+      "raw": 7.2,
+      "features": {
+        "acidentes": 2,
+        "densidade": 3.0,
+        "cromatismo": 0,
+        "n_secoes": 3,
+        "extensa": 0,
+        "semicolcheia": 1,
+        "tercina": 0,
+        "contratempo": 0,
+        "modulacao": 0,
+        "quatro_quartos": 0
+      }
+    }
+  ]
+}
