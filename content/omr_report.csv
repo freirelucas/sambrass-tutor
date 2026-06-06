@@ -1,0 +1,6 @@
+num,titulo,fifths_omr,fifths_esperado,armadura_ok,compasso_omr,compasso_cat,compasso_ok,n_notas,n_compassos
+1,Até Amanhã,-2,-1,NÃO,2/4,2/4,sim,145,43
+9,O Sol Nascerá,-1,-1,sim,2/4,2/4,sim,70,24
+13,A Flor e o Espinho,1,1,sim,2/4,2/4,sim,163,41
+25,Alguém Me Avisou,-1,-1,sim,2/4,2/4,sim,162,35
+35,Tristeza,1,1,sim,2/4,2/4,sim,127,46
