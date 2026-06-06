@@ -4,7 +4,7 @@ _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
 
 ## Progresso
 - **Catalogadas: 110 / 110 ✅** (meta: 110)
-- Notas MusicXML semeadas: 0 / ~5 (meta da sessão)
+- Notas MusicXML: pipeline provado (demo) + **7 snippets de célula C1–C7** (Fase 2). Transcrição das músicas: handoff (ver abaixo).
 
 ## Pronto e versionado
 - Fase 0: modelo agnóstico (peça em concerto + camada de instrumento).
@@ -35,3 +35,26 @@ _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
   (Ataulfo, João Nogueira, bloco Pagode: Revelação/Xande, Raça Negra, Art Popular…).
   Distribuição (concert): Eb24 F23 C20 Bb20 Ab9 G9 Db4 E1 · 2/4=92, 4/4=18 · 8 modulações.
   Export `content/catalog.csv` gerado. Próximo: Track B (semear MusicXML) + relatório.
+
+## Relatório final (piloto automático)
+Tudo no branch `claude/busy-cori-QXkHR`, validado e pushado:
+- **Banco 110/110** catalogado pelo rodapé (tom em concerto + camada de instrumento);
+  `content/catalog.csv` para revisão rápida.
+- **Metodologia de notas** MusicXML (escrito Bb + `<transpose>`) → JSON de eventos,
+  provada (`_demo_pipeline`) e aplicada aos **7 snippets de célula C1–C7** em
+  `content/notes/cells/` (conteúdo do bloco 'célula do dia', Fase 2).
+- **Pipeline de recorte** do PDF em alta resolução (`recortar.py`).
+- **Correções de integridade**: bug 010/011 (Peito Vazio × Preciso Me Encontrar),
+  numeração pelo rodapé (índice diverge), 8 modulações, 18 peças em 4/4.
+
+### Handoff — próximos passos sugeridos
+1. **Transcrever as melodias** para `content/notes/sb-NNN.musicxml` (escrito Bb +
+   `<transpose -2>`): melhor por entrada manual no MuseScore a partir dos scores, ou
+   Audiveris OMR offline (oemer falhou aqui). `build_notes.py` já consome. Comece pelas
+   fáceis: 009, 035, 025, 001.
+2. **Recalibrar a `dificuldade`** (tende a 6–7 na metade pagode) e conferir células — ver `REVISAR.md`.
+3. **Conferir** modulações/formas/compositores sinalizados em `REVISAR.md`.
+4. Banco a seu gosto → **scaffold do app Flutter** (Fase 1: metrônomo + rotina), depois snippets e microfone.
+
+### Fora de escopo nesta sessão (por decisão)
+- Deploy/GitHub Pages; app Flutter; transcrição MusicXML das 110 músicas.

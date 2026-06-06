@@ -79,7 +79,7 @@ def main():
     fingering, inst_transpose = load_fingering()
     args = sys.argv[1:]
     files = [pathlib.Path(a) for a in args] if args else \
-        [pathlib.Path(p) for p in sorted(glob.glob(str(CONTENT / "notes" / "*.musicxml")))]
+        [pathlib.Path(p) for p in sorted(glob.glob(str(CONTENT / "notes" / "**" / "*.musicxml"), recursive=True))]
     if not files:
         sys.exit("nenhum .musicxml em content/notes/")
     OUT.mkdir(exist_ok=True)

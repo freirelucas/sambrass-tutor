@@ -1,0 +1,36 @@
+{
+  "source": "cell-C6.musicxml",
+  "transpose_chromatic": -2,
+  "events": [
+    {
+      "measure": 1,
+      "rest": true,
+      "dur_beats": 0.5
+    },
+    {
+      "measure": 1,
+      "written_midi": 65,
+      "written_name": "F4",
+      "concert_midi": 63,
+      "concert_name": "Eb4",
+      "fingering": "1",
+      "dur_beats": 0.5,
+      "tie": null
+    },
+    {
+      "measure": 1,
+      "rest": true,
+      "dur_beats": 0.5
+    },
+    {
+      "measure": 1,
+      "written_midi": 65,
+      "written_name": "F4",
+      "concert_midi": 63,
+      "concert_name": "Eb4",
+      "fingering": "1",
+      "dur_beats": 0.5,
+      "tie": null
+    }
+  ]
+}

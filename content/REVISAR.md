@@ -27,5 +27,5 @@ abaixo é estimado pela análise e pode ser ajustado.
 - 057 "A Volta do Malandro": sem seções marcadas (corrido).
 
 ## Recorte de partituras
-- (a preencher) páginas onde a faixa de letras varia e o corte de topo (25,5%) possa
-  ter comido pauta — anotar para ajuste fino de `--top` por página.
+- Recorte a 200 dpi (corte de topo 25,5%) ficou limpo nas 110 lidas: letra removida,
+  pauta inteira. Resíduo: incipits curtos sob a pauta (incidentais). Sem ajuste por página necessário.
