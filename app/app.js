@@ -170,12 +170,18 @@ async function abrirPlayer(id, titulo, prov, voltar) {
 function renderPlayer(transpose) {
   if (!PLAYER) return;
   pararSynth(); PLAYER.transpose = transpose;
-  const visual = ABCJS.renderAbc('paper', PLAYER.abc, { add_classes: true, responsive: 'resize', visualTranspose: transpose })[0];
-  if (!ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
-  SYNTH = new ABCJS.synth.SynthController();
-  SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true, displayLoop: true, displayRestart: true });
-  SYNTH.setTune(visual, false, { program: 56, soundFontUrl: './vendor/soundfont/' })
-    .catch(e => { const a = $('#audio'); if (a) a.insertAdjacentHTML('beforeend', `<p class="meta">não consegui carregar o som (${e}). Tente recarregar.</p>`); });
+  let visual;
+  try {
+    visual = ABCJS.renderAbc('paper', PLAYER.abc, { add_classes: true, responsive: 'resize', visualTranspose: transpose })[0];
+  } catch (e) { $('#paper').innerHTML = '<p class="meta">não consegui desenhar a partitura.</p>'; return; }
+  if (!window.ABCJS || !ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
+  try {
+    SYNTH = new ABCJS.synth.SynthController();
+    SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true, displayLoop: true, displayRestart: true });
+    SYNTH.setTune(visual, false, { program: 56, soundFontUrl: './vendor/soundfont/' })
+      .catch(e => { const a = $('#audio'); if (a) a.insertAdjacentHTML('beforeend', `<p class="meta">não consegui carregar o som (${e}). Recarregue.</p>`); });
+  } catch (e) { $('#audio').innerHTML = `<p class="meta">erro no player: ${e.message}</p>`; }
+}
 }
 function cursorCtl() {
   const clear = () => document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight'));
