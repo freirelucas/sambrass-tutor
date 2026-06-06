@@ -14,11 +14,15 @@ on:
         required: false
   # workflow_dispatch só vale na branch padrão; gatilho push permite rodar daqui.
   push:
-    branches: ["claude/busy-cori-QXkHR"]
+    branches: ["main"]
     paths: [".github/workflows/omr.yml", "content/omr_prep.py"]
 
 permissions:
   contents: write
+
+concurrency:
+  group: omr-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   omr:
@@ -28,15 +32,14 @@ jobs:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
 
-      - name: Java 21 (Temurin)
+      - name: Java 25 (Temurin)  # Audiveris 5.10+ exige Java 25
         uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: "21" }
+        with: { distribution: temurin, java-version: "25" }
 
       - name: Dependências do sistema (Tesseract)
         run: |
           sudo apt-get update
-          sudo apt-get install -y tesseract-ocr tesseract-ocr-por tesseract-ocr-eng python3-pip
-          echo "TESSDATA_PREFIX=$(dirname $(find /usr/share -name eng.traineddata | head -1))" >> "$GITHUB_ENV"
+          sudo apt-get install -y tesseract-ocr python3-pip  # Audiveris traz a própria tessdata 4.1.0
 
       - name: Trazer o PDF-fonte (do branch main)
         run: git show origin/main:"Sambrass23 trompete.pdf" > "Sambrass23 trompete.pdf"
@@ -70,7 +73,7 @@ jobs:
       - name: Transcrever (batch → MusicXML)
         run: |
           mkdir -p omr/out
-          "$AUD" -batch -transcribe -export -output omr/out omr/input/*.png || true
+          "$AUD" -batch -transcribe -export -output omr/out -- omr/input/*.png || true
           echo "--- saídas ---"; find omr/out -type f | sort
 
       - name: Commitar MusicXML no branch omr/audiveris-raw
