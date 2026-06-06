@@ -2752,8 +2752,8 @@
       "titulo": "Flor de Lis",
       "compositor": "Djavan",
       "compasso": "2/4",
-      "key_concert": "G",
-      "modulates_to_concert": null,
+      "key_concert": "C",
+      "modulates_to_concert": "G",
       "densidade": "alta",
       "forma": [
         "A",
@@ -2768,6 +2768,7 @@
       ],
       "dificuldade": 7,
       "requisitos": [
+        "modulação-armadura",
         "tonalidade-3-sustenidos",
         "contratempo-intenso",
         "tercina",
@@ -2775,7 +2776,7 @@
       ],
       "dominio_publico": false,
       "verificada": true,
-      "obs": "Lá maior; contratempo constante (suingue difícil) + tercinas; forma A/B com casas.",
+      "obs": "Abre em Ré (2 sustenidos) e modula para Lá (3 sustenidos) — Djavan; contratempo constante + tercinas; A/B com casas. (Corrige o legado, que registrava só Lá.)",
       "score": "sb-084.jpg"
     },
     {

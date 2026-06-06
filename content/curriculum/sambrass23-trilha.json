@@ -506,7 +506,8 @@
       ],
       "habilidades_novas": [
         "anacruse (C7)",
-        "tonalidade 3 acidentes (Lá/Mib)"
+        "tonalidade 3 acidentes (Lá/Mib)",
+        "semicolcheias / staccato duplo (C4)"
       ],
       "foco": [
         {
@@ -545,14 +546,14 @@
           "dif": 6
         },
         {
-          "num": 84,
-          "titulo": "Flor de Lis",
-          "dif": 7
-        },
-        {
           "num": 54,
           "titulo": "Dança da Solidão",
           "dif": 10
+        },
+        {
+          "num": 97,
+          "titulo": "Cheia de Manias",
+          "dif": 5
         }
       ],
       "leitura_1avista": [
@@ -580,18 +581,11 @@
     {
       "modulo": 8,
       "faixa_dificuldade": [
-        5,
-        6
+        6,
+        7
       ],
-      "habilidades_novas": [
-        "semicolcheias / staccato duplo (C4)"
-      ],
+      "habilidades_novas": [],
       "foco": [
-        {
-          "num": 97,
-          "titulo": "Cheia de Manias",
-          "dif": 5
-        },
         {
           "num": 24,
           "titulo": "Acreditar",
@@ -631,6 +625,11 @@
           "num": 104,
           "titulo": "Eu Me Apaixonei pela Pessoa Errada",
           "dif": 6
+        },
+        {
+          "num": 28,
+          "titulo": "Casa de Bamba",
+          "dif": 7
         }
       ],
       "leitura_1avista": [
@@ -651,8 +650,8 @@
         7,
         105,
         109,
-        84,
-        54
+        54,
+        97
       ]
     },
     {
@@ -663,11 +662,6 @@
       ],
       "habilidades_novas": [],
       "foco": [
-        {
-          "num": 28,
-          "titulo": "Casa de Bamba",
-          "dif": 7
-        },
         {
           "num": 31,
           "titulo": "Renascer das Cinzas",
@@ -707,6 +701,11 @@
           "num": 65,
           "titulo": "A Tonga da Mironga do Kabuletê",
           "dif": 8
+        },
+        {
+          "num": 93,
+          "titulo": "Tristeza, Pé no Chão",
+          "dif": 8
         }
       ],
       "leitura_1avista": [
@@ -720,7 +719,6 @@
         }
       ],
       "revisao": [
-        97,
         24,
         50,
         81,
@@ -728,7 +726,8 @@
         85,
         94,
         100,
-        104
+        104,
+        28
       ]
     },
     {
@@ -741,11 +740,6 @@
         "modulação de armadura"
       ],
       "foco": [
-        {
-          "num": 93,
-          "titulo": "Tristeza, Pé no Chão",
-          "dif": 8
-        },
         {
           "num": 108,
           "titulo": "É Tarde Demais",
@@ -785,6 +779,11 @@
           "num": 73,
           "titulo": "Retalhos de Cetim",
           "dif": 7
+        },
+        {
+          "num": 74,
+          "titulo": "Você Abusou",
+          "dif": 8
         }
       ],
       "leitura_1avista": [
@@ -798,7 +797,6 @@
         }
       ],
       "revisao": [
-        28,
         31,
         58,
         62,
@@ -806,7 +804,8 @@
         110,
         21,
         60,
-        65
+        65,
+        93
       ]
     },
     {
@@ -820,8 +819,8 @@
       ],
       "foco": [
         {
-          "num": 74,
-          "titulo": "Você Abusou",
+          "num": 84,
+          "titulo": "Flor de Lis",
           "dif": 8
         },
         {
@@ -876,7 +875,6 @@
         }
       ],
       "revisao": [
-        93,
         108,
         13,
         102,
@@ -884,7 +882,8 @@
         91,
         36,
         45,
-        73
+        73,
+        74
       ]
     },
     {
@@ -952,7 +951,7 @@
         }
       ],
       "revisao": [
-        74,
+        84,
         103,
         29,
         6,

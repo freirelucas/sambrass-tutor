@@ -1585,8 +1585,8 @@
       "num": 84,
       "titulo": "Flor de Lis",
       "dificuldade_manual": 7,
-      "dificuldade_calc": 7,
-      "raw": 6.8,
+      "dificuldade_calc": 8,
+      "raw": 7.8,
       "features": {
         "acidentes": 3,
         "densidade": 3.0,
@@ -1596,7 +1596,7 @@
         "semicolcheia": 0,
         "tercina": 1,
         "contratempo": 1,
-        "modulacao": 0,
+        "modulacao": 1,
         "quatro_quartos": 0
       }
     },

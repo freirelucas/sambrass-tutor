@@ -82,7 +82,7 @@ num,titulo,compositor,key_concert,modula,compasso,densidade,dificuldade,forma,ce
 81,De Frente pro Crime,Aldir Blanc / João Bosco,F,,2/4,alta,6,A/B,C1 C2 C4,tonalidade-1-sustenido;colcheias-densas;casas;semicolcheias,True
 82,Linha de Passe,Aldir Blanc / João Bosco / Paulo Emílio,F,,2/4,alta,7,A/B/C,C1 C2,tonalidade-1-sustenido;forma-extensa;colcheias-densas;casas;DC,True
 83,Comportamento Geral,Gonzaguinha,Bb,,4/4,alta,6,A/B,C1 C2 C4 C5,compasso-4-4;colcheias-densas;tercina;casas,True
-84,Flor de Lis,Djavan,G,,2/4,alta,7,A/B,C6 C5,tonalidade-3-sustenidos;contratempo-intenso;tercina;casas,True
+84,Flor de Lis,Djavan,C,G,2/4,alta,7,A/B,C6 C5,modulação-armadura;tonalidade-3-sustenidos;contratempo-intenso;tercina;casas,True
 85,Mas Que Nada,Jorge Ben Jor,Bb,,2/4,alta,6,intro/A,C4 C2,semicolcheias-contínuas;síncope-marcante;articulação-rápida,True
 86,Eu Bebo Sim,João do Violão / Luiz Antônio,Bb,,2/4,média-alta,4,A/B,C1 C2,colcheias-em-grupo;síncope;casas,True
 87,Maracangalha,Dorival Caymmi,G,,2/4,média,5,A/B,C1 C3 C2,tonalidade-3-sustenidos;síncope;forma-curta-repetitiva,True

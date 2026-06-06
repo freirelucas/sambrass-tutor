@@ -1665,6 +1665,35 @@
   "obs": "Dó (sem armadura), 4/4; densa com semicolcheias e tercinas; A/B com casas."
  },
  {
+  "num": 84,
+  "titulo": "Flor de Lis",
+  "compositor": "Djavan",
+  "tom_escrito": "D->A",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C6",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "modulação-armadura",
+   "tonalidade-3-sustenidos",
+   "contratempo-intenso",
+   "tercina",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Abre em Ré (2 sustenidos) e modula para Lá (3 sustenidos) — Djavan; contratempo constante + tercinas; A/B com casas. (Corrige o legado, que registrava só Lá.)"
+ },
+ {
   "num": 86,
   "titulo": "Eu Bebo Sim",
   "compositor": "João do Violão / Luiz Antônio",
