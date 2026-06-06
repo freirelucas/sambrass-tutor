@@ -57,9 +57,10 @@ a.peca{color:inherit;text-decoration:none;display:block}
 
 /* botões */
 .btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-button.acao{min-height:52px;padding:0 28px;border-radius:14px;border:none;background:var(--verde);
+.acao{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  min-height:52px;padding:0 28px;border-radius:14px;border:none;background:var(--verde);
   color:#fff;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(47,125,91,.35)}
-button.acao.parar{background:var(--brand)}
+.acao.parar{background:var(--brand)}
 button.toggle{min-height:42px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);
   background:var(--card);color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
 button.toggle.on{background:var(--brand);border-color:var(--brand);color:#fff}

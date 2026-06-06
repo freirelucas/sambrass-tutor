@@ -28,24 +28,9 @@ def main():
     rot = json.load(open(ROOT / "content" / "curriculum" / "sambrass23-6semanas.json", encoding="utf-8"))["rotina_diaria"]
     json.dump(rot, open(data / "rotina.json", "w", encoding="utf-8"), ensure_ascii=False)
 
-    # 3) partituras web (do PDF; sem a faixa de letras)
-    scores = SITE / "scores"; scores.mkdir()
-    if PDF.exists():
-        import fitz
-        doc = fitz.open(PDF)
-        for num in range(1, 111):
-            page = doc[4 - 1 + (num - 1)]
-            r = page.rect
-            clip = fitz.Rect(r.x0, r.y0 + r.height * 0.255, r.x1, r.y1)
-            page.get_pixmap(dpi=110, clip=clip).save(scores / f"sb-{num:03d}.jpg", jpg_quality=78)
-        doc.close()
-        n = len(list(scores.glob("*.jpg")))
-    else:
-        n = 0
-        print("AVISO: PDF ausente — site sem partituras")
-
+    # (sem PDF no produto: a notação é renderizada nativamente pelo abcjs)
     nbytes = sum(f.stat().st_size for f in SITE.rglob("*") if f.is_file())
-    print(f"_site pronto: {len(list(SITE.rglob('*')))} arquivos, {n} partituras, {nbytes // 1024} KB")
+    print(f"_site pronto: {len(list(SITE.rglob('*')))} arquivos, {nbytes // 1024} KB (notação nativa, sem PDF)")
 
 
 if __name__ == "__main__":

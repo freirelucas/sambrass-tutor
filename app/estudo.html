@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11100f">
+<title>Estudo — Preciso Me Encontrar · Sambrass Tutor</title>
+<style>
+:root{
+  --bg:#12110f; --bg2:#1b1916; --tinta:#f4efe6; --suave:#b3a890; --ouro:#e7b14c;
+  --vinho:#c0394b; --vinho2:#e0566a; --verde:#4cc08a; --linha:#2e2a25; --card:#1c1a16;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);
+  padding-bottom:48px;-webkit-text-size-adjust:100%;overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+a{color:var(--ouro)}
+
+/* hero */
+.hero{position:relative;padding:46px 0 30px;overflow:hidden;
+  background:radial-gradient(120% 80% at 80% -10%,rgba(224,86,106,.28),transparent 60%),
+             radial-gradient(90% 70% at 0% 0%,rgba(231,177,76,.18),transparent 55%),var(--bg2);
+  border-bottom:1px solid var(--linha)}
+.disc{position:absolute;right:-70px;top:-40px;width:230px;height:230px;border-radius:50%;
+  background:repeating-radial-gradient(circle at center,#000 0 5px,#211d18 5px 8px);
+  box-shadow:0 0 0 10px #15120f,0 18px 50px rgba(0,0,0,.5);opacity:.55;animation:spin 18s linear infinite}
+.disc::after{content:"";position:absolute;inset:42%;border-radius:50%;background:var(--vinho)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro);font-weight:700}
+.hero h1{font-family:var(--serif);font-size:clamp(34px,9vw,56px);line-height:1.02;margin:8px 0 6px;font-weight:700}
+.compositor{color:var(--suave);font-size:15px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.badge{background:rgba(255,255,255,.06);border:1px solid var(--linha);border-radius:999px;
+  padding:6px 14px;font-size:13px;font-weight:600}
+.badge b{color:var(--ouro)}
+
+h2{font-family:var(--serif);font-size:24px;margin:34px 0 4px}
+.lead{color:var(--suave);margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:18px;margin:14px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;transform:translateY(14px);animation:rise .6s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* células */
+.cel{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.celplay{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;font-size:18px;color:#1a120a;
+  background:linear-gradient(145deg,var(--ouro),#caa043);box-shadow:0 6px 18px rgba(231,177,76,.35);transition:transform .12s}
+.celplay:active{transform:scale(.9)}
+.cel h3{margin:0;font-size:17px}.cel .desc{color:var(--suave);font-size:13.5px}
+.mini{margin-top:6px;background:#fbf8f1;border-radius:10px;padding:4px 8px;overflow-x:auto}
+.mini svg{max-width:100%;height:auto}
+
+/* player */
+.paper{background:#fbf8f1;border-radius:12px;padding:10px;overflow-x:auto}
+.paper svg{max-width:100%;height:auto}
+.abcjs-highlight{fill:var(--vinho)!important}
+.audio{margin-top:14px}
+.abcjs-inline-audio{background:rgba(255,255,255,.05);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.abcjs-inline-audio .abcjs-btn{background:#27231d;border:1px solid var(--linha);border-radius:10px;min-height:44px;min-width:44px;cursor:pointer}
+.abcjs-inline-audio .abcjs-btn svg path{fill:var(--tinta)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.toggle{min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);background:#23201b;
+  color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
+.toggle.on{background:var(--vinho);border-color:var(--vinho)}
+.nota{color:var(--suave);font-size:12.5px;margin-top:8px}
+
+/* passos */
+.passos{counter-reset:p;list-style:none;padding:0;margin:0}
+.passos li{position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--linha)}
+.passos li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:8px;width:30px;height:30px;
+  border-radius:50%;background:var(--verde);color:#06160f;font-weight:800;display:grid;place-items:center}
+.foot{color:var(--suave);font-size:13px;text-align:center;margin:36px 0 0}
+.voltar{display:inline-block;margin:16px 0 0;color:var(--suave);text-decoration:none;font-size:14px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="disc"></div>
+  <div class="eyebrow">Sambrass Tutor · estudo de peça</div>
+  <h1 id="titulo">Preciso Me Encontrar</h1>
+  <div class="compositor" id="compositor">Candeia</div>
+  <div class="badges" id="badges"></div>
+</div></header>
+
+<main class="wrap">
+  <h2>A peça em um sopro</h2>
+  <p class="lead" id="resumo">Um samba de Candeia — síncope no coração, colcheias correndo e tercinas dando o gingado. Aqui você ouve as peças que a formam, vê a partitura e toca junto, no seu andamento.</p>
+
+  <h2>As células que a formam</h2>
+  <p class="lead">O segredo do Sambrass: poucas células se repetem em tudo. Toque cada uma (timbre de trompete) e sinta o ritmo — estas são exatas.</p>
+  <div id="celulas"></div>
+
+  <h2>A melodia</h2>
+  <p class="lead">Partitura em Sol (como você lê no trompete). ▶ toca com o cursor seguindo as notas; ajuste o andamento e repita trechos.</p>
+  <div class="card">
+    <div class="row"><button class="toggle" id="tconcert">ouvir em concerto</button></div>
+    <div id="paper" class="paper"></div>
+    <div id="audio" class="audio"></div>
+    <p class="nota" id="notamelodia">Esta melodia é um rascunho de leitura automática (OMR) — o tom está conferido; as notas serão afinadas. As células acima são exatas.</p>
+  </div>
+
+  <h2>Como praticar (15 min)</h2>
+  <ol class="passos">
+    <li>Aqueça e <b>ouça as três células</b> acima; bata o pé no tempo.</li>
+    <li>Toque a célula da síncope (C2) <b>devagar</b>, repetindo, até soar natural.</li>
+    <li>Leia a melodia <b>lenta</b>, sem parar; depois suba o andamento aos poucos.</li>
+    <li>Isole o compasso difícil em <b>loop</b> e junte à frase.</li>
+  </ol>
+
+  <a class="voltar" href="./index.html">‹ voltar ao tutor</a>
+  <p class="foot">Sambrass Tutor — MVP de estudo · áudio offline (timbre de trompete)</p>
+</main>
+
+<script src="./vendor/abcjs.js"></script>
+<script>
+const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
+const CELLS_MOSTRAR = ['C1','C2','C5'];
+const $ = s => document.querySelector(s);
+let MELODIA = null, SYNTH = null;
+
+async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
+
+(async function(){
+  const [pieces, cells, abc] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json')]);
+  const p = (pieces?.pieces||[]).find(x => 'sb-'+String(x.num).padStart(3,'0') === ID);
+  const TOM={C:'Dó',G:'Sol',D:'Ré',A:'Lá',F:'Fá',Bb:'Si♭',Eb:'Mi♭',Ab:'Lá♭'};
+  const WR={C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb'};
+  if(p){
+    $('#titulo').textContent = p.titulo; $('#compositor').textContent = p.compositor;
+    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span>
+      <span class="badge">compasso <b>${p.compasso}</b></span>
+      <span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span>
+      <span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>`;
+  }
+  // células exatas
+  const cmap = {}; (cells?.celulas_ritmicas||[]).forEach(c=>cmap[c.id]=c);
+  $('#celulas').innerHTML = CELLS_MOSTRAR.map((cid,i)=>`
+    <div class="card cel" style="animation-delay:${i*.08}s">
+      <button class="celplay" data-abc="cell-${cid}" aria-label="tocar ${cid}">▶</button>
+      <div><h3>${cid} · ${cmap[cid]?.nome||''}</h3><div class="desc">${cmap[cid]?.descricao||''}</div>
+        <div class="mini" id="mini-${cid}"></div></div>
+    </div>`).join('');
+  CELLS_MOSTRAR.forEach(cid=>{ if(abc&&abc['cell-'+cid]) try{ ABCJS.renderAbc('mini-'+cid, abc['cell-'+cid], {staffwidth:260,scale:.8,paddingtop:0,paddingbottom:0}); }catch{} });
+  document.querySelectorAll('.celplay').forEach(b=> b.onclick=()=>playOnce(abc?.[b.dataset.abc]));
+
+  // melodia
+  MELODIA = abc?.[ID] || null;
+  if(MELODIA){ renderMelodia(0);
+    $('#tconcert').onclick = e=>{ const c=e.target.classList.toggle('on'); e.target.textContent=c?'ouvir escrito (Bb)':'ouvir em concerto'; renderMelodia(c?-2:0); };
+  } else { $('#paper').innerHTML='<p class="nota">melodia indisponível.</p>'; }
+})();
+
+async function playOnce(abc){
+  if(!abc || !window.ABCJS?.synth?.supportsAudio()) return;
+  try{
+    const v = ABCJS.renderAbc('*', abc)[0];
+    const s = new ABCJS.synth.CreateSynth();
+    await s.init({ visualObj:v, options:{ soundFontUrl:'./vendor/soundfont/', program:56 } });
+    await s.prime(); s.start();
+  }catch(e){}
+}
+function curs(){ const clr=()=>document.querySelectorAll('.abcjs-highlight').forEach(el=>el.classList.remove('abcjs-highlight'));
+  return { onStart(){}, onFinished(){clr();}, onEvent(ev){ if(!ev) return; clr(); (ev.elements||[]).forEach(s=>s.forEach(el=>el.classList.add('abcjs-highlight'))); } }; }
+function renderMelodia(tr){
+  if(SYNTH){ try{SYNTH.pause();}catch{} }
+  let v; try{ v = ABCJS.renderAbc('paper', MELODIA, {add_classes:true, responsive:'resize', visualTranspose:tr})[0]; }catch{ return; }
+  if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML='<p class="nota">áudio não suportado.</p>'; return; }
+  try{
+    SYNTH = new ABCJS.synth.SynthController();
+    SYNTH.load('#audio', curs(), {displayPlay:true,displayProgress:true,displayWarp:true,displayLoop:true,displayRestart:true});
+    SYNTH.setTune(v, false, {program:56, soundFontUrl:'./vendor/soundfont/'}).catch(()=>{});
+  }catch(e){}
+}
+</script>
+</body>
+</html>

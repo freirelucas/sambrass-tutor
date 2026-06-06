@@ -23,7 +23,11 @@ const tomEscrito = p => (WRIT[p.key_concert] || p.key_concert) + (p.modulates_to
 function telaHoje() {
   const mods = DB.curriculo?.modulos || [];
   const m = mods[Math.min(+(localStorage.getItem('sambrass_mod') || 0), mods.length - 1)] || null;
-  let h = `<h2 class="sec">Treino de hoje</h2>`;
+  let h = `<a class="peca" href="./estudo.html?id=sb-011"><div class="card" style="background:linear-gradient(135deg,#8a2331,#a83444);color:#fff;border:none">
+    <div class="meta" style="color:#ffd9b8">✦ Estudo em destaque</div>
+    <h3 style="color:#fff">Preciso Me Encontrar — Candeia</h3>
+    <div class="meta" style="color:#f4d9c4">Partitura + áudio de trompete + as células que a formam ›</div></div></a>
+    <h2 class="sec">Treino de hoje</h2>`;
   if (m) {
     h += `<div class="card"><div class="meta">Módulo ${m.modulo}/${mods.length} · dificuldade ${m.faixa_dificuldade[0]}–${m.faixa_dificuldade[1]}</div>
       <h3>Habilidades novas</h3><div>${(m.habilidades_novas || []).map(s => `<span class="tag">${s}</span>`).join('') || '<span class="meta">consolidação</span>'}</div>
@@ -71,10 +75,8 @@ function verPeca(n) {
       <div class="meta" style="margin:6px 0">Tom escrito <b>${tomEscrito(p)}</b> (concerto ${TOM[p.key_concert] || p.key_concert}) · ${p.compasso} · ${p.densidade} · forma ${(p.forma || []).join('/') || '?'}</div>
       <div>${(p.celulas || []).map(c => `<span class="tag">${c}</span>`).join('')} ${(p.requisitos || []).map(r => `<span class="tag">${r}</span>`).join('')}</div>
       <div class="prog" style="margin-top:10px"><b>Progresso:</b> ${sts.map(s => `<button class="${PROG[n] === s ? 'sel' : ''}" onclick="setProg(${n},'${s}');verPeca(${n})">${s.replace('_', ' ')}</button>`).join('')}</div>
-      <div class="btnrow" style="justify-content:flex-start;margin-top:12px"><button class="acao" onclick="tocarPeca(${n})">▶ Tocar partitura</button></div>
-      <img class="score" loading="lazy" src="./scores/sb-${String(n).padStart(3, '0')}.jpg" alt="partitura ${p.titulo}"
-        onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<p class=meta>partitura indisponível offline</p>')">
-      ${p.obs ? `<p class="meta" style="font-style:italic;margin-top:8px">${p.obs}</p>` : ''}
+      <div class="btnrow" style="justify-content:flex-start;margin-top:12px"><a class="acao" href="./estudo.html?id=sb-${String(n).padStart(3, '0')}">▶ Estudar (partitura + áudio)</a></div>
+      ${p.obs ? `<p class="meta" style="font-style:italic;margin-top:10px">${p.obs}</p>` : ''}
     </div>`;
   window.scrollTo(0, 0);
 }
