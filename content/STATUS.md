@@ -70,3 +70,12 @@ Tudo no branch `claude/busy-cori-QXkHR`, validado e pushado:
   **currículo de 13 módulos**. Doc em `content/CURADORIA.md`.
 - Trabalhando no **main** (autorizado). OMR-bruto fora do main (branch/artefato).
 
+## 🚀 NO AR — Sambrass Tutor (PWA)
+- **https://freirelucas.github.io/sambrass-tutor/** — PWA mobile-first, deploy via Actions (Pages).
+- Telas: **Hoje** (treino pela trilha/13 módulos + rotina 90 min), **Banco** (110 peças, visor de
+  partitura + progresso em localStorage), **Metrônomo** (Web Audio, rampa lento→roda, tap, 2/3/4),
+  **Vocabulário** (C1–C7/arpejos). Offline (service worker).
+- **Fase 0 OMR**: 110 melodias mescladas (Audiveris + tom do catálogo) em content/notes/omr/ →
+  runtime tocável (provisório, notas a conferir). `omr_merge.py` + `omr_check.py` + relatório.
+- Próximo: play-along (tocar as melodias no app) + snippets de células no app; corrigir notas do
+  OMR (loop de qualidade); depois nativo/microfone/plataforma.
