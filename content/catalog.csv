@@ -1,0 +1,111 @@
+num,titulo,compositor,key_concert,modula,compasso,densidade,dificuldade,forma,celulas,requisitos,verificada
+1,Até Amanhã,Noel Rosa,Eb,,2/4,média,4,A/B,C1 C2,síncope;casas-1-2,True
+2,Com Que Roupa,Noel Rosa,F,,2/4,média-alta,5,intro/A/B,C1 C2,tonalidade-1-sustenido;cromatismo-passagem;casas,True
+3,Feitiço da Vila,Noel Rosa / Vadico,Eb,,2/4,média-alta,5,A/B,C1 C2,colcheias-densas;cromatismo-leve;casa-1,True
+4,Fita Amarela,Noel Rosa,Ab,,2/4,média,4,A/B,C1 C7,tonalidade-2-bemóis;intro-7c;casas,True
+5,Acontece,Cartola,C,,4/4,média,4,A/B/C,C1 C5,tonalidade-2-sustenidos;tercina,True
+6,As Rosas Não Falam,Cartola,Eb,,2/4,média,4,A/B/C/D,C1 C5,forma-longa-ABCD;tercina;cromatismo-passagem,True
+7,Corra e Olhe o Céu,Cartola,Db,,2/4,média-alta,6,A/B,C1 C2,tonalidade-3-bemóis;cromatismo-passagem;colcheias-densas;forma-longa,True
+8,O Mundo é um Moinho,Cartola,C,,4/4,média-alta,5,A/B/C/D,C1 C5,tonalidade-2-sustenidos;tercina;forma-longa-ABCD;cromatismo,True
+9,O Sol Nascerá,Cartola / Elton Medeiros,Eb,,2/4,baixa,3,A/B,C1 C2 C5,frases-curtas;tercina-leve-secao-B,True
+10,Peito Vazio,Cartola / Elton Medeiros,F,,2/4,média-alta,5,intro/A/B,C1 C5 C2,tonalidade-1-sustenido;tercina;forma-longa,True
+11,Preciso Me Encontrar,Candeia,F,,2/4,média-alta,5,A/B,C1 C2 C5,tonalidade-1-sustenido;síncope;tercina,True
+12,Tive Sim,Cartola,F,,2/4,alta,6,A/B,C1 C2,forma-longa;colcheias-densas;síncope,True
+13,A Flor e o Espinho,Nelson Cavaquinho / Guilherme de Brito / Alcides Caminha,F,,2/4,alta,7,A/B/C,C1 C2 C4,semicolcheias;cromatismo-denso;forma-larga,True
+14,Folhas Secas,Nelson Cavaquinho / Guilherme de Brito,Eb,,2/4,alta,6,A/B,C1 C3 C2,cromatismo-denso;colcheias-densas;forma-longa,True
+15,Juízo Final,Nelson Cavaquinho / Élcio Soares,Bb,,2/4,média-alta,5,A/B,C1 C2 C5,cromatismo-passagem;tercina,True
+16,Vou Partir,Nelson Cavaquinho / Jair do Cavaquinho,Db,,2/4,média-alta,5,A/B,C1 C2,tonalidade-3-bemóis;colcheias-em-grupo;forma-longa,True
+17,A Voz do Morro,Zé Kéti,C,,2/4,média-alta,6,intro/A/B,C1 C6,tonalidade-2-sustenidos;andamento-rápido-240;cromatismo;casas,True
+18,Diz Que Fui por Aí,Zé Kéti / Hortêncio Rocha,Eb,,2/4,alta,6,A/B,C1 C2 C5,síncope;colcheias-densas;casas-1-2;tercina,True
+19,Mascarada,Zé Kéti / Elton Medeiros,Ab,,2/4,alta,6,A/B,C1 C5 C2,tonalidade-2-bemóis;tercina-contínua;cromatismo;síncope,True
+20,Tiro ao Álvaro,Adoniran Barbosa / Oswaldo Molles,C,,2/4,média-alta,5,A/B,C1 C2 C6,tonalidade-2-sustenidos;cromatismo;casas-1-2,True
+21,Samba do Arnesto,Adoniran Barbosa / Alocin,F,,2/4,alta,6,intro/A/B,C1 C2 C4 C5,tonalidade-1-sustenido;colcheias-densas;casas;forma-longa,True
+22,Trem das Onze,Adoniran Barbosa,Eb,,2/4,média-alta,5,intro/A/B,C1 C2,colcheias-em-grupo;cromatismo-passagem;forma-longa;casas,True
+23,Saudosa Maloca,Adoniran Barbosa,C,,4/4,alta,7,intro/A/B/C,C1 C2 C5,tonalidade-2-sustenidos;forma-extensa;colcheias-densas;tercina;casas,True
+24,Acreditar,Dona Ivone Lara / Délcio de Carvalho,C,,2/4,média-alta,6,A/B/C,C1 C2 C4,tonalidade-2-sustenidos;forma-longa-ABC;DS;colcheias-densas,True
+25,Alguém Me Avisou,Dona Ivone Lara,Eb,,2/4,média,4,A/B,C1 C2,síncope-leve;colcheias-em-grupo,True
+26,Enredo do Meu Samba,Dona Ivone Lara / Jorge Aragão,Eb,,4/4,alta,6,A/B/C,C1 C2 C5,compasso-4-4;tercina-contínua;forma-longa-ABC;DC;cromatismo,True
+27,Sonho Meu,Dona Ivone Lara / Délcio Carvalho,C,,2/4,média-alta,5,A/B/C/D,C1 C2,tonalidade-2-sustenidos;colcheias-densas;forma-longa-ABCD,True
+28,Casa de Bamba,Martinho da Vila,Eb,,2/4,alta,6,A/B/C,C1 C2 C4,semicolcheias;forma-longa;articulação-rápida,True
+29,Ex Amor,Martinho da Vila,Bb,,2/4,alta,6,A/B,C1 C2 C3,forma-extensa;colcheias-densas;casas;síncope,True
+30,Madalena do Jucu,Martinho da Vila,G,,2/4,média-alta,6,A/B,C1 C3 C2,tonalidade-3-sustenidos;colcheia-pontuada;casas;DC,True
+31,Renascer das Cinzas,Martinho da Vila,C,,2/4,alta,6,A/B,C1 C2 C4,tonalidade-2-sustenidos;semicolcheias;colcheias-densas;forma-longa;casas,True
+32,Água de Chuva no Mar,Wanderley Monteiro / Carlos Caetano / Gerson Gomes,Eb,,2/4,média-alta,5,A/B,C1 C2 C5,cromatismo-passagem;tercina;casas-1-2,True
+33,Andança,Edmundo Souto / Paulinho Tapajós / Danilo Caymmi,Bb,,2/4,média-alta,6,A/B,C1 C5,cromatismo-intenso-seção-A;tercina;casas,True
+34,Se Você Jurar,Francisco Alves / Ismael Silva / Nilton Bastos,F,,2/4,média,5,A/B/B',C1 C2,cromatismo-sustenidos;forma-longa;casas,True
+35,Tristeza,Haroldo Lobo / Niltinho,F,,2/4,baixa-média,3,A/B/C,C1 C6,frases-repetitivas-respiráveis;D.S.,True
+36,Vou Festejar,Jorge Aragão / Dida / Neoci,F,G,2/4,média-alta,6,A/B/C,C1 C5,modulação-armadura;tercina;forma-longa;casas,True
+37,Conselho,Adilson Bispo / Zé Roberto,F,,2/4,alta,6,A/B/C,C1 C2 C5,tonalidade-1-sustenido;colcheias-densas;forma-longa-ABC;cromatismo,True
+38,Do Fundo do Nosso Quintal,Jorge Aragão / Alberto Souza,F,,2/4,alta,6,A/B,C1 C2 C6,tonalidade-1-sustenido;colcheias-densas;forma-longa;casas;DS,True
+39,Eu e Você Sempre,Jorge Aragão / Flávio Cardoso,E,,4/4,alta,7,A/B/C,C1 C2 C6,tonalidade-6-sustenidos;compasso-4-4;forma-longa-ABC;DS;síncope,True
+40,Falsa Consideração,Marquinhos Sathã / Eros Fidélis / Libert,C,,2/4,alta,6,A/B,C1 C2 C6,tonalidade-2-sustenidos;colcheias-densas;forma-longa;DS,True
+41,Identidade,Jorge Aragão,Eb,,4/4,média-alta,5,A/B,C1 C2 C5,compasso-4-4;colcheias-em-grupo;casas;DS;tercina,True
+42,Lucidez,Jorge Aragão / Cleber Augusto,F,,2/4,alta,7,intro/A/B/C/D,C1 C2 C5,tonalidade-1-sustenido;forma-extensa;colcheias-densas;DS,True
+43,Malandro,Jorge Aragão / Jotabê,C,,2/4,alta,6,intro/A/B,C1 C2 C6,tonalidade-2-sustenidos;cromatismo-denso;casas;forma-longa,True
+44,Não Deixe o Samba Morrer,Aloísio / Edson Conceição,Eb,,2/4,média-alta,5,A/B/C,C1 C2 C6,síncope;contratempo;forma-longa,True
+45,Sufoco,Antônio José / Chico da Silva,Ab,C,2/4,alta,7,A/B,C1 C2 C5,modulação-armadura;tonalidade-2-bemóis;tercina;colcheias-densas;casas,True
+46,Você Me Vira a Cabeça,Chico Roque / Paulo Sérgio Valle,F,,4/4,alta,6,A/B,C1 C2 C5,tonalidade-1-sustenido;compasso-4-4;tercina;forma-longa;DS,True
+47,Coração em Desalinho,Monarco / Ratinho,C,,2/4,alta,7,A/B/C,C1 C2,tonalidade-2-sustenidos;forma-extensa;colcheias-densas;casas,True
+48,Jura,José Barbosa / Sinhô,Bb,,2/4,média,5,A/B,C1 C3 C2,colcheia-pontuada;forma-longa;cromatismo-passagem,True
+49,Vai Vadiar,?,F,,2/4,alta,7,A/refrão/B/C,C1 C5,tercina-contínua;ornamentos;forma-muito-longa;casas,True
+50,Verdade,Carlinhos Santana / Nelson Rufino,Eb,,2/4,alta,6,A/B,C1 C2 C4,semicolcheias;colcheias-densas;forma-longa,True
+51,Vivo Isolado do Mundo,Alcides Dias Lopes,Eb,,4/4,alta,6,A/B,C1 C2 C5,compasso-4-4;tercina;cromatismo;colcheias-densas,True
+52,Ainda Mais,Paulinho da Viola / Eduardo Gudin,C,,2/4,média-alta,5,A/B,C1 C2 C5,tonalidade-2-sustenidos;tercina;casas-1-2,True
+53,Coração Leviano,Paulinho da Viola,Eb,,2/4,alta,6,A/B,C1 C2 C5,tercina;colcheias-densas;forma-longa;casas,True
+54,Dança da Solidão,Paulinho da Viola,G,,2/4,alta,7,A/B/C,C1 C5,tonalidade-3-sustenidos;cromatismo-denso;tercina;DS-al-coda,True
+55,Foi um Rio Que Passou em Minha Vida,Paulinho da Viola,F,,2/4,alta,7,A/B/C/D,C1 C2,forma-extensa-101c;resistência;cromatismo;ornamentos,True
+56,Pecado Capital,Paulinho da Viola,C,,4/4,alta,6,A/B,C1 C2 C6,tonalidade-2-sustenidos;compasso-4-4;cromatismo-denso;casas,True
+57,A Volta do Malandro,Chico Buarque,Bb,,2/4,média-alta,5,,C1 C3 C2,forma-longa;colcheia-pontuada;cromatismo-passagem,True
+58,De Volta ao Samba,Chico Buarque,Ab,,2/4,alta,6,A/B/C,C1 C2 C4,tonalidade-2-bemóis;colcheias-densas;forma-longa-ABC;casas,True
+59,Homenagem ao Malandro,Chico Buarque,Eb,,2/4,alta,6,A/B,C1 C2 C6,colcheias-densas;casas;DC;cromatismo,True
+60,Partido Alto,Chico Buarque,G,,4/4,alta,6,A/B,C1 C2 C4,tonalidade-3-sustenidos;compasso-4-4;colcheias-densas;casas,True
+61,"Quem Te Viu, Quem Te Vê",Chico Buarque,Eb,C,2/4,média-alta,6,A/B,C1 C2,modulação-armadura;colcheias-densas;cromatismo;casa,True
+62,Samba do Grande Amor,Chico Buarque,C,,2/4,alta,6,A/B,C1 C2 C4,tonalidade-2-sustenidos;colcheias-densas;semicolcheias;forma-longa,True
+63,Sem Compromisso,Geraldo Pereira / Nelson Trigueiro,Ab,,2/4,alta,6,A/B,C1 C2 C6,tonalidade-2-bemóis;colcheias-densas;casas;síncope,True
+64,A Felicidade,Tom Jobim / Vinicius de Moraes,Eb,,2/4,média-alta,5,A/B,C1 C2,colcheias-densas;cromatismo-leve;fôlego-forma-larga,True
+65,A Tonga da Mironga do Kabuletê,Toquinho / Vinicius de Moraes,G,,2/4,alta,7,A/B,C1 C2 C4,tonalidade-3-sustenidos;semicolcheias-contínuas;colcheias-densas;casas,True
+66,Consolação,Baden Powell / Vinicius de Moraes,Bb,,2/4,alta,6,intro/A/B,C1 C2,colcheias-densas;forma-longa;síncope,True
+67,O Morro Não Tem Vez,Tom Jobim / Vinicius de Moraes,F,,2/4,média,5,A/B,C1 C3,colcheia-pontuada;cromatismo-passagem;casas;DS,True
+68,Pra Que Chorar,Baden Powell / Vinicius de Moraes,F,,2/4,média,5,A/B/C,C1 C2,tonalidade-1-sustenido;fraseado-lírico;casas,True
+69,Regra Três,Toquinho / Vinicius de Moraes,C,,2/4,alta,7,A/B/C,C1 C2 C5,tonalidade-2-sustenidos;cromatismo;forma-longa-ABC;casas;tercina,True
+70,Samba de Orly,Chico Buarque / Toquinho / Vinicius de Moraes,C,,2/4,alta,6,A/B,C1 C2,tonalidade-2-sustenidos;cromatismo-denso;colcheias-densas,True
+71,Ronda,Paulo Vanzolini,F,,2/4,alta,6,A/B/C,C1 C5 C2,tonalidade-1-sustenido;tercina-contínua;forma-longa-ABC,True
+72,Naquela Mesa,Sérgio Bittencourt,Bb,,4/4,alta,5,A/B,C1 C2,compasso-4-4;colcheias-densas;casas;cromatismo-passagem,True
+73,Retalhos de Cetim,Benito di Paula,Eb,F,2/4,alta,6,A/B,C1 C2 C6,modulação-armadura;colcheias-densas;casas;cromatismo,True
+74,Você Abusou,Antônio Carlos / Jocafi,Eb,G,4/4,alta,7,A/B,C1 C2,modulação-armadura;compasso-4-4;tonalidade-3-sustenidos;colcheias-densas;cromatismo,True
+75,Me Deixe em Paz,Monsueto / Marino Pinto,C,,2/4,média-alta,5,A/B,C1 C2,tonalidade-2-sustenidos;colcheias-em-grupo;casas,True
+76,É Preciso Perdoar,Alcivando Luz / Carlos Coqueijo,Bb,,2/4,média,4,A/B,C1 C2,colcheias-em-grupo;DC;fraseado-lírico,True
+77,Desde Que o Samba é Samba,Caetano Veloso / Gilberto Gil,Eb,,2/4,alta,6,A/B,C1 C2,colcheias-densas;forma-longa;casas;síncope,True
+78,Cicatrizes,Paulo César Pinheiro / Miltinho,C,,2/4,alta,6,A/B,C1 C2,tonalidade-2-sustenidos;colcheias-densas;casas;cromatismo,True
+79,De Mais Ninguém,Arnaldo Antunes / Marisa Monte,Ab,,2/4,alta,5,A,C1 C2 C4,tonalidade-2-bemóis;semicolcheias;forma-curta,True
+80,O Bêbado e o Equilibrista,Aldir Blanc / João Bosco,Ab,,2/4,alta,7,A/B,C1 C2 C6,tonalidade-2-bemóis;forma-extensa;cromatismo;colcheias-densas;casas,True
+81,De Frente pro Crime,Aldir Blanc / João Bosco,F,,2/4,alta,6,A/B,C1 C2 C4,tonalidade-1-sustenido;colcheias-densas;casas;semicolcheias,True
+82,Linha de Passe,Aldir Blanc / João Bosco / Paulo Emílio,F,,2/4,alta,7,A/B/C,C1 C2,tonalidade-1-sustenido;forma-extensa;colcheias-densas;casas;DC,True
+83,Comportamento Geral,Gonzaguinha,Bb,,4/4,alta,6,A/B,C1 C2 C4 C5,compasso-4-4;colcheias-densas;tercina;casas,True
+84,Flor de Lis,Djavan,G,,2/4,alta,7,A/B,C6 C5,tonalidade-3-sustenidos;contratempo-intenso;tercina;casas,True
+85,Mas Que Nada,Jorge Ben Jor,Bb,,2/4,alta,6,intro/A,C4 C2,semicolcheias-contínuas;síncope-marcante;articulação-rápida,True
+86,Eu Bebo Sim,João do Violão / Luiz Antônio,Bb,,2/4,média-alta,4,A/B,C1 C2,colcheias-em-grupo;síncope;casas,True
+87,Maracangalha,Dorival Caymmi,G,,2/4,média,5,A/B,C1 C3 C2,tonalidade-3-sustenidos;síncope;forma-curta-repetitiva,True
+88,Leva Meu Samba,Ataulfo Alves,Ab,,2/4,alta,6,A/B,C1 C2,tonalidade-2-bemóis;colcheias-densas;forma-longa;casas,True
+89,Na Cadência do Samba,Ataulfo Alves / Paulo Gesta,F,,2/4,alta,6,intro/A/B/C,C1 C2,tonalidade-1-sustenido;forma-longa;colcheias-densas;casas,True
+90,Pimenta no Vatapá,João Nogueira / Cláudio Jorge,Eb,,2/4,alta,6,intro/A/B/C,C1 C2 C5,forma-longa;tercina;colcheias-densas;casas,True
+91,Do Jeito Que o Rei Mandou,João Nogueira / Zé Catimba,Bb,Eb,2/4,alta,6,A/B,C1 C2 C5,modulação-armadura;tercina;casas;DS,True
+92,Canto das Três Raças,Paulo César Pinheiro / Mauro Duarte,F,,2/4,alta,7,A/B/refrão/C,C1 C2,tonalidade-1-sustenido;forma-extensa;colcheias-densas;refrão,True
+93,"Tristeza, Pé no Chão",Mamão,G,,2/4,alta,7,A/B,C1 C2 C4,tonalidade-3-sustenidos;semicolcheias-contínuas;colcheias-densas,True
+94,A Batucada dos Nossos Tantãs,Adilson Gavião / Robson Guimarães / Sereno,Eb,,2/4,alta,6,A/B,C1 C2 C4,colcheias-densas;semicolcheias;casas;forma-longa,True
+95,Agamamou,Leandro Lehart,Bb,,4/4,alta,7,A/B/C/D,C1 C2 C4,compasso-4-4;semicolcheias-contínuas;forma-extensa;casas;DC,True
+96,Caçamba,Efson / Odibar,F,,2/4,alta,7,intro/A/B/C/D,C1 C2 C4,tonalidade-1-sustenido;forma-extensa;semicolcheias;colcheias-densas,True
+97,Cheia de Manias,Luiz Carlos,Bb,,4/4,alta,6,A/B,C1 C2 C4,compasso-4-4;colcheias-densas;semicolcheias;DC,True
+98,Cilada,Délcio Luiz / Ronaldo Barcellos,Bb,,2/4,alta,6,A/B/C,C1 C2,forma-longa-ABC;colcheias-densas;casas;cromatismo,True
+99,Cigana,Gabú,Bb,,2/4,alta,5,A/B,C1 C2,colcheias-densas;casas;síncope,True
+100,Coração Radiante,Xande de Pilares / Mauro Jr / Helinho Salgueiro,Bb,,4/4,alta,6,A/B/C,C1 C2 C4,compasso-4-4;semicolcheias;colcheias-densas;forma-longa,True
+101,Deixa Acontecer,Carlos Caetano / Alex Freitas,C,,2/4,alta,6,A/B/C,C1 C2,tonalidade-2-sustenidos;forma-longa-ABC;colcheias-densas,True
+102,Domingo,Alexandre Pires / Fernando Pires,Bb,Eb,2/4,alta,6,A/B,C1 C2,modulação-armadura;colcheias-densas;casas,True
+103,Essa Tal Liberdade,Paulo Sérgio Valle / Chico Roque,C,G,4/4,alta,7,A/B/C,C1 C2,modulação-armadura;compasso-4-4;tonalidade-3-sustenidos;forma-longa-ABC;colcheias-densas,True
+104,Eu Me Apaixonei pela Pessoa Errada,Cleber Bittencourt / Pitter Corrêa,Bb,,2/4,alta,6,A/B/C,C1 C2 C4,forma-longa-ABC;colcheias-densas;semicolcheias;casas,True
+105,Inaraí,Salgadinho / Juninho do Banjo,Db,,4/4,alta,7,A/B/C,C1 C2,tonalidade-3-bemóis;compasso-4-4;forma-longa-ABC;colcheias-densas;DS,True
+106,Pé na Areia,Diogo Leite / Rodrigo Leite,Bb,,2/4,alta,6,A/B/C,C1 C2,forma-longa-ABC;colcheias-densas;casas,True
+107,Ta Escrito,Carlinhos Madureira / Gilson Bernini / Xande de Pilares,G,,2/4,alta,7,A/B/C,C1 C2 C4,tonalidade-3-sustenidos;forma-extensa;semicolcheias;colcheias-densas,True
+108,É Tarde Demais,Elias Muniz / Luiz Carlos,G,,2/4,alta,7,A/B/C,C1 C2 C4,tonalidade-3-sustenidos;forma-longa-ABC;colcheias-densas;casas;DS,True
+109,Telegrama,Leandro Lehart,Db,,2/4,alta,6,A/B/C,C1 C2,tonalidade-3-bemóis;forma-longa-ABC;colcheias-densas;casas,True
+110,Temporal,Leandro Lehart,Ab,,2/4,alta,6,A/B/C,C1 C2 C4,tonalidade-2-bemóis;forma-longa-ABC;colcheias-densas,True

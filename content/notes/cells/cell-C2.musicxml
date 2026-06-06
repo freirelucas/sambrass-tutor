@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- Snippet da célula C2 (síncope). Ritmo na tônica (Fá4 escrito). Loop p/ metrônomo. -->
+<score-partwise version="4.0">
+  <work><work-title>Célula C2 — síncope</work-title></work>
+  <part-list><score-part id="P1"><part-name>Trompete Bb</part-name></score-part></part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes><divisions>12</divisions><key><fifths>-1</fifths></key>
+        <time><beats>2</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+        <transpose><diatonic>-1</diatonic><chromatic>-2</chromatic></transpose></attributes>
+      <note><pitch><step>F</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>12</duration><voice>1</voice><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>6</duration><voice>1</voice><type>eighth</type></note>
+    </measure>
+  </part>
+</score-partwise>

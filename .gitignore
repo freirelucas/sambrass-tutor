@@ -1,2 +1,8 @@
 # Extração temporária do zip do curso (regenerável)
 _extracted/
+
+# PDF-fonte das 110 partituras: já versionado no branch main; mantido local p/ recorte/leitura
+Sambrass23 trompete.pdf
+
+# Scores recortados (29 MB, regeneráveis com content/recortar.py a partir do PDF)
+content/scores/

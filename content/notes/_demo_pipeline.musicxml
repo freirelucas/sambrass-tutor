@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- DEMONSTRAÇÃO do pipeline de notas (NÃO é uma peça do caderno).
+     Frase em Fá maior ESCRITO (trompete Bb), 2/4, exercitando C1/C2/A1.
+     Notas corretas por construção; serve para validar MusicXML -> JSON de eventos,
+     transposição escrito->concerto (transpose chromatic -2) e digitação.
+     Transcrições reais ficam em content/notes/sb-NNN.musicxml. -->
+<score-partwise version="4.0">
+  <work><work-title>Demonstração do pipeline — Fá maior (escrito Bb)</work-title></work>
+  <identification><encoding><software>sambrass-tutor</software></encoding></identification>
+  <part-list>
+    <score-part id="P1"><part-name>Trompete Bb</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>4</divisions>
+        <key><fifths>-1</fifths></key>
+        <time><beats>2</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+        <transpose><diatonic>-1</diatonic><chromatic>-2</chromatic></transpose>
+      </attributes>
+      <!-- A1 (arpejo Fá) + C1 (colcheias): F4 A4 C5 A4 -->
+      <note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+    </measure>
+    <measure number="2">
+      <!-- C2 síncope: colcheia / semínima / colcheia -> A4 Bb4 A4 -->
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>4</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+    </measure>
+    <measure number="3">
+      <!-- C1 em grupo, graus conjuntos: F4 G4 A4 Bb4 -->
+      <note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+      <note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note>
+    </measure>
+    <measure number="4">
+      <note><pitch><step>F</step><octave>4</octave></pitch><duration>8</duration><voice>1</voice><type>half</type></note>
+      <barline location="right"><bar-style>light-heavy</bar-style></barline>
+    </measure>
+  </part>
+</score-partwise>

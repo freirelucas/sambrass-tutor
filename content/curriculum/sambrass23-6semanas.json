@@ -1,0 +1,147 @@
+{
+  "id": "sambrass23-6semanas",
+  "caderno": "sambrass23",
+  "instrumento": "trumpet_bb",
+  "_meta": {
+    "titulo": "O Caminho do Sambrass — Trompete",
+    "duracao": "6 semanas",
+    "carga": "1h30/dia",
+    "nivel_alvo": "intermediário",
+    "meta_dupla": [
+      "tocar a melodia inteira",
+      "ler à primeira vista com fluência"
+    ],
+    "principio": "uma célula rítmica ou requisito novo por vez; repertório do Sambrass como aplicação; semicolcheia e cromatismo denso ficam para o fim"
+  },
+  "rotina_diaria": [
+    {
+      "bloco": "Aquecimento",
+      "min": 15,
+      "conteudo": "Notas longas (som) + lip slurs + escala do tom da semana. Igual todo dia."
+    },
+    {
+      "bloco": "Célula do dia",
+      "min": 20,
+      "conteudo": "Snippet que isola a dificuldade-alvo da semana, em loop com metrônomo lento subindo aos poucos."
+    },
+    {
+      "bloco": "Música em foco",
+      "min": 35,
+      "conteudo": "Decompor a peça da semana seção por seção: ler lento, isolar o compasso difícil, montar."
+    },
+    {
+      "bloco": "Leitura à primeira vista",
+      "min": 15,
+      "conteudo": "Uma peça NOVA do caderno (nunca vista), lenta, sem parar — treina o objetivo 3."
+    },
+    {
+      "bloco": "Revisão / roda",
+      "min": 5,
+      "conteudo": "Tocar de cór uma peça já dominada, em andamento de roda."
+    }
+  ],
+  "semanas": [
+    {
+      "n": 1,
+      "tema": "Som, Fá maior e a célula básica do samba",
+      "tom": "Fá",
+      "celula_alvo": "C1",
+      "requisito": "colcheia-em-grupo estável + síncope leve",
+      "pieces_foco": [
+        "sb-009",
+        "sb-035",
+        "sb-025"
+      ],
+      "leitura_1avista": [
+        "sb-001",
+        "sb-006"
+      ],
+      "licao": "O tecido de quase todo o caderno é a colcheia em grupo (C1) e a síncope (C2). A semana 1 fixa o som em Fá maior (a tonalidade mais comum) e ensina a sentir a síncope sem perder a pulsação. 009 e 035 são as duas mais respiráveis do caderno — começo ideal."
+    },
+    {
+      "n": 2,
+      "tema": "Síncope clássica e casas de repetição",
+      "tom": "Fá",
+      "celula_alvo": "C2",
+      "requisito": "síncope acentuada no contratempo + casas 1ª/2ª",
+      "pieces_foco": [
+        "sb-001",
+        "sb-025",
+        "sb-044"
+      ],
+      "leitura_1avista": [
+        "sb-068",
+        "sb-006"
+      ],
+      "licao": "A síncope (C2: colcheia-semínima-colcheia) é o coração do samba. Esta semana ela deixa de ser 'leve' e passa a ser o acento principal. 001 e 044 trazem casas 1ª/2ª — a primeira estrutura formal a dominar."
+    },
+    {
+      "n": 3,
+      "tema": "Novas tonalidades: Sol e Sib",
+      "tom": "Sol e Sib",
+      "celula_alvo": "C1+C2",
+      "requisito": "ler em 1 sustenido e em 2 bemóis",
+      "pieces_foco": [
+        "sb-035",
+        "sb-068",
+        "sb-004"
+      ],
+      "leitura_1avista": [
+        "sb-034",
+        "sb-005"
+      ],
+      "licao": "O eixo agora é a TONALIDADE, não o ritmo. Sol maior (1 sustenido) e Sib maior (2 bemóis) ampliam o caderno acessível. 004 (Sib) tem intro de 7 compassos — primeiro desafio de contagem de entrada."
+    },
+    {
+      "n": 4,
+      "tema": "Tercina e cromatismo de passagem",
+      "tom": "Fá e Ré",
+      "celula_alvo": "C5",
+      "requisito": "tercina de colcheias + notas cromáticas fora da armadura",
+      "pieces_foco": [
+        "sb-006",
+        "sb-005",
+        "sb-008"
+      ],
+      "leitura_1avista": [
+        "sb-027",
+        "sb-064"
+      ],
+      "licao": "A tercina (C5: três por tempo) e o cromatismo de passagem (A4: bordadura cromática) aparecem juntos nas peças de Cartola. 008 estreia Ré maior (2 sustenidos) + tercina + forma longa ABCD: o maior salto de fôlego até aqui."
+    },
+    {
+      "n": 5,
+      "tema": "Forma longa e fôlego (A/B/C/D)",
+      "tom": "Ré e Fá",
+      "celula_alvo": "C2+C5",
+      "requisito": "decorar e sustentar 4 seções; respiração estratégica",
+      "pieces_foco": [
+        "sb-027",
+        "sb-064",
+        "sb-008"
+      ],
+      "leitura_1avista": [
+        "sb-028",
+        "sb-013"
+      ],
+      "licao": "O desafio deixa de ser a nota e passa a ser a RESISTÊNCIA e a MEMÓRIA. Peças de 40+ compassos (064, 027) exigem mapa de respiração. Aqui a meta 1 (tocar inteira) encontra seu teste real."
+    },
+    {
+      "n": 6,
+      "tema": "Semicolcheia, staccato duplo e o ápice",
+      "tom": "todas",
+      "celula_alvo": "C3+C4",
+      "requisito": "semicolcheias contínuas com tu-ku + cromatismo denso",
+      "pieces_foco": [
+        "sb-028",
+        "sb-013",
+        "sb-064"
+      ],
+      "leitura_1avista": [
+        "sb-008",
+        "sb-044"
+      ],
+      "licao": "A semana do ápice. Semicolcheias densas (C4) pedem staccato duplo (tu-ku) para a velocidade; o cromatismo denso de 013 ('A Flor e o Espinho', a peça mais difícil do caderno) reúne tudo. Quem fecha a semana 6 lê o caderno inteiro à primeira vista e toca as 30 de cór."
+    }
+  ]
+}
