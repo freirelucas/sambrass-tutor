@@ -616,5 +616,533 @@
   ],
   "verificada": true,
   "obs": "Fá# (6 sustenidos!), 4/4, q=90; tom dificílimo (concert Mi); A/B/C com D.S."
+ },
+ {
+  "num": 40,
+  "titulo": "Falsa Consideração",
+  "compositor": "Marquinhos Sathã / Eros Fidélis / Libert",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "colcheias-densas",
+   "forma-longa",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B longa com D.S.; colcheias densas e síncope. (Compositor a confirmar.)"
+ },
+ {
+  "num": 41,
+  "titulo": "Identidade",
+  "compositor": "Jorge Aragão",
+  "tom_escrito": "F",
+  "compasso": "4/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "compasso-4-4",
+   "colcheias-em-grupo",
+   "casas",
+   "DS",
+   "tercina"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol), 4/4; A/B com casas e D.S.; colcheias e tercina."
+ },
+ {
+  "num": 42,
+  "titulo": "Lucidez",
+  "compositor": "Jorge Aragão / Cleber Augusto",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "forma-extensa",
+   "colcheias-densas",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); forma muito longa (intro/A/B/C/D) com D.S.; densa."
+ },
+ {
+  "num": 43,
+  "titulo": "Malandro",
+  "compositor": "Jorge Aragão / Jotabê",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "cromatismo-denso",
+   "casas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); muito cromática; intro/A/B com casas."
+ },
+ {
+  "num": 45,
+  "titulo": "Sufoco",
+  "compositor": "Antônio José / Chico da Silva",
+  "tom_escrito": "Bb->D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "modulação-armadura",
+   "tonalidade-2-bemóis",
+   "tercina",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Sib (2 bemóis), B em Ré (2 sustenidos); densa com tercinas; casas."
+ },
+ {
+  "num": 46,
+  "titulo": "Você Me Vira a Cabeça",
+  "compositor": "Chico Roque / Paulo Sérgio Valle",
+  "tom_escrito": "G",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "compasso-4-4",
+   "tercina",
+   "forma-longa",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido), 4/4, q=80; tercinas (e quintina); A/B com D.S."
+ },
+ {
+  "num": 47,
+  "titulo": "Coração em Desalinho",
+  "compositor": "Monarco / Ratinho",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "forma-extensa",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); A/B/C muito longa (com 'final'); colcheias densas."
+ },
+ {
+  "num": 48,
+  "titulo": "Jura",
+  "compositor": "José Barbosa / Sinhô",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "média",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C3",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "colcheia-pontuada",
+   "forma-longa",
+   "cromatismo-passagem"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); colcheia-pontuada; A/B longa."
+ },
+ {
+  "num": 50,
+  "titulo": "Verdade",
+  "compositor": "Carlinhos Santana / Nelson Rufino",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "semicolcheias",
+   "colcheias-densas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); densa com semicolcheias; A/B com repetições."
+ },
+ {
+  "num": 51,
+  "titulo": "Vivo Isolado do Mundo",
+  "compositor": "Alcides Dias Lopes",
+  "tom_escrito": "F",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "compasso-4-4",
+   "tercina",
+   "cromatismo",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol), 4/4, q=110; tercinas e cromatismo; A/B com casas."
+ },
+ {
+  "num": 52,
+  "titulo": "Ainda Mais",
+  "compositor": "Paulinho da Viola / Eduardo Gudin",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "tercina",
+   "casas-1-2"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); colcheias com tercinas; A/B com casas."
+ },
+ {
+  "num": 53,
+  "titulo": "Coração Leviano",
+  "compositor": "Paulinho da Viola",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tercina",
+   "colcheias-densas",
+   "forma-longa",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); tercinas e colcheias densas; A/B longa com casas."
+ },
+ {
+  "num": 56,
+  "titulo": "Pecado Capital",
+  "compositor": "Paulinho da Viola",
+  "tom_escrito": "D",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "compasso-4-4",
+   "cromatismo-denso",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos), 4/4; muito cromática; A/B com casas."
+ },
+ {
+  "num": 57,
+  "titulo": "A Volta do Malandro",
+  "compositor": "Chico Buarque",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [],
+  "celulas": [
+   "C1",
+   "C3",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "forma-longa",
+   "colcheia-pontuada",
+   "cromatismo-passagem"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); corrida (sem seções marcadas), longa; colcheia-pontuada e cromatismo."
+ },
+ {
+  "num": 58,
+  "titulo": "De Volta ao Samba",
+  "compositor": "Chico Buarque",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "colcheias-densas",
+   "forma-longa-ABC",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis); A/B/C densa com casas."
+ },
+ {
+  "num": 59,
+  "titulo": "Homenagem ao Malandro",
+  "compositor": "Chico Buarque",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C6"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "colcheias-densas",
+   "casas",
+   "DC",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); A/B densa com casas e D.C."
+ },
+ {
+  "num": 60,
+  "titulo": "Partido Alto",
+  "compositor": "Chico Buarque",
+  "tom_escrito": "A",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "compasso-4-4",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos), 4/4; ritmo de partido-alto, denso; A/B com casas."
+ },
+ {
+  "num": 62,
+  "titulo": "Samba do Grande Amor",
+  "compositor": "Chico Buarque",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1",
+   "A4"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "colcheias-densas",
+   "semicolcheias",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos); muito densa (colcheias contínuas); A/B longa."
  }
 ]

@@ -3,7 +3,7 @@
 _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
 
 ## Progresso
-- **Catalogadas: 50 / 110** (meta: 110)
+- **Catalogadas: 68 / 110** (meta: 110)
 - Notas MusicXML semeadas: 0 / ~5 (meta da sessão)
 
 ## Pronto e versionado
@@ -24,3 +24,6 @@ _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
   Nelson, Zé Kéti, Adoniran, Ivone, Martinho, Beth, Jorge Aragão). Achados de tom:
   023/026 são 4/4; 039 "Eu e Você Sempre" em Fá# (6 sustenidos!). Tons ambíguos
   confirmados por zoom do clef+armadura.
+- 68/110. + batches 4–6: 040–043,045–048,050–053,056–060,062 (Jorge Aragão,
+  Alcione/Marrom, Zeca/Monarco, Paulinho da Viola, Chico Buarque). Achados: 045
+  'Sufoco' modula Sib→Ré; vários 4/4 (041,046,051,056,060).

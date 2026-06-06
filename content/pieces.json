@@ -1288,6 +1288,144 @@
       "score": "sb-039.jpg"
     },
     {
+      "id": "sb-040",
+      "num": 40,
+      "titulo": "Falsa Consideração",
+      "compositor": "Marquinhos Sathã / Eros Fidélis / Libert",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "colcheias-densas",
+        "forma-longa",
+        "DS"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); A/B longa com D.S.; colcheias densas e síncope. (Compositor a confirmar.)",
+      "score": "sb-040.jpg"
+    },
+    {
+      "id": "sb-041",
+      "num": 41,
+      "titulo": "Identidade",
+      "compositor": "Jorge Aragão",
+      "compasso": "4/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "compasso-4-4",
+        "colcheias-em-grupo",
+        "casas",
+        "DS",
+        "tercina"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol), 4/4; A/B com casas e D.S.; colcheias e tercina.",
+      "score": "sb-041.jpg"
+    },
+    {
+      "id": "sb-042",
+      "num": 42,
+      "titulo": "Lucidez",
+      "compositor": "Jorge Aragão / Cleber Augusto",
+      "compasso": "2/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "intro",
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "forma-extensa",
+        "colcheias-densas",
+        "DS"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol (1 sustenido); forma muito longa (intro/A/B/C/D) com D.S.; densa.",
+      "score": "sb-042.jpg"
+    },
+    {
+      "id": "sb-043",
+      "num": 43,
+      "titulo": "Malandro",
+      "compositor": "Jorge Aragão / Jotabê",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "intro",
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "cromatismo-denso",
+        "casas",
+        "forma-longa"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); muito cromática; intro/A/B com casas.",
+      "score": "sb-043.jpg"
+    },
+    {
       "id": "sb-044",
       "num": 44,
       "titulo": "Não Deixe o Samba Morrer",
@@ -1319,6 +1457,140 @@
       "verificada": true,
       "obs": "Síncope + contratempo; forma longa.",
       "score": "sb-044.jpg"
+    },
+    {
+      "id": "sb-045",
+      "num": 45,
+      "titulo": "Sufoco",
+      "compositor": "Antônio José / Chico da Silva",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": "C",
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "modulação-armadura",
+        "tonalidade-2-bemóis",
+        "tercina",
+        "colcheias-densas",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Modula: A em Sib (2 bemóis), B em Ré (2 sustenidos); densa com tercinas; casas.",
+      "score": "sb-045.jpg"
+    },
+    {
+      "id": "sb-046",
+      "num": 46,
+      "titulo": "Você Me Vira a Cabeça",
+      "compositor": "Chico Roque / Paulo Sérgio Valle",
+      "compasso": "4/4",
+      "key_concert": "F",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-1-sustenido",
+        "compasso-4-4",
+        "tercina",
+        "forma-longa",
+        "DS"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Sol (1 sustenido), 4/4, q=80; tercinas (e quintina); A/B com D.S.",
+      "score": "sb-046.jpg"
+    },
+    {
+      "id": "sb-047",
+      "num": 47,
+      "titulo": "Coração em Desalinho",
+      "compositor": "Monarco / Ratinho",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 7,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "forma-extensa",
+        "colcheias-densas",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); A/B/C muito longa (com 'final'); colcheias densas.",
+      "score": "sb-047.jpg"
+    },
+    {
+      "id": "sb-048",
+      "num": 48,
+      "titulo": "Jura",
+      "compositor": "José Barbosa / Sinhô",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "média",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C3",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "colcheia-pontuada",
+        "forma-longa",
+        "cromatismo-passagem"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura); colcheia-pontuada; A/B longa.",
+      "score": "sb-048.jpg"
     },
     {
       "id": "sb-049",
@@ -1354,6 +1626,137 @@
       "verificada": true,
       "obs": "Tercinas densas e contínuas + apojaturas; refrão + A/B/C com casas e volta.",
       "score": "sb-049.jpg"
+    },
+    {
+      "id": "sb-050",
+      "num": 50,
+      "titulo": "Verdade",
+      "compositor": "Carlinhos Santana / Nelson Rufino",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "semicolcheias",
+        "colcheias-densas",
+        "forma-longa"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol); densa com semicolcheias; A/B com repetições.",
+      "score": "sb-050.jpg"
+    },
+    {
+      "id": "sb-051",
+      "num": 51,
+      "titulo": "Vivo Isolado do Mundo",
+      "compositor": "Alcides Dias Lopes",
+      "compasso": "4/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "compasso-4-4",
+        "tercina",
+        "cromatismo",
+        "colcheias-densas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol), 4/4, q=110; tercinas e cromatismo; A/B com casas.",
+      "score": "sb-051.jpg"
+    },
+    {
+      "id": "sb-052",
+      "num": 52,
+      "titulo": "Ainda Mais",
+      "compositor": "Paulinho da Viola / Eduardo Gudin",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "tercina",
+        "casas-1-2"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); colcheias com tercinas; A/B com casas.",
+      "score": "sb-052.jpg"
+    },
+    {
+      "id": "sb-053",
+      "num": 53,
+      "titulo": "Coração Leviano",
+      "compositor": "Paulinho da Viola",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tercina",
+        "colcheias-densas",
+        "forma-longa",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol); tercinas e colcheias densas; A/B longa com casas.",
+      "score": "sb-053.jpg"
     },
     {
       "id": "sb-054",
@@ -1425,6 +1828,169 @@
       "score": "sb-055.jpg"
     },
     {
+      "id": "sb-056",
+      "num": 56,
+      "titulo": "Pecado Capital",
+      "compositor": "Paulinho da Viola",
+      "compasso": "4/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "compasso-4-4",
+        "cromatismo-denso",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos), 4/4; muito cromática; A/B com casas.",
+      "score": "sb-056.jpg"
+    },
+    {
+      "id": "sb-057",
+      "num": 57,
+      "titulo": "A Volta do Malandro",
+      "compositor": "Chico Buarque",
+      "compasso": "2/4",
+      "key_concert": "Bb",
+      "modulates_to_concert": null,
+      "densidade": "média-alta",
+      "forma": [],
+      "celulas": [
+        "C1",
+        "C3",
+        "C2"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 5,
+      "requisitos": [
+        "forma-longa",
+        "colcheia-pontuada",
+        "cromatismo-passagem"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Dó (sem armadura); corrida (sem seções marcadas), longa; colcheia-pontuada e cromatismo.",
+      "score": "sb-057.jpg"
+    },
+    {
+      "id": "sb-058",
+      "num": 58,
+      "titulo": "De Volta ao Samba",
+      "compositor": "Chico Buarque",
+      "compasso": "2/4",
+      "key_concert": "Ab",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B",
+        "C"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-bemóis",
+        "colcheias-densas",
+        "forma-longa-ABC",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Si bemol (2 bemóis); A/B/C densa com casas.",
+      "score": "sb-058.jpg"
+    },
+    {
+      "id": "sb-059",
+      "num": 59,
+      "titulo": "Homenagem ao Malandro",
+      "compositor": "Chico Buarque",
+      "compasso": "2/4",
+      "key_concert": "Eb",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "colcheias-densas",
+        "casas",
+        "DC",
+        "cromatismo"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Fá (1 bemol); A/B densa com casas e D.C.",
+      "score": "sb-059.jpg"
+    },
+    {
+      "id": "sb-060",
+      "num": 60,
+      "titulo": "Partido Alto",
+      "compositor": "Chico Buarque",
+      "compasso": "4/4",
+      "key_concert": "G",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-3-sustenidos",
+        "compasso-4-4",
+        "colcheias-densas",
+        "casas"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Lá (3 sustenidos), 4/4; ritmo de partido-alto, denso; A/B com casas.",
+      "score": "sb-060.jpg"
+    },
+    {
       "id": "sb-061",
       "num": 61,
       "titulo": "Quem Te Viu, Quem Te Vê",
@@ -1456,6 +2022,40 @@
       "verificada": true,
       "obs": "Modula de Fá (1b) para Ré (2#) no final; colcheias densas com cromatismo.",
       "score": "sb-061.jpg"
+    },
+    {
+      "id": "sb-062",
+      "num": 62,
+      "titulo": "Samba do Grande Amor",
+      "compositor": "Chico Buarque",
+      "compasso": "2/4",
+      "key_concert": "C",
+      "modulates_to_concert": null,
+      "densidade": "alta",
+      "forma": [
+        "A",
+        "B"
+      ],
+      "celulas": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "arpejos": [
+        "A1",
+        "A4"
+      ],
+      "dificuldade": 6,
+      "requisitos": [
+        "tonalidade-2-sustenidos",
+        "colcheias-densas",
+        "semicolcheias",
+        "forma-longa"
+      ],
+      "dominio_publico": false,
+      "verificada": true,
+      "obs": "Ré (2 sustenidos); muito densa (colcheias contínuas); A/B longa.",
+      "score": "sb-062.jpg"
     },
     {
       "id": "sb-064",
