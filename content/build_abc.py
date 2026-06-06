@@ -112,9 +112,16 @@ def main():
         else:
             title = stem
         out[stem] = to_abc(data["events"], fifths, meter, title)
+    # melodias conferidas à mão (vencem o OMR) em content/notes_manual/*.abc
+    verified = []
+    mandir = CONTENT / "notes_manual"
+    for f in sorted(glob.glob(str(mandir / "*.abc"))):
+        stem = pathlib.Path(f).stem
+        out[stem] = pathlib.Path(f).read_text(encoding="utf-8")
+        verified.append(stem)
+    out["_verified"] = verified
     json.dump(out, open(CONTENT / "notes_abc.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-    print(f"ABC gerado: {len(out)} → content/notes_abc.json")
-    print("amostra cell-C2:\n", out.get("cell-C2", "")[:160])
+    print(f"ABC gerado: {len(out)-1} → content/notes_abc.json (conferidas à mão: {verified})")
 
 
 if __name__ == "__main__":
