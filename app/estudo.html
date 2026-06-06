@@ -3,186 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#11100f">
-<title>Estudo — Preciso Me Encontrar · Sambrass Tutor</title>
+<meta name="theme-color" content="#0e0d0c">
+<title>Preciso Me Encontrar · estudo · Sambrass Tutor</title>
 <style>
 :root{
-  --bg:#12110f; --bg2:#1b1916; --tinta:#f4efe6; --suave:#b3a890; --ouro:#e7b14c;
-  --vinho:#c0394b; --vinho2:#e0566a; --verde:#4cc08a; --linha:#2e2a25; --card:#1c1a16;
+  --bg:#0e0d0c; --bg2:#17150f; --pane:#1a1813; --linha:#2c281f;
+  --tinta:#f6f0e4; --suave:#a99c84; --ouro:#e9b850; --ouro2:#caa043;
+  --vinho:#cf3a4c; --vinho2:#e85d6e; --verde:#54c98e;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --serif:Georgia,"Times New Roman",serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);
-  padding-bottom:48px;-webkit-text-size-adjust:100%;overflow-x:hidden}
-.wrap{max-width:760px;margin:0 auto;padding:0 18px}
-a{color:var(--ouro)}
+  -webkit-text-size-adjust:100%;overflow-x:hidden;padding-bottom:40px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+small{color:var(--suave)}
 
 /* hero */
-.hero{position:relative;padding:46px 0 30px;overflow:hidden;
-  background:radial-gradient(120% 80% at 80% -10%,rgba(224,86,106,.28),transparent 60%),
-             radial-gradient(90% 70% at 0% 0%,rgba(231,177,76,.18),transparent 55%),var(--bg2);
-  border-bottom:1px solid var(--linha)}
-.disc{position:absolute;right:-70px;top:-40px;width:230px;height:230px;border-radius:50%;
-  background:repeating-radial-gradient(circle at center,#000 0 5px,#211d18 5px 8px);
-  box-shadow:0 0 0 10px #15120f,0 18px 50px rgba(0,0,0,.5);opacity:.55;animation:spin 18s linear infinite}
-.disc::after{content:"";position:absolute;inset:42%;border-radius:50%;background:var(--vinho)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro);font-weight:700}
-.hero h1{font-family:var(--serif);font-size:clamp(34px,9vw,56px);line-height:1.02;margin:8px 0 6px;font-weight:700}
-.compositor{color:var(--suave);font-size:15px}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.badge{background:rgba(255,255,255,.06);border:1px solid var(--linha);border-radius:999px;
-  padding:6px 14px;font-size:13px;font-weight:600}
+.hero{position:relative;padding:54px 0 34px;overflow:hidden;
+  background:radial-gradient(130% 90% at 85% -20%,rgba(232,93,110,.22),transparent 58%),
+             radial-gradient(80% 60% at -10% -10%,rgba(233,184,80,.16),transparent 55%),
+             linear-gradient(180deg,var(--bg2),var(--bg))}
+.kicker{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--ouro);font-weight:700}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(36px,10vw,58px);line-height:1.02;margin:10px 0 4px;
+  background:linear-gradient(180deg,#fff,#e7d9bf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.byline{color:var(--suave);font-size:15px;font-style:italic;font-family:var(--serif)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.badge{background:rgba(255,255,255,.05);border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
 .badge b{color:var(--ouro)}
 
-h2{font-family:var(--serif);font-size:24px;margin:34px 0 4px}
-.lead{color:var(--suave);margin:0 0 14px}
-.card{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:18px;margin:14px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;transform:translateY(14px);animation:rise .6s forwards}
+.sec{margin:42px 0 0}
+.sec-h{font-family:var(--serif);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ouro);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sec-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--linha),transparent)}
+.sec h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:2px 0 8px}
+.lead{color:var(--suave);margin:0 0 16px}
+.pane{background:var(--pane);border:1px solid var(--linha);border-radius:18px;padding:18px;margin:14px 0;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* células */
-.cel{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
-.celplay{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;font-size:18px;color:#1a120a;
-  background:linear-gradient(145deg,var(--ouro),#caa043);box-shadow:0 6px 18px rgba(231,177,76,.35);transition:transform .12s}
-.celplay:active{transform:scale(.9)}
-.cel h3{margin:0;font-size:17px}.cel .desc{color:var(--suave);font-size:13.5px}
-.mini{margin-top:6px;background:#fbf8f1;border-radius:10px;padding:4px 8px;overflow-x:auto}
+.heart{border-color:rgba(207,58,76,.5);background:linear-gradient(180deg,rgba(207,58,76,.10),var(--pane))}
+.cel{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.play{width:62px;height:62px;border:none;border-radius:50%;cursor:pointer;font-size:19px;color:#1a1206;
+  background:radial-gradient(120% 120% at 30% 25%,#ffd97a,var(--ouro2));box-shadow:0 8px 22px rgba(233,184,80,.4);transition:transform .12s}
+.play:active{transform:scale(.88)}
+.cel h3{margin:0;font-size:17px;font-family:var(--serif)}.cel .d{color:var(--suave);font-size:13.5px}
+.mini{margin-top:8px;background:#fbf7ee;border-radius:10px;padding:4px 8px;overflow-x:auto}
 .mini svg{max-width:100%;height:auto}
 
 /* player */
-.paper{background:#fbf8f1;border-radius:12px;padding:10px;overflow-x:auto}
+.stage{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 0 4px}
+.valves{display:flex;gap:14px;align-items:flex-end;height:78px}
+.valve{width:34px;height:62px;border-radius:12px;background:#221f18;border:1px solid var(--linha);
+  position:relative;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;color:var(--suave);
+  font-weight:800;font-size:13px;transition:all .09s}
+.valve::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:20px;height:12px;
+  border-radius:6px 6px 3px 3px;background:#2c281f;transition:all .09s}
+.valve.press{background:linear-gradient(180deg,var(--ouro),var(--ouro2));color:#1a1206;transform:translateY(6px);box-shadow:0 0 22px rgba(233,184,80,.5)}
+.valve.press::before{background:var(--ouro);transform:translateX(-50%) translateY(5px)}
+.agora{text-align:center;min-height:50px}
+.agora .nota{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--tinta);line-height:1}
+.agora .dedo{font-size:12px;color:var(--ouro);letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.paper{background:#fbf7ee;border-radius:12px;padding:10px;overflow-x:auto;margin-top:10px}
 .paper svg{max-width:100%;height:auto}
 .abcjs-highlight{fill:var(--vinho)!important}
 .audio{margin-top:14px}
-.abcjs-inline-audio{background:rgba(255,255,255,.05);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.abcjs-inline-audio .abcjs-btn{background:#27231d;border:1px solid var(--linha);border-radius:10px;min-height:44px;min-width:44px;cursor:pointer}
+.abcjs-inline-audio{background:rgba(255,255,255,.04);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.abcjs-inline-audio .abcjs-btn{background:#27231b;border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
 .abcjs-inline-audio .abcjs-btn svg path{fill:var(--tinta)}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
-.toggle{min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);background:#23201b;
-  color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
+.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tempo{display:flex;align-items:center;gap:10px;background:#211e17;border:1px solid var(--linha);border-radius:14px;padding:8px 12px}
+.tempo button{width:40px;height:40px;border-radius:10px;border:1px solid var(--linha);background:#2a261d;color:var(--tinta);font-size:20px;cursor:pointer}
+.tempo .bpm{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ouro);min-width:64px;text-align:center}
+.tempo .bpm small{font-size:11px;color:var(--suave);display:block;letter-spacing:1px}
+.toggle{min-height:46px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
 .toggle.on{background:var(--vinho);border-color:var(--vinho)}
-.nota{color:var(--suave);font-size:12.5px;margin-top:8px}
+.nota-rasc{color:var(--suave);font-size:12.5px;margin-top:12px}
+.ok{color:var(--verde)}
 
-/* passos */
-.passos{counter-reset:p;list-style:none;padding:0;margin:0}
-.passos li{position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--linha)}
-.passos li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:8px;width:30px;height:30px;
-  border-radius:50%;background:var(--verde);color:#06160f;font-weight:800;display:grid;place-items:center}
-.foot{color:var(--suave);font-size:13px;text-align:center;margin:36px 0 0}
-.voltar{display:inline-block;margin:16px 0 0;color:var(--suave);text-decoration:none;font-size:14px}
+/* prática */
+.passos{list-style:none;padding:0;margin:0}
+.passos li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--linha);cursor:pointer}
+.chk{flex:none;width:26px;height:26px;border-radius:8px;border:2px solid var(--linha);margin-top:2px;display:grid;place-items:center;color:transparent;font-weight:900}
+.passos li.done .chk{background:var(--verde);border-color:var(--verde);color:#06160f}
+.passos li.done .txt{color:var(--suave);text-decoration:line-through}
+.foot{color:var(--suave);font-size:13px;text-align:center;margin:40px 0 0}
+.voltar{display:inline-block;margin-top:18px;color:var(--suave);text-decoration:none;font-size:14px}
+.voltar:hover{color:var(--ouro)}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
-  <div class="disc"></div>
-  <div class="eyebrow">Sambrass Tutor · estudo de peça</div>
+  <div class="kicker">Sambrass Tutor · estudo de peça</div>
   <h1 id="titulo">Preciso Me Encontrar</h1>
-  <div class="compositor" id="compositor">Candeia</div>
+  <div class="byline" id="byline">Candeia · “deixe-me ir…”</div>
   <div class="badges" id="badges"></div>
 </div></header>
 
 <main class="wrap">
-  <h2>A peça em um sopro</h2>
-  <p class="lead" id="resumo">Um samba de Candeia — síncope no coração, colcheias correndo e tercinas dando o gingado. Aqui você ouve as peças que a formam, vê a partitura e toca junto, no seu andamento.</p>
+  <section class="sec">
+    <div class="sec-h">o coração</div>
+    <h2>A síncope que move o samba</h2>
+    <p class="lead">Antes da melodia, sinta o tijolo. Toque a célula e deixe o acento cair no contratempo — é o gingado de toda a peça.</p>
+    <div id="celulas"></div>
+  </section>
 
-  <h2>As células que a formam</h2>
-  <p class="lead">O segredo do Sambrass: poucas células se repetem em tudo. Toque cada uma (timbre de trompete) e sinta o ritmo — estas são exatas.</p>
-  <div id="celulas"></div>
+  <section class="sec">
+    <div class="sec-h">a melodia</div>
+    <h2>Toque junto — e veja a digitação</h2>
+    <p class="lead">Enquanto toca (timbre de trompete), as <b>3 válvulas acendem a digitação</b> da nota atual e o cursor segue a partitura. Ajuste o beat e repita trechos.</p>
+    <div class="pane">
+      <div class="stage">
+        <div class="valves"><div class="valve" id="v1">1</div><div class="valve" id="v2">2</div><div class="valve" id="v3">3</div></div>
+        <div class="agora"><div class="nota" id="notaAtual">·</div><div class="dedo" id="dedoAtual">pronto</div></div>
+      </div>
+      <div class="controls">
+        <div class="tempo"><button id="menos">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais">+</button></div>
+        <button class="toggle" id="tconcert">ouvir em concerto</button>
+      </div>
+      <div id="paper" class="paper"></div>
+      <div id="audio" class="audio"></div>
+      <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
+    </div>
+  </section>
 
-  <h2>A melodia</h2>
-  <p class="lead">Partitura em Sol (como você lê no trompete). ▶ toca com o cursor seguindo as notas; ajuste o andamento e repita trechos.</p>
-  <div class="card">
-    <div class="row"><button class="toggle" id="tconcert">ouvir em concerto</button></div>
-    <div id="paper" class="paper"></div>
-    <div id="audio" class="audio"></div>
-    <p class="nota" id="notamelodia">Esta melodia é um rascunho de leitura automática (OMR) — o tom está conferido; as notas serão afinadas. As células acima são exatas.</p>
-  </div>
-
-  <h2>Como praticar (15 min)</h2>
-  <ol class="passos">
-    <li>Aqueça e <b>ouça as três células</b> acima; bata o pé no tempo.</li>
-    <li>Toque a célula da síncope (C2) <b>devagar</b>, repetindo, até soar natural.</li>
-    <li>Leia a melodia <b>lenta</b>, sem parar; depois suba o andamento aos poucos.</li>
-    <li>Isole o compasso difícil em <b>loop</b> e junte à frase.</li>
-  </ol>
+  <section class="sec">
+    <div class="sec-h">prática · 15 min</div>
+    <h2>O caminho até tocar de cór</h2>
+    <ol class="passos" id="passos">
+      <li><span class="chk">✓</span><span class="txt"><b>Aqueça</b> e toque a síncope (▶ acima), batendo o pé no tempo.</span></li>
+      <li><span class="chk">✓</span><span class="txt">Leia a melodia <b>devagar</b> (baixe o BPM), olhando as válvulas, sem parar.</span></li>
+      <li><span class="chk">✓</span><span class="txt">Isole o compasso difícil em <b>loop</b> e suba o beat aos poucos até 92.</span></li>
+      <li><span class="chk">✓</span><span class="txt">Toque a frase inteira <b>de cór</b>, no andamento de roda.</span></li>
+    </ol>
+  </section>
 
   <a class="voltar" href="./index.html">‹ voltar ao tutor</a>
-  <p class="foot">Sambrass Tutor — MVP de estudo · áudio offline (timbre de trompete)</p>
+  <p class="foot">Sambrass Tutor — estudo offline · timbre de trompete · digitação ao vivo</p>
 </main>
 
 <script src="./vendor/abcjs.js"></script>
 <script>
 const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
-const CELLS_MOSTRAR = ['C1','C2','C5'];
+const CEL = ['C2','C1','C5'];
 const $ = s => document.querySelector(s);
-let MELODIA = null, SYNTH = null;
+const NOMES = ['Dó','Dó♯','Ré','Ré♯','Mi','Fá','Fá♯','Sol','Sol♯','Lá','Lá♯','Si'];
+const SHARP = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const VALV = {'F#3':'123','G3':'13','G#3':'23','A3':'12','A#3':'1','B3':'2','C4':'0','C#4':'123','D4':'13','D#4':'23','E4':'12','F4':'1','F#4':'2','G4':'0','G#4':'23','A4':'12','A#4':'1','B4':'2','C5':'0','C#5':'12','D5':'1','D#5':'2','E5':'0','F5':'1','F#5':'2','G5':'0','G#5':'23','A5':'12','A#5':'1','B5':'2','C6':'0'};
+function fingerOf(midi){ return VALV[SHARP[((midi%12)+12)%12] + (Math.floor(midi/12)-1)]; }
 
-// Áudio do celular: cria 1 AudioContext, registra no abcjs e RETOMA a cada toque (gesto).
-let AC = null;
-function audioUnlock(){
-  try{
-    if(!AC){ AC = new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC); }
-    if(AC.state === 'suspended') AC.resume();
-  }catch(e){}
-}
-['pointerdown','touchend','click'].forEach(ev => document.addEventListener(ev, audioUnlock, {capture:true}));
+let AC=null, MELODIA=null, SYNTH=null, BPM=92, TR=0, VISUAL=null;
+function audioUnlock(){ try{ if(!AC){ AC=new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC);} if(AC.state==='suspended') AC.resume(); }catch(e){} }
+['pointerdown','touchend','click'].forEach(ev=>document.addEventListener(ev,audioUnlock,{capture:true}));
 
 async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
 
 (async function(){
   const [pieces, cells, abc] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json')]);
-  const p = (pieces?.pieces||[]).find(x => 'sb-'+String(x.num).padStart(3,'0') === ID);
-  const TOM={C:'Dó',G:'Sol',D:'Ré',A:'Lá',F:'Fá',Bb:'Si♭',Eb:'Mi♭',Ab:'Lá♭'};
-  const WR={C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb'};
-  if(p){
-    $('#titulo').textContent = p.titulo; $('#compositor').textContent = p.compositor;
-    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span>
-      <span class="badge">compasso <b>${p.compasso}</b></span>
-      <span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span>
-      <span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>`;
-  }
-  // células exatas
-  const cmap = {}; (cells?.celulas_ritmicas||[]).forEach(c=>cmap[c.id]=c);
-  $('#celulas').innerHTML = CELLS_MOSTRAR.map((cid,i)=>`
-    <div class="card cel" style="animation-delay:${i*.08}s">
-      <button class="celplay" data-abc="cell-${cid}" aria-label="tocar ${cid}">▶</button>
-      <div><h3>${cid} · ${cmap[cid]?.nome||''}</h3><div class="desc">${cmap[cid]?.descricao||''}</div>
-        <div class="mini" id="mini-${cid}"></div></div>
-    </div>`).join('');
-  CELLS_MOSTRAR.forEach(cid=>{ if(abc&&abc['cell-'+cid]) try{ ABCJS.renderAbc('mini-'+cid, abc['cell-'+cid], {staffwidth:260,scale:.8,paddingtop:0,paddingbottom:0}); }catch{} });
-  document.querySelectorAll('.celplay').forEach(b=> b.onclick=()=>playOnce(abc?.[b.dataset.abc]));
+  const WR={C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
+  const p = (pieces?.pieces||[]).find(x=>'sb-'+String(x.num).padStart(3,'0')===ID);
+  if(p){ $('#titulo').textContent=p.titulo; $('#byline').textContent=p.compositor;
+    $('#badges').innerHTML=`<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>`; }
+  const cm={}; (cells?.celulas_ritmicas||[]).forEach(c=>cm[c.id]=c);
+  $('#celulas').innerHTML = CEL.map((id,i)=>`<div class="pane cel ${id==='C2'?'heart':''}" style="animation-delay:${i*.08}s">
+    <button class="play" data-abc="cell-${id}" aria-label="tocar ${id}">▶</button>
+    <div><h3>${id} · ${cm[id]?.nome||''}${id==='C2'?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
+  CEL.forEach(id=>{ if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id], {staffwidth:280,scale:.85,paddingtop:0,paddingbottom:0}); }catch{} });
+  document.querySelectorAll('.play').forEach(b=> b.onclick=()=>playOnce(abc?.[b.dataset.abc]));
 
-  // melodia
   MELODIA = abc?.[ID] || null;
-  if(MELODIA){ renderMelodia(0);
-    $('#tconcert').onclick = e=>{ const c=e.target.classList.toggle('on'); e.target.textContent=c?'ouvir escrito (Bb)':'ouvir em concerto'; renderMelodia(c?-2:0); };
-  } else { $('#paper').innerHTML='<p class="nota">melodia indisponível.</p>'; }
+  if(abc?._verified?.includes?.(ID)){ $('#rasc').innerHTML='Melodia <span class="ok">conferida ✓</span> · digitação de trompete.'; }
+  if(MELODIA){ setMel(); } else { $('#paper').innerHTML='<p class="nota-rasc">melodia indisponível.</p>'; }
+
+  $('#menos').onclick=()=>{ BPM=Math.max(50,BPM-2); $('#bpm').textContent=BPM; setMel(); };
+  $('#mais').onclick =()=>{ BPM=Math.min(180,BPM+2); $('#bpm').textContent=BPM; setMel(); };
+  $('#tconcert').onclick=e=>{ const c=e.target.classList.toggle('on'); TR=c?-2:0; e.target.textContent=c?'ouvir escrito (Bb)':'ouvir em concerto'; setMel(); };
+
+  const passos=$('#passos'); const done=JSON.parse(localStorage.getItem('passos-'+ID)||'[]');
+  [...passos.children].forEach((li,i)=>{ if(done.includes(i)) li.classList.add('done');
+    li.onclick=()=>{ li.classList.toggle('done'); const d=[...passos.children].map((x,k)=>x.classList.contains('done')?k:-1).filter(k=>k>=0); localStorage.setItem('passos-'+ID, JSON.stringify(d)); }; });
 })();
 
 async function playOnce(abc){
-  if(!abc || !window.ABCJS?.synth?.supportsAudio()) return;
-  audioUnlock();                                  // retoma o contexto DENTRO do gesto (antes dos await)
-  try{
-    let sc = document.getElementById('scratch');
-    if(!sc){ sc = document.createElement('div'); sc.id='scratch'; sc.style.display='none'; document.body.appendChild(sc); }
-    const v = ABCJS.renderAbc('scratch', abc)[0];
-    const s = new ABCJS.synth.CreateSynth();
-    await s.init({ audioContext: AC, visualObj:v, options:{ soundFontUrl:'./vendor/soundfont/', program:56 } });
-    await s.prime(); s.start();
-  }catch(e){ if(window.console) console.warn('playOnce', e); }
+  if(!abc || !window.ABCJS?.synth?.supportsAudio()) return; audioUnlock();
+  try{ let sc=document.getElementById('scratch'); if(!sc){sc=document.createElement('div');sc.id='scratch';sc.style.display='none';document.body.appendChild(sc);}
+    const v=ABCJS.renderAbc('scratch',abc)[0]; const s=new ABCJS.synth.CreateSynth();
+    await s.init({audioContext:AC, visualObj:v, options:{soundFontUrl:'./vendor/soundfont/', program:56}}); await s.prime(); s.start();
+  }catch(e){}
 }
-function curs(){ const clr=()=>document.querySelectorAll('.abcjs-highlight').forEach(el=>el.classList.remove('abcjs-highlight'));
-  return { onStart(){}, onFinished(){clr();}, onEvent(ev){ if(!ev) return; clr(); (ev.elements||[]).forEach(s=>s.forEach(el=>el.classList.add('abcjs-highlight'))); } }; }
-function renderMelodia(tr){
+function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).classList.toggle('press', f && f.includes(i)); } }
+function cursor(){
+  const clr=()=>document.querySelectorAll('.abcjs-highlight').forEach(el=>el.classList.remove('abcjs-highlight'));
+  return { onStart(){}, onFinished(){ clr(); setValves(''); $('#notaAtual').textContent='·'; $('#dedoAtual').textContent='fim'; },
+    onEvent(ev){ if(!ev) return; clr(); (ev.elements||[]).forEach(s=>s.forEach(el=>el.classList.add('abcjs-highlight')));
+      const mp=ev.midiPitches&&ev.midiPitches[0];
+      if(mp){ const w=Math.round(mp.pitch)-TR; const f=fingerOf(w);
+        $('#notaAtual').textContent=NOMES[((w%12)+12)%12]; $('#dedoAtual').textContent=(f==='0'?'solto (0)':'dedo '+f)||'—'; setValves(f); } } };
+}
+function setMel(){
+  if(!MELODIA) return; audioUnlock();
+  const abc=MELODIA.replace(/Q:1\/4=\d+/, 'Q:1/4='+BPM);
   if(SYNTH){ try{SYNTH.pause();}catch{} }
-  let v; try{ v = ABCJS.renderAbc('paper', MELODIA, {add_classes:true, responsive:'resize', visualTranspose:tr})[0]; }catch{ return; }
-  if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML='<p class="nota">áudio não suportado.</p>'; return; }
-  try{
-    SYNTH = new ABCJS.synth.SynthController();
-    SYNTH.load('#audio', curs(), {displayPlay:true,displayProgress:true,displayWarp:true,displayLoop:true,displayRestart:true});
-    SYNTH.setTune(v, false, {program:56, soundFontUrl:'./vendor/soundfont/'}).catch(()=>{});
+  try{ VISUAL=ABCJS.renderAbc('paper', abc, {add_classes:true, responsive:'resize', visualTranspose:TR})[0]; }catch{ return; }
+  if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML='<p class="nota-rasc">áudio não suportado.</p>'; return; }
+  try{ SYNTH=new ABCJS.synth.SynthController();
+    SYNTH.load('#audio', cursor(), {displayPlay:true,displayProgress:true,displayLoop:true,displayRestart:true});
+    SYNTH.setTune(VISUAL, false, {program:56, soundFontUrl:'./vendor/soundfont/'}).catch(()=>{});
   }catch(e){}
 }
 </script>

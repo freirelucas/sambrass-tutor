@@ -52,7 +52,7 @@ def dur_token(beats, L=16):
 
 
 def to_abc(events, fifths, meter, title, idx=1):
-    head = f"X:{idx}\nT:{title}\nM:{meter}\nL:1/16\nQ:1/4=96\nK:{fifths_to_key(fifths)}\n"
+    head = f"X:{idx}\nT:{title}\nM:{meter}\nL:1/16\nQ:1/4=92\nK:{fifths_to_key(fifths)}\n"
     body, measure, eff = [], None, keysig_acc(fifths)
     i, evs = 0, events
     while i < len(evs):
