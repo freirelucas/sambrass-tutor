@@ -119,6 +119,16 @@ const CELLS_MOSTRAR = ['C1','C2','C5'];
 const $ = s => document.querySelector(s);
 let MELODIA = null, SYNTH = null;
 
+// Áudio do celular: cria 1 AudioContext, registra no abcjs e RETOMA a cada toque (gesto).
+let AC = null;
+function audioUnlock(){
+  try{
+    if(!AC){ AC = new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC); }
+    if(AC.state === 'suspended') AC.resume();
+  }catch(e){}
+}
+['pointerdown','touchend','click'].forEach(ev => document.addEventListener(ev, audioUnlock, {capture:true}));
+
 async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
 
 (async function(){
@@ -153,14 +163,15 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
 
 async function playOnce(abc){
   if(!abc || !window.ABCJS?.synth?.supportsAudio()) return;
+  audioUnlock();                                  // retoma o contexto DENTRO do gesto (antes dos await)
   try{
     let sc = document.getElementById('scratch');
     if(!sc){ sc = document.createElement('div'); sc.id='scratch'; sc.style.display='none'; document.body.appendChild(sc); }
     const v = ABCJS.renderAbc('scratch', abc)[0];
     const s = new ABCJS.synth.CreateSynth();
-    await s.init({ visualObj:v, options:{ soundFontUrl:'./vendor/soundfont/', program:56 } });
+    await s.init({ audioContext: AC, visualObj:v, options:{ soundFontUrl:'./vendor/soundfont/', program:56 } });
     await s.prime(); s.start();
-  }catch(e){}
+  }catch(e){ if(window.console) console.warn('playOnce', e); }
 }
 function curs(){ const clr=()=>document.querySelectorAll('.abcjs-highlight').forEach(el=>el.classList.remove('abcjs-highlight'));
   return { onStart(){}, onFinished(){clr();}, onEvent(ev){ if(!ev) return; clr(); (ev.elements||[]).forEach(s=>s.forEach(el=>el.classList.add('abcjs-highlight'))); } }; }

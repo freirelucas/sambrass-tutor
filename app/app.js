@@ -146,6 +146,10 @@ function flash(i) { const at = M.next - M.ctx.currentTime; setTimeout(() => { do
 let SYNTH = null, PLAYER = null;  // PLAYER = {abc, transpose, titulo, voltar}
 async function loadAbc() { if (!DB.abc) DB.abc = await fetch('./data/abc.json').then(r => r.json()).catch(() => ({})); }
 function pararSynth() { if (SYNTH) { try { SYNTH.pause(); } catch {} SYNTH = null; } }
+// Áudio do celular: 1 AudioContext registrado no abcjs, retomado a cada toque (gesto).
+let AC = null;
+function audioUnlock() { try { if (!AC) { AC = new (window.AudioContext || window.webkitAudioContext)(); if (window.ABCJS?.synth?.registerAudioContext) ABCJS.synth.registerAudioContext(AC); } if (AC.state === 'suspended') AC.resume(); } catch (e) {} }
+['pointerdown', 'touchend'].forEach(ev => document.addEventListener(ev, audioUnlock, { capture: true }));
 
 async function abrirPlayer(id, titulo, prov, voltar) {
   pararMetro(); await loadAbc();
@@ -177,6 +181,7 @@ function renderPlayer(transpose) {
     visual = ABCJS.renderAbc('paper', PLAYER.abc, { add_classes: true, responsive: 'resize', visualTranspose: transpose })[0];
   } catch (e) { $('#paper').innerHTML = '<p class="meta">não consegui desenhar a partitura.</p>'; return; }
   if (!window.ABCJS || !ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
+  audioUnlock();
   try {
     SYNTH = new ABCJS.synth.SynthController();
     SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true, displayLoop: true, displayRestart: true });
