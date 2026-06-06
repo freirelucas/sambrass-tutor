@@ -67,6 +67,7 @@ function verPeca(n) {
       <div class="meta" style="margin:6px 0">Tom escrito <b>${tomEscrito(p)}</b> (concerto ${TOM[p.key_concert] || p.key_concert}) · ${p.compasso} · ${p.densidade} · forma ${(p.forma || []).join('/') || '?'}</div>
       <div>${(p.celulas || []).map(c => `<span class="tag">${c}</span>`).join('')} ${(p.requisitos || []).map(r => `<span class="tag">${r}</span>`).join('')}</div>
       <div class="prog" style="margin-top:10px"><b>Progresso:</b> ${sts.map(s => `<button class="${PROG[n] === s ? 'sel' : ''}" onclick="setProg(${n},'${s}');verPeca(${n})">${s.replace('_', ' ')}</button>`).join('')}</div>
+      <div class="btnrow" style="justify-content:flex-start;margin-top:12px"><button class="acao" onclick="tocarPeca(${n})">▶ Tocar partitura</button></div>
       <img class="score" loading="lazy" src="./scores/sb-${String(n).padStart(3, '0')}.jpg" alt="partitura ${p.titulo}"
         onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<p class=meta>partitura indisponível offline</p>')">
       ${p.obs ? `<p class="meta" style="font-style:italic;margin-top:8px">${p.obs}</p>` : ''}
@@ -76,10 +77,12 @@ function verPeca(n) {
 
 function telaVocab() {
   const c = DB.cells || {};
-  const li = arr => (arr || []).map(x => `<li><code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}</li>`).join('');
+  const li = (arr, play) => (arr || []).map(x =>
+    `<li>${play ? `<button class="prog" style="min-width:34px" onclick="tocarCell('${x.id}')">▶</button> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}</li>`).join('');
   tela.innerHTML = `<h2 class="sec">Vocabulário do caderno</h2>
-    <div class="card vocab"><h3>Células rítmicas</h3><ul class="lista">${li(c.celulas_ritmicas)}</ul></div>
-    <div class="card vocab"><h3>Arpejos</h3><ul class="lista">${li(c.arpejos)}</ul></div>
+    <p class="meta">Toque ▶ para ouvir e ver cada célula (timbre de trompete, com cursor).</p>
+    <div class="card vocab"><h3>Células rítmicas</h3><ul class="lista">${li(c.celulas_ritmicas, true)}</ul></div>
+    <div class="card vocab"><h3>Arpejos</h3><ul class="lista">${li(c.arpejos, false)}</ul></div>
     <p class="meta">Quase tudo é 2/4 em poucas células — dominá-las é ler o caderno à primeira vista.</p>`;
 }
 
@@ -133,8 +136,53 @@ function click(t, acc) {
 }
 function flash(i) { const at = M.next - M.ctx.currentTime; setTimeout(() => { document.querySelectorAll('.beat').forEach((b, j) => b.classList.toggle('on', j === i)); }, Math.max(0, at * 1000)); }
 
+/* ---------- player (abcjs: partitura + MIDI trompete + cursor) ---------- */
+let SYNTH = null, PLAYER = null;  // PLAYER = {abc, transpose, titulo, voltar}
+async function loadAbc() { if (!DB.abc) DB.abc = await fetch('./data/abc.json').then(r => r.json()).catch(() => ({})); }
+function pararSynth() { if (SYNTH) { try { SYNTH.pause(); } catch {} SYNTH = null; } }
+
+async function abrirPlayer(id, titulo, prov, voltar) {
+  pararMetro(); await loadAbc();
+  const abc = (DB.abc || {})[id];
+  PLAYER = abc ? { abc, transpose: 0, titulo, voltar: voltar || 'banco' } : null;
+  document.querySelectorAll('.abas button').forEach(b => b.classList.remove('ativa'));
+  if (!abc) { tela.innerHTML = `<button class="voltar" onclick="ir('${voltar || 'banco'}')">‹ voltar</button><p class="carregando">partitura não disponível.</p>`; return; }
+  tela.innerHTML = `<button class="voltar" onclick="ir('${voltar || 'banco'}')">‹ voltar</button>
+    <div class="card">
+      <h3>${titulo}</h3>
+      ${prov ? '<p class="meta">⚠ transcrição automática (provisória) — as notas podem ter erros; o tom está conferido</p>' : ''}
+      <div class="btnrow" style="justify-content:flex-start;margin:4px 0 10px">
+        <button class="toggle" id="tconcert">ouvir em concerto</button>
+      </div>
+      <div id="paper" class="paper"></div>
+      <div id="audio" class="audio"></div>
+      <p class="meta" style="margin-top:8px">▶ toca com timbre de trompete · ↔ controla o andamento · o cursor segue as notas.</p>
+    </div>`;
+  $('#tconcert').onclick = e => { const c = e.target.classList.toggle('on'); e.target.textContent = c ? 'ouvir escrito (Bb)' : 'ouvir em concerto'; renderPlayer(c ? -2 : 0); };
+  renderPlayer(0);
+  window.scrollTo(0, 0);
+}
+
+function renderPlayer(transpose) {
+  if (!PLAYER) return;
+  pararSynth(); PLAYER.transpose = transpose;
+  const visual = ABCJS.renderAbc('paper', PLAYER.abc, { add_classes: true, responsive: 'resize', visualTranspose: transpose })[0];
+  if (!ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
+  SYNTH = new ABCJS.synth.SynthController();
+  SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true });
+  SYNTH.setTune(visual, false, { program: 56 }).catch(() => {});
+}
+function cursorCtl() {
+  const clear = () => document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight'));
+  return { onStart() {}, onFinished() { clear(); }, onEvent(ev) { if (!ev || ev.measureStart && ev.left === null) return; clear(); (ev.elements || []).forEach(s => s.forEach(el => el.classList.add('abcjs-highlight'))); } };
+}
+window.abrirPlayer = abrirPlayer;
+window.tocarPeca = n => { const p = DB.byNum[n]; if (p) abrirPlayer('sb-' + String(n).padStart(3, '0'), String(n).padStart(3, '0') + ' — ' + p.titulo, true, 'banco'); };
+window.tocarCell = cid => { const c = (DB.cells?.celulas_ritmicas || []).find(x => x.id === cid) || {}; abrirPlayer('cell-' + cid, 'Célula ' + cid + ' — ' + (c.nome || ''), false, 'vocab'); };
+
 /* ---------- roteador ---------- */
 function ir(t) {
+  pararSynth();
   if (t !== 'metronomo' && M.on) pararMetro();
   document.querySelectorAll('.abas button').forEach(b => b.classList.toggle('ativa', b.dataset.tela === t));
   ({ hoje: telaHoje, banco: telaBanco, metronomo: metroTela, vocab: telaVocab }[t] || telaHoje)();

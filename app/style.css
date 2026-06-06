@@ -64,3 +64,13 @@ button.toggle.on{background:var(--caixa);border-color:var(--destaque);color:var(
 .prog button{min-height:36px;border:1px solid var(--linha);background:#fff;border-radius:7px;margin:2px 4px 0 0;padding:4px 10px;cursor:pointer}
 .prog button.sel{background:var(--verde);color:#fff;border-color:var(--verde)}
 .vocab code{background:var(--caixa);color:var(--destaque);font-weight:bold;border-radius:4px;padding:2px 7px;margin-right:6px}
+
+/* player (abcjs) */
+.paper{overflow-x:auto;background:#fff;border:1px solid var(--linha);border-radius:6px;padding:6px}
+.paper svg{max-width:100%;height:auto}
+.abcjs-highlight{fill:var(--destaque)!important}
+.abcjs-cursor{stroke:var(--destaque)}
+.audio{margin-top:12px}
+.abcjs-inline-audio{background:var(--caixa);border-radius:8px;padding:6px}
+.abcjs-inline-audio .abcjs-btn{background:#fff;border:1px solid var(--linha);border-radius:6px;min-height:40px;min-width:40px;cursor:pointer}
+.abcjs-inline-audio .abcjs-midi-current{background:var(--destaque)}

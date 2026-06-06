@@ -13,12 +13,8 @@ PDF = ROOT / "Sambrass23 trompete.pdf"
 def main():
     if SITE.exists():
         shutil.rmtree(SITE)
-    SITE.mkdir()
-    # 1) shell da PWA (tudo de app/, menos este script)
-    for f in APP.iterdir():
-        if f.name == "build_site.py":
-            continue
-        shutil.copy(f, SITE / f.name) if f.is_file() else None
+    # 1) shell da PWA inteiro (inclui vendor/abcjs), menos este script
+    shutil.copytree(APP, SITE, ignore=shutil.ignore_patterns("build_site.py", "__pycache__"))
 
     # 2) dados
     data = SITE / "data"; data.mkdir()
@@ -26,6 +22,9 @@ def main():
     shutil.copy(ROOT / "content" / "cells.json", data / "cells.json")
     shutil.copy(ROOT / "content" / "curriculum" / "sambrass23-trilha.json", data / "curriculum.json")
     shutil.copy(ROOT / "content" / "curadoria" / "trilha.json", data / "trilha.json")
+    abc = ROOT / "content" / "notes_abc.json"
+    if abc.exists():
+        shutil.copy(abc, data / "abc.json")
     rot = json.load(open(ROOT / "content" / "curriculum" / "sambrass23-6semanas.json", encoding="utf-8"))["rotina_diaria"]
     json.dump(rot, open(data / "rotina.json", "w", encoding="utf-8"), ensure_ascii=False)
 
