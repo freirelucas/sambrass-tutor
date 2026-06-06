@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
     inputs:
       pieces:
-        description: "Números das peças (espaço-separado). Vazio = piloto de 5."
-        default: "9 35 13 25 1"
+        description: "Números (espaço-separado) ou 'all' para as 110."
+        default: "all"
         required: false
   # workflow_dispatch só vale na branch padrão; gatilho push permite rodar daqui.
   push:
@@ -47,9 +47,9 @@ jobs:
       - name: Pré-processar a pauta (PyMuPDF)
         run: |
           python3 -m pip install --quiet PyMuPDF
-          PIECES="${{ github.event.inputs.pieces }}"
-          python3 content/omr_prep.py --dpi 300 ${PIECES:-9 35 13 25 1}
-          ls -la omr/input
+          PIECES="${{ github.event.inputs.pieces }}"; PIECES="${PIECES:-all}"
+          if [ "$PIECES" = "all" ]; then python3 content/omr_prep.py --dpi 300; else python3 content/omr_prep.py --dpi 300 $PIECES; fi
+          echo "imagens:"; ls omr/input | wc -l
 
       - name: Cache do build do Audiveris
         id: cache-aud
@@ -81,8 +81,8 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git checkout -B omr/audiveris-raw
-          git add -f omr/out
-          git commit -m "OMR Audiveris: MusicXML de ${{ github.event.inputs.pieces }}" || echo "(nada a commitar)"
+          git add -f omr/out/*.mxl omr/out/*.log
+          git commit -m "OMR Audiveris: MusicXML (lote ${{ github.event.inputs.pieces }})" || echo "(nada a commitar)"
           git push -f origin omr/audiveris-raw
 
       - name: Artefato (MusicXML)
