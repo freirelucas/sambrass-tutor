@@ -182,7 +182,6 @@ function renderPlayer(transpose) {
       .catch(e => { const a = $('#audio'); if (a) a.insertAdjacentHTML('beforeend', `<p class="meta">não consegui carregar o som (${e}). Recarregue.</p>`); });
   } catch (e) { $('#audio').innerHTML = `<p class="meta">erro no player: ${e.message}</p>`; }
 }
-}
 function cursorCtl() {
   const clear = () => document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight'));
   return { onStart() {}, onFinished() { clear(); }, onEvent(ev) { if (!ev || ev.measureStart && ev.left === null) return; clear(); (ev.elements || []).forEach(s => s.forEach(el => el.classList.add('abcjs-highlight'))); } };
