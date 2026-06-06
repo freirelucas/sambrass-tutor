@@ -1,0 +1,1010 @@
+{
+  "id": "sambrass23-trilha",
+  "caderno": "sambrass23",
+  "instrumento": "trumpet_bb",
+  "_meta": {
+    "titulo": "O Caminho do Sambrass — trilha completa (110 peças)",
+    "principio": "trilha mestra graded (uma habilidade nova por vez); módulos de ~9 peças; dificuldade = recalibrada 1–10; leitura à 1ª vista pela escada.",
+    "carga": "1h30/dia"
+  },
+  "rotina_diaria": [
+    {
+      "bloco": "Aquecimento",
+      "min": 15,
+      "conteudo": "Notas longas (som) + lip slurs + escala do tom da semana. Igual todo dia."
+    },
+    {
+      "bloco": "Célula do dia",
+      "min": 20,
+      "conteudo": "Snippet que isola a dificuldade-alvo da semana, em loop com metrônomo lento subindo aos poucos."
+    },
+    {
+      "bloco": "Música em foco",
+      "min": 35,
+      "conteudo": "Decompor a peça da semana seção por seção: ler lento, isolar o compasso difícil, montar."
+    },
+    {
+      "bloco": "Leitura à primeira vista",
+      "min": 15,
+      "conteudo": "Uma peça NOVA do caderno (nunca vista), lenta, sem parar — treina o objetivo 3."
+    },
+    {
+      "bloco": "Revisão / roda",
+      "min": 5,
+      "conteudo": "Tocar de cór uma peça já dominada, em andamento de roda."
+    }
+  ],
+  "modulos": [
+    {
+      "modulo": 1,
+      "faixa_dificuldade": [
+        1,
+        5
+      ],
+      "habilidades_novas": [
+        "síncope (C2)",
+        "tonalidade 1 acidente (Fá/Sol)",
+        "tercina (C5)",
+        "casas 1ª/2ª",
+        "forma longa (A/B/C/D)"
+      ],
+      "foco": [
+        {
+          "num": 25,
+          "titulo": "Alguém Me Avisou",
+          "dif": 2
+        },
+        {
+          "num": 12,
+          "titulo": "Tive Sim",
+          "dif": 5
+        },
+        {
+          "num": 9,
+          "titulo": "O Sol Nascerá",
+          "dif": 1
+        },
+        {
+          "num": 11,
+          "titulo": "Preciso Me Encontrar",
+          "dif": 4
+        },
+        {
+          "num": 1,
+          "titulo": "Até Amanhã",
+          "dif": 2
+        },
+        {
+          "num": 18,
+          "titulo": "Diz Que Fui por Aí",
+          "dif": 5
+        },
+        {
+          "num": 53,
+          "titulo": "Coração Leviano",
+          "dif": 5
+        },
+        {
+          "num": 77,
+          "titulo": "Desde Que o Samba é Samba",
+          "dif": 5
+        },
+        {
+          "num": 68,
+          "titulo": "Pra Que Chorar",
+          "dif": 2
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 76,
+          "titulo": "É Preciso Perdoar"
+        },
+        {
+          "num": 48,
+          "titulo": "Jura"
+        }
+      ],
+      "revisao": []
+    },
+    {
+      "modulo": 2,
+      "faixa_dificuldade": [
+        1,
+        6
+      ],
+      "habilidades_novas": [
+        "contratempo / ataque no 'e' (C6)",
+        "tonalidade sem acidentes (Dó/Sib escritos)",
+        "D.S. / D.C. (saltos)"
+      ],
+      "foco": [
+        {
+          "num": 10,
+          "titulo": "Peito Vazio",
+          "dif": 4
+        },
+        {
+          "num": 71,
+          "titulo": "Ronda",
+          "dif": 6
+        },
+        {
+          "num": 35,
+          "titulo": "Tristeza",
+          "dif": 2
+        },
+        {
+          "num": 44,
+          "titulo": "Não Deixe o Samba Morrer",
+          "dif": 4
+        },
+        {
+          "num": 86,
+          "titulo": "Eu Bebo Sim",
+          "dif": 3
+        },
+        {
+          "num": 66,
+          "titulo": "Consolação",
+          "dif": 4
+        },
+        {
+          "num": 99,
+          "titulo": "Cigana",
+          "dif": 4
+        },
+        {
+          "num": 106,
+          "titulo": "Pé na Areia",
+          "dif": 4
+        },
+        {
+          "num": 76,
+          "titulo": "É Preciso Perdoar",
+          "dif": 1
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 1,
+          "titulo": "Até Amanhã"
+        },
+        {
+          "num": 25,
+          "titulo": "Alguém Me Avisou"
+        }
+      ],
+      "revisao": [
+        25,
+        12,
+        9,
+        11,
+        1,
+        18,
+        53,
+        77,
+        68
+      ]
+    },
+    {
+      "modulo": 3,
+      "faixa_dificuldade": [
+        4,
+        5
+      ],
+      "habilidades_novas": [
+        "cromatismo de passagem"
+      ],
+      "foco": [
+        {
+          "num": 38,
+          "titulo": "Do Fundo do Nosso Quintal",
+          "dif": 5
+        },
+        {
+          "num": 3,
+          "titulo": "Feitiço da Vila",
+          "dif": 4
+        },
+        {
+          "num": 15,
+          "titulo": "Juízo Final",
+          "dif": 4
+        },
+        {
+          "num": 33,
+          "titulo": "Andança",
+          "dif": 4
+        },
+        {
+          "num": 34,
+          "titulo": "Se Você Jurar",
+          "dif": 4
+        },
+        {
+          "num": 64,
+          "titulo": "A Felicidade",
+          "dif": 4
+        },
+        {
+          "num": 2,
+          "titulo": "Com Que Roupa",
+          "dif": 5
+        },
+        {
+          "num": 22,
+          "titulo": "Trem das Onze",
+          "dif": 5
+        },
+        {
+          "num": 32,
+          "titulo": "Água de Chuva no Mar",
+          "dif": 5
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 68,
+          "titulo": "Pra Que Chorar"
+        },
+        {
+          "num": 4,
+          "titulo": "Fita Amarela"
+        }
+      ],
+      "revisao": [
+        10,
+        71,
+        35,
+        44,
+        86,
+        66,
+        99,
+        106,
+        76
+      ]
+    },
+    {
+      "modulo": 4,
+      "faixa_dificuldade": [
+        2,
+        7
+      ],
+      "habilidades_novas": [
+        "colcheia pontuada + semicolcheia (C3)",
+        "leitura em 4/4"
+      ],
+      "foco": [
+        {
+          "num": 98,
+          "titulo": "Cilada",
+          "dif": 5
+        },
+        {
+          "num": 59,
+          "titulo": "Homenagem ao Malandro",
+          "dif": 6
+        },
+        {
+          "num": 37,
+          "titulo": "Conselho",
+          "dif": 7
+        },
+        {
+          "num": 48,
+          "titulo": "Jura",
+          "dif": 2
+        },
+        {
+          "num": 57,
+          "titulo": "A Volta do Malandro",
+          "dif": 3
+        },
+        {
+          "num": 67,
+          "titulo": "O Morro Não Tem Vez",
+          "dif": 3
+        },
+        {
+          "num": 14,
+          "titulo": "Folhas Secas",
+          "dif": 7
+        },
+        {
+          "num": 41,
+          "titulo": "Identidade",
+          "dif": 4
+        },
+        {
+          "num": 46,
+          "titulo": "Você Me Vira a Cabeça",
+          "dif": 5
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 86,
+          "titulo": "Eu Bebo Sim"
+        },
+        {
+          "num": 15,
+          "titulo": "Juízo Final"
+        }
+      ],
+      "revisao": [
+        38,
+        3,
+        15,
+        33,
+        34,
+        64,
+        2,
+        22,
+        32
+      ]
+    },
+    {
+      "modulo": 5,
+      "faixa_dificuldade": [
+        4,
+        7
+      ],
+      "habilidades_novas": [
+        "tonalidade 2 acidentes (Ré/Sib)"
+      ],
+      "foco": [
+        {
+          "num": 72,
+          "titulo": "Naquela Mesa",
+          "dif": 5
+        },
+        {
+          "num": 51,
+          "titulo": "Vivo Isolado do Mundo",
+          "dif": 6
+        },
+        {
+          "num": 26,
+          "titulo": "Enredo do Meu Samba",
+          "dif": 7
+        },
+        {
+          "num": 5,
+          "titulo": "Acontece",
+          "dif": 4
+        },
+        {
+          "num": 75,
+          "titulo": "Me Deixe em Paz",
+          "dif": 4
+        },
+        {
+          "num": 20,
+          "titulo": "Tiro ao Álvaro",
+          "dif": 5
+        },
+        {
+          "num": 40,
+          "titulo": "Falsa Consideração",
+          "dif": 5
+        },
+        {
+          "num": 52,
+          "titulo": "Ainda Mais",
+          "dif": 5
+        },
+        {
+          "num": 63,
+          "titulo": "Sem Compromisso",
+          "dif": 5
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 33,
+          "titulo": "Andança"
+        },
+        {
+          "num": 66,
+          "titulo": "Consolação"
+        }
+      ],
+      "revisao": [
+        98,
+        59,
+        37,
+        48,
+        57,
+        67,
+        14,
+        41,
+        46
+      ]
+    },
+    {
+      "modulo": 6,
+      "faixa_dificuldade": [
+        5,
+        8
+      ],
+      "habilidades_novas": [],
+      "foco": [
+        {
+          "num": 88,
+          "titulo": "Leva Meu Samba",
+          "dif": 5
+        },
+        {
+          "num": 17,
+          "titulo": "A Voz do Morro",
+          "dif": 6
+        },
+        {
+          "num": 78,
+          "titulo": "Cicatrizes",
+          "dif": 6
+        },
+        {
+          "num": 101,
+          "titulo": "Deixa Acontecer",
+          "dif": 6
+        },
+        {
+          "num": 19,
+          "titulo": "Mascarada",
+          "dif": 7
+        },
+        {
+          "num": 70,
+          "titulo": "Samba de Orly",
+          "dif": 7
+        },
+        {
+          "num": 43,
+          "titulo": "Malandro",
+          "dif": 8
+        },
+        {
+          "num": 56,
+          "titulo": "Pecado Capital",
+          "dif": 8
+        },
+        {
+          "num": 69,
+          "titulo": "Regra Três",
+          "dif": 8
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 99,
+          "titulo": "Cigana"
+        },
+        {
+          "num": 106,
+          "titulo": "Pé na Areia"
+        }
+      ],
+      "revisao": [
+        72,
+        51,
+        26,
+        5,
+        75,
+        20,
+        40,
+        52,
+        63
+      ]
+    },
+    {
+      "modulo": 7,
+      "faixa_dificuldade": [
+        2,
+        10
+      ],
+      "habilidades_novas": [
+        "anacruse (C7)",
+        "tonalidade 3 acidentes (Lá/Mib)"
+      ],
+      "foco": [
+        {
+          "num": 4,
+          "titulo": "Fita Amarela",
+          "dif": 2
+        },
+        {
+          "num": 16,
+          "titulo": "Vou Partir",
+          "dif": 4
+        },
+        {
+          "num": 30,
+          "titulo": "Madalena do Jucu",
+          "dif": 4
+        },
+        {
+          "num": 87,
+          "titulo": "Maracangalha",
+          "dif": 4
+        },
+        {
+          "num": 7,
+          "titulo": "Corra e Olhe o Céu",
+          "dif": 6
+        },
+        {
+          "num": 105,
+          "titulo": "Inaraí",
+          "dif": 6
+        },
+        {
+          "num": 109,
+          "titulo": "Telegrama",
+          "dif": 6
+        },
+        {
+          "num": 84,
+          "titulo": "Flor de Lis",
+          "dif": 7
+        },
+        {
+          "num": 54,
+          "titulo": "Dança da Solidão",
+          "dif": 10
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 34,
+          "titulo": "Se Você Jurar"
+        },
+        {
+          "num": 3,
+          "titulo": "Feitiço da Vila"
+        }
+      ],
+      "revisao": [
+        88,
+        17,
+        78,
+        101,
+        19,
+        70,
+        43,
+        56,
+        69
+      ]
+    },
+    {
+      "modulo": 8,
+      "faixa_dificuldade": [
+        5,
+        6
+      ],
+      "habilidades_novas": [
+        "semicolcheias / staccato duplo (C4)"
+      ],
+      "foco": [
+        {
+          "num": 97,
+          "titulo": "Cheia de Manias",
+          "dif": 5
+        },
+        {
+          "num": 24,
+          "titulo": "Acreditar",
+          "dif": 6
+        },
+        {
+          "num": 50,
+          "titulo": "Verdade",
+          "dif": 6
+        },
+        {
+          "num": 81,
+          "titulo": "De Frente pro Crime",
+          "dif": 6
+        },
+        {
+          "num": 83,
+          "titulo": "Comportamento Geral",
+          "dif": 6
+        },
+        {
+          "num": 85,
+          "titulo": "Mas Que Nada",
+          "dif": 6
+        },
+        {
+          "num": 94,
+          "titulo": "A Batucada dos Nossos Tantãs",
+          "dif": 6
+        },
+        {
+          "num": 100,
+          "titulo": "Coração Radiante",
+          "dif": 6
+        },
+        {
+          "num": 104,
+          "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+          "dif": 6
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 10,
+          "titulo": "Peito Vazio"
+        },
+        {
+          "num": 11,
+          "titulo": "Preciso Me Encontrar"
+        }
+      ],
+      "revisao": [
+        4,
+        16,
+        30,
+        87,
+        7,
+        105,
+        109,
+        84,
+        54
+      ]
+    },
+    {
+      "modulo": 9,
+      "faixa_dificuldade": [
+        7,
+        8
+      ],
+      "habilidades_novas": [],
+      "foco": [
+        {
+          "num": 28,
+          "titulo": "Casa de Bamba",
+          "dif": 7
+        },
+        {
+          "num": 31,
+          "titulo": "Renascer das Cinzas",
+          "dif": 7
+        },
+        {
+          "num": 58,
+          "titulo": "De Volta ao Samba",
+          "dif": 7
+        },
+        {
+          "num": 62,
+          "titulo": "Samba do Grande Amor",
+          "dif": 7
+        },
+        {
+          "num": 79,
+          "titulo": "De Mais Ninguém",
+          "dif": 7
+        },
+        {
+          "num": 110,
+          "titulo": "Temporal",
+          "dif": 7
+        },
+        {
+          "num": 21,
+          "titulo": "Samba do Arnesto",
+          "dif": 8
+        },
+        {
+          "num": 60,
+          "titulo": "Partido Alto",
+          "dif": 8
+        },
+        {
+          "num": 65,
+          "titulo": "A Tonga da Mironga do Kabuletê",
+          "dif": 8
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 41,
+          "titulo": "Identidade"
+        },
+        {
+          "num": 44,
+          "titulo": "Não Deixe o Samba Morrer"
+        }
+      ],
+      "revisao": [
+        97,
+        24,
+        50,
+        81,
+        83,
+        85,
+        94,
+        100,
+        104
+      ]
+    },
+    {
+      "modulo": 10,
+      "faixa_dificuldade": [
+        5,
+        9
+      ],
+      "habilidades_novas": [
+        "modulação de armadura"
+      ],
+      "foco": [
+        {
+          "num": 93,
+          "titulo": "Tristeza, Pé no Chão",
+          "dif": 8
+        },
+        {
+          "num": 108,
+          "titulo": "É Tarde Demais",
+          "dif": 8
+        },
+        {
+          "num": 13,
+          "titulo": "A Flor e o Espinho",
+          "dif": 9
+        },
+        {
+          "num": 102,
+          "titulo": "Domingo",
+          "dif": 5
+        },
+        {
+          "num": 61,
+          "titulo": "Quem Te Viu, Quem Te Vê",
+          "dif": 6
+        },
+        {
+          "num": 91,
+          "titulo": "Do Jeito Que o Rei Mandou",
+          "dif": 6
+        },
+        {
+          "num": 36,
+          "titulo": "Vou Festejar",
+          "dif": 7
+        },
+        {
+          "num": 45,
+          "titulo": "Sufoco",
+          "dif": 7
+        },
+        {
+          "num": 73,
+          "titulo": "Retalhos de Cetim",
+          "dif": 7
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 64,
+          "titulo": "A Felicidade"
+        },
+        {
+          "num": 5,
+          "titulo": "Acontece"
+        }
+      ],
+      "revisao": [
+        28,
+        31,
+        58,
+        62,
+        79,
+        110,
+        21,
+        60,
+        65
+      ]
+    },
+    {
+      "modulo": 11,
+      "faixa_dificuldade": [
+        6,
+        8
+      ],
+      "habilidades_novas": [
+        "forma extensa / resistência"
+      ],
+      "foco": [
+        {
+          "num": 74,
+          "titulo": "Você Abusou",
+          "dif": 8
+        },
+        {
+          "num": 103,
+          "titulo": "Essa Tal Liberdade",
+          "dif": 8
+        },
+        {
+          "num": 29,
+          "titulo": "Ex Amor",
+          "dif": 6
+        },
+        {
+          "num": 6,
+          "titulo": "As Rosas Não Falam",
+          "dif": 7
+        },
+        {
+          "num": 27,
+          "titulo": "Sonho Meu",
+          "dif": 7
+        },
+        {
+          "num": 47,
+          "titulo": "Coração em Desalinho",
+          "dif": 7
+        },
+        {
+          "num": 82,
+          "titulo": "Linha de Passe",
+          "dif": 7
+        },
+        {
+          "num": 89,
+          "titulo": "Na Cadência do Samba",
+          "dif": 7
+        },
+        {
+          "num": 92,
+          "titulo": "Canto das Três Raças",
+          "dif": 7
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 75,
+          "titulo": "Me Deixe em Paz"
+        },
+        {
+          "num": 87,
+          "titulo": "Maracangalha"
+        }
+      ],
+      "revisao": [
+        93,
+        108,
+        13,
+        102,
+        61,
+        91,
+        36,
+        45,
+        73
+      ]
+    },
+    {
+      "modulo": 12,
+      "faixa_dificuldade": [
+        8,
+        10
+      ],
+      "habilidades_novas": [],
+      "foco": [
+        {
+          "num": 49,
+          "titulo": "Vai Vadiar",
+          "dif": 8
+        },
+        {
+          "num": 80,
+          "titulo": "O Bêbado e o Equilibrista",
+          "dif": 8
+        },
+        {
+          "num": 90,
+          "titulo": "Pimenta no Vatapá",
+          "dif": 8
+        },
+        {
+          "num": 95,
+          "titulo": "Agamamou",
+          "dif": 8
+        },
+        {
+          "num": 8,
+          "titulo": "O Mundo é um Moinho",
+          "dif": 9
+        },
+        {
+          "num": 23,
+          "titulo": "Saudosa Maloca",
+          "dif": 9
+        },
+        {
+          "num": 42,
+          "titulo": "Lucidez",
+          "dif": 9
+        },
+        {
+          "num": 55,
+          "titulo": "Foi um Rio Que Passou em Minha Vida",
+          "dif": 9
+        },
+        {
+          "num": 96,
+          "titulo": "Caçamba",
+          "dif": 10
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 16,
+          "titulo": "Vou Partir"
+        },
+        {
+          "num": 30,
+          "titulo": "Madalena do Jucu"
+        }
+      ],
+      "revisao": [
+        74,
+        103,
+        29,
+        6,
+        27,
+        47,
+        82,
+        89,
+        92
+      ]
+    },
+    {
+      "modulo": 13,
+      "faixa_dificuldade": [
+        9,
+        10
+      ],
+      "habilidades_novas": [
+        "tonalidade extrema (Fá#, 6 sustenidos)"
+      ],
+      "foco": [
+        {
+          "num": 107,
+          "titulo": "Ta Escrito",
+          "dif": 10
+        },
+        {
+          "num": 39,
+          "titulo": "Eu e Você Sempre",
+          "dif": 9
+        }
+      ],
+      "leitura_1avista": [
+        {
+          "num": 72,
+          "titulo": "Naquela Mesa"
+        },
+        {
+          "num": 97,
+          "titulo": "Cheia de Manias"
+        }
+      ],
+      "revisao": [
+        49,
+        80,
+        90,
+        95,
+        8,
+        23,
+        42,
+        55,
+        96
+      ]
+    }
+  ]
+}
