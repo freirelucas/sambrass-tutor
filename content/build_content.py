@@ -10,7 +10,7 @@ Uso:  python3 content/build_content.py
 Fonte legada: _extracted/sambrass_course/data/{musicas,jornada}.json
 (descompacte o zip do curso antes de rodar).
 """
-import json, pathlib, sys, zipfile, glob
+import json, pathlib, sys, zipfile, glob, csv
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
@@ -142,6 +142,18 @@ def main():
               ensure_ascii=False, indent=2)
     json.dump(curriculum, open(CONTENT / "curriculum" / "sambrass23-6semanas.json", "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
+
+    # espelho tabular para revisão rápida (Track C)
+    with open(CONTENT / "catalog.csv", "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["num", "titulo", "compositor", "key_concert", "modula",
+                    "compasso", "densidade", "dificuldade", "forma", "celulas",
+                    "requisitos", "verificada"])
+        for p in pieces:
+            w.writerow([p["num"], p["titulo"], p["compositor"], p["key_concert"],
+                        p["modulates_to_concert"] or "", p["compasso"], p["densidade"],
+                        p["dificuldade"], "/".join(p["forma"]), " ".join(p["celulas"]),
+                        ";".join(p["requisitos"]), p["verificada"]])
 
     ver = sum(1 for p in pieces if p.get("verificada"))
     print(f"OK — {len(pieces)} peças montadas ({ver} verificadas), round-trip de tom validado.")

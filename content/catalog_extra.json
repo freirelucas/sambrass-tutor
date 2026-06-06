@@ -1663,5 +1663,708 @@
   ],
   "verificada": true,
   "obs": "Dó (sem armadura), 4/4; densa com semicolcheias e tercinas; A/B com casas."
+ },
+ {
+  "num": 86,
+  "titulo": "Eu Bebo Sim",
+  "compositor": "João do Violão / Luiz Antônio",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "média-alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 4,
+  "requisitos": [
+   "colcheias-em-grupo",
+   "síncope",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); A/B; colcheias em grupo."
+ },
+ {
+  "num": 88,
+  "titulo": "Leva Meu Samba",
+  "compositor": "Ataulfo Alves",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "colcheias-densas",
+   "forma-longa",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis); A/B longa e densa; casas."
+ },
+ {
+  "num": 89,
+  "titulo": "Na Cadência do Samba",
+  "compositor": "Ataulfo Alves / Paulo Gesta",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "forma-longa",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); intro/A/B/C; densa com repetições."
+ },
+ {
+  "num": 90,
+  "titulo": "Pimenta no Vatapá",
+  "compositor": "João Nogueira / Cláudio Jorge",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-longa",
+   "tercina",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); intro/A/B/C longa com tercinas; casas."
+ },
+ {
+  "num": 91,
+  "titulo": "Do Jeito Que o Rei Mandou",
+  "compositor": "João Nogueira / Zé Catimba",
+  "tom_escrito": "C->F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C5"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "modulação-armadura",
+   "tercina",
+   "casas",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Dó, B em Fá (1 bemol); tercinas; casas e D.S."
+ },
+ {
+  "num": 92,
+  "titulo": "Canto das Três Raças",
+  "compositor": "Paulo César Pinheiro / Mauro Duarte",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "refrão",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "forma-extensa",
+   "colcheias-densas",
+   "refrão"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); forma longa com refrão (A/B/refrão/C); densa."
+ },
+ {
+  "num": 93,
+  "titulo": "Tristeza, Pé no Chão",
+  "compositor": "Mamão",
+  "tom_escrito": "A",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "semicolcheias-contínuas",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos); muito densa (semicolcheias contínuas); A/B."
+ },
+ {
+  "num": 94,
+  "titulo": "A Batucada dos Nossos Tantãs",
+  "compositor": "Adilson Gavião / Robson Guimarães / Sereno",
+  "tom_escrito": "F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "colcheias-densas",
+   "semicolcheias",
+   "casas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Fá (1 bemol); A/B longa e densa; casas."
+ },
+ {
+  "num": 95,
+  "titulo": "Agamamou",
+  "compositor": "Leandro Lehart",
+  "tom_escrito": "C",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "compasso-4-4",
+   "semicolcheias-contínuas",
+   "forma-extensa",
+   "casas",
+   "DC"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), 4/4, q=90; muito densa (semicolcheias contínuas); A/B/C/D com casas e D.C."
+ },
+ {
+  "num": 96,
+  "titulo": "Caçamba",
+  "compositor": "Efson / Odibar",
+  "tom_escrito": "G",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "intro",
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-1-sustenido",
+   "forma-extensa",
+   "semicolcheias",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Sol (1 sustenido); intro/A/B/C/D longa; semicolcheias densas."
+ },
+ {
+  "num": 97,
+  "titulo": "Cheia de Manias",
+  "compositor": "Luiz Carlos",
+  "tom_escrito": "C",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "compasso-4-4",
+   "colcheias-densas",
+   "semicolcheias",
+   "DC"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), 4/4; muito densa; A/B com D.C."
+ },
+ {
+  "num": 98,
+  "titulo": "Cilada",
+  "compositor": "Délcio Luiz / Ronaldo Barcellos",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "casas",
+   "cromatismo"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); A/B/C densa com casas."
+ },
+ {
+  "num": 99,
+  "titulo": "Cigana",
+  "compositor": "Gabú",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 5,
+  "requisitos": [
+   "colcheias-densas",
+   "casas",
+   "síncope"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), q=80; A/B densa com casas."
+ },
+ {
+  "num": 100,
+  "titulo": "Coração Radiante",
+  "compositor": "Xande de Pilares / Mauro Jr / Helinho Salgueiro",
+  "tom_escrito": "C",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "compasso-4-4",
+   "semicolcheias",
+   "colcheias-densas",
+   "forma-longa"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), 4/4; A/B/C muito densa (semicolcheias)."
+ },
+ {
+  "num": 101,
+  "titulo": "Deixa Acontecer",
+  "compositor": "Carlos Caetano / Alex Freitas",
+  "tom_escrito": "D",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-sustenidos",
+   "forma-longa-ABC",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Ré (2 sustenidos), q=95; A/B/C densa."
+ },
+ {
+  "num": 102,
+  "titulo": "Domingo",
+  "compositor": "Alexandre Pires / Fernando Pires",
+  "tom_escrito": "C->F",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "modulação-armadura",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Dó, B em Fá (1 bemol); densa com casas."
+ },
+ {
+  "num": 103,
+  "titulo": "Essa Tal Liberdade",
+  "compositor": "Paulo Sérgio Valle / Chico Roque",
+  "tom_escrito": "D->A",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "modulação-armadura",
+   "compasso-4-4",
+   "tonalidade-3-sustenidos",
+   "forma-longa-ABC",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Modula: A em Ré (2 sustenidos), B/C em Lá (3 sustenidos), 4/4; densa."
+ },
+ {
+  "num": 104,
+  "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+  "compositor": "Cleber Bittencourt / Pitter Corrêa",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "semicolcheias",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura); A/B/C densa com casas."
+ },
+ {
+  "num": 105,
+  "titulo": "Inaraí",
+  "compositor": "Salgadinho / Juninho do Banjo",
+  "tom_escrito": "Eb",
+  "compasso": "4/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-3-bemóis",
+   "compasso-4-4",
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Mi bemol (3 bemóis), 4/4; A/B/C densa com casas e D.S."
+ },
+ {
+  "num": 106,
+  "titulo": "Pé na Areia",
+  "compositor": "Diogo Leite / Rodrigo Leite",
+  "tom_escrito": "C",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Dó (sem armadura), q=80; A/B/C densa com casas."
+ },
+ {
+  "num": 107,
+  "titulo": "Ta Escrito",
+  "compositor": "Carlinhos Madureira / Gilson Bernini / Xande de Pilares",
+  "tom_escrito": "A",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "forma-extensa",
+   "semicolcheias",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos); A/B/C longa e muito densa."
+ },
+ {
+  "num": 108,
+  "titulo": "É Tarde Demais",
+  "compositor": "Elias Muniz / Luiz Carlos",
+  "tom_escrito": "A",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 7,
+  "requisitos": [
+   "tonalidade-3-sustenidos",
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "casas",
+   "DS"
+  ],
+  "verificada": true,
+  "obs": "Lá (3 sustenidos), q=80; A/B/C densa com casas e D.S."
+ },
+ {
+  "num": 109,
+  "titulo": "Telegrama",
+  "compositor": "Leandro Lehart",
+  "tom_escrito": "Eb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-3-bemóis",
+   "forma-longa-ABC",
+   "colcheias-densas",
+   "casas"
+  ],
+  "verificada": true,
+  "obs": "Mi bemol (3 bemóis); A/B/C densa com casas."
+ },
+ {
+  "num": 110,
+  "titulo": "Temporal",
+  "compositor": "Leandro Lehart",
+  "tom_escrito": "Bb",
+  "compasso": "2/4",
+  "densidade": "alta",
+  "forma": [
+   "A",
+   "B",
+   "C"
+  ],
+  "celulas": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "arpejos": [
+   "A1"
+  ],
+  "dificuldade": 6,
+  "requisitos": [
+   "tonalidade-2-bemóis",
+   "forma-longa-ABC",
+   "colcheias-densas"
+  ],
+  "verificada": true,
+  "obs": "Si bemol (2 bemóis); A/B/C densa."
  }
 ]

@@ -4,6 +4,10 @@ Itens que precisam da sua conferência de trompetista. O objetivo (`titulo`,
 `compositor`, `tom`, `compasso`, `forma`) é lido direto da partitura; o subjetivo
 abaixo é estimado pela análise e pode ser ajustado.
 
+## Calibração de dificuldade
+- A `dificuldade` pende para 6–7 na metade pagode (densa, formas longas) e 3–5 nos
+  sambas clássicos. É minha estimativa relativa; recalibre a escala 1–10 ao seu gosto.
+
 ## Sempre estimados (analíticos)
 - **`dificuldade`** (1–10) e **`celulas`/`arpejos`** de TODAS as peças catalogadas
   nesta sessão: são leitura analítica minha. Confira as que importam para a jornada.

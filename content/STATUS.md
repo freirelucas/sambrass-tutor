@@ -3,7 +3,7 @@
 _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
 
 ## Progresso
-- **Catalogadas: 86 / 110** (meta: 110)
+- **Catalogadas: 110 / 110 ✅** (meta: 110)
 - Notas MusicXML semeadas: 0 / ~5 (meta da sessão)
 
 ## Pronto e versionado
@@ -31,3 +31,7 @@ _Branch `claude/busy-cori-QXkHR`. Atualizado a cada lote._
   Aldir Blanc/João Bosco, Gonzaguinha). Achados: 073 modula Fá→Sol, 074 Fá→Lá;
   índice volta a divergir a partir de 077 (rodapé 077='Desde Que o Samba é Samba',
   078='Cicatrizes') — catalogado pelo rodapé.
+- **110/110 ✅ banco completo e validado.** + batches 10–13: 086–110
+  (Ataulfo, João Nogueira, bloco Pagode: Revelação/Xande, Raça Negra, Art Popular…).
+  Distribuição (concert): Eb24 F23 C20 Bb20 Ab9 G9 Db4 E1 · 2/4=92, 4/4=18 · 8 modulações.
+  Export `content/catalog.csv` gerado. Próximo: Track B (semear MusicXML) + relatório.
