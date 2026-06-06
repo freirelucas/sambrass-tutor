@@ -79,3 +79,15 @@ Tudo no branch `claude/busy-cori-QXkHR`, validado e pushado:
   runtime tocável (provisório, notas a conferir). `omr_merge.py` + `omr_check.py` + relatório.
 - Próximo: play-along (tocar as melodias no app) + snippets de células no app; corrigir notas do
   OMR (loop de qualidade); depois nativo/microfone/plataforma.
+
+## 🎯 SALTO — player real (partitura + MIDI + cursor)
+- No app (https://freirelucas.github.io/sambrass-tutor/): toque ▶ numa peça ou célula →
+  **partitura renderizada (abcjs) + MIDI com timbre de trompete (GM 56) + cursor seguindo
+  as notas + andamento (warp) + loop/restart + escrito↔concerto**. ▶ direto nas listas;
+  card "Células de hoje" na tela Hoje.
+- Dados: `content/build_abc.py` (eventos→ABC: armadura, acidentes, durações, tercinas,
+  ligaduras) → `content/notes_abc.json` (110 peças + 7 células). abcjs vendorizado (offline).
+- **Honestidade:** as **células tocam exatas**; as **melodias das 110 são provisórias**
+  (notas do OMR podem ter erros — marcado no player), mas o **tom está conferido**.
+- Próximo: corrigir as notas das peças da abertura da trilha (loop de qualidade) para
+  play-along perfeito; depois nativo/microfone.
