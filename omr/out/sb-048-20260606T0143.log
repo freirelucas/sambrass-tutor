@@ -1,0 +1,68 @@
+2026-06-06 01:43:09,503 INFO [sb-048]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-048.png
+2026-06-06 01:43:09,732 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:43:09,732 INFO []                 Book.java:2525 | Book stored as omr/out/sb-048.omr
+2026-06-06 01:43:09,733 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-06 01:43:09,733 INFO [sb-048]       StepMonitoring.java:98   | LOAD
+2026-06-06 01:43:09,800 INFO [sb-048]            SheetStub.java:1278 | Loaded image #1 3175x1935 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-048.png
+2026-06-06 01:43:09,800 INFO [sb-048]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-06 01:43:09,877 INFO [sb-048]       StepMonitoring.java:98   | BINARY
+2026-06-06 01:43:10,112 INFO [sb-048]       StepMonitoring.java:98   | SCALE
+2026-06-06 01:43:10,114 INFO [sb-048]         ScaleBuilder.java:255  | Beam  guessed height: 14 -- mid of [6..22]
+2026-06-06 01:43:10,114 INFO [sb-048]         ScaleBuilder.java:271  | Beam measured height: 14 -- 0.50 of [6..22] range at 396% of needed quorum
+2026-06-06 01:43:10,114 INFO [sb-048]         ScaleBuilder.java:401  | Normalized black jitter: 13.04 %
+2026-06-06 01:43:10,114 INFO [sb-048]            ScaleStep.java:65   | Scale{ interline(22,23,24) line(3,4,6) beam(14)}
+2026-06-06 01:43:10,114 INFO [sb-048]       StepMonitoring.java:98   | GRID
+2026-06-06 01:43:10,210 INFO [sb-048]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-06 01:43:10,214 INFO [sb-048]    ClustersRetriever.java:326  | Retrieved raw line clusters: 5 of sizes [5] with interline(22,23,24)
+2026-06-06 01:43:10,245 INFO [sb-048]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5]
+2026-06-06 01:43:10,369 INFO [sb-048]        SystemManager.java:779  | 1 part along 5 systems
+2026-06-06 01:43:10,369 INFO [sb-048]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-06 01:43:10,370 INFO [sb-048]       StepMonitoring.java:98   | HEADERS
+2026-06-06 01:43:10,424 INFO [sb-048]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-06 01:43:10,455 INFO [sb-048]        StemSeedsStep.java:86   | stem(5 max:7)
+2026-06-06 01:43:10,464 INFO [sb-048]       StepMonitoring.java:98   | BEAMS
+2026-06-06 01:43:13,730 INFO [sb-048]       StepMonitoring.java:98   | LEDGERS
+2026-06-06 01:43:13,832 INFO [sb-048]       StepMonitoring.java:98   | HEADS
+2026-06-06 01:43:18,455 INFO [sb-048]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.3]}
+2026-06-06 01:43:18,455 INFO [sb-048]       StepMonitoring.java:98   | STEMS
+2026-06-06 01:43:18,732 INFO [sb-048]       StepMonitoring.java:98   | REDUCTION
+2026-06-06 01:43:18,752 INFO [sb-048]        ReductionStep.java:105  | Stems free length median value: 81 pixels, 3.5 interlines
+2026-06-06 01:43:18,753 INFO [sb-048]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-06 01:43:18,753 INFO [sb-048]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-06 01:43:18,753 INFO [sb-048]       StepMonitoring.java:98   | TEXTS
+2026-06-06 01:43:18,814 WARN [sb-048]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:43:18,814 INFO [sb-048]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:43:18,814 INFO [sb-048]       StepMonitoring.java:98   | MEASURES
+2026-06-06 01:43:18,815 INFO [sb-048]                 Page.java:307  | 47 raw measures: [13 in system#1, 10 in system#2, 8 in system#3, 8 in system#4, 8 in system#5]
+2026-06-06 01:43:18,815 INFO [sb-048]       StepMonitoring.java:98   | CHORDS
+2026-06-06 01:43:18,816 INFO [sb-048]       StepMonitoring.java:98   | CURVES
+2026-06-06 01:43:19,168 INFO [sb-048]         SlursBuilder.java:240  | Slurs: 36
+2026-06-06 01:43:19,170 INFO [sb-048]      SegmentsBuilder.java:155  | Segments: 23
+2026-06-06 01:43:19,172 WARN [sb-048]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:43:19,173 INFO [sb-048]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:43:19,173 INFO [sb-048]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=71,y=137,width=73,height=71]
+2026-06-06 01:43:19,175 WARN [sb-048]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:43:19,175 INFO [sb-048]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:43:19,175 INFO [sb-048]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=113,y=1144,width=71,height=70]
+2026-06-06 01:43:19,175 INFO [sb-048]       StepMonitoring.java:98   | SYMBOLS
+2026-06-06 01:43:19,848 INFO [sb-048]       StepMonitoring.java:98   | LINKS
+2026-06-06 01:43:19,854 INFO [sb-048]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4882{(0.207) staff:2 OTTAVA BASSA} at java.awt.Point[x=2832,y=936]
+2026-06-06 01:43:19,858 INFO [sb-048]             KeyInter.java:1189 | No effective key before AlterInter#4904{(0.800) staff:3 NATURAL pitch:1.0}
+2026-06-06 01:43:19,864 INFO [sb-048]       StepMonitoring.java:98   | RHYTHMS
+2026-06-06 01:43:19,871 INFO [sb-048]       StepMonitoring.java:98   | PAGE
+2026-06-06 01:43:19,872 INFO [sb-048]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 ArticulationInter#4801{(0.683/0.863) STACCATO} vs RestInter#4861{(0.533/0.533) staff:2 EIGHTH_REST pitch:-17.3}
+2026-06-06 01:43:19,872 INFO [sb-048]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 PedalInter#4781{(0.598/0.598) PEDAL_MARK} vs RestInter#4861{(0.533/0.533) staff:2 EIGHTH_REST pitch:-17.3}
+2026-06-06 01:43:19,872 INFO [sb-048]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 PedalInter#4781{(0.598/0.598) PEDAL_MARK} vs AugmentationDotInter#4889{(0.785/0.905) staff:2 AUGMENTATION_DOT}
+2026-06-06 01:43:19,872 INFO [sb-048]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 PedalInter#4781{(0.598/0.598) PEDAL_MARK} vs AugmentationDotInter#4895{(0.681/0.910) AUGMENTATION_DOT}
+2026-06-06 01:43:19,872 INFO [sb-048]                 Book.java:2584 | Book{sb-048} storing
+2026-06-06 01:43:20,142 INFO [sb-048]                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:43:20,192 INFO [sb-048]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-06 01:43:20,400 INFO [sb-048]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-06 01:43:20,400 INFO [sb-048]                 Book.java:2525 | Book stored as omr/out/sb-048.omr
+2026-06-06 01:43:20,401 INFO [sb-048]            SheetStub.java:1655 | Sheet disposed
+2026-06-06 01:43:20,631 INFO [sb-048]                 Book.java:2050 | End of Stub#1
+2026-06-06 01:43:20,631 INFO [sb-048]                 Book.java:2057 | End of Book{sb-048}
+2026-06-06 01:43:20,786 INFO [sb-048]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-06 01:43:20,787 INFO [sb-048]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-06 01:43:20,798 INFO [sb-048]        ScoreExporter.java:164  | Score sb-048 exported to omr/out/sb-048.mxl
+2026-06-06 01:43:21,039 INFO [sb-048]                Score.java:181  | Closing {Score 1}

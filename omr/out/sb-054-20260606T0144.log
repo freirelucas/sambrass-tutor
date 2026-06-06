@@ -1,0 +1,174 @@
+2026-06-06 01:44:16,791 INFO [sb-054]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-054.png
+2026-06-06 01:44:17,045 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:44:17,046 INFO []                 Book.java:2525 | Book stored as omr/out/sb-054.omr
+2026-06-06 01:44:17,046 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-06 01:44:17,046 INFO [sb-054]       StepMonitoring.java:98   | LOAD
+2026-06-06 01:44:17,112 INFO [sb-054]            SheetStub.java:1278 | Loaded image #1 3175x1935 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-054.png
+2026-06-06 01:44:17,113 INFO [sb-054]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-06 01:44:17,187 INFO [sb-054]       StepMonitoring.java:98   | BINARY
+2026-06-06 01:44:17,428 INFO [sb-054]       StepMonitoring.java:98   | SCALE
+2026-06-06 01:44:17,430 INFO [sb-054]         ScaleBuilder.java:255  | Beam  guessed height: 12 -- mid of [6..18]
+2026-06-06 01:44:17,430 INFO [sb-054]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.42 of [6..18] range at 397% of needed quorum
+2026-06-06 01:44:17,430 INFO [sb-054]         ScaleBuilder.java:401  | Normalized black jitter: 15.79 %
+2026-06-06 01:44:17,430 INFO [sb-054]            ScaleStep.java:65   | Scale{ interline(18,19,20) line(3,4,6) beam(11)}
+2026-06-06 01:44:17,430 INFO [sb-054]       StepMonitoring.java:98   | GRID
+2026-06-06 01:44:17,551 INFO [sb-054]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-06 01:44:17,559 INFO [sb-054]    ClustersRetriever.java:326  | Retrieved raw line clusters: 6 of sizes [5] with interline(18,19,20)
+2026-06-06 01:44:17,636 INFO [sb-054]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6]
+2026-06-06 01:44:17,839 INFO [sb-054]        SystemManager.java:779  | 1 part along 6 systems
+2026-06-06 01:44:17,840 INFO [sb-054]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-06 01:44:17,840 INFO [sb-054]       StepMonitoring.java:98   | HEADERS
+2026-06-06 01:44:17,947 INFO [sb-054]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-06 01:44:17,979 INFO [sb-054]        StemSeedsStep.java:86   | stem(4 max:5)
+2026-06-06 01:44:17,989 INFO [sb-054]       StepMonitoring.java:98   | BEAMS
+2026-06-06 01:44:20,115 INFO [sb-054]       StepMonitoring.java:98   | LEDGERS
+2026-06-06 01:44:20,294 INFO [sb-054]       StepMonitoring.java:98   | HEADS
+2026-06-06 01:44:25,808 INFO [sb-054]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.8,R:-1.3]}
+2026-06-06 01:44:25,809 INFO [sb-054]       StepMonitoring.java:98   | STEMS
+2026-06-06 01:44:26,565 INFO [sb-054]       StepMonitoring.java:98   | REDUCTION
+2026-06-06 01:44:26,594 INFO [sb-054]        ReductionStep.java:105  | Stems free length median value: 68 pixels, 3.6 interlines
+2026-06-06 01:44:26,598 INFO [sb-054]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-06 01:44:26,598 INFO [sb-054]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-06 01:44:26,598 INFO [sb-054]       StepMonitoring.java:98   | TEXTS
+2026-06-06 01:44:26,668 WARN [sb-054]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:44:26,668 INFO [sb-054]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:44:26,669 INFO [sb-054]       StepMonitoring.java:98   | MEASURES
+2026-06-06 01:44:26,670 INFO [sb-054]                 Page.java:307  | 51 raw measures: [8 in system#1, 9 in system#2, 13 in system#3, 6 in system#4, 7 in system#5, 8 in system#6]
+2026-06-06 01:44:26,670 INFO [sb-054]       StepMonitoring.java:98   | CHORDS
+2026-06-06 01:44:26,672 INFO [sb-054]       StepMonitoring.java:98   | CURVES
+2026-06-06 01:44:27,164 INFO [sb-054]         SlursBuilder.java:240  | Slurs: 33
+2026-06-06 01:44:27,168 INFO [sb-054]      SegmentsBuilder.java:155  | Segments: 12
+2026-06-06 01:44:27,170 WARN [sb-054]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:44:27,170 INFO [sb-054]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:44:27,170 INFO [sb-054]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=125,y=120,width=68,height=55]
+2026-06-06 01:44:27,172 WARN [sb-054]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:44:27,172 INFO [sb-054]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:44:27,172 INFO [sb-054]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=203,y=676,width=62,height=54]
+2026-06-06 01:44:27,174 WARN [sb-054]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:44:27,174 INFO [sb-054]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:44:27,174 INFO [sb-054]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=1998,y=966,width=63,height=56]
+2026-06-06 01:44:27,174 INFO [sb-054]       StepMonitoring.java:98   | SYMBOLS
+2026-06-06 01:44:28,372 INFO [sb-054]       StepMonitoring.java:98   | LINKS
+2026-06-06 01:44:28,398 INFO [sb-054]       StepMonitoring.java:98   | RHYTHMS
+2026-06-06 01:44:28,400 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#1} No timeOffset for HeadChordInter#8209{(0.856/0.856) staff:1 slot#3 dur:1/4}
+2026-06-06 01:44:28,400 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for HeadChordInter#8209{(0.856/0.856) staff:1 slot#3 dur:1/4}
+2026-06-06 01:44:28,400 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for HeadChordInter#8210{(0.934/0.934) staff:1 slot#4 dur:1/4}
+2026-06-06 01:44:28,400 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2026-06-06 01:44:28,400 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for RestChordInter#9807{(0.745/0.745) staff:1 slot#3 dur:1/4}
+2026-06-06 01:44:28,400 INFO [sb-054]                Voice.java:257  | Measure{#2} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,400 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-06-06 01:44:28,401 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for RestChordInter#9810{(0.797/0.797) staff:1 slot#3 dur:1/16}
+2026-06-06 01:44:28,401 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#4} No timeOffset for RestChordInter#9810{(0.797/0.797) staff:1 slot#3 dur:1/16}
+2026-06-06 01:44:28,401 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#4} No timeOffset for HeadChordInter#8220{(0.870/0.870) staff:1 slot#4 dur:1/4}
+2026-06-06 01:44:28,401 INFO [sb-054]                Voice.java:257  | Measure{#4} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,401 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#4 no correct rhythm
+2026-06-06 01:44:28,402 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#8224{(0.890/0.890) staff:1 slot#3 dur:1/4}
+2026-06-06 01:44:28,402 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#5} No timeOffset for HeadChordInter#8224{(0.890/0.890) staff:1 slot#3 dur:1/4}
+2026-06-06 01:44:28,402 INFO [sb-054]                Voice.java:257  | Measure{#5} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,402 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#5 no correct rhythm
+2026-06-06 01:44:28,402 INFO [sb-054]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,402 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#6 no correct rhythm
+2026-06-06 01:44:28,402 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#7} No timeOffset for HeadChordInter#8231{(0.899/0.899) staff:1 slot#3 dur:1/16}
+2026-06-06 01:44:28,402 INFO [sb-054]          StackRhythm.java:224  | S1 MeasureStack#7 no correct rhythm
+2026-06-06 01:44:28,403 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#9} No timeOffset for HeadChordInter#8238{(0.903/0.903) staff:2 slot#4 dur:1/16}
+2026-06-06 01:44:28,403 INFO [sb-054]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/16} too long
+2026-06-06 01:44:28,403 INFO [sb-054]          StackRhythm.java:224  | S2 MeasureStack#9 no correct rhythm
+2026-06-06 01:44:28,403 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#10} No timeOffset for RestChordInter#9889{(0.794/0.794) staff:2 slot#3 dur:1/16}
+2026-06-06 01:44:28,403 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#10} No timeOffset for RestChordInter#9889{(0.794/0.794) staff:2 slot#3 dur:1/16}
+2026-06-06 01:44:28,403 INFO [sb-054]                Voice.java:257  | Measure{#10} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,403 INFO [sb-054]          StackRhythm.java:224  | S2 MeasureStack#10 no correct rhythm
+2026-06-06 01:44:28,403 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#11} No timeOffset for HeadChordInter#8249{(0.884/0.884) staff:2 slot#5 dur:1/4}
+2026-06-06 01:44:28,403 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#11} No timeOffset for HeadChordInter#8249{(0.884/0.884) staff:2 slot#5 dur:1/4}
+2026-06-06 01:44:28,403 INFO [sb-054]          StackRhythm.java:224  | S2 MeasureStack#11 no correct rhythm
+2026-06-06 01:44:28,404 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#14} No timeOffset for HeadChordInter#8255{(0.938/0.938) staff:2 slot#3 dur:1/4}
+2026-06-06 01:44:28,404 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#14} No timeOffset for HeadChordInter#8255{(0.938/0.938) staff:2 slot#3 dur:1/4}
+2026-06-06 01:44:28,404 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#14} No timeOffset for HeadChordInter#8256{(0.897/0.897) staff:2 slot#4 dur:1/4}
+2026-06-06 01:44:28,404 INFO [sb-054]                Voice.java:257  | Measure{#14} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,404 INFO [sb-054]          StackRhythm.java:224  | S2 MeasureStack#14 no correct rhythm
+2026-06-06 01:44:28,405 INFO [sb-054]                Voice.java:257  | Measure{#17} Voice{#1 excess:1/4} too long
+2026-06-06 01:44:28,405 INFO [sb-054]          StackRhythm.java:224  | S2 MeasureStack#17 no correct rhythm
+2026-06-06 01:44:28,405 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#20} No timeOffset for HeadChordInter#8279{(0.922/0.922) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,405 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#20} No timeOffset for HeadChordInter#8279{(0.922/0.922) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,405 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#20 no correct rhythm
+2026-06-06 01:44:28,405 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#21} No timeOffset for HeadChordInter#8283{(0.875/0.875) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,405 INFO [sb-054]                Voice.java:257  | Measure{#21} Voice{#1 excess:1/16} too long
+2026-06-06 01:44:28,405 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#21 no correct rhythm
+2026-06-06 01:44:28,406 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#22} No timeOffset for HeadChordInter#8287{(0.899/0.899) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,406 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#22 no correct rhythm
+2026-06-06 01:44:28,406 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#24} No timeOffset for HeadChordInter#8291{(0.867/0.867) staff:3 slot#5 dur:1/4}
+2026-06-06 01:44:28,406 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#24} No timeOffset for HeadChordInter#8291{(0.867/0.867) staff:3 slot#5 dur:1/4}
+2026-06-06 01:44:28,406 INFO [sb-054]                Voice.java:257  | Measure{#24} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,406 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#24 no correct rhythm
+2026-06-06 01:44:28,407 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#29} No timeOffset for HeadChordInter#8305{(0.925/0.925) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,407 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#29} No timeOffset for HeadChordInter#8305{(0.925/0.925) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,407 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#29 no correct rhythm
+2026-06-06 01:44:28,407 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#30} No timeOffset for HeadChordInter#8309{(0.878/0.878) staff:3 slot#4 dur:1/4}
+2026-06-06 01:44:28,407 INFO [sb-054]                Voice.java:257  | Measure{#30} Voice{#1 excess:1/16} too long
+2026-06-06 01:44:28,407 INFO [sb-054]          StackRhythm.java:224  | S3 MeasureStack#30 no correct rhythm
+2026-06-06 01:44:28,407 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#31} No timeOffset for HeadChordInter#8312{(0.893/0.893) staff:4 slot#3 dur:1/4}
+2026-06-06 01:44:28,408 INFO [sb-054]                Voice.java:257  | Measure{#31} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,408 INFO [sb-054]          StackRhythm.java:224  | S4 MeasureStack#31 no correct rhythm
+2026-06-06 01:44:28,408 INFO [sb-054]                Voice.java:257  | Measure{#32} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,408 INFO [sb-054]          StackRhythm.java:224  | S4 MeasureStack#32 no correct rhythm
+2026-06-06 01:44:28,409 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#37} No timeOffset for HeadChordInter#8335{(0.942/0.942) staff:5 slot#3 dur:1/4}
+2026-06-06 01:44:28,409 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#37} No timeOffset for HeadChordInter#8335{(0.942/0.942) staff:5 slot#3 dur:1/4}
+2026-06-06 01:44:28,409 INFO [sb-054]          StackRhythm.java:224  | S5 MeasureStack#37 no correct rhythm
+2026-06-06 01:44:28,410 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#40} No timeOffset for RestChordInter#10114{(0.799/0.799) staff:5 slot#3 dur:1/16}
+2026-06-06 01:44:28,410 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#40} No timeOffset for RestChordInter#10114{(0.799/0.799) staff:5 slot#3 dur:1/16}
+2026-06-06 01:44:28,410 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#40} No timeOffset for HeadChordInter#8349{(0.873/0.873) staff:5 slot#4 dur:1/4}
+2026-06-06 01:44:28,410 INFO [sb-054]                Voice.java:257  | Measure{#40} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,410 INFO [sb-054]          StackRhythm.java:224  | S5 MeasureStack#40 no correct rhythm
+2026-06-06 01:44:28,411 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#43} No timeOffset for HeadChordInter#8361{(0.932/0.932) staff:5 slot#3 dur:1/4}
+2026-06-06 01:44:28,411 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#43} No timeOffset for HeadChordInter#8361{(0.932/0.932) staff:5 slot#3 dur:1/4}
+2026-06-06 01:44:28,411 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#43} No timeOffset for HeadChordInter#8362{(0.884/0.884) staff:5 slot#4 dur:1/4}
+2026-06-06 01:44:28,412 INFO [sb-054]                Voice.java:257  | Measure{#43} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,412 INFO [sb-054]          StackRhythm.java:224  | S5 MeasureStack#43 no correct rhythm
+2026-06-06 01:44:28,412 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#44} No timeOffset for RestChordInter#10167{(0.799/0.799) staff:6 slot#3 dur:1/16}
+2026-06-06 01:44:28,412 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#44} No timeOffset for RestChordInter#10167{(0.799/0.799) staff:6 slot#3 dur:1/16}
+2026-06-06 01:44:28,412 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#44} No timeOffset for HeadChordInter#8366{(0.949/0.949) staff:6 slot#4 dur:1/4}
+2026-06-06 01:44:28,412 INFO [sb-054]                Voice.java:257  | Measure{#44} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,412 INFO [sb-054]          StackRhythm.java:224  | S6 MeasureStack#44 no correct rhythm
+2026-06-06 01:44:28,413 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#46} No timeOffset for RestChordInter#10168{(0.800/0.800) staff:6 slot#3 dur:1/16}
+2026-06-06 01:44:28,413 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#46} No timeOffset for RestChordInter#10168{(0.800/0.800) staff:6 slot#3 dur:1/16}
+2026-06-06 01:44:28,413 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#46} No timeOffset for RestChordInter#10169{(0.799/0.799) staff:6 slot#4 dur:1/16}
+2026-06-06 01:44:28,413 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#46} No timeOffset for HeadChordInter#8377{(0.901/0.901) staff:6 slot#5 dur:1/4}
+2026-06-06 01:44:28,413 INFO [sb-054]          StackRhythm.java:224  | S6 MeasureStack#46 no correct rhythm
+2026-06-06 01:44:28,414 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#47} No timeOffset for HeadChordInter#8381{(0.948/0.948) staff:6 slot#3 dur:1/16}
+2026-06-06 01:44:28,414 INFO [sb-054]                Voice.java:257  | Measure{#47} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,414 INFO [sb-054]          StackRhythm.java:224  | S6 MeasureStack#47 no correct rhythm
+2026-06-06 01:44:28,414 INFO [sb-054]        MeasureRhythm.java:1044 | Measure{#48} No timeOffset for HeadChordInter#8388{(0.892/0.892) staff:6 slot#5 dur:1/8}
+2026-06-06 01:44:28,414 INFO [sb-054]   AbstractChordInter.java:627  | Measure{#48} No timeOffset for HeadChordInter#8388{(0.892/0.892) staff:6 slot#5 dur:1/8}
+2026-06-06 01:44:28,414 INFO [sb-054]          StackRhythm.java:224  | S6 MeasureStack#48 no correct rhythm
+2026-06-06 01:44:28,415 INFO [sb-054]                Voice.java:257  | Measure{#49} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,415 INFO [sb-054]          StackRhythm.java:224  | S6 MeasureStack#49 no correct rhythm
+2026-06-06 01:44:28,415 INFO [sb-054]       StepMonitoring.java:98   | PAGE
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#2} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#4} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#5} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#6} Voice{#2 excess:3/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#9} Voice{#1 excess:1/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#10} Voice{#2 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#14} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#17} Voice{#1 excess:1/4} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#21} Voice{#2 excess:1/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#24} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#30} Voice{#2 excess:1/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#31} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#32} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#40} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,416 INFO [sb-054]                Voice.java:257  | Measure{#43} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,417 INFO [sb-054]                Voice.java:257  | Measure{#44} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,417 INFO [sb-054]                Voice.java:257  | Measure{#47} Voice{#1 excess:1/8} too long
+2026-06-06 01:44:28,417 INFO [sb-054]                Voice.java:257  | Measure{#49} Voice{#1 excess:3/16} too long
+2026-06-06 01:44:28,418 INFO [sb-054]                 Book.java:2584 | Book{sb-054} storing
+2026-06-06 01:44:28,716 INFO [sb-054]                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:44:28,780 INFO [sb-054]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-06 01:44:29,073 INFO [sb-054]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-06 01:44:29,074 INFO [sb-054]                 Book.java:2525 | Book stored as omr/out/sb-054.omr
+2026-06-06 01:44:29,074 INFO [sb-054]            SheetStub.java:1655 | Sheet disposed
+2026-06-06 01:44:29,329 INFO [sb-054]                 Book.java:2050 | End of Stub#1
+2026-06-06 01:44:29,330 INFO [sb-054]                 Book.java:2057 | End of Book{sb-054}
+2026-06-06 01:44:29,551 INFO [sb-054]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-06 01:44:29,552 INFO [sb-054]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-06 01:44:29,567 INFO [sb-054]        ScoreExporter.java:164  | Score sb-054 exported to omr/out/sb-054.mxl
+2026-06-06 01:44:29,838 INFO [sb-054]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,94 @@
+2026-06-06 01:33:58,301 INFO [sb-001]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-001.png
+2026-06-06 01:33:58,497 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:33:58,497 INFO []                 Book.java:2525 | Book stored as omr/out/sb-001.omr
+2026-06-06 01:33:58,499 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-06 01:33:58,500 INFO [sb-001]       StepMonitoring.java:98   | LOAD
+2026-06-06 01:33:58,635 INFO [sb-001]            SheetStub.java:1278 | Loaded image #1 3175x1935 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-001.png
+2026-06-06 01:33:58,638 INFO [sb-001]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-06 01:33:58,818 INFO [sb-001]       StepMonitoring.java:98   | BINARY
+2026-06-06 01:33:59,292 INFO [sb-001]       StepMonitoring.java:98   | SCALE
+2026-06-06 01:33:59,318 INFO [sb-001]         ScaleBuilder.java:255  | Beam  guessed height: 13 -- mid of [6..21]
+2026-06-06 01:33:59,324 INFO [sb-001]         ScaleBuilder.java:271  | Beam measured height: 13 -- 0.47 of [6..21] range at 361% of needed quorum
+2026-06-06 01:33:59,324 INFO [sb-001]         ScaleBuilder.java:401  | Normalized black jitter: 8.70 %
+2026-06-06 01:33:59,324 INFO [sb-001]            ScaleStep.java:65   | Scale{ interline(22,23,23) line(4,5,6) beam(13)}
+2026-06-06 01:33:59,325 INFO [sb-001]       StepMonitoring.java:98   | GRID
+2026-06-06 01:33:59,765 INFO [sb-001]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-06 01:33:59,800 INFO [sb-001]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(22,23,23)
+2026-06-06 01:33:59,957 INFO [sb-001]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4]
+2026-06-06 01:34:00,213 INFO [sb-001]        SystemManager.java:134  | Indentation detected for system #1
+2026-06-06 01:34:00,214 INFO [sb-001]        SystemManager.java:779  | 1 part along 4 systems
+2026-06-06 01:34:00,215 INFO [sb-001]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-06 01:34:00,215 INFO [sb-001]       StepMonitoring.java:98   | HEADERS
+2026-06-06 01:34:01,266 INFO [sb-001]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-06 01:34:01,393 INFO [sb-001]        StemSeedsStep.java:86   | stem(4 max:6)
+2026-06-06 01:34:01,457 INFO [sb-001]       StepMonitoring.java:98   | BEAMS
+2026-06-06 01:34:04,711 INFO [sb-001]       StepMonitoring.java:98   | LEDGERS
+2026-06-06 01:34:04,898 INFO [sb-001]       StepMonitoring.java:98   | HEADS
+2026-06-06 01:34:09,324 INFO [sb-001]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.2] NOTEHEAD_BLACK[L:0.3,R:-0.1]}
+2026-06-06 01:34:09,325 INFO [sb-001]       StepMonitoring.java:98   | STEMS
+2026-06-06 01:34:09,965 INFO [sb-001]       StepMonitoring.java:98   | REDUCTION
+2026-06-06 01:34:10,074 INFO [sb-001]        ReductionStep.java:105  | Stems free length median value: 77 pixels, 3.3 interlines
+2026-06-06 01:34:10,079 INFO [sb-001]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-06 01:34:10,079 INFO [sb-001]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-06 01:34:10,080 INFO [sb-001]       StepMonitoring.java:98   | TEXTS
+2026-06-06 01:34:10,283 WARN [sb-001]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:34:10,284 INFO [sb-001]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:34:10,296 INFO [sb-001]       StepMonitoring.java:98   | MEASURES
+2026-06-06 01:34:10,303 INFO [sb-001]                 Page.java:307  | 43 raw measures: [8 in system#1, 12 in system#2, 11 in system#3, 12 in system#4]
+2026-06-06 01:34:10,304 INFO [sb-001]       StepMonitoring.java:98   | CHORDS
+2026-06-06 01:34:10,322 INFO [sb-001]       StepMonitoring.java:98   | CURVES
+2026-06-06 01:34:11,087 INFO [sb-001]         SlursBuilder.java:240  | Slurs: 33
+2026-06-06 01:34:11,123 INFO [sb-001]      SegmentsBuilder.java:155  | Segments: 28
+2026-06-06 01:34:11,139 WARN [sb-001]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:34:11,140 INFO [sb-001]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:34:11,140 INFO [sb-001]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=337,y=225,width=193,height=75]
+2026-06-06 01:34:11,145 WARN [sb-001]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:34:11,145 INFO [sb-001]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:34:11,145 INFO [sb-001]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=404,y=598,width=79,height=73]
+2026-06-06 01:34:11,149 WARN [sb-001]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:34:11,149 INFO [sb-001]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:34:11,149 INFO [sb-001]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=1872,y=1125,width=74,height=72]
+2026-06-06 01:34:11,150 INFO [sb-001]       StepMonitoring.java:98   | SYMBOLS
+2026-06-06 01:34:12,206 INFO [sb-001]       StepMonitoring.java:98   | LINKS
+2026-06-06 01:34:12,217 INFO [sb-001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5232{(0.128) staff:2 OTTAVA BASSA} at java.awt.Point[x=445,y=1179]
+2026-06-06 01:34:12,228 INFO [sb-001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5282{(0.128) staff:3 OTTAVA ALTA} at java.awt.Point[x=445,y=1179]
+2026-06-06 01:34:12,237 INFO [sb-001]             KeyInter.java:1322 | Key built KeyInter#5456{(0.137) staff:4 KEY_SHARP_1 pitch:-4.3 fifths:1}
+2026-06-06 01:34:12,238 INFO [sb-001]             KeyInter.java:1322 | Key built KeyInter#5458{(0.694) staff:4 KEY_CANCEL pitch:-3.6 fifths:null}
+2026-06-06 01:34:12,248 INFO [sb-001]       StepMonitoring.java:98   | RHYTHMS
+2026-06-06 01:34:12,296 INFO [sb-001]       StepMonitoring.java:98   | PAGE
+2026-06-06 01:34:12,302 INFO [sb-001]                 Book.java:2584 | Book{sb-001} storing
+2026-06-06 01:34:12,353 INFO [sb-001]                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:34:12,431 INFO [sb-001]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-06 01:34:13,042 INFO [sb-001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-06 01:34:13,043 INFO [sb-001]                 Book.java:2525 | Book stored as omr/out/sb-001.omr
+2026-06-06 01:34:13,044 INFO [sb-001]            SheetStub.java:1655 | Sheet disposed
+2026-06-06 01:34:13,071 INFO [sb-001]                 Book.java:2050 | End of Stub#1
+2026-06-06 01:34:13,072 INFO [sb-001]                 Book.java:2057 | End of Book{sb-001}
+2026-06-06 01:34:13,525 INFO [sb-001]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-06 01:34:13,820 INFO [sb-001]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-06 01:34:13,838 WARN [sb-001]      PartwiseBuilder.java:1777 | Error visiting KeyInter#5458{(0.694/0.694) staff:4 KEY_CANCEL pitch:-3.6 fifths:null} in {Page#1.1}
+java.lang.NumberFormatException: For input string: "null"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.math.BigInteger.<init>(BigInteger.java:583)
+	at java.base/java.math.BigInteger.<init>(BigInteger.java:721)
+	at org.audiveris.omr.score.PartwiseBuilder.processKey(PartwiseBuilder.java:1742)
+	at org.audiveris.omr.score.PartwiseBuilder.processKeys(PartwiseBuilder.java:1795)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2041)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-06-06 01:34:13,918 INFO [sb-001]        ScoreExporter.java:164  | Score sb-001 exported to omr/out/sb-001.mxl
+2026-06-06 01:34:13,970 INFO [sb-001]                Score.java:181  | Closing {Score 1}

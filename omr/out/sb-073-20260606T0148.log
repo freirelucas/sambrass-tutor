@@ -1,0 +1,69 @@
+2026-06-06 01:48:16,953 INFO [sb-073]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-073.png
+2026-06-06 01:48:17,292 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:48:17,292 INFO []                 Book.java:2525 | Book stored as omr/out/sb-073.omr
+2026-06-06 01:48:17,292 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-06 01:48:17,293 INFO [sb-073]       StepMonitoring.java:98   | LOAD
+2026-06-06 01:48:17,356 INFO [sb-073]            SheetStub.java:1278 | Loaded image #1 3175x1935 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/sb-073.png
+2026-06-06 01:48:17,357 INFO [sb-073]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-06 01:48:17,431 INFO [sb-073]       StepMonitoring.java:98   | BINARY
+2026-06-06 01:48:17,664 INFO [sb-073]       StepMonitoring.java:98   | SCALE
+2026-06-06 01:48:17,665 INFO [sb-073]         ScaleBuilder.java:255  | Beam  guessed height: 16 -- mid of [7..25]
+2026-06-06 01:48:17,665 INFO [sb-073]         ScaleBuilder.java:271  | Beam measured height: 15 -- 0.44 of [7..25] range at 446% of needed quorum
+2026-06-06 01:48:17,666 INFO [sb-073]         ScaleBuilder.java:401  | Normalized black jitter: 11.54 %
+2026-06-06 01:48:17,666 INFO [sb-073]            ScaleStep.java:65   | Scale{ interline(25,26,27) line(3,4,6) beam(15)}
+2026-06-06 01:48:17,666 INFO [sb-073]       StepMonitoring.java:98   | GRID
+2026-06-06 01:48:17,757 INFO [sb-073]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-06 01:48:17,761 INFO [sb-073]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(25,26,27)
+2026-06-06 01:48:17,788 INFO [sb-073]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4]
+2026-06-06 01:48:17,901 INFO [sb-073]        SystemManager.java:779  | 1 part along 4 systems
+2026-06-06 01:48:17,901 INFO [sb-073]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-06 01:48:17,901 INFO [sb-073]       StepMonitoring.java:98   | HEADERS
+2026-06-06 01:48:17,980 INFO [sb-073]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-06 01:48:18,011 INFO [sb-073]        StemSeedsStep.java:86   | stem(6 max:7)
+2026-06-06 01:48:18,026 INFO [sb-073]       StepMonitoring.java:98   | BEAMS
+2026-06-06 01:48:21,617 INFO [sb-073]       StepMonitoring.java:98   | LEDGERS
+2026-06-06 01:48:21,720 INFO [sb-073]       StepMonitoring.java:98   | HEADS
+2026-06-06 01:48:26,844 INFO [sb-073]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-1.3,R:-1.7]}
+2026-06-06 01:48:26,844 INFO [sb-073]       StepMonitoring.java:98   | STEMS
+2026-06-06 01:48:27,102 INFO [sb-073]       StepMonitoring.java:98   | REDUCTION
+2026-06-06 01:48:27,118 INFO [sb-073]        ReductionStep.java:105  | Stems free length median value: 89 pixels, 3.4 interlines
+2026-06-06 01:48:27,119 INFO [sb-073]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-06 01:48:27,119 INFO [sb-073]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-06 01:48:27,119 INFO [sb-073]       StepMonitoring.java:98   | TEXTS
+2026-06-06 01:48:27,185 WARN [sb-073]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:48:27,186 INFO [sb-073]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:48:27,186 INFO [sb-073]       StepMonitoring.java:98   | MEASURES
+2026-06-06 01:48:27,187 INFO [sb-073]                 Page.java:307  | 34 raw measures: [8 in system#1, 7 in system#2, 11 in system#3, 8 in system#4]
+2026-06-06 01:48:27,187 INFO [sb-073]       StepMonitoring.java:98   | CHORDS
+2026-06-06 01:48:27,188 INFO [sb-073]       StepMonitoring.java:98   | CURVES
+2026-06-06 01:48:27,522 INFO [sb-073]         SlursBuilder.java:240  | Slurs: 34
+2026-06-06 01:48:27,527 INFO [sb-073]      SegmentsBuilder.java:155  | Segments: 36
+2026-06-06 01:48:27,530 WARN [sb-073]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:48:27,530 INFO [sb-073]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:48:27,530 INFO [sb-073]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=123,y=116,width=81,height=80]
+2026-06-06 01:48:27,532 WARN [sb-073]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-06 01:48:27,532 INFO [sb-073]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-06 01:48:27,532 INFO [sb-073]    RehearsalsBuilder.java:199  | No text found in rehearsal enclosure java.awt.Rectangle[x=470,y=916,width=81,height=78]
+2026-06-06 01:48:27,533 INFO [sb-073]       StepMonitoring.java:98   | SYMBOLS
+2026-06-06 01:48:28,255 INFO [sb-073]       StepMonitoring.java:98   | LINKS
+2026-06-06 01:48:28,260 INFO [sb-073]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#3960{(0.343) staff:3 OTTAVA BASSA} at java.awt.Point[x=30,y=1543]
+2026-06-06 01:48:28,261 INFO [sb-073]             KeyInter.java:1322 | Key built KeyInter#4030{(0.800) staff:3 KEY_SHARP_1 pitch:-4.0 fifths:1}
+2026-06-06 01:48:28,264 INFO [sb-073]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4010{(0.343) staff:4 OTTAVA ALTA} at java.awt.Point[x=30,y=1543]
+2026-06-06 01:48:28,264 INFO [sb-073]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4013{(0.139) staff:4 OTTAVA ALTA} at java.awt.Point[x=767,y=1354]
+2026-06-06 01:48:28,267 INFO [sb-073]       StepMonitoring.java:98   | RHYTHMS
+2026-06-06 01:48:28,269 INFO [sb-073]        MeasureRhythm.java:1044 | Measure{#15} No timeOffset for HeadChordInter#3220{(0.568/0.568) staff:2 slot#5 dur:1/2}
+2026-06-06 01:48:28,270 INFO [sb-073]   AbstractChordInter.java:627  | Measure{#15} No timeOffset for HeadChordInter#3220{(0.568/0.568) staff:2 slot#5 dur:1/2}
+2026-06-06 01:48:28,270 INFO [sb-073]          StackRhythm.java:224  | S2 MeasureStack#15 no correct rhythm
+2026-06-06 01:48:28,272 INFO [sb-073]       StepMonitoring.java:98   | PAGE
+2026-06-06 01:48:28,273 INFO [sb-073]                 Book.java:2584 | Book{sb-073} storing
+2026-06-06 01:48:28,643 INFO [sb-073]                 Book.java:2565 | Stored /book.xml
+2026-06-06 01:48:28,693 INFO [sb-073]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-06 01:48:28,896 INFO [sb-073]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-06 01:48:28,896 INFO [sb-073]                 Book.java:2525 | Book stored as omr/out/sb-073.omr
+2026-06-06 01:48:28,897 INFO [sb-073]            SheetStub.java:1655 | Sheet disposed
+2026-06-06 01:48:29,233 INFO [sb-073]                 Book.java:2050 | End of Stub#1
+2026-06-06 01:48:29,234 INFO [sb-073]                 Book.java:2057 | End of Book{sb-073}
+2026-06-06 01:48:29,377 INFO [sb-073]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-06 01:48:29,378 INFO [sb-073]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-06 01:48:29,385 INFO [sb-073]        ScoreExporter.java:164  | Score sb-073 exported to omr/out/sb-073.mxl
+2026-06-06 01:48:29,764 INFO [sb-073]                Score.java:181  | Closing {Score 1}
