@@ -40,10 +40,11 @@ function telaHoje() {
 function linhaPeca(n) {
   const p = DB.byNum[n]; if (!p) return '';
   const st = PROG[n] ? ` · ${PROG[n]}` : '';
-  return `<li><a class="peca" href="#" onclick="verPeca(${n});return false">
-    <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo}
-    <span class="dif">${p.dificuldade || '?'}</span>
-    <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}</div></a></li>`;
+  return `<li><div class="linha"><button class="playmini" onclick="event.stopPropagation();tocarPeca(${n})" aria-label="tocar">▶</button>
+    <a class="peca" href="#" onclick="verPeca(${n});return false">
+      <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo}
+      <span class="dif">${p.dificuldade || '?'}</span>
+      <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}</div></a></div></li>`;
 }
 
 function telaBanco() {
@@ -169,7 +170,7 @@ function renderPlayer(transpose) {
   const visual = ABCJS.renderAbc('paper', PLAYER.abc, { add_classes: true, responsive: 'resize', visualTranspose: transpose })[0];
   if (!ABCJS.synth || !ABCJS.synth.supportsAudio()) { $('#audio').innerHTML = '<p class="meta">áudio não suportado neste navegador.</p>'; return; }
   SYNTH = new ABCJS.synth.SynthController();
-  SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true });
+  SYNTH.load('#audio', cursorCtl(), { displayPlay: true, displayProgress: true, displayWarp: true, displayLoop: true, displayRestart: true });
   SYNTH.setTune(visual, false, { program: 56 }).catch(() => {});
 }
 function cursorCtl() {
