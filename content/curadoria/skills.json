@@ -1,0 +1,22 @@
+{
+  "skills": {
+    "tom-0": "tonalidade sem acidentes (Dó/Sib escritos)",
+    "tom-1": "tonalidade 1 acidente (Fá/Sol)",
+    "tom-2": "tonalidade 2 acidentes (Ré/Sib)",
+    "tom-3": "tonalidade 3 acidentes (Lá/Mib)",
+    "tom-6": "tonalidade extrema (Fá#, 6 sustenidos)",
+    "sincope": "síncope (C2)",
+    "tercina": "tercina (C5)",
+    "colcheia-pontuada": "colcheia pontuada + semicolcheia (C3)",
+    "semicolcheia": "semicolcheias / staccato duplo (C4)",
+    "contratempo": "contratempo / ataque no 'e' (C6)",
+    "anacruse": "anacruse (C7)",
+    "casas": "casas 1ª/2ª",
+    "ds-dc": "D.S. / D.C. (saltos)",
+    "modulacao": "modulação de armadura",
+    "forma-longa": "forma longa (A/B/C/D)",
+    "forma-extensa": "forma extensa / resistência",
+    "cromatismo": "cromatismo de passagem",
+    "compasso-4-4": "leitura em 4/4"
+  }
+}

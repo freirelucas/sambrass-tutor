@@ -1,0 +1,1137 @@
+{
+  "pieces": [
+    {
+      "num": 1,
+      "titulo": "Até Amanhã",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 2,
+      "titulo": "Com Que Roupa",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 3,
+      "titulo": "Feitiço da Vila",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 4,
+      "titulo": "Fita Amarela",
+      "skills": [
+        "anacruse",
+        "casas",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 5,
+      "titulo": "Acontece",
+      "skills": [
+        "compasso-4-4",
+        "forma-longa",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 6,
+      "titulo": "As Rosas Não Falam",
+      "skills": [
+        "cromatismo",
+        "forma-extensa",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 7,
+      "titulo": "Corra e Olhe o Céu",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 8,
+      "titulo": "O Mundo é um Moinho",
+      "skills": [
+        "compasso-4-4",
+        "cromatismo",
+        "forma-extensa",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 9,
+      "titulo": "O Sol Nascerá",
+      "skills": [
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 10,
+      "titulo": "Peito Vazio",
+      "skills": [
+        "forma-longa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 11,
+      "titulo": "Preciso Me Encontrar",
+      "skills": [
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 12,
+      "titulo": "Tive Sim",
+      "skills": [
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 13,
+      "titulo": "A Flor e o Espinho",
+      "skills": [
+        "cromatismo",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 14,
+      "titulo": "Folhas Secas",
+      "skills": [
+        "colcheia-pontuada",
+        "cromatismo",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 15,
+      "titulo": "Juízo Final",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tercina",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 16,
+      "titulo": "Vou Partir",
+      "skills": [
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 17,
+      "titulo": "A Voz do Morro",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "forma-longa",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 18,
+      "titulo": "Diz Que Fui por Aí",
+      "skills": [
+        "casas",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 19,
+      "titulo": "Mascarada",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 20,
+      "titulo": "Tiro ao Álvaro",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 21,
+      "titulo": "Samba do Arnesto",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 22,
+      "titulo": "Trem das Onze",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 23,
+      "titulo": "Saudosa Maloca",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "forma-extensa",
+        "sincope",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 24,
+      "titulo": "Acreditar",
+      "skills": [
+        "ds-dc",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 25,
+      "titulo": "Alguém Me Avisou",
+      "skills": [
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 26,
+      "titulo": "Enredo do Meu Samba",
+      "skills": [
+        "compasso-4-4",
+        "cromatismo",
+        "ds-dc",
+        "forma-longa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 27,
+      "titulo": "Sonho Meu",
+      "skills": [
+        "forma-extensa",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 28,
+      "titulo": "Casa de Bamba",
+      "skills": [
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 29,
+      "titulo": "Ex Amor",
+      "skills": [
+        "casas",
+        "colcheia-pontuada",
+        "forma-extensa",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 30,
+      "titulo": "Madalena do Jucu",
+      "skills": [
+        "casas",
+        "colcheia-pontuada",
+        "ds-dc",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 31,
+      "titulo": "Renascer das Cinzas",
+      "skills": [
+        "casas",
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 32,
+      "titulo": "Água de Chuva no Mar",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 33,
+      "titulo": "Andança",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "tercina",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 34,
+      "titulo": "Se Você Jurar",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 35,
+      "titulo": "Tristeza",
+      "skills": [
+        "contratempo",
+        "forma-longa",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 36,
+      "titulo": "Vou Festejar",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "modulacao",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 37,
+      "titulo": "Conselho",
+      "skills": [
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 38,
+      "titulo": "Do Fundo do Nosso Quintal",
+      "skills": [
+        "casas",
+        "contratempo",
+        "ds-dc",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 39,
+      "titulo": "Eu e Você Sempre",
+      "skills": [
+        "compasso-4-4",
+        "contratempo",
+        "ds-dc",
+        "forma-longa",
+        "sincope",
+        "tom-6"
+      ]
+    },
+    {
+      "num": 40,
+      "titulo": "Falsa Consideração",
+      "skills": [
+        "contratempo",
+        "ds-dc",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 41,
+      "titulo": "Identidade",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "ds-dc",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 42,
+      "titulo": "Lucidez",
+      "skills": [
+        "ds-dc",
+        "forma-extensa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 43,
+      "titulo": "Malandro",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 44,
+      "titulo": "Não Deixe o Samba Morrer",
+      "skills": [
+        "contratempo",
+        "forma-longa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 45,
+      "titulo": "Sufoco",
+      "skills": [
+        "casas",
+        "modulacao",
+        "sincope",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 46,
+      "titulo": "Você Me Vira a Cabeça",
+      "skills": [
+        "compasso-4-4",
+        "ds-dc",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 47,
+      "titulo": "Coração em Desalinho",
+      "skills": [
+        "casas",
+        "forma-extensa",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 48,
+      "titulo": "Jura",
+      "skills": [
+        "colcheia-pontuada",
+        "cromatismo",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 49,
+      "titulo": "Vai Vadiar",
+      "skills": [
+        "casas",
+        "forma-extensa",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 50,
+      "titulo": "Verdade",
+      "skills": [
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 51,
+      "titulo": "Vivo Isolado do Mundo",
+      "skills": [
+        "compasso-4-4",
+        "cromatismo",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 52,
+      "titulo": "Ainda Mais",
+      "skills": [
+        "casas",
+        "sincope",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 53,
+      "titulo": "Coração Leviano",
+      "skills": [
+        "casas",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 54,
+      "titulo": "Dança da Solidão",
+      "skills": [
+        "cromatismo",
+        "ds-dc",
+        "forma-longa",
+        "tercina",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 55,
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "skills": [
+        "cromatismo",
+        "forma-extensa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 56,
+      "titulo": "Pecado Capital",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "contratempo",
+        "cromatismo",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 57,
+      "titulo": "A Volta do Malandro",
+      "skills": [
+        "colcheia-pontuada",
+        "cromatismo",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 58,
+      "titulo": "De Volta ao Samba",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 59,
+      "titulo": "Homenagem ao Malandro",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "ds-dc",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 60,
+      "titulo": "Partido Alto",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "semicolcheia",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 61,
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "skills": [
+        "cromatismo",
+        "modulacao",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 62,
+      "titulo": "Samba do Grande Amor",
+      "skills": [
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 63,
+      "titulo": "Sem Compromisso",
+      "skills": [
+        "casas",
+        "contratempo",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 64,
+      "titulo": "A Felicidade",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 65,
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "skills": [
+        "casas",
+        "semicolcheia",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 66,
+      "titulo": "Consolação",
+      "skills": [
+        "forma-longa",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 67,
+      "titulo": "O Morro Não Tem Vez",
+      "skills": [
+        "casas",
+        "colcheia-pontuada",
+        "cromatismo",
+        "ds-dc",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 68,
+      "titulo": "Pra Que Chorar",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 69,
+      "titulo": "Regra Três",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tercina",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 70,
+      "titulo": "Samba de Orly",
+      "skills": [
+        "cromatismo",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 71,
+      "titulo": "Ronda",
+      "skills": [
+        "forma-longa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 72,
+      "titulo": "Naquela Mesa",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "cromatismo",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 73,
+      "titulo": "Retalhos de Cetim",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "modulacao",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 74,
+      "titulo": "Você Abusou",
+      "skills": [
+        "compasso-4-4",
+        "cromatismo",
+        "modulacao",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 75,
+      "titulo": "Me Deixe em Paz",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 76,
+      "titulo": "É Preciso Perdoar",
+      "skills": [
+        "ds-dc",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 77,
+      "titulo": "Desde Que o Samba é Samba",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 78,
+      "titulo": "Cicatrizes",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 79,
+      "titulo": "De Mais Ninguém",
+      "skills": [
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 80,
+      "titulo": "O Bêbado e o Equilibrista",
+      "skills": [
+        "casas",
+        "contratempo",
+        "cromatismo",
+        "forma-extensa",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 81,
+      "titulo": "De Frente pro Crime",
+      "skills": [
+        "casas",
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 82,
+      "titulo": "Linha de Passe",
+      "skills": [
+        "casas",
+        "ds-dc",
+        "forma-extensa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 83,
+      "titulo": "Comportamento Geral",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "semicolcheia",
+        "sincope",
+        "tercina",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 84,
+      "titulo": "Flor de Lis",
+      "skills": [
+        "casas",
+        "contratempo",
+        "tercina",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 85,
+      "titulo": "Mas Que Nada",
+      "skills": [
+        "semicolcheia",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 86,
+      "titulo": "Eu Bebo Sim",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 87,
+      "titulo": "Maracangalha",
+      "skills": [
+        "colcheia-pontuada",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 88,
+      "titulo": "Leva Meu Samba",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 89,
+      "titulo": "Na Cadência do Samba",
+      "skills": [
+        "casas",
+        "forma-extensa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 90,
+      "titulo": "Pimenta no Vatapá",
+      "skills": [
+        "casas",
+        "forma-extensa",
+        "sincope",
+        "tercina",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 91,
+      "titulo": "Do Jeito Que o Rei Mandou",
+      "skills": [
+        "casas",
+        "ds-dc",
+        "modulacao",
+        "sincope",
+        "tercina",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 92,
+      "titulo": "Canto das Três Raças",
+      "skills": [
+        "forma-extensa",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 93,
+      "titulo": "Tristeza, Pé no Chão",
+      "skills": [
+        "semicolcheia",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 94,
+      "titulo": "A Batucada dos Nossos Tantãs",
+      "skills": [
+        "casas",
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 95,
+      "titulo": "Agamamou",
+      "skills": [
+        "casas",
+        "compasso-4-4",
+        "ds-dc",
+        "forma-extensa",
+        "semicolcheia",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 96,
+      "titulo": "Caçamba",
+      "skills": [
+        "forma-extensa",
+        "semicolcheia",
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "num": 97,
+      "titulo": "Cheia de Manias",
+      "skills": [
+        "compasso-4-4",
+        "ds-dc",
+        "semicolcheia",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 98,
+      "titulo": "Cilada",
+      "skills": [
+        "casas",
+        "cromatismo",
+        "forma-longa",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 99,
+      "titulo": "Cigana",
+      "skills": [
+        "casas",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 100,
+      "titulo": "Coração Radiante",
+      "skills": [
+        "compasso-4-4",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 101,
+      "titulo": "Deixa Acontecer",
+      "skills": [
+        "forma-longa",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 102,
+      "titulo": "Domingo",
+      "skills": [
+        "casas",
+        "modulacao",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 103,
+      "titulo": "Essa Tal Liberdade",
+      "skills": [
+        "compasso-4-4",
+        "forma-longa",
+        "modulacao",
+        "sincope",
+        "tom-2"
+      ]
+    },
+    {
+      "num": 104,
+      "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 105,
+      "titulo": "Inaraí",
+      "skills": [
+        "compasso-4-4",
+        "ds-dc",
+        "forma-longa",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 106,
+      "titulo": "Pé na Areia",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "sincope",
+        "tom-0"
+      ]
+    },
+    {
+      "num": 107,
+      "titulo": "Ta Escrito",
+      "skills": [
+        "forma-extensa",
+        "semicolcheia",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 108,
+      "titulo": "É Tarde Demais",
+      "skills": [
+        "casas",
+        "ds-dc",
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 109,
+      "titulo": "Telegrama",
+      "skills": [
+        "casas",
+        "forma-longa",
+        "sincope",
+        "tom-3"
+      ]
+    },
+    {
+      "num": 110,
+      "titulo": "Temporal",
+      "skills": [
+        "forma-longa",
+        "semicolcheia",
+        "sincope",
+        "tom-2"
+      ]
+    }
+  ]
+}

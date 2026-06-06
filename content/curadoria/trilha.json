@@ -1,0 +1,3877 @@
+{
+  "_meta": {
+    "sobre": "trilha mestra (1 habilidade nova/passo), trilhas por habilidade, escada de leitura à 1ª vista. dificuldade_calc = recalibrada 1–10."
+  },
+  "trilha_mestra": [
+    {
+      "passo": 1,
+      "num": 25,
+      "titulo": "Alguém Me Avisou",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "sincope",
+        "tom-1"
+      ]
+    },
+    {
+      "passo": 2,
+      "num": 12,
+      "titulo": "Tive Sim",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 3,
+      "num": 9,
+      "titulo": "O Sol Nascerá",
+      "dificuldade_calc": 1,
+      "habilidade_nova": [
+        "tercina"
+      ]
+    },
+    {
+      "passo": 4,
+      "num": 11,
+      "titulo": "Preciso Me Encontrar",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 5,
+      "num": 1,
+      "titulo": "Até Amanhã",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "casas"
+      ]
+    },
+    {
+      "passo": 6,
+      "num": 18,
+      "titulo": "Diz Que Fui por Aí",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 7,
+      "num": 53,
+      "titulo": "Coração Leviano",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 8,
+      "num": 77,
+      "titulo": "Desde Que o Samba é Samba",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 9,
+      "num": 68,
+      "titulo": "Pra Que Chorar",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "forma-longa"
+      ]
+    },
+    {
+      "passo": 10,
+      "num": 10,
+      "titulo": "Peito Vazio",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 11,
+      "num": 71,
+      "titulo": "Ronda",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 12,
+      "num": 35,
+      "titulo": "Tristeza",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "contratempo"
+      ]
+    },
+    {
+      "passo": 13,
+      "num": 44,
+      "titulo": "Não Deixe o Samba Morrer",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 14,
+      "num": 86,
+      "titulo": "Eu Bebo Sim",
+      "dificuldade_calc": 3,
+      "habilidade_nova": [
+        "tom-0"
+      ]
+    },
+    {
+      "passo": 15,
+      "num": 66,
+      "titulo": "Consolação",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 16,
+      "num": 99,
+      "titulo": "Cigana",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 17,
+      "num": 106,
+      "titulo": "Pé na Areia",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 18,
+      "num": 76,
+      "titulo": "É Preciso Perdoar",
+      "dificuldade_calc": 1,
+      "habilidade_nova": [
+        "ds-dc"
+      ]
+    },
+    {
+      "passo": 19,
+      "num": 38,
+      "titulo": "Do Fundo do Nosso Quintal",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 20,
+      "num": 3,
+      "titulo": "Feitiço da Vila",
+      "dificuldade_calc": 4,
+      "habilidade_nova": [
+        "cromatismo"
+      ]
+    },
+    {
+      "passo": 21,
+      "num": 15,
+      "titulo": "Juízo Final",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 22,
+      "num": 33,
+      "titulo": "Andança",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 23,
+      "num": 34,
+      "titulo": "Se Você Jurar",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 24,
+      "num": 64,
+      "titulo": "A Felicidade",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 25,
+      "num": 2,
+      "titulo": "Com Que Roupa",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 26,
+      "num": 22,
+      "titulo": "Trem das Onze",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 27,
+      "num": 32,
+      "titulo": "Água de Chuva no Mar",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 28,
+      "num": 98,
+      "titulo": "Cilada",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 29,
+      "num": 59,
+      "titulo": "Homenagem ao Malandro",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 30,
+      "num": 37,
+      "titulo": "Conselho",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 31,
+      "num": 48,
+      "titulo": "Jura",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "colcheia-pontuada"
+      ]
+    },
+    {
+      "passo": 32,
+      "num": 57,
+      "titulo": "A Volta do Malandro",
+      "dificuldade_calc": 3,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 33,
+      "num": 67,
+      "titulo": "O Morro Não Tem Vez",
+      "dificuldade_calc": 3,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 34,
+      "num": 14,
+      "titulo": "Folhas Secas",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 35,
+      "num": 41,
+      "titulo": "Identidade",
+      "dificuldade_calc": 4,
+      "habilidade_nova": [
+        "compasso-4-4"
+      ]
+    },
+    {
+      "passo": 36,
+      "num": 46,
+      "titulo": "Você Me Vira a Cabeça",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 37,
+      "num": 72,
+      "titulo": "Naquela Mesa",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 38,
+      "num": 51,
+      "titulo": "Vivo Isolado do Mundo",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 39,
+      "num": 26,
+      "titulo": "Enredo do Meu Samba",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 40,
+      "num": 5,
+      "titulo": "Acontece",
+      "dificuldade_calc": 4,
+      "habilidade_nova": [
+        "tom-2"
+      ]
+    },
+    {
+      "passo": 41,
+      "num": 75,
+      "titulo": "Me Deixe em Paz",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 42,
+      "num": 20,
+      "titulo": "Tiro ao Álvaro",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 43,
+      "num": 40,
+      "titulo": "Falsa Consideração",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 44,
+      "num": 52,
+      "titulo": "Ainda Mais",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 45,
+      "num": 63,
+      "titulo": "Sem Compromisso",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 46,
+      "num": 88,
+      "titulo": "Leva Meu Samba",
+      "dificuldade_calc": 5,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 47,
+      "num": 17,
+      "titulo": "A Voz do Morro",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 48,
+      "num": 78,
+      "titulo": "Cicatrizes",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 49,
+      "num": 101,
+      "titulo": "Deixa Acontecer",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 50,
+      "num": 19,
+      "titulo": "Mascarada",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 51,
+      "num": 70,
+      "titulo": "Samba de Orly",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 52,
+      "num": 43,
+      "titulo": "Malandro",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 53,
+      "num": 56,
+      "titulo": "Pecado Capital",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 54,
+      "num": 69,
+      "titulo": "Regra Três",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 55,
+      "num": 4,
+      "titulo": "Fita Amarela",
+      "dificuldade_calc": 2,
+      "habilidade_nova": [
+        "anacruse"
+      ]
+    },
+    {
+      "passo": 56,
+      "num": 16,
+      "titulo": "Vou Partir",
+      "dificuldade_calc": 4,
+      "habilidade_nova": [
+        "tom-3"
+      ]
+    },
+    {
+      "passo": 57,
+      "num": 30,
+      "titulo": "Madalena do Jucu",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 58,
+      "num": 87,
+      "titulo": "Maracangalha",
+      "dificuldade_calc": 4,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 59,
+      "num": 7,
+      "titulo": "Corra e Olhe o Céu",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 60,
+      "num": 105,
+      "titulo": "Inaraí",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 61,
+      "num": 109,
+      "titulo": "Telegrama",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 62,
+      "num": 84,
+      "titulo": "Flor de Lis",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 63,
+      "num": 54,
+      "titulo": "Dança da Solidão",
+      "dificuldade_calc": 10,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 64,
+      "num": 97,
+      "titulo": "Cheia de Manias",
+      "dificuldade_calc": 5,
+      "habilidade_nova": [
+        "semicolcheia"
+      ]
+    },
+    {
+      "passo": 65,
+      "num": 24,
+      "titulo": "Acreditar",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 66,
+      "num": 50,
+      "titulo": "Verdade",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 67,
+      "num": 81,
+      "titulo": "De Frente pro Crime",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 68,
+      "num": 83,
+      "titulo": "Comportamento Geral",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 69,
+      "num": 85,
+      "titulo": "Mas Que Nada",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 70,
+      "num": 94,
+      "titulo": "A Batucada dos Nossos Tantãs",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 71,
+      "num": 100,
+      "titulo": "Coração Radiante",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 72,
+      "num": 104,
+      "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 73,
+      "num": 28,
+      "titulo": "Casa de Bamba",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 74,
+      "num": 31,
+      "titulo": "Renascer das Cinzas",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 75,
+      "num": 58,
+      "titulo": "De Volta ao Samba",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 76,
+      "num": 62,
+      "titulo": "Samba do Grande Amor",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 77,
+      "num": 79,
+      "titulo": "De Mais Ninguém",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 78,
+      "num": 110,
+      "titulo": "Temporal",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 79,
+      "num": 21,
+      "titulo": "Samba do Arnesto",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 80,
+      "num": 60,
+      "titulo": "Partido Alto",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 81,
+      "num": 65,
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 82,
+      "num": 93,
+      "titulo": "Tristeza, Pé no Chão",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 83,
+      "num": 108,
+      "titulo": "É Tarde Demais",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 84,
+      "num": 13,
+      "titulo": "A Flor e o Espinho",
+      "dificuldade_calc": 9,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 85,
+      "num": 102,
+      "titulo": "Domingo",
+      "dificuldade_calc": 5,
+      "habilidade_nova": [
+        "modulacao"
+      ]
+    },
+    {
+      "passo": 86,
+      "num": 61,
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 87,
+      "num": 91,
+      "titulo": "Do Jeito Que o Rei Mandou",
+      "dificuldade_calc": 6,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 88,
+      "num": 36,
+      "titulo": "Vou Festejar",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 89,
+      "num": 45,
+      "titulo": "Sufoco",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 90,
+      "num": 73,
+      "titulo": "Retalhos de Cetim",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 91,
+      "num": 74,
+      "titulo": "Você Abusou",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 92,
+      "num": 103,
+      "titulo": "Essa Tal Liberdade",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 93,
+      "num": 29,
+      "titulo": "Ex Amor",
+      "dificuldade_calc": 6,
+      "habilidade_nova": [
+        "forma-extensa"
+      ]
+    },
+    {
+      "passo": 94,
+      "num": 6,
+      "titulo": "As Rosas Não Falam",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 95,
+      "num": 27,
+      "titulo": "Sonho Meu",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 96,
+      "num": 47,
+      "titulo": "Coração em Desalinho",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 97,
+      "num": 82,
+      "titulo": "Linha de Passe",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 98,
+      "num": 89,
+      "titulo": "Na Cadência do Samba",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 99,
+      "num": 92,
+      "titulo": "Canto das Três Raças",
+      "dificuldade_calc": 7,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 100,
+      "num": 49,
+      "titulo": "Vai Vadiar",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 101,
+      "num": 80,
+      "titulo": "O Bêbado e o Equilibrista",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 102,
+      "num": 90,
+      "titulo": "Pimenta no Vatapá",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 103,
+      "num": 95,
+      "titulo": "Agamamou",
+      "dificuldade_calc": 8,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 104,
+      "num": 8,
+      "titulo": "O Mundo é um Moinho",
+      "dificuldade_calc": 9,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 105,
+      "num": 23,
+      "titulo": "Saudosa Maloca",
+      "dificuldade_calc": 9,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 106,
+      "num": 42,
+      "titulo": "Lucidez",
+      "dificuldade_calc": 9,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 107,
+      "num": 55,
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "dificuldade_calc": 9,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 108,
+      "num": 96,
+      "titulo": "Caçamba",
+      "dificuldade_calc": 10,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 109,
+      "num": 107,
+      "titulo": "Ta Escrito",
+      "dificuldade_calc": 10,
+      "habilidade_nova": []
+    },
+    {
+      "passo": 110,
+      "num": 39,
+      "titulo": "Eu e Você Sempre",
+      "dificuldade_calc": 9,
+      "habilidade_nova": [
+        "tom-6"
+      ]
+    }
+  ],
+  "trilhas_por_habilidade": {
+    "tom-0": [
+      {
+        "num": 76,
+        "titulo": "É Preciso Perdoar",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 48,
+        "titulo": "Jura",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 57,
+        "titulo": "A Volta do Malandro",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 86,
+        "titulo": "Eu Bebo Sim",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 15,
+        "titulo": "Juízo Final",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 33,
+        "titulo": "Andança",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 66,
+        "titulo": "Consolação",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 99,
+        "titulo": "Cigana",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 106,
+        "titulo": "Pé na Areia",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 72,
+        "titulo": "Naquela Mesa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 97,
+        "titulo": "Cheia de Manias",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 98,
+        "titulo": "Cilada",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 102,
+        "titulo": "Domingo",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 29,
+        "titulo": "Ex Amor",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 85,
+        "titulo": "Mas Que Nada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 100,
+        "titulo": "Coração Radiante",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 104,
+        "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      }
+    ],
+    "tom-1": [
+      {
+        "num": 9,
+        "titulo": "O Sol Nascerá",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 1,
+        "titulo": "Até Amanhã",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 25,
+        "titulo": "Alguém Me Avisou",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 35,
+        "titulo": "Tristeza",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 68,
+        "titulo": "Pra Que Chorar",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 67,
+        "titulo": "O Morro Não Tem Vez",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 3,
+        "titulo": "Feitiço da Vila",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 10,
+        "titulo": "Peito Vazio",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 11,
+        "titulo": "Preciso Me Encontrar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 34,
+        "titulo": "Se Você Jurar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 44,
+        "titulo": "Não Deixe o Samba Morrer",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 64,
+        "titulo": "A Felicidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 2,
+        "titulo": "Com Que Roupa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 12,
+        "titulo": "Tive Sim",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 18,
+        "titulo": "Diz Que Fui por Aí",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 22,
+        "titulo": "Trem das Onze",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 32,
+        "titulo": "Água de Chuva no Mar",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 38,
+        "titulo": "Do Fundo do Nosso Quintal",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 46,
+        "titulo": "Você Me Vira a Cabeça",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 53,
+        "titulo": "Coração Leviano",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 77,
+        "titulo": "Desde Que o Samba é Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 50,
+        "titulo": "Verdade",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 51,
+        "titulo": "Vivo Isolado do Mundo",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 61,
+        "titulo": "Quem Te Viu, Quem Te Vê",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 71,
+        "titulo": "Ronda",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 81,
+        "titulo": "De Frente pro Crime",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 94,
+        "titulo": "A Batucada dos Nossos Tantãs",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 6,
+        "titulo": "As Rosas Não Falam",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 14,
+        "titulo": "Folhas Secas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 28,
+        "titulo": "Casa de Bamba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 36,
+        "titulo": "Vou Festejar",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 37,
+        "titulo": "Conselho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 82,
+        "titulo": "Linha de Passe",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 89,
+        "titulo": "Na Cadência do Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 92,
+        "titulo": "Canto das Três Raças",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 49,
+        "titulo": "Vai Vadiar",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 74,
+        "titulo": "Você Abusou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 90,
+        "titulo": "Pimenta no Vatapá",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 13,
+        "titulo": "A Flor e o Espinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 42,
+        "titulo": "Lucidez",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 55,
+        "titulo": "Foi um Rio Que Passou em Minha Vida",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 96,
+        "titulo": "Caçamba",
+        "dificuldade_calc": 10
+      }
+    ],
+    "tom-2": [
+      {
+        "num": 4,
+        "titulo": "Fita Amarela",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 5,
+        "titulo": "Acontece",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 75,
+        "titulo": "Me Deixe em Paz",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 20,
+        "titulo": "Tiro ao Álvaro",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 40,
+        "titulo": "Falsa Consideração",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 52,
+        "titulo": "Ainda Mais",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 63,
+        "titulo": "Sem Compromisso",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 88,
+        "titulo": "Leva Meu Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 17,
+        "titulo": "A Voz do Morro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 24,
+        "titulo": "Acreditar",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 78,
+        "titulo": "Cicatrizes",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 101,
+        "titulo": "Deixa Acontecer",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 19,
+        "titulo": "Mascarada",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 27,
+        "titulo": "Sonho Meu",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 31,
+        "titulo": "Renascer das Cinzas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 45,
+        "titulo": "Sufoco",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 47,
+        "titulo": "Coração em Desalinho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 58,
+        "titulo": "De Volta ao Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 62,
+        "titulo": "Samba do Grande Amor",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 70,
+        "titulo": "Samba de Orly",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 79,
+        "titulo": "De Mais Ninguém",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 110,
+        "titulo": "Temporal",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 103,
+        "titulo": "Essa Tal Liberdade",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 8,
+        "titulo": "O Mundo é um Moinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      }
+    ],
+    "tom-3": [
+      {
+        "num": 16,
+        "titulo": "Vou Partir",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 30,
+        "titulo": "Madalena do Jucu",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 87,
+        "titulo": "Maracangalha",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 7,
+        "titulo": "Corra e Olhe o Céu",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 105,
+        "titulo": "Inaraí",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 109,
+        "titulo": "Telegrama",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 84,
+        "titulo": "Flor de Lis",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 60,
+        "titulo": "Partido Alto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 65,
+        "titulo": "A Tonga da Mironga do Kabuletê",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 93,
+        "titulo": "Tristeza, Pé no Chão",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 54,
+        "titulo": "Dança da Solidão",
+        "dificuldade_calc": 10
+      },
+      {
+        "num": 107,
+        "titulo": "Ta Escrito",
+        "dificuldade_calc": 10
+      }
+    ],
+    "tom-6": [
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      }
+    ],
+    "sincope": [
+      {
+        "num": 9,
+        "titulo": "O Sol Nascerá",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 76,
+        "titulo": "É Preciso Perdoar",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 1,
+        "titulo": "Até Amanhã",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 25,
+        "titulo": "Alguém Me Avisou",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 48,
+        "titulo": "Jura",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 68,
+        "titulo": "Pra Que Chorar",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 57,
+        "titulo": "A Volta do Malandro",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 86,
+        "titulo": "Eu Bebo Sim",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 3,
+        "titulo": "Feitiço da Vila",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 10,
+        "titulo": "Peito Vazio",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 11,
+        "titulo": "Preciso Me Encontrar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 15,
+        "titulo": "Juízo Final",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 16,
+        "titulo": "Vou Partir",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 30,
+        "titulo": "Madalena do Jucu",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 34,
+        "titulo": "Se Você Jurar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 44,
+        "titulo": "Não Deixe o Samba Morrer",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 64,
+        "titulo": "A Felicidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 66,
+        "titulo": "Consolação",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 75,
+        "titulo": "Me Deixe em Paz",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 87,
+        "titulo": "Maracangalha",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 99,
+        "titulo": "Cigana",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 106,
+        "titulo": "Pé na Areia",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 2,
+        "titulo": "Com Que Roupa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 12,
+        "titulo": "Tive Sim",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 18,
+        "titulo": "Diz Que Fui por Aí",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 20,
+        "titulo": "Tiro ao Álvaro",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 22,
+        "titulo": "Trem das Onze",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 32,
+        "titulo": "Água de Chuva no Mar",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 38,
+        "titulo": "Do Fundo do Nosso Quintal",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 40,
+        "titulo": "Falsa Consideração",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 46,
+        "titulo": "Você Me Vira a Cabeça",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 52,
+        "titulo": "Ainda Mais",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 53,
+        "titulo": "Coração Leviano",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 63,
+        "titulo": "Sem Compromisso",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 72,
+        "titulo": "Naquela Mesa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 77,
+        "titulo": "Desde Que o Samba é Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 88,
+        "titulo": "Leva Meu Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 97,
+        "titulo": "Cheia de Manias",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 98,
+        "titulo": "Cilada",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 102,
+        "titulo": "Domingo",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 7,
+        "titulo": "Corra e Olhe o Céu",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 24,
+        "titulo": "Acreditar",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 29,
+        "titulo": "Ex Amor",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 50,
+        "titulo": "Verdade",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 51,
+        "titulo": "Vivo Isolado do Mundo",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 61,
+        "titulo": "Quem Te Viu, Quem Te Vê",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 71,
+        "titulo": "Ronda",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 78,
+        "titulo": "Cicatrizes",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 81,
+        "titulo": "De Frente pro Crime",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 85,
+        "titulo": "Mas Que Nada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 94,
+        "titulo": "A Batucada dos Nossos Tantãs",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 100,
+        "titulo": "Coração Radiante",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 101,
+        "titulo": "Deixa Acontecer",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 104,
+        "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 105,
+        "titulo": "Inaraí",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 109,
+        "titulo": "Telegrama",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 14,
+        "titulo": "Folhas Secas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 19,
+        "titulo": "Mascarada",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 27,
+        "titulo": "Sonho Meu",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 28,
+        "titulo": "Casa de Bamba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 31,
+        "titulo": "Renascer das Cinzas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 37,
+        "titulo": "Conselho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 45,
+        "titulo": "Sufoco",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 47,
+        "titulo": "Coração em Desalinho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 58,
+        "titulo": "De Volta ao Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 62,
+        "titulo": "Samba do Grande Amor",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 70,
+        "titulo": "Samba de Orly",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 79,
+        "titulo": "De Mais Ninguém",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 82,
+        "titulo": "Linha de Passe",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 89,
+        "titulo": "Na Cadência do Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 92,
+        "titulo": "Canto das Três Raças",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 110,
+        "titulo": "Temporal",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 60,
+        "titulo": "Partido Alto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 65,
+        "titulo": "A Tonga da Mironga do Kabuletê",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 74,
+        "titulo": "Você Abusou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 90,
+        "titulo": "Pimenta no Vatapá",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 93,
+        "titulo": "Tristeza, Pé no Chão",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 103,
+        "titulo": "Essa Tal Liberdade",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 13,
+        "titulo": "A Flor e o Espinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 42,
+        "titulo": "Lucidez",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 55,
+        "titulo": "Foi um Rio Que Passou em Minha Vida",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 96,
+        "titulo": "Caçamba",
+        "dificuldade_calc": 10
+      },
+      {
+        "num": 107,
+        "titulo": "Ta Escrito",
+        "dificuldade_calc": 10
+      }
+    ],
+    "tercina": [
+      {
+        "num": 9,
+        "titulo": "O Sol Nascerá",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 5,
+        "titulo": "Acontece",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 10,
+        "titulo": "Peito Vazio",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 11,
+        "titulo": "Preciso Me Encontrar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 15,
+        "titulo": "Juízo Final",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 33,
+        "titulo": "Andança",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 18,
+        "titulo": "Diz Que Fui por Aí",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 32,
+        "titulo": "Água de Chuva no Mar",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 46,
+        "titulo": "Você Me Vira a Cabeça",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 52,
+        "titulo": "Ainda Mais",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 53,
+        "titulo": "Coração Leviano",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 51,
+        "titulo": "Vivo Isolado do Mundo",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 71,
+        "titulo": "Ronda",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 6,
+        "titulo": "As Rosas Não Falam",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 19,
+        "titulo": "Mascarada",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 36,
+        "titulo": "Vou Festejar",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 37,
+        "titulo": "Conselho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 45,
+        "titulo": "Sufoco",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 84,
+        "titulo": "Flor de Lis",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 49,
+        "titulo": "Vai Vadiar",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 90,
+        "titulo": "Pimenta no Vatapá",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 8,
+        "titulo": "O Mundo é um Moinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 42,
+        "titulo": "Lucidez",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 54,
+        "titulo": "Dança da Solidão",
+        "dificuldade_calc": 10
+      }
+    ],
+    "colcheia-pontuada": [
+      {
+        "num": 48,
+        "titulo": "Jura",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 57,
+        "titulo": "A Volta do Malandro",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 67,
+        "titulo": "O Morro Não Tem Vez",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 30,
+        "titulo": "Madalena do Jucu",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 87,
+        "titulo": "Maracangalha",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 29,
+        "titulo": "Ex Amor",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 14,
+        "titulo": "Folhas Secas",
+        "dificuldade_calc": 7
+      }
+    ],
+    "semicolcheia": [
+      {
+        "num": 97,
+        "titulo": "Cheia de Manias",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 24,
+        "titulo": "Acreditar",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 50,
+        "titulo": "Verdade",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 81,
+        "titulo": "De Frente pro Crime",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 85,
+        "titulo": "Mas Que Nada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 94,
+        "titulo": "A Batucada dos Nossos Tantãs",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 100,
+        "titulo": "Coração Radiante",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 104,
+        "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 28,
+        "titulo": "Casa de Bamba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 31,
+        "titulo": "Renascer das Cinzas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 58,
+        "titulo": "De Volta ao Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 62,
+        "titulo": "Samba do Grande Amor",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 79,
+        "titulo": "De Mais Ninguém",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 110,
+        "titulo": "Temporal",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 60,
+        "titulo": "Partido Alto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 65,
+        "titulo": "A Tonga da Mironga do Kabuletê",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 93,
+        "titulo": "Tristeza, Pé no Chão",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 13,
+        "titulo": "A Flor e o Espinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 96,
+        "titulo": "Caçamba",
+        "dificuldade_calc": 10
+      },
+      {
+        "num": 107,
+        "titulo": "Ta Escrito",
+        "dificuldade_calc": 10
+      }
+    ],
+    "contratempo": [
+      {
+        "num": 35,
+        "titulo": "Tristeza",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 44,
+        "titulo": "Não Deixe o Samba Morrer",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 20,
+        "titulo": "Tiro ao Álvaro",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 38,
+        "titulo": "Do Fundo do Nosso Quintal",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 40,
+        "titulo": "Falsa Consideração",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 63,
+        "titulo": "Sem Compromisso",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 17,
+        "titulo": "A Voz do Morro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 84,
+        "titulo": "Flor de Lis",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      }
+    ],
+    "anacruse": [
+      {
+        "num": 4,
+        "titulo": "Fita Amarela",
+        "dificuldade_calc": 2
+      }
+    ],
+    "casas": [
+      {
+        "num": 1,
+        "titulo": "Até Amanhã",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 4,
+        "titulo": "Fita Amarela",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 68,
+        "titulo": "Pra Que Chorar",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 67,
+        "titulo": "O Morro Não Tem Vez",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 86,
+        "titulo": "Eu Bebo Sim",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 30,
+        "titulo": "Madalena do Jucu",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 33,
+        "titulo": "Andança",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 34,
+        "titulo": "Se Você Jurar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 75,
+        "titulo": "Me Deixe em Paz",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 99,
+        "titulo": "Cigana",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 106,
+        "titulo": "Pé na Areia",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 2,
+        "titulo": "Com Que Roupa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 18,
+        "titulo": "Diz Que Fui por Aí",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 20,
+        "titulo": "Tiro ao Álvaro",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 22,
+        "titulo": "Trem das Onze",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 32,
+        "titulo": "Água de Chuva no Mar",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 38,
+        "titulo": "Do Fundo do Nosso Quintal",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 52,
+        "titulo": "Ainda Mais",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 53,
+        "titulo": "Coração Leviano",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 63,
+        "titulo": "Sem Compromisso",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 72,
+        "titulo": "Naquela Mesa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 77,
+        "titulo": "Desde Que o Samba é Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 88,
+        "titulo": "Leva Meu Samba",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 98,
+        "titulo": "Cilada",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 102,
+        "titulo": "Domingo",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 17,
+        "titulo": "A Voz do Morro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 29,
+        "titulo": "Ex Amor",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 78,
+        "titulo": "Cicatrizes",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 81,
+        "titulo": "De Frente pro Crime",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 94,
+        "titulo": "A Batucada dos Nossos Tantãs",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 104,
+        "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 109,
+        "titulo": "Telegrama",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 31,
+        "titulo": "Renascer das Cinzas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 36,
+        "titulo": "Vou Festejar",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 45,
+        "titulo": "Sufoco",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 47,
+        "titulo": "Coração em Desalinho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 58,
+        "titulo": "De Volta ao Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 82,
+        "titulo": "Linha de Passe",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 84,
+        "titulo": "Flor de Lis",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 89,
+        "titulo": "Na Cadência do Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 49,
+        "titulo": "Vai Vadiar",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 60,
+        "titulo": "Partido Alto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 65,
+        "titulo": "A Tonga da Mironga do Kabuletê",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 90,
+        "titulo": "Pimenta no Vatapá",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      }
+    ],
+    "ds-dc": [
+      {
+        "num": 76,
+        "titulo": "É Preciso Perdoar",
+        "dificuldade_calc": 1
+      },
+      {
+        "num": 67,
+        "titulo": "O Morro Não Tem Vez",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 30,
+        "titulo": "Madalena do Jucu",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 38,
+        "titulo": "Do Fundo do Nosso Quintal",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 40,
+        "titulo": "Falsa Consideração",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 46,
+        "titulo": "Você Me Vira a Cabeça",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 97,
+        "titulo": "Cheia de Manias",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 24,
+        "titulo": "Acreditar",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 105,
+        "titulo": "Inaraí",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 82,
+        "titulo": "Linha de Passe",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 42,
+        "titulo": "Lucidez",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 54,
+        "titulo": "Dança da Solidão",
+        "dificuldade_calc": 10
+      }
+    ],
+    "modulacao": [
+      {
+        "num": 102,
+        "titulo": "Domingo",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 61,
+        "titulo": "Quem Te Viu, Quem Te Vê",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 91,
+        "titulo": "Do Jeito Que o Rei Mandou",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 36,
+        "titulo": "Vou Festejar",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 45,
+        "titulo": "Sufoco",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 74,
+        "titulo": "Você Abusou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 103,
+        "titulo": "Essa Tal Liberdade",
+        "dificuldade_calc": 8
+      }
+    ],
+    "forma-longa": [
+      {
+        "num": 35,
+        "titulo": "Tristeza",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 68,
+        "titulo": "Pra Que Chorar",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 5,
+        "titulo": "Acontece",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 10,
+        "titulo": "Peito Vazio",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 34,
+        "titulo": "Se Você Jurar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 44,
+        "titulo": "Não Deixe o Samba Morrer",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 66,
+        "titulo": "Consolação",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 106,
+        "titulo": "Pé na Areia",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 2,
+        "titulo": "Com Que Roupa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 22,
+        "titulo": "Trem das Onze",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 98,
+        "titulo": "Cilada",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 17,
+        "titulo": "A Voz do Morro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 24,
+        "titulo": "Acreditar",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 71,
+        "titulo": "Ronda",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 100,
+        "titulo": "Coração Radiante",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 101,
+        "titulo": "Deixa Acontecer",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 104,
+        "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 105,
+        "titulo": "Inaraí",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 109,
+        "titulo": "Telegrama",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 28,
+        "titulo": "Casa de Bamba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 36,
+        "titulo": "Vou Festejar",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 37,
+        "titulo": "Conselho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 58,
+        "titulo": "De Volta ao Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 110,
+        "titulo": "Temporal",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 21,
+        "titulo": "Samba do Arnesto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 103,
+        "titulo": "Essa Tal Liberdade",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 108,
+        "titulo": "É Tarde Demais",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 13,
+        "titulo": "A Flor e o Espinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 54,
+        "titulo": "Dança da Solidão",
+        "dificuldade_calc": 10
+      }
+    ],
+    "forma-extensa": [
+      {
+        "num": 29,
+        "titulo": "Ex Amor",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 6,
+        "titulo": "As Rosas Não Falam",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 27,
+        "titulo": "Sonho Meu",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 47,
+        "titulo": "Coração em Desalinho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 82,
+        "titulo": "Linha de Passe",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 89,
+        "titulo": "Na Cadência do Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 92,
+        "titulo": "Canto das Três Raças",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 49,
+        "titulo": "Vai Vadiar",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 90,
+        "titulo": "Pimenta no Vatapá",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 8,
+        "titulo": "O Mundo é um Moinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 42,
+        "titulo": "Lucidez",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 55,
+        "titulo": "Foi um Rio Que Passou em Minha Vida",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 96,
+        "titulo": "Caçamba",
+        "dificuldade_calc": 10
+      },
+      {
+        "num": 107,
+        "titulo": "Ta Escrito",
+        "dificuldade_calc": 10
+      }
+    ],
+    "cromatismo": [
+      {
+        "num": 48,
+        "titulo": "Jura",
+        "dificuldade_calc": 2
+      },
+      {
+        "num": 57,
+        "titulo": "A Volta do Malandro",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 67,
+        "titulo": "O Morro Não Tem Vez",
+        "dificuldade_calc": 3
+      },
+      {
+        "num": 3,
+        "titulo": "Feitiço da Vila",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 15,
+        "titulo": "Juízo Final",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 33,
+        "titulo": "Andança",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 34,
+        "titulo": "Se Você Jurar",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 64,
+        "titulo": "A Felicidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 2,
+        "titulo": "Com Que Roupa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 20,
+        "titulo": "Tiro ao Álvaro",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 22,
+        "titulo": "Trem das Onze",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 32,
+        "titulo": "Água de Chuva no Mar",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 72,
+        "titulo": "Naquela Mesa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 98,
+        "titulo": "Cilada",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 7,
+        "titulo": "Corra e Olhe o Céu",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 17,
+        "titulo": "A Voz do Morro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 51,
+        "titulo": "Vivo Isolado do Mundo",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 59,
+        "titulo": "Homenagem ao Malandro",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 61,
+        "titulo": "Quem Te Viu, Quem Te Vê",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 78,
+        "titulo": "Cicatrizes",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 6,
+        "titulo": "As Rosas Não Falam",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 14,
+        "titulo": "Folhas Secas",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 19,
+        "titulo": "Mascarada",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 37,
+        "titulo": "Conselho",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 70,
+        "titulo": "Samba de Orly",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 73,
+        "titulo": "Retalhos de Cetim",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 43,
+        "titulo": "Malandro",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 69,
+        "titulo": "Regra Três",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 74,
+        "titulo": "Você Abusou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 80,
+        "titulo": "O Bêbado e o Equilibrista",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 8,
+        "titulo": "O Mundo é um Moinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 13,
+        "titulo": "A Flor e o Espinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 55,
+        "titulo": "Foi um Rio Que Passou em Minha Vida",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 54,
+        "titulo": "Dança da Solidão",
+        "dificuldade_calc": 10
+      }
+    ],
+    "compasso-4-4": [
+      {
+        "num": 5,
+        "titulo": "Acontece",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 41,
+        "titulo": "Identidade",
+        "dificuldade_calc": 4
+      },
+      {
+        "num": 46,
+        "titulo": "Você Me Vira a Cabeça",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 72,
+        "titulo": "Naquela Mesa",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 97,
+        "titulo": "Cheia de Manias",
+        "dificuldade_calc": 5
+      },
+      {
+        "num": 51,
+        "titulo": "Vivo Isolado do Mundo",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 83,
+        "titulo": "Comportamento Geral",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 100,
+        "titulo": "Coração Radiante",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 105,
+        "titulo": "Inaraí",
+        "dificuldade_calc": 6
+      },
+      {
+        "num": 26,
+        "titulo": "Enredo do Meu Samba",
+        "dificuldade_calc": 7
+      },
+      {
+        "num": 56,
+        "titulo": "Pecado Capital",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 60,
+        "titulo": "Partido Alto",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 74,
+        "titulo": "Você Abusou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 95,
+        "titulo": "Agamamou",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 103,
+        "titulo": "Essa Tal Liberdade",
+        "dificuldade_calc": 8
+      },
+      {
+        "num": 8,
+        "titulo": "O Mundo é um Moinho",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 23,
+        "titulo": "Saudosa Maloca",
+        "dificuldade_calc": 9
+      },
+      {
+        "num": 39,
+        "titulo": "Eu e Você Sempre",
+        "dificuldade_calc": 9
+      }
+    ]
+  },
+  "escada_leitura": [
+    {
+      "num": 76,
+      "titulo": "É Preciso Perdoar",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 1
+    },
+    {
+      "num": 9,
+      "titulo": "O Sol Nascerá",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 1
+    },
+    {
+      "num": 48,
+      "titulo": "Jura",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 35,
+      "titulo": "Tristeza",
+      "tom_concert": "F",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 1,
+      "titulo": "Até Amanhã",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 25,
+      "titulo": "Alguém Me Avisou",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 68,
+      "titulo": "Pra Que Chorar",
+      "tom_concert": "F",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 4,
+      "titulo": "Fita Amarela",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 57,
+      "titulo": "A Volta do Malandro",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 86,
+      "titulo": "Eu Bebo Sim",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 67,
+      "titulo": "O Morro Não Tem Vez",
+      "tom_concert": "F",
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 15,
+      "titulo": "Juízo Final",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 33,
+      "titulo": "Andança",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 66,
+      "titulo": "Consolação",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 99,
+      "titulo": "Cigana",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 106,
+      "titulo": "Pé na Areia",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 34,
+      "titulo": "Se Você Jurar",
+      "tom_concert": "F",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 3,
+      "titulo": "Feitiço da Vila",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 10,
+      "titulo": "Peito Vazio",
+      "tom_concert": "F",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 11,
+      "titulo": "Preciso Me Encontrar",
+      "tom_concert": "F",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 41,
+      "titulo": "Identidade",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 44,
+      "titulo": "Não Deixe o Samba Morrer",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 64,
+      "titulo": "A Felicidade",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 5,
+      "titulo": "Acontece",
+      "tom_concert": "C",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 75,
+      "titulo": "Me Deixe em Paz",
+      "tom_concert": "C",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 87,
+      "titulo": "Maracangalha",
+      "tom_concert": "G",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 16,
+      "titulo": "Vou Partir",
+      "tom_concert": "Db",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 30,
+      "titulo": "Madalena do Jucu",
+      "tom_concert": "G",
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 72,
+      "titulo": "Naquela Mesa",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 97,
+      "titulo": "Cheia de Manias",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 98,
+      "titulo": "Cilada",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 102,
+      "titulo": "Domingo",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 2,
+      "titulo": "Com Que Roupa",
+      "tom_concert": "F",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 22,
+      "titulo": "Trem das Onze",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 32,
+      "titulo": "Água de Chuva no Mar",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 12,
+      "titulo": "Tive Sim",
+      "tom_concert": "F",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 18,
+      "titulo": "Diz Que Fui por Aí",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 38,
+      "titulo": "Do Fundo do Nosso Quintal",
+      "tom_concert": "F",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 46,
+      "titulo": "Você Me Vira a Cabeça",
+      "tom_concert": "F",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 53,
+      "titulo": "Coração Leviano",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 77,
+      "titulo": "Desde Que o Samba é Samba",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 20,
+      "titulo": "Tiro ao Álvaro",
+      "tom_concert": "C",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 52,
+      "titulo": "Ainda Mais",
+      "tom_concert": "C",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 40,
+      "titulo": "Falsa Consideração",
+      "tom_concert": "C",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 63,
+      "titulo": "Sem Compromisso",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 88,
+      "titulo": "Leva Meu Samba",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 29,
+      "titulo": "Ex Amor",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 83,
+      "titulo": "Comportamento Geral",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 85,
+      "titulo": "Mas Que Nada",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 91,
+      "titulo": "Do Jeito Que o Rei Mandou",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 100,
+      "titulo": "Coração Radiante",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 104,
+      "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 61,
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 50,
+      "titulo": "Verdade",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 51,
+      "titulo": "Vivo Isolado do Mundo",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 59,
+      "titulo": "Homenagem ao Malandro",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 71,
+      "titulo": "Ronda",
+      "tom_concert": "F",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 81,
+      "titulo": "De Frente pro Crime",
+      "tom_concert": "F",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 94,
+      "titulo": "A Batucada dos Nossos Tantãs",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 17,
+      "titulo": "A Voz do Morro",
+      "tom_concert": "C",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 24,
+      "titulo": "Acreditar",
+      "tom_concert": "C",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 78,
+      "titulo": "Cicatrizes",
+      "tom_concert": "C",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 101,
+      "titulo": "Deixa Acontecer",
+      "tom_concert": "C",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 7,
+      "titulo": "Corra e Olhe o Céu",
+      "tom_concert": "Db",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 105,
+      "titulo": "Inaraí",
+      "tom_concert": "Db",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 109,
+      "titulo": "Telegrama",
+      "tom_concert": "Db",
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 6,
+      "titulo": "As Rosas Não Falam",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 36,
+      "titulo": "Vou Festejar",
+      "tom_concert": "F",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 14,
+      "titulo": "Folhas Secas",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 26,
+      "titulo": "Enredo do Meu Samba",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 28,
+      "titulo": "Casa de Bamba",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 37,
+      "titulo": "Conselho",
+      "tom_concert": "F",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 73,
+      "titulo": "Retalhos de Cetim",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 82,
+      "titulo": "Linha de Passe",
+      "tom_concert": "F",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 89,
+      "titulo": "Na Cadência do Samba",
+      "tom_concert": "F",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 92,
+      "titulo": "Canto das Três Raças",
+      "tom_concert": "F",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 27,
+      "titulo": "Sonho Meu",
+      "tom_concert": "C",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 19,
+      "titulo": "Mascarada",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 31,
+      "titulo": "Renascer das Cinzas",
+      "tom_concert": "C",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 45,
+      "titulo": "Sufoco",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 47,
+      "titulo": "Coração em Desalinho",
+      "tom_concert": "C",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 58,
+      "titulo": "De Volta ao Samba",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 62,
+      "titulo": "Samba do Grande Amor",
+      "tom_concert": "C",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 70,
+      "titulo": "Samba de Orly",
+      "tom_concert": "C",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 79,
+      "titulo": "De Mais Ninguém",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 110,
+      "titulo": "Temporal",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 84,
+      "titulo": "Flor de Lis",
+      "tom_concert": "G",
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 95,
+      "titulo": "Agamamou",
+      "tom_concert": "Bb",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 21,
+      "titulo": "Samba do Arnesto",
+      "tom_concert": "F",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 49,
+      "titulo": "Vai Vadiar",
+      "tom_concert": "F",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 74,
+      "titulo": "Você Abusou",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 90,
+      "titulo": "Pimenta no Vatapá",
+      "tom_concert": "Eb",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 43,
+      "titulo": "Malandro",
+      "tom_concert": "C",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 56,
+      "titulo": "Pecado Capital",
+      "tom_concert": "C",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 69,
+      "titulo": "Regra Três",
+      "tom_concert": "C",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 80,
+      "titulo": "O Bêbado e o Equilibrista",
+      "tom_concert": "Ab",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 103,
+      "titulo": "Essa Tal Liberdade",
+      "tom_concert": "C",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 60,
+      "titulo": "Partido Alto",
+      "tom_concert": "G",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 65,
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "tom_concert": "G",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 93,
+      "titulo": "Tristeza, Pé no Chão",
+      "tom_concert": "G",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 108,
+      "titulo": "É Tarde Demais",
+      "tom_concert": "G",
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 13,
+      "titulo": "A Flor e o Espinho",
+      "tom_concert": "F",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 42,
+      "titulo": "Lucidez",
+      "tom_concert": "F",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 55,
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "tom_concert": "F",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 8,
+      "titulo": "O Mundo é um Moinho",
+      "tom_concert": "C",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 23,
+      "titulo": "Saudosa Maloca",
+      "tom_concert": "C",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 39,
+      "titulo": "Eu e Você Sempre",
+      "tom_concert": "E",
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 96,
+      "titulo": "Caçamba",
+      "tom_concert": "F",
+      "dificuldade_calc": 10
+    },
+    {
+      "num": 54,
+      "titulo": "Dança da Solidão",
+      "tom_concert": "G",
+      "dificuldade_calc": 10
+    },
+    {
+      "num": 107,
+      "titulo": "Ta Escrito",
+      "tom_concert": "G",
+      "dificuldade_calc": 10
+    }
+  ]
+}
