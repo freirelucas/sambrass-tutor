@@ -1,20 +1,28 @@
-// Service worker — offline-first simples. Cacheia o shell na instalação e tudo o que
-// for buscado (dados/partituras) em runtime (cache-first com fallback de rede).
-const CACHE = 'sambrass-v1';
-const SHELL = ['./', './index.html', './style.css', './app.js', './manifest.webmanifest', './icon.svg'];
+// Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
+// cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
+const CACHE = 'sambrass-v3';
+const SHELL = ['./', './index.html', './estudo.html', './style.css', './app.js',
+  './vendor/abcjs.js', './vendor/abcjs-audio.css', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
-  e.respondWith(
-    caches.match(e.request).then(hit => hit || fetch(e.request).then(res => {
-      if (res.ok && res.type === 'basic') { const cp = res.clone(); caches.open(CACHE).then(c => c.put(e.request, cp)); }
-      return res;
-    }).catch(() => hit))
+  const url = new URL(e.request.url);
+  if (url.pathname.endsWith('-mp3.js')) {           // soundfont: cache-first
+    e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(r => {
+      const cp = r.clone(); caches.open(CACHE).then(c => c.put(e.request, cp)); return r;
+    })));
+    return;
+  }
+  e.respondWith(                                     // resto: network-first
+    fetch(e.request).then(r => {
+      if (r && r.ok && r.type === 'basic') { const cp = r.clone(); caches.open(CACHE).then(c => c.put(e.request, cp)); }
+      return r;
+    }).catch(() => caches.match(e.request))
   );
 });

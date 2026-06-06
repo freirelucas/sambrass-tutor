@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0e0d0c">
 <title>Preciso Me Encontrar · estudo · Sambrass Tutor</title>
+<link rel="stylesheet" href="./vendor/abcjs-audio.css">
 <style>
 :root{
   --bg:#0e0d0c; --bg2:#17150f; --pane:#1a1813; --linha:#2c281f;
@@ -48,7 +49,7 @@ small{color:var(--suave)}
   background:radial-gradient(120% 120% at 30% 25%,#ffd97a,var(--ouro2));box-shadow:0 8px 22px rgba(233,184,80,.4);transition:transform .12s}
 .play:active{transform:scale(.88)}
 .cel h3{margin:0;font-size:17px;font-family:var(--serif)}.cel .d{color:var(--suave);font-size:13.5px}
-.mini{margin-top:8px;background:#fbf7ee;border-radius:10px;padding:4px 8px;overflow-x:auto}
+.mini{margin-top:8px;background:#fff;border-radius:10px;padding:6px 8px;overflow-x:auto}
 .mini svg{max-width:100%;height:auto}
 
 /* player */
@@ -64,7 +65,7 @@ small{color:var(--suave)}
 .agora{text-align:center;min-height:50px}
 .agora .nota{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--tinta);line-height:1}
 .agora .dedo{font-size:12px;color:var(--ouro);letter-spacing:1px;text-transform:uppercase;font-weight:700}
-.paper{background:#fbf7ee;border-radius:12px;padding:10px;overflow-x:auto;margin-top:10px}
+.paper{background:#fff;border-radius:12px;padding:12px;overflow-x:auto;margin-top:10px}
 .paper svg{max-width:100%;height:auto}
 .abcjs-highlight{fill:var(--vinho)!important}
 .audio{margin-top:14px}
@@ -168,7 +169,7 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   $('#celulas').innerHTML = CEL.map((id,i)=>`<div class="pane cel ${id==='C2'?'heart':''}" style="animation-delay:${i*.08}s">
     <button class="play" data-abc="cell-${id}" aria-label="tocar ${id}">▶</button>
     <div><h3>${id} · ${cm[id]?.nome||''}${id==='C2'?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
-  CEL.forEach(id=>{ if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id], {staffwidth:280,scale:.85,paddingtop:0,paddingbottom:0}); }catch{} });
+  CEL.forEach(id=>{ if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id].replace(/\nT:[^\n]*/,''), {staffwidth:300,scale:1,paddingtop:0,paddingbottom:0}); }catch{} });
   document.querySelectorAll('.play').forEach(b=> b.onclick=()=>playOnce(abc?.[b.dataset.abc]));
 
   MELODIA = abc?.[ID] || null;
@@ -202,7 +203,7 @@ function cursor(){
 }
 function setMel(){
   if(!MELODIA) return; audioUnlock();
-  const abc=MELODIA.replace(/Q:1\/4=\d+/, 'Q:1/4='+BPM);
+  const abc=MELODIA.replace(/Q:1\/4=\d+/, 'Q:1/4='+BPM).replace(/\nT:[^\n]*/,'');
   if(SYNTH){ try{SYNTH.pause();}catch{} }
   try{ VISUAL=ABCJS.renderAbc('paper', abc, {add_classes:true, responsive:'resize', visualTranspose:TR})[0]; }catch{ return; }
   if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML='<p class="nota-rasc">áudio não suportado.</p>'; return; }
