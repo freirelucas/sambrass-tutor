@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- OMR Audiveris (PROVISÓRIO — escrito Bb + transpose -2 injetado; conferir). -->
+<!-- OMR Audiveris + tom do catálogo (PROVISÓRIO; notas a conferir). Tom escrito = -1 acidentes; transpose -2. -->
 <score-partwise version="4.0.3">
   <identification>
     <encoding>
@@ -66,7 +66,7 @@
       <attributes>
         <divisions>8</divisions>
         <key>
-          <fifths>-2</fifths>
+          <fifths>-1</fifths>
         </key>
         <time>
           <beats>2</beats>
