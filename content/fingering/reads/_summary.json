@@ -1,0 +1,992 @@
+[
+{
+"num": 1,
+"n_systems": 4,
+"n_fingerings": 100,
+"omr_notes": 145,
+"count_ratio": 0.69,
+"mean_score": 0.845,
+"confidence": "revisar"
+},
+{
+"num": 2,
+"n_systems": 5,
+"n_fingerings": 100,
+"omr_notes": 153,
+"count_ratio": 0.65,
+"mean_score": 0.68,
+"confidence": "revisar"
+},
+{
+"num": 3,
+"n_systems": 4,
+"n_fingerings": 83,
+"omr_notes": 115,
+"count_ratio": 0.72,
+"mean_score": 0.718,
+"confidence": "alta"
+},
+{
+"num": 4,
+"n_systems": 4,
+"n_fingerings": 74,
+"omr_notes": 91,
+"count_ratio": 0.81,
+"mean_score": 0.7,
+"confidence": "alta"
+},
+{
+"num": 5,
+"n_systems": 4,
+"n_fingerings": 113,
+"omr_notes": 103,
+"count_ratio": 1.1,
+"mean_score": 0.867,
+"confidence": "alta"
+},
+{
+"num": 6,
+"n_systems": 4,
+"n_fingerings": 97,
+"omr_notes": 102,
+"count_ratio": 0.95,
+"mean_score": 0.679,
+"confidence": "alta"
+},
+{
+"num": 7,
+"n_systems": 4,
+"n_fingerings": 68,
+"omr_notes": 96,
+"count_ratio": 0.71,
+"mean_score": 0.725,
+"confidence": "alta"
+},
+{
+"num": 8,
+"n_systems": 4,
+"n_fingerings": 111,
+"omr_notes": 136,
+"count_ratio": 0.82,
+"mean_score": 0.659,
+"confidence": "alta"
+},
+{
+"num": 9,
+"n_systems": 3,
+"n_fingerings": 44,
+"omr_notes": 70,
+"count_ratio": 0.63,
+"mean_score": 0.723,
+"confidence": "revisar"
+},
+{
+"num": 10,
+"n_systems": 5,
+"n_fingerings": 173,
+"omr_notes": 161,
+"count_ratio": 1.07,
+"mean_score": 0.634,
+"confidence": "alta"
+},
+{
+"num": 11,
+"n_systems": 3,
+"n_fingerings": 58,
+"omr_notes": 67,
+"count_ratio": 0.87,
+"mean_score": 0.875,
+"confidence": "alta"
+},
+{
+"num": 12,
+"n_systems": 4,
+"n_fingerings": 91,
+"omr_notes": 136,
+"count_ratio": 0.67,
+"mean_score": 0.88,
+"confidence": "revisar"
+},
+{
+"num": 13,
+"n_systems": 4,
+"n_fingerings": 99,
+"omr_notes": 163,
+"count_ratio": 0.61,
+"mean_score": 0.657,
+"confidence": "revisar"
+},
+{
+"num": 14,
+"n_systems": 5,
+"n_fingerings": 107,
+"omr_notes": 138,
+"count_ratio": 0.78,
+"mean_score": 0.71,
+"confidence": "alta"
+},
+{
+"num": 15,
+"n_systems": 4,
+"n_fingerings": 66,
+"omr_notes": 98,
+"count_ratio": 0.67,
+"mean_score": 0.7,
+"confidence": "revisar"
+},
+{
+"num": 16,
+"n_systems": 4,
+"n_fingerings": 52,
+"omr_notes": 64,
+"count_ratio": 0.81,
+"mean_score": 0.75,
+"confidence": "alta"
+},
+{
+"num": 17,
+"n_systems": 4,
+"n_fingerings": 115,
+"omr_notes": 112,
+"count_ratio": 1.03,
+"mean_score": 0.844,
+"confidence": "alta"
+},
+{
+"num": 18,
+"n_systems": 5,
+"n_fingerings": 140,
+"omr_notes": 169,
+"count_ratio": 0.83,
+"mean_score": 0.865,
+"confidence": "alta"
+},
+{
+"num": 19,
+"n_systems": 4,
+"n_fingerings": 98,
+"omr_notes": 126,
+"count_ratio": 0.78,
+"mean_score": 0.847,
+"confidence": "alta"
+},
+{
+"num": 20,
+"n_systems": 4,
+"n_fingerings": 96,
+"omr_notes": 105,
+"count_ratio": 0.91,
+"mean_score": 0.73,
+"confidence": "alta"
+},
+{
+"num": 21,
+"n_systems": 4,
+"n_fingerings": 113,
+"omr_notes": 151,
+"count_ratio": 0.75,
+"mean_score": 0.839,
+"confidence": "alta"
+},
+{
+"num": 22,
+"n_systems": 5,
+"n_fingerings": 82,
+"omr_notes": 157,
+"count_ratio": 0.52,
+"mean_score": 0.686,
+"confidence": "revisar"
+},
+{
+"num": 23,
+"n_systems": 7,
+"n_fingerings": 285,
+"omr_notes": 302,
+"count_ratio": 0.94,
+"mean_score": 0.781,
+"confidence": "alta"
+},
+{
+"num": 24,
+"n_systems": 5,
+"n_fingerings": 112,
+"omr_notes": 153,
+"count_ratio": 0.73,
+"mean_score": 0.643,
+"confidence": "alta"
+},
+{
+"num": 25,
+"n_systems": 5,
+"n_fingerings": 131,
+"omr_notes": 162,
+"count_ratio": 0.81,
+"mean_score": 0.707,
+"confidence": "alta"
+},
+{
+"num": 26,
+"n_systems": 4,
+"n_fingerings": 152,
+"omr_notes": 181,
+"count_ratio": 0.84,
+"mean_score": 0.704,
+"confidence": "alta"
+},
+{
+"num": 27,
+"n_systems": 4,
+"n_fingerings": 121,
+"omr_notes": 190,
+"count_ratio": 0.64,
+"mean_score": 0.621,
+"confidence": "revisar"
+},
+{
+"num": 28,
+"n_systems": 5,
+"n_fingerings": 187,
+"omr_notes": 212,
+"count_ratio": 0.88,
+"mean_score": 0.84,
+"confidence": "alta"
+},
+{
+"num": 29,
+"n_systems": 5,
+"n_fingerings": 105,
+"omr_notes": 236,
+"count_ratio": 0.44,
+"mean_score": 0.686,
+"confidence": "revisar"
+},
+{
+"num": 30,
+"n_systems": 4,
+"n_fingerings": 75,
+"omr_notes": 111,
+"count_ratio": 0.68,
+"mean_score": 0.648,
+"confidence": "revisar"
+},
+{
+"num": 31,
+"n_systems": 5,
+"n_fingerings": 136,
+"omr_notes": 223,
+"count_ratio": 0.61,
+"mean_score": 0.811,
+"confidence": "revisar"
+},
+{
+"num": 32,
+"n_systems": 4,
+"n_fingerings": 85,
+"omr_notes": 127,
+"count_ratio": 0.67,
+"mean_score": 0.824,
+"confidence": "revisar"
+},
+{
+"num": 33,
+"n_systems": 4,
+"n_fingerings": 90,
+"omr_notes": 119,
+"count_ratio": 0.76,
+"mean_score": 0.744,
+"confidence": "alta"
+},
+{
+"num": 34,
+"n_systems": 4,
+"n_fingerings": 88,
+"omr_notes": 118,
+"count_ratio": 0.75,
+"mean_score": 0.846,
+"confidence": "alta"
+},
+{
+"num": 35,
+"n_systems": 5,
+"n_fingerings": 95,
+"omr_notes": 127,
+"count_ratio": 0.75,
+"mean_score": 0.726,
+"confidence": "alta"
+},
+{
+"num": 36,
+"n_systems": 4,
+"n_fingerings": 68,
+"omr_notes": 89,
+"count_ratio": 0.76,
+"mean_score": 0.807,
+"confidence": "alta"
+},
+{
+"num": 37,
+"n_systems": 6,
+"n_fingerings": 144,
+"omr_notes": 201,
+"count_ratio": 0.72,
+"mean_score": 0.816,
+"confidence": "alta"
+},
+{
+"num": 38,
+"n_systems": 5,
+"n_fingerings": 157,
+"omr_notes": 193,
+"count_ratio": 0.81,
+"mean_score": 0.878,
+"confidence": "alta"
+},
+{
+"num": 39,
+"n_systems": 4,
+"n_fingerings": 76,
+"omr_notes": 111,
+"count_ratio": 0.68,
+"mean_score": 0.852,
+"confidence": "revisar"
+},
+{
+"num": 40,
+"n_systems": 6,
+"n_fingerings": 192,
+"omr_notes": 250,
+"count_ratio": 0.77,
+"mean_score": 0.802,
+"confidence": "alta"
+},
+{
+"num": 41,
+"n_systems": 4,
+"n_fingerings": 108,
+"omr_notes": 109,
+"count_ratio": 0.99,
+"mean_score": 0.854,
+"confidence": "alta"
+},
+{
+"num": 42,
+"n_systems": 6,
+"n_fingerings": 137,
+"omr_notes": 214,
+"count_ratio": 0.64,
+"mean_score": 0.837,
+"confidence": "revisar"
+},
+{
+"num": 43,
+"n_systems": 4,
+"n_fingerings": 88,
+"omr_notes": 98,
+"count_ratio": 0.9,
+"mean_score": 0.812,
+"confidence": "alta"
+},
+{
+"num": 44,
+"n_systems": 4,
+"n_fingerings": 126,
+"omr_notes": 179,
+"count_ratio": 0.7,
+"mean_score": 0.829,
+"confidence": "alta"
+},
+{
+"num": 45,
+"n_systems": 4,
+"n_fingerings": 117,
+"omr_notes": 165,
+"count_ratio": 0.71,
+"mean_score": 0.831,
+"confidence": "alta"
+},
+{
+"num": 46,
+"n_systems": 5,
+"n_fingerings": 124,
+"omr_notes": 166,
+"count_ratio": 0.75,
+"mean_score": 0.828,
+"confidence": "alta"
+},
+{
+"num": 47,
+"n_systems": 6,
+"n_fingerings": 183,
+"omr_notes": 273,
+"count_ratio": 0.67,
+"mean_score": 0.808,
+"confidence": "revisar"
+},
+{
+"num": 48,
+"n_systems": 5,
+"n_fingerings": 92,
+"omr_notes": 135,
+"count_ratio": 0.68,
+"mean_score": 0.671,
+"confidence": "revisar"
+},
+{
+"num": 49,
+"n_systems": 5,
+"n_fingerings": 199,
+"omr_notes": 231,
+"count_ratio": 0.86,
+"mean_score": 0.798,
+"confidence": "alta"
+},
+{
+"num": 50,
+"n_systems": 5,
+"n_fingerings": 96,
+"omr_notes": 127,
+"count_ratio": 0.76,
+"mean_score": 0.715,
+"confidence": "alta"
+},
+{
+"num": 51,
+"n_systems": 4,
+"n_fingerings": 110,
+"omr_notes": 125,
+"count_ratio": 0.88,
+"mean_score": 0.83,
+"confidence": "alta"
+},
+{
+"num": 52,
+"n_systems": 4,
+"n_fingerings": 95,
+"omr_notes": 144,
+"count_ratio": 0.66,
+"mean_score": 0.818,
+"confidence": "revisar"
+},
+{
+"num": 53,
+"n_systems": 4,
+"n_fingerings": 105,
+"omr_notes": 158,
+"count_ratio": 0.66,
+"mean_score": 0.69,
+"confidence": "revisar"
+},
+{
+"num": 54,
+"n_systems": 6,
+"n_fingerings": 152,
+"omr_notes": 153,
+"count_ratio": 0.99,
+"mean_score": 0.817,
+"confidence": "alta"
+},
+{
+"num": 55,
+"n_systems": 7,
+"n_fingerings": 238,
+"omr_notes": 363,
+"count_ratio": 0.66,
+"mean_score": 0.805,
+"confidence": "revisar"
+},
+{
+"num": 56,
+"n_systems": 5,
+"n_fingerings": 133,
+"omr_notes": 178,
+"count_ratio": 0.75,
+"mean_score": 0.809,
+"confidence": "alta"
+},
+{
+"num": 57,
+"n_systems": 5,
+"n_fingerings": 100,
+"omr_notes": 140,
+"count_ratio": 0.71,
+"mean_score": 0.683,
+"confidence": "alta"
+},
+{
+"num": 58,
+"n_systems": 5,
+"n_fingerings": 103,
+"omr_notes": 160,
+"count_ratio": 0.64,
+"mean_score": 0.728,
+"confidence": "revisar"
+},
+{
+"num": 59,
+"n_systems": 4,
+"n_fingerings": 93,
+"omr_notes": 118,
+"count_ratio": 0.79,
+"mean_score": 0.721,
+"confidence": "alta"
+},
+{
+"num": 60,
+"n_systems": 4,
+"n_fingerings": 116,
+"omr_notes": 130,
+"count_ratio": 0.89,
+"mean_score": 0.857,
+"confidence": "alta"
+},
+{
+"num": 61,
+"n_systems": 4,
+"n_fingerings": 105,
+"omr_notes": 150,
+"count_ratio": 0.7,
+"mean_score": 0.661,
+"confidence": "alta"
+},
+{
+"num": 62,
+"n_systems": 4,
+"n_fingerings": 96,
+"omr_notes": 191,
+"count_ratio": 0.5,
+"mean_score": 0.634,
+"confidence": "revisar"
+},
+{
+"num": 63,
+"n_systems": 4,
+"n_fingerings": 107,
+"omr_notes": 146,
+"count_ratio": 0.73,
+"mean_score": 0.852,
+"confidence": "alta"
+},
+{
+"num": 64,
+"n_systems": 5,
+"n_fingerings": 102,
+"omr_notes": 179,
+"count_ratio": 0.57,
+"mean_score": 0.665,
+"confidence": "revisar"
+},
+{
+"num": 65,
+"n_systems": 4,
+"n_fingerings": 81,
+"omr_notes": 102,
+"count_ratio": 0.79,
+"mean_score": 0.635,
+"confidence": "alta"
+},
+{
+"num": 66,
+"n_systems": 5,
+"n_fingerings": 96,
+"omr_notes": 139,
+"count_ratio": 0.69,
+"mean_score": 0.707,
+"confidence": "revisar"
+},
+{
+"num": 67,
+"n_systems": 4,
+"n_fingerings": 71,
+"omr_notes": 85,
+"count_ratio": 0.84,
+"mean_score": 0.689,
+"confidence": "alta"
+},
+{
+"num": 68,
+"n_systems": 4,
+"n_fingerings": 71,
+"omr_notes": 129,
+"count_ratio": 0.55,
+"mean_score": 0.69,
+"confidence": "revisar"
+},
+{
+"num": 69,
+"n_systems": 5,
+"n_fingerings": 99,
+"omr_notes": 159,
+"count_ratio": 0.62,
+"mean_score": 0.596,
+"confidence": "revisar"
+},
+{
+"num": 70,
+"n_systems": 4,
+"n_fingerings": 93,
+"omr_notes": 146,
+"count_ratio": 0.64,
+"mean_score": 0.637,
+"confidence": "revisar"
+},
+{
+"num": 71,
+"n_systems": 3,
+"n_fingerings": 97,
+"omr_notes": 111,
+"count_ratio": 0.87,
+"mean_score": 0.853,
+"confidence": "alta"
+},
+{
+"num": 72,
+"n_systems": 4,
+"n_fingerings": 123,
+"omr_notes": 141,
+"count_ratio": 0.87,
+"mean_score": 0.671,
+"confidence": "alta"
+},
+{
+"num": 73,
+"n_systems": 4,
+"n_fingerings": 85,
+"omr_notes": 117,
+"count_ratio": 0.73,
+"mean_score": 0.737,
+"confidence": "alta"
+},
+{
+"num": 74,
+"n_systems": 4,
+"n_fingerings": 86,
+"omr_notes": 112,
+"count_ratio": 0.77,
+"mean_score": 0.666,
+"confidence": "alta"
+},
+{
+"num": 75,
+"n_systems": 4,
+"n_fingerings": 67,
+"omr_notes": 126,
+"count_ratio": 0.53,
+"mean_score": 0.852,
+"confidence": "revisar"
+},
+{
+"num": 76,
+"n_systems": 3,
+"n_fingerings": 63,
+"omr_notes": 97,
+"count_ratio": 0.65,
+"mean_score": 0.743,
+"confidence": "revisar"
+},
+{
+"num": 77,
+"n_systems": 5,
+"n_fingerings": 65,
+"omr_notes": 191,
+"count_ratio": 0.34,
+"mean_score": 0.783,
+"confidence": "revisar"
+},
+{
+"num": 78,
+"n_systems": 4,
+"n_fingerings": 89,
+"omr_notes": 101,
+"count_ratio": 0.88,
+"mean_score": 0.858,
+"confidence": "alta"
+},
+{
+"num": 79,
+"n_systems": 3,
+"n_fingerings": 59,
+"omr_notes": 73,
+"count_ratio": 0.81,
+"mean_score": 0.7,
+"confidence": "alta"
+},
+{
+"num": 80,
+"n_systems": 6,
+"n_fingerings": 137,
+"omr_notes": 165,
+"count_ratio": 0.83,
+"mean_score": 0.677,
+"confidence": "alta"
+},
+{
+"num": 81,
+"n_systems": 4,
+"n_fingerings": 90,
+"omr_notes": 118,
+"count_ratio": 0.76,
+"mean_score": 0.682,
+"confidence": "alta"
+},
+{
+"num": 82,
+"n_systems": 5,
+"n_fingerings": 115,
+"omr_notes": 161,
+"count_ratio": 0.71,
+"mean_score": 0.824,
+"confidence": "alta"
+},
+{
+"num": 83,
+"n_systems": 4,
+"n_fingerings": 111,
+"omr_notes": 136,
+"count_ratio": 0.82,
+"mean_score": 0.882,
+"confidence": "alta"
+},
+{
+"num": 84,
+"n_systems": 5,
+"n_fingerings": 120,
+"omr_notes": 173,
+"count_ratio": 0.69,
+"mean_score": 0.817,
+"confidence": "revisar"
+},
+{
+"num": 85,
+"n_systems": 4,
+"n_fingerings": 98,
+"omr_notes": 138,
+"count_ratio": 0.71,
+"mean_score": 0.699,
+"confidence": "alta"
+},
+{
+"num": 86,
+"n_systems": 4,
+"n_fingerings": 97,
+"omr_notes": 128,
+"count_ratio": 0.76,
+"mean_score": 0.778,
+"confidence": "alta"
+},
+{
+"num": 87,
+"n_systems": 3,
+"n_fingerings": 55,
+"omr_notes": 71,
+"count_ratio": 0.77,
+"mean_score": 0.645,
+"confidence": "alta"
+},
+{
+"num": 88,
+"n_systems": 4,
+"n_fingerings": 60,
+"omr_notes": 175,
+"count_ratio": 0.34,
+"mean_score": 0.751,
+"confidence": "revisar"
+},
+{
+"num": 89,
+"n_systems": 5,
+"n_fingerings": 106,
+"omr_notes": 159,
+"count_ratio": 0.67,
+"mean_score": 0.64,
+"confidence": "revisar"
+},
+{
+"num": 90,
+"n_systems": 5,
+"n_fingerings": 113,
+"omr_notes": 181,
+"count_ratio": 0.62,
+"mean_score": 0.673,
+"confidence": "revisar"
+},
+{
+"num": 91,
+"n_systems": 4,
+"n_fingerings": 101,
+"omr_notes": 133,
+"count_ratio": 0.76,
+"mean_score": 0.707,
+"confidence": "alta"
+},
+{
+"num": 92,
+"n_systems": 5,
+"n_fingerings": 127,
+"omr_notes": 228,
+"count_ratio": 0.56,
+"mean_score": 0.66,
+"confidence": "revisar"
+},
+{
+"num": 93,
+"n_systems": 3,
+"n_fingerings": 75,
+"omr_notes": 84,
+"count_ratio": 0.89,
+"mean_score": 0.829,
+"confidence": "alta"
+},
+{
+"num": 94,
+"n_systems": 5,
+"n_fingerings": 141,
+"omr_notes": 174,
+"count_ratio": 0.81,
+"mean_score": 0.683,
+"confidence": "alta"
+},
+{
+"num": 95,
+"n_systems": 6,
+"n_fingerings": 245,
+"omr_notes": 254,
+"count_ratio": 0.96,
+"mean_score": 0.864,
+"confidence": "alta"
+},
+{
+"num": 96,
+"n_systems": 5,
+"n_fingerings": 146,
+"omr_notes": 155,
+"count_ratio": 0.94,
+"mean_score": 0.837,
+"confidence": "alta"
+},
+{
+"num": 97,
+"n_systems": 5,
+"n_fingerings": 169,
+"omr_notes": 200,
+"count_ratio": 0.84,
+"mean_score": 0.711,
+"confidence": "alta"
+},
+{
+"num": 98,
+"n_systems": 4,
+"n_fingerings": 107,
+"omr_notes": 108,
+"count_ratio": 0.99,
+"mean_score": 0.686,
+"confidence": "alta"
+},
+{
+"num": 99,
+"n_systems": 4,
+"n_fingerings": 98,
+"omr_notes": 130,
+"count_ratio": 0.75,
+"mean_score": 0.884,
+"confidence": "alta"
+},
+{
+"num": 100,
+"n_systems": 4,
+"n_fingerings": 124,
+"omr_notes": 161,
+"count_ratio": 0.77,
+"mean_score": 0.855,
+"confidence": "alta"
+},
+{
+"num": 101,
+"n_systems": 5,
+"n_fingerings": 146,
+"omr_notes": 168,
+"count_ratio": 0.87,
+"mean_score": 0.845,
+"confidence": "alta"
+},
+{
+"num": 102,
+"n_systems": 4,
+"n_fingerings": 122,
+"omr_notes": 174,
+"count_ratio": 0.7,
+"mean_score": 0.682,
+"confidence": "alta"
+},
+{
+"num": 103,
+"n_systems": 4,
+"n_fingerings": 114,
+"omr_notes": 127,
+"count_ratio": 0.9,
+"mean_score": 0.871,
+"confidence": "alta"
+},
+{
+"num": 104,
+"n_systems": 4,
+"n_fingerings": 134,
+"omr_notes": 137,
+"count_ratio": 0.98,
+"mean_score": 0.861,
+"confidence": "alta"
+},
+{
+"num": 105,
+"n_systems": 4,
+"n_fingerings": 104,
+"omr_notes": 148,
+"count_ratio": 0.7,
+"mean_score": 0.78,
+"confidence": "alta"
+},
+{
+"num": 106,
+"n_systems": 4,
+"n_fingerings": 125,
+"omr_notes": 151,
+"count_ratio": 0.83,
+"mean_score": 0.825,
+"confidence": "alta"
+},
+{
+"num": 107,
+"n_systems": 5,
+"n_fingerings": 180,
+"omr_notes": 206,
+"count_ratio": 0.87,
+"mean_score": 0.793,
+"confidence": "alta"
+},
+{
+"num": 108,
+"n_systems": 4,
+"n_fingerings": 107,
+"omr_notes": 128,
+"count_ratio": 0.84,
+"mean_score": 0.843,
+"confidence": "alta"
+},
+{
+"num": 109,
+"n_systems": 4,
+"n_fingerings": 113,
+"omr_notes": 145,
+"count_ratio": 0.78,
+"mean_score": 0.811,
+"confidence": "alta"
+},
+{
+"num": 110,
+"n_systems": 5,
+"n_fingerings": 126,
+"omr_notes": 177,
+"count_ratio": 0.71,
+"mean_score": 0.847,
+"confidence": "alta"
+}
+]
