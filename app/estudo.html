@@ -82,6 +82,21 @@ small{color:var(--suave)}
 .toggle.on{background:var(--vinho);border-color:var(--vinho)}
 .nota-rasc{color:var(--suave);font-size:12.5px;margin-top:12px}
 .ok{color:var(--verde)}
+/* tutor de escuta */
+.abcjs-good{fill:var(--verde)!important}.abcjs-bad{fill:var(--vinho2)!important}
+.tuner{width:100%;max-width:320px;margin-top:10px;opacity:.4;transition:opacity .2s}
+.tuner.ativo{opacity:1}
+.tuner .scale{position:relative;height:8px;border-radius:6px;
+  background:linear-gradient(90deg,var(--vinho),#3a3630 38%,var(--verde) 50%,#3a3630 62%,var(--vinho))}
+.tuner .needle{position:absolute;top:-3px;left:50%;width:3px;height:14px;background:var(--tinta);
+  border-radius:2px;transform:translateX(-50%);transition:left .06s linear}
+.tuner .needle.intune{background:var(--verde);box-shadow:0 0 10px var(--verde)}
+.tuner .micnota{font-size:12px;color:var(--suave);text-align:center;margin-top:6px;font-variant-numeric:tabular-nums}
+.loopbox,.rampbox{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.lstep{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--suave)}
+.lstep button{width:30px;height:34px;border-radius:8px;border:1px solid var(--linha);background:#2a261d;color:var(--tinta);font-size:16px;cursor:pointer}
+.lstep>span{min-width:16px;text-align:center;color:var(--tinta);font-weight:700}
+.chip{font-size:12px;color:var(--ouro);font-weight:700}
 
 /* prática */
 .passos{list-style:none;padding:0;margin:0}
@@ -118,11 +133,21 @@ small{color:var(--suave)}
       <div class="stage">
         <div class="valves"><div class="valve" id="v1">1</div><div class="valve" id="v2">2</div><div class="valve" id="v3">3</div></div>
         <div class="agora"><div class="nota" id="notaAtual">·</div><div class="dedo" id="dedoAtual">pronto</div></div>
+        <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div></div>
       </div>
       <div class="controls">
         <div class="tempo"><button id="menos">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais">+</button></div>
         <button class="toggle" id="tconcert">ouvir em concerto</button>
+        <button class="toggle" id="tmic">🎤 ouvir meu som</button>
+        <button class="toggle" id="tprat">▶ praticar</button>
+        <div class="loopbox"><button class="toggle" id="tloop">🔁 loop</button>
+          <span class="lstep">comp <button id="laMinus">−</button><span id="laVal">1</span><button id="laPlus">+</button>
+          → <button id="lbMinus">−</button><span id="lbVal">1</span><button id="lbPlus">+</button></span>
+          <span class="chip" id="loopchip"></span></div>
+        <div class="rampbox"><button class="toggle" id="tramp">⏫ rampa</button>
+          <span class="lstep">até <button id="raMinus">−</button><span id="rampVal">120</span><button id="raPlus">+</button> BPM</span></div>
       </div>
+      <p class="nota-rasc">🎤 <b>Praticar</b>: o app dá a <b>clave</b> (sem melodia, pra ouvir você), você toca, e a nota fica <span class="ok">verde</span> quando acerta. Use <b>fones</b> se quiser ouvir o trompete junto.</p>
       <div id="paper" class="paper"></div>
       <div id="audio" class="audio"></div>
       <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
@@ -145,78 +170,7 @@ small{color:var(--suave)}
 </main>
 
 <script src="./vendor/abcjs.js"></script>
-<script>
-const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
-const CEL = ['C2','C1','C5'];
-const $ = s => document.querySelector(s);
-const NOMES = ['Dó','Dó♯','Ré','Ré♯','Mi','Fá','Fá♯','Sol','Sol♯','Lá','Lá♯','Si'];
-const SHARP = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
-const VALV = {'F#3':'123','G3':'13','G#3':'23','A3':'12','A#3':'1','B3':'2','C4':'0','C#4':'123','D4':'13','D#4':'23','E4':'12','F4':'1','F#4':'2','G4':'0','G#4':'23','A4':'12','A#4':'1','B4':'2','C5':'0','C#5':'12','D5':'1','D#5':'2','E5':'0','F5':'1','F#5':'2','G5':'0','G#5':'23','A5':'12','A#5':'1','B5':'2','C6':'0'};
-function fingerOf(midi){ return VALV[SHARP[((midi%12)+12)%12] + (Math.floor(midi/12)-1)]; }
-
-let AC=null, MELODIA=null, SYNTH=null, BPM=92, TR=0, VISUAL=null;
-function audioUnlock(){ try{ if(!AC){ AC=new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC);} if(AC.state==='suspended') AC.resume(); }catch(e){} }
-['pointerdown','touchend','click'].forEach(ev=>document.addEventListener(ev,audioUnlock,{capture:true}));
-
-async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
-
-(async function(){
-  const [pieces, cells, abc, escada] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json')]);
-  const WR={C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
-  const NIVEL={book1:'Book 1',book2:'Book 2',arban:'Arban'};
-  const p = (pieces?.pieces||[]).find(x=>'sb-'+String(x.num).padStart(3,'0')===ID);
-  const esc = (escada?.pieces||[]).find(x=>x.id===ID);
-  if(p){ $('#titulo').textContent=p.titulo; $('#byline').textContent=p.compositor;
-    const bNivel = esc?`<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>`:'';
-    $('#badges').innerHTML=`<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`; }
-  const cm={}; (cells?.celulas_ritmicas||[]).forEach(c=>cm[c.id]=c);
-  $('#celulas').innerHTML = CEL.map((id,i)=>`<div class="pane cel ${id==='C2'?'heart':''}" style="animation-delay:${i*.08}s">
-    <button class="play" data-abc="cell-${id}" aria-label="tocar ${id}">▶</button>
-    <div><h3>${id} · ${cm[id]?.nome||''}${id==='C2'?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
-  CEL.forEach(id=>{ if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id].replace(/\nT:[^\n]*/,'').replace(/\nQ:[^\n]*/,''), {staffwidth:235,scale:1.35,paddingtop:2,paddingbottom:2,paddingleft:0,paddingright:0}); }catch{} });
-  document.querySelectorAll('.play').forEach(b=> b.onclick=()=>playOnce(abc?.[b.dataset.abc]));
-
-  MELODIA = abc?.[ID] || null;
-  if(abc?._verified?.includes?.(ID)){ $('#rasc').innerHTML='Melodia <span class="ok">conferida ✓</span> · digitação de trompete.'; }
-  if(MELODIA){ setMel(); } else { $('#paper').innerHTML='<p class="nota-rasc">melodia indisponível.</p>'; }
-
-  $('#menos').onclick=()=>{ BPM=Math.max(50,BPM-2); $('#bpm').textContent=BPM; setMel(); };
-  $('#mais').onclick =()=>{ BPM=Math.min(180,BPM+2); $('#bpm').textContent=BPM; setMel(); };
-  $('#tconcert').onclick=e=>{ const c=e.target.classList.toggle('on'); TR=c?-2:0; e.target.textContent=c?'ouvir escrito (Bb)':'ouvir em concerto'; setMel(); };
-
-  const passos=$('#passos'); const done=JSON.parse(localStorage.getItem('passos-'+ID)||'[]');
-  [...passos.children].forEach((li,i)=>{ if(done.includes(i)) li.classList.add('done');
-    li.onclick=()=>{ li.classList.toggle('done'); const d=[...passos.children].map((x,k)=>x.classList.contains('done')?k:-1).filter(k=>k>=0); localStorage.setItem('passos-'+ID, JSON.stringify(d)); }; });
-})();
-
-async function playOnce(abc){
-  if(!abc || !window.ABCJS?.synth?.supportsAudio()) return; audioUnlock();
-  try{ let sc=document.getElementById('scratch'); if(!sc){sc=document.createElement('div');sc.id='scratch';sc.style.display='none';document.body.appendChild(sc);}
-    const v=ABCJS.renderAbc('scratch',abc)[0]; const s=new ABCJS.synth.CreateSynth();
-    await s.init({audioContext:AC, visualObj:v, options:{soundFontUrl:'./vendor/soundfont/', program:56}}); await s.prime(); s.start();
-  }catch(e){}
-}
-function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).classList.toggle('press', f && f.includes(i)); } }
-function cursor(){
-  const clr=()=>document.querySelectorAll('.abcjs-highlight').forEach(el=>el.classList.remove('abcjs-highlight'));
-  return { onStart(){}, onFinished(){ clr(); setValves(''); $('#notaAtual').textContent='·'; $('#dedoAtual').textContent='fim'; },
-    onEvent(ev){ if(!ev) return; clr(); (ev.elements||[]).forEach(s=>s.forEach(el=>el.classList.add('abcjs-highlight')));
-      const mp=ev.midiPitches&&ev.midiPitches[0];
-      if(mp){ const w=Math.round(mp.pitch)-TR; const f=fingerOf(w);
-        $('#notaAtual').textContent=NOMES[((w%12)+12)%12]; $('#dedoAtual').textContent=(f==='0'?'solto (0)':'dedo '+f)||'—'; setValves(f); } } };
-}
-function setMel(){
-  if(!MELODIA) return; audioUnlock();
-  const abc=MELODIA.replace(/Q:1\/4=\d+/, 'Q:1/4='+BPM).replace(/\nT:[^\n]*/,'');
-  if(SYNTH){ try{SYNTH.pause();}catch{} }
-  const pw=Math.max(280,(($('#paper').clientWidth)||340)-26);
-  try{ VISUAL=ABCJS.renderAbc('paper', abc, {add_classes:true, staffwidth:pw, visualTranspose:TR, scale:1, wrap:{preferredMeasuresPerLine:4, minSpacing:1, maxSpacing:1.8, lastLineLimit:true}})[0]; }catch{ return; }
-  if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML='<p class="nota-rasc">áudio não suportado.</p>'; return; }
-  try{ SYNTH=new ABCJS.synth.SynthController();
-    SYNTH.load('#audio', cursor(), {displayPlay:true,displayProgress:true,displayLoop:true,displayRestart:true});
-    SYNTH.setTune(VISUAL, false, {program:56, soundFontUrl:'./vendor/soundfont/'}).catch(()=>{});
-  }catch(e){}
-}
-</script>
+<script defer src="./vendor/pitch-detector.js"></script>
+<script defer src="./estudo.js"></script>
 </body>
 </html>

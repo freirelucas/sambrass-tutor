@@ -1,0 +1,13 @@
+{
+  "name": "sambrass-tutor-tests",
+  "private": true,
+  "description": "Harness de testes do tutor (não faz parte do app, que é vanilla sem build).",
+  "scripts": {
+    "test:core": "node tests/pitch-core.test.js",
+    "test:e2e": "playwright test",
+    "test": "node tests/pitch-core.test.js && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
