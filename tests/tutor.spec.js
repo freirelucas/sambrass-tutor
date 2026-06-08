@@ -56,6 +56,18 @@ test('rótulo de qualidade reflete o tier (melodia fundida pelos dedos)', async 
   await expect(page.locator('#rasc')).toContainText('pelos dedos', { timeout: 10000 });
 });
 
+test('banco mostra o nível pedagógico e filtra por ele', async ({ page }) => {
+  await page.goto('/index.html');
+  await page.waitForFunction(() => document.querySelector('#tela') && document.querySelector('#tela').textContent.length > 40);
+  await page.evaluate(() => ir('banco'));                           // ir() é global (onclick inline)
+  await expect(page.locator('#fnivel')).toBeVisible();
+  await expect(page.locator('#listapecas .niv').first()).toBeVisible();
+  await page.selectOption('#fnivel', 'book1');                      // filtra Book 1
+  const chips = await page.locator('#listapecas .niv').allInnerTexts();
+  expect(chips.length, 'há peças Book 1').toBeGreaterThan(0);
+  expect(chips.every((t) => t.includes('Book 1')), 'só Book 1 no filtro').toBeTruthy();
+});
+
 test('ligar microfone e praticar: tuner ativa e o cursor silencioso avança', async ({ page, context }) => {
   await context.grantPermissions(['microphone']);
   const errors = [];
