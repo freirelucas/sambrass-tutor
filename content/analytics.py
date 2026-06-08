@@ -8,7 +8,7 @@ matriz célula × tom, correlações e outliers. Uso: python3 content/analytics.
 import json, html, collections, sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "curadoria"))
 from lib import (load_pieces, features, piece_skills, difficulty_table,
-                 written_acc, SKILLS, PC, ROOT)
+                 written_acc, nivel_minimo, SKILLS, PC, ROOT)
 
 NAME_BY_PC = {0: "C", 1: "Db", 2: "D", 3: "Eb", 4: "E", 5: "F",
               6: "F#", 7: "G", 8: "Ab", 9: "A", 10: "Bb", 11: "B"}
@@ -52,6 +52,7 @@ def main():
     cel = count(c for p in P for c in p["celulas"])
     skl = count(s for p in P for s in skills_by[p["num"]])
     composers = count(p["compositor"].split(" / ")[0] for p in P)
+    niv = count(nivel_minimo(p) for p in P)  # escada pedagógica (Book1/Book2/Arban)
 
     # matriz célula × tom escrito
     keys = [k for k in tom_order if k in tom_w]
@@ -76,6 +77,7 @@ def main():
         "dificuldade_calc": dict(sorted(dcal.items())),
         "celulas": dict(cel), "habilidades": dict(skl),
         "matriz_celula_tom": matrix,
+        "nivel_minimo": {k: niv.get(k, 0) for k in ("book1", "book2", "arban")},
         "outliers": {k: [p["num"] for p in v] for k, v in outliers.items()},
     }, open(ROOT / "analytics.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
@@ -120,7 +122,7 @@ ul{{list-style:none;padding:0;font-size:14px}}ul li{{padding:3px 0;border-bottom
 <div class="sub">110 peças catalogadas · gerado de content/pieces.json · dificuldade_calc = fórmula recalibrada 1–10</div>
 <div class="kpi"><div><b>{len(P)}</b>peças</div><div><b>{len(keys)}</b>tons</div>
 <div><b>{comp.get('4/4',0)}</b>em 4/4</div><div><b>{len(outliers['modulantes'])}</b>modulações</div>
-<div><b>{sum(1 for p in P if 'C4' in p['celulas'])}</b>com semicolcheia</div></div>
+<div><b>{niv['book1']}</b>tocáveis só com Book 1</div></div>
 
 <h2>Tonalidades (escritas) e compasso</h2><div class="grid">
 <div class="card"><b>Tom escrito</b>{bars([(k, tom_w[k]) for k in keys])}</div>
@@ -131,6 +133,11 @@ ul{{list-style:none;padding:0;font-size:14px}}ul li{{padding:3px 0;border-bottom
 <div class="card"><b>Manual (estimada)</b>{bars(dman_items)}</div>
 <div class="card"><b>Recalibrada (fórmula)</b>{bars(dcal_items)}</div></div>
 <p class="sub">A manual aglomerava em 6; a recalibrada espalha pela escala — use-a como referência objetiva.</p>
+
+<h2>Escada pedagógica — o que cada método destrava</h2><div class="grid">
+<div class="card"><b>Nível mínimo por peça</b>{bars([("Book 1", niv['book1']), ("Book 2", niv['book2']), ("Arban", niv['arban'])])}</div>
+<div class="card"><b>Funil acumulado (peças tocáveis)</b>{bars([("só Book 1", niv['book1']), ("+ Book 2", niv['book1'] + niv['book2']), ("+ Arban", len(P))])}</div></div>
+<p class="sub">Critério estrito (handoff §4): a peça destrava quando TODOS os requisitos — tom, células, ornamento, forma — têm âncora no nível acumulado. A camada idiomática (suingue/modulação/respiração) é o valor próprio do app. Deriva de pieces.json; detalhe em <code>docs/escada_pedagogica.md</code>.</p>
 
 <h2>Habilidades mais frequentes</h2><div class="card">{bars(skl.most_common())}</div>
 

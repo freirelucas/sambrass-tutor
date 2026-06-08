@@ -22,6 +22,7 @@ def main():
     shutil.copy(ROOT / "content" / "cells.json", data / "cells.json")
     shutil.copy(ROOT / "content" / "curriculum" / "sambrass23-trilha.json", data / "curriculum.json")
     shutil.copy(ROOT / "content" / "curadoria" / "trilha.json", data / "trilha.json")
+    shutil.copy(ROOT / "content" / "curadoria" / "escada.json", data / "escada.json")
     abc = ROOT / "content" / "notes_abc.json"
     if abc.exists():
         shutil.copy(abc, data / "abc.json")

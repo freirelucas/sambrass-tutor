@@ -1,0 +1,3029 @@
+{
+  "_meta": {
+    "sobre": "Escada pedagógica: nível mínimo de método (Essential Elements Book 1/2, Arban) + camada idiomática Sambrass, por peça. Derivado de pieces.json pela regra em curadoria/lib.py. Materializa a HANDOFF §8 para as 110.",
+    "regra": {
+      "book1_tons_escritos": [
+        "C",
+        "F",
+        "G",
+        "Bb"
+      ],
+      "book2_tons_escritos": [
+        "D",
+        "A",
+        "Eb",
+        "E"
+      ],
+      "book2_celulas": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "arban_marcadores": [
+        "contratempo-intenso",
+        "cromatismo-denso",
+        "forma-extensa-101c",
+        "forma-muito-longa",
+        "ornamentos",
+        "resistência",
+        "tercina-contínua"
+      ]
+    },
+    "funil": {
+      "book1": 30,
+      "book2": 67,
+      "arban": 13
+    },
+    "acumulado_tocavel": {
+      "book1": 30,
+      "book2": 97,
+      "arban": 110
+    },
+    "validacao_oraculo": {
+      "match": 27,
+      "diverge": 2,
+      "de": 29,
+      "divergencias": [
+        {
+          "titulo": "Fita Amarela",
+          "num": 4,
+          "handoff": "book2",
+          "regra": "book1",
+          "status": "diverge"
+        },
+        {
+          "titulo": "Preciso Me Encontrar",
+          "num": 11,
+          "handoff": "arban",
+          "regra": "book2",
+          "status": "diverge"
+        }
+      ],
+      "nota": "Divergências justificadas em docs/escada_pedagogica.md: 'Fita Amarela' segue a tabela-mestre §3 (Sib 2♭ = Book 1, não Book 2); 'Preciso Me Encontrar' é drift de numeração/metadados (handoff Lá/dif7 vs sb-011 Sol/dif4)."
+    }
+  },
+  "pieces": [
+    {
+      "num": 1,
+      "id": "sb-001",
+      "titulo": "Até Amanhã",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 2,
+      "id": "sb-002",
+      "titulo": "Com Que Roupa",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 3,
+      "id": "sb-003",
+      "titulo": "Feitiço da Vila",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 4,
+      "id": "sb-004",
+      "titulo": "Fita Amarela",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C7 anacruse (#36)",
+          "A1 tríade ascendente (#147–149)",
+          "A2 tríade descendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 5,
+      "id": "sb-005",
+      "titulo": "Acontece",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 6,
+      "id": "sb-006",
+      "titulo": "As Rosas Não Falam",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 7,
+      "id": "sb-007",
+      "titulo": "Corra e Olhe o Céu",
+      "tom_escrito": "Eb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura Eb"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita Eb"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 8,
+      "id": "sb-008",
+      "titulo": "O Mundo é um Moinho",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 9,
+      "id": "sb-009",
+      "titulo": "O Sol Nascerá",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 1
+    },
+    {
+      "num": 10,
+      "id": "sb-010",
+      "titulo": "Peito Vazio",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 11,
+      "id": "sb-011",
+      "titulo": "Preciso Me Encontrar",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 12,
+      "id": "sb-012",
+      "titulo": "Tive Sim",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 13,
+      "id": "sb-013",
+      "titulo": "A Flor e o Espinho",
+      "tom_escrito": "G",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 14,
+      "id": "sb-014",
+      "titulo": "Folhas Secas",
+      "tom_escrito": "F",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C3",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 15,
+      "id": "sb-015",
+      "titulo": "Juízo Final",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 16,
+      "id": "sb-016",
+      "titulo": "Vou Partir",
+      "tom_escrito": "Eb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura Eb"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita Eb"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 17,
+      "id": "sb-017",
+      "titulo": "A Voz do Morro",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)",
+          "A2 tríade descendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 18,
+      "id": "sb-018",
+      "titulo": "Diz Que Fui por Aí",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 19,
+      "id": "sb-019",
+      "titulo": "Mascarada",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5",
+        "tercina-contínua"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [
+          "tercina contínua"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 20,
+      "id": "sb-020",
+      "titulo": "Tiro ao Álvaro",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 21,
+      "id": "sb-021",
+      "titulo": "Samba do Arnesto",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 22,
+      "id": "sb-022",
+      "titulo": "Trem das Onze",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 23,
+      "id": "sb-023",
+      "titulo": "Saudosa Maloca",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 24,
+      "id": "sb-024",
+      "titulo": "Acreditar",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 25,
+      "id": "sb-025",
+      "titulo": "Alguém Me Avisou",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 26,
+      "id": "sb-026",
+      "titulo": "Enredo do Meu Samba",
+      "tom_escrito": "F",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5",
+        "tercina-contínua"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [
+          "tercina contínua"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 27,
+      "id": "sb-027",
+      "titulo": "Sonho Meu",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 28,
+      "id": "sb-028",
+      "titulo": "Casa de Bamba",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 29,
+      "id": "sb-029",
+      "titulo": "Ex Amor",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 30,
+      "id": "sb-030",
+      "titulo": "Madalena do Jucu",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 31,
+      "id": "sb-031",
+      "titulo": "Renascer das Cinzas",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 32,
+      "id": "sb-032",
+      "titulo": "Água de Chuva no Mar",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 33,
+      "id": "sb-033",
+      "titulo": "Andança",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 34,
+      "id": "sb-034",
+      "titulo": "Se Você Jurar",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 35,
+      "id": "sb-035",
+      "titulo": "Tristeza",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)",
+          "A2 tríade descendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 36,
+      "id": "sb-036",
+      "titulo": "Vou Festejar",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "modula A",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "modula para A",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 37,
+      "id": "sb-037",
+      "titulo": "Conselho",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 38,
+      "id": "sb-038",
+      "titulo": "Do Fundo do Nosso Quintal",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 39,
+      "id": "sb-039",
+      "titulo": "Eu e Você Sempre",
+      "tom_escrito": "F#",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura F#"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [
+          "armadura escrita F#"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 40,
+      "id": "sb-040",
+      "titulo": "Falsa Consideração",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 41,
+      "id": "sb-041",
+      "titulo": "Identidade",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 42,
+      "id": "sb-042",
+      "titulo": "Lucidez",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 43,
+      "id": "sb-043",
+      "titulo": "Malandro",
+      "tom_escrito": "D",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 44,
+      "id": "sb-044",
+      "titulo": "Não Deixe o Samba Morrer",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 45,
+      "id": "sb-045",
+      "titulo": "Sufoco",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "modula D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "modula para D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 46,
+      "id": "sb-046",
+      "titulo": "Você Me Vira a Cabeça",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 47,
+      "id": "sb-047",
+      "titulo": "Coração em Desalinho",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 48,
+      "id": "sb-048",
+      "titulo": "Jura",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 49,
+      "id": "sb-049",
+      "titulo": "Vai Vadiar",
+      "tom_escrito": "G",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5",
+        "tercina-contínua",
+        "ornamentos",
+        "forma-muito-longa"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [
+          "tercina contínua",
+          "ornamentos: apojatura/grupeto/trinado (Arban IV)",
+          "forma muito longa"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 50,
+      "id": "sb-050",
+      "titulo": "Verdade",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 51,
+      "id": "sb-051",
+      "titulo": "Vivo Isolado do Mundo",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 52,
+      "id": "sb-052",
+      "titulo": "Ainda Mais",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 53,
+      "id": "sb-053",
+      "titulo": "Coração Leviano",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 54,
+      "id": "sb-054",
+      "titulo": "Dança da Solidão",
+      "tom_escrito": "A",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C5",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C5 tercina"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 10
+    },
+    {
+      "num": 55,
+      "id": "sb-055",
+      "titulo": "Foi um Rio Que Passou em Minha Vida",
+      "tom_escrito": "G",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "forma-extensa-101c",
+        "resistência",
+        "ornamentos"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [
+          "forma extensa de 101+ compassos",
+          "resistência de forma extensa",
+          "ornamentos: apojatura/grupeto/trinado (Arban IV)"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 9
+    },
+    {
+      "num": 56,
+      "id": "sb-056",
+      "titulo": "Pecado Capital",
+      "tom_escrito": "D",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 57,
+      "id": "sb-057",
+      "titulo": "A Volta do Malandro",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 58,
+      "id": "sb-058",
+      "titulo": "De Volta ao Samba",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 59,
+      "id": "sb-059",
+      "titulo": "Homenagem ao Malandro",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 60,
+      "id": "sb-060",
+      "titulo": "Partido Alto",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 61,
+      "id": "sb-061",
+      "titulo": "Quem Te Viu, Quem Te Vê",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "modula D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "modula para D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 62,
+      "id": "sb-062",
+      "titulo": "Samba do Grande Amor",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 63,
+      "id": "sb-063",
+      "titulo": "Sem Compromisso",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 64,
+      "id": "sb-064",
+      "titulo": "A Felicidade",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 65,
+      "id": "sb-065",
+      "titulo": "A Tonga da Mironga do Kabuletê",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 66,
+      "id": "sb-066",
+      "titulo": "Consolação",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 67,
+      "id": "sb-067",
+      "titulo": "O Morro Não Tem Vez",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "A1 tríade ascendente (#147–149)",
+          "A2 tríade descendente (#147–149)"
+        ],
+        "book2": [
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 68,
+      "id": "sb-068",
+      "titulo": "Pra Que Chorar",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A2 tríade descendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 2
+    },
+    {
+      "num": 69,
+      "id": "sb-069",
+      "titulo": "Regra Três",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 70,
+      "id": "sb-070",
+      "titulo": "Samba de Orly",
+      "tom_escrito": "D",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "cromatismo-denso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [
+          "cromatismo denso"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 71,
+      "id": "sb-071",
+      "titulo": "Ronda",
+      "tom_escrito": "G",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5",
+        "tercina-contínua"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [
+          "tercina contínua"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 72,
+      "id": "sb-072",
+      "titulo": "Naquela Mesa",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 73,
+      "id": "sb-073",
+      "titulo": "Retalhos de Cetim",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "modula para G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 74,
+      "id": "sb-074",
+      "titulo": "Você Abusou",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "modula A"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [
+          "modula para A"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 75,
+      "id": "sb-075",
+      "titulo": "Me Deixe em Paz",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 76,
+      "id": "sb-076",
+      "titulo": "É Preciso Perdoar",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 1
+    },
+    {
+      "num": 77,
+      "id": "sb-077",
+      "titulo": "Desde Que o Samba é Samba",
+      "tom_escrito": "F",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 78,
+      "id": "sb-078",
+      "titulo": "Cicatrizes",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 79,
+      "id": "sb-079",
+      "titulo": "De Mais Ninguém",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 80,
+      "id": "sb-080",
+      "titulo": "O Bêbado e o Equilibrista",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)",
+          "A4 bordadura cromática (#174)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 81,
+      "id": "sb-081",
+      "titulo": "De Frente pro Crime",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 82,
+      "id": "sb-082",
+      "titulo": "Linha de Passe",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 83,
+      "id": "sb-083",
+      "titulo": "Comportamento Geral",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4",
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias",
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 84,
+      "id": "sb-084",
+      "titulo": "Flor de Lis",
+      "tom_escrito": "D",
+      "nivel_minimo": "arban",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "modula A",
+        "C5",
+        "contratempo-intenso"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C6 contratempo (#158–164)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "modula para A",
+          "C5 tercina"
+        ],
+        "arban": [
+          "contratempo intenso / staccato duplo (tu-ku, Arban VI)"
+        ],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 85,
+      "id": "sb-085",
+      "titulo": "Mas Que Nada",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 86,
+      "id": "sb-086",
+      "titulo": "Eu Bebo Sim",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 3
+    },
+    {
+      "num": 87,
+      "id": "sb-087",
+      "titulo": "Maracangalha",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C3"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C3 colcheia pontuada + semicolcheia"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 88,
+      "id": "sb-088",
+      "titulo": "Leva Meu Samba",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 89,
+      "id": "sb-089",
+      "titulo": "Na Cadência do Samba",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 90,
+      "id": "sb-090",
+      "titulo": "Pimenta no Vatapá",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 91,
+      "id": "sb-091",
+      "titulo": "Do Jeito Que o Rei Mandou",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C5"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "modula para F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C5 tercina"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 92,
+      "id": "sb-092",
+      "titulo": "Canto das Três Raças",
+      "tom_escrito": "G",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 7
+    },
+    {
+      "num": 93,
+      "id": "sb-093",
+      "titulo": "Tristeza, Pé no Chão",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 94,
+      "id": "sb-094",
+      "titulo": "A Batucada dos Nossos Tantãs",
+      "tom_escrito": "F",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 95,
+      "id": "sb-095",
+      "titulo": "Agamamou",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 96,
+      "id": "sb-096",
+      "titulo": "Caçamba",
+      "tom_escrito": "G",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita G",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "mapa de respiração (forma longa)"
+        ]
+      },
+      "dificuldade_calc": 10
+    },
+    {
+      "num": 97,
+      "id": "sb-097",
+      "titulo": "Cheia de Manias",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 98,
+      "id": "sb-098",
+      "titulo": "Cilada",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 99,
+      "id": "sb-099",
+      "titulo": "Cigana",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 100,
+      "id": "sb-100",
+      "titulo": "Coração Radiante",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 101,
+      "id": "sb-101",
+      "titulo": "Deixa Acontecer",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 102,
+      "id": "sb-102",
+      "titulo": "Domingo",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "modula para F",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 5
+    },
+    {
+      "num": 103,
+      "id": "sb-103",
+      "titulo": "Essa Tal Liberdade",
+      "tom_escrito": "D",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura D",
+        "modula A"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita D",
+          "modula para A"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba",
+          "modulação de armadura na peça"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 104,
+      "id": "sb-104",
+      "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+      "tom_escrito": "C",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 105,
+      "id": "sb-105",
+      "titulo": "Inaraí",
+      "tom_escrito": "Eb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura Eb"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita Eb"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 106,
+      "id": "sb-106",
+      "titulo": "Pé na Areia",
+      "tom_escrito": "C",
+      "nivel_minimo": "book1",
+      "tocavel_book1": true,
+      "requisito_orfao_book1": [],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita C",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 4
+    },
+    {
+      "num": 107,
+      "id": "sb-107",
+      "titulo": "Ta Escrito",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 10
+    },
+    {
+      "num": 108,
+      "id": "sb-108",
+      "titulo": "É Tarde Demais",
+      "tom_escrito": "A",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura A",
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita A",
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 8
+    },
+    {
+      "num": 109,
+      "id": "sb-109",
+      "titulo": "Telegrama",
+      "tom_escrito": "Eb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "armadura Eb"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "armadura escrita Eb"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 6
+    },
+    {
+      "num": 110,
+      "id": "sb-110",
+      "titulo": "Temporal",
+      "tom_escrito": "Bb",
+      "nivel_minimo": "book2",
+      "tocavel_book1": false,
+      "requisito_orfao_book1": [
+        "C4"
+      ],
+      "prerequisitos": {
+        "book1": [
+          "armadura escrita Bb",
+          "C1 colcheias em grupo (#40–45)",
+          "C2 síncope (Arban I / tie #59)",
+          "A1 tríade ascendente (#147–149)"
+        ],
+        "book2": [
+          "C4 quatro semicolcheias"
+        ],
+        "arban": [],
+        "idiomatico": [
+          "suingue / divisão do samba"
+        ]
+      },
+      "dificuldade_calc": 7
+    }
+  ]
+}

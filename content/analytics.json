@@ -49,15 +49,15 @@
     "C6": 14
   },
   "habilidades": {
+    "tom-1": 47,
     "sincope": 98,
     "casas": 57,
-    "tom-1": 47,
     "cromatismo": 36,
     "forma-longa": 33,
     "tom-2": 30,
     "anacruse": 1,
-    "compasso-4-4": 18,
     "tercina": 31,
+    "compasso-4-4": 18,
     "forma-extensa": 17,
     "tom-3": 12,
     "semicolcheia": 24,
@@ -139,6 +139,11 @@
       "Bb": 1,
       "Eb": 0
     }
+  },
+  "nivel_minimo": {
+    "book1": 30,
+    "book2": 67,
+    "arban": 13
   },
   "outliers": {
     "mais_dificeis": [

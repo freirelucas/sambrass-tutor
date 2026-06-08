@@ -32,6 +32,7 @@ small{color:var(--suave)}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .badge{background:rgba(255,255,255,.05);border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
 .badge b{color:var(--ouro)}
+.badge.nivel-book1 b{color:var(--verde)}.badge.nivel-arban b{color:var(--vinho2)}
 
 .sec{margin:42px 0 0}
 .sec-h{font-family:var(--serif);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ouro);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:6px}
@@ -160,11 +161,14 @@ function audioUnlock(){ try{ if(!AC){ AC=new (window.AudioContext||window.webkit
 async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json')]);
+  const [pieces, cells, abc, escada] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json')]);
   const WR={C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
+  const NIVEL={book1:'Book 1',book2:'Book 2',arban:'Arban'};
   const p = (pieces?.pieces||[]).find(x=>'sb-'+String(x.num).padStart(3,'0')===ID);
+  const esc = (escada?.pieces||[]).find(x=>x.id===ID);
   if(p){ $('#titulo').textContent=p.titulo; $('#byline').textContent=p.compositor;
-    $('#badges').innerHTML=`<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>`; }
+    const bNivel = esc?`<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>`:'';
+    $('#badges').innerHTML=`<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`; }
   const cm={}; (cells?.celulas_ritmicas||[]).forEach(c=>cm[c.id]=c);
   $('#celulas').innerHTML = CEL.map((id,i)=>`<div class="pane cel ${id==='C2'?'heart':''}" style="animation-delay:${i*.08}s">
     <button class="play" data-abc="cell-${id}" aria-label="tocar ${id}">▶</button>
