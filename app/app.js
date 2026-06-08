@@ -7,8 +7,8 @@ const tela = document.getElementById('tela');
 
 async function carregar() {
   const get = async (f) => { try { return await (await fetch('./data/' + f)).json(); } catch { return null; } };
-  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina] = await Promise.all(
-    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json'].map(get));
+  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality] = await Promise.all(
+    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json'].map(get));
   DB.byNum = {}; (DB.pieces?.pieces || []).forEach(p => DB.byNum[p.num] = p);
 }
 
@@ -18,6 +18,14 @@ const setProg = (n, s) => { if (PROG[n] === s) delete PROG[n]; else PROG[n] = s;
 const TOM = { C: 'Dó', G: 'Sol', D: 'Ré', A: 'Lá', E: 'Mi', 'F#': 'Fá#', F: 'Fá', Bb: 'Si♭', Eb: 'Mi♭', Ab: 'Lá♭', Db: 'Ré♭', B: 'Si' };
 const WRIT = { C: 'D', G: 'A', D: 'E', A: 'B', E: 'F#', 'F#': 'G#', F: 'G', Bb: 'C', Eb: 'F', Ab: 'Bb', Db: 'Eb', B: 'C#' };
 const tomEscrito = p => (WRIT[p.key_concert] || p.key_concert) + (p.modulates_to_concert ? '→' + (WRIT[p.modulates_to_concert] || '') : '');
+// qualidade da melodia: rascunho (OMR) < dedos (fusão pela digitação) < conferida (à mão)
+const QUAL = {
+  conferida: { tag: '✓', cls: 'q-ok', txt: 'conferida à mão' },
+  dedos: { tag: '♪', cls: 'q-mid', txt: 'tom pelos dedos · oitava/ritmo provisórios' },
+  rascunho: { tag: '~', cls: 'q-raw', txt: 'leitura automática (OMR) · em revisão' }
+};
+const idOf = n => 'sb-' + String(n).padStart(3, '0');
+const qualOf = n => (DB.quality && DB.quality[idOf(n)]) || 'rascunho';
 
 /* ---------- telas ---------- */
 function telaHoje() {
@@ -47,9 +55,10 @@ function telaHoje() {
 function linhaPeca(n) {
   const p = DB.byNum[n]; if (!p) return '';
   const st = PROG[n] ? ` · ${PROG[n]}` : '';
+  const q = QUAL[qualOf(n)];
   return `<li><div class="linha"><button class="playmini" onclick="event.stopPropagation();tocarPeca(${n})" aria-label="tocar">▶</button>
     <a class="peca" href="#" onclick="verPeca(${n});return false">
-      <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo}
+      <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo} <span class="qual ${q.cls}" title="melodia: ${q.txt}">${q.tag}</span>
       <span class="dif">${p.dificuldade || '?'}</span>
       <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}</div></a></div></li>`;
 }
@@ -160,7 +169,7 @@ async function abrirPlayer(id, titulo, prov, voltar) {
   tela.innerHTML = `<button class="voltar" onclick="ir('${voltar || 'banco'}')">‹ voltar</button>
     <div class="card">
       <h3>${titulo}</h3>
-      ${prov ? '<p class="meta">⚠ transcrição automática (provisória) — as notas podem ter erros; o tom está conferido</p>' : ''}
+      ${(() => { const t = (DB.quality && DB.quality[id]) || 'rascunho'; if (t === 'conferida') return ''; const m = QUAL[t]; return `<p class="meta">⚠ melodia provisória — ${m.txt}; as células são exatas</p>`; })()}
       <div class="btnrow" style="justify-content:flex-start;margin:4px 0 10px">
         <button class="toggle" id="tconcert">ouvir em concerto</button>
       </div>

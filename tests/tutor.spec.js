@@ -44,10 +44,16 @@ test('página de estudo carrega com badge de nível e controles do tutor', async
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.goto('/estudo.html?id=sb-011');
   await expect(page.locator('#badges')).toContainText('nível', { timeout: 10000 });
+  await expect(page.locator('#rasc')).toContainText('conferida');   // sb-011 = tier conferida
   for (const id of ['#tmic', '#tprat', '#tloop', '#tramp', '#tuner', '#needle']) {
     await expect(page.locator(id)).toHaveCount(1);
   }
   expect(errors, 'sem exceções não tratadas na página').toEqual([]);
+});
+
+test('rótulo de qualidade reflete o tier (melodia fundida pelos dedos)', async ({ page }) => {
+  await page.goto('/estudo.html?id=sb-003');                        // sb-003 = tier dedos
+  await expect(page.locator('#rasc')).toContainText('pelos dedos', { timeout: 10000 });
 });
 
 test('ligar microfone e praticar: tuner ativa e o cursor silencioso avança', async ({ page, context }) => {

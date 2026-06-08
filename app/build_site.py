@@ -26,6 +26,9 @@ def main():
     abc = ROOT / "content" / "notes_abc.json"
     if abc.exists():
         shutil.copy(abc, data / "abc.json")
+    q = ROOT / "content" / "notes_quality.json"
+    if q.exists():
+        shutil.copy(q, data / "quality.json")
     rot = json.load(open(ROOT / "content" / "curriculum" / "sambrass23-6semanas.json", encoding="utf-8"))["rotina_diaria"]
     json.dump(rot, open(data / "rotina.json", "w", encoding="utf-8"), ensure_ascii=False)
 

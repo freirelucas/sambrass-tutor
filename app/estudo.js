@@ -47,7 +47,13 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   document.querySelectorAll('.play').forEach(b => b.onclick = () => playOnce(abc?.[b.dataset.abc]));
 
   MELODIA = abc?.[ID] || null;
-  if(abc?._verified?.includes?.(ID)){ $('#rasc').innerHTML = 'Melodia <span class="ok">conferida ✓</span> · digitação de trompete.'; }
+  const RASC = {
+    conferida: 'Melodia <span class="ok">conferida ✓</span> · digitação de trompete.',
+    dedos: 'Melodia <span class="ok">tom pelos dedos ✓</span> — a classe de altura veio da <b>digitação impressa</b>; oitava e ritmo do OMR (provisórios). As células acima são exatas.',
+    rascunho: 'Melodia: rascunho de leitura automática (OMR), em revisão. As células acima são exatas.'
+  };
+  const tier = abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
+  $('#rasc').innerHTML = RASC[tier] || RASC.rascunho;
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
   else { $('#paper').innerHTML = '<p class="nota-rasc">melodia indisponível.</p>'; }
 
