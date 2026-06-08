@@ -49,3 +49,22 @@ test('página de estudo carrega com badge de nível e controles do tutor', async
   }
   expect(errors, 'sem exceções não tratadas na página').toEqual([]);
 });
+
+test('ligar microfone e praticar: tuner ativa e o cursor silencioso avança', async ({ page, context }) => {
+  await context.grantPermissions(['microphone']);
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/estudo.html?id=sb-011');
+  await expect(page.locator('#badges')).toContainText('nível');
+
+  await page.click('#tmic');                                  // mic (fake device) → tuner ativo
+  await expect(page.locator('#tuner')).toHaveClass(/ativo/);
+
+  await page.click('#tprat');                                 // praticar → TimingCallbacks + clave
+  await expect(page.locator('#tprat')).toContainText('parar');
+  await expect(page.locator('.abcjs-highlight').first()).toBeVisible({ timeout: 5000 });
+
+  await page.click('#tprat');                                 // parar
+  await expect(page.locator('#tprat')).toContainText('praticar');
+  expect(errors, 'sem exceções nos fluxos de mic/prática').toEqual([]);
+});
