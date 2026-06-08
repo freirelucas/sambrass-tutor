@@ -16,3 +16,8 @@ content/notes_runtime/sb-*.json
 
 # Site montado p/ deploy (gerado por app/build_site.py)
 _site/
+
+# Testes de navegador (Playwright): deps e artefatos baixados/gerados
+node_modules/
+test-results/
+playwright-report/

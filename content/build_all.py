@@ -14,6 +14,7 @@ STEPS = [
     ("notas → JSON de eventos", "build_notes.py"),
     ("dificuldade recalibrada", "curadoria/recalibrar.py"),
     ("habilidades + trilha mestra", "curadoria/trilha.py"),
+    ("escada pedagógica (níveis Book1/2/Arban)", "curadoria/escada.py"),
     ("currículo expandido", "curadoria/curriculo.py"),
     ("analytics (dashboard)", "analytics.py"),
     ("validação de integridade", "validate.py"),

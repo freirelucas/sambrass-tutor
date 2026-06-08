@@ -5,6 +5,14 @@ Documento de planejamento. Transforma o caderno digital atual
 toca, escuta e acompanha o progresso — e que nasce pessoal mas é arquitetado
 para virar plataforma multi-instrumento.
 
+> **Atualização (estado real do repo).** Este plano precede a construção. Hoje: as **110**
+> peças estão catalogadas (não 30), com OMR + leitor de digitação; e o produto em uso é uma
+> **PWA web** (`app/`, vanilla JS, offline), porque o toolchain aqui não tem SDK Flutter — o
+> nativo (§3) vira fase seguinte, não a primeira. A **escada pedagógica** (Book 1 → Book 2 →
+> Arban → camada idiomática) já está materializada por peça em `content/curadoria/escada.json`
+> e documentada em [`docs/escada_pedagogica.md`](docs/escada_pedagogica.md); o **Pilar 4**
+> (detecção de tom / play-along) está em construção na PWA.
+
 ## Decisões tomadas
 
 | Eixo | Escolha | Implicação |

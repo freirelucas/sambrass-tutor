@@ -125,3 +125,111 @@ def piece_skills(p):
     elif len(p.get("forma", [])) >= 3:
         s.add("forma-longa")
     return s
+
+
+# --- Escada pedagógica: Book 1 → Book 2 → Arban + camada idiomática Sambrass ---
+# Materializa o mapeamento da handoff de pedagogia (cruzamento do caderno com os 3 métodos
+# de trompete). Regra transparente sobre tom/células/requisitos. Ver docs/escada_pedagogica.md.
+WRITTEN_NAME = {0: "C", 1: "Db", 2: "D", 3: "Eb", 4: "E", 5: "F",
+                6: "F#", 7: "G", 8: "Ab", 9: "A", 10: "Bb", 11: "B"}
+
+
+def written_key(key_concert):
+    """Nome da armadura ESCRITA (trompete Bb = concerto transposto +2 semitons)."""
+    return WRITTEN_NAME[(PC[key_concert] + 2) % 12] if key_concert in PC else "?"
+
+
+# Nível mínimo de método por armadura ESCRITA (sharp/flat-aware: Ré 2♯=Book2, Sib 2♭=Book1).
+# Book 1 cobre Dó/Fá/Sol/Sib; Book 2 acrescenta Ré/Lá/Mib; extremos (Fá#/Si) só no Arban.
+KEY_LEVEL = {"C": 1, "F": 1, "G": 1, "Bb": 1,
+             "D": 2, "A": 2, "Eb": 2, "E": 2, "Db": 2, "Ab": 2,
+             "F#": 3, "B": 3}
+B2_CELLS = {"C3", "C4", "C5"}              # células órfãs do Book 1 → Book 2
+# Marcadores qualitativos que SÓ o Arban formaliza (ornamento, tu-ku, resistência, denso).
+ARBAN_REQ = {"ornamentos", "resistência", "forma-extensa-101c", "forma-muito-longa",
+             "tercina-contínua", "cromatismo-denso", "contratempo-intenso"}
+LEVEL_NAME = {1: "book1", 2: "book2", 3: "arban"}
+
+CELL_ANCHOR = {"C1": ("book1", "C1 colcheias em grupo (#40–45)"),
+               "C2": ("book1", "C2 síncope (Arban I / tie #59)"),
+               "C6": ("book1", "C6 contratempo (#158–164)"),
+               "C7": ("book1", "C7 anacruse (#36)"),
+               "C3": ("book2", "C3 colcheia pontuada + semicolcheia"),
+               "C4": ("book2", "C4 quatro semicolcheias"),
+               "C5": ("book2", "C5 tercina")}
+ARP_ANCHOR = {"A1": ("book1", "A1 tríade ascendente (#147–149)"),
+              "A2": ("book1", "A2 tríade descendente (#147–149)"),
+              "A4": ("book1", "A4 bordadura cromática (#174)"),
+              "A3": ("arban", "A3 arpejo de 7ª da dominante (Arban V)")}
+ARBAN_DESC = {"ornamentos": "ornamentos: apojatura/grupeto/trinado (Arban IV)",
+              "resistência": "resistência de forma extensa",
+              "forma-extensa-101c": "forma extensa de 101+ compassos",
+              "forma-muito-longa": "forma muito longa",
+              "tercina-contínua": "tercina contínua",
+              "cromatismo-denso": "cromatismo denso",
+              "contratempo-intenso": "contratempo intenso / staccato duplo (tu-ku, Arban VI)"}
+
+
+def _key_level(p):
+    lv = KEY_LEVEL.get(written_key(p["key_concert"]), 2)
+    if p.get("modulates_to_concert"):
+        lv = max(lv, KEY_LEVEL.get(written_key(p["modulates_to_concert"]), 2))
+    return lv
+
+
+def nivel_minimo(p):
+    """Menor nível de método que destrava a peça (critério ESTRITO da handoff §4:
+    um requisito órfão — tom, célula ou marcador — sobe o nível)."""
+    lv = _key_level(p)
+    if set(p.get("celulas", [])) & B2_CELLS:
+        lv = max(lv, 2)
+    if set(p.get("requisitos", [])) & ARBAN_REQ:
+        lv = 3
+    return LEVEL_NAME[lv]
+
+
+def prerequisitos(p):
+    """O que a peça exige em cada camada (âncoras de método + camada idiomática Sambrass §5)."""
+    pr = {"book1": [], "book2": [], "arban": [], "idiomatico": []}
+    wk = written_key(p["key_concert"])
+    pr[LEVEL_NAME[KEY_LEVEL.get(wk, 2)]].append(f"armadura escrita {wk}")
+    if p.get("modulates_to_concert"):
+        wk2 = written_key(p["modulates_to_concert"])
+        pr[LEVEL_NAME[KEY_LEVEL.get(wk2, 2)]].append(f"modula para {wk2}")
+    for c in p.get("celulas", []):
+        if c in CELL_ANCHOR:
+            lv, d = CELL_ANCHOR[c]
+            pr[lv].append(d)
+    for a in p.get("arpejos", []):
+        if a in ARP_ANCHOR:
+            lv, d = ARP_ANCHOR[a]
+            pr[lv].append(d)
+    for r in p.get("requisitos", []):
+        if r in ARBAN_DESC:
+            pr["arban"].append(ARBAN_DESC[r])
+    pr["idiomatico"].append("suingue / divisão do samba")
+    if p.get("modulates_to_concert"):
+        pr["idiomatico"].append("modulação de armadura na peça")
+    reqs = set(p.get("requisitos", []))
+    if reqs & {"resistência", "forma-extensa-101c", "forma-muito-longa", "fôlego-forma-larga"} \
+            or len(p.get("forma", [])) >= 4:
+        pr["idiomatico"].append("mapa de respiração (forma longa)")
+    for k in pr:  # dedupe preservando ordem
+        seen = set()
+        pr[k] = [x for x in pr[k] if not (x in seen or seen.add(x))]
+    return pr
+
+
+def orfaos_book1(p):
+    """Requisitos que IMPEDEM tocar só com o Book 1 (o que ainda falta destravar)."""
+    orf = []
+    wk = written_key(p["key_concert"])
+    if KEY_LEVEL.get(wk, 2) >= 2:
+        orf.append(f"armadura {wk}")
+    if p.get("modulates_to_concert"):
+        wk2 = written_key(p["modulates_to_concert"])
+        if KEY_LEVEL.get(wk2, 2) >= 2:
+            orf.append(f"modula {wk2}")
+    orf += sorted(set(p.get("celulas", [])) & B2_CELLS)
+    orf += [r for r in p.get("requisitos", []) if r in ARBAN_REQ]
+    return orf

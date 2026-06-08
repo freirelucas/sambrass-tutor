@@ -1,8 +1,9 @@
 // Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
 // cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
-const CACHE = 'sambrass-v4';
-const SHELL = ['./', './index.html', './estudo.html', './style.css', './app.js',
-  './vendor/abcjs.js', './vendor/abcjs-audio.css', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'sambrass-v5';
+const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './app.js',
+  './vendor/abcjs.js', './vendor/abcjs-audio.css', './vendor/pitch-detector.js',
+  './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})).then(() => self.skipWaiting()));

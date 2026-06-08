@@ -6,7 +6,7 @@
 ABC em tom ESCRITO (parte do trompete) — é o que o músico lê e toca junto.
 Uso: python3 content/build_abc.py
 """
-import json, sys, pathlib, glob
+import json, sys, pathlib, glob, collections
 import xml.etree.ElementTree as ET
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from build_notes import compile_file, load_fingering, CONTENT
@@ -102,6 +102,7 @@ def main():
     fingering, tr = load_fingering()
     cat = {p["num"]: p for p in load_pieces()}
     out = {}
+    quality = {}   # por peça: rascunho (OMR cru) < dedos (fusão) < conferida (à mão)
     for p in sorted(glob.glob(str(CONTENT / "notes" / "**" / "*.musicxml"), recursive=True)):
         stem = pathlib.Path(p).stem
         if stem.startswith("_"): continue
@@ -112,16 +113,26 @@ def main():
         else:
             title = stem
         out[stem] = to_abc(data["events"], fifths, meter, title)
-    # melodias conferidas à mão (vencem o OMR) em content/notes_manual/*.abc
-    verified = []
-    mandir = CONTENT / "notes_manual"
-    for f in sorted(glob.glob(str(mandir / "*.abc"))):
+        if stem.startswith("sb-"):
+            quality[stem] = "rascunho"
+    # fusão dedos+OMR (provisória, melhor que o OMR cru): content/notes_auto/*.abc
+    for f in sorted(glob.glob(str(CONTENT / "notes_auto" / "*.abc"))):
         stem = pathlib.Path(f).stem
         out[stem] = pathlib.Path(f).read_text(encoding="utf-8")
-        verified.append(stem)
+        quality[stem] = "dedos"
+    # melodias conferidas à mão (vencem tudo): content/notes_manual/*.abc
+    verified = []
+    for f in sorted(glob.glob(str(CONTENT / "notes_manual" / "*.abc"))):
+        stem = pathlib.Path(f).stem
+        out[stem] = pathlib.Path(f).read_text(encoding="utf-8")
+        quality[stem] = "conferida"; verified.append(stem)
     out["_verified"] = verified
+    out["_quality"] = quality
     json.dump(out, open(CONTENT / "notes_abc.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-    print(f"ABC gerado: {len(out)-1} → content/notes_abc.json (conferidas à mão: {verified})")
+    json.dump(quality, open(CONTENT / "notes_quality.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+    tiers = collections.Counter(quality.values())
+    n_pieces = sum(1 for k in out if k.startswith("sb-"))
+    print(f"ABC gerado: {n_pieces} peças → notes_abc.json · tiers {dict(tiers)} · conferidas: {verified}")
 
 
 if __name__ == "__main__":
