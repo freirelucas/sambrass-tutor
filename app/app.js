@@ -7,9 +7,10 @@ const tela = document.getElementById('tela');
 
 async function carregar() {
   const get = async (f) => { try { return await (await fetch('./data/' + f)).json(); } catch { return null; } };
-  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality] = await Promise.all(
-    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json'].map(get));
+  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality, DB.escada] = await Promise.all(
+    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json', 'escada.json'].map(get));
   DB.byNum = {}; (DB.pieces?.pieces || []).forEach(p => DB.byNum[p.num] = p);
+  DB.nivelByNum = {}; (DB.escada?.pieces || []).forEach(e => DB.nivelByNum[e.num] = e.nivel_minimo);
 }
 
 /* ---------- progresso (localStorage) ---------- */
@@ -26,6 +27,9 @@ const QUAL = {
 };
 const idOf = n => 'sb-' + String(n).padStart(3, '0');
 const qualOf = n => (DB.quality && DB.quality[idOf(n)]) || 'rascunho';
+// nível pedagógico (escada Book1/2/Arban)
+const NIVEL = { book1: 'Book 1', book2: 'Book 2', arban: 'Arban' };
+const nivelOf = n => (DB.nivelByNum && DB.nivelByNum[n]) || null;
 
 /* ---------- telas ---------- */
 function telaHoje() {
@@ -60,18 +64,27 @@ function linhaPeca(n) {
     <a class="peca" href="#" onclick="verPeca(${n});return false">
       <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo} <span class="qual ${q.cls}" title="melodia: ${q.txt}">${q.tag}</span>
       <span class="dif">${p.dificuldade || '?'}</span>
-      <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}</div></a></div></li>`;
+      <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}${(() => { const nv = nivelOf(n); return nv ? ` · <span class="niv niv-${nv}">${NIVEL[nv]}</span>` : ''; })()}</div></a></div></li>`;
 }
 
 function telaBanco() {
   const ps = (DB.pieces?.pieces || []).slice().sort((a, b) => a.num - b.num);
+  const inp = 'width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--linha);border-radius:8px;font:inherit;margin-bottom:6px';
   tela.innerHTML = `<h2 class="sec">Banco — ${ps.length} peças</h2>
-    <input id="busca" placeholder="buscar título ou compositor…" style="width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--linha);border-radius:8px;font:inherit;margin-bottom:6px">
+    <input id="busca" placeholder="buscar título ou compositor…" style="${inp}">
+    <select id="fnivel" style="${inp}">
+      <option value="">todos os níveis (escada pedagógica)</option>
+      <option value="book1">Book 1 — fundação</option>
+      <option value="book2">Book 2 — células/tons novos</option>
+      <option value="arban">Arban — ornamento/resistência</option></select>
     <ul class="lista" id="listapecas">${ps.map(p => linhaPeca(p.num)).join('')}</ul>`;
-  $('#busca').oninput = e => {
-    const q = e.target.value.toLowerCase();
-    $('#listapecas').innerHTML = ps.filter(p => (p.titulo + ' ' + p.compositor).toLowerCase().includes(q)).map(p => linhaPeca(p.num)).join('');
+  const aplica = () => {
+    const q = ($('#busca').value || '').toLowerCase(), nv = $('#fnivel').value;
+    $('#listapecas').innerHTML = ps.filter(p =>
+      (p.titulo + ' ' + p.compositor).toLowerCase().includes(q) && (!nv || nivelOf(p.num) === nv)
+    ).map(p => linhaPeca(p.num)).join('') || '<li class="meta" style="padding:12px">nenhuma peça nesse filtro.</li>';
   };
+  $('#busca').oninput = aplica; $('#fnivel').onchange = aplica;
 }
 
 function verPeca(n) {
