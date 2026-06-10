@@ -5,6 +5,7 @@
   "scripts": {
     "test:core": "node tests/pitch-core.test.js",
     "test:e2e": "playwright test",
+    "bench:transcricao": "node tools/transcricao/bench_sb011.mjs",
     "test": "node tests/pitch-core.test.js && playwright test"
   },
   "devDependencies": {
