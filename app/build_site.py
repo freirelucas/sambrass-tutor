@@ -41,7 +41,7 @@ def main():
         shutil.copy(ped / "app_tecnica.json", data / "tecnica.json")      # técnica por lote (lazy)
         # resumo enxuto dos 6 lotes (tom + foco) p/ os cabeçalhos da trilha — eager
         tec = json.load(open(ped / "app_tecnica.json", encoding="utf-8"))
-        lotes = [{"lote": t["lote"], "tom": t["tom"], "feat": t["feat"]} for t in tec]
+        lotes = [{"lote": t["lote"], "nivel": t.get("nivel"), "tom": t["tom"], "feat": t["feat"]} for t in tec]
         json.dump(lotes, open(data / "lotes.json", "w", encoding="utf-8"), ensure_ascii=False)
 
     # (sem PDF no produto: a notação é renderizada nativamente pelo abcjs)

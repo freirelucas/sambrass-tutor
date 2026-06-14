@@ -53,6 +53,43 @@ const qualOf = n => (DB.quality && DB.quality[idOf(n)]) || 'rascunho';
 // nível pedagógico (escada Book1/2/Arban)
 const NIVEL = { book1: 'Book 1', book2: 'Book 2', arban: 'Arban' };
 const nivelOf = n => (DB.nivelByNum && DB.nivelByNum[n]) || null;
+const NIVEL_FULL = { book1: 'Book 1 · fundação', book2: 'Book 2 · células e tons novos', arban: 'Arban · topo técnico' };
+const NIVEL_DESC = {
+  book1: 'A base do caderno: som, tons naturais (Dó/Fá/Sol/Sib escritos), colcheias em grupo, contratempo e anacruse. Esgote este nível antes de subir.',
+  book2: 'Células novas — semicolcheia, tercina, colcheia pontuada — e armaduras com mais acidentes (Ré/Lá/Mib).',
+  arban: 'O topo técnico: ornamentos, staccato duplo (tu-ku), arpejo de 7ª da dominante e resistência de forma longa.'
+};
+// nível da ARMADURA ESCRITA na escada (espelha content/curadoria/lib.py KEY_LEVEL)
+const KEY_LEVEL = { C: 1, F: 1, G: 1, Bb: 1, D: 2, A: 2, Eb: 2, E: 2, Db: 2, Ab: 2, 'F#': 3, B: 3 };
+const LVLKEY = { 1: 'book1', 2: 'book2', 3: 'arban' };
+const keyLevelOf = concert => KEY_LEVEL[WRIT[concert] || concert] || 2;
+// célula/arpejo → nível em que se destrava (para o Vocabulário)
+const CELL_LEVEL = { C1: 'book1', C2: 'book1', C6: 'book1', C7: 'book1', C3: 'book2', C4: 'book2', C5: 'book2', A1: 'book1', A2: 'book1', A4: 'book1', A3: 'arban' };
+// competências exigidas por uma peça (espelha lib.py piece_skills) — usado no Banco e no Vocabulário
+function pieceTags(p) {
+  const t = new Set(), cel = new Set(p.celulas || []), rq = (p.requisitos || []).join(' '), forma = p.forma || [];
+  if (cel.has('C2') || rq.includes('síncope')) t.add('sincope');
+  if (cel.has('C6') || rq.includes('contratempo')) t.add('contratempo');
+  if (cel.has('C5') || rq.includes('tercina')) t.add('tercina');
+  if (cel.has('C4') || rq.includes('semicolcheia')) t.add('semicolcheia');
+  if (cel.has('C3') || rq.includes('pontuada')) t.add('pontuada');
+  if (cel.has('C7') || rq.includes('anacruse')) t.add('anacruse');
+  if (rq.includes('cromatismo')) t.add('cromatismo');
+  if (rq.includes('casas')) t.add('casas');
+  if (rq.includes('DS') || rq.includes('DC')) t.add('ds-dc');
+  if (p.modulates_to_concert || rq.includes('modula')) t.add('modulacao');
+  if (rq.includes('ornamento')) t.add('ornamentos');
+  if (p.compasso === '4/4') t.add('quatro');
+  if (rq.includes('extensa') || forma.length >= 4) t.add('forma-extensa');
+  else if (forma.length >= 3) t.add('forma-longa');
+  return t;
+}
+const COMP_CHIPS = [['sincope', 'síncope'], ['contratempo', 'contratempo'], ['tercina', 'tercina'],
+  ['semicolcheia', 'semicolcheia'], ['pontuada', 'colcheia pontuada'], ['anacruse', 'anacruse'],
+  ['cromatismo', 'cromatismo'], ['casas', 'casas 1ª/2ª'], ['ds-dc', 'saltos D.S./D.C.'],
+  ['modulacao', 'modulação'], ['forma-longa', 'forma longa'], ['forma-extensa', 'forma extensa'],
+  ['ornamentos', 'ornamentos'], ['quatro', 'compasso 4/4']];
+const EFF_CHIPS = [['agudo', 'agudo +'], ['vel', 'veloz +'], ['folego', 'fôlego +']];
 
 /* ---------- telas ---------- */
 // A home é a Trilha (telaTrilha em trilha.js) — o caminho sugerido estilo Duolingo.
@@ -68,30 +105,50 @@ function linhaPeca(n) {
       <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}${(() => { const nv = nivelOf(n); return nv ? ` · <span class="niv niv-${nv}">${NIVEL[nv]}</span>` : ''; })()}</div></a></div></li>`;
 }
 
+// Banco = navegador por competências: combine nível (escada) · habilidade · esforço · busca.
 function telaBanco() {
   const ps = (DB.pieces?.pieces || []).slice().sort((a, b) => a.num - b.num);
   const inp = 'width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--linha);border-radius:8px;font:inherit;margin-bottom:6px';
-  const eff = (k, lab) => `<label class="efflab">${lab} até <select id="f_${k}" class="effsel">${[1, 2, 3, 4, 5, 6].map(i => `<option value="${i}"${i === 6 ? ' selected' : ''}>${i}</option>`).join('')}</select></label>`;
+  const cnt = {}; COMP_CHIPS.forEach(([k]) => cnt[k] = 0); const eff = { agudo: 0, vel: 0, folego: 0 };
+  ps.forEach(p => {
+    const tg = pieceTags(p); COMP_CHIPS.forEach(([k]) => { if (tg.has(k)) cnt[k]++; });
+    const m = DB.percByNum[p.num] || {}; ['agudo', 'vel', 'folego'].forEach(k => { if ((m[k] || 0) >= 4) eff[k]++; });
+  });
+  const chip = (kind, k, lab, n) => n ? `<button class="chip ${kind}" data-kind="${kind}" data-k="${k}">${lab} <span class="chipn">${n}</span></button>` : '';
   tela.innerHTML = `<h2 class="sec">Banco — ${ps.length} peças</h2>
+    <p class="meta">Navegue por <b>competência</b>: combine nível, habilidade e esforço (e busque pelo nome).</p>
     <input id="busca" placeholder="buscar título ou compositor…" style="${inp}">
     <select id="fnivel" style="${inp}">
       <option value="">todos os níveis (escada pedagógica)</option>
       <option value="book1">Book 1 — fundação</option>
       <option value="book2">Book 2 — células/tons novos</option>
       <option value="arban">Arban — ornamento/resistência</option></select>
-    <div class="effrow"><span class="meta">esforço:</span> ${eff('agudo', 'agudo')} ${eff('vel', 'veloc.')} ${eff('folego', 'fôlego')}</div>
-    <ul class="lista" id="listapecas">${ps.map(p => linhaPeca(p.num)).join('')}</ul>`;
+    <div class="chiprow">${COMP_CHIPS.map(([k, l]) => chip('comp', k, l, cnt[k])).join('')}</div>
+    <div class="chiprow"><span class="chiplab">esforço:</span>${EFF_CHIPS.map(([k, l]) => chip('eff', k, l, eff[k])).join('')}</div>
+    <div class="bancohead"><span class="meta" id="bancocount"></span><button class="limpaf" id="limpaf" hidden>limpar ✕</button></div>
+    <ul class="lista" id="listapecas"></ul>`;
+  const act = { comp: new Set(), eff: new Set() };
   const aplica = () => {
     const q = ($('#busca').value || '').toLowerCase(), nv = $('#fnivel').value;
-    const fa = +$('#f_agudo').value, fv = +$('#f_vel').value, ff = +$('#f_folego').value;
-    $('#listapecas').innerHTML = ps.filter(p => {
-      const m = DB.percByNum[p.num] || {};
-      return (p.titulo + ' ' + p.compositor).toLowerCase().includes(q) && (!nv || nivelOf(p.num) === nv)
-        && (m.agudo || 0) <= fa && (m.vel || 0) <= fv && (m.folego || 0) <= ff;
-    }).map(p => linhaPeca(p.num)).join('') || '<li class="meta" style="padding:12px">nenhuma peça nesse filtro.</li>';
+    const out = ps.filter(p => {
+      if (!(p.titulo + ' ' + p.compositor).toLowerCase().includes(q)) return false;
+      if (nv && nivelOf(p.num) !== nv) return false;
+      const tg = pieceTags(p); for (const k of act.comp) if (!tg.has(k)) return false;
+      const m = DB.percByNum[p.num] || {}; for (const k of act.eff) if ((m[k] || 0) < 4) return false;
+      return true;
+    });
+    $('#listapecas').innerHTML = out.map(p => linhaPeca(p.num)).join('') || '<li class="meta" style="padding:12px">nenhuma peça nesse filtro.</li>';
+    $('#bancocount').textContent = `${out.length} de ${ps.length} peças`;
+    $('#limpaf').hidden = !(act.comp.size || act.eff.size || nv);
   };
   $('#busca').oninput = aplica; $('#fnivel').onchange = aplica;
-  ['agudo', 'vel', 'folego'].forEach(k => $('#f_' + k).onchange = aplica);
+  tela.querySelectorAll('.chip').forEach(b => b.onclick = () => {
+    const set = b.dataset.kind === 'comp' ? act.comp : act.eff, k = b.dataset.k;
+    if (set.has(k)) { set.delete(k); b.classList.remove('on'); } else { set.add(k); b.classList.add('on'); }
+    aplica();
+  });
+  $('#limpaf').onclick = () => { act.comp.clear(); act.eff.clear(); $('#fnivel').value = ''; tela.querySelectorAll('.chip.on').forEach(b => b.classList.remove('on')); aplica(); };
+  aplica();
 }
 
 function verPeca(n) {
@@ -111,16 +168,32 @@ function verPeca(n) {
 }
 
 function telaVocab() {
-  const c = DB.cells || {};
+  const c = DB.cells || {}, pieces = (DB.pieces?.pieces || []), tot = pieces.length;
+  const lvlTag = id => { const l = CELL_LEVEL[id]; return l ? ` <span class="niv niv-${l}">${NIVEL[l]}</span>` : ''; };
   const li = (arr, play) => (arr || []).map(x =>
-    `<li>${play ? `<button class="prog" style="min-width:34px" onclick="tocarCell('${x.id}')">▶</button> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}</li>`).join('');
+    `<li>${play ? `<button class="prog" style="min-width:34px" onclick="tocarCell('${x.id}')">▶</button> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}${lvlTag(x.id)}</li>`).join('');
+  // tonalidades por nível da escada (pela armadura escrita), nomeadas em concerto
+  const tk = { book1: {}, book2: {}, arban: {} };
+  pieces.forEach(p => { const lk = LVLKEY[keyLevelOf(p.key_concert)], nm = TOM[p.key_concert] || p.key_concert; tk[lk][nm] = (tk[lk][nm] || 0) + 1; });
+  const tomRow = lk => { const e = Object.entries(tk[lk]).sort((a, b) => b[1] - a[1]); return e.length ? e.map(([nm, n]) => `<span class="tag">${nm} <b>${n}</b></span>`).join(' ') : '<span class="meta">—</span>'; };
+  // demais competências (contagens reais)
+  const cnt = {}; COMP_CHIPS.forEach(([k]) => cnt[k] = 0);
+  pieces.forEach(p => { const tg = pieceTags(p); COMP_CHIPS.forEach(([k]) => { if (tg.has(k)) cnt[k]++; }); });
+  const comp = COMP_CHIPS.filter(([k]) => cnt[k]).map(([k, lab]) => `<span class="tag">${lab} <b>${cnt[k]}</b></span>`).join(' ');
+  const c44 = pieces.filter(p => p.compasso === '4/4').length, c24 = tot - c44;
   tela.innerHTML = `<div class="card" style="text-align:center"><button class="acao" style="width:100%" onclick="openPrep()">🌬️ Aquecimento — 12 exercícios${prepDone() ? ' ✓' : ''}</button>
       <p class="meta" style="margin-top:8px">Prepare o corpo antes de tocar: ar → bocal → som → registro → articulação.</p></div>
     <h2 class="sec">Vocabulário do caderno</h2>
-    <p class="meta">Toque ▶ para ouvir e ver cada célula (timbre de trompete, com cursor).</p>
+    <p class="meta">As competências das ${tot} peças, organizadas pela <b>escada</b> (Book 1 → Book 2 → Arban). Toque ▶ para ouvir cada célula.</p>
     <div class="card vocab"><h3>Células rítmicas</h3><ul class="lista">${li(c.celulas_ritmicas, true)}</ul></div>
     <div class="card vocab"><h3>Arpejos</h3><ul class="lista">${li(c.arpejos, false)}</ul></div>
-    <p class="meta">Quase tudo é 2/4 em poucas células — dominá-las é ler o caderno à primeira vista.</p>`;
+    <div class="card vocab"><h3>Tonalidades <span class="meta">(pela armadura escrita)</span></h3>
+      <div class="vocablvl"><span class="niv niv-book1">${NIVEL.book1}</span> ${tomRow('book1')}</div>
+      <div class="vocablvl"><span class="niv niv-book2">${NIVEL.book2}</span> ${tomRow('book2')}</div>
+      <div class="vocablvl"><span class="niv niv-arban">${NIVEL.arban}</span> ${tomRow('arban')}</div>
+      <p class="meta" style="margin-top:8px">No trompete Bb a armadura escrita = tom de concerto + 2 semitons — por isso Dó de concerto se lê em Ré (2♯, Book 2), e só Sib/Fá/Sol/Dó escritos ficam no Book 1.</p></div>
+    <div class="card vocab"><h3>Articulação, forma e leitura</h3><p class="tags">${comp || '<span class="meta">—</span>'}</p></div>
+    <p class="meta">${c24} peças em 2/4 e ${c44} em 4/4. Dominar este vocabulário é ler o caderno à primeira vista.</p>`;
 }
 
 /* ---------- metrônomo (Web Audio) ---------- */

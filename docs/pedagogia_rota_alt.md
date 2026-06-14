@@ -15,15 +15,18 @@ prática deliberada).
   Python, `content/pedagogia/build/gerar_pedagogia2.py`), embutidos em `app_pedagogia.json`. No
   cliente são injetados como SVG puro — **sem Verovio/abcjs** para os desafios (a melodia da peça
   segue no abcjs, no tutor).
-- **Dois eixos de ordenação, complementares.** A trilha ordena pela **heurística de complexidade**
-  (abaixo); cada nó mostra **também** o **nível da escada** (Book1/2/Arban — pré-requisitos
-  pedagógicos) e o **tier de qualidade** da melodia. "Quão difícil de tocar" × "que pré-requisitos".
+- **Escada como eixo primário, complexidade dentro do nível.** A trilha ordena primeiro pela
+  **escada** (Book 1 → Book 2 → Arban — pré-requisitos pedagógicos: **esgota-se o Book 1 antes de
+  subir**) e, **dentro de cada nível**, pela **heurística de complexidade** (abaixo). Os 6 lotes ficam
+  **aninhados** nos níveis (Book 1 → lotes 1-2 · Book 2 → 3-5 · Arban → 6), cada um com a faixa do
+  nível como cabeçalho. Sem cadeado: a ordem é sugestão, tudo clicável (SDT). Cada nó mostra ainda o
+  **tier de qualidade** da melodia.
 
 ## Dados publicados (de `content/pedagogia/` → `app/data/` via `build_site.py`)
 
 | origem (`content/pedagogia/`) | publicado (`data/`) | carga | conteúdo |
 |---|---|---|---|
-| `app_musicas.json` | `percurso.json` | eager (58 KB) | nós da trilha: num/título/lote/agudo/vel/fôlego/pico |
+| `app_musicas.json` | `percurso.json` | eager (58 KB) | nós da trilha: num/título/**nivel**/lote/agudo/vel/fôlego/pico |
 | `app_pedagogia.json` | `pedagogia.json` | **lazy** (1,5 MB) | por peça: `perfil`, `plano`, `desafios[{t,d,w,svg}]` |
 | `app_prep.json` | `aquecimento.json` | lazy | 12 aquecimentos `{nome,dica,svg}` |
 | `app_tecnica.json` | `tecnica.json` | lazy | técnica por lote (eixos × exercícios) |
@@ -41,6 +44,9 @@ achou **erros de oitava** no OMR (`notes_abc.json`) — ex.: falso Fá6 em sb-09
 - **Velocidade**: semicolcheia/densidade/tercina → 1–6 (corr. 0,61 com a dificuldade curada).
 - **Fôlego**: extensão + nº de seções → 1–6.
 - `SCORE = 2·agudo + vel + fôlego` → ordenação → **6 lotes**. Em `content/pedagogia/heuristica_limpa.json`.
+  A ordenação por SCORE agora age **dentro de cada nível da escada** (não mais sobre as 110 cruas); a
+  re-bucketização aninhada (Book 1 → 1-2 · Book 2 → 3-5 · Arban → 6) e a regeneração da técnica de cada
+  lote ficam em `content/pedagogia/build/reordena_escada.py`.
 
 A heurística **age em silêncio** (a UI não comenta que "o agudo do caderno quase não varia").
 
@@ -67,7 +73,7 @@ nossa ouvia o aluno mas não estruturava a sessão. Agora a estrutura **desemboc
 
 ## Arquitetura no app (vanilla, como o resto da PWA)
 
-- `app/trilha.js` — `telaTrilha()` (home): HUD + lotes + nós zigue-zague + bandeira SUGERIDA.
+- `app/trilha.js` — `telaTrilha()` (home): HUD + faixas de nível (escada) + lotes aninhados + nós zigue-zague + bandeira SUGERIDA.
 - `app/story.js` — engine de Stories (capa/perfil/plano/desafios/diário; aquecimento; técnica do
   lote). Faz merge do nó (`percurso`) com `pedagogia[num]` (lazy) ao abrir.
 - `app/app.js` — progresso SDT (`store` sb2_*, `bestLevel`/`isDone`/`streakCount`) + migração única
