@@ -7,15 +7,38 @@ const tela = document.getElementById('tela');
 
 async function carregar() {
   const get = async (f) => { try { return await (await fetch('./data/' + f)).json(); } catch { return null; } };
-  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality, DB.escada] = await Promise.all(
-    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json', 'escada.json'].map(get));
+  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality, DB.escada, DB.percurso, DB.lotes] = await Promise.all(
+    ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json', 'escada.json', 'percurso.json', 'lotes.json'].map(get));
   DB.byNum = {}; (DB.pieces?.pieces || []).forEach(p => DB.byNum[p.num] = p);
   DB.nivelByNum = {}; (DB.escada?.pieces || []).forEach(e => DB.nivelByNum[e.num] = e.nivel_minimo);
+  DB.percByNum = {}; (DB.percurso || []).forEach(m => DB.percByNum[m.num] = m);
 }
 
 /* ---------- progresso (localStorage) ---------- */
 const PROG = JSON.parse(localStorage.getItem('sambrass_prog') || '{}');
 const setProg = (n, s) => { if (PROG[n] === s) delete PROG[n]; else PROG[n] = s; localStorage.setItem('sambrass_prog', JSON.stringify(PROG)); };
+
+/* progresso SDT (autoavaliação 1–5, sem XP/cadeado) — rota "O Caminho do Sambrass".
+   Fonte de verdade = sb2_logs {num:[{d,n}]}; dominada = melhor nível ≥ 4. */
+const store = {
+  get(k, d) { try { const v = JSON.parse(localStorage.getItem('sb2_' + k)); return v == null ? d : v; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('sb2_' + k, JSON.stringify(v)); } catch {} }
+};
+const RATELBL = ['', 'tive dificuldade na leitura', 'leio, mas paro/erro', 'toco seguido, lento', 'toco no andamento', 'toco de cor 🎉'];
+const LCOR = ['', '#2e6b4f', '#5a7a1f', '#8a5a1f', '#a3431f', '#7a1f1f', '#3a3a3a'];   // cor por lote 1–6
+const bestLevel = n => { const l = store.get('logs', {})[n]; return (!l || !l.length) ? 0 : Math.max(...l.map(x => x.n)); };
+const isDone = n => bestLevel(n) >= 4;
+const countDone = () => (DB.percurso || []).filter(m => isDone(m.num)).length;
+const prepDone = () => store.get('prepdone', false);
+const markDay = () => { const days = store.get('days', []); const t = new Date().toISOString().slice(0, 10); if (!days.includes(t)) { days.push(t); store.set('days', days); } };
+const streakCount = () => { const days = store.get('days', []).slice().sort(); let s = 0, d = new Date(); for (; ;) { const k = d.toISOString().slice(0, 10); if (days.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; };
+// migração única: 'dominada' do modelo antigo (sambrass_prog) vira um log nível 4
+(function migrarProg() {
+  if (store.get('migrado', false)) return;
+  const logs = store.get('logs', {}), hoje = new Date().toISOString().slice(0, 10);
+  Object.keys(PROG).forEach(n => { if (PROG[n] === 'dominada' && !(logs[n] || []).some(x => x.n >= 4)) (logs[n] = logs[n] || []).push({ d: hoje, n: 4 }); });
+  store.set('logs', logs); store.set('migrado', true);
+})();
 const TOM = { C: 'Dó', G: 'Sol', D: 'Ré', A: 'Lá', E: 'Mi', 'F#': 'Fá#', F: 'Fá', Bb: 'Si♭', Eb: 'Mi♭', Ab: 'Lá♭', Db: 'Ré♭', B: 'Si' };
 const WRIT = { C: 'D', G: 'A', D: 'E', A: 'B', E: 'F#', 'F#': 'G#', F: 'G', Bb: 'C', Eb: 'F', Ab: 'Bb', Db: 'Eb', B: 'C#' };
 const tomEscrito = p => (WRIT[p.key_concert] || p.key_concert) + (p.modulates_to_concert ? '→' + (WRIT[p.modulates_to_concert] || '') : '');
@@ -32,29 +55,7 @@ const NIVEL = { book1: 'Book 1', book2: 'Book 2', arban: 'Arban' };
 const nivelOf = n => (DB.nivelByNum && DB.nivelByNum[n]) || null;
 
 /* ---------- telas ---------- */
-function telaHoje() {
-  const mods = DB.curriculo?.modulos || [];
-  const m = mods[Math.min(+(localStorage.getItem('sambrass_mod') || 0), mods.length - 1)] || null;
-  let h = `<a class="peca" href="./estudo.html?id=sb-011"><div class="card" style="background:linear-gradient(135deg,#8a2331,#a83444);color:#fff;border:none">
-    <div class="meta" style="color:#ffd9b8">✦ Estudo em destaque</div>
-    <h3 style="color:#fff">Preciso Me Encontrar — Candeia</h3>
-    <div class="meta" style="color:#f4d9c4">Partitura + áudio de trompete + as células que a formam ›</div></div></a>
-    <h2 class="sec">Treino de hoje</h2>`;
-  if (m) {
-    h += `<div class="card"><div class="meta">Módulo ${m.modulo}/${mods.length} · dificuldade ${m.faixa_dificuldade[0]}–${m.faixa_dificuldade[1]}</div>
-      <h3>Habilidades novas</h3><div>${(m.habilidades_novas || []).map(s => `<span class="tag">${s}</span>`).join('') || '<span class="meta">consolidação</span>'}</div>
-      <div style="margin-top:10px" class="prog"><b>Módulo:</b> ${mods.map((_, i) => `<button class="${i === m.modulo - 1 ? 'sel' : ''}" onclick="localStorage.setItem('sambrass_mod',${i});ir('hoje')">${i + 1}</button>`).join('')}</div></div>`;
-    h += `<h2 class="sec">A rotina (90 min)</h2><ul class="lista rotina">` +
-      (DB.rotina || []).map(b => `<li><span class="rmin">${b.min}min</span> <b>${b.bloco}</b> — ${b.conteudo}</li>`).join('') + `</ul>`;
-    const cellsHoje = [...new Set((m.foco || []).flatMap(f => DB.byNum[f.num]?.celulas || []))].sort();
-    if (cellsHoje.length)
-      h += `<h2 class="sec">Células de hoje</h2><div class="card"><p class="meta">Isole cada uma (▶, com cursor), suba o andamento no metrônomo, depois aplique nas peças.</p>${cellsHoje.map(c => `<button class="prog" onclick="tocarCell('${c}')">▶ ${c}</button>`).join(' ')}</div>`;
-    h += `<h2 class="sec">Em foco</h2><ul class="lista">` + (m.foco || []).map(f => linhaPeca(f.num)).join('') + `</ul>`;
-    if (m.leitura_1avista?.length)
-      h += `<h2 class="sec">Leitura à 1ª vista</h2><ul class="lista">` + m.leitura_1avista.map(f => linhaPeca(f.num)).join('') + `</ul>`;
-  } else h += `<p class="carregando">currículo indisponível.</p>`;
-  tela.innerHTML = h;
-}
+// A home é a Trilha (telaTrilha em trilha.js) — o caminho sugerido estilo Duolingo.
 
 function linhaPeca(n) {
   const p = DB.byNum[n]; if (!p) return '';
@@ -70,6 +71,7 @@ function linhaPeca(n) {
 function telaBanco() {
   const ps = (DB.pieces?.pieces || []).slice().sort((a, b) => a.num - b.num);
   const inp = 'width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--linha);border-radius:8px;font:inherit;margin-bottom:6px';
+  const eff = (k, lab) => `<label class="efflab">${lab} até <select id="f_${k}" class="effsel">${[1, 2, 3, 4, 5, 6].map(i => `<option value="${i}"${i === 6 ? ' selected' : ''}>${i}</option>`).join('')}</select></label>`;
   tela.innerHTML = `<h2 class="sec">Banco — ${ps.length} peças</h2>
     <input id="busca" placeholder="buscar título ou compositor…" style="${inp}">
     <select id="fnivel" style="${inp}">
@@ -77,14 +79,19 @@ function telaBanco() {
       <option value="book1">Book 1 — fundação</option>
       <option value="book2">Book 2 — células/tons novos</option>
       <option value="arban">Arban — ornamento/resistência</option></select>
+    <div class="effrow"><span class="meta">esforço:</span> ${eff('agudo', 'agudo')} ${eff('vel', 'veloc.')} ${eff('folego', 'fôlego')}</div>
     <ul class="lista" id="listapecas">${ps.map(p => linhaPeca(p.num)).join('')}</ul>`;
   const aplica = () => {
     const q = ($('#busca').value || '').toLowerCase(), nv = $('#fnivel').value;
-    $('#listapecas').innerHTML = ps.filter(p =>
-      (p.titulo + ' ' + p.compositor).toLowerCase().includes(q) && (!nv || nivelOf(p.num) === nv)
-    ).map(p => linhaPeca(p.num)).join('') || '<li class="meta" style="padding:12px">nenhuma peça nesse filtro.</li>';
+    const fa = +$('#f_agudo').value, fv = +$('#f_vel').value, ff = +$('#f_folego').value;
+    $('#listapecas').innerHTML = ps.filter(p => {
+      const m = DB.percByNum[p.num] || {};
+      return (p.titulo + ' ' + p.compositor).toLowerCase().includes(q) && (!nv || nivelOf(p.num) === nv)
+        && (m.agudo || 0) <= fa && (m.vel || 0) <= fv && (m.folego || 0) <= ff;
+    }).map(p => linhaPeca(p.num)).join('') || '<li class="meta" style="padding:12px">nenhuma peça nesse filtro.</li>';
   };
   $('#busca').oninput = aplica; $('#fnivel').onchange = aplica;
+  ['agudo', 'vel', 'folego'].forEach(k => $('#f_' + k).onchange = aplica);
 }
 
 function verPeca(n) {
@@ -107,7 +114,9 @@ function telaVocab() {
   const c = DB.cells || {};
   const li = (arr, play) => (arr || []).map(x =>
     `<li>${play ? `<button class="prog" style="min-width:34px" onclick="tocarCell('${x.id}')">▶</button> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}</li>`).join('');
-  tela.innerHTML = `<h2 class="sec">Vocabulário do caderno</h2>
+  tela.innerHTML = `<div class="card" style="text-align:center"><button class="acao" style="width:100%" onclick="openPrep()">🌬️ Aquecimento — 12 exercícios${prepDone() ? ' ✓' : ''}</button>
+      <p class="meta" style="margin-top:8px">Prepare o corpo antes de tocar: ar → bocal → som → registro → articulação.</p></div>
+    <h2 class="sec">Vocabulário do caderno</h2>
     <p class="meta">Toque ▶ para ouvir e ver cada célula (timbre de trompete, com cursor).</p>
     <div class="card vocab"><h3>Células rítmicas</h3><ul class="lista">${li(c.celulas_ritmicas, true)}</ul></div>
     <div class="card vocab"><h3>Arpejos</h3><ul class="lista">${li(c.arpejos, false)}</ul></div>
@@ -224,11 +233,11 @@ function ir(t) {
   pararSynth();
   if (t !== 'metronomo' && M.on) pararMetro();
   document.querySelectorAll('.abas button').forEach(b => b.classList.toggle('ativa', b.dataset.tela === t));
-  ({ hoje: telaHoje, banco: telaBanco, metronomo: metroTela, vocab: telaVocab }[t] || telaHoje)();
+  ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab }[t] || telaTrilha)();
   window.scrollTo(0, 0);
 }
 window.ir = ir; window.verPeca = verPeca; window.setProg = setProg;
 document.querySelectorAll('.abas button').forEach(b => b.onclick = () => ir(b.dataset.tela));
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
-carregar().then(() => ir('hoje')).catch(() => { tela.innerHTML = '<p class="carregando">erro ao carregar os dados.</p>'; });
+carregar().then(() => ir('trilha')).catch(() => { tela.innerHTML = '<p class="carregando">erro ao carregar os dados.</p>'; });

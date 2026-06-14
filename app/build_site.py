@@ -32,6 +32,18 @@ def main():
     rot = json.load(open(ROOT / "content" / "curriculum" / "sambrass23-6semanas.json", encoding="utf-8"))["rotina_diaria"]
     json.dump(rot, open(data / "rotina.json", "w", encoding="utf-8"), ensure_ascii=False)
 
+    # 3) camada pedagógica (rota "Caminho do Sambrass": trilha + Stories + desafios)
+    ped = ROOT / "content" / "pedagogia"
+    if ped.exists():
+        shutil.copy(ped / "app_musicas.json", data / "percurso.json")    # nós da trilha (eager, leve)
+        shutil.copy(ped / "app_pedagogia.json", data / "pedagogia.json")  # perfil/plano/desafios (lazy)
+        shutil.copy(ped / "app_prep.json", data / "aquecimento.json")     # 12 aquecimentos (lazy)
+        shutil.copy(ped / "app_tecnica.json", data / "tecnica.json")      # técnica por lote (lazy)
+        # resumo enxuto dos 6 lotes (tom + foco) p/ os cabeçalhos da trilha — eager
+        tec = json.load(open(ped / "app_tecnica.json", encoding="utf-8"))
+        lotes = [{"lote": t["lote"], "tom": t["tom"], "feat": t["feat"]} for t in tec]
+        json.dump(lotes, open(data / "lotes.json", "w", encoding="utf-8"), ensure_ascii=False)
+
     # (sem PDF no produto: a notação é renderizada nativamente pelo abcjs)
     nbytes = sum(f.stat().st_size for f in SITE.rglob("*") if f.is_file())
     print(f"_site pronto: {len(list(SITE.rglob('*')))} arquivos, {nbytes // 1024} KB (notação nativa, sem PDF)")
