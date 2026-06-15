@@ -45,6 +45,22 @@ a.peca{color:inherit;text-decoration:none;display:block}
 .peca .num{font-weight:800;color:var(--brand);margin-right:6px}
 .qual{display:inline-block;width:16px;text-align:center;font-weight:800;font-size:12px;border-radius:4px;vertical-align:middle}
 .qual.q-ok{color:#1f7a4d}.qual.q-mid{color:#b07a17}.qual.q-raw{color:#b9b1a3}
+.ptop{display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.25}
+.ptit{font-weight:600}
+.feitatag{font-size:10px;font-weight:800;color:#fff;background:var(--verde);border-radius:999px;padding:1px 8px}
+.pcomp{font-size:12px;color:var(--suave);font-style:italic;margin:2px 0 5px}
+.pchips{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.chip-tom,.chip-c{font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px}
+.chip-tom{background:#efe7f3;color:#6b3f8a}.chip-c{background:var(--caixa);color:#6a5f4d}
+.ctag{font-size:11px;font-weight:600;border-radius:6px;padding:1px 8px;background:#f3ece0;color:#8a6a2f;border:1px solid #e7dcc6}
+.fp{display:inline-flex;align-items:flex-end;gap:2px;height:15px;margin-left:3px}
+.fp i{width:4px;border-radius:1px;display:block}
+.fp .fp0{background:#c0392b}.fp .fp1{background:#2d6fb0}.fp .fp2{background:#2e8b57}
+.difb{flex:none;width:30px;height:30px;border-radius:50%;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sombra)}
+.linha.feita{border-color:#cfe6da;background:linear-gradient(0deg,#f3faf6,var(--card))}
+.capanote{font-size:12.5px;line-height:1.4;border-radius:10px;padding:8px 12px;margin:10px 0 0;text-align:left}
+.capanote.warn{background:#fdf3da;border:1px solid #ecd9a6;color:#7a5a12}
+.capanote.soft{background:#eef3fb;border:1px solid #cfdcf0;color:#33507a}
 .niv{display:inline-block;padding:0 6px;border-radius:6px;font-weight:700;font-size:11px;white-space:nowrap}
 .niv-book1{background:#e6f3ec;color:#1f7a4d}.niv-book2{background:#fdf3da;color:#9a6a12}.niv-arban{background:#fbe6e9;color:#9a2738}
 .rotina li,.vocab li{display:block;background:var(--card);border:1px solid var(--linha);

@@ -22,7 +22,10 @@ const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200;
 
 let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, VISUAL = null;
 // tutor de escuta
-let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null;
+let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
+// grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
+// oitava do OMR não é confiável) avalia pela CLASSE DE ALTURA, evitando falsos vermelhos.
+function samePitch(a, b) { return OCTAVE_EXACT ? a === b : ((((a - b) % 12) + 12) % 12) === 0; }
 let TIMER = null, PRACTON = false;
 let SLICE = null, LOOPON = false, LO_A = 1, LO_B = 1, MCOUNT = 1;
 let RAMPON = false, RTARGET = 120;
@@ -68,7 +71,8 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
     rascunho: 'Melodia: rascunho de leitura automática (OMR), em revisão. As células acima são exatas.'
   };
   const tier = abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
-  $('#rasc').innerHTML = RASC[tier] || RASC.rascunho;
+  OCTAVE_EXACT = (tier === 'conferida');
+  $('#rasc').innerHTML = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
   else { $('#paper').innerHTML = '<p class="nota-rasc">melodia indisponível.</p>'; }
 
@@ -216,7 +220,12 @@ async function enableMic(){
     $('#tmic').classList.add('on'); $('#tmic').textContent = '🎤 ouvindo';
     $('#tuner').classList.add('ativo');
     RAF = requestAnimationFrame(micLoop);
-  }catch(e){ $('#micnota').textContent = 'permita o microfone'; MICON = false; }
+  }catch(e){
+    MICON = false;
+    $('#tuner').classList.add('ativo');
+    $('#micnota').innerHTML = 'sem acesso ao microfone — toque <b>🎤 ouvir meu som</b> de novo e <b>permita</b>; ou siga sem avaliar (clave + cursor funcionam).';
+    $('#tmic').classList.remove('on'); $('#tmic').textContent = '🎤 ouvir meu som';
+  }
 }
 function disableMic(){
   MICON = false; cancelAnimationFrame(RAF);
@@ -232,7 +241,7 @@ function updateNeedle(pp){
     nd.style.left = Math.max(0, Math.min(100, 50 + pp.cents)) + '%';
     nd.style.opacity = 1;
     rd.textContent = `você: ${NOMES[((pp.midi % 12) + 12) % 12]} ${pp.cents >= 0 ? '+' : ''}${pp.cents}¢`;
-    nd.classList.toggle('intune', Math.abs(pp.cents) <= CENTS_TOL && EXP && pp.midi === EXP.midi);
+    nd.classList.toggle('intune', Math.abs(pp.cents) <= CENTS_TOL && EXP && samePitch(pp.midi, EXP.midi));
   }else{
     nd.style.opacity = .25; rd.textContent = 'você: —'; nd.classList.remove('intune');
   }
@@ -244,7 +253,7 @@ function micLoop(){
   updateNeedle(pp);
   if(EXP){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
-    if(pp && pp.midi === EXP.midi && Math.abs(pp.cents) <= CENTS_TOL){
+    if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
       EXP.matchedMs += dt;
       if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good'; }
     }else if(pp){

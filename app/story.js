@@ -62,6 +62,24 @@ async function openTecnica(lote) {
 
 function tutorPeca(num) { location.href = './estudo.html?id=sb-' + String(num).padStart(3, '0'); }
 const micBtn = num => `<button class="acao micbtn" onclick="tutorPeca(${num})">🎤 tocar no tutor (ele ouve você)</button>`;
+// avisos da capa: tier da melodia (honestidade do grader) + empurrão suave de nível (não-bloqueante)
+function capaNotas(m) {
+  let h = '';
+  const tier = (typeof qualOf === 'function') ? qualOf(m.num) : 'conferida';
+  if (tier !== 'conferida') {
+    const txt = tier === 'dedos' ? 'leitura provisória (tom pelos dedos · oitava e ritmo em revisão)' : 'leitura automática (OMR), em revisão';
+    h += `<p class="capanote warn">⚠ Melodia: ${txt}. Confira a partitura — o tutor avalia pela classe de altura.</p>`;
+  }
+  const ms = DB.percurso || [], RANK = { book1: 0, book2: 1, arban: 2 };
+  if (typeof suggestedIndex === 'function' && m.nivel) {
+    const sug = ms[suggestedIndex()];
+    if (sug && (RANK[m.nivel] || 0) > (RANK[sug.nivel] || 0)) {
+      const lbl = (typeof NIVEL_FULL !== 'undefined' && NIVEL_FULL[m.nivel]) || m.nivel;
+      h += `<p class="capanote soft">💡 Esta é <b>${lbl}</b> — o sugerido agora é mais abaixo na escada. Mas nada trava: se quiser encarar, vá.</p>`;
+    }
+  }
+  return h;
+}
 
 function renderSlide() {
   renderBars();
@@ -69,6 +87,7 @@ function renderSlide() {
   if (s.type === 'capa') { const m = s.m;
     h = `<div class="slide"><div class="kicker">Lote ${m.lote} · tom de ${m.tom}</div>
       <h2>${m.titulo}</h2><div class="by">${m.compositor}</div>
+      ${capaNotas(m)}
       <div class="cplx">
         <div class="cchip"><span class="lab">Agudo</span>${dots6(m.agudo)}<span class="v">máx <b>${m.pico_nome || '?'}</b></span></div>
         <div class="cchip"><span class="lab">Veloc.</span>${dots6(m.vel)}<span class="v">${m.vel}/6</span></div>

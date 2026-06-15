@@ -90,24 +90,33 @@ const COMP_CHIPS = [['sincope', 'síncope'], ['contratempo', 'contratempo'], ['t
   ['modulacao', 'modulação'], ['forma-longa', 'forma longa'], ['forma-extensa', 'forma extensa'],
   ['ornamentos', 'ornamentos'], ['quatro', 'compasso 4/4']];
 const EFF_CHIPS = [['agudo', 'agudo +'], ['vel', 'veloz +'], ['folego', 'fôlego +']];
+const COMP_SHORT = { sincope: 'síncope', contratempo: 'contratempo', tercina: 'tercina', semicolcheia: 'semicolcheia', pontuada: 'pontuada', anacruse: 'anacruse', cromatismo: 'cromatismo', casas: 'casas', 'ds-dc': 'D.S./D.C.', modulacao: 'modulação', 'forma-longa': 'forma longa', 'forma-extensa': 'forma extensa' };
+const COMP_SALIENT = ['tercina', 'semicolcheia', 'cromatismo', 'modulacao', 'contratempo', 'sincope', 'pontuada', 'anacruse', 'casas', 'ds-dc', 'forma-extensa', 'forma-longa'];
+const difColor = d => { const t = Math.max(0, Math.min(1, ((d || 5) - 3) / 4)); return `hsl(${Math.round(130 * (1 - t))} 58% 42%)`; };
 
 /* ---------- telas ---------- */
 // A home é a Trilha (telaTrilha em trilha.js) — o caminho sugerido estilo Duolingo.
 
 function linhaPeca(n) {
   const p = DB.byNum[n]; if (!p) return '';
-  const st = isDone(n) ? ' · <b style="color:var(--verde)">dominada ✓</b>' : '';
-  const q = QUAL[qualOf(n)];
-  return `<li><div class="linha"><button class="playmini" onclick="event.stopPropagation();tocarPeca(${n})" aria-label="tocar">▶</button>
-    <a class="peca" href="#" onclick="verPeca(${n});return false">
-      <span class="num">${String(n).padStart(3, '0')}</span> ${p.titulo} <span class="qual ${q.cls}" title="melodia: ${q.txt}">${q.tag}</span>
-      <span class="dif">${p.dificuldade || '?'}</span>
-      <div class="meta">${p.compositor} · ${TOM[p.key_concert] || p.key_concert} · ${p.compasso}${st}${(() => { const nv = nivelOf(n); return nv ? ` · <span class="niv niv-${nv}">${NIVEL[nv]}</span>` : ''; })()}</div></a></div></li>`;
+  const m = DB.percByNum[n] || {}, q = QUAL[qualOf(n)], nv = nivelOf(n), done = isDone(n), dif = p.dificuldade || 0;
+  const tg = pieceTags(p);
+  const comp = COMP_SALIENT.filter(k => tg.has(k)).slice(0, 2).map(k => `<span class="ctag">${COMP_SHORT[k]}</span>`).join('');
+  const fp = ['agudo', 'vel', 'folego'].map((k, i) => `<i class="fp${i}" style="height:${3 + (m[k] || 0) * 2}px"></i>`).join('');
+  return `<li><div class="linha${done ? ' feita' : ''}">
+      <button class="playmini" onclick="event.stopPropagation();tocarPeca(${n})" aria-label="tocar">▶</button>
+      <a class="peca" href="#" onclick="verPeca(${n});return false">
+        <div class="ptop"><span class="num">${String(n).padStart(3, '0')}</span> <span class="ptit">${p.titulo}</span> <span class="qual ${q.cls}" title="melodia: ${q.txt}">${q.tag}</span>${done ? ' <span class="feitatag">dominada ✓</span>' : ''}</div>
+        <div class="pcomp">${p.compositor}</div>
+        <div class="pchips"><span class="chip-tom">${TOM[p.key_concert] || p.key_concert}</span><span class="chip-c">${p.compasso}</span>${nv ? `<span class="niv niv-${nv}">${NIVEL[nv]}</span>` : ''}${comp}<span class="fp" title="esforço · agudo/veloz/fôlego">${fp}</span></div>
+      </a>
+      <div class="difb" style="background:${difColor(dif)}" title="dificuldade ${dif}/7">${dif || '?'}</div>
+    </div></li>`;
 }
 
 // Banco = navegador por competências: combine nível (escada) · habilidade · esforço · busca.
 function telaBanco() {
-  const ps = (DB.pieces?.pieces || []).slice().sort((a, b) => a.num - b.num);
+  const ps = (DB.pieces?.pieces || []).slice().sort((a, b) => (a.dificuldade || 0) - (b.dificuldade || 0) || a.num - b.num);
   const inp = 'width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--linha);border-radius:8px;font:inherit;margin-bottom:6px';
   const cnt = {}; COMP_CHIPS.forEach(([k]) => cnt[k] = 0); const eff = { agudo: 0, vel: 0, folego: 0 };
   ps.forEach(p => {
@@ -116,7 +125,7 @@ function telaBanco() {
   });
   const chip = (kind, k, lab, n) => n ? `<button class="chip ${kind}" data-kind="${kind}" data-k="${k}">${lab} <span class="chipn">${n}</span></button>` : '';
   tela.innerHTML = `<h2 class="sec">Banco — ${ps.length} peças</h2>
-    <p class="meta">Navegue por <b>competência</b>: combine nível, habilidade e esforço (e busque pelo nome).</p>
+    <p class="meta">Navegue por <b>competência</b>: combine nível, habilidade e esforço (e busque pelo nome). Ordenadas da <b>mais fácil à mais difícil</b> — a numeração do caderno é mantida.</p>
     <input id="busca" placeholder="buscar título ou compositor…" style="${inp}">
     <select id="fnivel" style="${inp}">
       <option value="">todos os níveis (escada pedagógica)</option>
