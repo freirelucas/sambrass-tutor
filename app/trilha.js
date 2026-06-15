@@ -21,7 +21,7 @@ function telaTrilha() {
     <h3>Bem-vindo ao Caminho do Sambrass 🎺</h3>
     <ol class="wsteps">
       <li><b>Toque o caderno inteiro</b> — 110 sambas, do mais fácil (Book 1) ao mais técnico. No seu ritmo: nada trava.</li>
-      <li><b>O tutor ouve você.</b> Em cada peça o microfone escuta seu trompete e mostra se a nota saiu certa — use <b>fones</b>.</li>
+      <li><b>O tutor ouve você.</b> Toque a peça e o microfone mostra se a nota saiu certa — no modo praticar o app fica em silêncio pra escutar só você (sem fone).</li>
       <li><b>Comece</b> pelo aquecimento e pela peça marcada <span class="flag-inline">SUGERIDA</span>.</li>
     </ol>
     <button class="acao" onclick="fecharWelcome()">entendi, bora tocar</button></div>`;
