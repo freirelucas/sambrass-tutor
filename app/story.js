@@ -56,6 +56,9 @@ async function openTecnica(lote) {
   const t = (DB.tecnica || [])[lote - 1]; if (!t) return;
   const sl = [{ type: 'tecIntro', t }];
   (t.eixos || []).forEach(e => (e.exercicios || []).forEach(ex => sl.push({ type: 'tecEx', eixo: e.eixo, ex })));
+  const pcs = (DB.percurso || []).filter(x => x.lote === lote);
+  const alvo = pcs.find(x => typeof isDone === 'function' && !isDone(x.num)) || pcs[0];
+  if (alvo) sl.push({ type: 'tecFim', lote, alvo, n: pcs.length });
   S = { slides: sl, i: 0, music: null, rate: 0, checks: {}, tec: true };
   showStory(`Técnica · Lote ${lote} · tom de ${t.tom}`);
 }
@@ -127,6 +130,11 @@ function renderSlide() {
   } else if (s.type === 'tecEx') { const ex = s.ex;
     h = `<div class="slide"><div class="kicker">${s.eixo}</div><h3>${ex.nome}</h3>
       <p>${ex.dica || ''}</p>${ex.svg ? `<div class="scorebox">${ex.svg}</div>` : ''}</div>`;
+  } else if (s.type === 'tecFim') { const a = s.alvo;
+    h = `<div class="slide"><div class="kicker">Aplicar na música</div><h2>A técnica vira samba</h2>
+      <p class="big">Leve o que você treinou para uma peça do Lote ${s.lote}.</p>
+      <button class="acao micbtn" onclick="openMusic(${a.num})">▶ abrir ${a.titulo}</button>
+      <p class="why" style="margin-top:12px">💡 São ${s.n} peças neste lote — todas trabalham este mesmo foco técnico.</p></div>`;
   }
   document.getElementById('slideHost').innerHTML = h;
   const last = S.i === S.slides.length - 1;
