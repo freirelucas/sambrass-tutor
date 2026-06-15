@@ -80,6 +80,8 @@ small{color:var(--suave)}
 .tempo .bpm small{font-size:11px;color:var(--suave);display:block;letter-spacing:1px}
 .toggle{min-height:46px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
 .toggle.on{background:var(--vinho);border-color:var(--vinho)}
+.toggle.go{background:linear-gradient(180deg,#ffd97a,var(--ouro2));color:#1a1206;border-color:var(--ouro2);font-weight:800;font-size:14px;padding:0 18px}
+.toggle.go.on{background:var(--vinho);border-color:var(--vinho);color:#fff}
 .nota-rasc{color:var(--suave);font-size:12.5px;margin-top:12px}
 .ok{color:var(--verde)}
 /* tutor de escuta */
@@ -136,6 +138,7 @@ small{color:var(--suave)}
         <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div></div>
       </div>
       <div class="controls">
+        <button class="toggle go" id="tgo">▶ Tocar com o tutor</button>
         <div class="tempo"><button id="menos">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais">+</button></div>
         <button class="toggle" id="tconcert">ouvir em concerto</button>
         <button class="toggle" id="tmic">🎤 ouvir meu som</button>
@@ -167,6 +170,7 @@ small{color:var(--suave)}
   </section>
 
   <a class="voltar" href="./index.html">‹ voltar ao tutor</a>
+  <a id="reportar" class="voltar" href="#" target="_blank" rel="noopener" style="margin-left:14px">⚠ reportar erro nesta peça</a>
   <p class="foot">Sambrass Tutor — estudo offline · timbre de trompete · digitação ao vivo</p>
 </main>
 

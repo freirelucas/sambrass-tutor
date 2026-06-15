@@ -74,6 +74,13 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   const tier = abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
   OCTAVE_EXACT = (tier === 'conferida');
   $('#rasc').innerHTML = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
+  { const rep = $('#reportar');
+    if(rep){
+      const tomEsc = p ? (WR[p.key_concert]||p.key_concert) : '?';
+      const titulo = `[beta] ${ID}${p?': '+p.titulo:''} — `;
+      const body = `**Peça:** ${ID}${p?` — ${p.titulo} (${p.compositor})`:''}\n**Em que tela?** estudo\n**Leitura (tier):** ${tier}\n**Tom escrito:** ${tomEsc}\n\n**O que aconteceu?**\n(nota/oitava/ritmo no compasso __; ou o tutor marcou vermelho mas eu acertei; ou áudio/microfone)\n\n**O que era esperado?**\n\n**Aparelho/navegador:** ${navigator.userAgent}`;
+      rep.href = `https://github.com/freirelucas/sambrass-tutor/issues/new?labels=beta&title=${encodeURIComponent(titulo)}&body=${encodeURIComponent(body)}`;
+    } }
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
   else { $('#paper').innerHTML = '<p class="nota-rasc">melodia indisponível.</p>'; }
 
@@ -84,6 +91,12 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   // --- tutor de escuta ---
   $('#tmic').onclick = () => MICON ? disableMic() : enableMic();
   $('#tprat').onclick = () => PRACTON ? stopPractice() : startPractice();
+  $('#tgo').onclick = async () => {   // um clique: admite o microfone + começa a praticar
+    if(PRACTON){ stopPractice(); return; }
+    audioUnlock();
+    if(!MICON){ try{ await enableMic(); }catch{} }
+    startPractice();
+  };
   $('#tloop').onclick = e => { LOOPON = e.currentTarget.classList.toggle('on'); applyLoop(); };
   $('#laMinus').onclick = () => { LO_A = Math.max(1, Math.min(LO_A-1, LO_B)); syncLoopUI(); if(LOOPON) applyLoop(); };
   $('#laPlus').onclick  = () => { LO_A = Math.min(LO_B, LO_A+1); syncLoopUI(); if(LOOPON) applyLoop(); };
@@ -192,12 +205,14 @@ function startPractice(){
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
   TIMER = newTimer(); TIMER.start(); PRACTON = true;
   $('#tprat').classList.add('on'); $('#tprat').textContent = '⏸ parar';
+  const g = $('#tgo'); if(g){ g.classList.add('on'); g.textContent = '⏸ parar'; }
 }
 function stopPractice(){
   if(TIMER){ try{ TIMER.stop(); }catch{} TIMER = null; }
   PRACTON = false; WAITING = false; EXP = null; clrHi(); clrGrade(); setValves('');
   $('#notaAtual').textContent = '·'; $('#dedoAtual').textContent = 'pronto';
   $('#tprat').classList.remove('on'); $('#tprat').textContent = '▶ praticar';
+  const g = $('#tgo'); if(g){ g.classList.remove('on'); g.textContent = '▶ Tocar com o tutor'; }
 }
 function restartTimer(){ if(!PRACTON) return; if(TIMER){ try{ TIMER.stop(); }catch{} } TIMER = newTimer(); TIMER.start(); }
 function practiceEvent(ev){
