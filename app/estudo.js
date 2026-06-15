@@ -75,12 +75,7 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   OCTAVE_EXACT = (tier === 'conferida');
   $('#rasc').innerHTML = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
   { const rep = $('#reportar');
-    if(rep){
-      const tomEsc = p ? (WR[p.key_concert]||p.key_concert) : '?';
-      const titulo = `[beta] ${ID}${p?': '+p.titulo:''} — `;
-      const body = `**Peça:** ${ID}${p?` — ${p.titulo} (${p.compositor})`:''}\n**Em que tela?** estudo\n**Leitura (tier):** ${tier}\n**Tom escrito:** ${tomEsc}\n\n**O que aconteceu?**\n(nota/oitava/ritmo no compasso __; ou o tutor marcou vermelho mas eu acertei; ou áudio/microfone)\n\n**O que era esperado?**\n\n**Aparelho/navegador:** ${navigator.userAgent}`;
-      rep.href = `https://github.com/freirelucas/sambrass-tutor/issues/new?labels=beta&title=${encodeURIComponent(titulo)}&body=${encodeURIComponent(body)}`;
-    } }
+    if(rep) rep.onclick = e => { e.preventDefault(); if(window.reportarBeta) reportarBeta({ piece: `${ID}${p?' '+p.titulo:''}`, screen: 'estudo' }); }; }
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
   else { $('#paper').innerHTML = '<p class="nota-rasc">melodia indisponível.</p>'; }
 

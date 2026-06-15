@@ -1,0 +1,6 @@
+name = "sambrass-report"
+main = "report-worker.js"
+compatibility_date = "2024-11-01"
+
+# Segredo (NÃO versionar): defina com  wrangler secret put GITHUB_TOKEN
+# [vars] vão aqui se quiser parametrizar REPO/ALLOW_ORIGIN sem editar o código.
