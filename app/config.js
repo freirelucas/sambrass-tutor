@@ -3,10 +3,23 @@
  * Sem REPORT_ENDPOINT definido: o "enviar" abre o GitHub (com login) já preenchido.
  * Com REPORT_ENDPOINT (um Worker — ver serverless/): posta direto e cria a issue SEM login. */
 window.REPORT_REPO = 'freirelucas/sambrass-tutor';
-window.REPORT_ENDPOINT = '';   // ← cole aqui a URL do Worker p/ habilitar envio sem login (ver serverless/README.md)
+// OPÇÃO MAIS SIMPLES (sem servidor, sem login): cole a URL do seu Google Form / Tally.
+// O botão "reportar" abre o form já pré-preenchido com a peça/tela. Ver docs/feedback-form.md.
+window.REPORT_FORM_URL = '';
+window.REPORT_FORM_FIELDS = {};   // Google Forms (opcional) p/ pré-preencher: { piece:'entry.123', screen:'entry.456' }
+// alternativa: endpoint (Worker/Formsubmit) p/ o form in-app. Vazio = link do GitHub (com login).
+window.REPORT_ENDPOINT = '';
 
+function buildFormUrl(ctx) {
+  const base = window.REPORT_FORM_URL, map = window.REPORT_FORM_FIELDS || {}, params = [];
+  const add = (k, v) => { if (v) params.push(encodeURIComponent(k) + '=' + encodeURIComponent(v)); };
+  add(map.piece || 'peca', ctx.piece || ''); add(map.screen || 'tela', ctx.screen || '');
+  if (map.piece || map.screen) params.push('usp=pp_url');   // Google Forms prefill
+  return params.length ? base + (base.includes('?') ? '&' : '?') + params.join('&') : base;
+}
 window.reportarBeta = function (ctx) {
   ctx = ctx || {};
+  if (window.REPORT_FORM_URL) { window.open(buildFormUrl(ctx), '_blank', 'noopener'); return; }   // Google Forms / Tally
   const ghTitle = `[beta] ${ctx.piece ? ctx.piece + ': ' : ''}`;
   const ghBody = `**Peça:** ${ctx.piece || '—'}\n**Tela:** ${ctx.screen || '—'}\n\n**O que aconteceu?**\n\n**O que era esperado?**\n\n**Aparelho/navegador:** ${navigator.userAgent}`;
   const ghUrl = `https://github.com/${window.REPORT_REPO}/issues/new?labels=beta&title=${encodeURIComponent(ghTitle)}&body=${encodeURIComponent(ghBody)}`;
