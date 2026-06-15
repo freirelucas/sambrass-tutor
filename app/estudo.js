@@ -8,7 +8,9 @@
  *    e o microfone gradua a nota atual. Silencioso de propósito — evita o mic ouvir o app.
  */
 const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
-const CEL = ['C2', 'C1', 'C5'];
+// células reais da peça → "o coração" = a mais saliente presente (não mais fixo C2/C1/C5)
+const HEARTPRI = ['C2', 'C6', 'C5', 'C4', 'C3', 'C7', 'C1'];
+const HEARTH2 = { C2: 'A síncope que move o samba', C6: 'O contratempo que dá o gingado', C5: 'A tercina contra a divisão binária', C4: 'A semicolcheia e o tu-ku', C3: 'A colcheia pontuada — o galope', C7: 'A anacruse: entrar antes do tempo', C1: 'As colcheias em grupo' };
 const $ = s => document.querySelector(s);
 const NOMES = ['Dó', 'Dó♯', 'Ré', 'Ré♯', 'Mi', 'Fá', 'Fá♯', 'Sol', 'Sol♯', 'Lá', 'Lá♯', 'Si'];
 const SHARP = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
@@ -40,11 +42,24 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';
     $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`; }
   const cm = {}; (cells?.celulas_ritmicas||[]).forEach(c => cm[c.id]=c);
-  $('#celulas').innerHTML = CEL.map((id,i) => `<div class="pane cel ${id==='C2'?'heart':''}" style="animation-delay:${i*.08}s">
+  const presentes = (p?.celulas||[]).filter(id => cm[id] && abc?.['cell-'+id]);
+  const ordenadas = HEARTPRI.filter(id => presentes.includes(id)).concat(presentes.filter(id => !HEARTPRI.includes(id)));
+  const CEL = (ordenadas.length ? ordenadas : ['C1']).slice(0,4);
+  const HEART = CEL[0];
+  { const h2 = $('#celH2'); if(h2) h2.textContent = HEARTH2[HEART] || 'As células desta peça'; }
+  $('#celulas').innerHTML = CEL.map((id,i) => `<div class="pane cel ${id===HEART?'heart':''}" style="animation-delay:${i*.08}s">
     <button class="play" data-abc="cell-${id}" aria-label="tocar ${id}">▶</button>
-    <div><h3>${id} · ${cm[id]?.nome||''}${id==='C2'?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
+    <div><h3>${id} · ${cm[id]?.nome||''}${id===HEART?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
   CEL.forEach(id => { if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id].replace(/\nT:[^\n]*/,'').replace(/\nQ:[^\n]*/,''), {staffwidth:235,scale:1.35,paddingtop:2,paddingbottom:2,paddingleft:0,paddingright:0}); }catch{} });
   document.querySelectorAll('.play').forEach(b => b.onclick = () => playOnce(abc?.[b.dataset.abc]));
+  { const formaTxt = (p?.forma||[]).join('/'), longa = (p?.forma||[]).length>=3, hn = cm[HEART]?.nome||HEART;
+    const passosArr = [
+      `<b>Aqueça</b> e toque a célula ${HEART} (${hn}) — ▶ acima — batendo o pé no tempo.`,
+      `Leia a melodia <b>devagar</b> (baixe o BPM), olhando as válvulas, sem parar nos erros.`,
+      longa ? `Estude <b>uma seção por vez</b> (forma ${formaTxt}); junte duas só quando cada uma sair de cor.`
+            : `Isole o <b>compasso difícil</b> em loop 🔁 e suba o beat aos poucos.`,
+      `Toque a frase inteira <b>de cór</b>, no andamento de roda.`];
+    const ol = $('#passos'); if(ol) ol.innerHTML = passosArr.map(t => `<li><span class="chk">✓</span><span class="txt">${t}</span></li>`).join(''); }
 
   MELODIA = abc?.[ID] || null;
   const RASC = {

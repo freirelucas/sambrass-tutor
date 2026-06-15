@@ -96,7 +96,7 @@ const EFF_CHIPS = [['agudo', 'agudo +'], ['vel', 'veloz +'], ['folego', 'fôlego
 
 function linhaPeca(n) {
   const p = DB.byNum[n]; if (!p) return '';
-  const st = PROG[n] ? ` · ${PROG[n]}` : '';
+  const st = isDone(n) ? ' · <b style="color:var(--verde)">dominada ✓</b>' : '';
   const q = QUAL[qualOf(n)];
   return `<li><div class="linha"><button class="playmini" onclick="event.stopPropagation();tocarPeca(${n})" aria-label="tocar">▶</button>
     <a class="peca" href="#" onclick="verPeca(${n});return false">
@@ -153,15 +153,22 @@ function telaBanco() {
 
 function verPeca(n) {
   const p = DB.byNum[n]; if (!p) return;
-  const sts = ['a_ler', 'em_foco', 'dominada'];
+  const lvl = bestLevel(n), nv = nivelOf(n);
+  const status = isDone(n)
+    ? `<span class="niv niv-book1">dominada ✓</span> <span class="meta">autoavaliação ${lvl}/5</span>`
+    : lvl ? `<span class="meta">em progresso — melhor: ${RATELBL[lvl]}</span>`
+      : `<span class="meta">ainda não tocada</span>`;
   tela.innerHTML = `<button class="voltar" onclick="ir('banco')">‹ banco</button>
     <div class="card"><span class="dif">dif ${p.dificuldade || '?'}</span>
       <h3>${String(n).padStart(3, '0')} — ${p.titulo}</h3>
       <div class="meta">${p.compositor}</div>
-      <div class="meta" style="margin:6px 0">Tom escrito <b>${tomEscrito(p)}</b> (concerto ${TOM[p.key_concert] || p.key_concert}) · ${p.compasso} · ${p.densidade} · forma ${(p.forma || []).join('/') || '?'}</div>
+      <div class="meta" style="margin:6px 0">Tom escrito <b>${tomEscrito(p)}</b> (concerto ${TOM[p.key_concert] || p.key_concert}) · ${p.compasso} · ${p.densidade} · forma ${(p.forma || []).join('/') || '?'}${nv ? ` · <span class="niv niv-${nv}">${NIVEL[nv]}</span>` : ''}</div>
       <div>${(p.celulas || []).map(c => `<span class="tag">${c}</span>`).join('')} ${(p.requisitos || []).map(r => `<span class="tag">${r}</span>`).join('')}</div>
-      <div class="prog" style="margin-top:10px"><b>Progresso:</b> ${sts.map(s => `<button class="${PROG[n] === s ? 'sel' : ''}" onclick="setProg(${n},'${s}');verPeca(${n})">${s.replace('_', ' ')}</button>`).join('')}</div>
-      <div class="btnrow" style="justify-content:flex-start;margin-top:12px"><a class="acao" href="./estudo.html?id=sb-${String(n).padStart(3, '0')}">▶ Estudar (partitura + áudio)</a></div>
+      <div style="margin:10px 0"><b>Progresso:</b> ${status}</div>
+      <div class="btnrow" style="justify-content:flex-start;margin-top:12px;gap:8px">
+        <button class="acao" onclick="openMusic(${n})">abrir o plano (Story)</button>
+        <a class="acao" href="./estudo.html?id=sb-${String(n).padStart(3, '0')}">🎤 tocar no tutor</a></div>
+      <p class="meta" style="margin-top:8px">Vira <b>dominada ✓</b> (na trilha também) quando você se autoavalia nível 4+ no diário da Story.</p>
       ${p.obs ? `<p class="meta" style="font-style:italic;margin-top:10px">${p.obs}</p>` : ''}
     </div>`;
   window.scrollTo(0, 0);

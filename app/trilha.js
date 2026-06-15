@@ -17,7 +17,15 @@ function telaTrilha() {
   const ms = DB.percurso || [];
   if (!ms.length) { tela.innerHTML = '<p class="carregando">trilha indisponível.</p>'; return; }
   const uni = suggestedIndex(), nd = streakCount();
-  let h = `<div class="hud">
+  const welcome = store.get('onboarded', false) ? '' : `<div class="welcome card">
+    <h3>Bem-vindo ao Caminho do Sambrass 🎺</h3>
+    <ol class="wsteps">
+      <li><b>Toque o caderno inteiro</b> — 110 sambas, do mais fácil (Book 1) ao mais técnico. No seu ritmo: nada trava.</li>
+      <li><b>O tutor ouve você.</b> Em cada peça o microfone escuta seu trompete e mostra se a nota saiu certa — use <b>fones</b>.</li>
+      <li><b>Comece</b> pelo aquecimento e pela peça marcada <span class="flag-inline">SUGERIDA</span>.</li>
+    </ol>
+    <button class="acao" onclick="fecharWelcome()">entendi, bora tocar</button></div>`;
+  let h = welcome + `<div class="hud">
       <div><b>O Caminho do Sambrass</b><div class="meta">trilha de 110 sambas</div></div>
       <div class="hudpills"><span class="pill">📅 ${nd} ${nd === 1 ? 'dia' : 'dias'}</span><span class="pill">🎺 ${countDone()}/${ms.length}</span></div>
     </div>
@@ -52,3 +60,4 @@ function telaTrilha() {
   tela.innerHTML = h + '</div>';
 }
 window.telaTrilha = telaTrilha;
+window.fecharWelcome = () => { store.set('onboarded', true); telaTrilha(); };
