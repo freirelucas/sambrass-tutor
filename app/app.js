@@ -32,6 +32,10 @@ const countDone = () => (DB.percurso || []).filter(m => isDone(m.num)).length;
 const prepDone = () => store.get('prepdone', false);
 const markDay = () => { const days = store.get('days', []); const t = new Date().toISOString().slice(0, 10); if (!days.includes(t)) { days.push(t); store.set('days', days); } };
 const streakCount = () => { const days = store.get('days', []).slice().sort(); let s = 0, d = new Date(); for (; ;) { const k = d.toISOString().slice(0, 10); if (days.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; };
+// repetição espaçada: um "treino" = uma sessão concluída no diário; uma dominada volta p/ revisão após 7 treinos
+const treinoCount = () => store.get('treinos', 0);
+const reviewDue = n => { if (!isDone(n)) return false; const lt = store.get('lastT', {})[n]; return lt != null && (treinoCount() - lt) >= 7; };
+const nextReview = () => { const lt = store.get('lastT', {}); const due = (DB.percurso || []).filter(m => reviewDue(m.num)); return due.length ? due.sort((a, b) => (lt[a.num] || 0) - (lt[b.num] || 0))[0] : null; };
 // migração única: 'dominada' do modelo antigo (sambrass_prog) vira um log nível 4
 (function migrarProg() {
   if (store.get('migrado', false)) return;

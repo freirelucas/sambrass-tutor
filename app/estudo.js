@@ -27,6 +27,7 @@ let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = f
 // oitava do OMR não é confiável) avalia pela CLASSE DE ALTURA, evitando falsos vermelhos.
 function samePitch(a, b) { return OCTAVE_EXACT ? a === b : ((((a - b) % 12) + 12) % 12) === 0; }
 let TIMER = null, PRACTON = false;
+let ESPERAR = false, WAITING = false;   // "esperar por mim": cursor só avança quando o mic confirma a nota
 let SLICE = null, LOOPON = false, LO_A = 1, LO_B = 1, MCOUNT = 1;
 let RAMPON = false, RTARGET = 120;
 
@@ -91,6 +92,7 @@ async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch
   $('#tramp').onclick = e => { RAMPON = e.currentTarget.classList.toggle('on'); };
   $('#raMinus').onclick = () => { RTARGET = Math.max(60, RTARGET-4); $('#rampVal').textContent = RTARGET; };
   $('#raPlus').onclick  = () => { RTARGET = Math.min(180, RTARGET+4); $('#rampVal').textContent = RTARGET; };
+  $('#tesp').onclick = e => { ESPERAR = e.currentTarget.classList.toggle('on'); if(!ESPERAR && WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } };
   syncLoopUI(); $('#rampVal').textContent = RTARGET;
 
   const passos = $('#passos'); const done = JSON.parse(localStorage.getItem('passos-'+ID)||'[]');
@@ -193,7 +195,7 @@ function startPractice(){
 }
 function stopPractice(){
   if(TIMER){ try{ TIMER.stop(); }catch{} TIMER = null; }
-  PRACTON = false; EXP = null; clrHi(); clrGrade(); setValves('');
+  PRACTON = false; WAITING = false; EXP = null; clrHi(); clrGrade(); setValves('');
   $('#notaAtual').textContent = '·'; $('#dedoAtual').textContent = 'pronto';
   $('#tprat').classList.remove('on'); $('#tprat').textContent = '▶ praticar';
 }
@@ -208,6 +210,7 @@ function practiceEvent(ev){
     return;
   }
   showNote(ev, MICON);   // gradua só se o mic estiver ligado
+  if(ESPERAR && MICON && TIMER){ try{ TIMER.pause(); }catch{} WAITING = true; }   // espera você acertar
 }
 
 /* ---------------- microfone + agulha de afinação ---------------- */
@@ -255,7 +258,8 @@ function micLoop(){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
     if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
       EXP.matchedMs += dt;
-      if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good'; }
+      if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good';
+        if(WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } }   // acertou → avança o cursor
     }else if(pp){
       EXP.wrongMs += dt;
       if(EXP.wrongMs >= WRONG_MS && !EXP.painted){ paint(EXP.els, 'bad'); EXP.painted = 'bad'; }

@@ -32,6 +32,8 @@ function telaTrilha() {
     <p class="trilha-intro">A ordem segue a <b>escada pedagógica</b>: primeiro o Book 1 (fundação), depois Book 2 e Arban — e, dentro de cada nível, do mais confortável ao mais exigente. Nada trava: toque o que quiser.</p>
     <div class="prepnode" onclick="openPrep()"><div class="pic">${prepDone() ? '✓' : '🌬️'}</div>
       <div><b>Aquecimento</b><div class="meta">12 exercícios · faça sempre antes</div></div></div>
+    ${(() => { const rev = nextReview(); return rev ? `<div class="revcard" onclick="openMusic(${rev.num})"><div class="pic">🔁</div>
+      <div><b>Revisar hoje</b><div class="meta">${rev.titulo} — dominada há ${treinoCount() - (store.get('lastT', {})[rev.num] || 0)} treinos. A repetição espaçada é o que fixa.</div></div></div>` : ''; })()}
     <div class="path">`;
   let lastNivel = null, lastLote = 0;
   ms.forEach((m, i) => {
