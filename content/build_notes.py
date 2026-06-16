@@ -60,7 +60,7 @@ def compile_file(path, fingering, inst_transpose):
             written = (octave + 1) * 12 + STEP_SEMI[step] + alter
             concert = written + chromatic
             wname = name(written, SHARP)  # nome p/ casar com o mapa de digitação
-            events.append({
+            ev = {
                 "measure": mnum,
                 "written_midi": written,
                 "written_name": (step + ("b" if alter < 0 else "#" * alter) + str(octave)),
@@ -69,7 +69,16 @@ def compile_file(path, fingering, inst_transpose):
                 "fingering": fingering.get(wname),
                 "dur_beats": beats,
                 "tie": note.find("tie").get("type") if note.find("tie") is not None else None,
-            })
+            }
+            # ligaduras de expressão (slur): legato no trompete = notas NÃO articuladas.
+            # Vêm em <notations><slur type="start|stop"/>; guardamos a contagem por nota.
+            notations = note.find("notations")
+            if notations is not None:
+                ss = sum(s.get("type") == "start" for s in notations.findall("slur"))
+                se = sum(s.get("type") == "stop" for s in notations.findall("slur"))
+                if ss: ev["slur_start"] = ss
+                if se: ev["slur_stop"] = se
+            events.append(ev)
     if chromatic != -inst_transpose:
         print(f"  aviso: transpose {chromatic} difere do esperado {-inst_transpose} (Bb) em {path.name}")
     return {"source": path.name, "transpose_chromatic": chromatic, "events": events}

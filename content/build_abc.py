@@ -45,15 +45,40 @@ def abc_pitch(midi, fifths):
     return L, acc, ch
 
 
-def dur_token(beats, L=16):
-    """beats (semínima=1) -> comprimento ABC com unidade 1/L (1/16)."""
-    units = round(beats * (L / 4))
-    return str(units) if units != 1 else ""
+def units_of(beats, L=16):
+    """beats (semínima=1) -> nº de unidades 1/L (1/16)."""
+    return max(1, round(beats * (L / 4)))
+
+# comprimentos (em 1/16) que o ABC desenha como UMA cabeça de nota (semínima, pontuadas, etc.)
+REPR = [16, 12, 8, 6, 4, 3, 2, 1]
+
+def split_units(u):
+    """Quebra uma duração em pedaços representáveis (ex.: 5 -> [4,1], 7 -> [6,1]).
+    No corpo, viram a mesma nota LIGADA — evita 'Duration not representable' do abcjs
+    e escreve a ligadura/ponto que o OMR deixou implícito na duração."""
+    out = []
+    for r in REPR:
+        while u >= r:
+            out.append(r); u -= r
+    return out or [1]
+
+def len_str(u):
+    return "" if u == 1 else str(u)
 
 
 def to_abc(events, fifths, meter, title, idx=1):
     head = f"X:{idx}\nT:{title}\nM:{meter}\nL:1/16\nQ:1/4=92\nK:{fifths_to_key(fifths)}\n"
     body, measure, eff = [], None, keysig_acc(fifths)
+    depth = 0   # ligaduras (slurs) abertas — fechamos sempre balanceado (OMR pode vir torto)
+
+    def wrap(e, force_units=None):
+        nonlocal depth
+        opens = int(e.get("slur_start", 0) or 0)
+        depth += opens
+        closes = min(int(e.get("slur_stop", 0) or 0), depth)
+        depth -= closes
+        return " " + "(" * opens + note_token(e, fifths, eff, force_units) + ")" * closes
+
     i, evs = 0, events
     while i < len(evs):
         e = evs[i]
@@ -65,24 +90,30 @@ def to_abc(events, fifths, meter, title, idx=1):
         if len(trip) == 3 and all(abs(t.get("dur_beats", 0) - 1 / 3) < 0.04 for t in trip) \
                 and all(t.get("measure") == measure for t in trip):
             body.append(" (3")
-            for t in trip: body.append(note_token(t, fifths, eff, force_units=2))
+            for t in trip: body.append(wrap(t, force_units=2))
             i += 3; continue
-        body.append(note_token(e, fifths, eff))
+        body.append(wrap(e))
         i += 1
-    return head + "".join(body) + " |]\n"
+    return head + "".join(body) + ")" * depth + " |]\n"   # fecha ligaduras penduradas
 
 
 def note_token(e, fifths, eff, force_units=None):
-    beats = e.get("dur_beats", 1)
-    length = str(force_units) if force_units else dur_token(beats)
+    """Token ABC 'nu' da nota (sem espaço à esquerda nem slur — quem envolve é o wrap).
+    Durações não representáveis (5/16, 7/16…) viram pedaços LIGADOS, preservando o tempo."""
     if e.get("rest"):
-        return " z" + length
+        if force_units:
+            return "z" + len_str(force_units)
+        return " ".join("z" + len_str(s) for s in split_units(units_of(e.get("dur_beats", 1))))
     L, acc, ch = abc_pitch(e["written_midi"], fifths)
-    tok = ""
+    head = ""
     if acc != eff.get(L, "="):
-        tok = acc; eff[L] = acc
+        head = acc; eff[L] = acc
     tie = "-" if e.get("tie") == "start" else ""
-    return " " + tok + ch + length + tie
+    if force_units:
+        return head + ch + len_str(force_units) + tie
+    segs = split_units(units_of(e.get("dur_beats", 1)))    # acidente só na 1ª; resto é a mesma nota ligada
+    parts = [head + ch + len_str(segs[0])] + [ch + len_str(s) for s in segs[1:]]
+    return "-".join(parts) + tie
 
 
 def fifths_to_key(f):
