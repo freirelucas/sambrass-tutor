@@ -326,7 +326,7 @@ function ir(t) {
   pararSynth();
   if (t !== 'metronomo' && M.on) pararMetro();
   document.querySelectorAll('.abas button').forEach(b => b.classList.toggle('ativa', b.dataset.tela === t));
-  ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab }[t] || telaTrilha)();
+  ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab, progresso: telaProg }[t] || telaTrilha)();
   window.scrollTo(0, 0);
 }
 window.ir = ir; window.verPeca = verPeca; window.setProg = setProg;

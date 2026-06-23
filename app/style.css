@@ -214,3 +214,20 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .snav .sprev{min-height:52px;padding:0 18px;border-radius:14px;border:1px solid var(--linha);background:var(--card);color:var(--tinta);font-weight:700;cursor:pointer}
 .snav .sprev[disabled]{opacity:.4}
 .snav .snext{flex:1;min-height:52px;border-radius:14px;border:none;background:var(--brand);color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+
+/* ---------- Progresso (painel factual, SDT — sem XP) ---------- */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.pcard{background:var(--card);border:1px solid var(--linha);border-radius:var(--r);padding:12px 6px;text-align:center;box-shadow:var(--sombra)}
+.pnum{font-size:24px;font-weight:800;color:var(--brand);line-height:1}
+.plab{font-size:11px;color:var(--suave);margin-top:4px}
+.spark{display:flex;align-items:flex-end;gap:4px;height:64px;margin:6px 0 4px}
+.spark .spk{flex:1;height:100%;display:flex;align-items:flex-end}
+.spark .spk i{display:block;width:100%;background:var(--verde);border-radius:3px 3px 0 0;min-height:2px;transition:height .3s}
+.lrow,.crow{display:flex;align-items:center;gap:10px;margin:7px 0}
+.lname{font-size:12px;font-weight:700;color:var(--ll,#555);min-width:54px}
+.lbar,.cbar{flex:1;height:9px;background:var(--caixa);border-radius:999px;overflow:hidden}
+.lbar i,.cbar i{display:block;height:100%;border-radius:999px}
+.cbar i{background:var(--brand)}
+.lval,.cval{font-size:12px;color:var(--suave);min-width:42px;text-align:right}
+.cname{font-size:13px;min-width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:380px){.pgrid{grid-template-columns:repeat(2,1fr)}}
