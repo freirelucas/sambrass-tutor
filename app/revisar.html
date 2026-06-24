@@ -18,6 +18,7 @@ h1{font-family:var(--serif);font-weight:600;font-size:26px;margin:0 0 4px}
 .prog{font-size:13px;color:var(--ouro);font-weight:700;margin-top:8px}
 .card{background:var(--pane);border:1px solid var(--linha);border-radius:16px;padding:16px;margin:18px 0;box-shadow:0 14px 34px rgba(0,0,0,.32)}
 .card.ok{border-color:rgba(84,201,142,.55)}.card.erro{border-color:rgba(207,58,76,.55)}
+.card.cur{outline:2px solid var(--ouro);outline-offset:4px}
 .card h2{font-family:var(--serif);font-size:20px;margin:0 0 2px}.card .by{color:var(--suave);font-size:13px;margin:0 0 12px}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media(max-width:780px){.cols{grid-template-columns:1fr}}
@@ -44,6 +45,7 @@ a.volta{color:var(--suave);text-decoration:none}a.volta:hover{color:var(--ouro)}
   <h1>Revisar os temas das cumbias</h1>
   <p class="sub">Ouça a <b>frase</b> e compare com a <b>partitura</b> ao lado. Marque <b>✓ confere</b> ou <b>✗ tem erro</b> (e diga o quê). No fim, <b>copie o resultado</b> e me mande — eu ajusto o que precisar.</p>
   <p class="prog" id="prog">—</p>
+  <p class="sub">⌨ atalhos: <b>Espaço</b> ouvir · <b>A</b> confere · <b>E</b> erro · <b>↑/↓</b> navegar — <i>marcar avança sozinho pra próxima pendente</i></p>
 </div></header>
 
 <main class="wrap" id="lista"><p class="hint" style="margin-top:24px">carregando…</p></main>
@@ -93,6 +95,8 @@ function render(){
   const [abc, abcFull, pieces, quality] = await Promise.all([jget('abc.json'), jget('abc_full.json'), jget('pieces.json'), jget('quality.json')]);
   const lista = $('#lista'); lista.innerHTML='';
   const ps = (pieces?.pieces||[]).slice().sort((a,b)=>a.num-b.num);
+  const ids = [], temas = {};
+  function mark(id, v){ state[id]={...(state[id]||{}), v: state[id]?.v===v?'':v}; save(); if(state[id]?.v) advance(); }
   for(const p of ps){
     const id = p.id, tema = abc?.[id], full = abcFull?.[id];
     if(!tema || !(full && full !== tema)) continue;   // só cumbias OMR (têm peça inteira distinta = têm recorte/partitura)
@@ -113,16 +117,31 @@ function render(){
         <input class="nota" placeholder="o que está errado? (ex.: 3º compasso, nota aguda)" value="${(state[id]?.nota||'').replace(/"/g,'&quot;')}">
       </div>`;
     // esconde o card se a imagem da partitura não carregar
-    const img = card.querySelector('img'); img.onerror = () => card.remove();
-    lista.appendChild(card);
+    const img = card.querySelector('img'); img.onerror = () => { const k=ids.indexOf(id); if(k>=0) ids.splice(k,1); card.remove(); };
+    lista.appendChild(card); ids.push(id); temas[id]=tema;
     try{ ABCJS.renderAbc('paper-'+id, tema.replace(/\nT:[^\n]*/,''), {responsive:'resize', staffwidth:480}); }catch(e){}
     const plays = card.querySelectorAll('button.play');
     plays[0].onclick = e => play(tema, e.currentTarget);
     if(plays[1]) plays[1].onclick = e => play(full, e.currentTarget);
-    card.querySelector('.ok').onclick = () => { state[id]={...(state[id]||{}), v: state[id]?.v==='ok'?'':'ok'}; save(); };
-    card.querySelector('.erro').onclick = () => { state[id]={...(state[id]||{}), v: state[id]?.v==='erro'?'':'erro'}; save(); };
+    card.querySelector('.ok').onclick = () => mark(id,'ok');
+    card.querySelector('.erro').onclick = () => mark(id,'erro');
     card.querySelector('.nota').oninput = e => { state[id]={...(state[id]||{}), nota:e.target.value}; localStorage.setItem(KEY,JSON.stringify(state)); };
+    card.onclick = e => { if(!e.target.closest('button,input')) setCur(cards().indexOf(card)); };
   }
+  let cur = 0;
+  const cards = () => [...document.querySelectorAll('.card')];
+  function setCur(i){ const cs=cards(); if(!cs.length) return; cur=Math.max(0,Math.min(i,cs.length-1)); cs.forEach((c,k)=>c.classList.toggle('cur',k===cur)); cs[cur].scrollIntoView({behavior:'smooth',block:'center'}); }
+  function advance(){ const cs=cards(); let n=cur+1; while(n<cs.length && state[cs[n].dataset.id]?.v) n++; setCur(n<cs.length?n:cur); }
+  document.addEventListener('keydown', e => {
+    if(e.target.matches('input,textarea')) return;
+    const cs=cards(); if(!cs.length) return; const id=cs[cur]?.dataset.id; if(!id) return;
+    if(e.key===' '){ e.preventDefault(); const b=cs[cur].querySelector('button.play'); if(b) play(temas[id], b); }
+    else if(e.key==='a'||e.key==='A') mark(id,'ok');
+    else if(e.key==='e'||e.key==='E') mark(id,'erro');
+    else if(e.key==='ArrowDown'||e.key==='j'){ e.preventDefault(); setCur(cur+1); }
+    else if(e.key==='ArrowUp'||e.key==='k'){ e.preventDefault(); setCur(cur-1); }
+  });
+  setCur(0);
   render();
   $('#copiar').onclick = async () => {
     const out = {}; document.querySelectorAll('.card').forEach(c=>{ const id=c.dataset.id, st=state[id]||{}; out[id]={v:st.v||'pendente', nota:st.nota||''}; });
