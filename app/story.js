@@ -7,7 +7,7 @@
  */
 let S = { slides: [], i: 0, music: null, rate: 0, checks: {} };
 const dots6 = v => { let h = '<span class="dots">'; for (let i = 1; i <= 6; i++) h += `<i class="${i <= v ? 'f' : ''}"></i>`; return h + '</span>'; };
-const fetchJSON = f => fetch('./data/' + f).then(r => r.json()).catch(() => null);
+const fetchJSON = f => fetch('./data/' + JCFG().base + f).then(r => r.json()).catch(() => null);
 async function loadPedagogia() { if (!DB.pedagogia) DB.pedagogia = (await fetchJSON('pedagogia.json')) || {}; }
 async function loadAquec() { if (!DB.aquec) DB.aquec = (await fetchJSON('aquecimento.json')) || []; }
 async function loadTecnica() { if (!DB.tecnica) DB.tecnica = (await fetchJSON('tecnica.json')) || []; }
@@ -63,7 +63,7 @@ async function openTecnica(lote) {
   showStory(`Técnica · Lote ${lote} · tom de ${t.tom}`);
 }
 
-function tutorPeca(num) { location.href = './estudo.html?id=sb-' + String(num).padStart(3, '0'); }
+function tutorPeca(num) { location.href = './estudo.html?id=' + idOf(num) + (JORNADA !== 'sambrass' ? '&jornada=' + JORNADA : ''); }
 const micBtn = num => `<button class="acao micbtn" onclick="tutorPeca(${num})">🎤 tocar no tutor (ele ouve você)</button>`;
 // avisos da capa: tier da melodia (honestidade do grader) + empurrão suave de nível (não-bloqueante)
 function capaNotas(m) {

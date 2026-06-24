@@ -8,6 +8,7 @@
  *    e o microfone gradua a nota atual. Silencioso de propósito — evita o mic ouvir o app.
  */
 const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
+const JBASE = new URLSearchParams(location.search).get('jornada') === 'cumbias' ? 'cumbias/' : '';   // jornada → base dos dados
 // células reais da peça → "o coração" = a mais saliente presente (não mais fixo C2/C1/C5)
 const HEARTPRI = ['C2', 'C6', 'C5', 'C4', 'C3', 'C7', 'C1'];
 const HEARTH2 = { C2: 'A síncope que move o samba', C6: 'O contratempo que dá o gingado', C5: 'A tercina contra a divisão binária', C4: 'A semicolcheia e o tu-ku', C3: 'A colcheia pontuada — o galope', C7: 'A anacruse: entrar antes do tempo', C1: 'As colcheias em grupo' };
@@ -34,13 +35,13 @@ let RAMPON = false, RTARGET = 120;
 function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC); } if(AC.state==='suspended') AC.resume(); }catch(e){} }
 ['pointerdown','touchend','click'].forEach(ev => document.addEventListener(ev, audioUnlock, {capture:true}));
 
-async function j(f){ try{ return await (await fetch('./data/'+f)).json(); }catch{ return null; } }
+async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
   const [pieces, cells, abc, escada] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json')]);
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
-  const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban'};
-  const p = (pieces?.pieces||[]).find(x => 'sb-'+String(x.num).padStart(3,'0')===ID);
+  const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
+  const p = (pieces?.pieces||[]).find(x => x.id===ID);
   const esc = (escada?.pieces||[]).find(x => x.id===ID);
   if(p){ $('#titulo').textContent = p.titulo; $('#byline').textContent = p.compositor;
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';

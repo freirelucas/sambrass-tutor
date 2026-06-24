@@ -16,20 +16,21 @@ function suggestedIndex() {
 function telaTrilha() {
   const ms = DB.percurso || [];
   if (!ms.length) { tela.innerHTML = '<p class="carregando">trilha indisponível.</p>'; return; }
-  const uni = suggestedIndex(), nd = streakCount();
+  const uni = suggestedIndex(), nd = streakCount(), J = JCFG(), cumbia = JORNADA === 'cumbias';
+  const seletor = `<div class="jsel">${Object.keys(JORNADAS).map(id => `<button class="${id === JORNADA ? 'on' : ''}" onclick="trocarJornada('${id}')">${JORNADAS[id].curto}</button>`).join('')}</div>`;
   const welcome = store.get('onboarded', false) ? '' : `<div class="welcome card">
-    <h3>Bem-vindo ao Caminho do Sambrass 🎺</h3>
+    <h3>${cumbia ? 'Jornada das Cumbias 🎺' : 'Bem-vindo ao Caminho do Sambrass 🎺'}</h3>
     <ol class="wsteps">
-      <li><b>Toque o caderno inteiro</b> — 110 sambas, do mais fácil (Book 1) ao mais técnico. No seu ritmo: nada trava.</li>
+      <li><b>${cumbia ? 'Toque as cumbias' : 'Toque o caderno inteiro'}</b> — ${cumbia ? 'cada uma vive de um <b>riff repetido</b>: decore a frase e deixe ela girar no groove.' : '110 sambas, do mais fácil (Book 1) ao mais técnico.'} No seu ritmo: nada trava.</li>
       <li><b>O tutor ouve você.</b> Toque a peça e o microfone mostra se a nota saiu certa — no modo praticar o app fica em silêncio pra escutar só você (sem fone).</li>
       <li><b>Comece</b> pelo aquecimento e pela peça marcada <span class="flag-inline">SUGERIDA</span>.</li>
     </ol>
     <button class="acao" onclick="fecharWelcome()">entendi, bora tocar</button></div>`;
-  let h = welcome + `<div class="hud">
-      <div><b>O Caminho do Sambrass</b><div class="meta">trilha de 110 sambas</div></div>
+  let h = seletor + welcome + `<div class="hud">
+      <div><b>${J.nome}</b><div class="meta">trilha de ${ms.length} ${cumbia ? 'cumbias' : 'sambas'}</div></div>
       <div class="hudpills"><span class="pill">📅 ${nd} ${nd === 1 ? 'dia' : 'dias'}</span><span class="pill">🎺 ${countDone()}/${ms.length}</span></div>
     </div>
-    <p class="trilha-intro">A ordem segue a <b>escada pedagógica</b>: primeiro o Book 1 (fundação), depois Book 2 e Arban — e, dentro de cada nível, do mais confortável ao mais exigente. Nada trava: toque o que quiser.</p>
+    <p class="trilha-intro">${cumbia ? 'A ordem vai do <b>riff mais simples e repetido</b> ao mais sincopado e agudo. Nada trava: toque o que quiser.' : 'A ordem segue a <b>escada pedagógica</b>: primeiro o Book 1 (fundação), depois Book 2 e Arban — e, dentro de cada nível, do mais confortável ao mais exigente. Nada trava: toque o que quiser.'}</p>
     <div class="prepnode" onclick="openPrep()"><div class="pic">${prepDone() ? '✓' : '🌬️'}</div>
       <div><b>Aquecimento</b><div class="meta">12 exercícios · faça sempre antes</div></div></div>
     ${(() => { const rev = nextReview(); return rev ? `<div class="revcard" onclick="openMusic(${rev.num})"><div class="pic">🔁</div>

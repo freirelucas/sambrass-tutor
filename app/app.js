@@ -5,8 +5,18 @@ const DB = {};            // dados carregados
 const $ = (s, e = document) => e.querySelector(s);
 const tela = document.getElementById('tela');
 
+/* ---------- jornadas (multi-corpus) ---------- */
+// Sambrass fica intacto (data/ flat, chaves sb2_*); Cumbias entram ao lado (data/cumbias/, cu2_*).
+const JORNADAS = {
+  sambrass: { nome: 'O Caminho do Sambrass', curto: 'Sambrass', sub: 'sambas · Book 1 → Arban', base: '', store: 'sb2', prefix: 'sb' },
+  cumbias: { nome: 'Jornada das Cumbias', curto: 'Cumbias', sub: 'cumbia · chicha · riffs', base: 'cumbias/', store: 'cu2', prefix: 'cu' }
+};
+let JORNADA = localStorage.getItem('jornada_ativa') || 'sambrass';
+if (!JORNADAS[JORNADA]) JORNADA = 'sambrass';
+const JCFG = () => JORNADAS[JORNADA];
+
 async function carregar() {
-  const get = async (f) => { try { return await (await fetch('./data/' + f)).json(); } catch { return null; } };
+  const get = async (f) => { try { return await (await fetch('./data/' + JCFG().base + f)).json(); } catch { return null; } };
   [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality, DB.escada, DB.percurso, DB.lotes] = await Promise.all(
     ['pieces.json', 'curriculum.json', 'trilha.json', 'cells.json', 'rotina.json', 'quality.json', 'escada.json', 'percurso.json', 'lotes.json'].map(get));
   DB.byNum = {}; (DB.pieces?.pieces || []).forEach(p => DB.byNum[p.num] = p);
@@ -21,8 +31,8 @@ const setProg = (n, s) => { if (PROG[n] === s) delete PROG[n]; else PROG[n] = s;
 /* progresso SDT (autoavaliação 1–5, sem XP/cadeado) — rota "O Caminho do Sambrass".
    Fonte de verdade = sb2_logs {num:[{d,n}]}; dominada = melhor nível ≥ 4. */
 const store = {
-  get(k, d) { try { const v = JSON.parse(localStorage.getItem('sb2_' + k)); return v == null ? d : v; } catch { return d; } },
-  set(k, v) { try { localStorage.setItem('sb2_' + k, JSON.stringify(v)); } catch {} }
+  get(k, d) { try { const v = JSON.parse(localStorage.getItem(JCFG().store + '_' + k)); return v == null ? d : v; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(JCFG().store + '_' + k, JSON.stringify(v)); } catch {} }
 };
 const RATELBL = ['', 'tive dificuldade na leitura', 'leio, mas paro/erro', 'toco seguido, lento', 'toco no andamento', 'toco de cor 🎉'];
 const LCOR = ['', '#2e6b4f', '#5a7a1f', '#8a5a1f', '#a3431f', '#7a1f1f', '#3a3a3a'];   // cor por lote 1–6
@@ -38,6 +48,7 @@ const reviewDue = n => { if (!isDone(n)) return false; const lt = store.get('las
 const nextReview = () => { const lt = store.get('lastT', {}); const due = (DB.percurso || []).filter(m => reviewDue(m.num)); return due.length ? due.sort((a, b) => (lt[a.num] || 0) - (lt[b.num] || 0))[0] : null; };
 // migração única: 'dominada' do modelo antigo (sambrass_prog) vira um log nível 4
 (function migrarProg() {
+  if (JORNADA !== 'sambrass') return;   // PROG legado é só do Sambrass
   if (store.get('migrado', false)) return;
   const logs = store.get('logs', {}), hoje = new Date().toISOString().slice(0, 10);
   Object.keys(PROG).forEach(n => { if (PROG[n] === 'dominada' && !(logs[n] || []).some(x => x.n >= 4)) (logs[n] = logs[n] || []).push({ d: hoje, n: 4 }); });
@@ -52,16 +63,23 @@ const QUAL = {
   dedos: { tag: '♪', cls: 'q-mid', txt: 'tom pelos dedos · oitava/ritmo provisórios' },
   rascunho: { tag: '~', cls: 'q-raw', txt: 'leitura automática (OMR) · em revisão' }
 };
-const idOf = n => 'sb-' + String(n).padStart(3, '0');
+const idOf = n => JCFG().prefix + '-' + String(n).padStart(3, '0');
 const qualOf = n => (DB.quality && DB.quality[idOf(n)]) || 'rascunho';
 // nível pedagógico (escada Book1/2/Arban)
 const NIVEL = { book1: 'Book 1', book2: 'Book 2', arban: 'Arban' };
 const nivelOf = n => (DB.nivelByNum && DB.nivelByNum[n]) || null;
-const NIVEL_FULL = { book1: 'Book 1 · fundação', book2: 'Book 2 · células e tons novos', arban: 'Arban · topo técnico' };
+const NIVEL_FULL = {
+  book1: 'Book 1 · fundação', book2: 'Book 2 · células e tons novos', arban: 'Arban · topo técnico',
+  // tiers da Jornada das Cumbias (escada = músicas, ordenada por dificuldade)
+  riff: 'Riff & groove', sincopa: 'Síncope & cromatismo', fogo: 'Agudo & velocidade'
+};
 const NIVEL_DESC = {
   book1: 'A base do caderno: som, tons naturais (Dó/Fá/Sol/Sib escritos), colcheias em grupo, contratempo e anacruse. Esgote este nível antes de subir.',
   book2: 'Células novas — semicolcheia, tercina, colcheia pontuada — e armaduras com mais acidentes (Ré/Lá/Mib).',
-  arban: 'O topo técnico: ornamentos, staccato duplo (tu-ku), arpejo de 7ª da dominante e resistência de forma longa.'
+  arban: 'O topo técnico: ornamentos, staccato duplo (tu-ku), arpejo de 7ª da dominante e resistência de forma longa.',
+  riff: 'A entrada da cumbia: riffs curtos e MUITO repetidos. Decore a frase e deixe ela girar no groove.',
+  sincopa: 'O gingado: síncope, contratempo e notas cromáticas de passagem — o sabor da chicha.',
+  fogo: 'O fogo: registro mais agudo e corridas rápidas. Ar firme e língua leve.'
 };
 // nível da ARMADURA ESCRITA na escada (espelha content/curadoria/lib.py KEY_LEVEL)
 const KEY_LEVEL = { C: 1, F: 1, G: 1, Bb: 1, D: 2, A: 2, Eb: 2, E: 2, Db: 2, Ab: 2, 'F#': 3, B: 3 };
@@ -268,7 +286,7 @@ function flash(i) { const at = M.next - M.ctx.currentTime; setTimeout(() => { do
 
 /* ---------- player (abcjs: partitura + MIDI trompete + cursor) ---------- */
 let SYNTH = null, PLAYER = null;  // PLAYER = {abc, transpose, titulo, voltar}
-async function loadAbc() { if (!DB.abc) DB.abc = await fetch('./data/abc.json').then(r => r.json()).catch(() => ({})); }
+async function loadAbc() { if (!DB.abc) DB.abc = await fetch('./data/' + JCFG().base + 'abc.json').then(r => r.json()).catch(() => ({})); }
 function pararSynth() { if (SYNTH) { try { SYNTH.pause(); } catch {} SYNTH = null; } }
 // Áudio do celular: 1 AudioContext registrado no abcjs, retomado a cada toque (gesto).
 let AC = null;
@@ -318,7 +336,7 @@ function cursorCtl() {
   return { onStart() {}, onFinished() { clear(); }, onEvent(ev) { if (!ev || ev.measureStart && ev.left === null) return; clear(); (ev.elements || []).forEach(s => s.forEach(el => el.classList.add('abcjs-highlight'))); } };
 }
 window.abrirPlayer = abrirPlayer;
-window.tocarPeca = n => { const p = DB.byNum[n]; if (p) abrirPlayer('sb-' + String(n).padStart(3, '0'), String(n).padStart(3, '0') + ' — ' + p.titulo, true, 'banco'); };
+window.tocarPeca = n => { const p = DB.byNum[n]; if (p) abrirPlayer(idOf(n), String(n).padStart(3, '0') + ' — ' + p.titulo, true, 'banco'); };
 window.tocarCell = cid => { const c = (DB.cells?.celulas_ritmicas || []).find(x => x.id === cid) || {}; abrirPlayer('cell-' + cid, 'Célula ' + cid + ' — ' + (c.nome || ''), false, 'vocab'); };
 
 /* ---------- roteador ---------- */
@@ -330,6 +348,15 @@ function ir(t) {
   window.scrollTo(0, 0);
 }
 window.ir = ir; window.verPeca = verPeca; window.setProg = setProg;
+async function trocarJornada(id) {
+  if (!JORNADAS[id] || id === JORNADA) return;
+  pararSynth(); if (M.on) pararMetro();
+  JORNADA = id; localStorage.setItem('jornada_ativa', id);
+  tela.innerHTML = '<p class="carregando">carregando…</p>';
+  ['pieces', 'curriculo', 'trilha', 'cells', 'rotina', 'quality', 'escada', 'percurso', 'lotes', 'abc', 'pedagogia', 'aquec', 'tecnica'].forEach(k => delete DB[k]);
+  await carregar(); ir('trilha');
+}
+window.trocarJornada = trocarJornada;
 document.querySelectorAll('.abas button').forEach(b => b.onclick = () => ir(b.dataset.tela));
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
