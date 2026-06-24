@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d0c">
+<title>Revisar temas das cumbias · Sambrass</title>
+<link rel="stylesheet" href="./vendor/abcjs-audio.css">
+<style>
+:root{--bg:#0e0d0c;--pane:#1a1813;--linha:#2c281f;--tinta:#f6f0e4;--suave:#a99c84;--ouro:#e9b850;--verde:#54c98e;--vinho:#cf3a4c;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--serif:"Iowan Old Style",Palatino,Georgia,serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.55 var(--sans);padding-bottom:80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{padding:28px 0 10px;border-bottom:1px solid var(--linha);position:sticky;top:0;background:linear-gradient(180deg,var(--bg),rgba(14,13,12,.92));backdrop-filter:blur(6px);z-index:5}
+h1{font-family:var(--serif);font-weight:600;font-size:26px;margin:0 0 4px}
+.sub{color:var(--suave);font-size:13.5px;margin:0}
+.prog{font-size:13px;color:var(--ouro);font-weight:700;margin-top:8px}
+.card{background:var(--pane);border:1px solid var(--linha);border-radius:16px;padding:16px;margin:18px 0;box-shadow:0 14px 34px rgba(0,0,0,.32)}
+.card.ok{border-color:rgba(84,201,142,.55)}.card.erro{border-color:rgba(207,58,76,.55)}
+.card h2{font-family:var(--serif);font-size:20px;margin:0 0 2px}.card .by{color:var(--suave);font-size:13px;margin:0 0 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media(max-width:780px){.cols{grid-template-columns:1fr}}
+.box{background:#fff;color:#15120b;border-radius:10px;padding:10px;overflow:auto}
+.box svg{max-width:100%;height:auto}
+.box img{max-width:100%;display:block;border-radius:6px}
+.lbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ouro);font-weight:700;margin:0 0 6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);min-height:44px;padding:0 14px;font-weight:600}
+button.play{background:linear-gradient(180deg,#ffd97a,#caa043);color:#1a1206;border-color:#caa043}
+button.ok{border-color:var(--verde)}button.ok.on{background:var(--verde);color:#06160f}
+button.erro{border-color:var(--vinho)}button.erro.on{background:var(--vinho);color:#fff}
+.tier{font-size:12px;color:var(--suave)}
+input.nota{flex:1;min-width:180px;min-height:44px;background:#15130e;border:1px solid var(--linha);border-radius:10px;color:var(--tinta);padding:0 12px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#15130e;border-top:1px solid var(--linha);padding:12px 18px;z-index:6}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+textarea{width:100%;min-height:90px;background:#15130e;border:1px solid var(--linha);border-radius:10px;color:var(--tinta);padding:10px;font:13px/1.4 ui-monospace,monospace;margin-top:10px;display:none}
+.hint{color:var(--suave);font-size:12.5px}
+a.volta{color:var(--suave);text-decoration:none}a.volta:hover{color:var(--ouro)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Revisar os temas das cumbias</h1>
+  <p class="sub">Ouça a <b>frase</b> e compare com a <b>partitura</b> ao lado. Marque <b>✓ confere</b> ou <b>✗ tem erro</b> (e diga o quê). No fim, <b>copie o resultado</b> e me mande — eu ajusto o que precisar.</p>
+  <p class="prog" id="prog">—</p>
+</div></header>
+
+<main class="wrap" id="lista"><p class="hint" style="margin-top:24px">carregando…</p></main>
+
+<div class="bar"><div class="wrap">
+  <button id="copiar">📋 copiar resultado</button>
+  <button id="limpar">apagar minhas marcações</button>
+  <span class="hint" id="barhint">suas marcações ficam salvas neste navegador.</span>
+  <a class="volta" href="./index.html">‹ voltar ao app</a>
+</div><div class="wrap"><textarea id="saida" readonly></textarea></div></div>
+
+<script src="./vendor/abcjs.js"></script>
+<script>
+const KEY = 'revisao_cumbias_v1';
+const WR = {C:'Dó',G:'Sol',D:'Ré',A:'Lá',F:'Fá',Bb:'Sib',Eb:'Mib'};
+let AC = null;
+function unlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC);} if(AC.state==='suspended') AC.resume(); }catch(e){} }
+['pointerdown','touchend'].forEach(ev=>document.addEventListener(ev,unlock,{capture:true}));
+const state = JSON.parse(localStorage.getItem(KEY) || '{}');
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); render(); }
+const $ = s => document.querySelector(s);
+
+async function jget(f){ try{ return await (await fetch('./data/cumbias/'+f)).json(); }catch{ return null; } }
+
+async function play(abc, btn){
+  if(!abc || !window.ABCJS?.synth?.supportsAudio()) return; unlock();
+  try{
+    let sc = document.getElementById('scratch'); if(!sc){ sc=document.createElement('div'); sc.id='scratch'; sc.style.display='none'; document.body.appendChild(sc); }
+    const v = ABCJS.renderAbc('scratch', abc)[0];
+    const s = new ABCJS.synth.CreateSynth();
+    btn.textContent = '… carregando';
+    await s.init({audioContext:AC, visualObj:v, options:{soundFontUrl:'./vendor/soundfont/', program:56}});
+    await s.prime(); s.start(); btn.textContent = btn.dataset.label;
+  }catch(e){ btn.textContent = btn.dataset.label; }
+}
+
+function render(){
+  const cards = document.querySelectorAll('.card');
+  let ok=0, erro=0;
+  cards.forEach(c=>{ const id=c.dataset.id; const st=state[id]||{}; c.classList.toggle('ok',st.v==='ok'); c.classList.toggle('erro',st.v==='erro');
+    c.querySelector('.ok').classList.toggle('on',st.v==='ok'); c.querySelector('.erro').classList.toggle('on',st.v==='erro');
+    if(st.v==='ok')ok++; if(st.v==='erro')erro++; });
+  $('#prog').textContent = `${ok} ✓ conferem · ${erro} ✗ com erro · ${cards.length-ok-erro} pendentes (de ${cards.length})`;
+}
+
+(async function(){
+  const [abc, abcFull, pieces, quality] = await Promise.all([jget('abc.json'), jget('abc_full.json'), jget('pieces.json'), jget('quality.json')]);
+  const lista = $('#lista'); lista.innerHTML='';
+  const ps = (pieces?.pieces||[]).slice().sort((a,b)=>a.num-b.num);
+  for(const p of ps){
+    const id = p.id, tema = abc?.[id], full = abcFull?.[id];
+    if(!tema || !(full && full !== tema)) continue;   // só cumbias OMR (têm peça inteira distinta = têm recorte/partitura)
+    // safety: esconde o card se a imagem da partitura não existir
+    const card = document.createElement('section'); card.className='card'; card.dataset.id=id;
+    card.innerHTML = `
+      <h2>${p.titulo}</h2>
+      <p class="by">${p.compositor||''} · tom de ${WR[p.key_concert]||p.key_concert} · <span class="tier">tier atual: ${(quality&&quality[id])||'?'}</span></p>
+      <div class="cols">
+        <div><p class="lbl">a frase (como o app toca)</p><div class="box" id="paper-${id}"></div>
+          <div class="row"><button class="play" data-label="▶ ouvir o tema">▶ ouvir o tema</button>
+          ${full&&full!==tema?'<button class="play" data-label="▶ ouvir a peça inteira">▶ ouvir a peça inteira</button>':''}</div></div>
+        <div><p class="lbl">a partitura (fonte)</p><div class="box"><img loading="lazy" src="./revisao/${id}.png" alt="partitura ${id}"></div></div>
+      </div>
+      <div class="row">
+        <button class="ok">✓ confere</button>
+        <button class="erro">✗ tem erro</button>
+        <input class="nota" placeholder="o que está errado? (ex.: 3º compasso, nota aguda)" value="${(state[id]?.nota||'').replace(/"/g,'&quot;')}">
+      </div>`;
+    // esconde o card se a imagem da partitura não carregar
+    const img = card.querySelector('img'); img.onerror = () => card.remove();
+    lista.appendChild(card);
+    try{ ABCJS.renderAbc('paper-'+id, tema.replace(/\nT:[^\n]*/,''), {responsive:'resize', staffwidth:480}); }catch(e){}
+    const plays = card.querySelectorAll('button.play');
+    plays[0].onclick = e => play(tema, e.currentTarget);
+    if(plays[1]) plays[1].onclick = e => play(full, e.currentTarget);
+    card.querySelector('.ok').onclick = () => { state[id]={...(state[id]||{}), v: state[id]?.v==='ok'?'':'ok'}; save(); };
+    card.querySelector('.erro').onclick = () => { state[id]={...(state[id]||{}), v: state[id]?.v==='erro'?'':'erro'}; save(); };
+    card.querySelector('.nota').oninput = e => { state[id]={...(state[id]||{}), nota:e.target.value}; localStorage.setItem(KEY,JSON.stringify(state)); };
+  }
+  render();
+  $('#copiar').onclick = async () => {
+    const out = {}; document.querySelectorAll('.card').forEach(c=>{ const id=c.dataset.id, st=state[id]||{}; out[id]={v:st.v||'pendente', nota:st.nota||''}; });
+    const txt = 'REVISÃO CUMBIAS\n' + JSON.stringify(out, null, 1);
+    $('#saida').style.display='block'; $('#saida').value = txt;
+    try{ await navigator.clipboard.writeText(txt); $('#barhint').textContent='copiado! cole aqui no chat.'; }
+    catch{ $('#barhint').textContent='selecione o texto abaixo e copie.'; $('#saida').select(); }
+  };
+  $('#limpar').onclick = () => { if(confirm('Apagar suas marcações?')){ for(const k in state) delete state[k]; save(); document.querySelectorAll('.nota').forEach(n=>n.value=''); } };
+})();
+</script>
+</body>
+</html>
