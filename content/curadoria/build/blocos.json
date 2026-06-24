@@ -1,0 +1,7569 @@
+{
+ "_meta": {
+  "sobre": "Índice de blocos (cor=tônica+modo, forma=classe estrutural) + validação best-effort de tags de célula.",
+  "gerado_por": "content/curadoria/blocos.py"
+ },
+ "pecas": {
+  "sb-001": {
+   "jornada": "sambrass",
+   "titulo": "Até Amanhã",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.056,
+    "ks_corr": 0.817,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.33,
+     "grau (2ª)": 0.42,
+     "3ª": 0.12,
+     "4ª": 0.06,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.36,
+     "repete": 0.33
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-002": {
+   "jornada": "sambrass",
+   "titulo": "Com Que Roupa",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.235,
+    "ks_corr": 0.983,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.41,
+     "3ª": 0.18,
+     "4ª": 0.01,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.33,
+     "repete": 0.36
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-003": {
+   "jornada": "sambrass",
+   "titulo": "Feitiço da Vila",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.009,
+    "ks_corr": 0.837,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.3,
+     "grau (2ª)": 0.38,
+     "3ª": 0.17,
+     "4ª": 0.09,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.32,
+     "desce": 0.38,
+     "repete": 0.3
+    },
+    "salto_max": 13,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C4",
+     "G#5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-004": {
+   "jornada": "sambrass",
+   "titulo": "Fita Amarela",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.069,
+    "ks_corr": 0.692,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.33,
+     "grau (2ª)": 0.39,
+     "3ª": 0.18,
+     "4ª": 0.08,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.32,
+     "desce": 0.34,
+     "repete": 0.33
+    },
+    "salto_max": 6,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "C#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "Ab maior · misto",
+   "celula_dominante": "C1",
+   "celulas_marcadas": [
+    "C1",
+    "C7"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-005": {
+   "jornada": "sambrass",
+   "titulo": "Acontece",
+   "armadura": "C",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.057,
+    "ks_corr": 0.825,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.43,
+     "grau (2ª)": 0.32,
+     "3ª": 0.12,
+     "4ª": 0.04,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.33,
+     "repete": 0.43
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "E5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "G maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 4,
+    "cobertura": 0.12
+   }
+  },
+  "sb-006": {
+   "jornada": "sambrass",
+   "titulo": "As Rosas Não Falam",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.166,
+    "ks_corr": 0.811,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.14,
+     "grau (2ª)": 0.52,
+     "3ª": 0.18,
+     "4ª": 0.05,
+     "5ª": 0.07,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.49,
+     "desce": 0.38,
+     "repete": 0.14
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.14
+   }
+  },
+  "sb-007": {
+   "jornada": "sambrass",
+   "titulo": "Corra e Olhe o Céu",
+   "armadura": "Db",
+   "cor": {
+    "tonica": "Db",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.137,
+    "ks_corr": 0.956,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.25,
+     "grau (2ª)": 0.46,
+     "3ª": 0.17,
+     "4ª": 0.04,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.07
+    },
+    "contorno": {
+     "sobe": 0.23,
+     "desce": 0.52,
+     "repete": 0.25
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "D#5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "misto"
+   },
+   "bloco": "Db maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.17
+   }
+  },
+  "sb-008": {
+   "jornada": "sambrass",
+   "titulo": "O Mundo é um Moinho",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.121,
+    "ks_corr": 0.875,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.27,
+     "grau (2ª)": 0.4,
+     "3ª": 0.12,
+     "4ª": 0.08,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.09
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.41,
+     "repete": 0.27
+    },
+    "salto_max": 13,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-009": {
+   "jornada": "sambrass",
+   "titulo": "O Sol Nascerá",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.19,
+    "ks_corr": 0.834,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.39,
+     "3ª": 0.13,
+     "4ª": 0.01,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.33,
+     "repete": 0.42
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "B3",
+     "D#5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.23
+   }
+  },
+  "sb-010": {
+   "jornada": "sambrass",
+   "titulo": "Peito Vazio",
+   "armadura": "F",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.22,
+    "ks_corr": 0.998,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.17,
+     "grau (2ª)": 0.52,
+     "3ª": 0.23,
+     "4ª": 0.06,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.51,
+     "desce": 0.32,
+     "repete": 0.17
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "E5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "arpejado"
+   },
+   "bloco": "G maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C2"
+   ],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.15
+   }
+  },
+  "sb-011": {
+   "jornada": "sambrass",
+   "titulo": "Preciso Me Encontrar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.148,
+    "ks_corr": 0.921,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.27,
+     "grau (2ª)": 0.08,
+     "3ª": 0.41,
+     "4ª": 0.09,
+     "5ª": 0.12,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.39,
+     "desce": 0.33,
+     "repete": 0.27
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.09,
+    "tessitura": [
+     "A3",
+     "D5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-012": {
+   "jornada": "sambrass",
+   "titulo": "Tive Sim",
+   "armadura": "F",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.104,
+    "ks_corr": 0.898,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.39,
+     "3ª": 0.1,
+     "4ª": 0.12,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.39,
+     "repete": 0.36
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "F5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-013": {
+   "jornada": "sambrass",
+   "titulo": "A Flor e o Espinho",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.167,
+    "ks_corr": 0.848,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.4,
+     "grau (2ª)": 0.36,
+     "3ª": 0.19,
+     "4ª": 0.02,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.31,
+     "repete": 0.4
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C#4",
+     "E5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-014": {
+   "jornada": "sambrass",
+   "titulo": "Folhas Secas",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.001,
+    "ks_corr": 0.68,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.29,
+     "grau (2ª)": 0.43,
+     "3ª": 0.18,
+     "4ª": 0.03,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.07
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.42,
+     "repete": 0.29
+    },
+    "salto_max": 13,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "B3",
+     "F5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-015": {
+   "jornada": "sambrass",
+   "titulo": "Juízo Final",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.04,
+    "ks_corr": 0.714,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.34,
+     "grau (2ª)": 0.3,
+     "3ª": 0.27,
+     "4ª": 0.03,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.37,
+     "repete": 0.34
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "D4",
+     "D#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "arpejado"
+   },
+   "bloco": "D maior/mixolídio · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C5"
+   ],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.16
+   }
+  },
+  "sb-016": {
+   "jornada": "sambrass",
+   "titulo": "Vou Partir",
+   "armadura": "Db",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.021,
+    "ks_corr": 0.817,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.17,
+     "grau (2ª)": 0.35,
+     "3ª": 0.33,
+     "4ª": 0.05,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.48,
+     "repete": 0.17
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.1,
+    "tessitura": [
+     "A#3",
+     "D#5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "Bb menor · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-017": {
+   "jornada": "sambrass",
+   "titulo": "A Voz do Morro",
+   "armadura": "C",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.177,
+    "ks_corr": 1.018,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.12,
+     "grau (2ª)": 0.5,
+     "3ª": 0.21,
+     "4ª": 0.08,
+     "5ª": 0.08,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.42,
+     "desce": 0.46,
+     "repete": 0.12
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "B3",
+     "C5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C6",
+   "celulas_marcadas": [
+    "C1",
+    "C6"
+   ],
+   "celulas_detectadas": [],
+   "tags_nao_confirmadas": [
+    "C6"
+   ],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.21
+   }
+  },
+  "sb-018": {
+   "jornada": "sambrass",
+   "titulo": "Diz Que Fui por Aí",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.041,
+    "ks_corr": 0.912,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.31,
+     "grau (2ª)": 0.44,
+     "3ª": 0.14,
+     "4ª": 0.06,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.4,
+     "repete": 0.31
+    },
+    "salto_max": 37,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "G1",
+     "D#5"
+    ],
+    "ambito_semitons": 44,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-019": {
+   "jornada": "sambrass",
+   "titulo": "Mascarada",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.189,
+    "ks_corr": 0.933,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.42,
+     "3ª": 0.05,
+     "4ª": 0.04,
+     "5ª": 0.2,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.42,
+     "repete": 0.23
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "Ab maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-020": {
+   "jornada": "sambrass",
+   "titulo": "Tiro ao Álvaro",
+   "armadura": "C",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.226,
+    "ks_corr": 1.009,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.18,
+     "grau (2ª)": 0.44,
+     "3ª": 0.22,
+     "4ª": 0.08,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.47,
+     "repete": 0.18
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-021": {
+   "jornada": "sambrass",
+   "titulo": "Samba do Arnesto",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.193,
+    "ks_corr": 1.067,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.43,
+     "grau (2ª)": 0.31,
+     "3ª": 0.1,
+     "4ª": 0.09,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.23,
+     "desce": 0.34,
+     "repete": 0.43
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.05
+   }
+  },
+  "sb-022": {
+   "jornada": "sambrass",
+   "titulo": "Trem das Onze",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.122,
+    "ks_corr": 0.721,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.33,
+     "grau (2ª)": 0.37,
+     "3ª": 0.17,
+     "4ª": 0.06,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.38,
+     "repete": 0.33
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-023": {
+   "jornada": "sambrass",
+   "titulo": "Saudosa Maloca",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.2,
+    "ks_corr": 1.061,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.32,
+     "3ª": 0.2,
+     "4ª": 0.06,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.39,
+     "repete": 0.35
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "E5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.03
+   }
+  },
+  "sb-024": {
+   "jornada": "sambrass",
+   "titulo": "Acreditar",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.141,
+    "ks_corr": 0.936,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.25,
+     "grau (2ª)": 0.33,
+     "3ª": 0.26,
+     "4ª": 0.11,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.38,
+     "desce": 0.38,
+     "repete": 0.25
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "E5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-025": {
+   "jornada": "sambrass",
+   "titulo": "Alguém Me Avisou",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.19,
+    "ks_corr": 1.106,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.29,
+     "grau (2ª)": 0.4,
+     "3ª": 0.25,
+     "4ª": 0.02,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.33,
+     "desce": 0.38,
+     "repete": 0.29
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "Eb maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-026": {
+   "jornada": "sambrass",
+   "titulo": "Enredo do Meu Samba",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.11,
+    "ks_corr": 0.979,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.16,
+     "grau (2ª)": 0.33,
+     "3ª": 0.35,
+     "4ª": 0.09,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.42,
+     "desce": 0.43,
+     "repete": 0.16
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.04,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "Eb maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-027": {
+   "jornada": "sambrass",
+   "titulo": "Sonho Meu",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.039,
+    "ks_corr": 0.884,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.45,
+     "grau (2ª)": 0.29,
+     "3ª": 0.17,
+     "4ª": 0.04,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.26,
+     "repete": 0.45
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "G3",
+     "D5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "arpejado"
+   },
+   "bloco": "C maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-028": {
+   "jornada": "sambrass",
+   "titulo": "Casa de Bamba",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.281,
+    "ks_corr": 0.999,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.58,
+     "grau (2ª)": 0.11,
+     "3ª": 0.15,
+     "4ª": 0.05,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.08
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.18,
+     "repete": 0.58
+    },
+    "salto_max": 16,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G#3",
+     "F5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "misto"
+   },
+   "bloco": "Ab maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-029": {
+   "jornada": "sambrass",
+   "titulo": "Ex Amor",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.113,
+    "ks_corr": 0.726,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.39,
+     "3ª": 0.15,
+     "4ª": 0.04,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.35,
+     "repete": 0.35
+    },
+    "salto_max": 13,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G3",
+     "D#5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "misto"
+   },
+   "bloco": "D menor · misto",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-030": {
+   "jornada": "sambrass",
+   "titulo": "Madalena do Jucu",
+   "armadura": "G",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.005,
+    "ks_corr": 0.683,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.53,
+     "grau (2ª)": 0.24,
+     "3ª": 0.23,
+     "4ª": 0.0,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.21,
+     "repete": 0.53
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "F#4",
+     "E5"
+    ],
+    "ambito_semitons": 10,
+    "classe": "arpejado"
+   },
+   "bloco": "G maior · arpejado",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.14
+   }
+  },
+  "sb-031": {
+   "jornada": "sambrass",
+   "titulo": "Renascer das Cinzas",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.128,
+    "ks_corr": 0.739,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.43,
+     "grau (2ª)": 0.28,
+     "3ª": 0.16,
+     "4ª": 0.03,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.09
+    },
+    "contorno": {
+     "sobe": 0.23,
+     "desce": 0.34,
+     "repete": 0.43
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G#3",
+     "F5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-032": {
+   "jornada": "sambrass",
+   "titulo": "Água de Chuva no Mar",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.089,
+    "ks_corr": 0.974,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.25,
+     "grau (2ª)": 0.33,
+     "3ª": 0.3,
+     "4ª": 0.03,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.44,
+     "repete": 0.25
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "B3",
+     "F5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "arpejado"
+   },
+   "bloco": "Ab maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.19
+   }
+  },
+  "sb-033": {
+   "jornada": "sambrass",
+   "titulo": "Andança",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.224,
+    "ks_corr": 0.779,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.37,
+     "grau (2ª)": 0.42,
+     "3ª": 0.14,
+     "4ª": 0.05,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.36,
+     "repete": 0.37
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C#4",
+     "E5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.13
+   }
+  },
+  "sb-034": {
+   "jornada": "sambrass",
+   "titulo": "Se Você Jurar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.031,
+    "ks_corr": 0.83,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.32,
+     "grau (2ª)": 0.44,
+     "3ª": 0.14,
+     "4ª": 0.04,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.37,
+     "desce": 0.32,
+     "repete": 0.32
+    },
+    "salto_max": 17,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "D5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "D menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 2,
+    "cobertura": 0.05
+   }
+  },
+  "sb-035": {
+   "jornada": "sambrass",
+   "titulo": "Tristeza",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.023,
+    "ks_corr": 0.668,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.45,
+     "3ª": 0.08,
+     "4ª": 0.04,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.28,
+     "desce": 0.37,
+     "repete": 0.35
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C6",
+   "celulas_marcadas": [
+    "C1",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.13
+   }
+  },
+  "sb-036": {
+   "jornada": "sambrass",
+   "titulo": "Vou Festejar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.052,
+    "ks_corr": 0.975,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.24,
+     "3ª": 0.28,
+     "4ª": 0.14,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.38,
+     "desce": 0.4,
+     "repete": 0.23
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "arpejado"
+   },
+   "bloco": "D maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C5"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.16
+   }
+  },
+  "sb-037": {
+   "jornada": "sambrass",
+   "titulo": "Conselho",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.158,
+    "ks_corr": 1.019,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.39,
+     "grau (2ª)": 0.34,
+     "3ª": 0.14,
+     "4ª": 0.04,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.33,
+     "repete": 0.39
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-038": {
+   "jornada": "sambrass",
+   "titulo": "Do Fundo do Nosso Quintal",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.053,
+    "ks_corr": 0.922,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.26,
+     "3ª": 0.16,
+     "4ª": 0.1,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.28,
+     "desce": 0.31,
+     "repete": 0.42
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "F5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-039": {
+   "jornada": "sambrass",
+   "titulo": "Eu e Você Sempre",
+   "armadura": "E",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.133,
+    "ks_corr": 0.847,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.4,
+     "grau (2ª)": 0.38,
+     "3ª": 0.12,
+     "4ª": 0.08,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.27,
+     "desce": 0.33,
+     "repete": 0.4
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "D4",
+     "F#5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "Ab menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-040": {
+   "jornada": "sambrass",
+   "titulo": "Falsa Consideração",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.054,
+    "ks_corr": 0.823,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.37,
+     "grau (2ª)": 0.45,
+     "3ª": 0.1,
+     "4ª": 0.03,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.35,
+     "repete": 0.37
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G3",
+     "E5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-041": {
+   "jornada": "sambrass",
+   "titulo": "Identidade",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.044,
+    "ks_corr": 0.907,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.28,
+     "grau (2ª)": 0.44,
+     "3ª": 0.18,
+     "4ª": 0.05,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.43,
+     "repete": 0.28
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G#3",
+     "C5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.15
+   }
+  },
+  "sb-042": {
+   "jornada": "sambrass",
+   "titulo": "Lucidez",
+   "armadura": "F",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.045,
+    "ks_corr": 0.603,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.38,
+     "3ª": 0.14,
+     "4ª": 0.07,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.34,
+     "repete": 0.35
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G3",
+     "D5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C5"
+   ],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-043": {
+   "jornada": "sambrass",
+   "titulo": "Malandro",
+   "armadura": "C",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.116,
+    "ks_corr": 0.9,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.12,
+     "grau (2ª)": 0.59,
+     "3ª": 0.26,
+     "4ª": 0.01,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.33,
+     "desce": 0.55,
+     "repete": 0.12
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C#4",
+     "E5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "D maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 3,
+    "cobertura": 0.09
+   }
+  },
+  "sb-044": {
+   "jornada": "sambrass",
+   "titulo": "Não Deixe o Samba Morrer",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.209,
+    "ks_corr": 1.015,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.32,
+     "grau (2ª)": 0.51,
+     "3ª": 0.11,
+     "4ª": 0.03,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.43,
+     "repete": 0.32
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "D#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-045": {
+   "jornada": "sambrass",
+   "titulo": "Sufoco",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": "dórico",
+    "conf": 0.0,
+    "ks_corr": 0.671,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.09,
+     "grau (2ª)": 0.55,
+     "3ª": 0.2,
+     "4ª": 0.05,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.4,
+     "desce": 0.51,
+     "repete": 0.09
+    },
+    "salto_max": 16,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "G menor/dórico · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-046": {
+   "jornada": "sambrass",
+   "titulo": "Você Me Vira a Cabeça",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.205,
+    "ks_corr": 1.023,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.28,
+     "grau (2ª)": 0.54,
+     "3ª": 0.13,
+     "4ª": 0.02,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.33,
+     "desce": 0.39,
+     "repete": 0.28
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "F5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "D menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-047": {
+   "jornada": "sambrass",
+   "titulo": "Coração em Desalinho",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.104,
+    "ks_corr": 0.938,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.41,
+     "grau (2ª)": 0.32,
+     "3ª": 0.14,
+     "4ª": 0.04,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.07
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.33,
+     "repete": 0.41
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G3",
+     "E5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-048": {
+   "jornada": "sambrass",
+   "titulo": "Jura",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.121,
+    "ks_corr": 0.86,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.37,
+     "grau (2ª)": 0.35,
+     "3ª": 0.16,
+     "4ª": 0.07,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.28,
+     "desce": 0.35,
+     "repete": 0.37
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "E5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-049": {
+   "jornada": "sambrass",
+   "titulo": "Vai Vadiar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.115,
+    "ks_corr": 0.842,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.24,
+     "grau (2ª)": 0.38,
+     "3ª": 0.21,
+     "4ª": 0.09,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.45,
+     "repete": 0.24
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-050": {
+   "jornada": "sambrass",
+   "titulo": "Verdade",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.063,
+    "ks_corr": 0.968,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.38,
+     "grau (2ª)": 0.39,
+     "3ª": 0.11,
+     "4ª": 0.07,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.37,
+     "repete": 0.38
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D#4",
+     "D#5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.19
+   }
+  },
+  "sb-051": {
+   "jornada": "sambrass",
+   "titulo": "Vivo Isolado do Mundo",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.088,
+    "ks_corr": 0.862,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.44,
+     "3ª": 0.19,
+     "4ª": 0.06,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.48,
+     "repete": 0.23
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "B3",
+     "F5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-052": {
+   "jornada": "sambrass",
+   "titulo": "Ainda Mais",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.138,
+    "ks_corr": 0.939,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.38,
+     "3ª": 0.17,
+     "4ª": 0.04,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.33,
+     "repete": 0.36
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-053": {
+   "jornada": "sambrass",
+   "titulo": "Coração Leviano",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.114,
+    "ks_corr": 0.907,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.24,
+     "grau (2ª)": 0.47,
+     "3ª": 0.15,
+     "4ª": 0.07,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.37,
+     "desce": 0.39,
+     "repete": 0.24
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A#3",
+     "D#5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.06
+   }
+  },
+  "sb-054": {
+   "jornada": "sambrass",
+   "titulo": "Dança da Solidão",
+   "armadura": "G",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.036,
+    "ks_corr": 0.784,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.22,
+     "grau (2ª)": 0.33,
+     "3ª": 0.2,
+     "4ª": 0.05,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.16
+    },
+    "contorno": {
+     "sobe": 0.34,
+     "desce": 0.44,
+     "repete": 0.22
+    },
+    "salto_max": 18,
+    "arpejo_frac": 0.03,
+    "tessitura": [
+     "A3",
+     "F#5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C5"
+   ],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-055": {
+   "jornada": "sambrass",
+   "titulo": "Foi um Rio Que Passou em Minha Vida",
+   "armadura": "F",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.204,
+    "ks_corr": 1.105,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.32,
+     "3ª": 0.17,
+     "4ª": 0.06,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.28,
+     "desce": 0.37,
+     "repete": 0.35
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.02
+   }
+  },
+  "sb-056": {
+   "jornada": "sambrass",
+   "titulo": "Pecado Capital",
+   "armadura": "C",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.08,
+    "ks_corr": 0.896,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.33,
+     "grau (2ª)": 0.32,
+     "3ª": 0.25,
+     "4ª": 0.03,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.37,
+     "repete": 0.33
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.03,
+    "tessitura": [
+     "B3",
+     "F5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "arpejado"
+   },
+   "bloco": "D maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 2,
+    "cobertura": 0.03
+   }
+  },
+  "sb-057": {
+   "jornada": "sambrass",
+   "titulo": "A Volta do Malandro",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.06,
+    "ks_corr": 0.835,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.59,
+     "grau (2ª)": 0.21,
+     "3ª": 0.17,
+     "4ª": 0.02,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.19,
+     "desce": 0.22,
+     "repete": 0.59
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "G3",
+     "F#5"
+    ],
+    "ambito_semitons": 23,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior/mixolídio · misto",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-058": {
+   "jornada": "sambrass",
+   "titulo": "De Volta ao Samba",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.028,
+    "ks_corr": 0.686,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.37,
+     "3ª": 0.08,
+     "4ª": 0.03,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.33,
+     "repete": 0.42
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior/mixolídio · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C4"
+   ],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.2
+   }
+  },
+  "sb-059": {
+   "jornada": "sambrass",
+   "titulo": "Homenagem ao Malandro",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.199,
+    "ks_corr": 0.884,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.56,
+     "3ª": 0.1,
+     "4ª": 0.09,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.38,
+     "desce": 0.38,
+     "repete": 0.23
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A#3",
+     "F5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "escalar"
+   },
+   "bloco": "Bb maior · escalar",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-060": {
+   "jornada": "sambrass",
+   "titulo": "Partido Alto",
+   "armadura": "G",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.155,
+    "ks_corr": 1.062,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.65,
+     "grau (2ª)": 0.12,
+     "3ª": 0.12,
+     "4ª": 0.05,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.15,
+     "desce": 0.2,
+     "repete": 0.65
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "E4",
+     "E5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "misto"
+   },
+   "bloco": "G maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C4"
+   ],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-061": {
+   "jornada": "sambrass",
+   "titulo": "Quem Te Viu, Quem Te Vê",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.006,
+    "ks_corr": 0.678,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.46,
+     "grau (2ª)": 0.34,
+     "3ª": 0.11,
+     "4ª": 0.03,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.28,
+     "repete": 0.46
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "G#3",
+     "D5"
+    ],
+    "ambito_semitons": 18,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-062": {
+   "jornada": "sambrass",
+   "titulo": "Samba do Grande Amor",
+   "armadura": "C",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.073,
+    "ks_corr": 0.701,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.59,
+     "grau (2ª)": 0.33,
+     "3ª": 0.03,
+     "4ª": 0.02,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.22,
+     "desce": 0.19,
+     "repete": 0.59
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "G maior/mixolídio · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-063": {
+   "jornada": "sambrass",
+   "titulo": "Sem Compromisso",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.004,
+    "ks_corr": 0.976,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.48,
+     "grau (2ª)": 0.22,
+     "3ª": 0.13,
+     "4ª": 0.09,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.28,
+     "repete": 0.48
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "C#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-064": {
+   "jornada": "sambrass",
+   "titulo": "A Felicidade",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.102,
+    "ks_corr": 0.924,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.41,
+     "grau (2ª)": 0.38,
+     "3ª": 0.13,
+     "4ª": 0.06,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.27,
+     "desce": 0.32,
+     "repete": 0.41
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "D#5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-065": {
+   "jornada": "sambrass",
+   "titulo": "A Tonga da Mironga do Kabuletê",
+   "armadura": "G",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.185,
+    "ks_corr": 0.958,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.38,
+     "3ª": 0.12,
+     "4ª": 0.04,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.22,
+     "desce": 0.37,
+     "repete": 0.42
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "D5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "G maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.16
+   }
+  },
+  "sb-066": {
+   "jornada": "sambrass",
+   "titulo": "Consolação",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.151,
+    "ks_corr": 0.874,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.27,
+     "grau (2ª)": 0.26,
+     "3ª": 0.42,
+     "4ª": 0.01,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.32,
+     "desce": 0.41,
+     "repete": 0.27
+    },
+    "salto_max": 19,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "G3",
+     "F5"
+    ],
+    "ambito_semitons": 22,
+    "classe": "arpejado"
+   },
+   "bloco": "G menor · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.23
+   }
+  },
+  "sb-067": {
+   "jornada": "sambrass",
+   "titulo": "O Morro Não Tem Vez",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.038,
+    "ks_corr": 0.856,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.24,
+     "3ª": 0.29,
+     "4ª": 0.1,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.36,
+     "repete": 0.35
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.28
+   }
+  },
+  "sb-068": {
+   "jornada": "sambrass",
+   "titulo": "Pra Que Chorar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.129,
+    "ks_corr": 1.014,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.34,
+     "3ª": 0.2,
+     "4ª": 0.05,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.27,
+     "desce": 0.38,
+     "repete": 0.35
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.25
+   }
+  },
+  "sb-069": {
+   "jornada": "sambrass",
+   "titulo": "Regra Três",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.153,
+    "ks_corr": 1.064,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.32,
+     "grau (2ª)": 0.36,
+     "3ª": 0.16,
+     "4ª": 0.1,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.42,
+     "repete": 0.32
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.15
+   }
+  },
+  "sb-070": {
+   "jornada": "sambrass",
+   "titulo": "Samba de Orly",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.144,
+    "ks_corr": 0.97,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.31,
+     "grau (2ª)": 0.46,
+     "3ª": 0.11,
+     "4ª": 0.03,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.07
+    },
+    "contorno": {
+     "sobe": 0.27,
+     "desce": 0.42,
+     "repete": 0.31
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-071": {
+   "jornada": "sambrass",
+   "titulo": "Ronda",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.023,
+    "ks_corr": 0.734,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.32,
+     "grau (2ª)": 0.34,
+     "3ª": 0.18,
+     "4ª": 0.1,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.39,
+     "repete": 0.32
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.03,
+    "tessitura": [
+     "C4",
+     "E5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C2"
+   ],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 3,
+    "cobertura": 0.08
+   }
+  },
+  "sb-072": {
+   "jornada": "sambrass",
+   "titulo": "Naquela Mesa",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.271,
+    "ks_corr": 0.821,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.13,
+     "grau (2ª)": 0.59,
+     "3ª": 0.09,
+     "4ª": 0.07,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.52,
+     "repete": 0.13
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "escalar"
+   },
+   "bloco": "G menor · escalar",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.17
+   }
+  },
+  "sb-073": {
+   "jornada": "sambrass",
+   "titulo": "Retalhos de Cetim",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "F",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.221,
+    "ks_corr": 1.089,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.47,
+     "grau (2ª)": 0.34,
+     "3ª": 0.1,
+     "4ª": 0.03,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.29,
+     "repete": 0.47
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "C#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "F menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.14
+   }
+  },
+  "sb-074": {
+   "jornada": "sambrass",
+   "titulo": "Você Abusou",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.046,
+    "ks_corr": 0.575,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.31,
+     "grau (2ª)": 0.49,
+     "3ª": 0.14,
+     "4ª": 0.03,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.33,
+     "desce": 0.36,
+     "repete": 0.31
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "D5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.14
+   }
+  },
+  "sb-075": {
+   "jornada": "sambrass",
+   "titulo": "Me Deixe em Paz",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.101,
+    "ks_corr": 0.834,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.48,
+     "grau (2ª)": 0.25,
+     "3ª": 0.14,
+     "4ª": 0.11,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.22,
+     "desce": 0.3,
+     "repete": 0.48
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C4",
+     "E5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-076": {
+   "jornada": "sambrass",
+   "titulo": "É Preciso Perdoar",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.052,
+    "ks_corr": 0.987,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.27,
+     "grau (2ª)": 0.48,
+     "3ª": 0.19,
+     "4ª": 0.01,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.34,
+     "desce": 0.39,
+     "repete": 0.27
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "F5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.16
+   }
+  },
+  "sb-077": {
+   "jornada": "sambrass",
+   "titulo": "Desde Que o Samba é Samba",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.044,
+    "ks_corr": 0.701,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.52,
+     "grau (2ª)": 0.32,
+     "3ª": 0.12,
+     "4ª": 0.04,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.21,
+     "desce": 0.27,
+     "repete": 0.52
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "D#4",
+     "F5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "Ab maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-078": {
+   "jornada": "sambrass",
+   "titulo": "Cicatrizes",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.228,
+    "ks_corr": 1.008,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.1,
+     "grau (2ª)": 0.62,
+     "3ª": 0.1,
+     "4ª": 0.05,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.08
+    },
+    "contorno": {
+     "sobe": 0.38,
+     "desce": 0.52,
+     "repete": 0.1
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "escalar"
+   },
+   "bloco": "A menor · escalar",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C2"
+   ],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.16
+   }
+  },
+  "sb-079": {
+   "jornada": "sambrass",
+   "titulo": "De Mais Ninguém",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.138,
+    "ks_corr": 0.688,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.22,
+     "grau (2ª)": 0.56,
+     "3ª": 0.11,
+     "4ª": 0.07,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.47,
+     "repete": 0.22
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "escalar"
+   },
+   "bloco": "C menor · escalar",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.22
+   }
+  },
+  "sb-080": {
+   "jornada": "sambrass",
+   "titulo": "O Bêbado e o Equilibrista",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.187,
+    "ks_corr": 0.834,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.29,
+     "grau (2ª)": 0.43,
+     "3ª": 0.15,
+     "4ª": 0.07,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.32,
+     "desce": 0.39,
+     "repete": 0.29
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "D#5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "Ab maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-081": {
+   "jornada": "sambrass",
+   "titulo": "De Frente pro Crime",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.243,
+    "ks_corr": 1.131,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.6,
+     "grau (2ª)": 0.08,
+     "3ª": 0.23,
+     "4ª": 0.06,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.21,
+     "desce": 0.2,
+     "repete": 0.6
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.2
+   }
+  },
+  "sb-082": {
+   "jornada": "sambrass",
+   "titulo": "Linha de Passe",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.048,
+    "ks_corr": 0.713,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.47,
+     "grau (2ª)": 0.17,
+     "3ª": 0.28,
+     "4ª": 0.04,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.28,
+     "repete": 0.47
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-083": {
+   "jornada": "sambrass",
+   "titulo": "Comportamento Geral",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.244,
+    "ks_corr": 1.003,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.38,
+     "grau (2ª)": 0.4,
+     "3ª": 0.16,
+     "4ª": 0.04,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.37,
+     "repete": 0.38
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "D5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.18
+   }
+  },
+  "sb-084": {
+   "jornada": "sambrass",
+   "titulo": "Flor de Lis",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.049,
+    "ks_corr": 0.935,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.37,
+     "grau (2ª)": 0.27,
+     "3ª": 0.23,
+     "4ª": 0.06,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.33,
+     "repete": 0.37
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "G3",
+     "F5"
+    ],
+    "ambito_semitons": 22,
+    "classe": "arpejado"
+   },
+   "bloco": "C maior · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C5",
+    "C6"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-085": {
+   "jornada": "sambrass",
+   "titulo": "Mas Que Nada",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.075,
+    "ks_corr": 0.999,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.34,
+     "3ª": 0.15,
+     "4ª": 0.08,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.34,
+     "repete": 0.42
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A#3",
+     "D5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-086": {
+   "jornada": "sambrass",
+   "titulo": "Eu Bebo Sim",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.186,
+    "ks_corr": 0.864,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.57,
+     "grau (2ª)": 0.13,
+     "3ª": 0.18,
+     "4ª": 0.07,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.17,
+     "desce": 0.26,
+     "repete": 0.57
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "D4",
+     "D#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-087": {
+   "jornada": "sambrass",
+   "titulo": "Maracangalha",
+   "armadura": "G",
+   "cor": {
+    "tonica": "G",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.247,
+    "ks_corr": 0.982,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.16,
+     "3ª": 0.24,
+     "4ª": 0.1,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.09
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.33,
+     "repete": 0.36
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "D5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "arpejado"
+   },
+   "bloco": "G maior · arpejado",
+   "celula_dominante": "C3",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.23
+   }
+  },
+  "sb-088": {
+   "jornada": "sambrass",
+   "titulo": "Leva Meu Samba",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "Ab",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.149,
+    "ks_corr": 1.062,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.39,
+     "grau (2ª)": 0.39,
+     "3ª": 0.1,
+     "4ª": 0.05,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.05
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.36,
+     "repete": 0.39
+    },
+    "salto_max": 13,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "Ab maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.07
+   }
+  },
+  "sb-089": {
+   "jornada": "sambrass",
+   "titulo": "Na Cadência do Samba",
+   "armadura": "F",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.164,
+    "ks_corr": 0.872,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.44,
+     "grau (2ª)": 0.36,
+     "3ª": 0.08,
+     "4ª": 0.08,
+     "5ª": 0.03,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.2,
+     "desce": 0.36,
+     "repete": 0.44
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "A3",
+     "C5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-090": {
+   "jornada": "sambrass",
+   "titulo": "Pimenta no Vatapá",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.057,
+    "ks_corr": 0.799,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.37,
+     "grau (2ª)": 0.33,
+     "3ª": 0.22,
+     "4ª": 0.06,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.29,
+     "desce": 0.34,
+     "repete": 0.37
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "Bb maior/mixolídio · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "sb-091": {
+   "jornada": "sambrass",
+   "titulo": "Do Jeito Que o Rei Mandou",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.124,
+    "ks_corr": 1.02,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.24,
+     "3ª": 0.23,
+     "4ª": 0.07,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.06
+    },
+    "contorno": {
+     "sobe": 0.25,
+     "desce": 0.39,
+     "repete": 0.36
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "G3",
+     "G5"
+    ],
+    "ambito_semitons": 24,
+    "classe": "arpejado"
+   },
+   "bloco": "C menor · arpejado",
+   "celula_dominante": "C5",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C5"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-092": {
+   "jornada": "sambrass",
+   "titulo": "Canto das Três Raças",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.139,
+    "ks_corr": 1.062,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.36,
+     "grau (2ª)": 0.36,
+     "3ª": 0.19,
+     "4ª": 0.04,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.4,
+     "repete": 0.36
+    },
+    "salto_max": 17,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 6,
+    "x": 2,
+    "cobertura": 0.05
+   }
+  },
+  "sb-093": {
+   "jornada": "sambrass",
+   "titulo": "Tristeza, Pé no Chão",
+   "armadura": "G",
+   "cor": {
+    "tonica": "E",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.022,
+    "ks_corr": 0.978,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.58,
+     "grau (2ª)": 0.16,
+     "3ª": 0.17,
+     "4ª": 0.06,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.17,
+     "desce": 0.25,
+     "repete": 0.58
+    },
+    "salto_max": 36,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "B3",
+     "E7"
+    ],
+    "ambito_semitons": 41,
+    "classe": "misto"
+   },
+   "bloco": "E menor · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-094": {
+   "jornada": "sambrass",
+   "titulo": "A Batucada dos Nossos Tantãs",
+   "armadura": "Eb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.027,
+    "ks_corr": 0.969,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.46,
+     "grau (2ª)": 0.26,
+     "3ª": 0.11,
+     "4ª": 0.12,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.23,
+     "desce": 0.31,
+     "repete": 0.46
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.14
+   }
+  },
+  "sb-095": {
+   "jornada": "sambrass",
+   "titulo": "Agamamou",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.097,
+    "ks_corr": 0.787,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.71,
+     "grau (2ª)": 0.15,
+     "3ª": 0.11,
+     "4ª": 0.0,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.12,
+     "desce": 0.17,
+     "repete": 0.71
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "F4",
+     "C5"
+    ],
+    "ambito_semitons": 7,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 5,
+    "cobertura": 0.16
+   }
+  },
+  "sb-096": {
+   "jornada": "sambrass",
+   "titulo": "Caçamba",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.117,
+    "ks_corr": 0.991,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.48,
+     "grau (2ª)": 0.31,
+     "3ª": 0.1,
+     "4ª": 0.08,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.23,
+     "desce": 0.29,
+     "repete": 0.48
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C2"
+   ],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-097": {
+   "jornada": "sambrass",
+   "titulo": "Cheia de Manias",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.045,
+    "ks_corr": 0.743,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.41,
+     "grau (2ª)": 0.37,
+     "3ª": 0.18,
+     "4ª": 0.02,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.35,
+     "repete": 0.41
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "D5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "misto"
+   },
+   "bloco": "F maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-098": {
+   "jornada": "sambrass",
+   "titulo": "Cilada",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.127,
+    "ks_corr": 0.856,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.28,
+     "grau (2ª)": 0.47,
+     "3ª": 0.11,
+     "4ª": 0.07,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.37,
+     "repete": 0.28
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "D#5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "G menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.15
+   }
+  },
+  "sb-099": {
+   "jornada": "sambrass",
+   "titulo": "Cigana",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.039,
+    "ks_corr": 0.817,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.42,
+     "grau (2ª)": 0.13,
+     "3ª": 0.36,
+     "4ª": 0.05,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.26,
+     "desce": 0.32,
+     "repete": 0.42
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "D5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "arpejado"
+   },
+   "bloco": "Bb maior · arpejado",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-100": {
+   "jornada": "sambrass",
+   "titulo": "Coração Radiante",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.227,
+    "ks_corr": 1.027,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.41,
+     "grau (2ª)": 0.42,
+     "3ª": 0.09,
+     "4ª": 0.05,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.21,
+     "desce": 0.38,
+     "repete": 0.41
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "Bb maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.2
+   }
+  },
+  "sb-101": {
+   "jornada": "sambrass",
+   "titulo": "Deixa Acontecer",
+   "armadura": "C",
+   "cor": {
+    "tonica": "G",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.155,
+    "ks_corr": 0.924,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.2,
+     "grau (2ª)": 0.57,
+     "3ª": 0.1,
+     "4ª": 0.05,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.45,
+     "repete": 0.2
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A3",
+     "F5"
+    ],
+    "ambito_semitons": 20,
+    "classe": "escalar"
+   },
+   "bloco": "G menor · escalar",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.14
+   }
+  },
+  "sb-102": {
+   "jornada": "sambrass",
+   "titulo": "Domingo",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Eb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.023,
+    "ks_corr": 0.743,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.41,
+     "grau (2ª)": 0.34,
+     "3ª": 0.16,
+     "4ª": 0.05,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.27,
+     "desce": 0.32,
+     "repete": 0.41
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "B3",
+     "D#5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "Eb maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.14
+   }
+  },
+  "sb-103": {
+   "jornada": "sambrass",
+   "titulo": "Essa Tal Liberdade",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.088,
+    "ks_corr": 1.005,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.58,
+     "grau (2ª)": 0.3,
+     "3ª": 0.07,
+     "4ª": 0.03,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.17,
+     "desce": 0.25,
+     "repete": 0.58
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "B3",
+     "C5"
+    ],
+    "ambito_semitons": 13,
+    "classe": "misto"
+   },
+   "bloco": "C maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.13
+   }
+  },
+  "sb-104": {
+   "jornada": "sambrass",
+   "titulo": "Eu Me Apaixonei pela Pessoa Errada",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.072,
+    "ks_corr": 0.958,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.24,
+     "grau (2ª)": 0.38,
+     "3ª": 0.3,
+     "4ª": 0.02,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.33,
+     "desce": 0.43,
+     "repete": 0.24
+    },
+    "salto_max": 10,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "Bb maior · arpejado",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-105": {
+   "jornada": "sambrass",
+   "titulo": "Inaraí",
+   "armadura": "Db",
+   "cor": {
+    "tonica": "Db",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.118,
+    "ks_corr": 0.846,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.27,
+     "grau (2ª)": 0.52,
+     "3ª": 0.11,
+     "4ª": 0.04,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.41,
+     "repete": 0.27
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C#4",
+     "F5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "Db maior · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.11
+   }
+  },
+  "sb-106": {
+   "jornada": "sambrass",
+   "titulo": "Pé na Areia",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.071,
+    "ks_corr": 0.85,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.28,
+     "grau (2ª)": 0.53,
+     "3ª": 0.09,
+     "4ª": 0.06,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.37,
+     "repete": 0.28
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.21
+   }
+  },
+  "sb-107": {
+   "jornada": "sambrass",
+   "titulo": "Ta Escrito",
+   "armadura": "G",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.173,
+    "ks_corr": 1.069,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.48,
+     "grau (2ª)": 0.3,
+     "3ª": 0.16,
+     "4ª": 0.05,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.22,
+     "desce": 0.3,
+     "repete": 0.48
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "E5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "misto"
+   },
+   "bloco": "D maior · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [
+    "C4"
+   ],
+   "celulas_extra_candidatas": [
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.08
+   }
+  },
+  "sb-108": {
+   "jornada": "sambrass",
+   "titulo": "É Tarde Demais",
+   "armadura": "G",
+   "cor": {
+    "tonica": "E",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.124,
+    "ks_corr": 0.92,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.31,
+     "grau (2ª)": 0.31,
+     "3ª": 0.26,
+     "4ª": 0.02,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.08
+    },
+    "contorno": {
+     "sobe": 0.31,
+     "desce": 0.38,
+     "repete": 0.31
+    },
+    "salto_max": 36,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "C4",
+     "E7"
+    ],
+    "ambito_semitons": 40,
+    "classe": "arpejado"
+   },
+   "bloco": "E menor · arpejado",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "sb-109": {
+   "jornada": "sambrass",
+   "titulo": "Telegrama",
+   "armadura": "Db",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.201,
+    "ks_corr": 1.036,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.56,
+     "grau (2ª)": 0.19,
+     "3ª": 0.12,
+     "4ª": 0.11,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.22,
+     "desce": 0.23,
+     "repete": 0.56
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "Bb menor · misto",
+   "celula_dominante": "C2",
+   "celulas_marcadas": [
+    "C1",
+    "C2"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.1
+   }
+  },
+  "sb-110": {
+   "jornada": "sambrass",
+   "titulo": "Temporal",
+   "armadura": "Ab",
+   "cor": {
+    "tonica": "C",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.17,
+    "ks_corr": 0.879,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.65,
+     "grau (2ª)": 0.17,
+     "3ª": 0.09,
+     "4ª": 0.06,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.14,
+     "desce": 0.21,
+     "repete": 0.65
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D#5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "misto"
+   },
+   "bloco": "C menor · misto",
+   "celula_dominante": "C4",
+   "celulas_marcadas": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.09
+   }
+  },
+  "cu-001": {
+   "jornada": "cumbias",
+   "titulo": "Sonido Amazónico",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "Bb",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.044,
+    "ks_corr": 0.897,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.0,
+     "grau (2ª)": 0.4,
+     "3ª": 0.56,
+     "4ª": 0.0,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.44,
+     "desce": 0.56,
+     "repete": 0.0
+    },
+    "salto_max": 7,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "A#3",
+     "A#4"
+    ],
+    "ambito_semitons": 12,
+    "classe": "arpejado"
+   },
+   "bloco": "Bb maior · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 5,
+    "x": 2,
+    "cobertura": 0.38
+   }
+  },
+  "cu-002": {
+   "jornada": "cumbias",
+   "titulo": "A Patrícia",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.013,
+    "ks_corr": 0.898,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.04,
+     "grau (2ª)": 0.52,
+     "3ª": 0.24,
+     "4ª": 0.2,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.44,
+     "desce": 0.52,
+     "repete": 0.04
+    },
+    "salto_max": 5,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 4,
+    "x": 2,
+    "cobertura": 0.31
+   }
+  },
+  "cu-003": {
+   "jornada": "cumbias",
+   "titulo": "Cumbia del Monte",
+   "armadura": "F",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.257,
+    "ks_corr": 1.085,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.0,
+     "grau (2ª)": 0.67,
+     "3ª": 0.23,
+     "4ª": 0.1,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.6,
+     "desce": 0.4,
+     "repete": 0.0
+    },
+    "salto_max": 5,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "D5"
+    ],
+    "ambito_semitons": 14,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.52
+   }
+  },
+  "cu-004": {
+   "jornada": "cumbias",
+   "titulo": "Cariñito",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.204,
+    "ks_corr": 1.077,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.34,
+     "grau (2ª)": 0.27,
+     "3ª": 0.14,
+     "4ª": 0.22,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.32,
+     "desce": 0.34,
+     "repete": 0.34
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "E4",
+     "A5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.27
+   }
+  },
+  "cu-005": {
+   "jornada": "cumbias",
+   "titulo": "Llorando se Fue",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.101,
+    "ks_corr": 0.893,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.14,
+     "grau (2ª)": 0.26,
+     "3ª": 0.1,
+     "4ª": 0.42,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.39,
+     "desce": 0.47,
+     "repete": 0.14
+    },
+    "salto_max": 17,
+    "arpejo_frac": 0.02,
+    "tessitura": [
+     "C5",
+     "G6"
+    ],
+    "ambito_semitons": 19,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 8,
+    "cobertura": 0.14
+   }
+  },
+  "cu-006": {
+   "jornada": "cumbias",
+   "titulo": "Danza de los Mirlos",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.062,
+    "ks_corr": 1.021,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.25,
+     "3ª": 0.27,
+     "4ª": 0.22,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.4,
+     "desce": 0.37,
+     "repete": 0.23
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.05,
+    "tessitura": [
+     "D4",
+     "B5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 8,
+    "cobertura": 0.11
+   }
+  },
+  "cu-007": {
+   "jornada": "cumbias",
+   "titulo": "La Danza del Petrolero",
+   "armadura": "G",
+   "cor": {
+    "tonica": "E",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.098,
+    "ks_corr": 0.747,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.19,
+     "grau (2ª)": 0.28,
+     "3ª": 0.42,
+     "4ª": 0.07,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.04
+    },
+    "contorno": {
+     "sobe": 0.44,
+     "desce": 0.36,
+     "repete": 0.19
+    },
+    "salto_max": 11,
+    "arpejo_frac": 0.06,
+    "tessitura": [
+     "B3",
+     "E5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "E menor · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.11
+   }
+  },
+  "cu-008": {
+   "jornada": "cumbias",
+   "titulo": "Cumbia Sobre el Mar",
+   "armadura": "F",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.115,
+    "ks_corr": 0.901,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.23,
+     "grau (2ª)": 0.14,
+     "3ª": 0.59,
+     "4ª": 0.03,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.38,
+     "desce": 0.39,
+     "repete": 0.23
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.15,
+    "tessitura": [
+     "C4",
+     "A5"
+    ],
+    "ambito_semitons": 21,
+    "classe": "arpejado"
+   },
+   "bloco": "C maior/mixolídio · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.26
+   }
+  },
+  "cu-009": {
+   "jornada": "cumbias",
+   "titulo": "El Diablo",
+   "armadura": "F",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.101,
+    "ks_corr": 0.873,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.31,
+     "grau (2ª)": 0.42,
+     "3ª": 0.16,
+     "4ª": 0.03,
+     "5ª": 0.07,
+     "salto (≥6ª)": 0.01
+    },
+    "contorno": {
+     "sobe": 0.24,
+     "desce": 0.45,
+     "repete": 0.31
+    },
+    "salto_max": 19,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D3",
+     "D5"
+    ],
+    "ambito_semitons": 24,
+    "classe": "misto"
+   },
+   "bloco": "A menor · misto",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C5",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 32,
+    "cobertura": 0.47
+   }
+  },
+  "cu-010": {
+   "jornada": "cumbias",
+   "titulo": "Constelación",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "E",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.155,
+    "ks_corr": 0.854,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.15,
+     "grau (2ª)": 0.54,
+     "3ª": 0.15,
+     "4ª": 0.07,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.42,
+     "desce": 0.43,
+     "repete": 0.15
+    },
+    "salto_max": 8,
+    "arpejo_frac": 0.01,
+    "tessitura": [
+     "F#4",
+     "F#5"
+    ],
+    "ambito_semitons": 12,
+    "classe": "misto"
+   },
+   "bloco": "E maior/mixolídio · misto",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.15
+   }
+  },
+  "cu-011": {
+   "jornada": "cumbias",
+   "titulo": "Elsa",
+   "armadura": "C",
+   "cor": {
+    "tonica": "C",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.076,
+    "ks_corr": 0.939,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.11,
+     "3ª": 0.39,
+     "4ª": 0.09,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.3,
+     "repete": 0.35
+    },
+    "salto_max": 9,
+    "arpejo_frac": 0.07,
+    "tessitura": [
+     "E4",
+     "G5"
+    ],
+    "ambito_semitons": 15,
+    "classe": "arpejado"
+   },
+   "bloco": "C maior · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 2,
+    "cobertura": 0.17
+   }
+  },
+  "cu-012": {
+   "jornada": "cumbias",
+   "titulo": "Cumbia da Praia",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "maior",
+    "dica_modal": "mixolídio",
+    "conf": 0.0,
+    "ks_corr": 1.004,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.24,
+     "grau (2ª)": 0.49,
+     "3ª": 0.16,
+     "4ª": 0.06,
+     "5ª": 0.01,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.35,
+     "desce": 0.41,
+     "repete": 0.24
+    },
+    "salto_max": 17,
+    "arpejo_frac": 0.05,
+    "tessitura": [
+     "A3",
+     "D5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "D maior/mixolídio · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 4,
+    "cobertura": 0.2
+   }
+  },
+  "cu-014": {
+   "jornada": "cumbias",
+   "titulo": "Lobos al Escape",
+   "armadura": "C",
+   "cor": {
+    "tonica": "A",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.089,
+    "ks_corr": 1.018,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.18,
+     "grau (2ª)": 0.45,
+     "3ª": 0.26,
+     "4ª": 0.06,
+     "5ª": 0.02,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.4,
+     "desce": 0.42,
+     "repete": 0.18
+    },
+    "salto_max": 15,
+    "arpejo_frac": 0.04,
+    "tessitura": [
+     "A3",
+     "G5"
+    ],
+    "ambito_semitons": 22,
+    "classe": "arpejado"
+   },
+   "bloco": "A menor · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C3",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C3",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.2
+   }
+  },
+  "cu-015": {
+   "jornada": "cumbias",
+   "titulo": "Baião do Deserto",
+   "armadura": "G",
+   "cor": {
+    "tonica": "E",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.094,
+    "ks_corr": 0.88,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.35,
+     "grau (2ª)": 0.37,
+     "3ª": 0.18,
+     "4ª": 0.01,
+     "5ª": 0.06,
+     "salto (≥6ª)": 0.03
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.34,
+     "repete": 0.35
+    },
+    "salto_max": 14,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "D4",
+     "F#5"
+    ],
+    "ambito_semitons": 16,
+    "classe": "misto"
+   },
+   "bloco": "E menor · misto",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 7,
+    "x": 2,
+    "cobertura": 0.12
+   }
+  },
+  "cu-016": {
+   "jornada": "cumbias",
+   "titulo": "Ya se ha Muerto mi Abuelo",
+   "armadura": "F",
+   "cor": {
+    "tonica": "D",
+    "modo": "menor",
+    "dica_modal": null,
+    "conf": 0.085,
+    "ks_corr": 0.871,
+    "armadura_bate": true
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.3,
+     "grau (2ª)": 0.11,
+     "3ª": 0.4,
+     "4ª": 0.12,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.02
+    },
+    "contorno": {
+     "sobe": 0.39,
+     "desce": 0.32,
+     "repete": 0.3
+    },
+    "salto_max": 12,
+    "arpejo_frac": 0.05,
+    "tessitura": [
+     "C4",
+     "F5"
+    ],
+    "ambito_semitons": 17,
+    "classe": "arpejado"
+   },
+   "bloco": "D menor · arpejado",
+   "celula_dominante": "-",
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 8,
+    "x": 5,
+    "cobertura": 0.19
+   }
+  }
+ },
+ "blocos": {
+  "F maior · misto": [
+   "sb-002",
+   "sb-017",
+   "sb-021",
+   "sb-035",
+   "sb-037",
+   "sb-038",
+   "sb-063",
+   "sb-068",
+   "sb-095",
+   "sb-096",
+   "sb-097"
+  ],
+  "Eb maior · misto": [
+   "sb-003",
+   "sb-009",
+   "sb-014",
+   "sb-018",
+   "sb-050",
+   "sb-053",
+   "sb-094",
+   "sb-102"
+  ],
+  "G menor · misto": [
+   "sb-006",
+   "sb-042",
+   "sb-044",
+   "sb-048",
+   "sb-076",
+   "sb-083",
+   "sb-085",
+   "sb-098"
+  ],
+  "A menor · misto": [
+   "sb-012",
+   "sb-031",
+   "sb-049",
+   "sb-075",
+   "sb-089",
+   "sb-106",
+   "cu-004",
+   "cu-009"
+  ],
+  "C menor · misto": [
+   "sb-001",
+   "sb-022",
+   "sb-041",
+   "sb-051",
+   "sb-061",
+   "sb-064",
+   "sb-110"
+  ],
+  "C maior · misto": [
+   "sb-008",
+   "sb-040",
+   "sb-047",
+   "sb-052",
+   "sb-070",
+   "sb-103"
+  ],
+  "D menor · arpejado": [
+   "sb-011",
+   "sb-013",
+   "sb-067",
+   "sb-092",
+   "cu-005",
+   "cu-016"
+  ],
+  "F maior · arpejado": [
+   "sb-020",
+   "sb-071",
+   "sb-081",
+   "sb-082",
+   "cu-002",
+   "cu-003"
+  ],
+  "A menor · arpejado": [
+   "sb-023",
+   "sb-024",
+   "sb-054",
+   "sb-069",
+   "cu-006",
+   "cu-014"
+  ],
+  "Ab maior · misto": [
+   "sb-004",
+   "sb-019",
+   "sb-028",
+   "sb-080",
+   "sb-088"
+  ],
+  "Bb maior · misto": [
+   "sb-033",
+   "sb-055",
+   "sb-074",
+   "sb-086",
+   "sb-100"
+  ],
+  "G maior · misto": [
+   "sb-005",
+   "sb-060",
+   "sb-065"
+  ],
+  "G maior · arpejado": [
+   "sb-010",
+   "sb-030",
+   "sb-087"
+  ],
+  "C maior · arpejado": [
+   "sb-027",
+   "sb-084",
+   "cu-011"
+  ],
+  "D menor · misto": [
+   "sb-029",
+   "sb-034",
+   "sb-046"
+  ],
+  "D maior · arpejado": [
+   "sb-036",
+   "sb-043",
+   "sb-056"
+  ],
+  "Bb maior · arpejado": [
+   "sb-099",
+   "sb-104",
+   "cu-001"
+  ],
+  "Db maior · misto": [
+   "sb-007",
+   "sb-105"
+  ],
+  "D maior/mixolídio · arpejado": [
+   "sb-015",
+   "cu-012"
+  ],
+  "Eb maior · arpejado": [
+   "sb-025",
+   "sb-026"
+  ],
+  "Ab maior · arpejado": [
+   "sb-032",
+   "sb-077"
+  ],
+  "Bb maior/mixolídio · misto": [
+   "sb-057",
+   "sb-058"
+  ],
+  "G menor · escalar": [
+   "sb-072",
+   "sb-101"
+  ],
+  "E menor · misto": [
+   "sb-093",
+   "cu-015"
+  ],
+  "E menor · arpejado": [
+   "sb-108",
+   "cu-007"
+  ],
+  "Bb menor · arpejado": [
+   "sb-016"
+  ],
+  "Ab menor · misto": [
+   "sb-039"
+  ],
+  "G menor/dórico · arpejado": [
+   "sb-045"
+  ],
+  "Bb maior · escalar": [
+   "sb-059"
+  ],
+  "G maior/mixolídio · misto": [
+   "sb-062"
+  ],
+  "G menor · arpejado": [
+   "sb-066"
+  ],
+  "F menor · misto": [
+   "sb-073"
+  ],
+  "A menor · escalar": [
+   "sb-078"
+  ],
+  "C menor · escalar": [
+   "sb-079"
+  ],
+  "Bb maior/mixolídio · arpejado": [
+   "sb-090"
+  ],
+  "C menor · arpejado": [
+   "sb-091"
+  ],
+  "D maior · misto": [
+   "sb-107"
+  ],
+  "Bb menor · misto": [
+   "sb-109"
+  ],
+  "C maior/mixolídio · arpejado": [
+   "cu-008"
+  ],
+  "E maior/mixolídio · misto": [
+   "cu-010"
+  ]
+ }
+}
