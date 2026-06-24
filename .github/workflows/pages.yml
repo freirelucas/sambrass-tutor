@@ -26,6 +26,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: python3 content/build_abc.py   # gera content/notes_abc.json (ABC p/ o player)
+      - run: pip install verovio             # pauta do riff nas Stories das cumbias
+      - run: python3 content/cumbia/build_cumbia.py   # regenera a Jornada das Cumbias (riffs + pedagogia)
       - run: python3 app/build_site.py
       - uses: actions/configure-pages@v5
         with: { enablement: true }

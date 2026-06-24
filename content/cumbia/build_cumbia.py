@@ -38,7 +38,8 @@ def riff_svg(abc):
     try:
         _TK.setOptions({"inputFrom": "abc", "scale": 36, "adjustPageHeight": True, "pageWidth": 1500,
                         "header": "none", "footer": "none", "pageMarginLeft": 6, "pageMarginRight": 6,
-                        "pageMarginTop": 2, "pageMarginBottom": 2, "breaks": "none"})
+                        "pageMarginTop": 2, "pageMarginBottom": 2, "breaks": "none",
+                        "xmlIdSeed": 1})        # ids determinísticos → build reproduzível
         _TK.loadData(abc)
         s = _TK.renderToSVG(1)
         s = re.sub(r'width="\d+px"', 'width="100%"', s, count=1)
