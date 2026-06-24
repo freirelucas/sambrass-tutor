@@ -137,6 +137,7 @@ def main():
     for p in sorted(glob.glob(str(CONTENT / "notes" / "**" / "*.musicxml"), recursive=True)):
         stem = pathlib.Path(p).stem
         if stem.startswith("_"): continue
+        if stem.startswith("cu-"): continue   # cumbias têm pipeline próprio (content/cumbia/)
         data = compile_file(pathlib.Path(p), fingering, tr)
         fifths, meter = get_meta(p)
         if stem.startswith("sb-"):
