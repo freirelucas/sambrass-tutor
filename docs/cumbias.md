@@ -40,6 +40,15 @@ content/notes/cumbia/cu-NNN.musicxml           (tema principal / riff — tier '
 content/cumbia/build/*.json   →  build_site.py  →  _site/data/cumbias/*.json
 ```
 
+## Tema vs peça inteira ("os dois")
+Cada cumbia OMR tem **duas** representações: o **tema** (abertura, ~8–16 compassos — `abc.json`,
+o que se **pratica/avalia** no tutor e abre a Story) e a **peça inteira** (`abc_full.json`, atrás
+do botão "▶ tocar a peça inteira" no estudo e no player do Banco). `build_cumbia.py` extrai o tema
+com `phrases.theme_measure_span()` (compassos inteiros, ancorado no riff, clamp [8,16]) e computa
+perfil/dificuldade **no tema**. As 3 cumbias DSL (≤8 comp.) têm tema == peça inteira (botão escondido).
+Sambrass não tem `abc_full.json` → o app degrada limpo. O tier (`quality.json`) descreve o **tema
+praticado**; a peça inteira é sempre leitura OMR crua.
+
 ## "Frases repetitivas" (o coração da jornada)
 `phrases.py` acha, por cumbia, a **frase mais repetida** (a sequência de
 `(altura, duração)` mais longa que volta ≥2×, sem sobreposição). Usada para:
@@ -48,13 +57,13 @@ content/cumbia/build/*.json   →  build_site.py  →  _site/data/cumbias/*.json
   (`dificuldade = 2·agudo + vel + fôlego − 2·repetição`).
 
 ## Qualidade (honestidade)
-As melodias das cumbias são **provisórias** (tier `rascunho`): leituras de
-melhor-esforço do **tema principal** (não a partitura inteira, não conferidas nota a
-nota). O app mostra "⚠ melodia provisória" e o tutor compara por **classe de altura**
-(tolerante a oitava), igual ao OMR do Sambrass. Para promover a `conferida`: criar
-`content/cumbia/notes_manual/cu-NNN.abc` à mão (vence o ABC do build e marca `conferida`) —
-o caminho típico é gerar a melodia com Audiveris (OMR), conferir contra o PDF, salvar como
-`.abc`. `build_cumbia.py` aplica esse override (inerte enquanto o diretório não existe).
+Tiers: `rascunho` (leitura OMR/à-mão não conferida — o tutor avalia por **classe de altura**,
+tolerante a oitava) e `conferida` (tema conferido nota a nota contra a partitura — o tutor avalia
+por **oitava exata**). Estado atual: os **12 temas OMR estão `conferida`** (conferidos best-effort
+contra os PDFs; o botão "⚠ reportar erro" cobre resíduos); as **3 cumbias DSL seguem `rascunho`**.
+A **peça inteira** (`abc_full.json`) é sempre OMR cru, qualquer que seja o tier do tema.
+Para conferir/promover: criar `content/cumbia/notes_manual/cu-NNN.abc` (vence o ABC do build e marca
+`conferida`); `build_cumbia.py` aplica o override (inerte enquanto o diretório não existe).
 
 ## Adicionar uma cumbia
 Coloque o PDF em `content/cumbia/pdfs/` e escolha a fonte da melodia:
