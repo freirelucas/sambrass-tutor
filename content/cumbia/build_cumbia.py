@@ -125,6 +125,10 @@ def desafios(b, cat):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     cat = {p["num"]: p for p in json.load(open(HERE / "pieces_cumbia.json", encoding="utf-8"))["pieces"]}
+    # melodias conferidas à mão (vencem o ABC do build e promovem a 'conferida'): notes_manual/cu-*.abc
+    MANUAL = HERE / "notes_manual"
+    manual_abc = ({p.stem: p.read_text(encoding="utf-8") for p in MANUAL.glob("cu-*.abc")}
+                  if MANUAL.exists() else {})
     builds = [build_one(p) for p in sorted(NOTES.glob("cu-*.musicxml"))]
     # dificuldade: agudo pesa 2; mais repetição = mais fácil (entra antes)
     for b in builds:
@@ -151,8 +155,12 @@ def main():
             tom=c.get("key_concert", "Bb"), lote=b["lote"], nivel=b["nivel"], agudo=f["agudo"],
             vel=f["vel"], folego=f["folego"], pico_nome=f["pico_nome"], forma=c.get("forma", [])))
         escada["pieces"].append(dict(num=b["num"], id=b["stem"], nivel_minimo=b["nivel"]))
-        abc[b["stem"]] = b["abc"]
-        quality[b["stem"]] = c.get("quality", "rascunho")
+        if b["stem"] in manual_abc:                       # conferida à mão vence tudo
+            abc[b["stem"]] = manual_abc[b["stem"]]
+            quality[b["stem"]] = "conferida"
+        else:
+            abc[b["stem"]] = b["abc"]
+            quality[b["stem"]] = c.get("quality", "rascunho")
         pedag[str(b["num"])] = dict(
             perfil=dict(
                 agudo=f"Pico em {f['pico_nome']} (nível {f['agudo']}/6).",

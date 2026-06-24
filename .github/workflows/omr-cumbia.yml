@@ -1,0 +1,85 @@
+name: OMR Cumbias (Audiveris)
+
+# Processa as partituras das CUMBIAS (content/cumbia/pdfs/) com Audiveris (OMR) e exporta
+# MusicXML. Irmão do omr.yml (que é hard-wired ao caderno mestre do Sambrass): aqui os PDFs
+# já vêm no checkout, o pré-processo é content/cumbia/omr_prep.py e a saída vai para o branch
+# omr/cumbia-raw (paralelo ao omr/audiveris-raw). Compartilha o MESMO cache do build do
+# Audiveris (key audiveris-installdist-v1) → não recompila se o omr.yml já buildou.
+# Dispare manualmente (Actions > OMR Cumbias > Run) escolhendo as cumbias.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pieces:
+        description: "Números (espaço-separado) ou 'all' para todas as cumbias source=omr."
+        default: "all"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: omr-cumbia-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  omr-cumbia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Java 25 (Temurin)  # Audiveris 5.10+ exige Java 25
+        uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "25" }
+
+      - name: Dependências do sistema (Tesseract)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr python3-pip  # Audiveris traz a própria tessdata
+
+      - name: Pré-processar as cumbias (PyMuPDF; PDFs já no repo)
+        run: |
+          python3 -m pip install --quiet PyMuPDF
+          PIECES="${{ github.event.inputs.pieces }}"; PIECES="${PIECES:-all}"
+          if [ "$PIECES" = "all" ]; then python3 content/cumbia/omr_prep.py --dpi 300; else python3 content/cumbia/omr_prep.py --dpi 300 $PIECES; fi
+          echo "imagens:"; ls omr/input/cu-*.png | wc -l
+
+      - name: Cache do build do Audiveris  # MESMA key do omr.yml → cache compartilhado
+        id: cache-aud
+        uses: actions/cache@v4
+        with:
+          path: audiveris/app/build/install
+          key: audiveris-installdist-v1
+
+      - name: Build do Audiveris (se não cacheado)
+        if: steps.cache-aud.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 https://github.com/Audiveris/audiveris.git
+          cd audiveris && ./gradlew --no-daemon :app:installDist
+
+      - name: Localizar o binário do Audiveris
+        run: |
+          AUD=$(find audiveris -path '*/install/*/bin/Audiveris' | head -1)
+          echo "AUD=$AUD" >> "$GITHUB_ENV"
+          echo "binário: $AUD"; "$AUD" -help || true
+
+      - name: Transcrever (batch → MusicXML)
+        run: |
+          mkdir -p omr/out
+          "$AUD" -batch -transcribe -export -output omr/out -- omr/input/cu-*.png || true
+          echo "--- saídas ---"; find omr/out -type f | sort
+
+      - name: Commitar MusicXML no branch omr/cumbia-raw
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout -B omr/cumbia-raw
+          git add -f omr/out/cu-*.mxl omr/out/cu-*.log 2>/dev/null || git add -f omr/out/cu-*.mxl
+          git commit -m "OMR Audiveris cumbias: MusicXML (lote ${{ github.event.inputs.pieces }})" || echo "(nada a commitar)"
+          git push -f origin omr/cumbia-raw
+
+      - name: Artefato (MusicXML)
+        uses: actions/upload-artifact@v4
+        with: { name: cumbia-musicxml, path: omr/out/cu-*.mxl, if-no-files-found: warn }
