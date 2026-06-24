@@ -38,7 +38,9 @@ function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webk
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json')]);
+  const [pieces, cells, abc, escada, abcFull, quality] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+    JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
+    j('quality.json')]);
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
@@ -66,15 +68,20 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
       `Toque a frase inteira <b>de cór</b>, no andamento de roda.`];
     const ol = $('#passos'); if(ol) ol.innerHTML = passosArr.map(t => `<li><span class="chk">✓</span><span class="txt">${t}</span></li>`).join(''); }
 
-  MELODIA = abc?.[ID] || null;
+  const TEMA = abc?.[ID] || null;
+  const FULL = (abcFull && abcFull[ID]) || null;        // peça inteira (só nas cumbias OMR)
+  const TEM_DOIS = !!(FULL && TEMA && FULL !== TEMA);    // há tema + peça inteira distintos?
+  MELODIA = TEMA;                                        // pratica/avalia o TEMA por padrão
   const RASC = {
     conferida: 'Melodia <span class="ok">conferida ✓</span> · digitação de trompete.',
     dedos: 'Melodia <span class="ok">tom pelos dedos ✓</span> — a classe de altura veio da <b>digitação impressa</b>; oitava e ritmo do OMR (provisórios). As células acima são exatas.',
     rascunho: 'Melodia: rascunho de leitura automática (OMR), em revisão. As células acima são exatas.'
   };
-  const tier = abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
+  // tier do TEMA praticado: lê o quality.json padrão (cumbias não têm _quality embutido no abc.json)
+  const tier = (quality && quality[ID]) || abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
   OCTAVE_EXACT = (tier === 'conferida');
-  $('#rasc').innerHTML = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
+  const RASC_TEMA = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
+  $('#rasc').innerHTML = RASC_TEMA;
   { const rep = $('#reportar');
     if(rep) rep.onclick = e => { e.preventDefault(); if(window.reportarBeta) reportarBeta({ piece: `${ID}${p?' '+p.titulo:''}`, screen: 'estudo' }); }; }
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
@@ -83,6 +90,19 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#menos').onclick = () => { BPM = Math.max(50, BPM-2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
   $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
   $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'ouvir escrito (Bb)':'ouvir em concerto'; setMel(); if(PRACTON) restartTimer(); };
+  // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
+  { const tFull = $('#tfull');
+    if(tFull && !TEM_DOIS){ tFull.style.display = 'none'; }
+    else if(tFull){ tFull.onclick = e => {
+      const on = e.currentTarget.classList.toggle('on');
+      MELODIA = on ? FULL : TEMA;
+      e.currentTarget.textContent = on ? '↩ voltar ao tema' : '▶ tocar a peça inteira';
+      if(PRACTON) stopPractice();                                  // avaliação é só no tema
+      if(LOOPON){ LOOPON = false; $('#tloop')?.classList.remove('on'); SLICE = null; $('#loopchip').textContent = ''; }
+      MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; syncLoopUI();
+      $('#rasc').innerHTML = on ? 'Peça inteira: leitura automática (OMR), em revisão — o <b>tema</b> acima é o que você pratica/avalia.' : RASC_TEMA;
+      setMel();
+    }; } }
 
   // --- tutor de escuta ---
   $('#tmic').onclick = () => MICON ? disableMic() : enableMic();

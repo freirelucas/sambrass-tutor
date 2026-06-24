@@ -286,7 +286,11 @@ function flash(i) { const at = M.next - M.ctx.currentTime; setTimeout(() => { do
 
 /* ---------- player (abcjs: partitura + MIDI trompete + cursor) ---------- */
 let SYNTH = null, PLAYER = null;  // PLAYER = {abc, transpose, titulo, voltar}
-async function loadAbc() { if (!DB.abc) DB.abc = await fetch('./data/' + JCFG().base + 'abc.json').then(r => r.json()).catch(() => ({})); }
+async function loadAbc() {
+  if (!DB.abc) DB.abc = await fetch('./data/' + JCFG().base + 'abc.json').then(r => r.json()).catch(() => ({}));
+  if (!DB.abcFull) DB.abcFull = JCFG().base === 'cumbias/'   // peça inteira só nas cumbias (evita 404 no Sambrass)
+    ? await fetch('./data/' + JCFG().base + 'abc_full.json').then(r => r.json()).catch(() => ({})) : {};
+}
 function pararSynth() { if (SYNTH) { try { SYNTH.pause(); } catch {} SYNTH = null; } }
 // Áudio do celular: 1 AudioContext registrado no abcjs, retomado a cada toque (gesto).
 let AC = null;
@@ -296,7 +300,9 @@ function audioUnlock() { try { if (!AC) { AC = new (window.AudioContext || windo
 async function abrirPlayer(id, titulo, prov, voltar) {
   pararMetro(); await loadAbc();
   const abc = (DB.abc || {})[id];
-  PLAYER = abc ? { abc, transpose: 0, titulo, voltar: voltar || 'banco' } : null;
+  const full = (DB.abcFull || {})[id];                       // peça inteira (cumbias OMR)
+  const temDois = !!(full && abc && full !== abc);
+  PLAYER = abc ? { abc, full, tema: abc, transpose: 0, titulo, voltar: voltar || 'banco' } : null;
   document.querySelectorAll('.abas button').forEach(b => b.classList.remove('ativa'));
   if (!abc) { tela.innerHTML = `<button class="voltar" onclick="ir('${voltar || 'banco'}')">‹ voltar</button><p class="carregando">partitura não disponível.</p>`; return; }
   tela.innerHTML = `<button class="voltar" onclick="ir('${voltar || 'banco'}')">‹ voltar</button>
@@ -305,12 +311,14 @@ async function abrirPlayer(id, titulo, prov, voltar) {
       ${(() => { const t = (DB.quality && DB.quality[id]) || 'rascunho'; if (t === 'conferida') return ''; const m = QUAL[t]; return `<p class="meta">⚠ melodia provisória — ${m.txt}; as células são exatas</p>`; })()}
       <div class="btnrow" style="justify-content:flex-start;margin:4px 0 10px">
         <button class="toggle" id="tconcert">ouvir em concerto</button>
+        ${temDois ? '<button class="toggle" id="tfull">▶ tocar a peça inteira</button>' : ''}
       </div>
       <div id="paper" class="paper"></div>
       <div id="audio" class="audio"></div>
       <p class="meta" style="margin-top:8px">▶ toca com timbre de trompete · ↔ controla o andamento · o cursor segue as notas.</p>
     </div>`;
   $('#tconcert').onclick = e => { const c = e.target.classList.toggle('on'); e.target.textContent = c ? 'ouvir escrito (Bb)' : 'ouvir em concerto'; renderPlayer(c ? -2 : 0); };
+  if (temDois) $('#tfull').onclick = e => { const on = e.target.classList.toggle('on'); PLAYER.abc = on ? PLAYER.full : PLAYER.tema; e.target.textContent = on ? '↩ voltar ao tema' : '▶ tocar a peça inteira'; renderPlayer(PLAYER.transpose); };
   renderPlayer(0);
   window.scrollTo(0, 0);
 }
@@ -353,7 +361,7 @@ async function trocarJornada(id) {
   pararSynth(); if (M.on) pararMetro();
   JORNADA = id; localStorage.setItem('jornada_ativa', id);
   tela.innerHTML = '<p class="carregando">carregando…</p>';
-  ['pieces', 'curriculo', 'trilha', 'cells', 'rotina', 'quality', 'escada', 'percurso', 'lotes', 'abc', 'pedagogia', 'aquec', 'tecnica'].forEach(k => delete DB[k]);
+  ['pieces', 'curriculo', 'trilha', 'cells', 'rotina', 'quality', 'escada', 'percurso', 'lotes', 'abc', 'abcFull', 'pedagogia', 'aquec', 'tecnica'].forEach(k => delete DB[k]);
   await carregar(); ir('trilha');
 }
 window.trocarJornada = trocarJornada;

@@ -49,7 +49,7 @@ def emit_cumbias():
     dest = SITE / "data" / "cumbias"; dest.mkdir(parents=True, exist_ok=True)
     n = 0
     for f in ["pieces.json", "percurso.json", "escada.json", "lotes.json", "abc.json",
-              "quality.json", "pedagogia.json", "cells.json", "aquecimento.json", "tecnica.json", "rotina.json"]:
+              "abc_full.json", "quality.json", "pedagogia.json", "cells.json", "aquecimento.json", "tecnica.json", "rotina.json"]:
         n += _cp_opt(cdir / f, dest / f)
     return n > 0
 

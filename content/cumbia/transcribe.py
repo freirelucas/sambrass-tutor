@@ -83,9 +83,9 @@ TUNES = [
 # (pós-CI). key_concert fica "" até o omr_check revelar a armadura lida pelo Audiveris — daí
 # preenche-se e o omr_import injeta a armadura certa. compasso/compositor são melhor-esforço.
 CATALOG_EXTRA = [
-    # key_concert preenchido a partir da revisão do OMR (omr_check + conferência do render).
-    # cu-013 e cu-017 ficam "" (NÃO importadas): Audiveris perdeu a armadura (013, peça em 4#)
-    # / foto torta de papel (017, não-cumbia) — OMR não confiável, marcadas p/ re-OMR/conferência.
+    # key_concert vindo da revisão do OMR (omr_check + conferência do render).
+    # cu-013 e cu-017 foram REMOVIDAS: Audiveris falhou irrecuperavelmente — 013 perdeu a
+    # armadura (peça em 4 sustenidos → notas todas naturais); 017 é foto torta (não-cumbia).
     dict(num=4,  titulo="Cariñito",                  compositor="Ángel Aníbal Rosado",       pdf="Carinito - Trompete Bb.pdf",                      source="omr", key_concert="C",  beats=4, beat_type=4, forma=["A", "B", "C", "D"]),
     dict(num=5,  titulo="Llorando se Fue",           compositor="Los Kjarkas (G. Hermosa)",  pdf="Llorando se Fue_Cumbias_TrompBb.pdf",             source="omr", key_concert="Bb", beats=4, beat_type=4, forma=["A", "B"]),
     dict(num=6,  titulo="Danza de los Mirlos",       compositor="Los Mirlos",                pdf="Danza de los mirlos - Trompete 1_melodia.pdf",    source="omr", key_concert="C",  beats=4, beat_type=4, forma=["A", "B"]),
@@ -95,11 +95,9 @@ CATALOG_EXTRA = [
     dict(num=10, titulo="Constelación",              compositor="Los Destellos (arr. Lucca Ramalho)", pdf="Constelacion - Trompete Bb.pdf",         source="omr", key_concert="Bb", beats=2, beat_type=4, forma=["A", "B", "C", "D"]),
     dict(num=11, titulo="Elsa",                      compositor="(cumbia)",                  pdf="Elsa - Trompete Bb.pdf",                          source="omr", key_concert="C",  beats=4, beat_type=4, forma=["A", "B"]),
     dict(num=12, titulo="Cumbia da Praia",           compositor="(cumbia)",                  pdf="Cumbia da Praia - Trumpet in Bb.pdf",             source="omr", key_concert="F",  beats=2, beat_type=4, forma=["A", "B"]),
-    dict(num=13, titulo="Cumbia del Desierto",       compositor="Los Destellos",             pdf="Cumbia del Desierto_Cumbias_TrompBB1.pdf",        source="omr", key_concert="",   beats=2, beat_type=4, forma=["A", "B"]),
     dict(num=14, titulo="Lobos al Escape",           compositor="Los Mirlos",                pdf="Lobos al escape-Trumpet_in_Bb.pdf",               source="omr", key_concert="C",  beats=2, beat_type=4, forma=["A", "B"]),
     dict(num=15, titulo="Baião do Deserto",          compositor="(baião)",                   pdf="Baiao Do Deserto- Trompete.pdf",                  source="omr", key_concert="G",  beats=2, beat_type=4, forma=["A", "B"]),
     dict(num=16, titulo="Ya se ha Muerto mi Abuelo", compositor="(cumbia)",                  pdf="Ya se ha muerto mi abuelo - Trompete Bb.pdf",     source="omr", key_concert="F",  beats=2, beat_type=4, forma=["A", "B"]),
-    dict(num=17, titulo="Yekermo Sew",               compositor="Mulatu Astatke",            pdf="Yekermo Sew - Trompete Bb.pdf",                   source="omr", key_concert="",   beats=4, beat_type=4, forma=["A", "B"]),
 ]
 
 

@@ -57,6 +57,44 @@ def riff_events(riff, fifths_meta_measure=1):
     return [{"measure": fifths_meta_measure, "written_midi": m, "dur_beats": d} for m, d in riff["notes"]]
 
 
+def _event_measures(events):
+    """Compasso de cada NOTA (na ordem de _notes/positions). Mapeia índice de nota → compasso."""
+    return [e["measure"] for e in events if "written_midi" in e]
+
+
+def theme_measure_span(events, riff=None, min_bars=8, max_bars=16):
+    """[primeiro, último] compasso (inclusive) do TEMA de abertura — compassos INTEIROS.
+    Ancora nas ~2 primeiras ocorrências do riff dominante; clampa em [min,max]; abre no compasso 1.
+    Retorna None se não houver notas. Para peças curtas (DSL ≤8 comp.) devolve a peça inteira."""
+    if riff is None:
+        riff = extract_riff(events)
+    meas = _event_measures(events)
+    if not meas:
+        return None
+    first, last_measure = min(meas), max(meas)
+    end = min(first + min_bars - 1, last_measure)            # default: primeiros min_bars
+    if riff and riff.get("positions"):
+        pos = riff["positions"]
+        second_start = pos[1] if len(pos) >= 2 else pos[0]
+        idx_end = min(second_start + riff["len"] - 1, len(meas) - 1)
+        end = meas[idx_end]                                  # fecha após ~2 voltas do riff
+    end = max(end, first + min_bars - 1)                     # pelo menos min_bars
+    end = min(end, first + max_bars - 1, last_measure)       # no máximo max_bars, nunca além da peça
+    return (first, end)
+
+
+def slice_events_by_measure(events, lo, hi):
+    """Sub-lista de eventos com compasso em [lo,hi], RENUMERADOS p/ começar em 1 (ABC self-contained)."""
+    out = []
+    for e in events:
+        m = e.get("measure")
+        if m is not None and lo <= m <= hi:
+            e2 = dict(e)
+            e2["measure"] = m - lo + 1
+            out.append(e2)
+    return out
+
+
 if __name__ == "__main__":
     import sys, pathlib, glob
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))

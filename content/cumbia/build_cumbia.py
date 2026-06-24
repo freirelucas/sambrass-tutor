@@ -78,15 +78,19 @@ def features(events):
 def build_one(path):
     fing, tr = load_fingering()
     data = compile_file(path, fing, tr)
-    events = data["events"]
+    events = data["events"]                              # peça INTEIRA
     fifths, meter = get_meta(path)
-    abc = to_abc(events, fifths, meter, path.stem)
-    riff = phrases.extract_riff(events)
-    feat = features(events)
-    feat["repeticao"] = phrases.repeticao_ratio(events)
+    abc_full = to_abc(events, fifths, meter, path.stem)
+    riff = phrases.extract_riff(events)                  # riff na peça inteira (mais ocorrências = robusto)
+    span = phrases.theme_measure_span(events, riff)
+    theme_events = phrases.slice_events_by_measure(events, *span) if span else events
+    abc_theme = to_abc(theme_events, fifths, meter, path.stem)
+    feat = features(theme_events)                        # PERFIL/dificuldade = o TEMA praticado
+    feat["repeticao"] = phrases.repeticao_ratio(theme_events)
     rabc = to_abc(phrases.riff_events(riff), fifths, meter, "riff") if riff else ""
     return dict(stem=path.stem, num=int(path.stem.split("-")[1]), fifths=fifths, meter=meter,
-                abc=abc, riff=riff, riff_abc=rabc, feat=feat)
+                abc=abc_theme, abc_full=abc_full, theme_span=span,
+                riff=riff, riff_abc=rabc, feat=feat)
 
 
 def desafios(b, cat):
@@ -178,6 +182,7 @@ def main():
     dump = lambda name, obj: json.dump(obj, open(OUT / name, "w", encoding="utf-8"), ensure_ascii=False)
     dump("pieces.json", pieces); dump("percurso.json", percurso); dump("escada.json", escada)
     dump("lotes.json", lotes); dump("abc.json", abc); dump("quality.json", quality)
+    dump("abc_full.json", {b["stem"]: b["abc_full"] for b in builds})   # peça inteira ("tocar inteira")
     dump("pedagogia.json", pedag); dump("tecnica.json", tecnica)
     shutil.copy(CONTENT / "cells.json", OUT / "cells.json")
     if (CONTENT / "pedagogia" / "app_prep.json").exists():
