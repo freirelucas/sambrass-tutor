@@ -28,6 +28,7 @@ def emit_sambrass():
     shutil.copy(C / "curadoria" / "escada.json", dest / "escada.json")
     _cp_opt(C / "notes_abc.json", dest / "abc.json")
     _cp_opt(C / "notes_quality.json", dest / "quality.json")
+    _cp_opt(C / "curadoria" / "build" / "blocos.json", dest / "blocos.json")   # índice de blocos (cor+forma) p/ a tela de blocos
     rot = json.load(open(C / "curriculum" / "sambrass23-6semanas.json", encoding="utf-8"))["rotina_diaria"]
     json.dump(rot, open(dest / "rotina.json", "w", encoding="utf-8"), ensure_ascii=False)
     ped = C / "pedagogia"

@@ -147,6 +147,28 @@ def structure(events):
             "ambito_semitons": max(notes) - min(notes), "classe": classe}
 
 
+def meter_beats(compasso):
+    try:
+        num, den = str(compasso).split("/"); return int(num) * 4 / int(den)
+    except Exception:
+        return 4.0
+
+
+def onsets_first(events, meter, nbars=2):
+    """Posições de ataque (em tempos, dentro do compasso) das ~2 primeiras barras — o 'groove'."""
+    pos = 0.0; cur = None; first = None; out = []
+    for e in events:
+        m = e.get("measure")
+        if m != cur:
+            cur = m; pos = 0.0
+        if first is None and m is not None:
+            first = m
+        if "written_midi" in e and first is not None and m < first + nbars:
+            out.append(round(pos % meter, 3))
+        pos += e.get("dur_beats", 0) or 0
+    return sorted(set(out))
+
+
 def find_musicxml(pid):
     cands = glob.glob(str(CONTENT / "notes" / "**" / f"{pid}.musicxml"), recursive=True)
     cands.sort(key=lambda p: ("/omr/" in p))   # prefere não-OMR se houver
@@ -173,6 +195,11 @@ def main():
         ausentes = sorted(t for t in tags if t in DETECTAVEIS and t not in presentes)
         extras = sorted(c for c in presentes if c not in tags and c in ("C3", "C4", "C5", "C6"))
         riff = extract_riff(ev)
+        mb = meter_beats(p.get("compasso", "4/4"))
+        ons = onsets_first(ev, mb)
+        riff_rec = ({"len": riff["len"], "x": riff["count"], "cobertura": round(repeticao_ratio(ev), 2),
+                     "midis": [m for m, _ in riff["notes"]], "durs": [round(dd, 3) for _, dd in riff["notes"]]}
+                    if riff else None)
         dom = next((c for c in ["C4", "C5", "C3", "C2", "C6", "C1"] if c in tags), "-")
         modo_lbl = cor["modo"] + (("/" + cor["dica_modal"]) if cor.get("dica_modal") else "")
         cor_lbl = f"{cor['tonica']} {modo_lbl}"
@@ -180,9 +207,9 @@ def main():
         modos[modo_lbl] += 1; classes[est.get("classe", "?")] += 1
         reg[pid] = {"jornada": jornada, "titulo": p.get("titulo", p.get("title", "")),
                     "armadura": key, "cor": cor, "forma": est, "bloco": bloco, "celula_dominante": dom,
+                    "dif": p.get("dificuldade"), "meter": mb, "onsets": ons,
                     "celulas_marcadas": sorted(tags), "celulas_detectadas": sorted(presentes),
-                    "tags_nao_confirmadas": ausentes, "celulas_extra_candidatas": extras,
-                    "riff": {"len": riff["len"], "x": riff["count"], "cobertura": round(repeticao_ratio(ev), 2)} if riff else None}
+                    "tags_nao_confirmadas": ausentes, "celulas_extra_candidatas": extras, "riff": riff_rec}
         blocos[bloco].append(pid)
         if ausentes:
             diverg.append((pid, p.get("titulo", ""), sorted(tags), ausentes))

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d0c">
+<title>Blocos — as geometrias do acervo · Sambrass</title>
+<link rel="stylesheet" href="./vendor/abcjs-audio.css">
+<style>
+:root{--bg:#0e0d0c;--pane:#1a1813;--linha:#2c281f;--tinta:#f6f0e4;--suave:#a99c84;--ouro:#e9b850;
+  --warm:#e8932e;--cool:#2f8fd0;--verde:#54c98e;--vinho:#cf3a4c;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--serif:"Iowan Old Style",Palatino,Georgia,serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tinta);font:15px/1.5 var(--sans);padding-bottom:96px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 0;border-bottom:1px solid var(--linha)}
+h1{font-family:var(--serif);font-weight:600;font-size:23px;margin:0 0 3px}
+.sub{color:var(--suave);font-size:13px;margin:0 0 12px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--linha);border-bottom:none;background:#211e17;color:var(--suave);
+  border-radius:10px 10px 0 0;padding:9px 15px;min-height:42px}
+.tabs button.on{background:var(--pane);color:var(--ouro)}
+main{padding:18px 0}
+.view{display:none}.view.on{display:block}
+.hint{color:var(--suave);font-size:12.5px;margin:0 0 14px}
+.grid{display:flex;flex-wrap:wrap;gap:10px}
+.card{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:8px;cursor:pointer;text-align:center;transition:transform .08s}
+.card:hover{transform:translateY(-2px);border-color:var(--ouro)}
+.card.sel{outline:2px solid var(--ouro);outline-offset:2px}
+.card .nm{font-size:11px;color:var(--suave);margin-top:4px;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card svg{display:block}
+.grphead{width:100%;font-family:var(--serif);font-size:15px;color:var(--ouro);margin:16px 0 4px;border-bottom:1px solid var(--linha);padding-bottom:3px}
+#corwrap{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+#corsvg{background:#fffdf8;border-radius:14px;flex:0 0 auto}
+.leg{font-size:12.5px;color:var(--suave)}
+.leg b{color:var(--tinta)} .dotw{color:var(--warm)} .dotc{color:var(--cool)}
+.tile{border-radius:5px;cursor:pointer;border:1px solid rgba(255,255,255,.12);position:relative}
+.tile:hover{outline:2px solid #fff}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#15130e;border-top:1px solid var(--linha);padding:10px 16px;z-index:9}
+.bar .wrap{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.bar .who{font-weight:700} .bar .det{color:var(--suave);font-size:12.5px}
+button.act{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);min-height:42px;padding:0 13px}
+button.play{background:linear-gradient(180deg,#ffd97a,#caa043);color:#1a1206;border-color:#caa043}
+button.maj{border-color:var(--warm)} button.maj.on{background:var(--warm);color:#1a1206}
+button.min{border-color:var(--cool)} button.min.on{background:var(--cool);color:#06121c}
+button.ok{border-color:var(--verde)} button.ok.on{background:var(--verde);color:#06160f}
+.prog{font-size:12.5px;color:var(--ouro);font-weight:700}
+a.volta{color:var(--suave);text-decoration:none;margin-left:auto}a.volta:hover{color:var(--ouro)}
+textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--linha);border-radius:9px;color:var(--tinta);padding:8px;font:12px/1.4 ui-monospace,monospace;margin-top:8px;display:none}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Blocos — as geometrias do acervo</h1>
+  <p class="sub">Cada peça é um bloco com <b>cor</b> (tom+modo) e <b>forma</b> (estrutura). Clique um bloco para <b>ouvir</b> e, na vista <b>Cor</b>, confirmar maior/menor por ouvido. Atalhos: <b>Espaço</b> ouvir · <b>M</b> maior · <b>N</b> menor · <b>✓=Enter</b>.</p>
+  <div class="tabs" id="tabs"></div>
+</div></header>
+
+<main class="wrap">
+  <section class="view" id="v-cor"></section>
+  <section class="view" id="v-contorno"></section>
+  <section class="view" id="v-groove"></section>
+  <section class="view" id="v-parede"></section>
+</main>
+
+<div class="bar"><div class="wrap">
+  <span class="who" id="who">— selecione um bloco —</span>
+  <span class="det" id="det"></span>
+  <button class="act play" id="bplay">▶ ouvir</button>
+  <button class="act maj" id="bmaj">maior</button>
+  <button class="act min" id="bmin">menor</button>
+  <button class="act ok" id="bok">✓ confere</button>
+  <span class="prog" id="prog"></span>
+  <button class="act" id="bexport">📋 exportar</button>
+  <a class="volta" href="./index.html">‹ app</a>
+</div><div class="wrap"><textarea id="saida" readonly></textarea></div></div>
+
+<div id="scratch" style="display:none"></div>
+<script src="./vendor/abcjs.js"></script>
+<script>
+'use strict';
+const KEY='blocos_revisao_v1';
+const $=s=>document.querySelector(s);
+const PC={C:0,Db:1,'C#':1,D:2,Eb:3,'D#':3,E:4,F:5,'F#':6,Gb:6,G:7,Ab:8,'G#':8,A:9,Bb:10,'A#':10,B:11};
+const COF=[0,7,2,9,4,11,6,1,8,3,10,5];            // círculo de quintas (C no topo, horário)
+const COFPOS={}; COF.forEach((pc,i)=>COFPOS[pc]=i);
+const MAJL={0:'C',7:'G',2:'D',9:'A',4:'E',11:'B',6:'F♯',1:'D♭',8:'A♭',3:'E♭',10:'B♭',5:'F'};
+const MINL={0:'Am',7:'Em',2:'Bm',9:'F♯m',4:'C♯m',11:'G♯m',6:'E♭m',1:'B♭m',8:'Fm',3:'Cm',10:'Gm',5:'Dm'};
+const WARM='#e8932e',COOL='#2f8fd0';
+const hueOf=pc=>`hsl(${(COFPOS[pc]??0)*30},70%,55%)`;
+const rad=d=>d*Math.PI/180;
+
+let DB={}, ABC={}, AC=null, sel=null;
+const state=JSON.parse(localStorage.getItem(KEY)||'{}');
+const save=()=>{localStorage.setItem(KEY,JSON.stringify(state)); paintProg();};
+
+function unlock(){try{if(!AC){AC=new(window.AudioContext||window.webkitAudioContext)();ABCJS.synth.registerAudioContext(AC);}if(AC.state==='suspended')AC.resume();}catch(e){}}
+['pointerdown','keydown'].forEach(ev=>document.addEventListener(ev,unlock,{capture:true,once:false}));
+
+async function play(id){
+  const abc=ABC[id]; if(!abc||!window.ABCJS?.synth?.supportsAudio())return; unlock();
+  try{
+    const v=ABCJS.renderAbc('scratch',abc.replace(/\nT:[^\n]*/,''))[0];
+    const s=new ABCJS.synth.CreateSynth();
+    await s.init({audioContext:AC,visualObj:v,options:{soundFontUrl:'./vendor/soundfont/',program:56}});
+    await s.prime(); s.start();
+  }catch(e){}
+}
+
+// ---------- seleção + confirmação (revisão de cor) ----------
+function selectPiece(id){
+  sel=id; const r=DB[id]; if(!r)return;
+  const c=r.cor, m=c.modo+(c.dica_modal?'/'+c.dica_modal:'');
+  $('#who').textContent=`${id} · ${r.titulo||''}`;
+  const low=c.conf<0.06?' ⚠ baixa confiança':'';
+  $('#det').textContent=`achei: ${c.tonica} ${m} (conf ${c.conf}${low}) · ${r.forma?.classe||''} · armadura ${r.armadura}`;
+  const st=state[id]||{};
+  $('#bmaj').classList.toggle('on',st.modo==='maior');
+  $('#bmin').classList.toggle('on',st.modo==='menor');
+  $('#bok').classList.toggle('on',!!st.ok);
+  document.querySelectorAll('.card.sel,.tile.sel').forEach(e=>e.classList.remove('sel'));
+  document.querySelectorAll(`[data-id="${id}"]`).forEach(e=>e.classList.add('sel'));
+}
+function setModo(modo){ if(!sel)return; const st=state[sel]||{}; st.modo=st.modo===modo?'':modo; st.ok=true; state[sel]=st; save(); selectPiece(sel); }
+function confere(){ if(!sel)return; const st=state[sel]||(state[sel]={}); st.ok=!st.ok; if(st.ok&&!st.modo)st.modo=DB[sel].cor.modo; save(); selectPiece(sel); }
+function paintProg(){
+  const ids=Object.keys(DB), done=ids.filter(i=>state[i]?.ok).length;
+  $('#prog').textContent=`${done}/${ids.length} confirmados`;
+}
+$('#bplay').onclick=()=>sel&&play(sel);
+$('#bmaj').onclick=()=>setModo('maior'); $('#bmin').onclick=()=>setModo('menor'); $('#bok').onclick=confere;
+$('#bexport').onclick=async()=>{
+  const out={}; Object.keys(DB).forEach(id=>{const s=state[id];if(s?.ok)out[id]={modo:s.modo||DB[id].cor.modo,nota:s.nota||''};});
+  const txt='REVISÃO DE COR (blocos)\n'+JSON.stringify(out,null,1);
+  $('#saida').style.display='block'; $('#saida').value=txt;
+  try{await navigator.clipboard.writeText(txt);}catch(e){$('#saida').select();}
+};
+document.addEventListener('keydown',e=>{
+  if(e.target.matches('input,textarea')||!sel)return;
+  if(e.key===' '){e.preventDefault();play(sel);}
+  else if(e.key==='m'||e.key==='M')setModo('maior');
+  else if(e.key==='n'||e.key==='N')setModo('menor');
+  else if(e.key==='Enter')confere();
+});
+
+// ---------- VISTA COR: círculo de quintas ----------
+function renderCor(){
+  const R=210,CX=250,CY=250, pieces=Object.entries(DB).filter(([,r])=>['maior','menor'].includes(r.cor.modo));
+  const groups={};
+  for(const [id,r] of pieces){
+    const tpc=PC[r.cor.tonica]; if(tpc==null)continue;
+    const sector=r.cor.modo==='maior'?COFPOS[tpc]:COFPOS[(tpc+3)%12];
+    const ring=r.cor.modo==='maior'?'out':'in';
+    (groups[sector+'_'+ring]=groups[sector+'_'+ring]||[]).push([id,r]);
+  }
+  let dots='';
+  for(const kk in groups){
+    const [sector,ring]=kk.split('_'); const items=groups[kk];
+    const base=ring==='out'?1.0:0.62, ang0=90-30*sector, cols=Math.max(1,Math.ceil(Math.sqrt(items.length)));
+    items.forEach(([id,r],idx)=>{
+      const row=Math.floor(idx/cols), col=idx%cols;
+      const da=(col-(cols-1)/2)*6.5, dr=0.085+row*0.075;
+      const a=rad(ang0+da), rd=(ring==='out'?base-dr:base-dr+0.18);
+      const x=CX+rd*R*Math.cos(a), y=CY-rd*R*Math.sin(a);
+      const maj=r.cor.modo==='maior', faint=r.cor.conf<0.06, conf=state[id]?.ok;
+      dots+=`<circle data-id="${id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${conf?7:5.5}" fill="${maj?WARM:COOL}" `
+        +`opacity="${faint&&!conf?0.4:0.95}" stroke="${conf?'#1a1206':'#fff'}" stroke-width="${conf?2:0.8}"><title>${id} ${r.titulo}</title></circle>`;
+    });
+  }
+  let spokes='';
+  for(let p=0;p<12;p++){const a=rad(90-30*p);
+    spokes+=`<line x1="${CX+0.5*R*Math.cos(a)}" y1="${CY-0.5*R*Math.sin(a)}" x2="${CX+1.2*R*Math.cos(a)}" y2="${CY-1.2*R*Math.sin(a)}" stroke="#ece3d1"/>`;
+    spokes+=`<text x="${CX+1.32*R*Math.cos(a)}" y="${CY-1.32*R*Math.sin(a)+4}" text-anchor="middle" font-size="13" font-weight="bold" fill="#5b4a2a">${MAJL[COF[p]]}</text>`;
+    spokes+=`<text x="${CX+0.5*R*Math.cos(a)}" y="${CY-0.5*R*Math.sin(a)+3}" text-anchor="middle" font-size="9" fill="#9a8aa0">${MINL[COF[p]]}</text>`;
+  }
+  const nMaj=pieces.filter(([,r])=>r.cor.modo==='maior').length, nMin=pieces.length-nMaj;
+  $('#v-cor').innerHTML=`<p class="hint">O espaço tonal do acervo. Externo = maior, interno = relativo menor. Clique um ponto, ouça, e confirme <b>M</b>aior/me<b>N</b>or — os esmaecidos (${pieces.filter(([,r])=>r.cor.conf<0.06).length}) pedem seu ouvido.</p>
+   <div id="corwrap"><svg id="corsvg" width="${CX*2+60}" height="${CY*2}" viewBox="0 0 ${CX*2+60} ${CY*2}">
+     <circle cx="${CX}" cy="${CY}" r="${R}" fill="none" stroke="#d8cdb8"/><circle cx="${CX}" cy="${CY}" r="${0.62*R}" fill="none" stroke="#d8cdb8"/>
+     ${spokes}${dots}</svg>
+   <div class="leg"><p><b>${nMaj}</b> <span class="dotw">●</span> maiores · <b>${nMin}</b> <span class="dotc">●</span> menores</p>
+   <p>O catálogo só guardava a <i>armadura</i>; a tônica+modo foi recuperada das notas. ● com borda escura = você confirmou.</p>
+   <p>A escada de Lego vira uma <b>rota neste círculo</b>: andar de quinta em quinta = um acidente por vez.</p></div></div>`;
+  $('#corsvg').querySelectorAll('circle[data-id]').forEach(c=>c.style.cursor='pointer');
+  $('#corsvg').addEventListener('click',e=>{const t=e.target.closest('[data-id]'); if(t){selectPiece(t.dataset.id);play(t.dataset.id);}});
+}
+
+// ---------- VISTA CONTORNO: a cordilheira do riff ----------
+function contourSVG(midis,color){
+  if(!midis||midis.length<2)return '<svg width="120" height="54"></svg>';
+  const W=120,H=54,lo=Math.min(...midis),hi=Math.max(...midis),rg=Math.max(1,hi-lo);
+  const pts=midis.map((m,i)=>`${(6+i*(W-12)/(midis.length-1)).toFixed(1)},${(H-6-(m-lo)/rg*(H-12)).toFixed(1)}`).join(' ');
+  const dotsc=midis.map((m,i)=>`<circle cx="${(6+i*(W-12)/(midis.length-1)).toFixed(1)}" cy="${(H-6-(m-lo)/rg*(H-12)).toFixed(1)}" r="2" fill="${color}"/>`).join('');
+  return `<svg width="${W}" height="${H}"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round"/>${dotsc}</svg>`;
+}
+function renderContorno(){
+  const byClass={};
+  for(const [id,r] of Object.entries(DB)){ if(!r.riff?.midis)continue; (byClass[r.forma?.classe||'?']=byClass[r.forma?.classe||'?']||[]).push([id,r]); }
+  let h='<p class="hint">Cada bloco é a <b>linha do seu riff</b> — a "cordilheira". Mesma forma = mesmo Lego. Agrupado por classe estrutural. Clique p/ ouvir.</p>';
+  for(const cls of ['arpejado','misto','escalar','saltado']){
+    const arr=byClass[cls]; if(!arr)continue;
+    h+=`<div class="grphead">${cls} · ${arr.length}</div><div class="grid">`;
+    for(const [id,r] of arr){
+      const col=r.cor.modo==='maior'?WARM:COOL;
+      h+=`<div class="card" data-id="${id}">${contourSVG(r.riff.midis,col)}<div class="nm">${r.titulo||id}</div></div>`;
+    }
+    h+='</div>';
+  }
+  const el=$('#v-contorno'); el.innerHTML=h;
+  el.querySelectorAll('.card').forEach(c=>c.onclick=()=>{selectPiece(c.dataset.id);play(c.dataset.id);});
+}
+
+// ---------- VISTA GROOVE: colar rítmico (relógio de tempos) ----------
+function neckSVG(onsets,meter,color){
+  const S=104,cx=S/2,cy=S/2,R=40; if(!meter)meter=4;
+  let ticks='';
+  for(let b=0;b<meter;b++){const a=rad(90-360*b/meter);
+    ticks+=`<circle cx="${(cx+R*Math.cos(a)).toFixed(1)}" cy="${(cy-R*Math.sin(a)).toFixed(1)}" r="2.5" fill="#c9bfa8"/>`;}
+  const pts=(onsets||[]).map(o=>{const a=rad(90-360*(o/meter));return `${(cx+R*Math.cos(a)).toFixed(1)},${(cy-R*Math.sin(a)).toFixed(1)}`;});
+  const poly=pts.length>1?`<polygon points="${pts.join(' ')}" fill="${color}22" stroke="${color}" stroke-width="2"/>`:'';
+  const od=(onsets||[]).map(o=>{const a=rad(90-360*(o/meter));return `<circle cx="${(cx+R*Math.cos(a)).toFixed(1)}" cy="${(cy-R*Math.sin(a)).toFixed(1)}" r="3.5" fill="${color}"/>`}).join('');
+  return `<svg width="${S}" height="${S}"><circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#e7ddca"/>${ticks}${poly}${od}</svg>`;
+}
+function renderGroove(){
+  const cumbias=[],sambas=[];
+  for(const [id,r] of Object.entries(DB)){ (r.jornada==='cumbias'?cumbias:sambas).push([id,r]); }
+  let h='<p class="hint">Ritmo como <b>polígono</b> no relógio de tempos (pontos = ataques nas 2 primeiras barras). A cumbia/chicha tende a polígonos regulares (ritmo euclidiano); a síncope do samba, deslocados. É onde as duas jornadas conversam.</p>';
+  for(const [t,arr] of [['cumbia · chicha',cumbias],['samba',sambas]]){
+    h+=`<div class="grphead">${t} · ${arr.length}</div><div class="grid">`;
+    for(const [id,r] of arr){
+      const col=r.cor.modo==='maior'?WARM:COOL;
+      h+=`<div class="card" data-id="${id}">${neckSVG(r.onsets,r.meter,col)}<div class="nm">${r.titulo||id}</div></div>`;
+    }
+    h+='</div>';
+  }
+  const el=$('#v-groove'); el.innerHTML=h;
+  el.querySelectorAll('.card').forEach(c=>c.onclick=()=>{selectPiece(c.dataset.id);play(c.dataset.id);});
+}
+
+// ---------- VISTA PAREDE: tiles de Lego ----------
+function renderParede(){
+  const arr=Object.entries(DB).slice().sort((a,b)=>{
+    const pa=COFPOS[PC[a[1].cor.tonica]]??99, pb=COFPOS[PC[b[1].cor.tonica]]??99;
+    return pa-pb || (a[1].dif||3)-(b[1].dif||3);
+  });
+  let h='<p class="hint">Cada peça é um <b>tile de Lego</b>: <b>matiz</b> = tom (posição no círculo), <b>claro/escuro</b> = maior/menor, <b>tamanho</b> = dificuldade/âmbito. Ordenado por cor. Clique p/ ouvir.</p><div class="grid" style="gap:6px">';
+  for(const [id,r] of arr){
+    const tpc=PC[r.cor.tonica]??0, maj=r.cor.modo==='maior';
+    const hue=(COFPOS[tpc]??0)*30, light=maj?58:40, sat=maj?72:55;
+    const sz=10+((r.dif||Math.min(7,3+(r.forma?.ambito_semitons||7)/5)))*6;
+    h+=`<div class="tile" data-id="${id}" title="${id} · ${r.titulo} · ${r.cor.tonica} ${r.cor.modo}${r.dif?' · dif '+r.dif:''}" `
+      +`style="width:${sz}px;height:${sz}px;background:hsl(${hue},${sat}%,${light}%)"></div>`;
+  }
+  h+='</div>';
+  const el=$('#v-parede'); el.innerHTML=h;
+  el.querySelectorAll('.tile').forEach(c=>c.onclick=()=>{selectPiece(c.dataset.id);play(c.dataset.id);});
+}
+
+// ---------- tabs ----------
+const VIEWS=[['cor','Cor · círculo de quintas',renderCor],['contorno','Contorno · cordilheira',renderContorno],
+  ['groove','Groove · colar rítmico',renderGroove],['parede','Parede de Lego',renderParede]];
+let built={};
+function showTab(k){
+  VIEWS.forEach(([id])=>{$('#v-'+id).classList.toggle('on',id===k);});
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.k===k));
+  if(!built[k]){ VIEWS.find(v=>v[0]===k)[2](); built[k]=true; }
+}
+$('#tabs').innerHTML=VIEWS.map(([id,lbl])=>`<button data-k="${id}">${lbl}</button>`).join('');
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>showTab(b.dataset.k));
+
+(async function(){
+  const j=async f=>{try{return await(await fetch(f)).json();}catch(e){return null;}};
+  const [blocos,abcS,abcC]=await Promise.all([j('./data/blocos.json'),j('./data/abc.json'),j('./data/cumbias/abc.json')]);
+  DB=blocos?.pecas||{}; ABC={...(abcS||{}),...(abcC||{})};
+  paintProg(); showTab('cor');
+})();
+</script>
+</body>
+</html>

@@ -41,6 +41,13 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C2",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -61,7 +68,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     74,
+     77,
+     75,
+     74,
+     72,
+     71,
+     72,
+     72
+    ],
+    "durs": [
+     0.5,
+     1.0,
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-002": {
@@ -101,6 +128,14 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -117,7 +152,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     72,
+     72,
+     69,
+     69,
+     73,
+     74,
+     74,
+     74
+    ],
+    "durs": [
+     0.25,
+     2.0,
+     1.0,
+     0.25,
+     0.5,
+     0.25,
+     2.0,
+     1.0
+    ]
    }
   },
   "sb-003": {
@@ -157,6 +212,16 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -175,7 +240,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     67,
+     65,
+     65,
+     62,
+     62,
+     65
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.75,
+     0.25,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-004": {
@@ -215,6 +296,15 @@
    },
    "bloco": "Ab maior · misto",
    "celula_dominante": "C1",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C7"
@@ -237,7 +327,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     62,
+     67,
+     69,
+     70
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-005": {
@@ -277,6 +379,12 @@
    },
    "bloco": "G maior · misto",
    "celula_dominante": "C5",
+   "dif": 4,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    3.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -294,7 +402,17 @@
    "riff": {
     "len": 3,
     "x": 4,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     73,
+     73,
+     73
+    ],
+    "durs": [
+     0.667,
+     0.667,
+     0.667
+    ]
    }
   },
   "sb-006": {
@@ -334,6 +452,16 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C5",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -353,7 +481,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     71,
+     72,
+     74,
+     72,
+     71,
+     71,
+     63
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-007": {
@@ -393,6 +539,15 @@
    },
    "bloco": "Db maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -409,7 +564,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.17
+    "cobertura": 0.17,
+    "midis": [
+     67,
+     70,
+     70,
+     67,
+     67,
+     65,
+     63,
+     62
+    ],
+    "durs": [
+     1.0,
+     1.0,
+     0.5,
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-008": {
@@ -449,6 +624,18 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -463,7 +650,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     66,
+     67,
+     79,
+     79,
+     69,
+     67,
+     71,
+     71
+    ],
+    "durs": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-009": {
@@ -503,6 +710,13 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C5",
+   "dif": 3,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -523,7 +737,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.23
+    "cobertura": 0.23,
+    "midis": [
+     77,
+     76,
+     74,
+     74,
+     72,
+     69,
+     65,
+     69
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-010": {
@@ -563,6 +797,13 @@
    },
    "bloco": "G maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.667,
+    1.333
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -581,7 +822,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.15
+    "cobertura": 0.15,
+    "midis": [
+     73,
+     74,
+     76,
+     78,
+     74,
+     76,
+     78,
+     74
+    ],
+    "durs": [
+     0.667,
+     0.667,
+     0.667,
+     0.667,
+     0.667,
+     0.667,
+     0.667,
+     0.667
+    ]
    }
   },
   "sb-011": {
@@ -621,6 +882,13 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    1.0,
+    1.333,
+    1.667
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -641,7 +909,17 @@
    "riff": {
     "len": 3,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     64,
+     67,
+     71
+    ],
+    "durs": [
+     0.333,
+     0.333,
+     0.333
+    ]
    }
   },
   "sb-012": {
@@ -681,6 +959,14 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -701,7 +987,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     71,
+     69,
+     71,
+     69,
+     74,
+     74,
+     72,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-013": {
@@ -741,6 +1047,16 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -761,7 +1077,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     71,
+     71,
+     69,
+     69,
+     69
+    ],
+    "durs": [
+     0.25,
+     0.75,
+     0.25,
+     1.0,
+     0.5
+    ]
    }
   },
   "sb-014": {
@@ -801,6 +1131,17 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C3",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -819,7 +1160,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     77,
+     72,
+     72,
+     69,
+     67,
+     67,
+     66,
+     74
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     2.0,
+     2.0,
+     0.25
+    ]
    }
   },
   "sb-015": {
@@ -859,6 +1220,12 @@
    },
    "bloco": "D maior/mixolídio · arpejado",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -882,7 +1249,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     64,
+     76,
+     76,
+     70,
+     72,
+     74,
+     77,
+     74
+    ],
+    "durs": [
+     1.0,
+     2.0,
+     2.0,
+     0.75,
+     0.5,
+     0.5,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-016": {
@@ -922,6 +1309,11 @@
    },
    "bloco": "Bb menor · arpejado",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -942,7 +1334,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     65,
+     68,
+     72,
+     75
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     2.0
+    ]
    }
   },
   "sb-017": {
@@ -982,6 +1386,12 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C6",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C6"
@@ -994,7 +1404,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.21
+    "cobertura": 0.21,
+    "midis": [
+     67,
+     69,
+     71,
+     64,
+     69,
+     67,
+     66,
+     69
+    ],
+    "durs": [
+     1.0,
+     1.0,
+     2.0,
+     2.0,
+     1.0,
+     1.0,
+     1.0,
+     2.0
+    ]
    }
   },
   "sb-018": {
@@ -1034,6 +1464,16 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1056,7 +1496,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     70,
+     70,
+     70,
+     69,
+     70
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-019": {
@@ -1096,6 +1550,16 @@
    },
    "bloco": "Ab maior · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1118,7 +1582,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     69,
+     62,
+     69,
+     62,
+     63,
+     63
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-020": {
@@ -1158,6 +1638,13 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1176,7 +1663,17 @@
    "riff": {
     "len": 3,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     71,
+     76,
+     74
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     1.0
+    ]
    }
   },
   "sb-021": {
@@ -1216,6 +1713,16 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1238,7 +1745,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.05
+    "cobertura": 0.05,
+    "midis": [
+     74,
+     74,
+     74,
+     74
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-022": {
@@ -1278,6 +1797,14 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -1300,7 +1827,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     79,
+     77,
+     77,
+     76,
+     77,
+     77,
+     74,
+     69
+    ],
+    "durs": [
+     2.0,
+     1.0,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-023": {
@@ -1340,6 +1887,17 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.375,
+    0.875,
+    1.875,
+    2.875,
+    3.875
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1362,7 +1920,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.03
+    "cobertura": 0.03,
+    "midis": [
+     71,
+     70,
+     73,
+     71,
+     70
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-024": {
@@ -1402,6 +1974,16 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1424,7 +2006,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     66,
+     62,
+     62,
+     59,
+     62,
+     66,
+     62
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.5,
+     0.333,
+     0.167,
+     0.25
+    ]
    }
   },
   "sb-025": {
@@ -1464,6 +2064,15 @@
    },
    "bloco": "Eb maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -1484,7 +2093,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     72,
+     74,
+     74,
+     72,
+     70,
+     70,
+     69,
+     65
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-026": {
@@ -1524,6 +2153,19 @@
    },
    "bloco": "Eb maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    2.0,
+    2.75,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1544,7 +2186,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     67,
+     67,
+     67,
+     70,
+     70,
+     74,
+     70,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.75,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-027": {
@@ -1584,6 +2246,13 @@
    },
    "bloco": "C maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -1604,7 +2273,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     71,
+     73,
+     73,
+     73,
+     71,
+     71,
+     71,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-028": {
@@ -1644,6 +2333,17 @@
    },
    "bloco": "Ab maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1664,7 +2364,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     74,
+     74,
+     74,
+     74,
+     74,
+     74,
+     75,
+     75
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-029": {
@@ -1704,6 +2424,13 @@
    },
    "bloco": "D menor · misto",
    "celula_dominante": "C3",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1726,7 +2453,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     64,
+     69,
+     69,
+     65,
+     65,
+     62,
+     64,
+     65
+    ],
+    "durs": [
+     2.0,
+     1.0,
+     0.75,
+     0.25,
+     1.5,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-030": {
@@ -1766,6 +2513,17 @@
    },
    "bloco": "G maior · arpejado",
    "celula_dominante": "C3",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1786,7 +2544,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     69,
+     71,
+     73,
+     73,
+     74,
+     74,
+     74,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-031": {
@@ -1826,6 +2604,15 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1846,7 +2633,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     66,
+     62,
+     62,
+     59,
+     62,
+     62,
+     66,
+     76
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-032": {
@@ -1886,6 +2693,16 @@
    },
    "bloco": "Ab maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -1906,7 +2723,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.19
+    "cobertura": 0.19,
+    "midis": [
+     74,
+     77,
+     75,
+     74,
+     72,
+     70,
+     67,
+     70
+    ],
+    "durs": [
+     0.25,
+     0.333,
+     0.333,
+     0.333,
+     0.333,
+     0.333,
+     0.333,
+     1.0
+    ]
    }
   },
   "sb-033": {
@@ -1946,6 +2783,14 @@
    },
    "bloco": "Bb maior · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -1960,7 +2805,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.13
+    "cobertura": 0.13,
+    "midis": [
+     76,
+     76,
+     76,
+     76,
+     77,
+     77,
+     76,
+     74
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     0.5,
+     0.5,
+     1.0,
+     0.5
+    ]
    }
   },
   "sb-034": {
@@ -2000,6 +2865,16 @@
    },
    "bloco": "D menor · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -2016,7 +2891,17 @@
    "riff": {
     "len": 3,
     "x": 2,
-    "cobertura": 0.05
+    "cobertura": 0.05,
+    "midis": [
+     62,
+     64,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-035": {
@@ -2056,6 +2941,12 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C6",
+   "dif": 3,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C6"
@@ -2073,7 +2964,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.13
+    "cobertura": 0.13,
+    "midis": [
+     74,
+     72,
+     71,
+     72,
+     64,
+     64,
+     66,
+     67
+    ],
+    "durs": [
+     1.0,
+     0.5,
+     0.5,
+     0.75,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-036": {
@@ -2113,6 +3024,11 @@
    },
    "bloco": "D maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -2125,7 +3041,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     76,
+     79,
+     79,
+     78,
+     75,
+     75,
+     76
+    ],
+    "durs": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-037": {
@@ -2165,6 +3099,16 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2185,7 +3129,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     71,
+     71,
+     71,
+     71,
+     69,
+     69,
+     68
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-038": {
@@ -2225,6 +3187,17 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2245,7 +3218,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     72,
+     72,
+     67,
+     67,
+     72,
+     67,
+     67,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     1.0,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-039": {
@@ -2285,6 +3278,21 @@
    },
    "bloco": "Ab menor · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.5,
+    1.75,
+    2.0,
+    3.0,
+    3.25,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2305,7 +3313,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     70,
+     71,
+     70,
+     71,
+     73,
+     73
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.75
+    ]
    }
   },
   "sb-040": {
@@ -2345,6 +3369,14 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2365,7 +3397,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     66,
+     66,
+     66,
+     67,
+     69,
+     67,
+     67,
+     66
+    ],
+    "durs": [
+     0.25,
+     2.0,
+     0.5,
+     0.25,
+     0.5,
+     0.5,
+     0.125,
+     0.125
+    ]
    }
   },
   "sb-041": {
@@ -2405,6 +3457,18 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    1.0,
+    2.0,
+    2.25,
+    2.75,
+    3.0,
+    3.25,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2423,7 +3487,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.15
+    "cobertura": 0.15,
+    "midis": [
+     69,
+     74,
+     72,
+     70,
+     65,
+     62,
+     65,
+     64
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-042": {
@@ -2463,6 +3547,15 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2486,7 +3579,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     69,
+     69,
+     69,
+     71,
+     72,
+     71,
+     69,
+     69
+    ],
+    "durs": [
+     2.0,
+     2.0,
+     0.5,
+     0.5,
+     0.75,
+     0.25,
+     2.0,
+     0.5
+    ]
    }
   },
   "sb-043": {
@@ -2526,6 +3639,13 @@
    },
    "bloco": "D maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2544,7 +3664,17 @@
    "riff": {
     "len": 3,
     "x": 3,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     73,
+     71,
+     70
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-044": {
@@ -2584,6 +3714,15 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2606,7 +3745,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     76,
+     74,
+     74,
+     72,
+     72,
+     71,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-045": {
@@ -2646,6 +3803,17 @@
    },
    "bloco": "G menor/dórico · arpejado",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2668,7 +3836,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     72,
+     74,
+     77,
+     75,
+     74,
+     75,
+     75
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.75,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-046": {
@@ -2708,6 +3894,18 @@
    },
    "bloco": "D menor · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.5,
+    1.5,
+    2.25,
+    2.5,
+    2.75,
+    3.0,
+    3.25,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2730,7 +3928,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     66,
+     67,
+     67,
+     66,
+     67,
+     67,
+     67,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-047": {
@@ -2770,6 +3988,15 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -2790,7 +4017,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     66,
+     66,
+     66,
+     66,
+     67,
+     67,
+     66,
+     66
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-048": {
@@ -2830,6 +4077,13 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C3",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2848,7 +4102,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     71,
+     69,
+     69,
+     71,
+     69,
+     69,
+     71,
+     69
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     1.0,
+     0.75,
+     0.25,
+     1.0,
+     0.75,
+     0.25
+    ]
    }
   },
   "sb-049": {
@@ -2888,6 +4162,19 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.333,
+    0.667,
+    0.75,
+    1.0,
+    1.25,
+    1.75,
+    2.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -2909,7 +4196,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     69,
+     69,
+     69,
+     71,
+     67,
+     64,
+     67,
+     67
+    ],
+    "durs": [
+     0.25,
+     1.0,
+     1.0,
+     0.75,
+     0.125,
+     0.125,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-050": {
@@ -2949,6 +4256,17 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -2969,7 +4287,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.19
+    "cobertura": 0.19,
+    "midis": [
+     69,
+     69,
+     69,
+     69,
+     69,
+     67,
+     65,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.75,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-051": {
@@ -3009,6 +4347,13 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    1.0,
+    3.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3029,7 +4374,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     79,
+     76,
+     79,
+     76
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.75,
+     0.25
+    ]
    }
   },
   "sb-052": {
@@ -3069,6 +4426,11 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C5",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3089,7 +4451,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     69,
+     69,
+     69,
+     71
+    ],
+    "durs": [
+     2.0,
+     1.0,
+     0.333,
+     0.333
+    ]
    }
   },
   "sb-053": {
@@ -3129,6 +4503,16 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    1.125,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3151,7 +4535,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.06
+    "cobertura": 0.06,
+    "midis": [
+     70,
+     70,
+     72,
+     74,
+     76
+    ],
+    "durs": [
+     1.0,
+     0.333,
+     0.333,
+     0.333,
+     1.0
+    ]
    }
   },
   "sb-054": {
@@ -3191,6 +4589,12 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C5"
@@ -3213,7 +4617,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     66,
+     66,
+     66,
+     63,
+     64,
+     64,
+     66,
+     66
+    ],
+    "durs": [
+     1.0,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-055": {
@@ -3253,6 +4677,13 @@
    },
    "bloco": "Bb maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -3273,7 +4704,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.02
+    "cobertura": 0.02,
+    "midis": [
+     67,
+     67,
+     67,
+     67
+    ],
+    "durs": [
+     1.5,
+     1.0,
+     1.0,
+     1.0
+    ]
    }
   },
   "sb-056": {
@@ -3313,6 +4756,21 @@
    },
    "bloco": "D maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.75,
+    2.0,
+    2.5,
+    2.75,
+    3.0,
+    3.25,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3333,7 +4791,17 @@
    "riff": {
     "len": 3,
     "x": 2,
-    "cobertura": 0.03
+    "cobertura": 0.03,
+    "midis": [
+     67,
+     67,
+     66
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-057": {
@@ -3373,6 +4841,11 @@
    },
    "bloco": "Bb maior/mixolídio · misto",
    "celula_dominante": "C3",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3393,7 +4866,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     67,
+     67,
+     70,
+     70,
+     70,
+     70,
+     70,
+     69
+    ],
+    "durs": [
+     2.0,
+     2.0,
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.75
+    ]
    }
   },
   "sb-058": {
@@ -3433,6 +4926,13 @@
    },
    "bloco": "Bb maior/mixolídio · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3454,7 +4954,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.2
+    "cobertura": 0.2,
+    "midis": [
+     70,
+     70,
+     70,
+     72,
+     74,
+     72,
+     72,
+     70
+    ],
+    "durs": [
+     0.25,
+     1.0,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-059": {
@@ -3494,6 +5014,15 @@
    },
    "bloco": "Bb maior · escalar",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3512,7 +5041,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     67,
+     67,
+     69,
+     67,
+     69,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-060": {
@@ -3552,6 +5097,17 @@
    },
    "bloco": "G maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3571,7 +5127,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     68,
+     68,
+     68,
+     68,
+     73,
+     73,
+     69,
+     69
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-061": {
@@ -3611,6 +5187,16 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -3631,7 +5217,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     69,
+     69,
+     69,
+     69,
+     69,
+     69,
+     69,
+     69
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-062": {
@@ -3671,6 +5277,18 @@
    },
    "bloco": "G maior/mixolídio · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3691,7 +5309,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     70,
+     71,
+     71,
+     69,
+     67,
+     67,
+     66,
+     66
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     2.0,
+     0.5,
+     0.25,
+     0.75,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-063": {
@@ -3731,6 +5369,16 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3751,7 +5399,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     67,
+     66,
+     66,
+     66,
+     66,
+     66,
+     67,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-064": {
@@ -3791,6 +5459,13 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -3809,7 +5484,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     69,
+     74,
+     74,
+     73,
+     72,
+     72,
+     65,
+     69
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-065": {
@@ -3849,6 +5544,17 @@
    },
    "bloco": "G maior · misto",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -3867,7 +5573,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     76,
+     76,
+     74,
+     73,
+     73,
+     69,
+     74,
+     74
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-066": {
@@ -3907,6 +5633,15 @@
    },
    "bloco": "G menor · arpejado",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -3925,7 +5660,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.23
+    "cobertura": 0.23,
+    "midis": [
+     64,
+     67,
+     69,
+     72,
+     69,
+     67,
+     64,
+     60
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-067": {
@@ -3965,6 +5720,15 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "C3",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C3"
@@ -3982,7 +5746,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.28
+    "cobertura": 0.28,
+    "midis": [
+     69,
+     72,
+     72,
+     69,
+     69,
+     67,
+     67,
+     67
+    ],
+    "durs": [
+     0.75,
+     0.25,
+     0.5,
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-068": {
@@ -4022,6 +5806,14 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4038,7 +5830,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.25
+    "cobertura": 0.25,
+    "midis": [
+     74,
+     74,
+     71,
+     72,
+     71,
+     69,
+     69,
+     67
+    ],
+    "durs": [
+     0.25,
+     1.0,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-069": {
@@ -4078,6 +5890,13 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4098,7 +5917,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.15
+    "cobertura": 0.15,
+    "midis": [
+     71,
+     71,
+     71,
+     71,
+     70,
+     71,
+     74,
+     73
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.75,
+     0.25
+    ]
    }
   },
   "sb-070": {
@@ -4138,6 +5977,14 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4156,7 +6003,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     66,
+     69,
+     69,
+     71,
+     71,
+     71,
+     73,
+     74
+    ],
+    "durs": [
+     2.0,
+     1.0,
+     0.25,
+     0.5,
+     0.25,
+     2.0,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-071": {
@@ -4196,6 +6063,17 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.167,
+    0.5,
+    1.0,
+    1.5,
+    1.75,
+    1.833
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4217,7 +6095,17 @@
    "riff": {
     "len": 3,
     "x": 3,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     72,
+     71,
+     69
+    ],
+    "durs": [
+     0.333,
+     0.333,
+     0.333
+    ]
    }
   },
   "sb-072": {
@@ -4257,6 +6145,18 @@
    },
    "bloco": "G menor · escalar",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4273,7 +6173,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.17
+    "cobertura": 0.17,
+    "midis": [
+     74,
+     74,
+     74,
+     74,
+     72,
+     71,
+     74,
+     72
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-073": {
@@ -4313,6 +6233,16 @@
    },
    "bloco": "F menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4331,7 +6261,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     67,
+     69,
+     70,
+     70,
+     67,
+     70,
+     70,
+     70
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.75
+    ]
    }
   },
   "sb-074": {
@@ -4371,6 +6321,16 @@
    },
    "bloco": "Bb maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    2.0,
+    3.0,
+    3.25,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4391,7 +6351,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     72,
+     72,
+     72,
+     72,
+     72,
+     72,
+     70,
+     69
+    ],
+    "durs": [
+     3.0,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-075": {
@@ -4431,6 +6411,16 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4451,7 +6441,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     71,
+     69,
+     71,
+     71,
+     66,
+     66,
+     66
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     1.0,
+     2.0,
+     1.0
+    ]
    }
   },
   "sb-076": {
@@ -4491,6 +6499,11 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C2",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4509,7 +6522,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     69,
+     69,
+     69,
+     72,
+     71,
+     69,
+     67,
+     64
+    ],
+    "durs": [
+     2.0,
+     2.0,
+     1.0,
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-077": {
@@ -4549,6 +6582,15 @@
    },
    "bloco": "Ab maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4569,7 +6611,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     74,
+     72,
+     72,
+     72,
+     72,
+     72,
+     72,
+     72
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-078": {
@@ -4609,6 +6671,11 @@
    },
    "bloco": "A menor · escalar",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4626,7 +6693,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     74,
+     73,
+     74,
+     74,
+     73,
+     71,
+     70,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-079": {
@@ -4666,6 +6753,16 @@
    },
    "bloco": "C menor · escalar",
    "celula_dominante": "C4",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4686,7 +6783,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.22
+    "cobertura": 0.22,
+    "midis": [
+     67,
+     69,
+     70,
+     69,
+     67,
+     63,
+     74,
+     72
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.75,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-080": {
@@ -4726,6 +6843,12 @@
    },
    "bloco": "Ab maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4744,7 +6867,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     75,
+     66,
+     72,
+     74,
+     75,
+     74,
+     74,
+     72
+    ],
+    "durs": [
+     2.0,
+     2.0,
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-081": {
@@ -4784,6 +6927,17 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4804,7 +6958,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.2
+    "cobertura": 0.2,
+    "midis": [
+     67,
+     71,
+     71,
+     71,
+     71,
+     74,
+     67,
+     72
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-082": {
@@ -4844,6 +7018,17 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -4862,7 +7047,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     70,
+     70,
+     70,
+     70,
+     70,
+     69,
+     69,
+     74
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-083": {
@@ -4902,6 +7107,22 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -4924,7 +7145,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.18
+    "cobertura": 0.18,
+    "midis": [
+     76,
+     74,
+     72,
+     76,
+     74,
+     72,
+     69,
+     69
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-084": {
@@ -4964,6 +7205,16 @@
    },
    "bloco": "C maior · arpejado",
    "celula_dominante": "C5",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C5",
     "C6"
@@ -4982,7 +7233,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     66,
+     66,
+     66,
+     66,
+     66,
+     69,
+     66,
+     66
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-085": {
@@ -5022,6 +7293,16 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C2",
     "C4"
@@ -5043,7 +7324,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     62,
+     62,
+     60,
+     64,
+     64,
+     64,
+     68,
+     68
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-086": {
@@ -5083,6 +7384,16 @@
    },
    "bloco": "Bb maior · misto",
    "celula_dominante": "C2",
+   "dif": 4,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5103,7 +7414,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     67,
+     70,
+     70,
+     70,
+     70,
+     70,
+     69,
+     69
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.75,
+     0.25,
+     1.0
+    ]
    }
   },
   "sb-087": {
@@ -5143,6 +7474,17 @@
    },
    "bloco": "G maior · arpejado",
    "celula_dominante": "C3",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5161,7 +7503,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.23
+    "cobertura": 0.23,
+    "midis": [
+     69,
+     69,
+     69,
+     69,
+     69,
+     69,
+     69,
+     71
+    ],
+    "durs": [
+     0.25,
+     2.0,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-088": {
@@ -5201,6 +7563,14 @@
    },
    "bloco": "Ab maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5219,7 +7589,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.07
+    "cobertura": 0.07,
+    "midis": [
+     72,
+     74,
+     72,
+     74,
+     74,
+     72
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-089": {
@@ -5259,6 +7645,18 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5279,7 +7677,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     64,
+     64,
+     67,
+     71,
+     72,
+     71,
+     69,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-090": {
@@ -5319,6 +7737,16 @@
    },
    "bloco": "Bb maior/mixolídio · arpejado",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5339,7 +7767,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     69,
+     65,
+     65,
+     65,
+     65,
+     65,
+     65,
+     65
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.333,
+     0.333,
+     0.333
+    ]
    }
   },
   "sb-091": {
@@ -5379,6 +7827,16 @@
    },
    "bloco": "C menor · arpejado",
    "celula_dominante": "C5",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5399,7 +7857,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     62,
+     65,
+     69,
+     67,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     0.25
+    ]
    }
   },
   "sb-092": {
@@ -5439,6 +7911,12 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5457,7 +7935,23 @@
    "riff": {
     "len": 6,
     "x": 2,
-    "cobertura": 0.05
+    "cobertura": 0.05,
+    "midis": [
+     74,
+     72,
+     71,
+     71,
+     69,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-093": {
@@ -5497,6 +7991,17 @@
    },
    "bloco": "E menor · misto",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5515,7 +8020,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     102,
+     102,
+     102,
+     102,
+     102
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-094": {
@@ -5555,6 +8074,11 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5577,7 +8101,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     74,
+     74,
+     74,
+     74,
+     74,
+     69,
+     74,
+     74
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-095": {
@@ -5617,6 +8161,25 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0,
+    3.25,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5637,7 +8200,27 @@
    "riff": {
     "len": 8,
     "x": 5,
-    "cobertura": 0.16
+    "cobertura": 0.16,
+    "midis": [
+     71,
+     71,
+     71,
+     71,
+     71,
+     71,
+     71,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-096": {
@@ -5677,6 +8260,15 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5696,7 +8288,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     62,
+     64,
+     62,
+     67,
+     67,
+     62,
+     64,
+     62
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-097": {
@@ -5736,6 +8348,26 @@
    },
    "bloco": "F maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0,
+    3.25,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5756,7 +8388,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     72,
+     72,
+     71,
+     69,
+     72,
+     72,
+     72,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-098": {
@@ -5796,6 +8448,16 @@
    },
    "bloco": "G menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5814,7 +8476,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.15
+    "cobertura": 0.15,
+    "midis": [
+     72,
+     69,
+     69,
+     71,
+     72,
+     74,
+     69,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.25
+    ]
    }
   },
   "sb-099": {
@@ -5854,6 +8536,18 @@
    },
    "bloco": "Bb maior · arpejado",
    "celula_dominante": "C2",
+   "dif": 5,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5876,7 +8570,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     67,
+     67,
+     64,
+     67,
+     72,
+     72,
+     72
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     1.0,
+     0.25
+    ]
    }
   },
   "sb-100": {
@@ -5916,6 +8628,22 @@
    },
    "bloco": "Bb maior · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.25,
+    3.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -5936,7 +8664,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.2
+    "cobertura": 0.2,
+    "midis": [
+     72,
+     72,
+     72,
+     72,
+     72,
+     71,
+     69,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-101": {
@@ -5976,6 +8724,14 @@
    },
    "bloco": "G menor · escalar",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -5996,7 +8752,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     69,
+     71,
+     72,
+     69,
+     76,
+     79,
+     77,
+     76
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     1.0,
+     1.0,
+     0.75,
+     0.25
+    ]
    }
   },
   "sb-102": {
@@ -6036,6 +8812,14 @@
    },
    "bloco": "Eb maior · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -6058,7 +8842,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     77,
+     77,
+     76,
+     74,
+     69,
+     69,
+     72,
+     74
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-103": {
@@ -6098,6 +8902,18 @@
    },
    "bloco": "C maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -6114,7 +8930,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.13
+    "cobertura": 0.13,
+    "midis": [
+     67,
+     67,
+     67,
+     67,
+     69,
+     71,
+     71,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-104": {
@@ -6154,6 +8990,18 @@
    },
    "bloco": "Bb maior · arpejado",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -6174,7 +9022,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     72,
+     72,
+     71,
+     69,
+     67,
+     64,
+     67,
+     64
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-105": {
@@ -6214,6 +9082,18 @@
    },
    "bloco": "Db maior · misto",
    "celula_dominante": "C2",
+   "dif": 7,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -6230,7 +9110,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     63,
+     65,
+     63,
+     65,
+     63,
+     65,
+     63,
+     65
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "sb-106": {
@@ -6270,6 +9170,16 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.25,
+    0.5,
+    0.75,
+    0.875,
+    1.0,
+    1.25
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -6290,7 +9200,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.21
+    "cobertura": 0.21,
+    "midis": [
+     69,
+     71,
+     72,
+     71,
+     69,
+     71,
+     72,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-107": {
@@ -6330,6 +9260,17 @@
    },
    "bloco": "D maior · misto",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -6349,7 +9290,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.08
+    "cobertura": 0.08,
+    "midis": [
+     71,
+     71,
+     71,
+     71,
+     71,
+     73,
+     71,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "sb-108": {
@@ -6389,6 +9350,15 @@
    },
    "bloco": "E menor · arpejado",
    "celula_dominante": "C4",
+   "dif": 7,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -6409,7 +9379,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     66,
+     66,
+     64,
+     62,
+     64,
+     64,
+     64,
+     66
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-109": {
@@ -6449,6 +9439,17 @@
    },
    "bloco": "Bb menor · misto",
    "celula_dominante": "C2",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [
     "C1",
     "C2"
@@ -6471,7 +9472,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.1
+    "cobertura": 0.1,
+    "midis": [
+     75,
+     72,
+     72,
+     72,
+     72,
+     70,
+     72
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "sb-110": {
@@ -6511,6 +9530,17 @@
    },
    "bloco": "C menor · misto",
    "celula_dominante": "C4",
+   "dif": 6,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5
+   ],
    "celulas_marcadas": [
     "C1",
     "C2",
@@ -6533,7 +9563,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.09
+    "cobertura": 0.09,
+    "midis": [
+     67,
+     65,
+     63,
+     63,
+     69,
+     69,
+     69,
+     69
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     1.0,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-001": {
@@ -6573,6 +9623,14 @@
    },
    "bloco": "Bb maior · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6583,7 +9641,21 @@
    "riff": {
     "len": 5,
     "x": 2,
-    "cobertura": 0.38
+    "cobertura": 0.38,
+    "midis": [
+     67,
+     64,
+     67,
+     69,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
    }
   },
   "cu-002": {
@@ -6623,6 +9695,14 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6633,7 +9713,19 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.31
+    "cobertura": 0.31,
+    "midis": [
+     67,
+     69,
+     67,
+     64
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     1.0
+    ]
    }
   },
   "cu-003": {
@@ -6673,6 +9765,16 @@
    },
    "bloco": "F maior · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6688,7 +9790,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.52
+    "cobertura": 0.52,
+    "midis": [
+     62,
+     67,
+     69,
+     71,
+     72,
+     74,
+     71,
+     67
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     1.0
+    ]
    }
   },
   "cu-004": {
@@ -6728,6 +9850,15 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.75,
+    1.0,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6743,7 +9874,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.27
+    "cobertura": 0.27,
+    "midis": [
+     78,
+     78,
+     76,
+     74,
+     74,
+     74,
+     74,
+     74
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.5,
+     0.75,
+     0.25,
+     0.75,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-005": {
@@ -6783,6 +9934,20 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.75,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6800,7 +9965,27 @@
    "riff": {
     "len": 8,
     "x": 8,
-    "cobertura": 0.14
+    "cobertura": 0.14,
+    "midis": [
+     81,
+     76,
+     76,
+     81,
+     76,
+     81,
+     76,
+     79
+    ],
+    "durs": [
+     0.25,
+     0.75,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     1.0,
+     0.25
+    ]
    }
   },
   "cu-006": {
@@ -6840,6 +10025,22 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6855,7 +10056,27 @@
    "riff": {
     "len": 8,
     "x": 8,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     71,
+     71,
+     71,
+     71,
+     74,
+     76,
+     78,
+     78
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-007": {
@@ -6895,6 +10116,22 @@
    },
    "bloco": "E menor · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    1.25,
+    1.5,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0,
+    3.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6912,7 +10149,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.11
+    "cobertura": 0.11,
+    "midis": [
+     69,
+     73,
+     76,
+     68,
+     73,
+     77,
+     66,
+     66
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-008": {
@@ -6952,6 +10209,14 @@
    },
    "bloco": "C maior/mixolídio · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -6962,7 +10227,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.26
+    "cobertura": 0.26,
+    "midis": [
+     64,
+     67,
+     71,
+     67,
+     64,
+     62,
+     62,
+     66
+    ],
+    "durs": [
+     1.0,
+     0.5,
+     1.0,
+     0.5,
+     0.5,
+     3.0,
+     1.0,
+     0.5
+    ]
    }
   },
   "cu-009": {
@@ -7002,6 +10287,16 @@
    },
    "bloco": "A menor · misto",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.25,
+    2.667,
+    3.0,
+    3.5,
+    3.75
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7021,7 +10316,27 @@
    "riff": {
     "len": 8,
     "x": 32,
-    "cobertura": 0.47
+    "cobertura": 0.47,
+    "midis": [
+     64,
+     71,
+     71,
+     74,
+     71,
+     71,
+     69,
+     67
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25,
+     0.5,
+     0.25
+    ]
    }
   },
   "cu-010": {
@@ -7061,6 +10376,17 @@
    },
    "bloco": "E maior/mixolídio · misto",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7076,7 +10402,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.15
+    "cobertura": 0.15,
+    "midis": [
+     68,
+     70,
+     73,
+     71,
+     73,
+     71,
+     68,
+     70
+    ],
+    "durs": [
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-011": {
@@ -7116,6 +10462,9 @@
    },
    "bloco": "C maior · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 4.0,
+   "onsets": [],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7133,7 +10482,27 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.17
+    "cobertura": 0.17,
+    "midis": [
+     69,
+     69,
+     69,
+     66,
+     71,
+     71,
+     71,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.75,
+     0.75
+    ]
    }
   },
   "cu-012": {
@@ -7173,6 +10542,15 @@
    },
    "bloco": "D maior/mixolídio · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7190,7 +10568,27 @@
    "riff": {
     "len": 8,
     "x": 4,
-    "cobertura": 0.2
+    "cobertura": 0.2,
+    "midis": [
+     76,
+     74,
+     76,
+     74,
+     76,
+     74,
+     76,
+     74
+    ],
+    "durs": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ]
    }
   },
   "cu-014": {
@@ -7230,6 +10628,9 @@
    },
    "bloco": "A menor · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7245,7 +10646,27 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.2
+    "cobertura": 0.2,
+    "midis": [
+     66,
+     71,
+     74,
+     78,
+     78,
+     81,
+     80,
+     78
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5,
+     0.75,
+     0.75,
+     0.5,
+     0.75,
+     0.75
+    ]
    }
   },
   "cu-015": {
@@ -7285,6 +10706,14 @@
    },
    "bloco": "E menor · misto",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7300,7 +10729,25 @@
    "riff": {
     "len": 7,
     "x": 2,
-    "cobertura": 0.12
+    "cobertura": 0.12,
+    "midis": [
+     71,
+     77,
+     77,
+     78,
+     78,
+     78,
+     71
+    ],
+    "durs": [
+     0.25,
+     0.5,
+     0.25,
+     1.0,
+     0.25,
+     0.25,
+     0.5
+    ]
    }
   },
   "cu-016": {
@@ -7340,6 +10787,15 @@
    },
    "bloco": "D menor · arpejado",
    "celula_dominante": "-",
+   "dif": null,
+   "meter": 2.0,
+   "onsets": [
+    0.0,
+    1.0,
+    1.25,
+    1.5,
+    1.75
+   ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
@@ -7355,7 +10811,27 @@
    "riff": {
     "len": 8,
     "x": 5,
-    "cobertura": 0.19
+    "cobertura": 0.19,
+    "midis": [
+     66,
+     69,
+     64,
+     64,
+     67,
+     64,
+     67,
+     71
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     1.0,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     1.0
+    ]
    }
   }
  },
