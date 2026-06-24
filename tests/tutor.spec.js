@@ -57,6 +57,7 @@ test('rótulo de qualidade reflete o tier (melodia fundida pelos dedos)', async 
 });
 
 test('banco mostra o nível pedagógico e filtra por ele', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await page.waitForFunction(() => document.querySelector('#tela') && document.querySelector('#tela').textContent.length > 40);
   await page.evaluate(() => ir('banco'));                           // ir() é global (onclick inline)
@@ -91,6 +92,7 @@ test('ligar microfone e praticar: tuner ativa e o cursor silencioso avança', as
 test('trilha é a home: 110 nós em 6 lotes, sem cadeado, com bandeira SUGERIDA', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
+  await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
   await expect(page.locator('.lotehead')).toHaveCount(6);
@@ -103,6 +105,7 @@ test('trilha é a home: 110 nós em 6 lotes, sem cadeado, com bandeira SUGERIDA'
 test('Story por música: capa→perfil→plano→desafio com pauta→diário marca dominada', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
+  await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
 
@@ -127,6 +130,7 @@ test('Story por música: capa→perfil→plano→desafio com pauta→diário mar
 });
 
 test('a síntese: o desafio leva ao tutor de escuta real (estudo.html)', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
   await page.locator('.node .inner').first().click();
@@ -134,4 +138,14 @@ test('a síntese: o desafio leva ao tutor de escuta real (estudo.html)', async (
   await page.locator('.micbtn').first().click();                         // 🎤 tocar no tutor
   await page.waitForURL(/estudo\.html\?id=sb-\d+/);
   await expect(page.locator('#badges')).toContainText('nível', { timeout: 10000 });
+});
+
+/* ---- Cumbias agora é a LINHA PRINCIPAL (default, sem jornada salva) ---- */
+test('home padrão é Cumbias: seletor em Cumbias e 15 nós', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/index.html');                                       // sem jornada salva → default
+  await expect(page.locator('.jsel button.on')).toContainText('Cumbias');
+  await expect(page.locator('.path .node')).toHaveCount(15, { timeout: 10000 });
+  expect(errors, 'home cumbias sem exceções').toEqual([]);
 });

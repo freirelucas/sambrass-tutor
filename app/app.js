@@ -7,12 +7,13 @@ const tela = document.getElementById('tela');
 
 /* ---------- jornadas (multi-corpus) ---------- */
 // Sambrass fica intacto (data/ flat, chaves sb2_*); Cumbias entram ao lado (data/cumbias/, cu2_*).
+// Cumbias é a LINHA PRINCIPAL (default + 1ª no seletor); Sambrass fica como alternativa.
 const JORNADAS = {
-  sambrass: { nome: 'O Caminho do Sambrass', curto: 'Sambrass', sub: 'sambas · Book 1 → Arban', base: '', store: 'sb2', prefix: 'sb' },
-  cumbias: { nome: 'Jornada das Cumbias', curto: 'Cumbias', sub: 'cumbia · chicha · riffs', base: 'cumbias/', store: 'cu2', prefix: 'cu' }
+  cumbias: { nome: 'Jornada das Cumbias', curto: 'Cumbias', sub: 'cumbia · chicha · riffs', base: 'cumbias/', store: 'cu2', prefix: 'cu' },
+  sambrass: { nome: 'O Caminho do Sambrass', curto: 'Sambrass', sub: 'sambas · Book 1 → Arban', base: '', store: 'sb2', prefix: 'sb' }
 };
-let JORNADA = localStorage.getItem('jornada_ativa') || 'sambrass';
-if (!JORNADAS[JORNADA]) JORNADA = 'sambrass';
+let JORNADA = localStorage.getItem('jornada_ativa') || 'cumbias';
+if (!JORNADAS[JORNADA]) JORNADA = 'cumbias';
 const JCFG = () => JORNADAS[JORNADA];
 
 async function carregar() {
