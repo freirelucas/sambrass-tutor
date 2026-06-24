@@ -1,0 +1,45 @@
+{
+ "pieces": [
+  {
+   "num": 1,
+   "id": "cu-001",
+   "titulo": "Sonido Amazónico",
+   "compositor": "Los Mirlos (arr. Lucca Ramalho)",
+   "key_concert": "Bb",
+   "compasso": "2/4",
+   "forma": [
+    "A",
+    "B",
+    "C"
+   ],
+   "quality": "rascunho"
+  },
+  {
+   "num": 2,
+   "id": "cu-002",
+   "titulo": "A Patrícia",
+   "compositor": "Los Destellos",
+   "key_concert": "Bb",
+   "compasso": "2/4",
+   "forma": [
+    "A",
+    "B",
+    "C"
+   ],
+   "quality": "rascunho"
+  },
+  {
+   "num": 3,
+   "id": "cu-003",
+   "titulo": "Cumbia del Monte",
+   "compositor": "(tradicional / arr. desconhecido)",
+   "key_concert": "F",
+   "compasso": "2/4",
+   "forma": [
+    "A",
+    "B"
+   ],
+   "quality": "rascunho"
+  }
+ ]
+}
