@@ -1,0 +1,61 @@
+2026-06-24 14:32:10,322 INFO [cu-007]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-007.png
+2026-06-24 14:32:10,365 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:32:10,365 INFO []                 Book.java:2525 | Book stored as omr/out/cu-007.omr
+2026-06-24 14:32:10,365 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-24 14:32:10,366 INFO [cu-007]       StepMonitoring.java:98   | LOAD
+2026-06-24 14:32:10,453 INFO [cu-007]            SheetStub.java:1278 | Loaded image #1 2480x3509 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-007.png
+2026-06-24 14:32:10,454 INFO [cu-007]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-24 14:32:10,554 INFO [cu-007]       StepMonitoring.java:98   | BINARY
+2026-06-24 14:32:10,868 INFO [cu-007]       StepMonitoring.java:98   | SCALE
+2026-06-24 14:32:10,870 INFO [cu-007]         ScaleBuilder.java:255  | Beam  guessed height: 13 -- mid of [6..20]
+2026-06-24 14:32:10,870 INFO [cu-007]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.36 of [6..20] range at 1027% of needed quorum
+2026-06-24 14:32:10,870 INFO [cu-007]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-06-24 14:32:10,870 INFO [cu-007]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,3,3) beam(11)}
+2026-06-24 14:32:10,870 INFO [cu-007]       StepMonitoring.java:98   | GRID
+2026-06-24 14:32:10,932 INFO [cu-007]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-24 14:32:10,936 INFO [cu-007]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(20,21,21)
+2026-06-24 14:32:10,956 INFO [cu-007]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6] #7[7] #8[8]
+2026-06-24 14:32:11,021 INFO [cu-007]        SystemManager.java:134  | Indentation detected for system #1
+2026-06-24 14:32:11,021 INFO [cu-007]        SystemManager.java:779  | 1 part along 8 systems
+2026-06-24 14:32:11,021 INFO [cu-007]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-24 14:32:11,021 INFO [cu-007]       StepMonitoring.java:98   | HEADERS
+2026-06-24 14:32:11,182 INFO [cu-007]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-24 14:32:11,205 INFO [cu-007]        StemSeedsStep.java:86   | stem(3 max:3)
+2026-06-24 14:32:11,210 INFO [cu-007]       StepMonitoring.java:98   | BEAMS
+2026-06-24 14:32:13,837 INFO [cu-007]       StepMonitoring.java:98   | LEDGERS
+2026-06-24 14:32:13,873 INFO [cu-007]       StepMonitoring.java:98   | HEADS
+2026-06-24 14:32:17,719 INFO [cu-007]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:-0.4]}
+2026-06-24 14:32:17,719 INFO [cu-007]       StepMonitoring.java:98   | STEMS
+2026-06-24 14:32:17,902 INFO [cu-007]       StepMonitoring.java:98   | REDUCTION
+2026-06-24 14:32:17,940 INFO [cu-007]        ReductionStep.java:105  | Stems free length median value: 68 pixels, 3.2 interlines
+2026-06-24 14:32:17,943 INFO [cu-007]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-24 14:32:17,943 INFO [cu-007]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-24 14:32:17,943 INFO [cu-007]       StepMonitoring.java:98   | TEXTS
+2026-06-24 14:32:18,012 WARN [cu-007]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-24 14:32:18,012 INFO [cu-007]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-24 14:32:18,014 INFO [cu-007]       StepMonitoring.java:98   | MEASURES
+2026-06-24 14:32:18,015 INFO [cu-007]                 Page.java:307  | 26 raw measures: [3 in system#1, 3 in system#2, 4 in system#3, 3 in system#4, 3 in system#5, 4 in system#6, 4 in system#7, 2 in system#8]
+2026-06-24 14:32:18,015 INFO [cu-007]       StepMonitoring.java:98   | CHORDS
+2026-06-24 14:32:18,018 INFO [cu-007]       StepMonitoring.java:98   | CURVES
+2026-06-24 14:32:18,379 INFO [cu-007]         SlursBuilder.java:240  | Slurs: 2
+2026-06-24 14:32:18,384 INFO [cu-007]      SegmentsBuilder.java:155  | Segments: 13
+2026-06-24 14:32:18,387 INFO [cu-007]       StepMonitoring.java:98   | SYMBOLS
+2026-06-24 14:32:18,609 INFO [cu-007]       StepMonitoring.java:98   | LINKS
+2026-06-24 14:32:18,627 INFO [cu-007]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4574{(0.297) staff:7 OTTAVA ALTA} at java.awt.Point[x=210,y=2679]
+2026-06-24 14:32:18,632 INFO [cu-007]       StepMonitoring.java:98   | RHYTHMS
+2026-06-24 14:32:18,639 INFO [cu-007]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2026-06-24 14:32:18,639 INFO [cu-007]          StackRhythm.java:224  | S3 MeasureStack#7 no correct rhythm
+2026-06-24 14:32:18,652 INFO [cu-007]       StepMonitoring.java:98   | PAGE
+2026-06-24 14:32:18,653 INFO [cu-007]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2026-06-24 14:32:18,653 INFO [cu-007]                 Book.java:2584 | Book{cu-007} storing
+2026-06-24 14:32:18,718 INFO [cu-007]                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:32:18,794 INFO [cu-007]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-24 14:32:19,041 INFO [cu-007]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-24 14:32:19,041 INFO [cu-007]                 Book.java:2525 | Book stored as omr/out/cu-007.omr
+2026-06-24 14:32:19,042 INFO [cu-007]            SheetStub.java:1655 | Sheet disposed
+2026-06-24 14:32:19,086 INFO [cu-007]                 Book.java:2050 | End of Stub#1
+2026-06-24 14:32:19,086 INFO [cu-007]                 Book.java:2057 | End of Book{cu-007}
+2026-06-24 14:32:19,252 INFO [cu-007]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-24 14:32:19,253 INFO [cu-007]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-24 14:32:19,271 INFO [cu-007]        ScoreExporter.java:164  | Score cu-007 exported to omr/out/cu-007.mxl
+2026-06-24 14:32:19,325 INFO [cu-007]                Score.java:181  | Closing {Score 1}

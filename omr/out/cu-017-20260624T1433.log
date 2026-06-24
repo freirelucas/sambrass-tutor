@@ -1,0 +1,79 @@
+2026-06-24 14:33:58,841 INFO [cu-017]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-017.png
+2026-06-24 14:33:58,917 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:33:58,918 INFO []                 Book.java:2525 | Book stored as omr/out/cu-017.omr
+2026-06-24 14:33:58,918 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-24 14:33:58,918 INFO [cu-017]       StepMonitoring.java:98   | LOAD
+2026-06-24 14:33:58,987 INFO [cu-017]            SheetStub.java:1278 | Loaded image #1 2481x3508 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-017.png
+2026-06-24 14:33:58,988 INFO [cu-017]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-24 14:33:59,094 INFO [cu-017]       StepMonitoring.java:98   | BINARY
+2026-06-24 14:33:59,415 INFO [cu-017]       StepMonitoring.java:98   | SCALE
+2026-06-24 14:33:59,417 INFO [cu-017]         ScaleBuilder.java:255  | Beam  guessed height: 11 -- mid of [5..17]
+2026-06-24 14:33:59,417 INFO [cu-017]         ScaleBuilder.java:271  | Beam measured height:  9 -- 0.33 of [5..17] range at 336% of needed quorum
+2026-06-24 14:33:59,417 INFO [cu-017]         ScaleBuilder.java:401  | Normalized black jitter: 22.22 %
+2026-06-24 14:33:59,417 INFO [cu-017]            ScaleStep.java:65   | Scale{ small_interline(15,15,16) interline(17,18,18) line(1,4,5) small_beam(9) beam(11)}
+2026-06-24 14:33:59,417 INFO [cu-017]       StepMonitoring.java:98   | GRID
+2026-06-24 14:33:59,484 INFO [cu-017]       LinesRetriever.java:1500 | Global slope: -0.03380
+2026-06-24 14:33:59,489 INFO [cu-017]    ClustersRetriever.java:533  | Destroying non-consistent Cluster#C155{interline(17,18,18) size:5 fil#162@0 fil#186@1 fil#155@2 fil#191@3 fil#318@4}
+2026-06-24 14:33:59,489 INFO [cu-017]    ClustersRetriever.java:533  | Destroying non-consistent Cluster#C1313{interline(17,18,18) size:5 fil#1238@0 fil#1271@1 fil#1274@2 fil#1355@3 fil#1313@4}
+2026-06-24 14:33:59,490 INFO [cu-017]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(17,18,18)
+2026-06-24 14:33:59,490 INFO [cu-017]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 15
+2026-06-24 14:33:59,490 INFO [cu-017]    ClustersRetriever.java:326  | Retrieved raw line clusters: 2 of sizes [5] with interline(15,15,16)
+2026-06-24 14:33:59,502 INFO [cu-017]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6]
+2026-06-24 14:33:59,623 INFO [cu-017]        SystemManager.java:134  | Indentation detected for system #1
+2026-06-24 14:33:59,624 INFO [cu-017]        SystemManager.java:779  | 1 part along 6 systems
+2026-06-24 14:33:59,624 INFO [cu-017]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-24 14:33:59,624 INFO [cu-017]       StepMonitoring.java:98   | HEADERS
+2026-06-24 14:33:59,698 INFO [cu-017]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-24 14:33:59,720 INFO [cu-017]        StemSeedsStep.java:86   | stem(4 max:6)
+2026-06-24 14:33:59,725 INFO [cu-017]       StepMonitoring.java:98   | BEAMS
+2026-06-24 14:34:01,723 INFO [cu-017]       StepMonitoring.java:98   | LEDGERS
+2026-06-24 14:34:01,758 INFO [cu-017]       StepMonitoring.java:98   | HEADS
+2026-06-24 14:34:03,259 INFO [cu-017]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:-0.1]}
+2026-06-24 14:34:03,259 INFO [cu-017]       StepMonitoring.java:98   | STEMS
+2026-06-24 14:34:03,353 INFO [cu-017]       StepMonitoring.java:98   | REDUCTION
+2026-06-24 14:34:03,371 INFO [cu-017]        ReductionStep.java:105  | Stems free length median value: 59 pixels, 3.3 interlines
+2026-06-24 14:34:03,372 INFO [cu-017]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-24 14:34:03,373 INFO [cu-017]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-24 14:34:03,373 INFO [cu-017]       StepMonitoring.java:98   | TEXTS
+2026-06-24 14:34:03,434 WARN [cu-017]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-24 14:34:03,435 INFO [cu-017]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-24 14:34:03,436 INFO [cu-017]       StepMonitoring.java:98   | MEASURES
+2026-06-24 14:34:03,436 INFO [cu-017]                 Page.java:307  | 19 raw measures: [3 in system#1, 4 in system#2, 3 in system#3, 3 in system#4, 4 in system#5, 2 in system#6]
+2026-06-24 14:34:03,437 INFO [cu-017]       StepMonitoring.java:98   | CHORDS
+2026-06-24 14:34:03,440 INFO [cu-017]       StepMonitoring.java:98   | CURVES
+2026-06-24 14:34:03,847 INFO [cu-017]         SlursBuilder.java:240  | Slurs: 3
+2026-06-24 14:34:03,852 INFO [cu-017]      SegmentsBuilder.java:155  | Segments: 10
+2026-06-24 14:34:03,854 INFO [cu-017]       StepMonitoring.java:98   | SYMBOLS
+2026-06-24 14:34:04,136 INFO [cu-017]       StepMonitoring.java:98   | LINKS
+2026-06-24 14:34:04,138 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3740{(0.151) staff:2 NATURAL pitch:-1.0}
+2026-06-24 14:34:04,140 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3754{(0.306) staff:3 NATURAL pitch:-3.0}
+2026-06-24 14:34:04,140 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3761{(0.368) staff:3 NATURAL pitch:-5.0}
+2026-06-24 14:34:04,140 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3762{(0.624) staff:3 NATURAL pitch:2.0}
+2026-06-24 14:34:04,144 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3773{(0.368) staff:4 NATURAL pitch:-5.0}
+2026-06-24 14:34:04,146 INFO [cu-017]             KeyInter.java:1198 | No effective key before AlterInter#3792{(0.164) staff:5 NATURAL pitch:-3.0}
+2026-06-24 14:34:04,149 INFO [cu-017]       StepMonitoring.java:98   | RHYTHMS
+2026-06-24 14:34:04,156 INFO [cu-017]       StepMonitoring.java:98   | PAGE
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3], please check time signatures
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [4, 5, 6, 7], please check time signatures
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [8, 9, 10], please check time signatures
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [11, 12, 13], please check time signatures
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#5 No target duration for measures local IDs [14, 15, 16, 17], please check time signatures
+2026-06-24 14:34:04,157 WARN [cu-017]         MeasureFixer.java:343  | System#6 No target duration for measures local IDs [18, 19], please check time signatures
+2026-06-24 14:34:04,157 INFO [cu-017]                 Book.java:2584 | Book{cu-017} storing
+2026-06-24 14:34:04,248 INFO [cu-017]                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:34:04,322 INFO [cu-017]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-24 14:34:04,490 INFO [cu-017]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-24 14:34:04,490 INFO [cu-017]                 Book.java:2525 | Book stored as omr/out/cu-017.omr
+2026-06-24 14:34:04,491 INFO [cu-017]            SheetStub.java:1655 | Sheet disposed
+2026-06-24 14:34:04,567 INFO [cu-017]                 Book.java:2050 | End of Stub#1
+2026-06-24 14:34:04,567 INFO [cu-017]                 Book.java:2057 | End of Book{cu-017}
+2026-06-24 14:34:04,734 INFO [cu-017]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-24 14:34:04,735 INFO [cu-017]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-24 14:34:04,735 INFO [cu-017]                 Part.java:351  | Sheet#1 System#1 Part#2{ staves[1] configs:[5s]} dummyPart id: 1
+2026-06-24 14:34:04,749 INFO [cu-017]                 Part.java:351  | Sheet#1 System#6 Part#2{ staves[6] configs:[5s]} dummyPart id: 1
+2026-06-24 14:34:04,750 INFO [cu-017]                 Part.java:351  | Sheet#1 System#2 Part#1{ staves[2] configs:[5]} dummyPart id: 2
+2026-06-24 14:34:04,750 INFO [cu-017]                 Part.java:351  | Sheet#1 System#3 Part#1{ staves[3] configs:[5]} dummyPart id: 2
+2026-06-24 14:34:04,750 INFO [cu-017]                 Part.java:351  | Sheet#1 System#4 Part#1{ staves[4] configs:[5]} dummyPart id: 2
+2026-06-24 14:34:04,750 INFO [cu-017]                 Part.java:351  | Sheet#1 System#5 Part#1{ staves[5] configs:[5]} dummyPart id: 2
+2026-06-24 14:34:04,761 INFO [cu-017]        ScoreExporter.java:164  | Score cu-017 exported to omr/out/cu-017.mxl
+2026-06-24 14:34:04,842 INFO [cu-017]                Score.java:181  | Closing {Score 1}

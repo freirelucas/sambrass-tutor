@@ -1,0 +1,62 @@
+2026-06-24 14:32:40,299 INFO [cu-009-p2]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-009-p2.png
+2026-06-24 14:32:40,354 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:32:40,355 INFO []                 Book.java:2525 | Book stored as omr/out/cu-009-p2.omr
+2026-06-24 14:32:40,355 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-24 14:32:40,356 INFO [cu-009-p2]       StepMonitoring.java:98   | LOAD
+2026-06-24 14:32:40,441 INFO [cu-009-p2]            SheetStub.java:1278 | Loaded image #1 2550x3300 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-009-p2.png
+2026-06-24 14:32:40,442 INFO [cu-009-p2]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-24 14:32:40,545 INFO [cu-009-p2]       StepMonitoring.java:98   | BINARY
+2026-06-24 14:32:40,857 INFO [cu-009-p2]       StepMonitoring.java:98   | SCALE
+2026-06-24 14:32:40,859 INFO [cu-009-p2]         ScaleBuilder.java:255  | Beam  guessed height: 13 -- mid of [6..20]
+2026-06-24 14:32:40,859 INFO [cu-009-p2]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.36 of [6..20] range at 870% of needed quorum
+2026-06-24 14:32:40,859 INFO [cu-009-p2]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-06-24 14:32:40,859 INFO [cu-009-p2]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(11)}
+2026-06-24 14:32:40,859 INFO [cu-009-p2]       StepMonitoring.java:98   | GRID
+2026-06-24 14:32:40,907 INFO [cu-009-p2]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-24 14:32:40,913 INFO [cu-009-p2]    ClustersRetriever.java:326  | Retrieved raw line clusters: 7 of sizes [5] with interline(20,21,21)
+2026-06-24 14:32:40,933 INFO [cu-009-p2]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6] #7[7]
+2026-06-24 14:32:41,019 INFO [cu-009-p2]        SystemManager.java:779  | 1 part along 7 systems
+2026-06-24 14:32:41,019 INFO [cu-009-p2]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-24 14:32:41,020 INFO [cu-009-p2]       StepMonitoring.java:98   | HEADERS
+2026-06-24 14:32:41,086 INFO [cu-009-p2]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-24 14:32:41,108 INFO [cu-009-p2]        StemSeedsStep.java:86   | stem(4 max:4)
+2026-06-24 14:32:41,112 INFO [cu-009-p2]       StepMonitoring.java:98   | BEAMS
+2026-06-24 14:32:43,769 INFO [cu-009-p2]       StepMonitoring.java:98   | LEDGERS
+2026-06-24 14:32:43,794 INFO [cu-009-p2]       StepMonitoring.java:98   | HEADS
+2026-06-24 14:32:48,278 INFO [cu-009-p2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-1.2]}
+2026-06-24 14:32:48,279 INFO [cu-009-p2]       StepMonitoring.java:98   | STEMS
+2026-06-24 14:32:48,457 INFO [cu-009-p2]       StepMonitoring.java:98   | REDUCTION
+2026-06-24 14:32:48,497 INFO [cu-009-p2]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-24 14:32:48,497 INFO [cu-009-p2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-24 14:32:48,497 INFO [cu-009-p2]       StepMonitoring.java:98   | TEXTS
+2026-06-24 14:32:48,568 WARN [cu-009-p2]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-24 14:32:48,568 INFO [cu-009-p2]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-24 14:32:48,570 INFO [cu-009-p2]       StepMonitoring.java:98   | MEASURES
+2026-06-24 14:32:48,571 INFO [cu-009-p2]                 Page.java:307  | 20 raw measures: [3 in system#1, 3 in system#2, 3 in system#3, 3 in system#4, 3 in system#5, 3 in system#6, 2 in system#7]
+2026-06-24 14:32:48,579 INFO [cu-009-p2]       StepMonitoring.java:98   | CHORDS
+2026-06-24 14:32:48,582 INFO [cu-009-p2]       StepMonitoring.java:98   | CURVES
+2026-06-24 14:32:48,897 INFO [cu-009-p2]         SlursBuilder.java:240  | Slurs: 50
+2026-06-24 14:32:48,899 INFO [cu-009-p2]      SegmentsBuilder.java:155  | Segments: 15
+2026-06-24 14:32:48,899 INFO [cu-009-p2]       StepMonitoring.java:98   | SYMBOLS
+2026-06-24 14:32:48,992 INFO [cu-009-p2]       StepMonitoring.java:98   | LINKS
+2026-06-24 14:32:49,006 INFO [cu-009-p2]       StepMonitoring.java:98   | RHYTHMS
+2026-06-24 14:32:49,020 INFO [cu-009-p2]       StepMonitoring.java:98   | PAGE
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [4, 5, 6], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [7, 8, 9], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#4 No target duration for measures local IDs [10, 11, 12], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#5 No target duration for measures local IDs [13, 14, 15], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#6 No target duration for measures local IDs [16, 17, 18], please check time signatures
+2026-06-24 14:32:49,021 WARN [cu-009-p2]         MeasureFixer.java:343  | System#7 No target duration for measures local IDs [19, 20], please check time signatures
+2026-06-24 14:32:49,022 INFO [cu-009-p2]                 Book.java:2584 | Book{cu-009-p2} storing
+2026-06-24 14:32:49,098 INFO [cu-009-p2]                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:32:49,172 INFO [cu-009-p2]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-24 14:32:49,411 INFO [cu-009-p2]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-24 14:32:49,411 INFO [cu-009-p2]                 Book.java:2525 | Book stored as omr/out/cu-009-p2.omr
+2026-06-24 14:32:49,412 INFO [cu-009-p2]            SheetStub.java:1655 | Sheet disposed
+2026-06-24 14:32:49,466 INFO [cu-009-p2]                 Book.java:2050 | End of Stub#1
+2026-06-24 14:32:49,466 INFO [cu-009-p2]                 Book.java:2057 | End of Book{cu-009-p2}
+2026-06-24 14:32:49,624 INFO [cu-009-p2]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-24 14:32:49,625 INFO [cu-009-p2]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-24 14:32:49,640 INFO [cu-009-p2]        ScoreExporter.java:164  | Score cu-009-p2 exported to omr/out/cu-009-p2.mxl
+2026-06-24 14:32:49,707 INFO [cu-009-p2]                Score.java:181  | Closing {Score 1}

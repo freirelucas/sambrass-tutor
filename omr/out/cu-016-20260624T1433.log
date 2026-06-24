@@ -1,0 +1,57 @@
+2026-06-24 14:33:49,131 INFO [cu-016]                 Book.java:560  | 1 sheet in /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-016.png
+2026-06-24 14:33:49,203 INFO []                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:33:49,204 INFO []                 Book.java:2525 | Book stored as omr/out/cu-016.omr
+2026-06-24 14:33:49,204 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-06-24 14:33:49,204 INFO [cu-016]       StepMonitoring.java:98   | LOAD
+2026-06-24 14:33:49,295 INFO [cu-016]            SheetStub.java:1278 | Loaded image #1 2550x3300 from /home/runner/work/sambrass-tutor/sambrass-tutor/omr/input/cu-016.png
+2026-06-24 14:33:49,296 INFO [cu-016]            ImageUtil.java:124  | Converting max RGB to gray
+2026-06-24 14:33:49,405 INFO [cu-016]       StepMonitoring.java:98   | BINARY
+2026-06-24 14:33:49,730 INFO [cu-016]       StepMonitoring.java:98   | SCALE
+2026-06-24 14:33:49,732 INFO [cu-016]         ScaleBuilder.java:255  | Beam  guessed height: 13 -- mid of [6..20]
+2026-06-24 14:33:49,732 INFO [cu-016]         ScaleBuilder.java:271  | Beam measured height: 12 -- 0.43 of [6..20] range at 423% of needed quorum
+2026-06-24 14:33:49,732 INFO [cu-016]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-06-24 14:33:49,732 INFO [cu-016]            ScaleStep.java:65   | Scale{ interline(21,21,22) line(2,2,3) beam(12)}
+2026-06-24 14:33:49,733 INFO [cu-016]       StepMonitoring.java:98   | GRID
+2026-06-24 14:33:49,796 INFO [cu-016]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-06-24 14:33:49,799 INFO [cu-016]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(21,21,22)
+2026-06-24 14:33:49,823 INFO [cu-016]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6] #7[7] #8[8]
+2026-06-24 14:33:49,895 INFO [cu-016]        SystemManager.java:134  | Indentation detected for system #1
+2026-06-24 14:33:49,896 INFO [cu-016]        SystemManager.java:779  | 1 part along 8 systems
+2026-06-24 14:33:49,896 INFO [cu-016]                 Book.java:543  | Created scores: [{Score 1}]
+2026-06-24 14:33:49,896 INFO [cu-016]       StepMonitoring.java:98   | HEADERS
+2026-06-24 14:33:49,990 INFO [cu-016]       StepMonitoring.java:98   | STEM_SEEDS
+2026-06-24 14:33:50,012 INFO [cu-016]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-06-24 14:33:50,017 INFO [cu-016]       StepMonitoring.java:98   | BEAMS
+2026-06-24 14:33:53,011 INFO [cu-016]       StepMonitoring.java:98   | LEDGERS
+2026-06-24 14:33:53,048 INFO [cu-016]       StepMonitoring.java:98   | HEADS
+2026-06-24 14:33:57,241 INFO [cu-016]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:-0.4]}
+2026-06-24 14:33:57,242 INFO [cu-016]       StepMonitoring.java:98   | STEMS
+2026-06-24 14:33:57,388 INFO [cu-016]       StepMonitoring.java:98   | REDUCTION
+2026-06-24 14:33:57,409 INFO [cu-016]        ReductionStep.java:105  | Stems free length median value: 75 pixels, 3.6 interlines
+2026-06-24 14:33:57,410 INFO [cu-016]       StepMonitoring.java:98   | CUE_BEAMS
+2026-06-24 14:33:57,410 INFO [cu-016]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-06-24 14:33:57,410 INFO [cu-016]       StepMonitoring.java:98   | TEXTS
+2026-06-24 14:33:57,472 WARN [cu-016]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-06-24 14:33:57,472 INFO [cu-016]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-06-24 14:33:57,474 INFO [cu-016]       StepMonitoring.java:98   | MEASURES
+2026-06-24 14:33:57,475 INFO [cu-016]                 Page.java:307  | 63 raw measures: [8 in system#1, 8 in system#2, 8 in system#3, 8 in system#4, 10 in system#5, 9 in system#6, 9 in system#7, 3 in system#8]
+2026-06-24 14:33:57,475 INFO [cu-016]       StepMonitoring.java:98   | CHORDS
+2026-06-24 14:33:57,477 INFO [cu-016]       StepMonitoring.java:98   | CURVES
+2026-06-24 14:33:57,785 INFO [cu-016]         SlursBuilder.java:240  | Slurs: 6
+2026-06-24 14:33:57,788 INFO [cu-016]      SegmentsBuilder.java:155  | Segments: 12
+2026-06-24 14:33:57,788 INFO [cu-016]       StepMonitoring.java:98   | SYMBOLS
+2026-06-24 14:33:58,035 INFO [cu-016]       StepMonitoring.java:98   | LINKS
+2026-06-24 14:33:58,045 INFO [cu-016]       StepMonitoring.java:98   | RHYTHMS
+2026-06-24 14:33:58,056 INFO [cu-016]       StepMonitoring.java:98   | PAGE
+2026-06-24 14:33:58,057 INFO [cu-016]                 Book.java:2584 | Book{cu-016} storing
+2026-06-24 14:33:58,143 INFO [cu-016]                 Book.java:2565 | Stored /book.xml
+2026-06-24 14:33:58,246 INFO [cu-016]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-06-24 14:33:58,444 INFO [cu-016]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-06-24 14:33:58,444 INFO [cu-016]                 Book.java:2525 | Book stored as omr/out/cu-016.omr
+2026-06-24 14:33:58,445 INFO [cu-016]            SheetStub.java:1655 | Sheet disposed
+2026-06-24 14:33:58,519 INFO [cu-016]                 Book.java:2050 | End of Stub#1
+2026-06-24 14:33:58,519 INFO [cu-016]                 Book.java:2057 | End of Book{cu-016}
+2026-06-24 14:33:58,662 INFO [cu-016]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-06-24 14:33:58,663 INFO [cu-016]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-06-24 14:33:58,675 INFO [cu-016]        ScoreExporter.java:164  | Score cu-016 exported to omr/out/cu-016.mxl
+2026-06-24 14:33:58,759 INFO [cu-016]                Score.java:181  | Closing {Score 1}
