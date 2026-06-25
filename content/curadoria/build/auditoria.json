@@ -25,7 +25,7 @@
     "tema_abc": 15,
     "blocos": 15,
     "riff": 15,
-    "onsets": 13,
+    "onsets": 15,
     "celulas_marcadas": 15
    }
   },
@@ -52,15 +52,15 @@
   },
   "confianca_extracao": {
    "n_blocos": 125,
-   "modo_baixa_conf": 37,
+   "modo_baixa_conf": 36,
    "modo_desconhecido": 0,
-   "armadura_nao_bate": 44,
+   "armadura_nao_bate": 39,
    "modo_no_catalogo": 0
   },
   "consistencia": {
-   "recuperacao_relativo_menor_ok": 35,
+   "recuperacao_relativo_menor_ok": 29,
    "tags_marcadas_nao_detectadas": 11,
-   "celulas_detectadas_nao_marcadas": 118
+   "celulas_detectadas_nao_marcadas": 117
   },
   "completude": {
    "sambrass": {
@@ -145,7 +145,7 @@
   {
    "sev": "alto",
    "dim": "confiança",
-   "msg": "modo musical não existe no catálogo (0%) — 100% derivado; 37 com confiança baixa (<0.06) pedem ouvido.",
+   "msg": "modo musical não existe no catálogo (0%) — 100% derivado; 36 com confiança baixa (<0.06) pedem ouvido.",
    "ids": [
     "sb-001",
     "sb-003",
@@ -173,12 +173,12 @@
     "sb-074",
     "sb-076"
    ],
-   "n": 37
+   "n": 36
   },
   {
    "sev": "médio",
    "dim": "consistência",
-   "msg": "44 blocos cuja armadura detectada NÃO bate com a do catálogo.",
+   "msg": "39 blocos cuja armadura detectada NÃO bate com a do catálogo.",
    "ids": [
     "sb-005",
     "sb-006",
@@ -206,7 +206,7 @@
     "sb-063",
     "sb-073"
    ],
-   "n": 44
+   "n": 39
   },
   {
    "sev": "médio",

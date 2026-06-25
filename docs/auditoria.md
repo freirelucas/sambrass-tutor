@@ -40,9 +40,10 @@ Gerada por `content/curadoria/auditoria.py` (re-rode a qualquer momento; snapsho
    **Cor** (clica → ouve → M/N) — e dar uma amostra nos 35 de relativo menor.
 
 ### 🟡 Médio
-4. **44 blocos com armadura detectada ≠ catálogo.** São as detecções genuinamente ambíguas
-   (ex.: `sb-005` catálogo C → detectado G maior, conf 0,057). Sobrepõem-se aos de baixa
-   confiança → **alvos prioritários** do ouvido.
+4. **~~44~~ → 39 blocos com armadura detectada ≠ catálogo.** São detecções genuinamente
+   ambíguas (ex.: `sb-005` catálogo C → detectado G maior, conf 0,057), hoje quase só
+   sambrass. As **12 cumbias conferidas** agora derivam a cor da melodia à mão (`.abc`),
+   constrita ao `K:` escrito — todas com armadura coerente. → alvos do ouvido: as sambrass.
 5. **11 peças com célula marcada mas não detectada nas notas** (tag à mão × notas).
    `sb-010, sb-015, sb-017, sb-042, …` → **Ação:** revisar — ou a tag está errada, ou o OMR está.
 6. **Dificuldade não comparável entre jornadas:** sambrass **3–7** (inteiro) vs cumbias

@@ -25,6 +25,7 @@ sys.path.insert(0, str(CONTENT))
 from build_notes import compile_file, load_fingering, name, SHARP  # noqa: E402
 sys.path.insert(0, str(CONTENT / "cumbia"))
 from phrases import extract_riff, repeticao_ratio  # noqa: E402
+from abc_events import events_from_abc, key_from_abc  # noqa: E402
 
 OUT = HERE / "build" / "blocos.json"
 
@@ -43,10 +44,12 @@ def _corr(a, b):
     return num / (da * db) if da and db else 0.0
 
 
-def detect_mode(events, key_pc):
+def detect_mode(events, key_pc, constrain=False):
     """K-S: melhor (tônica, modo) sobre 12 rotações, com viés de CADÊNCIA (a nota final
     e a inicial puxam a tônica — pista forte). conf = margem maior-vs-menor.
-    armadura_bate: a tônica detectada é coerente com a armadura do catálogo?"""
+    armadura_bate: a tônica detectada é coerente com a armadura do catálogo?
+    constrain=True: quando a armadura é CONFIRMADA (K: à mão), só decide entre a tônica
+    maior dessa armadura e seu relativo menor — robusto, sem detecção livre ruidosa."""
     npc = [e["concert_midi"] % 12 for e in events if "concert_midi" in e]
     w = [0.0] * 12
     for e in events:
@@ -58,11 +61,12 @@ def detect_mode(events, key_pc):
 
     def bias(c, r):
         return c + (0.15 if r == last else 0) + (0.05 if r == first else 0)   # cadência/início puxam a tônica
+    specs = ([(key_pc, "maior"), ((key_pc - 3) % 12, "menor")] if constrain
+             else [(r, m) for r in range(12) for m in ("maior", "menor")])
     cands = []
-    for r in range(12):
+    for r, m in specs:
         rot = w[r:] + w[:r]
-        cands.append((bias(_corr(rot, KK_MAJ), r), r, "maior"))
-        cands.append((bias(_corr(rot, KK_MIN), r), r, "menor"))
+        cands.append((bias(_corr(rot, KK_MAJ if m == "maior" else KK_MIN), r), r, m))
     cands.sort(reverse=True)
     best_corr, root, modo = cands[0]
     best_maj = max(c for c, _, m in cands if m == "maior")
@@ -182,13 +186,21 @@ def main():
 
     reg, blocos, diverg, sem_xml = {}, defaultdict(list), [], []
     modos = Counter(); classes = Counter()
+    MANUAL = CONTENT / "cumbia" / "notes_manual"
+    manual_abc = {f.stem: f.read_text(encoding="utf-8") for f in MANUAL.glob("cu-*.abc")} if MANUAL.exists() else {}
+    KNAME = {0: "C", 1: "Db", 2: "D", 3: "Eb", 4: "E", 5: "F", 6: "F#", 7: "G", 8: "Ab", 9: "A", 10: "Bb", 11: "B"}
     for jornada, pid, p in catalog:
-        xml = find_musicxml(pid)
-        if not xml:
-            sem_xml.append(pid); continue
-        ev = compile_file(pathlib.Path(xml), fing, tr)["events"]
-        key = p.get("key_concert", "C")
-        cor = detect_mode(ev, PC.get(key, 0))
+        conf_abc = manual_abc.get(pid)
+        if conf_abc:                                          # melodia CONFERIDA à mão → legos da fonte real
+            ev = events_from_abc(conf_abc); kpc = key_from_abc(conf_abc)
+            cor = detect_mode(ev, kpc, constrain=True); key = KNAME[kpc]
+        else:
+            xml = find_musicxml(pid)
+            if not xml:
+                sem_xml.append(pid); continue
+            ev = compile_file(pathlib.Path(xml), fing, tr)["events"]
+            key = p.get("key_concert", "C")
+            cor = detect_mode(ev, PC.get(key, 0))
         est = structure(ev)
         presentes = cells_present(ev)
         tags = set(p.get("celulas", []) or [])

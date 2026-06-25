@@ -20,6 +20,7 @@ from build_abc import to_abc, get_meta
 import phrases
 sys.path.insert(0, str(CONTENT / "curadoria"))
 from blocos import cells_present                          # detector de células (fonte única)
+from abc_events import events_from_abc                    # ABC conferido → eventos (legos da fonte real)
 
 NOTES = CONTENT / "notes" / "cumbia"
 OUT = HERE / "build"
@@ -77,22 +78,28 @@ def features(events):
                 salto=salto, s_de=s_de, s_para=s_para)
 
 
-def build_one(path):
+def build_one(path, manual_abc=None):
     fing, tr = load_fingering()
     data = compile_file(path, fing, tr)
-    events = data["events"]                              # peça INTEIRA
+    events = data["events"]                              # peça INTEIRA (OMR)
     fifths, meter = get_meta(path)
     abc_full = to_abc(events, fifths, meter, path.stem)
-    riff = phrases.extract_riff(events)                  # riff na peça inteira (mais ocorrências = robusto)
-    span = phrases.theme_measure_span(events, riff)
-    theme_events = phrases.slice_events_by_measure(events, *span) if span else events
-    abc_theme = to_abc(theme_events, fifths, meter, path.stem)
+    conf = (manual_abc or {}).get(path.stem)
+    if conf:                                             # melodia CONFERIDA à mão → tema/legos da fonte real
+        theme_events = events_from_abc(conf)
+        abc_theme = conf; span = None
+        riff = phrases.extract_riff(theme_events)
+    else:
+        riff = phrases.extract_riff(events)              # riff na peça inteira (mais ocorrências = robusto)
+        span = phrases.theme_measure_span(events, riff)
+        theme_events = phrases.slice_events_by_measure(events, *span) if span else events
+        abc_theme = to_abc(theme_events, fifths, meter, path.stem)
     feat = features(theme_events)                        # PERFIL/dificuldade = o TEMA praticado
     feat["repeticao"] = phrases.repeticao_ratio(theme_events)
     rabc = to_abc(phrases.riff_events(riff), fifths, meter, "riff") if riff else ""
     return dict(stem=path.stem, num=int(path.stem.split("-")[1]), fifths=fifths, meter=meter,
                 abc=abc_theme, abc_full=abc_full, theme_span=span,
-                celulas=sorted(cells_present(theme_events)),     # células detectadas no tema (seed; dono confirma)
+                celulas=sorted(cells_present(theme_events)),     # do tema CONFERIDO quando há .abc (senão OMR; seed)
                 riff=riff, riff_abc=rabc, feat=feat)
 
 
@@ -136,7 +143,7 @@ def main():
     MANUAL = HERE / "notes_manual"
     manual_abc = ({p.stem: p.read_text(encoding="utf-8") for p in MANUAL.glob("cu-*.abc")}
                   if MANUAL.exists() else {})
-    builds = [build_one(p) for p in sorted(NOTES.glob("cu-*.musicxml"))]
+    builds = [build_one(p, manual_abc) for p in sorted(NOTES.glob("cu-*.musicxml"))]
     # dificuldade: agudo pesa 2; mais repetição = mais fácil (entra antes)
     for b in builds:
         f = b["feat"]
