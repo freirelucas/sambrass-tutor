@@ -10,8 +10,11 @@
 const ID = new URLSearchParams(location.search).get('id') || 'sb-011';
 const JBASE = new URLSearchParams(location.search).get('jornada') === 'cumbias' ? 'cumbias/' : '';   // jornada → base dos dados
 // células reais da peça → "o coração" = a mais saliente presente (não mais fixo C2/C1/C5)
-const HEARTPRI = ['C2', 'C6', 'C5', 'C4', 'C3', 'C7', 'C1'];
-const HEARTH2 = { C2: 'A síncope que move o samba', C6: 'O contratempo que dá o gingado', C5: 'A tercina contra a divisão binária', C4: 'A semicolcheia e o tu-ku', C3: 'A colcheia pontuada — o galope', C7: 'A anacruse: entrar antes do tempo', C1: 'As colcheias em grupo' };
+const CUMBIA = JBASE === 'cumbias/';
+const HEARTPRI = CUMBIA ? ['C6', 'C4', 'C3', 'C1', 'C2', 'C5', 'C7'] : ['C2', 'C6', 'C5', 'C4', 'C3', 'C7', 'C1'];
+const HEARTH2 = CUMBIA
+  ? { C6: 'O contratempo que balança a cumbia', C4: 'A semicolcheia que enfeita o riff', C3: 'A colcheia pontuada — o trote', C1: 'As colcheias da güira — a base', C2: 'A síncope que puxa o riff', C5: 'A tercina contra a divisão', C7: 'A anacruse: entrar antes do tempo' }
+  : { C2: 'A síncope que move o samba', C6: 'O contratempo que dá o gingado', C5: 'A tercina contra a divisão binária', C4: 'A semicolcheia e o tu-ku', C3: 'A colcheia pontuada — o galope', C7: 'A anacruse: entrar antes do tempo', C1: 'As colcheias em grupo' };
 const $ = s => document.querySelector(s);
 const NOMES = ['Dó', 'Dó♯', 'Ré', 'Ré♯', 'Mi', 'Fá', 'Fá♯', 'Sol', 'Sol♯', 'Lá', 'Lá♯', 'Si'];
 const SHARP = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];

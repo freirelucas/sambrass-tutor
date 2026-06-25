@@ -32,9 +32,9 @@ Gerada por `content/curadoria/auditoria.py` (re-rode a qualquer momento; snapsho
    provisória — **75 "dedos"** (classe de altura confiável pela digitação impressa; oitava+ritmo
    do OMR) e **34 "rascunho"** (OMR puro). Mitigado por: badges de tier + ferramenta de revisão.
    → **Ação:** conferir por ouvido, começando pelos **34 rascunho** (confiança mais baixa).
-2. **Cumbias sem células: 0/15.** A pedagogia de "célula/coração" não existe nas cumbias
-   (todas com `celulas: []`). → **Ação:** marcar células das cumbias (dá pra semear dos
-   onsets/contorno já detectados nos blocos).
+2. ~~**Cumbias sem células: 0/15.**~~ → **✅ RESOLVIDO.** As 15 cumbias agora têm células
+   detectadas das notas (`cells_present` no `build_cumbia.py`); o "coração" da tela de estudo
+   renderiza (notação + áudio + *heart* cumbia-apropriado). Tags são *seed* — o dono confirma.
 3. **Modo 100% derivado · 37 de baixa confiança.** O par tom+modo não existe no catálogo;
    foi recuperado. **37 blocos** têm confiança < 0,06. → **Ação:** confirmar os 37 na vista
    **Cor** (clica → ouve → M/N) — e dar uma amostra nos 35 de relativo menor.

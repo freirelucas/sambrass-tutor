@@ -18,6 +18,8 @@ sys.path.insert(0, str(CONTENT)); sys.path.insert(0, str(HERE))
 from build_notes import compile_file, load_fingering, name, SHARP
 from build_abc import to_abc, get_meta
 import phrases
+sys.path.insert(0, str(CONTENT / "curadoria"))
+from blocos import cells_present                          # detector de células (fonte única)
 
 NOTES = CONTENT / "notes" / "cumbia"
 OUT = HERE / "build"
@@ -90,6 +92,7 @@ def build_one(path):
     rabc = to_abc(phrases.riff_events(riff), fifths, meter, "riff") if riff else ""
     return dict(stem=path.stem, num=int(path.stem.split("-")[1]), fifths=fifths, meter=meter,
                 abc=abc_theme, abc_full=abc_full, theme_span=span,
+                celulas=sorted(cells_present(theme_events)),     # células detectadas no tema (seed; dono confirma)
                 riff=riff, riff_abc=rabc, feat=feat)
 
 
@@ -153,7 +156,7 @@ def main():
         f = b["feat"]
         pieces["pieces"].append(dict(num=b["num"], id=b["stem"], titulo=c.get("titulo", b["stem"]),
             compositor=c.get("compositor", ""), key_concert=c.get("key_concert", "Bb"),
-            compasso=b["meter"], forma=c.get("forma", []), celulas=[], requisitos=[],
+            compasso=b["meter"], forma=c.get("forma", []), celulas=b["celulas"], requisitos=[],
             dificuldade=round(b["dificuldade"], 1)))
         percurso.append(dict(num=b["num"], titulo=c.get("titulo", b["stem"]), compositor=c.get("compositor", ""),
             tom=c.get("key_concert", "Bb"), lote=b["lote"], nivel=b["nivel"], agudo=f["agudo"],
@@ -179,6 +182,10 @@ def main():
     lotes = [lotes_seen[k] for k in sorted(lotes_seen)]
     tecnica = [dict(lote=L["lote"], nivel=L["nivel"], tom=L["tom"], feat=L["feat"], eixos=[]) for L in lotes]
 
+    sb_abc = json.load(open(CONTENT / "notes_abc.json", encoding="utf-8")) if (CONTENT / "notes_abc.json").exists() else {}
+    for k, v in sb_abc.items():
+        if k.startswith("cell-"):
+            abc.setdefault(k, v)                          # ABC das figuras de célula (rítmicas, compartilhadas) p/ o "coração" renderizar
     dump = lambda name, obj: json.dump(obj, open(OUT / name, "w", encoding="utf-8"), ensure_ascii=False)
     dump("pieces.json", pieces); dump("percurso.json", percurso); dump("escada.json", escada)
     dump("lotes.json", lotes); dump("abc.json", abc); dump("quality.json", quality)

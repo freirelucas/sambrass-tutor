@@ -5,7 +5,7 @@
   "pct_conferida": 10.4,
   "blocos": 125,
   "achados_por_severidade": {
-   "alto": 3,
+   "alto": 2,
    "médio": 3,
    "baixo": 1
   }
@@ -26,7 +26,7 @@
     "blocos": 15,
     "riff": 15,
     "onsets": 13,
-    "celulas_marcadas": 0
+    "celulas_marcadas": 15
    }
   },
   "verificacao": {
@@ -141,29 +141,6 @@
     "sb-026"
    ],
    "n": 109
-  },
-  {
-   "sev": "alto",
-   "dim": "cobertura",
-   "msg": "[cumbias] 0/15 peças têm células marcadas — dimensão de célula ausente.",
-   "ids": [
-    "cu-001",
-    "cu-008",
-    "cu-014",
-    "cu-002",
-    "cu-016",
-    "cu-015",
-    "cu-012",
-    "cu-003",
-    "cu-004",
-    "cu-011",
-    "cu-010",
-    "cu-009",
-    "cu-006",
-    "cu-007",
-    "cu-005"
-   ],
-   "n": 15
   },
   {
    "sev": "alto",
