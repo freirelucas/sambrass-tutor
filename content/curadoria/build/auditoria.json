@@ -1,0 +1,270 @@
+{
+ "resumo": {
+  "pecas_total": 125,
+  "conferidas_total": 13,
+  "pct_conferida": 10.4,
+  "blocos": 125,
+  "achados_por_severidade": {
+   "alto": 3,
+   "médio": 3,
+   "baixo": 1
+  }
+ },
+ "dimensoes": {
+  "cobertura": {
+   "sambrass": {
+    "pecas": 110,
+    "tema_abc": 110,
+    "blocos": 110,
+    "riff": 110,
+    "onsets": 110,
+    "celulas_marcadas": 110
+   },
+   "cumbias": {
+    "pecas": 15,
+    "tema_abc": 15,
+    "blocos": 15,
+    "riff": 15,
+    "onsets": 13,
+    "celulas_marcadas": 0
+   }
+  },
+  "verificacao": {
+   "sambrass": {
+    "tiers": {
+     "rascunho": 34,
+     "dedos": 75,
+     "conferida": 1
+    },
+    "conferida": 1,
+    "pct_conferida": 0.9,
+    "provisorias": 109
+   },
+   "cumbias": {
+    "tiers": {
+     "rascunho": 3,
+     "conferida": 12
+    },
+    "conferida": 12,
+    "pct_conferida": 80.0,
+    "provisorias": 3
+   }
+  },
+  "confianca_extracao": {
+   "n_blocos": 125,
+   "modo_baixa_conf": 37,
+   "modo_desconhecido": 0,
+   "armadura_nao_bate": 44,
+   "modo_no_catalogo": 0
+  },
+  "consistencia": {
+   "recuperacao_relativo_menor_ok": 35,
+   "tags_marcadas_nao_detectadas": 11,
+   "celulas_detectadas_nao_marcadas": 118
+  },
+  "completude": {
+   "sambrass": {
+    "compositor": 0,
+    "key_concert": 0,
+    "compasso": 0,
+    "forma": 1,
+    "dificuldade": 0
+   },
+   "cumbias": {
+    "compositor": 0,
+    "key_concert": 0,
+    "compasso": 0,
+    "forma": 0,
+    "dificuldade": 0
+   }
+  },
+  "integridade_referencial": {
+   "sambrass": {
+    "tags_orfas": [],
+    "escada_aponta_inexistente": [],
+    "pecas_fora_da_escada": 0,
+    "pecas_sem_tema_abc": 0
+   },
+   "cumbias": {
+    "tags_orfas": [],
+    "escada_aponta_inexistente": [],
+    "pecas_fora_da_escada": 0,
+    "pecas_sem_tema_abc": 0
+   }
+  },
+  "validade": {
+   "dif_sambrass": [
+    3,
+    7
+   ],
+   "dif_cumbias": [
+    10.2,
+    23.6
+   ],
+   "escala_consistente": false
+  },
+  "unicidade": {
+   "ids_duplicados": [],
+   "titulos_duplicados": []
+  }
+ },
+ "achados": [
+  {
+   "sev": "alto",
+   "dim": "verificação",
+   "msg": "[sambrass] só 1/110 (0.9%) conferidas por ouvido; o resto é provisório (OMR/dedos).",
+   "ids": [
+    "sb-001",
+    "sb-002",
+    "sb-003",
+    "sb-004",
+    "sb-005",
+    "sb-006",
+    "sb-007",
+    "sb-008",
+    "sb-009",
+    "sb-010",
+    "sb-012",
+    "sb-013",
+    "sb-014",
+    "sb-015",
+    "sb-016",
+    "sb-017",
+    "sb-018",
+    "sb-019",
+    "sb-020",
+    "sb-021",
+    "sb-022",
+    "sb-023",
+    "sb-024",
+    "sb-025",
+    "sb-026"
+   ],
+   "n": 109
+  },
+  {
+   "sev": "alto",
+   "dim": "cobertura",
+   "msg": "[cumbias] 0/15 peças têm células marcadas — dimensão de célula ausente.",
+   "ids": [
+    "cu-001",
+    "cu-008",
+    "cu-014",
+    "cu-002",
+    "cu-016",
+    "cu-015",
+    "cu-012",
+    "cu-003",
+    "cu-004",
+    "cu-011",
+    "cu-010",
+    "cu-009",
+    "cu-006",
+    "cu-007",
+    "cu-005"
+   ],
+   "n": 15
+  },
+  {
+   "sev": "alto",
+   "dim": "confiança",
+   "msg": "modo musical não existe no catálogo (0%) — 100% derivado; 37 com confiança baixa (<0.06) pedem ouvido.",
+   "ids": [
+    "sb-001",
+    "sb-003",
+    "sb-005",
+    "sb-014",
+    "sb-015",
+    "sb-016",
+    "sb-018",
+    "sb-027",
+    "sb-030",
+    "sb-034",
+    "sb-035",
+    "sb-036",
+    "sb-038",
+    "sb-040",
+    "sb-041",
+    "sb-042",
+    "sb-045",
+    "sb-054",
+    "sb-058",
+    "sb-061",
+    "sb-063",
+    "sb-067",
+    "sb-071",
+    "sb-074",
+    "sb-076"
+   ],
+   "n": 37
+  },
+  {
+   "sev": "médio",
+   "dim": "consistência",
+   "msg": "44 blocos cuja armadura detectada NÃO bate com a do catálogo.",
+   "ids": [
+    "sb-005",
+    "sb-006",
+    "sb-010",
+    "sb-012",
+    "sb-015",
+    "sb-017",
+    "sb-020",
+    "sb-028",
+    "sb-029",
+    "sb-032",
+    "sb-036",
+    "sb-039",
+    "sb-042",
+    "sb-043",
+    "sb-044",
+    "sb-045",
+    "sb-049",
+    "sb-054",
+    "sb-055",
+    "sb-056",
+    "sb-058",
+    "sb-059",
+    "sb-062",
+    "sb-063",
+    "sb-073"
+   ],
+   "n": 44
+  },
+  {
+   "sev": "médio",
+   "dim": "consistência",
+   "msg": "11 peças com célula MARCADA no catálogo mas NÃO detectada nas notas (tag à mão vs notas).",
+   "ids": [
+    "sb-010",
+    "sb-015",
+    "sb-017",
+    "sb-042",
+    "sb-054",
+    "sb-058",
+    "sb-060",
+    "sb-071",
+    "sb-078",
+    "sb-096",
+    "sb-107"
+   ],
+   "n": 11
+  },
+  {
+   "sev": "médio",
+   "dim": "validade",
+   "msg": "escala de dificuldade INCONSISTENTE entre jornadas: sambrass 3–7 vs cumbias 10.2–23.6 (não comparáveis).",
+   "ids": [],
+   "n": 0
+  },
+  {
+   "sev": "baixo",
+   "dim": "completude",
+   "msg": "[sambrass] campo 'forma' vazio em 1 peças.",
+   "ids": [
+    "sb-057"
+   ],
+   "n": 1
+  }
+ ]
+}
