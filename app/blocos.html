@@ -46,6 +46,19 @@ button.ok{border-color:var(--verde)} button.ok.on{background:var(--verde);color:
 .prog{font-size:12.5px;color:var(--ouro);font-weight:700}
 a.volta{color:var(--suave);text-decoration:none;margin-left:auto}a.volta:hover{color:var(--ouro)}
 textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--linha);border-radius:9px;color:var(--tinta);padding:8px;font:12px/1.4 ui-monospace,monospace;margin-top:8px;display:none}
+/* Telar */
+.tctl{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.tctl label{display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--suave);font-weight:700}
+.tctl select,.tctl input[type=range]{font:inherit;background:#15130e;color:var(--tinta);border:1px solid var(--linha);border-radius:8px;padding:7px 9px;min-height:38px}
+.tctl .telA{border-left:3px solid var(--warm)} .tctl .telB{border-left:3px solid var(--cool)}
+.tbtn{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);min-height:38px;padding:0 14px}
+.tbtn.go{background:linear-gradient(180deg,#ffd97a,#caa043);color:#1a1206;border-color:#caa043}
+#telarsvg{display:block;width:100%;height:auto;background:#15130e;border:1px solid var(--linha);border-radius:12px}
+.word{font:12px/1.5 ui-monospace,monospace;color:var(--suave);word-break:break-all;margin:8px 0 0}
+.word b{color:var(--ouro)}
+.ctxcard{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:13.5px}
+.ctxcard h3{font-family:var(--serif);margin:0 0 6px;color:var(--ouro)}
+.ctxcard a{color:var(--cool)} .ctxcard .nota{color:var(--suave);font-size:12.5px;border-left:3px solid var(--linha);padding-left:10px;margin-top:8px}
 </style>
 </head>
 <body>
@@ -60,6 +73,7 @@ textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--li
   <section class="view" id="v-contorno"></section>
   <section class="view" id="v-groove"></section>
   <section class="view" id="v-parede"></section>
+  <section class="view" id="v-telar"></section>
 </main>
 
 <div class="bar"><div class="wrap">
@@ -96,15 +110,19 @@ const save=()=>{localStorage.setItem(KEY,JSON.stringify(state)); paintProg();};
 function unlock(){try{if(!AC){AC=new(window.AudioContext||window.webkitAudioContext)();ABCJS.synth.registerAudioContext(AC);}if(AC.state==='suspended')AC.resume();}catch(e){}}
 ['pointerdown','keydown'].forEach(ev=>document.addEventListener(ev,unlock,{capture:true,once:false}));
 
-async function play(id){
-  const abc=ABC[id]; if(!abc||!window.ABCJS?.synth?.supportsAudio())return; unlock();
+let curSynth=null;
+async function playABCStr(abc){
+  if(!window.ABCJS?.synth?.supportsAudio())return null; unlock();
   try{
-    const v=ABCJS.renderAbc('scratch',abc.replace(/\nT:[^\n]*/,''))[0];
+    const v=ABCJS.renderAbc('scratch',abc)[0];
     const s=new ABCJS.synth.CreateSynth();
     await s.init({audioContext:AC,visualObj:v,options:{soundFontUrl:'./vendor/soundfont/',program:56}});
-    await s.prime(); s.start();
-  }catch(e){}
+    await s.prime(); try{curSynth&&curSynth.stop();}catch(e){} curSynth=s; s.start();
+    return s;
+  }catch(e){return null;}
 }
+function stopAudio(){ try{curSynth&&curSynth.stop();}catch(e){} curSynth=null; }
+async function play(id){ const abc=ABC[id]; if(!abc)return; await playABCStr(abc.replace(/\nT:[^\n]*/,'')); }
 
 // ---------- seleção + confirmação (revisão de cor) ----------
 function selectPiece(id){
@@ -255,9 +273,110 @@ function renderParede(){
   el.querySelectorAll('.tile').forEach(c=>c.onclick=()=>{selectPiece(c.dataset.id);play(c.dataset.id);});
 }
 
+// ---------- VISTA TELAR: motor aperiódico (palavra de Fibonacci sobre blocos) ----------
+const PHI=1.6180339887;
+// substituição A->AB, B->A  →  palavra de Fibonacci (corte 1D de Penrose / quasicristal)
+function fibWord(n){ let s='A'; for(let i=0;i<n;i++){ let t=''; for(const c of s) t+= c==='A'?'AB':'A'; s=t; } return s; }
+function midiToAbc(m){
+  const names=['C','^C','D','^D','E','F','^F','G','^G','A','^A','B'];
+  let pc=((m%12)+12)%12, oct=Math.floor(m/12)-1, tok=names[pc];
+  if(oct>=5){ tok=tok.toLowerCase(); for(let o=5;o<oct;o++) tok+="'"; }
+  else { for(let o=oct;o<4;o++) tok+=','; }
+  return tok;
+}
+const blocksWithRiff=()=>Object.entries(DB).filter(([,r])=>r.riff?.midis?.length>=2);
+let telarRAF=null, telarState=null;
+
+function buildTelarABC(word, blkA, blkB, bpm){
+  const tiles=[]; let notes='';
+  for(const c of word){
+    const r=c==='A'?blkA:blkB, md=r.riff.midis, du=r.riff.durs||md.map(()=>1);
+    let beats=0;
+    for(let i=0;i<md.length;i++){ const mult=Math.max(1,Math.round((du[i]||1)*4));
+      notes+=midiToAbc(md[i])+(mult>1?mult:''); beats+=(du[i]||1); }
+    notes+='|'; tiles.push({durMs: beats*60000/bpm});
+  }
+  return {abc:`X:1\nM:2/4\nL:1/16\nQ:1/4=${bpm}\nK:C\n${notes}`, tiles};
+}
+function loomRow(word,y,W,rowH,faint,isPlay){
+  const units=[...word].map(c=> c==='A'?PHI:1), tot=units.reduce((a,b)=>a+b,0);
+  let x=0,rects='',layout=[];
+  for(let i=0;i<word.length;i++){ const w=units[i]/tot*W, sym=word[i];
+    rects+=`<rect ${isPlay?`data-play="${i}"`:''} x="${x.toFixed(1)}" y="${y}" width="${Math.max(1,w-1).toFixed(1)}" height="${rowH-3}" rx="2" fill="${sym==='A'?WARM:COOL}" opacity="${faint?0.28:0.9}"/>`;
+    layout.push({x,w,sym}); x+=w; }
+  return {rects,layout};
+}
+function drawLoom(n,tiles){
+  const W=960,rowH=30,lvls=[]; for(let L=Math.max(2,n-3);L<=n;L++) lvls.push(L);
+  let h='',bottom=null,H=lvls.length*rowH+8;
+  lvls.forEach((L,ri)=>{ const w=fibWord(L),y=ri*rowH+4,isPlay=(L===n);
+    const {rects,layout}=loomRow(w,y,W,rowH,!isPlay,isPlay); h+=rects;
+    if(isPlay) bottom={layout,y}; });
+  h+=`<line id="telarcur" x1="0" y1="${bottom.y-2}" x2="0" y2="${bottom.y+rowH-3}" stroke="#fff" stroke-width="2" opacity="0"/>`;
+  const sv=$('#telarsvg'); sv.setAttribute('viewBox',`0 0 ${W} ${H}`); sv.innerHTML=h;
+  bottom.layout.forEach((t,i)=>t.durMs=tiles[i]?tiles[i].durMs:300);
+  let cum=0; bottom.layout.forEach(t=>{ t.t0=cum; cum+=t.durMs; t.t1=cum; });
+  telarState={layout:bottom.layout, total:cum, W};
+}
+function animTelar(){
+  if(!telarState)return; const start=performance.now(), cur=document.getElementById('telarcur');
+  cancelAnimationFrame(telarRAF);
+  (function frame(now){
+    const el=now-start, st=telarState;
+    let i=st.layout.findIndex(t=>el<t.t1); if(i<0)i=st.layout.length-1;
+    const t=st.layout[i], fx=t.x+(t.durMs?Math.min(1,(el-t.t0)/t.durMs):0)*t.w;
+    cur.setAttribute('x1',fx.toFixed(1)); cur.setAttribute('x2',fx.toFixed(1)); cur.setAttribute('opacity','0.9');
+    st.layout.forEach((tt,j)=>{const r=$(`#telarsvg rect[data-play="${j}"]`); if(r)r.setAttribute('opacity', j===i?1:0.55);});
+    if(el<st.total) telarRAF=requestAnimationFrame(frame);
+    else { cur.setAttribute('opacity','0'); if($('#telloop')?.checked) telarPlay(); }
+  })(start);
+}
+function telarGenerate(){
+  const a=$('#telA')?.value, b=$('#telB')?.value; if(!a||!b)return;
+  const n=+$('#telN').value, bpm=+$('#telBpm').value, word=fibWord(n);
+  const {abc,tiles}=buildTelarABC(word,DB[a],DB[b],bpm);
+  drawLoom(n,tiles); telarState.abc=abc;
+  $('#telword').innerHTML=`palavra de Fibonacci (nível ${n}, ${word.length} blocos): <b>${[...word].map(c=>c==='A'?'▰':'▪').join('')}</b>`;
+  $('#telmeta').textContent=`A=${a} · B=${b} · ${word.length} blocos · andamento ${bpm} — determinístico, nunca recomeça idêntico.`;
+}
+async function telarPlay(){ if(!telarState?.abc)return; await playABCStr(telarState.abc); animTelar(); }
+function renderTelar(){
+  const blks=blocksWithRiff();
+  if(blks.length<2){ $('#v-telar').innerHTML='<p class="hint">Sem blocos com riff suficientes.</p>'; return; }
+  const opts=blks.map(([id,r])=>`<option value="${id}">${id} · ${(r.titulo||'').slice(0,28)}</option>`).join('');
+  const cumb=blks.filter(([,r])=>r.jornada==='cumbias'), defA=(cumb[0]||blks[0])[0];
+  const defB=(cumb.find(([,r])=>r.cor.modo!==DB[defA].cor.modo)||cumb[1]||blks[1]||blks[0])[0];
+  $('#v-telar').innerHTML=`
+   <p class="hint">O <b>Telar Infinito</b>: a <b>palavra de Fibonacci</b> (substituição A→AB, B→A — o corte 1D de Penrose) tece dois blocos num arranjo <b>determinístico que nunca se repete idêntico</b>. Ordem sem repetição = a tensão viva da cumbia. ▰ = bloco A, ▪ = bloco B. Os fios claros acima são os níveis de inflação (auto-similaridade); o fio de baixo é o que soa.</p>
+   <div class="tctl">
+     <label class="telA">bloco A (▰)<select id="telA">${opts}</select></label>
+     <label class="telB">bloco B (▪)<select id="telB">${opts}</select></label>
+     <label>profundidade<input type="range" id="telN" min="3" max="8" value="6"></label>
+     <label>andamento<input type="range" id="telBpm" min="70" max="130" value="96"></label>
+     <button class="tbtn go" id="telgen">tecer</button>
+     <button class="tbtn" id="telplay">▶ tocar</button>
+     <button class="tbtn" id="telstop">⏹</button>
+     <label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="telloop"> repetir</label>
+   </div>
+   <svg id="telarsvg"></svg>
+   <p class="word" id="telword"></p>
+   <p class="word" id="telmeta"></p>
+   <div class="ctxcard">
+     <h3>Contexto — cumbia é fronteira viva</h3>
+     <p>O motor aqui é <b>matemática</b> (Penrose/Fibonacci), sem dono cultural. A cumbia, sim, é território vivo e mestiço. No Cone Sul há <b>fusão autoautoral</b> que vale ouvir: <a href="https://norient.com/stories/new-wave-cumbia" target="_blank" rel="noopener">Puel Kona</a> — grupo Mapuche que toca cumbia com <b>kultrún, trutruka e pifilka</b> (a <b>trutruka</b> é um trompete natural longo — primo do instrumento do aluno) — além de Jano Weichafe, a <a href="https://cumbia.fandom.com/es/wiki/Cumbia_chilena" target="_blank" rel="noopener">cumbia chilena</a> e a cumbia digital.</p>
+     <p class="nota">Honestidade (lição do Kené): o grafismo Mapuche (<i>ñimin</i>, <i>guñelve</i>) é <b>simétrico</b>, não aperiódico como Penrose — dois tipos de ordem, não o mesmo. E o <i>kultrún</i> é sagrado: referência creditada, nunca gimmick a "decodificar".</p>
+   </div>`;
+  $('#telA').value=defA; $('#telB').value=defB;
+  $('#telgen').onclick=telarGenerate; $('#telplay').onclick=telarPlay;
+  ['telA','telB','telN','telBpm'].forEach(id=>$('#'+id).onchange=telarGenerate);
+  $('#telstop').onclick=()=>{stopAudio();cancelAnimationFrame(telarRAF);const c=document.getElementById('telarcur');c&&c.setAttribute('opacity','0');};
+  telarGenerate();
+}
+
 // ---------- tabs ----------
 const VIEWS=[['cor','Cor · círculo de quintas',renderCor],['contorno','Contorno · cordilheira',renderContorno],
-  ['groove','Groove · colar rítmico',renderGroove],['parede','Parede de Lego',renderParede]];
+  ['groove','Groove · colar rítmico',renderGroove],['parede','Parede de Lego',renderParede],
+  ['telar','Telar · tear aperiódico',renderTelar]];
 let built={};
 function showTab(k){
   VIEWS.forEach(([id])=>{$('#v-'+id).classList.toggle('on',id===k);});
