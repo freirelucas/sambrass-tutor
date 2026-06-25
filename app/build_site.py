@@ -63,6 +63,7 @@ def main():
     # 2) dados por jornada
     emit_sambrass()
     tem_cumbia = emit_cumbias()
+    _cp_opt(C / "cumbia" / "build" / "cheatsheet.pdf", SITE / "cheatsheet.pdf")   # cheatsheet de frases p/ download
 
     nbytes = sum(f.stat().st_size for f in SITE.rglob("*") if f.is_file())
     print(f"_site pronto: {len(list(SITE.rglob('*')))} arquivos, {nbytes // 1024} KB · "
