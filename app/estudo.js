@@ -38,16 +38,19 @@ function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webk
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada, abcFull, quality] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+  const [pieces, cells, abc, escada, abcFull, quality, BLK] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
     JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
-    j('quality.json')]);
+    j('quality.json'),
+    fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null)]);   // índice de blocos (selo/grafismo)
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
   const esc = (escada?.pieces||[]).find(x => x.id===ID);
   if(p){ $('#titulo').textContent = p.titulo; $('#byline').textContent = p.compositor;
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';
-    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`; }
+    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`;
+    if(window.grafismo && BLK?.pecas?.[ID]){ const b = BLK.pecas[ID];
+      $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84); } }
   const cm = {}; (cells?.celulas_ritmicas||[]).forEach(c => cm[c.id]=c);
   const presentes = (p?.celulas||[]).filter(id => cm[id] && abc?.['cell-'+id]);
   const ordenadas = HEARTPRI.filter(id => presentes.includes(id)).concat(presentes.filter(id => !HEARTPRI.includes(id)));

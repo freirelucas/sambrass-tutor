@@ -57,6 +57,7 @@ a.volta{color:var(--suave);text-decoration:none}a.volta:hover{color:var(--ouro)}
   <a class="volta" href="./index.html">‹ voltar ao app</a>
 </div><div class="wrap"><textarea id="saida" readonly></textarea></div></div>
 
+<script src="./grafismo.js"></script>
 <script src="./vendor/abcjs.js"></script>
 <script>
 const KEY = 'revisao_cumbias_v1';
@@ -92,8 +93,10 @@ function render(){
 }
 
 (async function(){
-  const [abc, abcFull, pieces, quality] = await Promise.all([jget('abc.json'), jget('abc_full.json'), jget('pieces.json'), jget('quality.json')]);
+  const [abc, abcFull, pieces, quality, BLK] = await Promise.all([jget('abc.json'), jget('abc_full.json'), jget('pieces.json'), jget('quality.json'),
+    fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null)]);   // índice de blocos (selo/grafismo)
   const lista = $('#lista'); lista.innerHTML='';
+  const selo = id => { const b=BLK?.pecas?.[id]; return (window.grafismo&&b)?grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf},46):''; };
   const ps = (pieces?.pieces||[]).slice().sort((a,b)=>a.num-b.num);
   const ids = [], temas = {};
   function mark(id, v){ state[id]={...(state[id]||{}), v: state[id]?.v===v?'':v}; save(); if(state[id]?.v) advance(); }
@@ -101,8 +104,9 @@ function render(){
     const id = p.id, tema = abc?.[id], full = abcFull?.[id];
     if(!tema || !(full && full !== tema)) continue;   // só cumbias OMR (têm peça inteira distinta = têm recorte/partitura)
     // safety: esconde o card se a imagem da partitura não existir
-    const card = document.createElement('section'); card.className='card'; card.dataset.id=id;
+    const card = document.createElement('section'); card.className='card'; card.dataset.id=id; card.style.position='relative';
     card.innerHTML = `
+      <div class="cardselo" style="position:absolute;top:12px;right:12px;line-height:0" title="grafismo da frase — dos dados">${selo(id)}</div>
       <h2>${p.titulo}</h2>
       <p class="by">${p.compositor||''} · tom de ${WR[p.key_concert]||p.key_concert} · <span class="tier">tier atual: ${(quality&&quality[id])||'?'}</span></p>
       <div class="cols">

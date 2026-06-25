@@ -30,6 +30,10 @@ small{color:var(--suave)}
   background:linear-gradient(180deg,#fff,#e7d9bf);-webkit-background-clip:text;background-clip:text;color:transparent}
 .byline{color:var(--suave);font-size:15px;font-style:italic;font-family:var(--serif)}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero .wrap{position:relative}
+.herosel{position:absolute;top:6px;right:0;width:84px;height:84px;line-height:0}
+.herosel svg{width:84px;height:84px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+@media(max-width:520px){.herosel{width:58px;height:58px;top:2px}.herosel svg{width:58px;height:58px}}
 .badge{background:rgba(255,255,255,.05);border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
 .badge b{color:var(--ouro)}
 .badge.nivel-book1 b{color:var(--verde)}.badge.nivel-arban b{color:var(--vinho2)}
@@ -117,6 +121,7 @@ small{color:var(--suave)}
   <h1 id="titulo">carregando</h1>
   <div class="byline" id="byline"></div>
   <div class="badges" id="badges"></div>
+  <div id="selo" class="herosel" title="grafismo do bloco — gerado dos dados"></div>
 </div></header>
 
 <main class="wrap">
@@ -177,6 +182,7 @@ small{color:var(--suave)}
 
 <script src="./vendor/abcjs.js"></script>
 <script src="./config.js"></script>
+<script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./estudo.js"></script>
 </body>
