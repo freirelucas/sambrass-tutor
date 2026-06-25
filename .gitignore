@@ -21,3 +21,6 @@ _site/
 node_modules/
 test-results/
 playwright-report/
+
+# Cheatsheet: HTML intermediário (regenerável; o PDF é o entregável versionado)
+content/cumbia/build/cheatsheet.html
