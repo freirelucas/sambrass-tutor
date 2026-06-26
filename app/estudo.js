@@ -53,7 +53,9 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';
     $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`;
     if(window.grafismo && BLK?.pecas?.[ID]){ const b = BLK.pecas[ID];
-      $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84); } }
+      $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84); }
+    if(CUMBIA && esc){ const cb = {riff:1, sincopa:2, fogo:3}[esc.nivel_minimo];   // ponte reversa: aquece com o bloco do Cichowicz que prepara este lote
+      if(cb) $('#badges').insertAdjacentHTML('beforeend', ` <a class="badge warm" href="./respira.html" title="Flow do Cichowicz que prepara este lote">🫁 aqueça: Bloco ${cb}</a>`); } }
   const cm = {}; (cells?.celulas_ritmicas||[]).forEach(c => cm[c.id]=c);
   const presentes = (p?.celulas||[]).filter(id => cm[id] && abc?.['cell-'+id]);
   const ordenadas = HEARTPRI.filter(id => presentes.includes(id)).concat(presentes.filter(id => !HEARTPRI.includes(id)));
