@@ -151,6 +151,7 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .node.lft{margin-right:auto}
 .node.z1{transform:translateX(10%)}.node.z2{transform:translateX(18%)}.node.z3{transform:translateX(24%)}
 .node.lft.z1{transform:translateX(-10%)}.node.lft.z2{transform:translateX(-18%)}.node.lft.z3{transform:translateX(-24%)}
+@media (max-width:480px){ .node{max-width:none;transform:none!important} }   /* o zigzag estourava a largura no celular */
 .node .inner{width:58px;height:58px;border-radius:50%;border:3px solid var(--ll,var(--brand));
   background:var(--card);color:var(--ll,var(--brand));font-size:24px;cursor:pointer;flex:none;
   box-shadow:var(--sombra);display:flex;align-items:center;justify-content:center}
