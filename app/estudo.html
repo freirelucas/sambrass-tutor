@@ -121,6 +121,10 @@ small{color:var(--suave)}
 .backbtn{display:inline-flex;align-items:center;min-height:42px;color:var(--suave);text-decoration:none;font-weight:700;font-size:14px}
 .backbtn:active{color:var(--ouro)}
 .voltar:hover{color:var(--ouro)}
+.steps{position:sticky;top:0;z-index:15;display:flex;gap:6px;background:var(--bg);padding:10px 0 8px}
+.steps button{flex:1;min-height:46px;border:1px solid var(--linha);background:#211e17;color:var(--suave);border-radius:11px;font:inherit;font-weight:800;font-size:13px;cursor:pointer}
+.steps button.on{background:var(--pane);color:var(--ouro);border-color:var(--ouro2)}
+.sec.off{display:none}
 </style>
 </head>
 <body>
@@ -134,14 +138,19 @@ small{color:var(--suave)}
 </div></header>
 
 <main class="wrap">
-  <section class="sec">
+  <nav class="steps" id="steps">
+    <button class="on" data-s="0">① Coração</button>
+    <button data-s="1">② Frase</button>
+    <button data-s="2">③ Praticar</button>
+  </nav>
+  <section class="sec" data-step="0">
     <div class="sec-h">o coração</div>
     <h2 id="celH2">A síncope que move o samba</h2>
     <p class="lead">Antes da melodia, sinta o tijolo. Toque a célula e deixe o acento cair no contratempo — é o gingado de toda a peça.</p>
     <div id="celulas"></div>
   </section>
 
-  <section class="sec">
+  <section class="sec" data-step="1">
     <div class="sec-h">a melodia</div>
     <h2>Toque junto — e veja a digitação</h2>
     <p class="lead">Enquanto toca (timbre de trompete), as <b>3 válvulas acendem a digitação</b> da nota atual e o cursor segue a partitura. Ajuste o beat e repita trechos.</p>
@@ -173,7 +182,7 @@ small{color:var(--suave)}
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" data-step="2">
     <div class="sec-h">prática · 15 min</div>
     <h2>O caminho até tocar de cór</h2>
     <ol class="passos" id="passos">
@@ -194,5 +203,21 @@ small{color:var(--suave)}
 <script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./estudo.js"></script>
+<script>
+addEventListener('DOMContentLoaded', function () {
+  var secs = [].slice.call(document.querySelectorAll('main .sec[data-step]'));
+  var btns = [].slice.call(document.querySelectorAll('#steps button'));
+  if (!secs.length || !btns.length) return;
+  function show(i) {
+    secs.forEach(function (s) { s.classList.toggle('off', +s.dataset.step !== i); });
+    btns.forEach(function (b) { b.classList.toggle('on', +b.dataset.s === i); });
+    if (i === 1 && window.setMel) { try { setMel(); } catch (e) {} }   // re-renderiza a partitura na largura certa
+    try { window.dispatchEvent(new Event('resize')); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
+  btns.forEach(function (b) { b.onclick = function () { show(+b.dataset.s); }; });
+  show(0);
+});
+</script>
 </body>
 </html>

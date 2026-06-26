@@ -76,6 +76,7 @@ test('ligar microfone e praticar: tuner ativa e o cursor silencioso avança', as
   await page.goto('/estudo.html?id=sb-011');
   await expect(page.locator('#badges')).toContainText('nível');
 
+  await page.click('#steps button[data-s="1"]');             // passo "Frase" — onde vivem mic/tutor/partitura
   await page.click('#tmic');                                  // mic (fake device) → tuner ativo
   await expect(page.locator('#tuner')).toHaveClass(/ativo/);
 
