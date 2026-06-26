@@ -146,12 +146,12 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .nivband{font-weight:800;font-size:14.5px;letter-spacing:.3px;color:var(--nc,var(--brand))}
 .nivcount{font-size:12px;font-weight:700;color:var(--suave);white-space:nowrap}
 .nivdesc{font-size:12px;color:var(--suave);margin:4px 0 0;line-height:1.4}
-.node{display:flex;align-items:center;gap:12px;margin:9px 0;position:relative;max-width:520px}
-.node.rgt{margin-left:auto;flex-direction:row-reverse;text-align:right}
-.node.lft{margin-right:auto}
-.node.z1{transform:translateX(10%)}.node.z2{transform:translateX(18%)}.node.z3{transform:translateX(24%)}
-.node.lft.z1{transform:translateX(-10%)}.node.lft.z2{transform:translateX(-18%)}.node.lft.z3{transform:translateX(-24%)}
-@media (max-width:480px){ .node{max-width:none;transform:none!important} }   /* o zigzag estourava a largura no celular */
+/* trilha = escada VERTICAL limpa (cabe no polegar; trocou o zigzag que estourava) */
+.node{display:flex;align-items:center;gap:14px;margin:8px 0;padding:8px 12px 8px 10px;position:relative;
+  background:var(--card);border:1px solid var(--linha);border-left:4px solid var(--ll,var(--brand));border-radius:12px;box-shadow:var(--sombra)}
+.node.here{border-color:var(--ll,var(--brand));box-shadow:0 0 0 2px var(--ll,var(--brand)),var(--sombra)}
+.node .nlabel{flex:1;min-width:0}
+.node .flag{top:-9px;left:auto;right:12px;transform:none}
 .node .inner{width:58px;height:58px;border-radius:50%;border:3px solid var(--ll,var(--brand));
   background:var(--card);color:var(--ll,var(--brand));font-size:24px;cursor:pointer;flex:none;
   box-shadow:var(--sombra);display:flex;align-items:center;justify-content:center}

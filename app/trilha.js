@@ -52,9 +52,7 @@ function telaTrilha() {
         <div class="desc">tom de ${L.tom || '?'} · ${L.feat || ''} <button class="tecbtn" onclick="openTecnica(${m.lote})">técnica do lote ›</button></div></div>`;
     }
     const done = isDone(m.num), here = i === uni;
-    const side = (i % 6 < 3) ? 'rgt' : 'lft';
-    const z = ['z0', 'z1', 'z2', 'z3', 'z2', 'z1'][i % 6];
-    h += `<div class="node ${z} ${side}${here ? ' here' : ''}" style="--ll:${LCOR[m.lote]}">
+    h += `<div class="node${here ? ' here' : ''}" style="--ll:${LCOR[m.lote]}">
       ${here ? '<div class="flag">SUGERIDA</div>' : ''}
       <button class="inner${done ? ' done' : ''}" onclick="openMusic(${m.num})" aria-label="${m.titulo}"><span class="ic">${done ? '✓' : '🎺'}</span></button>
       <div class="nlabel"><b>${m.titulo}</b><div class="meta">${String(m.num).padStart(3, '0')} · ${m.tom}</div></div>
