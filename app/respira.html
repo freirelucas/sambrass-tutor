@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eae1d0">
+<title>Respira · Cichowicz Flow · Sambrass</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+/* — Respira: porta vanilla do protótipo React (Cichowicz Flow Studies) — */
+.flow-root{
+  --ink:#16110d; --paper:#f3ede1; --paper-2:#eae1d0;
+  --air:#1f7a6b; --air-soft:#cfe5df; --warm:#c0683b; --line:#d8cdb8;
+  min-height:100vh; background:var(--paper); color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-font-smoothing:antialiased; padding-bottom:40px;
+}
+html,body{margin:0;background:var(--paper2,#f3ede1)}
+*{box-sizing:border-box}
+.fl-back{display:inline-flex;align-items:center;min-height:42px;margin:8px 0 0 16px;color:var(--air);
+  text-decoration:none;font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:700}
+.fl-head{position:relative;padding:14px 22px 20px;overflow:hidden;
+  background:linear-gradient(180deg,var(--paper-2),var(--paper));border-bottom:1px solid var(--line)}
+.fl-breath{position:absolute;inset:auto 0 0 0;height:60px;opacity:.5;pointer-events:none}
+.fl-breath svg{width:100%;height:100%}
+.breath-path{fill:none;stroke:var(--air);stroke-width:2;stroke-dasharray:6 10;animation:flow 9s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-160}}
+.fl-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;position:relative;z-index:1}
+.fl-eyebrow{margin:0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--air);font-family:ui-monospace,Menlo,monospace}
+.fl-title{margin:2px 0 0;font-size:clamp(40px,11vw,60px);font-weight:600;letter-spacing:-.02em;line-height:.9}
+.fl-progress{text-align:right;line-height:1}
+.fl-prog-num{font-size:30px;font-weight:600;color:var(--air)}
+.fl-prog-den{font-size:16px;color:var(--ink);opacity:.5}
+.fl-prog-lbl{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-top:4px;font-family:ui-monospace,Menlo,monospace}
+.fl-sub{margin:14px 0 0;font-size:14px;opacity:.65;position:relative;z-index:1}
+.fl-track{padding:8px 16px 0;max-width:760px;margin:0 auto}
+.fl-block{margin-top:26px}
+.fl-block-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.fl-block-idx{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--warm);font-weight:700}
+.fl-block-name{font-size:19px;font-weight:600}
+.fl-block-aim{font-size:13px;opacity:.55;flex-basis:100%}
+@media(min-width:560px){.fl-block-aim{flex-basis:auto;margin-left:auto}}
+.fl-sectors{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:560px){.fl-sectors{grid-template-columns:1fr 1fr}}
+.fl-card{position:relative;text-align:left;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px 12px;
+  padding:14px 16px;border:1px solid var(--line);border-radius:2px;background:#fbf7ee;transition:transform .12s,border-color .15s,box-shadow .15s;font-family:inherit;color:inherit;width:100%}
+.fl-card:hover{transform:translateY(-2px);border-color:var(--air);box-shadow:0 6px 22px -14px rgba(31,122,107,.6)}
+.fl-card:focus-visible{outline:2px solid var(--air);outline-offset:2px}
+.fl-card-id{grid-row:1/3;font-size:30px;font-weight:600;color:var(--air);width:38px;text-align:center}
+.fl-card-study{font-family:ui-monospace,Menlo,monospace;font-size:11px;opacity:.5;letter-spacing:.08em}
+.fl-card-focus{grid-column:2;font-size:15px;font-weight:500;line-height:1.2}
+.fl-card-tempo{grid-row:1/3;grid-column:3;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--warm);white-space:nowrap}
+.fl-card.is-done{background:var(--air-soft);border-color:var(--air)}
+.fl-card.is-done .fl-card-id{opacity:.55}
+.fl-card-check{position:absolute;top:8px;right:10px;color:var(--air);font-size:13px;font-weight:700}
+.fl-panel-wrap{position:fixed;inset:0;background:rgba(22,17,13,.5);backdrop-filter:blur(3px);display:flex;align-items:flex-end;justify-content:center;z-index:50;animation:fade .2s ease}
+@media(min-width:560px){.fl-panel-wrap{align-items:center}}
+@keyframes fade{from{opacity:0}}
+.fl-panel{position:relative;width:100%;max-width:440px;background:var(--paper);border:1px solid var(--line);border-radius:14px 14px 0 0;padding:26px 22px 30px;animation:rise .26s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:560px){.fl-panel{border-radius:14px}}
+@keyframes rise{from{transform:translateY(24px);opacity:0}}
+.fl-close{position:absolute;top:14px;right:14px;border:none;background:none;font-size:18px;cursor:pointer;color:var(--ink);opacity:.5}
+.fl-close:hover{opacity:1}
+.fl-panel-top{display:flex;align-items:center;gap:14px}
+.fl-panel-id{font-size:46px;font-weight:600;color:var(--air);line-height:1}
+.fl-panel-study{margin:0;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.1em;opacity:.5;text-transform:uppercase}
+.fl-panel-focus{margin:2px 0 0;font-size:21px;font-weight:600;line-height:1.1}
+.fl-panel-tempo{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--warm)}
+.fl-panel-note{margin:14px 0 0;font-size:15px;opacity:.75;line-height:1.45}
+.fl-ring{position:relative;width:200px;height:200px;margin:22px auto 4px}
+.fl-ring svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--line);stroke-width:8}
+.ring-fg{fill:none;stroke:var(--air);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.fl-ring.rest .ring-fg{stroke:var(--warm)}
+.fl-ring-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.fl-ring-phase{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+.fl-ring-time{font-size:40px;font-weight:600;letter-spacing:-.02em}
+.fl-quote{text-align:center;font-style:italic;opacity:.6;font-size:14px;margin:6px 0 18px}
+.fl-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.fl-btn{font-family:inherit;font-size:15px;padding:11px 22px;border-radius:30px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer;transition:.15s;min-height:44px}
+.fl-btn:hover{background:var(--ink);color:var(--paper)}
+.fl-btn.primary{background:var(--air);border-color:var(--air);color:#fff}
+.fl-btn.primary:hover{background:#155e52}
+.fl-btn.ghost{border-color:var(--line);opacity:.7}
+.fl-btn.ghost:hover{background:none;color:var(--ink);opacity:1;border-color:var(--ink)}
+@media(prefers-reduced-motion:reduce){.breath-path{animation:none}.fl-panel,.fl-panel-wrap{animation:none}.ring-fg{transition:none}}
+</style>
+</head>
+<body>
+<div class="flow-root">
+  <a class="fl-back" href="./index.html">‹ voltar ao app</a>
+  <header class="fl-head">
+    <div class="fl-breath" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="none"><path class="breath-path" d="M0,30 Q75,4 150,30 T300,30 T450,30 T600,30"/></svg></div>
+    <div class="fl-head-row">
+      <div><p class="fl-eyebrow">Cichowicz · Flow Studies</p><h1 class="fl-title">Respira</h1></div>
+      <div class="fl-progress"><span class="fl-prog-num" id="progNum">0<span class="fl-prog-den">/10</span></span><span class="fl-prog-lbl">setores hoje</span></div>
+    </div>
+    <p class="fl-sub">Uma sessão. Som antes de velocidade. <span id="totalDur">~28:00</span> de prática.</p>
+  </header>
+  <main class="fl-track" id="track"></main>
+</div>
+<div id="panelHost"></div>
+<script>
+'use strict';
+const SECTORS=[
+  {id:"A",study:"1.1",tempo:100,dur:108,block:1,focus:"Ar contínuo · ligadura longa",note:"Início suave de cada nota. Só ar e legato.",audio:"./snippets/Cichowicz_Group_A_1-1.mp3"},
+  {id:"B",study:"1.2",tempo:112,dur:129,block:1,focus:"Primeiro cromatismo",note:"Mantenha o mesmo peso de ar do setor A.",audio:"./snippets/Cichowicz_Group_B_1-2.mp3"},
+  {id:"C",study:"1.3",tempo:112,dur:159,block:1,focus:"Abertura de intervalos",note:"Abrir sem apertar a embocadura.",audio:"./snippets/Cichowicz_Group_C_1-3.mp3"},
+  {id:"D",study:"1.4",tempo:112,dur:159,block:1,focus:"Condução de linha",note:"Respire só nos pontos marcados.",audio:"./snippets/Cichowicz_Group_D_1-4.mp3"},
+  {id:"E",study:"1.5",tempo:120,dur:154,block:2,focus:"Flexibilidade de registro",note:"Mudanças suaves, centro do som estável.",audio:"./snippets/Cichowicz_Group_E_1-5.mp3"},
+  {id:"F",study:"1.6",tempo:120,dur:179,block:2,focus:"Cromatismo denso",note:"Fraseado longo. Pico de controle de ar.",audio:"./snippets/Cichowicz_Group_F_1-6.mp3"},
+  {id:"G",study:"1.7",tempo:144,dur:179,block:3,focus:"Agilidade",note:"Colcheias limpas, articulação leve.",audio:"./snippets/Cichowicz_Group_G_1-7.mp3"},
+  {id:"H",study:"1.8",tempo:144,dur:154,block:3,focus:"Resistência",note:"Padrões longos. Gerencie o ar.",audio:"./snippets/Cichowicz_Group_H_1-8.mp3"},
+  {id:"I",study:"1.9",tempo:160,dur:169,block:3,focus:"Velocidade + extensão",note:"Rápido sem perder o som.",audio:"./snippets/Cichowicz_Group_I_1-9.mp3"},
+  {id:"J",study:"1.10",tempo:160,dur:174,block:3,focus:"Fechamento",note:"Máxima demanda, som ainda livre.",audio:"./snippets/Cichowicz_Group_J_1-10.mp3"},
+];
+const BLOCKS={1:{name:"Abertura do som",aim:"Ar, abertura e legato sem pressa."},2:{name:"Flexibilidade",aim:"Mobilidade entre registros."},3:{name:"Agilidade & resistência",aim:"Levar a base aquecida à velocidade."}};
+const QUOTES=["We must practice because muscles forget.","Keep simple things simple.","Take a small break if needed."];
+const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
+const $=s=>document.querySelector(s);
+
+const DKEY='respira_'+new Date().toISOString().slice(0,10);   // progresso do dia
+let done=JSON.parse(localStorage.getItem(DKEY)||'{}');
+const saveDone=()=>localStorage.setItem(DKEY,JSON.stringify(done));
+
+$('#totalDur').textContent='~'+fmt(SECTORS.reduce((a,s)=>a+s.dur,0));
+
+function renderTrack(){
+  let h='';
+  for(const b of [1,2,3]){
+    h+=`<section class="fl-block"><div class="fl-block-head"><span class="fl-block-idx">Bloco ${b}</span><span class="fl-block-name">${BLOCKS[b].name}</span><span class="fl-block-aim">${BLOCKS[b].aim}</span></div><div class="fl-sectors">`;
+    for(const s of SECTORS.filter(x=>x.block===b)){
+      h+=`<button class="fl-card ${done[s.id]?'is-done':''}" data-id="${s.id}">
+        <span class="fl-card-id">${s.id}</span><span class="fl-card-study">${s.study}</span>
+        <span class="fl-card-focus">${s.focus}</span><span class="fl-card-tempo">♩=${s.tempo}</span>
+        ${done[s.id]?'<span class="fl-card-check">✓</span>':''}</button>`;
+    }
+    h+=`</div></section>`;
+  }
+  $('#track').innerHTML=h;
+  document.querySelectorAll('.fl-card').forEach(c=>c.onclick=()=>open(c.dataset.id));
+  $('#progNum').innerHTML=`${Object.keys(done).length}<span class="fl-prog-den">/10</span>`;
+}
+
+// ---- painel do setor: motor Tocar → Descansar + áudio ----
+let timer=null, audioEl=null, st=null;
+function clearTimer(){ if(timer){clearInterval(timer);timer=null;} }
+function stopAudio(){ if(audioEl){audioEl.pause();} }
+function close(){ clearTimer(); stopAudio(); audioEl=null; st=null; $('#panelHost').innerHTML=''; renderTrack(); }
+
+function open(id){
+  const s=SECTORS.find(x=>x.id===id);
+  st={s, phase:'play', left:s.dur, running:false};
+  const idx=SECTORS.indexOf(s), quote=QUOTES[idx%QUOTES.length];
+  $('#panelHost').innerHTML=`<div class="fl-panel-wrap" id="pw"><div class="fl-panel" id="pp">
+    <button class="fl-close" id="pclose" aria-label="Fechar">✕</button>
+    <audio id="paudio" src="${s.audio}" preload="none" loop></audio>
+    <div class="fl-panel-top"><span class="fl-panel-id">${s.id}</span>
+      <div><p class="fl-panel-study">Estudo ${s.study}</p><h2 class="fl-panel-focus">${s.focus}</h2></div>
+      <span class="fl-panel-tempo">♩=${s.tempo}</span></div>
+    <p class="fl-panel-note">${s.note}</p>
+    <div class="fl-ring" id="ring"><svg viewBox="0 0 200 200"><circle class="ring-bg" cx="100" cy="100" r="88"/>
+      <circle class="ring-fg" id="ringfg" cx="100" cy="100" r="88" style="stroke-dasharray:${2*Math.PI*88}"/></svg>
+      <div class="fl-ring-mid"><span class="fl-ring-phase" id="rphase">Tocar</span><span class="fl-ring-time" id="rtime">${fmt(s.dur)}</span></div></div>
+    <p class="fl-quote">"${quote}"</p>
+    <div class="fl-controls" id="rctrl"></div></div></div>`;
+  audioEl=$('#paudio');
+  $('#pclose').onclick=close;
+  $('#pw').onclick=e=>{ if(e.target.id==='pw') close(); };
+  paintPanel();
+}
+function paintPanel(){
+  if(!st)return; const {s,phase,left,running}=st;
+  const ring=$('#ring'); ring.className='fl-ring '+phase;
+  $('#ringfg').style.strokeDashoffset = 2*Math.PI*88*(1-left/s.dur);
+  $('#rphase').textContent = phase==='play'?'Tocar':'Descansar';
+  $('#rtime').textContent = fmt(left);
+  let c='';
+  if(!running && left>0) c+=`<button class="fl-btn primary" id="bgo">${phase==='play'?'Começar':'Iniciar descanso'}</button>`;
+  if(running) c+=`<button class="fl-btn" id="bpause">Pausar</button>`;
+  if(left===0) c+=`<button class="fl-btn primary" id="bdone">Setor concluído ✓</button>`;
+  c+=`<button class="fl-btn ghost" id="brestart">Reiniciar</button>`;
+  $('#rctrl').innerHTML=c;
+  const on=(id,fn)=>{const e=document.getElementById(id);if(e)e.onclick=fn;};
+  on('bgo',()=>{ st.running=true; if(st.phase==='play'){ try{audioEl.currentTime=0;audioEl.play().catch(()=>{});}catch(e){} } run(); paintPanel(); });
+  on('bpause',()=>{ st.running=false; clearTimer(); stopAudio(); paintPanel(); });
+  on('bdone',close);
+  on('brestart',()=>open(st.s.id));
+}
+function run(){
+  clearTimer();
+  timer=setInterval(()=>{
+    if(!st)return;
+    if(st.left<=1){
+      if(st.phase==='play'){ st.phase='rest'; st.left=st.s.dur; stopAudio(); paintPanel(); return; }
+      clearTimer(); st.running=false; done[st.s.id]=true; saveDone(); st.left=0; paintPanel(); return;
+    }
+    st.left--; paintPanel();
+  },1000);
+}
+renderTrack();
+</script>
+</body>
+</html>
