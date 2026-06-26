@@ -92,6 +92,7 @@ def events_from_abc(abc, transpose=2):
     ksig = _keysig(head.get("K", "C"))
     events, measure = [], 1
     bar_acc = {}                                              # acidentes vigentes no compasso
+    tie = False                                               # ligadura de valor pendente
     for mt in _TOK.finditer(" ".join(body)):
         if mt.group("bar"):
             measure += 1
@@ -113,8 +114,14 @@ def events_from_abc(abc, transpose=2):
                 midi += bar_acc[up]
             elif up in ksig:
                 midi += ksig[up]
-            events.append({"measure": measure, "written_midi": midi + transpose,
-                           "concert_midi": midi, "dur_beats": round(_parselen(mt.group("len")) * unit, 3)})
+            dur = round(_parselen(mt.group("len")) * unit, 3)
+            if tie and events and events[-1].get("concert_midi") == midi:   # ligadura: nota igual funde (1 ataque só)
+                events[-1]["dur_beats"] = round(events[-1]["dur_beats"] + dur, 3)
+            else:
+                events.append({"measure": measure, "written_midi": midi + transpose, "concert_midi": midi, "dur_beats": dur})
+            tie = False
+        elif mt.group("other") == "-":                        # liga a próxima nota igual à anterior
+            tie = True
     return events
 
 

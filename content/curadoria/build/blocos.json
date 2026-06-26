@@ -10263,17 +10263,17 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.3,
-     "grau (2ª)": 0.35,
-     "3ª": 0.21,
-     "4ª": 0.09,
+     "uníssono": 0.22,
+     "grau (2ª)": 0.39,
+     "3ª": 0.23,
+     "4ª": 0.1,
      "5ª": 0.04,
      "salto (≥6ª)": 0.01
     },
     "contorno": {
-     "sobe": 0.25,
-     "desce": 0.45,
-     "repete": 0.3
+     "sobe": 0.28,
+     "desce": 0.51,
+     "repete": 0.22
     },
     "salto_max": 19,
     "arpejo_frac": 0.0,
@@ -10282,9 +10282,9 @@
      "E5"
     ],
     "ambito_semitons": 24,
-    "classe": "misto"
+    "classe": "arpejado"
    },
-   "bloco": "E menor · misto",
+   "bloco": "E menor · arpejado",
    "celula_dominante": "-",
    "dif": null,
    "meter": 4.0,
@@ -10313,24 +10313,24 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.21,
+    "cobertura": 0.23,
     "midis": [
      66,
      73,
-     73,
      76,
      73,
-     73,
      71,
-     69
+     69,
+     68,
+     66
     ],
     "durs": [
      0.25,
-     0.25,
-     0.25,
      0.5,
-     0.25,
-     0.25,
+     0.5,
+     0.5,
+     0.5,
+     0.5,
      0.5,
      0.25
     ]
@@ -10350,17 +10350,17 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.11,
-     "grau (2ª)": 0.62,
-     "3ª": 0.11,
-     "4ª": 0.14,
+     "uníssono": 0.01,
+     "grau (2ª)": 0.68,
+     "3ª": 0.12,
+     "4ª": 0.16,
      "5ª": 0.03,
      "salto (≥6ª)": 0.0
     },
     "contorno": {
-     "sobe": 0.45,
-     "desce": 0.45,
-     "repete": 0.11
+     "sobe": 0.49,
+     "desce": 0.49,
+     "repete": 0.01
     },
     "salto_max": 6,
     "arpejo_frac": 0.0,
@@ -10397,9 +10397,9 @@
     "C6"
    ],
    "riff": {
-    "len": 8,
+    "len": 7,
     "x": 2,
-    "cobertura": 0.21,
+    "cobertura": 0.2,
     "midis": [
      73,
      75,
@@ -10407,8 +10407,7 @@
      78,
      80,
      78,
-     73,
-     75
+     73
     ],
     "durs": [
      0.5,
@@ -10417,7 +10416,6 @@
      0.25,
      0.25,
      0.5,
-     0.25,
      0.25
     ]
    }
@@ -10436,20 +10434,20 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.42,
-     "grau (2ª)": 0.08,
-     "3ª": 0.33,
-     "4ª": 0.11,
+     "uníssono": 0.34,
+     "grau (2ª)": 0.09,
+     "3ª": 0.38,
+     "4ª": 0.12,
      "5ª": 0.03,
      "salto (≥6ª)": 0.03
     },
     "contorno": {
-     "sobe": 0.3,
-     "desce": 0.27,
-     "repete": 0.42
+     "sobe": 0.34,
+     "desce": 0.31,
+     "repete": 0.34
     },
     "salto_max": 9,
-    "arpejo_frac": 0.06,
+    "arpejo_frac": 0.07,
     "tessitura": [
      "F#4",
      "F#5"
@@ -10487,17 +10485,14 @@
     "C6"
    ],
    "riff": {
-    "len": 8,
+    "len": 5,
     "x": 2,
-    "cobertura": 0.24,
+    "cobertura": 0.17,
     "midis": [
      71,
      71,
      71,
      68,
-     73,
-     73,
-     73,
      73
     ],
     "durs": [
@@ -10505,10 +10500,7 @@
      0.5,
      0.5,
      0.25,
-     0.25,
-     0.25,
-     0.75,
-     0.75
+     0.5
     ]
    }
   },
@@ -10526,17 +10518,17 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.24,
-     "grau (2ª)": 0.51,
-     "3ª": 0.14,
+     "uníssono": 0.13,
+     "grau (2ª)": 0.58,
+     "3ª": 0.16,
      "4ª": 0.04,
      "5ª": 0.02,
-     "salto (≥6ª)": 0.06
+     "salto (≥6ª)": 0.07
     },
     "contorno": {
-     "sobe": 0.29,
-     "desce": 0.47,
-     "repete": 0.24
+     "sobe": 0.33,
+     "desce": 0.53,
+     "repete": 0.13
     },
     "salto_max": 17,
     "arpejo_frac": 0.0,
@@ -10545,23 +10537,21 @@
      "E5"
     ],
     "ambito_semitons": 17,
-    "classe": "misto"
+    "classe": "escalar"
    },
-   "bloco": "E menor · misto",
+   "bloco": "E menor · escalar",
    "celula_dominante": "-",
    "dif": null,
    "meter": 2.0,
    "onsets": [
     0.0,
+    0.25,
     0.5,
-    0.75,
-    1.0,
-    1.5
+    1.0
    ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
-    "C2",
     "C3",
     "C4"
    ],
@@ -10573,7 +10563,7 @@
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.31,
+    "cobertura": 0.35,
     "midis": [
      78,
      76,
@@ -10690,17 +10680,17 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.31,
-     "grau (2ª)": 0.38,
+     "uníssono": 0.29,
+     "grau (2ª)": 0.39,
      "3ª": 0.14,
      "4ª": 0.0,
      "5ª": 0.14,
-     "salto (≥6ª)": 0.03
+     "salto (≥6ª)": 0.04
     },
     "contorno": {
-     "sobe": 0.28,
-     "desce": 0.41,
-     "repete": 0.31
+     "sobe": 0.29,
+     "desce": 0.43,
+     "repete": 0.29
     },
     "salto_max": 12,
     "arpejo_frac": 0.0,
@@ -10731,7 +10721,7 @@
    "riff": {
     "len": 4,
     "x": 2,
-    "cobertura": 0.27,
+    "cobertura": 0.28,
     "midis": [
      73,
      79,
@@ -10946,15 +10936,15 @@
    "sb-043",
    "sb-056"
   ],
-  "E menor · misto": [
-   "sb-093",
-   "cu-009",
-   "cu-012"
-  ],
   "Bb maior · arpejado": [
    "sb-099",
    "sb-104",
    "cu-001"
+  ],
+  "E menor · arpejado": [
+   "sb-108",
+   "cu-009",
+   "cu-016"
   ],
   "Db maior · misto": [
    "sb-007",
@@ -10983,10 +10973,6 @@
   "D maior · misto": [
    "sb-107",
    "cu-004"
-  ],
-  "E menor · arpejado": [
-   "sb-108",
-   "cu-016"
   ],
   "B menor · arpejado": [
    "cu-006",
@@ -11028,6 +11014,9 @@
   "C menor · arpejado": [
    "sb-091"
   ],
+  "E menor · misto": [
+   "sb-093"
+  ],
   "Bb menor · misto": [
    "sb-109"
   ],
@@ -11036,6 +11025,9 @@
   ],
   "A menor/dórico · escalar": [
    "cu-010"
+  ],
+  "E menor · escalar": [
+   "cu-012"
   ],
   "B menor/dórico · misto": [
    "cu-014"
