@@ -11,14 +11,15 @@
 <meta name="mobile-web-app-capable" content="yes">
 <style>
 /* — Respira: porta vanilla do protótipo React (Cichowicz Flow Studies) — */
+:root{ --ink:#16110d; --paper:#f3ede1; --paper-2:#eae1d0;
+  --air:#1f7a6b; --air-soft:#cfe5df; --warm:#c0683b; --line:#d8cdb8; }
 .flow-root{
-  --ink:#16110d; --paper:#f3ede1; --paper-2:#eae1d0;
-  --air:#1f7a6b; --air-soft:#cfe5df; --warm:#c0683b; --line:#d8cdb8;
   min-height:100vh; background:var(--paper); color:var(--ink);
   font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   -webkit-font-smoothing:antialiased; padding-bottom:40px;
 }
-html,body{margin:0;background:var(--paper2,#f3ede1)}
+html,body{margin:0;background:var(--paper)}
+.fl-panel-wrap{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
 *{box-sizing:border-box}
 .fl-back{display:inline-flex;align-items:center;min-height:42px;margin:8px 0 0 16px;color:var(--air);
   text-decoration:none;font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:700}
