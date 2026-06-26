@@ -44,6 +44,8 @@ html,body{margin:0;background:var(--paper)}
 .fl-block-name{font-size:19px;font-weight:600}
 .fl-block-aim{font-size:13px;opacity:.55;flex-basis:100%}
 @media(min-width:560px){.fl-block-aim{flex-basis:auto;margin-left:auto}}
+.fl-prep{font-size:12.5px;color:#155e52;background:var(--air-soft);border-left:3px solid var(--air);padding:8px 12px;border-radius:0 6px 6px 0;margin:0 0 14px;line-height:1.45}
+.fl-prep b{color:var(--ink)}
 .fl-sectors{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:560px){.fl-sectors{grid-template-columns:1fr 1fr}}
 .fl-card{position:relative;text-align:left;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px 12px;
@@ -118,7 +120,14 @@ const SECTORS=[
   {id:"I",study:"1.9",tempo:160,dur:169,block:3,focus:"Velocidade + extensão",note:"Rápido sem perder o som.",audio:"./snippets/Cichowicz_Group_I_1-9.mp3"},
   {id:"J",study:"1.10",tempo:160,dur:174,block:3,focus:"Fechamento",note:"Máxima demanda, som ainda livre.",audio:"./snippets/Cichowicz_Group_J_1-10.mp3"},
 ];
-const BLOCKS={1:{name:"Abertura do som",aim:"Ar, abertura e legato sem pressa."},2:{name:"Flexibilidade",aim:"Mobilidade entre registros."},3:{name:"Agilidade & resistência",aim:"Levar a base aquecida à velocidade."}};
+const BLOCKS={
+  1:{name:"Abertura do som",aim:"Ar, abertura e legato sem pressa.",
+     prep:{n:"Lote 1 · riff",why:"o riff do acervo já é agudo (~6/6) mas lento (vel ~1.4): o ar e o legato de A–D deixam o agudo sair livre, sem forçar."}},
+  2:{name:"Flexibilidade",aim:"Mobilidade entre registros.",
+     prep:{n:"Lote 2 · síncope",why:"a síncope sobe a velocidade (vel 1.4→4.8) e alonga a frase (fôlego 1.6→4.0): a flexibilidade e o fraseado de E–F fazem a ponte."}},
+  3:{name:"Agilidade & resistência",aim:"Levar a base aquecida à velocidade.",
+     prep:{n:"Lote 3 · fogo",why:"o fogo é o pico (vel ~5.8, fôlego ~5.8, agudo 6/6): agilidade, velocidade+extensão e resistência de G–J a ♩160 são exatamente essa demanda."}},
+};
 const QUOTES=["We must practice because muscles forget.","Keep simple things simple.","Take a small break if needed."];
 const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
 const $=s=>document.querySelector(s);
@@ -132,7 +141,9 @@ $('#totalDur').textContent='~'+fmt(SECTORS.reduce((a,s)=>a+s.dur,0));
 function renderTrack(){
   let h='';
   for(const b of [1,2,3]){
-    h+=`<section class="fl-block"><div class="fl-block-head"><span class="fl-block-idx">Bloco ${b}</span><span class="fl-block-name">${BLOCKS[b].name}</span><span class="fl-block-aim">${BLOCKS[b].aim}</span></div><div class="fl-sectors">`;
+    h+=`<section class="fl-block"><div class="fl-block-head"><span class="fl-block-idx">Bloco ${b}</span><span class="fl-block-name">${BLOCKS[b].name}</span><span class="fl-block-aim">${BLOCKS[b].aim}</span></div>
+      <p class="fl-prep">→ prepara o <b>${BLOCKS[b].prep.n}</b> do acervo — ${BLOCKS[b].prep.why}</p>
+      <div class="fl-sectors">`;
     for(const s of SECTORS.filter(x=>x.block===b)){
       h+=`<button class="fl-card ${done[s.id]?'is-done':''}" data-id="${s.id}">
         <span class="fl-card-id">${s.id}</span><span class="fl-card-study">${s.study}</span>
