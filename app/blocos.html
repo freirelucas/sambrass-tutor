@@ -272,8 +272,8 @@ function renderParede(){
   for(const [id,r] of arr){
     const tpc=PC[r.cor.tonica]??0, maj=r.cor.modo==='maior';
     const hue=(COFPOS[tpc]??0)*30, light=maj?58:40, sat=maj?72:55;
-    const sz=10+((r.dif||Math.min(7,3+(r.forma?.ambito_semitons||7)/5)))*6;
-    h+=`<div class="tile" data-id="${id}" title="${id} · ${r.titulo} · ${r.cor.tonica} ${r.cor.modo}${r.dif?' · dif '+r.dif:''}" `
+    const sz=12+((r.dif_norm||r.dif||5))*4.2;   // dificuldade normalizada 1–10 (comparável entre jornadas)
+    h+=`<div class="tile" data-id="${id}" title="${id} · ${r.titulo} · ${r.cor.tonica} ${r.cor.modo}${r.dif_norm?' · dif '+r.dif_norm+'/10':''}" `
       +`style="width:${sz}px;height:${sz}px;background:hsl(${hue},${sat}%,${light}%)"></div>`;
   }
   h+='</div>';

@@ -183,6 +183,8 @@ def main():
     fing, tr = load_fingering()
     catalog = [("sambrass", p["id"], p) for p in json.load(open(CONTENT / "pieces.json", encoding="utf-8"))["pieces"]]
     catalog += [("cumbias", f"cu-{p['num']:03d}", p) for p in json.load(open(CONTENT / "cumbia" / "pieces_cumbia.json", encoding="utf-8"))["pieces"]]
+    cu_dif = ({p["id"]: p.get("dificuldade") for p in json.load(open(CONTENT / "cumbia" / "build" / "pieces.json", encoding="utf-8"))["pieces"]}
+              if (CONTENT / "cumbia" / "build" / "pieces.json").exists() else {})   # dif computada das cumbias (10–23)
 
     reg, blocos, diverg, sem_xml = {}, defaultdict(list), [], []
     modos = Counter(); classes = Counter()
@@ -219,12 +221,20 @@ def main():
         modos[modo_lbl] += 1; classes[est.get("classe", "?")] += 1
         reg[pid] = {"jornada": jornada, "titulo": p.get("titulo", p.get("title", "")),
                     "armadura": key, "cor": cor, "forma": est, "bloco": bloco, "celula_dominante": dom,
-                    "dif": p.get("dificuldade"), "meter": mb, "onsets": ons,
+                    "dif": p.get("dificuldade") if p.get("dificuldade") is not None else cu_dif.get(pid), "meter": mb, "onsets": ons,
                     "celulas_marcadas": sorted(tags), "celulas_detectadas": sorted(presentes),
                     "tags_nao_confirmadas": ausentes, "celulas_extra_candidatas": extras, "riff": riff_rec}
         blocos[bloco].append(pid)
         if ausentes:
             diverg.append((pid, p.get("titulo", ""), sorted(tags), ausentes))
+
+    for jn in ("sambrass", "cumbias"):                            # dificuldade UNIFICADA: normaliza 1–10 por jornada (comparável entre as duas)
+        ds = [reg[i]["dif"] for i in reg if reg[i]["jornada"] == jn and isinstance(reg[i].get("dif"), (int, float))]
+        if ds:
+            lo, hi = min(ds), max(ds); rng = (hi - lo) or 1
+            for i in reg:
+                if reg[i]["jornada"] == jn and isinstance(reg[i].get("dif"), (int, float)):
+                    reg[i]["dif_norm"] = round(1 + 9 * (reg[i]["dif"] - lo) / rng, 1)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     json.dump({"_meta": {"sobre": "Índice de blocos (cor=tônica+modo, forma=classe estrutural) + validação best-effort de tags de célula.",
