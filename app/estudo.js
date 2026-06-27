@@ -41,10 +41,11 @@ function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webk
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada, abcFull, quality, BLK] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
     JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
     j('quality.json'),
-    fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null)]);   // índice de blocos (selo/grafismo)
+    fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null),   // índice de blocos (selo/grafismo)
+    j('pedagogia.json')]);                                               // desafios da peça → dicas no fluxo (P1③)
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
@@ -75,6 +76,8 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
             : `Isole o <b>compasso difícil</b> em loop 🔁 e suba o beat aos poucos.`,
       `Toque a frase inteira <b>de cór</b>, no andamento de roda.`];
     const ol = $('#passos'); if(ol) ol.innerHTML = passosArr.map(t => `<li><span class="chk">✓</span><span class="txt">${t}</span></li>`).join(''); }
+  if(pedag && pedag[p?.num]?.desafios){ const dz = $('#desafios');                 // P1③: a pedagogia da Story, aqui no fluxo
+    if(dz) dz.innerHTML = pedag[p.num].desafios.map(d => `<div class="desafio"><h3>${d.t}</h3>${d.d?`<p>${d.d}</p>`:''}${d.w?`<p class="por">${d.w}</p>`:''}${d.svg||''}</div>`).join(''); }
 
   const TEMA = abc?.[ID] || null;
   const FULL = (abcFull && abcFull[ID]) || null;        // peça inteira (só nas cumbias OMR)
