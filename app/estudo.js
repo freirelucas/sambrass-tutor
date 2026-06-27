@@ -30,7 +30,7 @@ let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = f
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
 // oitava do OMR não é confiável) avalia pela CLASSE DE ALTURA, evitando falsos vermelhos.
 function samePitch(a, b) { return OCTAVE_EXACT ? a === b : ((((a - b) % 12) + 12) % 12) === 0; }
-let TIMER = null, PRACTON = false;
+let TIMER = null, PRACTON = false, SCORE = { ok: 0, tot: 0 };
 let ESPERAR = false, WAITING = false;   // "esperar por mim": cursor só avança quando o mic confirma a nota
 let SLICE = null, LOOPON = false, LO_A = 1, LO_B = 1, MCOUNT = 1;
 let RAMPON = false, RTARGET = 120;
@@ -100,7 +100,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
 
   $('#menos').onclick = () => { BPM = Math.max(50, BPM-2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
   $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
-  $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'ouvir escrito (Bb)':'ouvir em concerto'; setMel(); if(PRACTON) restartTimer(); };
+  $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'🎼 escrito (Sib)':'🎼 em concerto'; setMel(); if(PRACTON) restartTimer(); };
   // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
   { const tFull = $('#tfull');
     if(tFull && !TEM_DOIS){ tFull.style.display = 'none'; }
@@ -151,6 +151,7 @@ async function playOnce(abc){
 function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).classList.toggle('press', f && f.includes(i)); } }
 function clrHi(){ document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight')); }
 function clrGrade(){ document.querySelectorAll('.abcjs-good,.abcjs-bad').forEach(el => el.classList.remove('abcjs-good','abcjs-bad')); }
+function paintScore(){ const e = $('#micscore'); if(e) e.textContent = SCORE.tot ? `sessão: ✓ ${SCORE.ok}/${SCORE.tot}` : ''; }
 
 // mostra a nota atual (highlight + nome + válvulas); grade=true arma a comparação do mic
 function showNote(ev, grade){
@@ -230,7 +231,7 @@ function newTimer(){
 function startPractice(){
   if(!VISUAL) return; audioUnlock();
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
-  TIMER = newTimer(); TIMER.start(); PRACTON = true;
+  SCORE = { ok: 0, tot: 0 }; paintScore(); TIMER = newTimer(); TIMER.start(); PRACTON = true;
   $('#tprat').classList.add('on'); $('#tprat').textContent = '⏸ parar';
   const g = $('#tgo'); if(g){ g.classList.add('on'); g.textContent = '⏸ parar'; }
 }
@@ -300,11 +301,11 @@ function micLoop(){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
     if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
       EXP.matchedMs += dt;
-      if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good';
+      if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good'; SCORE.ok++; SCORE.tot++; paintScore();
         if(WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } }   // acertou → avança o cursor
     }else if(pp){
       EXP.wrongMs += dt;
-      if(EXP.wrongMs >= WRONG_MS && !EXP.painted){ paint(EXP.els, 'bad'); EXP.painted = 'bad'; }
+      if(EXP.wrongMs >= WRONG_MS && !EXP.painted){ paint(EXP.els, 'bad'); EXP.painted = 'bad'; SCORE.tot++; paintScore(); }
     }
   }
   RAF = requestAnimationFrame(micLoop);
