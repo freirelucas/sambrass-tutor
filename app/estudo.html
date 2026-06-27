@@ -127,6 +127,7 @@ small{color:var(--suave)}
 .sec.off{display:none}
 .badge.warm{background:rgba(31,122,107,.18);color:#7fe0c0;border:1px solid #2f8f7e;text-decoration:none}
 .badge.warm:active{background:rgba(31,122,107,.35)}
+.toggle.prim{border-color:var(--ouro2);color:var(--ouro)}
 </style>
 </head>
 <body>
@@ -167,8 +168,8 @@ small{color:var(--suave)}
         <div class="tempo"><button id="menos">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais">+</button></div>
         <button class="toggle" id="tconcert">ouvir em concerto</button>
         <button class="toggle" id="tfull">▶ tocar a peça inteira</button>
-        <button class="toggle" id="tmic">🎤 ouvir meu som</button>
-        <button class="toggle" id="tprat">▶ praticar</button>
+        <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
+        <button class="toggle prim" id="tprat">▶ praticar</button>
         <button class="toggle" id="tesp" title="o cursor só avança quando você acerta a nota (precisa do microfone)">⏳ esperar por mim</button>
         <div class="loopbox"><button class="toggle" id="tloop">🔁 loop</button>
           <span class="lstep">comp <button id="laMinus">−</button><span id="laVal">1</span><button id="laPlus">+</button>

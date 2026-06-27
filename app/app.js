@@ -234,7 +234,10 @@ function telaVocab() {
       <div class="vocablvl"><span class="niv niv-arban">${NIVEL.arban}</span> ${tomRow('arban')}</div>
       <p class="meta" style="margin-top:8px">No trompete Bb a armadura escrita = tom de concerto + 2 semitons — por isso Dó de concerto se lê em Ré (2♯, Book 2), e só Sib/Fá/Sol/Dó escritos ficam no Book 1.</p></div>
     <div class="card vocab"><h3>Articulação, forma e leitura</h3><p class="tags">${comp || '<span class="meta">—</span>'}</p></div>
-    <p class="meta">${c24} peças em 2/4 e ${c44} em 4/4. Dominar este vocabulário é ler o caderno à primeira vista.</p>`;
+    <p class="meta">${c24} peças em 2/4 e ${c44} em 4/4. Dominar este vocabulário é ler o caderno à primeira vista.</p>
+    <h2 class="sec">Ferramentas</h2>
+    <div class="card" style="text-align:center"><a class="acao" style="width:100%;display:block;box-sizing:border-box;text-decoration:none" href="./blocos.html">🔷 Mapa de blocos &amp; geometrias</a>
+      <p class="meta" style="margin-top:8px">O vocabulário como blocos de Lego: cor (tom), forma (contorno), groove e o selo de cada peça.</p></div>`;
 }
 
 /* ---------- metrônomo (Web Audio) ---------- */
