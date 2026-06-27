@@ -110,7 +110,7 @@ test('Story por música: capa→perfil→plano→desafio com pauta→diário mar
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
 
-  await page.locator('.node .inner').first().click();                    // abre a Story (lazy pedagogia)
+  await page.locator('.node .planobtn').first().click();                 // "plano ›" abre a Story (agora opcional; o nó toca direto)
   await expect(page.locator('#story.on')).toBeVisible();
   await expect(page.locator('.slide h2')).toBeVisible();                 // capa: título
 
@@ -134,9 +134,7 @@ test('a síntese: o desafio leva ao tutor de escuta real (estudo.html)', async (
   await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
-  await page.locator('.node .inner').first().click();
-  await expect(page.locator('.micbtn').first()).toBeVisible();
-  await page.locator('.micbtn').first().click();                         // 🎤 tocar no tutor
+  await page.locator('.node .inner').first().click();                    // P0: o nó leva DIRETO ao tutor (Story opcional via "plano ›")
   await page.waitForURL(/estudo\.html\?id=sb-\d+/);
   await expect(page.locator('#badges')).toContainText('nível', { timeout: 10000 });
 });

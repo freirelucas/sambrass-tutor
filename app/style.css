@@ -152,6 +152,9 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .node.here{border-color:var(--ll,var(--brand));box-shadow:0 0 0 2px var(--ll,var(--brand)),var(--sombra)}
 .node .nlabel{flex:1;min-width:0}
 .node .flag{top:-9px;left:auto;right:12px;transform:none}
+.node .nlabel{cursor:pointer}
+.planobtn{flex:none;align-self:center;font:inherit;font-size:12px;font-weight:700;color:var(--suave);background:none;border:1px solid var(--linha);border-radius:999px;padding:6px 11px;min-height:36px;cursor:pointer;white-space:nowrap}
+.planobtn:active{color:var(--brand);border-color:var(--brand)}
 .node .inner{width:58px;height:58px;border-radius:50%;border:3px solid var(--ll,var(--brand));
   background:var(--card);color:var(--ll,var(--brand));font-size:24px;cursor:pointer;flex:none;
   box-shadow:var(--sombra);display:flex;align-items:center;justify-content:center}

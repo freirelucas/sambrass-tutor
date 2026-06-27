@@ -54,8 +54,9 @@ function telaTrilha() {
     const done = isDone(m.num), here = i === uni;
     h += `<div class="node${here ? ' here' : ''}" style="--ll:${LCOR[m.lote]}">
       ${here ? '<div class="flag">SUGERIDA</div>' : ''}
-      <button class="inner${done ? ' done' : ''}" onclick="openMusic(${m.num})" aria-label="${m.titulo}"><span class="ic">${done ? '✓' : '🎺'}</span></button>
-      <div class="nlabel"><b>${m.titulo}</b><div class="meta">${String(m.num).padStart(3, '0')} · ${m.tom}</div></div>
+      <button class="inner${done ? ' done' : ''}" onclick="tutorPeca(${m.num})" aria-label="tocar ${m.titulo}"><span class="ic">${done ? '✓' : '🎺'}</span></button>
+      <div class="nlabel" onclick="tutorPeca(${m.num})"><b>${m.titulo}</b><div class="meta">${String(m.num).padStart(3, '0')} · ${m.tom}</div></div>
+      <button class="planobtn" onclick="openMusic(${m.num})" aria-label="plano e desafios de ${m.titulo}">plano ›</button>
     </div>`;
   });
   tela.innerHTML = h + '</div>';
