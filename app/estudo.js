@@ -24,7 +24,7 @@ function fingerOf(midi){ return VALV[SHARP[((midi % 12) + 12) % 12] + (Math.floo
 // tolerâncias do tutor
 const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200;
 
-let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, VISUAL = null;
+let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, OCT = 0, VISUAL = null;
 // tutor de escuta
 let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
@@ -41,18 +41,21 @@ function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webk
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag, percurso] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
     JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
     j('quality.json'),
     fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null),   // índice de blocos (selo/grafismo)
-    j('pedagogia.json')]);                                               // desafios da peça → dicas no fluxo (P1③)
+    j('pedagogia.json'),                                                 // desafios da peça → dicas no fluxo (P1③)
+    j('percurso.json')]);                                                // pico/agudo p/ o badge de alcance
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
   const esc = (escada?.pieces||[]).find(x => x.id===ID);
   if(p){ $('#titulo').textContent = p.titulo; $('#byline').textContent = p.compositor;
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';
-    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}`;
+    const perc = (percurso||[]).find(x => x.num === p.num) || {};   // alcance/registro: o que torna a cumbia difícil de verdade
+    const bAlc = perc.agudo ? `<span class="badge alc${perc.agudo>=5?' hi':''}" title="${perc.agudo>=5?'registro alto — use 🎺 8ª abaixo se ainda não alcança':'registro confortável'}">🎺 agudo <b>${perc.agudo}/6</b>${perc.pico_nome?` · pico ${perc.pico_nome}`:''}</span>` : '';
+    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}${bAlc}`;
     if(BLK?.pecas?.[ID]){ const b = BLK.pecas[ID];          // selo do hero = o Lego (mesma língua); fallback grafismo
       if(window.legoMini && b.legos?.length) $('#selo').innerHTML = window.legoMini(b, {w:84, h:84, rhythm:true});
       else if(window.grafismo) $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84); }
@@ -116,6 +119,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#menos').onclick = () => { BPM = Math.max(50, BPM-2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
   $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
   $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'🎼 escrito (Sib)':'🎼 em concerto'; setMel(); if(PRACTON) restartTimer(); };
+  $('#toct').onclick = e => { const c = e.currentTarget.classList.toggle('on'); OCT = c?-12:0; e.currentTarget.textContent = c?'🔼 voltar à 8ª':'🎺 8ª abaixo'; setMel(); if(PRACTON) restartTimer(); };   // registro grave: alcança o agudo / aquece
   // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
   { const tFull = $('#tfull');
     if(tFull && !TEM_DOIS){ tFull.style.display = 'none'; }
@@ -191,7 +195,7 @@ function setMel(){
   const abc = raw.replace(/Q:1\/4=\d+/, 'Q:1/4=' + BPM).replace(/\nT:[^\n]*/, '');
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
   const pw = Math.max(280, (($('#paper').clientWidth) || 340) - 26);
-  try{ VISUAL = ABCJS.renderAbc('paper', abc, {add_classes:true, staffwidth:pw, visualTranspose:TR, scale:1, wrap:{preferredMeasuresPerLine:4, minSpacing:1, maxSpacing:1.8, lastLineLimit:true}})[0]; }catch{ return; }
+  try{ VISUAL = ABCJS.renderAbc('paper', abc, {add_classes:true, staffwidth:pw, visualTranspose:TR+OCT, scale:1, wrap:{preferredMeasuresPerLine:4, minSpacing:1, maxSpacing:1.8, lastLineLimit:true}})[0]; }catch{ return; }
   if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML = '<p class="nota-rasc">áudio não suportado.</p>'; return; }
   try{ SYNTH = new ABCJS.synth.SynthController();
     SYNTH.load('#audio', cursor(), {displayPlay:true, displayProgress:true, displayLoop:true, displayRestart:true});
