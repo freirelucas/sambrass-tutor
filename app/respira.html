@@ -82,6 +82,7 @@ html,body{margin:0;background:var(--paper)}
 .fl-panel-focus{margin:2px 0 0;font-size:21px;font-weight:600;line-height:1.1}
 .fl-panel-tempo{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--warm)}
 .fl-panel-note{margin:14px 0 0;font-size:15px;opacity:.75;line-height:1.45}
+#paudio{width:100%;max-height:40vh;margin:12px 0 0;border-radius:12px;background:#000;display:block}
 .fl-ring{position:relative;width:200px;height:200px;margin:22px auto 4px}
 .fl-ring svg{transform:rotate(-90deg)}
 .ring-bg{fill:none;stroke:var(--line);stroke-width:8}
@@ -120,16 +121,16 @@ html,body{margin:0;background:var(--paper)}
 'use strict';
 // vel = derivado do tempo real (♩100→160); agudo = exigência de registro descrita na análise (1–6)
 const SECTORS=[
-  {id:"A",study:"1.1",tempo:100,vel:1,agudo:1,dur:108,block:1,focus:"Ar contínuo · ligadura longa",note:"Início suave de cada nota. Só ar e legato.",audio:"./snippets/Cichowicz_Group_A_1-1.mp3"},
-  {id:"B",study:"1.2",tempo:112,vel:2,agudo:2,dur:129,block:1,focus:"Primeiro cromatismo",note:"Mantenha o mesmo peso de ar do setor A.",audio:"./snippets/Cichowicz_Group_B_1-2.mp3"},
-  {id:"C",study:"1.3",tempo:112,vel:2,agudo:3,dur:159,block:1,focus:"Abertura de intervalos",note:"Abrir sem apertar a embocadura.",audio:"./snippets/Cichowicz_Group_C_1-3.mp3"},
-  {id:"D",study:"1.4",tempo:112,vel:2,agudo:3,dur:159,block:1,focus:"Condução de linha",note:"Respire só nos pontos marcados.",audio:"./snippets/Cichowicz_Group_D_1-4.mp3"},
-  {id:"E",study:"1.5",tempo:120,vel:3,agudo:4,dur:154,block:2,focus:"Flexibilidade de registro",note:"Mudanças suaves, centro do som estável.",audio:"./snippets/Cichowicz_Group_E_1-5.mp3"},
-  {id:"F",study:"1.6",tempo:120,vel:3,agudo:4,dur:179,block:2,focus:"Cromatismo denso",note:"Fraseado longo. Pico de controle de ar.",audio:"./snippets/Cichowicz_Group_F_1-6.mp3"},
-  {id:"G",study:"1.7",tempo:144,vel:5,agudo:4,dur:179,block:3,focus:"Agilidade",note:"Colcheias limpas, articulação leve.",audio:"./snippets/Cichowicz_Group_G_1-7.mp3"},
-  {id:"H",study:"1.8",tempo:144,vel:5,agudo:5,dur:154,block:3,focus:"Resistência",note:"Padrões longos. Gerencie o ar.",audio:"./snippets/Cichowicz_Group_H_1-8.mp3"},
-  {id:"I",study:"1.9",tempo:160,vel:6,agudo:6,dur:169,block:3,focus:"Velocidade + extensão",note:"Rápido sem perder o som.",audio:"./snippets/Cichowicz_Group_I_1-9.mp3"},
-  {id:"J",study:"1.10",tempo:160,vel:6,agudo:6,dur:174,block:3,focus:"Fechamento",note:"Máxima demanda, som ainda livre.",audio:"./snippets/Cichowicz_Group_J_1-10.mp3"},
+  {id:"A",study:"1.1",tempo:100,vel:1,agudo:1,dur:108,block:1,focus:"Ar contínuo · ligadura longa",note:"Início suave de cada nota. Só ar e legato.",audio:"./snippets/Cichowicz_Group_A_1-1.mp4"},
+  {id:"B",study:"1.2",tempo:112,vel:2,agudo:2,dur:129,block:1,focus:"Primeiro cromatismo",note:"Mantenha o mesmo peso de ar do setor A.",audio:"./snippets/Cichowicz_Group_B_1-2.mp4"},
+  {id:"C",study:"1.3",tempo:112,vel:2,agudo:3,dur:159,block:1,focus:"Abertura de intervalos",note:"Abrir sem apertar a embocadura.",audio:"./snippets/Cichowicz_Group_C_1-3.mp4"},
+  {id:"D",study:"1.4",tempo:112,vel:2,agudo:3,dur:159,block:1,focus:"Condução de linha",note:"Respire só nos pontos marcados.",audio:"./snippets/Cichowicz_Group_D_1-4.mp4"},
+  {id:"E",study:"1.5",tempo:120,vel:3,agudo:4,dur:154,block:2,focus:"Flexibilidade de registro",note:"Mudanças suaves, centro do som estável.",audio:"./snippets/Cichowicz_Group_E_1-5.mp4"},
+  {id:"F",study:"1.6",tempo:120,vel:3,agudo:4,dur:179,block:2,focus:"Cromatismo denso",note:"Fraseado longo. Pico de controle de ar.",audio:"./snippets/Cichowicz_Group_F_1-6.mp4"},
+  {id:"G",study:"1.7",tempo:144,vel:5,agudo:4,dur:179,block:3,focus:"Agilidade",note:"Colcheias limpas, articulação leve.",audio:"./snippets/Cichowicz_Group_G_1-7.mp4"},
+  {id:"H",study:"1.8",tempo:144,vel:5,agudo:5,dur:154,block:3,focus:"Resistência",note:"Padrões longos. Gerencie o ar.",audio:"./snippets/Cichowicz_Group_H_1-8.mp4"},
+  {id:"I",study:"1.9",tempo:160,vel:6,agudo:6,dur:169,block:3,focus:"Velocidade + extensão",note:"Rápido sem perder o som.",audio:"./snippets/Cichowicz_Group_I_1-9.mp4"},
+  {id:"J",study:"1.10",tempo:160,vel:6,agudo:6,dur:174,block:3,focus:"Fechamento",note:"Máxima demanda, som ainda livre.",audio:"./snippets/Cichowicz_Group_J_1-10.mp4"},
 ];
 const BLOCKS={
   1:{name:"Abertura do som",aim:"Ar, abertura e legato sem pressa.",
@@ -185,11 +186,11 @@ function open(id){
   const idx=SECTORS.indexOf(s), quote=QUOTES[idx%QUOTES.length];
   $('#panelHost').innerHTML=`<div class="fl-panel-wrap" id="pw"><div class="fl-panel" id="pp">
     <button class="fl-close" id="pclose" aria-label="Fechar">✕</button>
-    <audio id="paudio" src="${s.audio}" preload="none" loop></audio>
     <div class="fl-panel-top"><span class="fl-panel-id">${s.id}</span>
       <div><p class="fl-panel-study">Estudo ${s.study}</p><h2 class="fl-panel-focus">${s.focus}</h2></div>
       <span class="fl-panel-tempo">♩=${s.tempo}</span></div>
     <p class="fl-panel-note">${s.note}</p>
+    <video id="paudio" src="${s.audio}" preload="none" loop playsinline></video>
     <label class="fl-slow"><input type="checkbox" id="pslow"> tocar <b>0,75×</b> (devagar — sem mudar a afinação)</label>
     <div class="fl-ring" id="ring"><svg viewBox="0 0 200 200"><circle class="ring-bg" cx="100" cy="100" r="88"/>
       <circle class="ring-fg" id="ringfg" cx="100" cy="100" r="88" style="stroke-dasharray:${2*Math.PI*88}"/></svg>

@@ -221,7 +221,7 @@ function telaVocab() {
   const comp = COMP_CHIPS.filter(([k]) => cnt[k]).map(([k, lab]) => `<span class="tag">${lab} <b>${cnt[k]}</b></span>`).join(' ');
   const c44 = pieces.filter(p => p.compasso === '4/4').length, c24 = tot - c44;
   tela.innerHTML = `<div class="card" style="text-align:center"><a class="acao" style="width:100%;display:block;box-sizing:border-box;text-decoration:none" href="./respira.html">🫁 Respira — Flow do Cichowicz</a>
-      <p class="meta" style="margin-top:8px">10 setores (A→J, ♩=100→160) com play-along e descanso embutido. <b>Som antes de velocidade.</b> <span style="opacity:.7">O áudio carrega só ao tocar cada setor.</span></p></div>
+      <p class="meta" style="margin-top:8px">10 setores (A→J, ♩=100→160) com play-along e descanso embutido. <b>Som antes de velocidade.</b> <span style="opacity:.7">Vídeo com a partitura passando — carrega só ao tocar cada setor.</span></p></div>
     <div class="card" style="text-align:center"><button class="acao" style="width:100%" onclick="openPrep()">🌬️ Aquecimento — 12 exercícios${prepDone() ? ' ✓' : ''}</button>
       <p class="meta" style="margin-top:8px">Prepare o corpo antes de tocar: ar → bocal → som → registro → articulação.</p></div>
     <h2 class="sec">Vocabulário do caderno</h2>
