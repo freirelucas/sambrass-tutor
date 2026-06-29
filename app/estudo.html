@@ -12,6 +12,7 @@
 <meta name="apple-mobile-web-app-title" content="Sambrass">
 <title>Preciso Me Encontrar · estudo · Sambrass Tutor</title>
 <link rel="stylesheet" href="./vendor/abcjs-audio.css">
+<link rel="stylesheet" href="./lego.css">
 <style>
 :root{
   --bg:#0e0d0c; --bg2:#17150f; --pane:#1a1813; --linha:#2c281f;
@@ -60,6 +61,7 @@ small{color:var(--suave)}
   background:radial-gradient(120% 120% at 30% 25%,#ffd97a,var(--ouro2));box-shadow:0 8px 22px rgba(233,184,80,.4);transition:transform .12s}
 .play:active{transform:scale(.88)}
 .cel h3{margin:0;font-size:17px;font-family:var(--serif)}.cel .d{color:var(--suave);font-size:13.5px}
+#legoblk{margin:8px 0 6px}#legoblk .sec-h{margin-top:4px}#legoblk .lead{margin:4px 0 12px}
 .mini{margin-top:8px;background:#fff;color:#15120b;border-radius:10px;padding:6px 10px;overflow-x:auto}
 .mini svg{max-width:100%;height:auto;display:block;margin:0 auto}
 
@@ -156,6 +158,7 @@ small{color:var(--suave)}
     <div class="sec-h">o coração</div>
     <h2 id="celH2">A síncope que move o samba</h2>
     <p class="lead">Antes da melodia, sinta o tijolo. Toque a célula e deixe o acento cair no contratempo — é o gingado de toda a peça.</p>
+    <div id="legoblk"></div>
     <div id="celulas"></div>
   </section>
 
@@ -212,6 +215,7 @@ small{color:var(--suave)}
 <script src="./config.js"></script>
 <script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
+<script defer src="./lego.js"></script>
 <script defer src="./estudo.js"></script>
 <script>
 addEventListener('DOMContentLoaded', function () {

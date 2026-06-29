@@ -68,6 +68,20 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
     <div><h3>${id} · ${cm[id]?.nome||''}${id===HEART?' — o coração':''}</h3><div class="d">${cm[id]?.descricao||''}</div><div class="mini" id="mini-${id}"></div></div></div>`).join('');
   CEL.forEach(id => { if(abc?.['cell-'+id]) try{ ABCJS.renderAbc('mini-'+id, abc['cell-'+id].replace(/\nT:[^\n]*/,'').replace(/\nQ:[^\n]*/,''), {staffwidth:235,scale:1.35,paddingtop:2,paddingbottom:2,paddingleft:0,paddingright:0}); }catch{} });
   document.querySelectorAll('.play').forEach(b => b.onclick = () => playOnce(abc?.[b.dataset.abc]));
+  // L4/L5: o Lego do CORAÇÃO — os trechos que se repetem, tocáveis e ANIMADOS (mesma língua da trilha/blocos)
+  if (window.lego && BLK?.pecas?.[ID]?.legos?.length) {
+    const rec = BLK.pecas[ID], lb = $('#legoblk');
+    if (lb) {
+      lb.innerHTML = '<div class="sec-h">os trechos que se repetem</div>' +
+        '<p class="lead">Cada peça é um trecho que <b>volta</b> na música: em cima o <b>contorno</b> (o desenho das notas), embaixo o <b>colar rítmico</b> (a célula). Toque uma peça — ela <b>acende no tempo</b>. São os mesmos Legos da trilha e da exploração.</p>' +
+        window.lego(rec);
+      lb.querySelectorAll('.lego-pc').forEach(pc => pc.onclick = () => {
+        lb.querySelectorAll('.lego-pc.on').forEach(e => e.classList.remove('on'));
+        pc.classList.add('on'); audioUnlock();
+        if (window.legoPlay) window.legoPlay(pc, rec, +pc.dataset.lego, { audioContext: AC, bpm: BPM });
+      });
+    }
+  }
   { const formaTxt = (p?.forma||[]).join('/'), longa = (p?.forma||[]).length>=3, hn = cm[HEART]?.nome||HEART;
     const passosArr = [
       `<b>Aqueça</b> e toque a célula ${HEART} (${hn}) — ▶ acima — batendo o pé no tempo.`,
