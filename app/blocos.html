@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0e0d0c">
-<title>Blocos — as geometrias do acervo · Sambrass</title>
+<meta name="theme-color" content="#f7f4ee">
+<title>Blocos — os Legos do acervo · Sambrass</title>
 <link rel="stylesheet" href="./vendor/abcjs-audio.css">
+<link rel="stylesheet" href="./lego.css">
 <style>
-:root{--bg:#0e0d0c;--pane:#1a1813;--linha:#2c281f;--tinta:#f6f0e4;--suave:#a99c84;--ouro:#e9b850;
-  --warm:#e8932e;--cool:#2f8fd0;--verde:#54c98e;--vinho:#cf3a4c;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--serif:"Iowan Old Style",Palatino,Georgia,serif}
+:root{--bg:#f7f4ee;--pane:#ffffff;--caixa:#f1ece1;--linha:#e7e0d2;--tinta:#221d18;--suave:#857a68;
+  --ouro:#8a2331;--ouro2:#a83444;--warm:#e8932e;--cool:#2f8fd0;--verde:#2f7d5b;--vinho:#cf3a4c;
+  --sombra:0 2px 10px rgba(40,30,20,.07);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--serif:"Iowan Old Style",Palatino,Georgia,serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--tinta);font:15px/1.5 var(--sans);padding-bottom:96px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
@@ -16,49 +19,49 @@ header{padding:20px 0 0;border-bottom:1px solid var(--linha)}
 h1{font-family:var(--serif);font-weight:600;font-size:23px;margin:0 0 3px}
 .sub{color:var(--suave);font-size:13px;margin:0 0 12px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tabs button{font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--linha);border-bottom:none;background:#211e17;color:var(--suave);
+.tabs button{font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--linha);border-bottom:none;background:var(--caixa);color:var(--suave);
   border-radius:10px 10px 0 0;padding:9px 15px;min-height:42px}
-.tabs button.on{background:var(--pane);color:var(--ouro)}
+.tabs button.on{background:var(--pane);color:var(--ouro);border-color:var(--ouro)}
 main{padding:18px 0}
 .view{display:none}.view.on{display:block}
 .hint{color:var(--suave);font-size:12.5px;margin:0 0 14px}
 .grid{display:flex;flex-wrap:wrap;gap:10px}
-.card{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:8px;cursor:pointer;text-align:center;transition:transform .08s}
+.card{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:8px;cursor:pointer;text-align:center;transition:transform .08s;box-shadow:var(--sombra)}
 .card:hover{transform:translateY(-2px);border-color:var(--ouro)}
 .card.sel{outline:2px solid var(--ouro);outline-offset:2px}
 .card .nm{font-size:11px;color:var(--suave);margin-top:4px;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card svg{display:block}
 .grphead{width:100%;font-family:var(--serif);font-size:15px;color:var(--ouro);margin:16px 0 4px;border-bottom:1px solid var(--linha);padding-bottom:3px}
 #corwrap{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
-#corsvg{background:#fffdf8;border-radius:14px;flex:0 0 auto}
+#corsvg{background:#fffdf8;border-radius:14px;flex:0 0 auto;border:1px solid var(--linha)}
 .leg{font-size:12.5px;color:var(--suave)}
 .leg b{color:var(--tinta)} .dotw{color:var(--warm)} .dotc{color:var(--cool)}
-.tile{border-radius:5px;cursor:pointer;border:1px solid rgba(255,255,255,.12);position:relative}
-.tile:hover{outline:2px solid #fff}
-.bar{position:fixed;left:0;right:0;bottom:0;background:#15130e;border-top:1px solid var(--linha);padding:10px 16px;z-index:9}
+.tile{border-radius:5px;cursor:pointer;border:1px solid rgba(0,0,0,.12);position:relative}
+.tile:hover{outline:2px solid var(--tinta)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(247,244,238,.96);backdrop-filter:blur(8px);border-top:1px solid var(--linha);padding:10px 16px;z-index:9}
 .bar .wrap{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
 .bar .who{font-weight:700} .bar .det{color:var(--suave);font-size:12.5px}
-button.act{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);min-height:42px;padding:0 13px}
-button.play{background:linear-gradient(180deg,#ffd97a,#caa043);color:#1a1206;border-color:#caa043}
-button.maj{border-color:var(--warm)} button.maj.on{background:var(--warm);color:#1a1206}
-button.min{border-color:var(--cool)} button.min.on{background:var(--cool);color:#06121c}
-button.ok{border-color:var(--verde)} button.ok.on{background:var(--verde);color:#06160f}
+button.act{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:var(--pane);color:var(--tinta);min-height:42px;padding:0 13px}
+button.play{background:var(--verde);color:#fff;border-color:var(--verde)}
+button.maj{border-color:var(--warm)} button.maj.on{background:var(--warm);color:#3a2410}
+button.min{border-color:var(--cool)} button.min.on{background:var(--cool);color:#fff}
+button.ok{border-color:var(--verde)} button.ok.on{background:var(--verde);color:#fff}
 .prog{font-size:12.5px;color:var(--ouro);font-weight:700}
 a.volta{color:var(--suave);text-decoration:none;margin-left:auto}a.volta:hover{color:var(--ouro)}
-textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--linha);border-radius:9px;color:var(--tinta);padding:8px;font:12px/1.4 ui-monospace,monospace;margin-top:8px;display:none}
+textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var(--linha);border-radius:9px;color:var(--tinta);padding:8px;font:12px/1.4 ui-monospace,monospace;margin-top:8px;display:none}
 /* Telar */
-.tctl{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.tctl{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin-bottom:14px;box-shadow:var(--sombra)}
 .tctl label{display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--suave);font-weight:700}
-.tctl select,.tctl input[type=range]{font:inherit;background:#15130e;color:var(--tinta);border:1px solid var(--linha);border-radius:8px;padding:7px 9px;min-height:38px}
+.tctl select,.tctl input[type=range]{font:inherit;background:var(--pane);color:var(--tinta);border:1px solid var(--linha);border-radius:8px;padding:7px 9px;min-height:38px}
 .tctl .telA{border-left:3px solid var(--warm)} .tctl .telB{border-left:3px solid var(--cool)}
-.tbtn{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:#211e17;color:var(--tinta);min-height:38px;padding:0 14px}
-.tbtn.go{background:linear-gradient(180deg,#ffd97a,#caa043);color:#1a1206;border-color:#caa043}
-#telarsvg{display:block;width:100%;height:auto;background:#15130e;border:1px solid var(--linha);border-radius:12px}
+.tbtn{font:inherit;font-weight:700;cursor:pointer;border-radius:9px;border:1px solid var(--linha);background:var(--pane);color:var(--tinta);min-height:38px;padding:0 14px}
+.tbtn.go{background:var(--verde);color:#fff;border-color:var(--verde)}
+#telarsvg{display:block;width:100%;height:auto;background:var(--caixa);border:1px solid var(--linha);border-radius:12px}
 .word{font:12px/1.5 ui-monospace,monospace;color:var(--suave);word-break:break-all;margin:8px 0 0}
 .word b{color:var(--ouro)}
-.ctxcard{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:13.5px}
+.ctxcard{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:13.5px;box-shadow:var(--sombra)}
 .ctxcard h3{font-family:var(--serif);margin:0 0 6px;color:var(--ouro)}
-.ctxcard a{color:var(--cool)} .ctxcard .nota{color:var(--suave);font-size:12.5px;border-left:3px solid var(--linha);padding-left:10px;margin-top:8px}
+.ctxcard a{color:#2f6fb0} .ctxcard .nota{color:var(--suave);font-size:12.5px;border-left:3px solid var(--linha);padding-left:10px;margin-top:8px}
 .grafismo{display:block}
 #selo{display:inline-flex;vertical-align:middle} #selo svg{border-radius:8px}
 .card .grafismo{margin:0 auto}
@@ -66,8 +69,8 @@ textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--li
 </head>
 <body>
 <header><div class="wrap">
-  <h1>Blocos — as geometrias do acervo</h1>
-  <p class="sub">Cada peça é um bloco com <b>cor</b> (tom+modo) e <b>forma</b> (estrutura). Clique um bloco para <b>ouvir</b> e, na vista <b>Cor</b>, confirmar maior/menor por ouvido. Atalhos: <b>Espaço</b> ouvir · <b>M</b> maior · <b>N</b> menor · <b>✓=Enter</b>.</p>
+  <h1>Os Legos do acervo</h1>
+  <p class="sub">Cada peça é um <b>Lego</b>: a <b>cor</b> vem do tom (ciclo de quintas), e cada trecho que se repete é uma <b>peça</b> com seu <b>contorno</b> (arpejo) e <b>colar rítmico</b> (célula). Clique uma peça para <b>ouvir</b> o trecho; as outras vistas abrem a mesma análise por outro ângulo. Atalhos (vista Cor): <b>Espaço</b> ouvir · <b>M</b> maior · <b>N</b> menor · <b>✓=Enter</b>.</p>
   <div class="tabs" id="tabs"></div>
 </div></header>
 
@@ -96,6 +99,7 @@ textarea{width:100%;min-height:70px;background:#15130e;border:1px solid var(--li
 <div id="scratch" style="display:none"></div>
 <script src="./grafismo.js"></script>
 <script src="./vendor/abcjs.js"></script>
+<script src="./lego.js"></script>
 <script>
 'use strict';
 const KEY='blocos_revisao_v1';
@@ -189,7 +193,7 @@ function renderCor(){
       const x=CX+rd*R*Math.cos(a), y=CY-rd*R*Math.sin(a);
       const maj=r.cor.modo==='maior', faint=r.cor.conf<0.06, conf=state[id]?.ok;
       dots+=`<circle data-id="${id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${conf?7:5.5}" fill="${maj?WARM:COOL}" `
-        +`opacity="${faint&&!conf?0.4:0.95}" stroke="${conf?'#1a1206':'#fff'}" stroke-width="${conf?2:0.8}"><title>${id} ${r.titulo}</title></circle>`;
+        +`opacity="${faint&&!conf?0.4:0.95}" stroke="${conf?'#1a1206':'#8a7e6a'}" stroke-width="${conf?2:0.8}"><title>${id} ${r.titulo}</title></circle>`;
     });
   }
   let spokes='';
@@ -336,7 +340,7 @@ function drawLoom(n,tiles){
   lvls.forEach((L,ri)=>{ const w=fibWord(L),y=ri*rowH+4,isPlay=(L===n);
     const {rects,layout}=loomRow(w,y,W,rowH,!isPlay,isPlay); h+=rects;
     if(isPlay) bottom={layout,y}; });
-  h+=`<line id="telarcur" x1="0" y1="${bottom.y-2}" x2="0" y2="${bottom.y+rowH-3}" stroke="#fff" stroke-width="2" opacity="0"/>`;
+  h+=`<line id="telarcur" x1="0" y1="${bottom.y-2}" x2="0" y2="${bottom.y+rowH-3}" stroke="#8a2331" stroke-width="2" opacity="0"/>`;
   const sv=$('#telarsvg'); sv.setAttribute('viewBox',`0 0 ${W} ${H}`); sv.innerHTML=h;
   bottom.layout.forEach((t,i)=>t.durMs=tiles[i]?tiles[i].durMs:300);
   let cum=0; bottom.layout.forEach(t=>{ t.t0=cum; cum+=t.durMs; t.t1=cum; });

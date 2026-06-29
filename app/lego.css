@@ -1,0 +1,52 @@
+/* lego.css — o "KIT DE LEGO": a linguagem visual ÚNICA da peça (cumbia e samba),
+ * compartilhada por blocos / estudo / trilha. Regra de ouro: o Lego é sempre uma
+ * PEÇA DE PAPEL (clara), COLORIDA PELO TOM (ciclo de quintas) — então ele se lê
+ * idêntico na página clara (blocos), na escura (estudo) e no nó da trilha.
+ *
+ * A COR vem do DADO, via --lc (linha/contorno) e --lcbg (papel da peça), setados
+ * inline por lego.js. Aqui mora só a FORMA: peça encaixável, pinos (studs),
+ * colar rítmico e contorno. Nada de cor fixa de tema.
+ */
+:root{
+  --lego-warm:#e8932e;          /* maior (referência do kit) */
+  --lego-cool:#2f8fd0;          /* menor */
+  --lego-ink:#221d18;           /* tinta sobre o papel da peça */
+  --lego-stud-h:9px;
+}
+
+.lego{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+.lego-pc{
+  --lc:#8a2331; --lcbg:#f4eef0;
+  position:relative;display:flex;flex-direction:column;gap:2px;
+  width:212px;max-width:100%;padding:15px 13px 13px;cursor:pointer;
+  font:inherit;text-align:left;color:var(--lego-ink);
+  background:var(--lcbg);
+  border:1.5px solid var(--lc);
+  border-radius:4px 4px 13px 13px;          /* topo reto (encaixa), base arredondada */
+  box-shadow:0 2px 8px rgba(40,30,20,.10);
+  transition:transform .1s, box-shadow .12s;
+  -webkit-appearance:none;appearance:none;
+}
+.lego-pc:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(40,30,20,.16)}
+.lego-pc:active{transform:translateY(0)}
+.lego-pc.on{box-shadow:0 0 0 2.5px var(--lc), 0 8px 18px rgba(40,30,20,.18)}
+
+/* os pinos (studs) do Lego, espiando acima da peça */
+.lego-studs{position:absolute;top:-7px;left:14px;display:flex;gap:8px;line-height:0}
+.lego-studs i{display:block;width:15px;height:var(--lego-stud-h);border-radius:5px 5px 2px 2px;
+  background:var(--lc);box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+
+.lego-n{display:flex;align-items:baseline;gap:6px;font-weight:800;font-size:13.5px;color:var(--lc)}
+.lego-n small{font-weight:700;color:var(--lego-ink);opacity:.55;font-size:11px}
+.lego-svg{display:block;width:100%;height:auto;margin:5px 0 0;overflow:visible}
+.lego-play{position:absolute;right:11px;bottom:10px;font-size:12px;color:var(--lc);opacity:.7}
+.lego-empty{color:var(--lego-ink);opacity:.6;font-size:13px;margin:4px 0}
+
+/* nó da contorno/colar quando "acende" no playback (L4) */
+.lego-svg .lp-dot.lit{r:3.6}
+.lego-svg .lp-seg.lit{opacity:1}
+.lego-svg .lp-dot,.lego-svg .lp-seg{transition:opacity .08s, r .08s}
+
+/* mini (nó da trilha): só contorno+colar, sem moldura */
+.lego-mini{display:inline-flex;line-height:0;vertical-align:middle}
+.lego-mini svg{display:block}
