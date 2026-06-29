@@ -79,17 +79,25 @@
     return html + '</div>';
   };
 
-  // glifo pequeno (o "selo" do nó da trilha): só o contorno do 1º trecho, na cor do tom
+  // glifo pequeno (o "selo" do nó da trilha / hero do estudo): o contorno do 1º trecho
+  // na cor do tom; opt.rhythm acrescenta o colar (p/ um selo mais cheio, ex.: o hero).
   root.legoMini = function (d, opt) {
     opt = opt || {}; var lg = d && d.legos && d.legos[0]; if (!lg || !lg.midis || lg.midis.length < 2) return '';
-    var c = colors(d), W = opt.w || 38, H = opt.h || 26, m = lg.midis,
+    var c = colors(d), W = opt.w || 38, H = opt.h || 26, withR = !!opt.rhythm, m = lg.midis,
+        pad = 3, cTop = pad, cBot = (withR ? H * 0.62 : H - pad),       // banda do contorno
         lo = Math.min.apply(null, m), hi = Math.max.apply(null, m), rg = Math.max(1, hi - lo), pts = [], i, x, y;
     for (i = 0; i < m.length; i++) {
-      x = 3 + i * (W - 6) / (m.length - 1); y = H - 3 - (m[i] - lo) / rg * (H - 6);
+      x = pad + i * (W - 2 * pad) / (m.length - 1); y = cBot - (m[i] - lo) / rg * (cBot - cTop);
       pts.push(x.toFixed(1) + ',' + y.toFixed(1));
     }
-    return '<span class="lego-mini" aria-hidden="true"><svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '">' +
-      '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + c.col + '" stroke-width="2" stroke-linejoin="round"/></svg></span>';
+    var g = '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + c.col + '" stroke-width="2" stroke-linejoin="round"/>';
+    if (withR) {
+      var durs = lg.durs || [], tot = durs.reduce(function (a, b) { return a + (b || 0); }, 0) || 1, xx = pad, yy = H - pad - 4, seg = '', w;
+      for (i = 0; i < durs.length; i++) { w = (durs[i] / tot) * (W - 2 * pad);
+        seg += '<rect x="' + xx.toFixed(1) + '" y="' + yy + '" width="' + Math.max(1.5, w - 1.5).toFixed(1) + '" height="4" rx="1.5" fill="' + c.col + '" opacity="0.7"/>'; xx += w; }
+      g += seg;
+    }
+    return '<span class="lego-mini" aria-hidden="true"><svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '">' + g + '</svg></span>';
   };
 
   // ---- tocar + animar um trecho (L4): contorno/colar acendem no tempo ----
