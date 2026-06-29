@@ -55,11 +55,30 @@ function telaTrilha() {
     h += `<div class="node${here ? ' here' : ''}" style="--ll:${LCOR[m.lote]}">
       ${here ? '<div class="flag">SUGERIDA</div>' : ''}
       <button class="inner${done ? ' done' : ''}" onclick="tutorPeca(${m.num})" aria-label="tocar ${m.titulo}"><span class="ic">${done ? '✓' : '🎺'}</span></button>
-      <div class="nlabel" onclick="tutorPeca(${m.num})"><b>${m.titulo}</b><div class="meta">${String(m.num).padStart(3, '0')} · ${m.tom}</div></div>
+      <div class="nlabel" onclick="tutorPeca(${m.num})"><b>${m.titulo}</b><div class="meta">${String(m.num).padStart(3, '0')} · ${m.tom}<span class="nlego" data-id="${idOf(m.num)}"></span></div></div>
       <button class="planobtn" onclick="openMusic(${m.num})" aria-label="plano e desafios de ${m.titulo}">plano ›</button>
     </div>`;
   });
   tela.innerHTML = h + '</div>';
+  enhanceTrilhaLegos();                       // L5: o mini-Lego (contorno do 1º trecho) em cada nó — a mesma língua
+}
+
+// índice de blocos (cor+legos) carregado sob demanda, sem travar a trilha (a home)
+let _blocosPecas = null;
+async function loadBlocosIndex() {
+  if (_blocosPecas) return _blocosPecas;
+  try { _blocosPecas = (await (await fetch('./data/blocos.json')).json())?.pecas || {}; }
+  catch (e) { _blocosPecas = {}; }
+  return _blocosPecas;
+}
+async function enhanceTrilhaLegos() {
+  if (!window.legoMini) return;
+  const pecas = await loadBlocosIndex();
+  document.querySelectorAll('.nlego[data-id]').forEach(span => {
+    if (span.dataset.done) return;
+    const r = pecas[span.dataset.id];
+    if (r && r.legos && r.legos.length) { span.innerHTML = window.legoMini(r, { w: 34, h: 20 }); span.dataset.done = '1'; }
+  });
 }
 window.telaTrilha = telaTrilha;
 window.fecharWelcome = () => { store.set('onboarded', true); telaTrilha(); };

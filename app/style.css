@@ -161,6 +161,8 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .node .inner.done{background:var(--ll,var(--verde));color:#fff}
 .node .inner:active{transform:scale(.92)}
 .node .nlabel{min-width:0}.node .nlabel b{font-size:14px;display:block;line-height:1.2}
+.nlego{display:inline-flex;vertical-align:middle;margin-left:7px;opacity:.9}
+.nlego svg{display:block}
 .node.here .inner{box-shadow:0 0 0 4px rgba(138,35,49,.18),var(--sombra)}
 .flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;
   font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:999px;white-space:nowrap;z-index:2}
