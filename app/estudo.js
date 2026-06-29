@@ -116,8 +116,9 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
   else { $('#paper').innerHTML = '<p class="nota-rasc">melodia indisponível.</p>'; }
 
-  $('#menos').onclick = () => { BPM = Math.max(50, BPM-2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
-  $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; PRACTON ? restartTimer() : setMel(); };
+  const syncBand = () => { if(window.Groove && Groove.on) Groove.setBpm(BPM); };
+  $('#menos').onclick = () => { BPM = Math.max(50, BPM-2); $('#bpm').textContent = BPM; syncBand(); PRACTON ? restartTimer() : setMel(); };
+  $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; syncBand(); PRACTON ? restartTimer() : setMel(); };
   $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'🎼 escrito (Sib)':'🎼 em concerto'; setMel(); if(PRACTON) restartTimer(); };
   $('#toct').onclick = e => { const c = e.currentTarget.classList.toggle('on'); OCT = c?-12:0; e.currentTarget.textContent = c?'🔼 voltar à 8ª':'🎺 8ª abaixo'; setMel(); if(PRACTON) restartTimer(); };   // registro grave: alcança o agudo / aquece
   // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
@@ -137,6 +138,13 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   // --- tutor de escuta ---
   $('#tmic').onclick = () => MICON ? disableMic() : enableMic();
   $('#tprat').onclick = () => PRACTON ? stopPractice() : startPractice();
+  { const bandRoot = window.Groove ? Groove.rootFromKey(p?.key_concert) : 41;   // acompanhamento no tom de CONCERTO
+    const tb = $('#tband');
+    if(tb) tb.onclick = () => {
+      if(!window.Groove) return;
+      if(Groove.on){ Groove.stop(); tb.classList.remove('on'); tb.textContent = '🪘 com a banda'; }
+      else { audioUnlock(); Groove.start({audioContext: AC, bpm: BPM, root: bandRoot}); tb.classList.add('on'); tb.textContent = '⏹ parar a banda'; }
+    }; }
   $('#tgo').onclick = async () => {   // um clique: admite o microfone + começa a praticar
     if(PRACTON){ stopPractice(); return; }
     audioUnlock();
@@ -244,7 +252,7 @@ function newTimer(){
   return new ABCJS.TimingCallbacks(VISUAL, {
     qpm: BPM,
     eventCallback: practiceEvent,
-    beatCallback: (b) => { clave((b % bpb) === 0); }
+    beatCallback: (b) => { if(!(window.Groove && Groove.on)) clave((b % bpb) === 0); }   // a banda já dá o tempo
   });
 }
 function startPractice(){

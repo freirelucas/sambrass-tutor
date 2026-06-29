@@ -181,6 +181,7 @@ small{color:var(--suave)}
         <button class="toggle" id="tfull">▶ tocar a peça inteira</button>
         <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
         <button class="toggle prim" id="tprat">▶ praticar</button>
+        <button class="toggle" id="tband" title="liga o acompanhamento de cumbia (güira + baixo + naipe) no tom e no andamento — toque por cima">🪘 com a banda</button>
         <button class="toggle" id="tesp" title="o cursor só avança quando você acerta a nota (precisa do microfone)">⏳ esperar por mim</button>
         <div class="loopbox"><button class="toggle" id="tloop">🔁 loop</button>
           <span class="lstep">comp <button id="laMinus">−</button><span id="laVal">1</span><button id="laPlus">+</button>
@@ -218,6 +219,7 @@ small{color:var(--suave)}
 <script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./lego.js"></script>
+<script defer src="./groove.js"></script>
 <script defer src="./estudo.js"></script>
 <script>
 addEventListener('DOMContentLoaded', function () {
