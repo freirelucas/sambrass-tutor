@@ -65,6 +65,12 @@ textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var
 .grafismo{display:block}
 #selo{display:inline-flex;vertical-align:middle} #selo svg{border-radius:8px}
 .card .grafismo{margin:0 auto}
+/* vista Legos */
+.legopiece{margin:0 0 20px}
+.lpt{font-size:14.5px;margin:0 0 10px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.lpt b{font-family:var(--serif);font-weight:600}
+.lpmeta{color:var(--suave);font-size:12px;font-weight:600}
+#legos-more{margin:0 0 14px}
 </style>
 </head>
 <body>
@@ -75,6 +81,7 @@ textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var
 </div></header>
 
 <main class="wrap">
+  <section class="view" id="v-legos"></section>
   <section class="view" id="v-cor"></section>
   <section class="view" id="v-contorno"></section>
   <section class="view" id="v-groove"></section>
@@ -401,8 +408,43 @@ function renderTelar(){
   telarGenerate();
 }
 
+// ---------- VISTA LEGOS: o Lego funcional (os trechos que se repetem, tocáveis) ----------
+function pieceLegoCard(id,r){
+  const n=r.legos.length;
+  return `<div class="legopiece" data-id="${id}"><div class="lpt"><b>${r.titulo||id}</b>`
+    +`<span class="lpmeta">${id} · ${r.cor.tonica} ${r.cor.modo} · ${n} trecho${n>1?'s':''} que se repete${n>1?'m':''}</span></div>${window.lego(r)}</div>`;
+}
+function wireLegos(scope){
+  scope.querySelectorAll('.legopiece').forEach(card=>{
+    const id=card.dataset.id, r=DB[id];
+    card.querySelectorAll('.lego-pc').forEach(pc=>{
+      pc.onclick=()=>{
+        scope.querySelectorAll('.lego-pc.on').forEach(e=>e.classList.remove('on'));
+        pc.classList.add('on'); selectPiece(id); unlock();
+        if(window.legoPlay) window.legoPlay(pc, r, +pc.dataset.lego, {audioContext:AC, bpm:96});
+      };
+    });
+  });
+}
+function renderLegos(){
+  const cumb=[],samb=[];
+  for(const [id,r] of Object.entries(DB)){ if(!r.legos||!r.legos.length)continue; (r.jornada==='cumbias'?cumb:samb).push([id,r]); }
+  const byCor=(a,b)=>{const pa=COFPOS[PC[a[1].cor.tonica]]??99,pb=COFPOS[PC[b[1].cor.tonica]]??99;return pa-pb;};
+  cumb.sort(byCor); samb.sort(byCor);
+  let h='<p class="hint">O <b>Lego</b> de cada peça: os <b>trechos que se repetem</b> viram peças encaixáveis. Cada peça mostra o <b>contorno</b> (a linha do arpejo) em cima e o <b>colar rítmico</b> (a célula) embaixo. Clique uma peça para <b>ouvir</b> o trecho — o contorno e o colar acendem no tempo. A <b>cor</b> é o tom (ciclo de quintas). É a mesma língua da trilha e do estudo.</p>';
+  h+=`<div class="grphead">cumbia · chicha · ${cumb.length}</div><div id="legos-cumb">`;
+  for(const [id,r] of cumb) h+=pieceLegoCard(id,r);
+  h+=`</div><div class="grphead">samba · ${samb.length}</div>`
+    +`<button class="tbtn" id="legos-more">▸ mostrar os Legos dos sambas (${samb.length})</button><div id="legos-samb"></div>`;
+  const el=$('#v-legos'); el.innerHTML=h;
+  wireLegos($('#legos-cumb'));
+  const more=$('#legos-more');
+  more.onclick=()=>{ let s=''; for(const [id,r] of samb) s+=pieceLegoCard(id,r);
+    $('#legos-samb').innerHTML=s; wireLegos($('#legos-samb')); more.style.display='none'; };
+}
+
 // ---------- tabs ----------
-const VIEWS=[['cor','Cor · círculo de quintas',renderCor],['contorno','Contorno · cordilheira',renderContorno],
+const VIEWS=[['legos','Legos · os trechos',renderLegos],['cor','Cor · círculo de quintas',renderCor],['contorno','Contorno · cordilheira',renderContorno],
   ['groove','Groove · colar rítmico',renderGroove],['parede','Parede de Lego',renderParede],
   ['selos','Selos · grafismos',renderSelos],['telar','Telar · tear aperiódico',renderTelar]];
 let built={};
@@ -418,7 +460,7 @@ document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>showTab(b.dat
   const j=async f=>{try{return await(await fetch(f)).json();}catch(e){return null;}};
   const [blocos,abcS,abcC]=await Promise.all([j('./data/blocos.json'),j('./data/abc.json'),j('./data/cumbias/abc.json')]);
   DB=blocos?.pecas||{}; ABC={...(abcS||{}),...(abcC||{})};
-  paintProg(); showTab('cor');
+  paintProg(); showTab('legos');
 })();
 </script>
 </body>

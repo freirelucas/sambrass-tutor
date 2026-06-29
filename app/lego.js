@@ -98,7 +98,16 @@
     scope.querySelectorAll(sel + '.lit').forEach(function (e) { e.classList.remove('lit'); });
     if (i != null) { var t = scope.querySelector(sel + '[data-i="' + i + '"]'); if (t) t.classList.add('lit'); }
   }
-  var _liveSynth = null;
+  var _live = null;   // { synth, timer, scope } do trecho que está tocando agora
+  function clearLive() {
+    if (!_live) return;
+    try { _live.synth.stop(); } catch (e) {}
+    try { _live.timer.stop(); } catch (e) {}
+    lit(_live.scope, '.lp-dot', null); lit(_live.scope, '.lp-seg', null);
+    _live = null;
+  }
+  root.legoStop = clearLive;
+  // scopeEl = a PEÇA clicada (.lego-pc), p/ acender só o contorno/colar dela
   root.legoPlay = function (scopeEl, d, idx, opts) {
     opts = opts || {};
     var lg = d && d.legos && d.legos[idx]; if (!lg) return Promise.resolve(null);
@@ -119,10 +128,10 @@
     return synth.init({ audioContext: AC, visualObj: visual, options: { soundFontUrl: opts.soundFontUrl || './vendor/soundfont/', program: 56 } })
       .then(function () { return synth.prime(); })
       .then(function () {
-        try { if (_liveSynth) _liveSynth.stop(); } catch (e) {}
-        _liveSynth = synth; k = -1; synth.start(); timer.start();
-        synth.onEnded = function () { lit(scopeEl, '.lp-dot', null); lit(scopeEl, '.lp-seg', null); try { timer.stop(); } catch (e) {} };
-        return { stop: function () { try { synth.stop(); } catch (e) {} try { timer.stop(); } catch (e) {} lit(scopeEl, '.lp-dot', null); lit(scopeEl, '.lp-seg', null); } };
+        clearLive();                       // para o trecho anterior (synth + timer + acesos)
+        _live = { synth: synth, timer: timer, scope: scopeEl };
+        k = -1; synth.start(); timer.start();
+        return { stop: clearLive };
       })
       .catch(function () { return null; });
   };
