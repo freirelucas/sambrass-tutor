@@ -24,7 +24,7 @@ CONTENT = HERE.parent
 sys.path.insert(0, str(CONTENT))
 from build_notes import compile_file, load_fingering, name, SHARP  # noqa: E402
 sys.path.insert(0, str(CONTENT / "cumbia"))
-from phrases import extract_riff, repeticao_ratio  # noqa: E402
+from phrases import extract_riff, extract_riffs, repeticao_ratio  # noqa: E402
 from abc_events import events_from_abc, key_from_abc  # noqa: E402
 
 OUT = HERE / "build" / "blocos.json"
@@ -214,6 +214,8 @@ def main():
         riff_rec = ({"len": riff["len"], "x": riff["count"], "cobertura": round(repeticao_ratio(ev), 2),
                      "midis": [m for m, _ in riff["notes"]], "durs": [round(dd, 3) for _, dd in riff["notes"]]}
                     if riff else None)
+        legos = [{"midis": [m for m, _ in r["notes"]], "durs": [round(dd, 3) for _, dd in r["notes"]], "x": r["count"]}
+                 for r in extract_riffs(ev, 3)]      # os 3 trechos que se repetem (matéria do Lego)
         dom = next((c for c in ["C4", "C5", "C3", "C2", "C6", "C1"] if c in tags), "-")
         modo_lbl = cor["modo"] + (("/" + cor["dica_modal"]) if cor.get("dica_modal") else "")
         cor_lbl = f"{cor['tonica']} {modo_lbl}"
@@ -223,7 +225,7 @@ def main():
                     "armadura": key, "cor": cor, "forma": est, "bloco": bloco, "celula_dominante": dom,
                     "dif": p.get("dificuldade") if p.get("dificuldade") is not None else cu_dif.get(pid), "meter": mb, "onsets": ons,
                     "celulas_marcadas": sorted(tags), "celulas_detectadas": sorted(presentes),
-                    "tags_nao_confirmadas": ausentes, "celulas_extra_candidatas": extras, "riff": riff_rec}
+                    "tags_nao_confirmadas": ausentes, "celulas_extra_candidatas": extras, "riff": riff_rec, "legos": legos}
         blocos[bloco].append(pid)
         if ausentes:
             diverg.append((pid, p.get("titulo", ""), sorted(tags), ausentes))

@@ -41,6 +41,38 @@ def extract_riff(events, min_len=3, max_len=8):
     return best
 
 
+def extract_riffs(events, k=3, min_len=3, max_len=8):
+    """Os k trechos DISTINTOS que mais se repetem (>=2x, sem sobreposição) — os 'blocos' da peça.
+    Distintos = não cobrem majoritariamente as mesmas notas (descarta variações/sub-frases)."""
+    notes = _notes(events)
+    if len(notes) < min_len * 2:
+        return []
+    cands = []
+    for L in range(max_len, min_len - 1, -1):
+        seen = defaultdict(list)
+        for i in range(len(notes) - L + 1):
+            seen[tuple(notes[i:i + L])].append(i)
+        for gram, pos in seen.items():
+            nonov, last = [], -10 ** 9
+            for p in pos:
+                if p - last >= L:
+                    nonov.append(p); last = p
+            if len(nonov) >= 2:
+                cands.append(dict(notes=list(gram), count=len(nonov), positions=nonov, len=L, score=len(nonov) * L))
+    cands.sort(key=lambda c: -c["score"])
+    chosen, used = [], set()
+    for c in cands:
+        cov = set()
+        for p in c["positions"]:
+            cov.update(range(p, p + c["len"]))
+        if cov and len(cov & used) > 0.5 * len(cov):     # sobrepõe muito com um já escolhido → é variação
+            continue
+        chosen.append(c); used |= cov
+        if len(chosen) >= k:
+            break
+    return chosen
+
+
 def repeticao_ratio(events):
     """Fração das notas da peça cobertas pelo riff dominante (0–1). Sinal de 'decorabilidade'."""
     notes = _notes(events)
