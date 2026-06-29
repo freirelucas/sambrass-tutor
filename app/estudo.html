@@ -107,6 +107,14 @@ small{color:var(--suave)}
   border-radius:2px;transform:translateX(-50%);transition:left .06s linear}
 .tuner .needle.intune{background:var(--verde);box-shadow:0 0 10px var(--verde)}
 .tuner .micnota{font-size:12px;color:var(--suave);text-align:center;margin-top:6px;font-variant-numeric:tabular-nums}
+.pocket{margin-top:10px}
+.pk-scale{position:relative;height:8px;border-radius:6px;background:#2a261d}
+.pk-zero{position:absolute;left:50%;top:-3px;width:2px;height:14px;background:var(--ouro);transform:translateX(-50%);border-radius:1px}
+.pk-mark{position:absolute;left:50%;top:-4px;width:10px;height:16px;border-radius:3px;background:var(--suave);transform:translateX(-50%);transition:left .09s linear;opacity:0}
+.pk-mark.on{opacity:1}
+.pk-mark.ok{background:var(--verde)} .pk-mark.late{background:var(--vinho2)} .pk-mark.early{background:#5b9bd5}
+.pk-lbl{font-size:12px;color:var(--suave);text-align:center;margin-top:7px;font-variant-numeric:tabular-nums}
+.pk-lbl.ok{color:var(--verde)} .pk-lbl.late{color:var(--vinho2)} .pk-lbl.early{color:#5b9bd5}
 .loopbox,.rampbox{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .lstep{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--suave)}
 .lstep button{width:30px;height:34px;border-radius:8px;border:1px solid var(--linha);background:#2a261d;color:var(--tinta);font-size:16px;cursor:pointer}
@@ -171,7 +179,9 @@ small{color:var(--suave)}
       <div class="stage">
         <div class="valves"><div class="valve" id="v1">1</div><div class="valve" id="v2">2</div><div class="valve" id="v3">3</div></div>
         <div class="agora"><div class="nota" id="notaAtual">·</div><div class="dedo" id="dedoAtual">pronto</div></div>
-        <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div><div class="micscore" id="micscore"></div></div>
+        <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div><div class="micscore" id="micscore"></div>
+          <div class="pocket" id="pocket" title="o tempo é relativo ao seu próprio compasso (tira a latência do navegador) — mede a sua regularidade/pocket">
+            <div class="pk-scale"><i class="pk-zero"></i><i class="pk-mark" id="pkmark"></i></div><div class="pk-lbl" id="pklbl">pocket: toque pra medir</div></div></div>
       </div>
       <div class="controls">
         <button class="toggle go" id="tgo">▶ Tocar com o tutor</button>

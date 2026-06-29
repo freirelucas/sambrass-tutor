@@ -22,7 +22,7 @@ const VALV = {'F#3':'123','G3':'13','G#3':'23','A3':'12','A#3':'1','B3':'2','C4'
 function fingerOf(midi){ return VALV[SHARP[((midi % 12) + 12) % 12] + (Math.floor(midi / 12) - 1)]; }
 
 // tolerâncias do tutor
-const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200;
+const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200, POCKET_TOL = 70;   // ±70ms = "no tempo"
 
 let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, OCT = 0, VISUAL = null;
 // tutor de escuta
@@ -31,6 +31,7 @@ let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = f
 // oitava do OMR não é confiável) avalia pela CLASSE DE ALTURA, evitando falsos vermelhos.
 function samePitch(a, b) { return OCTAVE_EXACT ? a === b : ((((a - b) % 12) + 12) % 12) === 0; }
 let TIMER = null, PRACTON = false, SCORE = { ok: 0, tot: 0 };
+let TIMINGS = [], POCKET = { ok: 0, tot: 0 };   // grade rítmica: onsets vs cursor; baseline = mediana (tira a latência)
 let ESPERAR = false, WAITING = false;   // "esperar por mim": cursor só avança quando o mic confirma a nota
 let SLICE = null, LOOPON = false, LO_A = 1, LO_B = 1, MCOUNT = 1;
 let RAMPON = false, RTARGET = 120;
@@ -179,6 +180,24 @@ function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).cla
 function clrHi(){ document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight')); }
 function clrGrade(){ document.querySelectorAll('.abcjs-good,.abcjs-bad').forEach(el => el.classList.remove('abcjs-good','abcjs-bad')); }
 function paintScore(){ const e = $('#micscore'); if(e) e.textContent = SCORE.tot ? `sessão: ✓ ${SCORE.ok}/${SCORE.tot}` : ''; }
+// --- grade rítmica (pocket): o ataque do aluno vs o cursor, relativo ao próprio baseline ---
+function median(a){ if(!a.length) return 0; const s = [...a].sort((x,y)=>x-y), m = s.length>>1; return s.length%2 ? s[m] : (s[m-1]+s[m])/2; }
+function recordPocket(delta){
+  TIMINGS.push(delta); if(TIMINGS.length > 40) TIMINGS.shift();
+  const rel = delta - median(TIMINGS);                 // tira a latência sistêmica → mede a regularidade
+  POCKET.tot++; if(Math.abs(rel) <= POCKET_TOL) POCKET.ok++;
+  paintPocket(rel);
+}
+function paintPocket(rel){
+  const m = $('#pkmark'), l = $('#pklbl'); if(!m) return;
+  const cls = Math.abs(rel) <= POCKET_TOL ? 'ok' : (rel > 0 ? 'late' : 'early');
+  m.className = 'pk-mark on ' + cls; m.style.left = Math.max(2, Math.min(98, 50 + rel/4)) + '%';
+  if(l){ l.className = 'pk-lbl ' + cls;
+    l.textContent = (Math.abs(rel) <= POCKET_TOL ? 'no tempo' : (rel > 0 ? `atrasado +${Math.round(rel)}ms` : `adiantado ${Math.round(-rel)}ms`))
+      + ` · regularidade ${POCKET.tot ? Math.round(100*POCKET.ok/POCKET.tot) : 0}%`; }
+}
+function resetPocket(){ TIMINGS = []; POCKET = { ok: 0, tot: 0 };
+  const m = $('#pkmark'), l = $('#pklbl'); if(m) m.className = 'pk-mark'; if(l){ l.className = 'pk-lbl'; l.textContent = 'pocket: toque pra medir'; } }
 
 // mostra a nota atual (highlight + nome + válvulas); grade=true arma a comparação do mic
 function showNote(ev, grade){
@@ -188,7 +207,7 @@ function showNote(ev, grade){
   if(mp){ const w = Math.round(mp.pitch) - TR; const f = fingerOf(w);
     $('#notaAtual').textContent = NOMES[((w % 12) + 12) % 12];
     $('#dedoAtual').textContent = (f === '0' ? 'solto (0)' : 'dedo ' + f) || '—'; setValves(f);
-    if(grade){ EXP = {midi: w - 2, els: ev.elements || [], matchedMs: 0, wrongMs: 0, lastTs: performance.now(), painted: null}; }
+    if(grade){ EXP = {midi: w - 2, els: ev.elements || [], matchedMs: 0, wrongMs: 0, lastTs: performance.now(), painted: null, cursorTs: performance.now(), onsetTs: null}; }
   }
 }
 function cursor(){ // modo OUVIR (SynthController) — sem graduar (evita o mic julgar o próprio app)
@@ -258,7 +277,7 @@ function newTimer(){
 function startPractice(){
   if(!VISUAL) return; audioUnlock();
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
-  SCORE = { ok: 0, tot: 0 }; paintScore(); TIMER = newTimer(); TIMER.start(); PRACTON = true;
+  SCORE = { ok: 0, tot: 0 }; paintScore(); resetPocket(); TIMER = newTimer(); TIMER.start(); PRACTON = true;
   $('#tprat').classList.add('on'); $('#tprat').textContent = '⏸ parar';
   const g = $('#tgo'); if(g){ g.classList.add('on'); g.textContent = '⏸ parar'; }
 }
@@ -327,6 +346,7 @@ function micLoop(){
   if(EXP){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
     if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
+      if(EXP.onsetTs == null && EXP.cursorTs != null){ EXP.onsetTs = now; recordPocket(now - EXP.cursorTs); }   // 1º ataque certo → mede o tempo
       EXP.matchedMs += dt;
       if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good'; SCORE.ok++; SCORE.tot++; paintScore();
         if(WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } }   // acertou → avança o cursor
