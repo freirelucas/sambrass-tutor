@@ -31,8 +31,8 @@ function telaTrilha() {
       <div class="hudpills"><span class="pill">📅 ${nd} ${nd === 1 ? 'dia' : 'dias'}</span><span class="pill">🎺 ${countDone()}/${ms.length}</span></div>
     </div>
     <p class="trilha-intro">${cumbia ? 'A ordem vai do <b>riff mais simples e repetido</b> ao mais sincopado e agudo. Nada trava: toque o que quiser.' : 'A ordem segue a <b>escada pedagógica</b>: primeiro o Book 1 (fundação), depois Book 2 e Arban — e, dentro de cada nível, do mais confortável ao mais exigente. Nada trava: toque o que quiser.'}</p>
-    <div class="prepnode" onclick="openPrep()"><div class="pic">${prepDone() ? '✓' : '🌬️'}</div>
-      <div><b>Aquecimento</b><div class="meta">12 exercícios · faça sempre antes</div></div></div>
+    <a class="prepnode" href="./respira.html"><div class="pic">🫁</div>
+      <div><b>Aquecimento — Cichowicz</b><div class="meta">Flow do Cichowicz · som antes de velocidade · faça sempre antes</div></div></a>
     <a class="afnode" href="./afinar.html"><div class="pic">🎯</div>
       <div><b>Afinar &amp; primeiros sons</b><div class="meta">afinador + drone — comece aqui se ainda não toca</div></div></a>
     ${(() => { const rev = nextReview(); return rev ? `<div class="revcard" onclick="openMusic(${rev.num})"><div class="pic">🔁</div>

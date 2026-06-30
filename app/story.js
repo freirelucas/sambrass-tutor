@@ -1,9 +1,9 @@
 'use strict';
-/* Stories por música (rota "O Caminho do Sambrass"): capa → perfil → plano → desafios → diário;
- * + Aquecimento e Técnica do lote. Engine de slides própria, sem dependência.
- * Lazy-load: data/{pedagogia,aquecimento,tecnica}.json (SVGs pré-assados; injetados como SVG puro).
- * SÍNTESE das duas rotas: todo desafio leva ao TUTOR DE ESCUTA real (estudo.html?id=).
- * Usa de app.js: DB, store, RATELBL, markDay. De trilha.js: telaTrilha (atualiza ✓ ao fechar).
+/* "Instrução colapsada" por música (rota "O Caminho do Sambrass"): capa · perfil · plano ·
+ * desafios · diário — agora como ACORDEÃO rolável (seções colapsáveis), não mais slides swipe.
+ * + Técnica do lote e as instruções de aquecimento (12 passos) usam o mesmo acordeão.
+ * O aquecimento de verdade é o Cichowicz (respira.html). Lazy-load: data/{pedagogia,aquecimento,tecnica}.json.
+ * Todo desafio leva ao TUTOR DE ESCUTA real (estudo.html?id=). Usa de app.js: DB, store, RATELBL, markDay.
  */
 let S = { slides: [], i: 0, music: null, rate: 0, checks: {} };
 const dots6 = v => { let h = '<span class="dots">'; for (let i = 1; i <= 6; i++) h += `<i class="${i <= v ? 'f' : ''}"></i>`; return h + '</span>'; };
@@ -16,15 +16,15 @@ function storyEl() {
   let s = document.getElementById('story');
   if (!s) {
     s = document.createElement('div'); s.id = 'story'; s.className = 'story'; s.hidden = true;
-    s.innerHTML = `<div class="storytop"><button class="sclose" onclick="closeStory()" aria-label="fechar">✕</button><div id="sbars" class="sbars"></div></div>
-      <div id="storyCtx" class="storyctx"></div><div id="slideHost" class="slideHost"></div><div id="snav" class="snav"></div>`;
+    s.innerHTML = `<div class="storytop"><button class="sclose" onclick="closeStory()" aria-label="fechar">✕</button><div id="storyCtx" class="storyctx"></div></div>
+      <div id="slideHost" class="slideHost"></div><div id="snav" class="snav"></div>`;
     document.body.appendChild(s);
   }
   return s;
 }
 function showStory(ctx) {
   const s = storyEl(); document.getElementById('storyCtx').textContent = ctx;
-  s.hidden = false; s.classList.add('on'); renderSlide(); window.scrollTo(0, 0);
+  s.hidden = false; s.classList.add('on'); renderAccordion(); window.scrollTo(0, 0);
 }
 function closeStory() {
   const s = document.getElementById('story'); if (s) { s.hidden = true; s.classList.remove('on'); }
@@ -49,7 +49,7 @@ async function openPrep() {
   (DB.aquec || []).forEach((p, k) => sl.push({ type: 'prepEx', p, k }));
   sl.push({ type: 'prepFin' });
   S = { slides: sl, i: 0, music: null, rate: 0, checks: {} };
-  showStory('Aquecimento');
+  showStory('Instruções de aquecimento');
 }
 async function openTecnica(lote) {
   await loadTecnica();
@@ -84,79 +84,89 @@ function capaNotas(m) {
   return h;
 }
 
-function renderSlide() {
-  renderBars();
-  const s = S.slides[S.i]; let h = '';
+// cada "slide" → uma seção de acordeão: {title, sub, body, open?}
+function slidePart(s) {
   if (s.type === 'capa') { const m = s.m;
-    h = `<div class="slide"><div class="kicker">Lote ${m.lote} · tom de ${m.tom}</div>
-      <h2>${m.titulo}</h2><div class="by">${m.compositor}</div>
-      ${capaNotas(m)}
+    return { open: true, title: m.titulo, sub: `Lote ${m.lote} · ${m.tom}`,
+      body: `<div class="by">${m.compositor}</div>${capaNotas(m)}
       <div class="cplx">
         <div class="cchip"><span class="lab">Agudo</span>${dots6(m.agudo)}<span class="v">máx <b>${m.pico_nome || '?'}</b></span></div>
         <div class="cchip"><span class="lab">Veloc.</span>${dots6(m.vel)}<span class="v">${m.vel}/6</span></div>
         <div class="cchip"><span class="lab">Fôlego</span>${dots6(m.folego)}<span class="v">${m.folego}/6</span></div></div>
-      <p class="big">Forma ${m.forma || '?'}. Deslize: o perfil, o plano de ataque e os desafios.</p>${micBtn(m.num)}</div>`;
-  } else if (s.type === 'perfil') { const m = s.m, pf = m.perfil || {};
+      <p class="big">Forma ${m.forma || '?'}.</p>${micBtn(m.num)}` };
+  }
+  if (s.type === 'perfil') { const m = s.m, pf = m.perfil || {};
     const blk = (lab, v, txt) => `<div class="pf"><div class="ph"><span class="lab">${lab}</span>${dots6(v)}</div><p>${txt || ''}</p></div>`;
-    h = `<div class="slide"><div class="kicker">Perfil</div><h2>Onde mora o esforço</h2>
-      ${blk('Agudo', m.agudo, pf.agudo)}${blk('Velocidade', m.vel, pf.vel)}${blk('Fôlego', m.folego, pf.folego)}</div>`;
-  } else if (s.type === 'plano') { const p = s.m.plano || {};
-    h = `<div class="slide"><div class="kicker">Plano de ataque</div><h2>Como estudar esta peça</h2>
-      <p class="big">O foco é <b>${p.foco || ''}</b>.</p><p>${p.leitura || ''}</p><p style="margin-top:10px">${p.estrategia || ''}</p></div>`;
-  } else if (s.type === 'chal') { const d = s.d, on = S.checks[s.k];
-    h = `<div class="slide"><div class="kicker">Desafio ${s.k + 1} de ${(S.music.desafios || []).length}</div>
-      <div class="dchal"><div class="step">faça agora</div><h3>${d.t}</h3><p>${d.d}</p>
+    return { title: 'Onde mora o esforço', sub: 'perfil',
+      body: `${blk('Agudo', m.agudo, pf.agudo)}${blk('Velocidade', m.vel, pf.vel)}${blk('Fôlego', m.folego, pf.folego)}` };
+  }
+  if (s.type === 'plano') { const p = s.m.plano || {};
+    return { title: 'Como estudar esta peça', sub: 'plano',
+      body: `<p class="big">O foco é <b>${p.foco || ''}</b>.</p><p>${p.leitura || ''}</p><p style="margin-top:10px">${p.estrategia || ''}</p>` };
+  }
+  if (s.type === 'chal') { const d = s.d, on = S.checks[s.k];
+    return { title: d.t, sub: `desafio ${s.k + 1}`,
+      body: `<div class="dchal"><div class="step">faça agora</div><p>${d.d}</p>
         ${d.svg ? `<div class="scorebox">${d.svg}</div>` : ''}
-        <div class="chk" onclick="toggleChk(${s.k})"><span class="box ${on ? 'on' : ''}">${on ? '✓' : ''}</span>${on ? 'feito!' : 'marque quando fizer'}</div></div>
-      ${d.w ? `<p class="why">💡 <b>Por quê:</b> ${d.w}</p>` : ''}${micBtn(S.music.num)}</div>`;
-  } else if (s.type === 'diario') { const m = s.m;
-    h = `<div class="slide"><div class="kicker">Diário</div><h2>Como foi hoje?</h2>
-      <p>Registre para você — é o que mostra a evolução real entre as sessões.</p>
+        <div class="chk" data-chk="${s.k}" onclick="toggleChk(${s.k})"><span class="box ${on ? 'on' : ''}">${on ? '✓' : ''}</span><span class="chktxt">${on ? 'feito!' : 'marque quando fizer'}</span></div></div>
+      ${d.w ? `<p class="why">💡 <b>Por quê:</b> ${d.w}</p>` : ''}` };
+  }
+  if (s.type === 'diario') { const m = s.m;
+    return { open: true, title: 'Como foi hoje?', sub: 'diário',
+      body: `<p>Registre para você — é o que mostra a evolução real entre as sessões.</p>
       <div class="rate" id="rate">${[1, 2, 3, 4, 5].map(n => `<button onclick="setRate(${n})">${n}</button>`).join('')}</div>
       <div class="ratelbl" id="ratelbl">toque um número</div>
-      <p class="why" style="margin-top:18px">💡 Nível 4+ marca a peça como dominada na trilha. Voltar a ela em dias seguintes (repetição espaçada) é o que fixa.</p>${micBtn(m.num)}</div>`;
-  } else if (s.type === 'prepIntro') {
-    h = `<div class="slide"><div class="kicker">Capítulo 0</div><h2>Aquecimento</h2>
-      <p class="big">Antes de tocar qualquer samba, prepare o corpo: <b>ar → bocal → som → flexibilidade → registro → articulação → dinâmica</b>.</p>
-      <p>São 12 passos curtos. Faça com calma, som tranquilo.</p></div>`;
-  } else if (s.type === 'prepEx') { const p = s.p;
-    h = `<div class="slide"><div class="kicker">Aquecimento ${s.k + 1} de 12</div><h3>${p.nome}</h3>
-      <p>${p.dica || ''}</p>${p.svg ? `<div class="scorebox">${p.svg}</div>` : ''}</div>`;
-  } else if (s.type === 'prepFin') {
-    h = `<div class="slide"><div class="kicker">Pronto</div><h2>Corpo aquecido 🌬️ ✓</h2><p class="big">Agora escolha um samba na trilha e toque.</p></div>`;
-  } else if (s.type === 'tecIntro') { const t = s.t;
-    h = `<div class="slide"><div class="kicker">Técnica do Lote ${t.lote}</div><h2>tom de ${t.tom}</h2>
-      <p class="big">Foco do lote: <b>${t.feat}</b>.</p><p>Exercícios curtos por eixo — som, flexibilidade, articulação, dinâmica.</p></div>`;
-  } else if (s.type === 'tecEx') { const ex = s.ex;
-    h = `<div class="slide"><div class="kicker">${s.eixo}</div><h3>${ex.nome}</h3>
-      <p>${ex.dica || ''}</p>${ex.svg ? `<div class="scorebox">${ex.svg}</div>` : ''}</div>`;
-  } else if (s.type === 'tecFim') { const a = s.alvo;
-    h = `<div class="slide"><div class="kicker">Aplicar na música</div><h2>A técnica vira samba</h2>
-      <p class="big">Leve o que você treinou para uma peça do Lote ${s.lote}.</p>
-      <button class="acao micbtn" onclick="openMusic(${a.num})">▶ abrir ${a.titulo}</button>
-      <p class="why" style="margin-top:12px">💡 São ${s.n} peças neste lote — todas trabalham este mesmo foco técnico.</p></div>`;
+      <p class="why" style="margin-top:14px">💡 Nível 4+ marca a peça como dominada na trilha. Voltar a ela em dias seguintes (repetição espaçada) é o que fixa.</p>${micBtn(m.num)}` };
   }
-  document.getElementById('slideHost').innerHTML = h;
-  const last = S.i === S.slides.length - 1;
+  if (s.type === 'prepIntro') {
+    return { open: true, title: 'Aquecimento — 12 passos', sub: 'instruções',
+      body: `<p class="big">Antes de tocar, prepare o corpo: <b>ar → bocal → som → flexibilidade → registro → articulação → dinâmica</b>. Som tranquilo, sem pressa.</p>
+      <p class="why">💡 O aquecimento de verdade é o <b>Cichowicz</b> (na aba Aquecer / no nó da trilha). Aqui é só a referência passo a passo.</p>` };
+  }
+  if (s.type === 'prepEx') { const p = s.p;
+    return { title: p.nome, sub: `passo ${s.k + 1}`, body: `<p>${p.dica || ''}</p>${p.svg ? `<div class="scorebox">${p.svg}</div>` : ''}` };
+  }
+  if (s.type === 'prepFin') {
+    return { title: 'Corpo aquecido 🌬️', sub: 'pronto', body: `<p class="big">Agora escolha um samba na trilha e toque.</p>` };
+  }
+  if (s.type === 'tecIntro') { const t = s.t;
+    return { open: true, title: `Técnica — tom de ${t.tom}`, sub: `lote ${t.lote}`,
+      body: `<p class="big">Foco do lote: <b>${t.feat}</b>.</p><p>Exercícios curtos por eixo — som, flexibilidade, articulação, dinâmica.</p>` };
+  }
+  if (s.type === 'tecEx') { const ex = s.ex;
+    return { title: ex.nome, sub: s.eixo, body: `<p>${ex.dica || ''}</p>${ex.svg ? `<div class="scorebox">${ex.svg}</div>` : ''}` };
+  }
+  if (s.type === 'tecFim') { const a = s.alvo;
+    return { title: 'A técnica vira samba', sub: 'aplicar',
+      body: `<p class="big">Leve o que você treinou para uma peça do Lote ${s.lote}.</p>
+      <button class="acao micbtn" onclick="openMusic(${a.num})">▶ abrir ${a.titulo}</button>
+      <p class="why" style="margin-top:12px">💡 São ${s.n} peças neste lote — todas trabalham este mesmo foco técnico.</p>` };
+  }
+  return { title: '', body: '' };
+}
+function renderAccordion() {
+  document.getElementById('slideHost').innerHTML = S.slides.map(s => {
+    const part = slidePart(s);
+    return `<div class="acc${part.open ? ' open' : ''}"><button class="acc-h" onclick="accToggle(this)">${part.title}${part.sub ? `<span class="acc-sub">${part.sub}</span>` : ''}<span class="acc-i">▸</span></button><div class="acc-b">${part.body}</div></div>`;
+  }).join('');
   document.getElementById('snav').innerHTML =
-    `<button class="sprev" onclick="prevSlide()"${S.i === 0 ? ' disabled' : ''}>‹ voltar</button>
-     <button class="snext" onclick="${last ? 'finishStory()' : 'nextSlide()'}">${last ? (S.music ? 'concluir' : 'fechar') : 'continuar ›'}</button>`;
+    `<button class="snext" onclick="finishStory()">${S.music ? 'concluir' : 'fechar'}</button>`;
 }
-function renderBars() {
-  let h = '';
-  for (let i = 0; i < S.slides.length; i++) h += `<div class="sbar${i <= S.i ? ' done' : ''}"><i style="width:${i <= S.i ? 100 : 0}%"></i></div>`;
-  document.getElementById('sbars').innerHTML = h;
-}
-function nextSlide() { if (S.i < S.slides.length - 1) { S.i++; renderSlide(); } }
-function prevSlide() { if (S.i > 0) { S.i--; renderSlide(); } }
+function accToggle(btn) { const it = btn.closest('.acc'); if (it) it.classList.toggle('open'); }
 function setRate(n) {
   S.rate = n; document.querySelectorAll('#rate button').forEach((b, i) => b.classList.toggle('sel', i + 1 === n));
-  document.getElementById('ratelbl').textContent = RATELBL[n];
+  const l = document.getElementById('ratelbl'); if (l) l.textContent = RATELBL[n];
 }
-function toggleChk(k) { S.checks[k] = !S.checks[k]; renderSlide(); }
+function toggleChk(k) {
+  S.checks[k] = !S.checks[k];
+  const el = document.querySelector(`[data-chk="${k}"]`);
+  if (el) { const box = el.querySelector('.box'), tx = el.querySelector('.chktxt');
+    if (box) { box.classList.toggle('on', S.checks[k]); box.textContent = S.checks[k] ? '✓' : ''; }
+    if (tx) tx.textContent = S.checks[k] ? 'feito!' : 'marque quando fizer'; }
+}
 function finishStory() {
   if (S.music) {
-    if (!S.rate) { const l = document.getElementById('ratelbl'); if (l) l.textContent = 'escolha de 1 a 5 para concluir'; return; }
+    if (!S.rate) { const l = document.getElementById('ratelbl'); if (l) l.textContent = 'no Diário, escolha de 1 a 5 para concluir'; return; }
     const logs = store.get('logs', {}), num = S.music.num;
     (logs[num] = logs[num] || []).push({ d: new Date().toISOString().slice(0, 10), n: S.rate });
     store.set('logs', logs); markDay();

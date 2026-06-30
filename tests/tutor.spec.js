@@ -103,31 +103,25 @@ test('trilha é a home: 110 nós em 6 lotes, sem cadeado, com bandeira SUGERIDA'
   expect(errors, 'trilha sem exceções').toEqual([]);
 });
 
-test('Story por música: capa→perfil→plano→desafio com pauta→diário marca dominada', async ({ page }) => {
+test('plano por música é ACORDEÃO: pauta no desafio → diário marca dominada', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.addInitScript(() => localStorage.setItem('jornada_ativa', 'sambrass'));   // Sambrass virou alternativa
   await page.goto('/index.html');
   await expect(page.locator('.path .node')).toHaveCount(110, { timeout: 10000 });
 
-  await page.locator('.node .planobtn').first().click();                 // "plano ›" abre a Story (agora opcional; o nó toca direto)
+  await page.locator('.node .planobtn').first().click();                 // "plano ›" abre a instrução (acordeão; o nó toca direto)
   await expect(page.locator('#story.on')).toBeVisible();
-  await expect(page.locator('.slide h2')).toBeVisible();                 // capa: título
+  await expect(page.locator('.acc-h').first()).toBeVisible();            // virou acordeão (não mais slides)
 
-  let sawSvg = false;                                                    // avança até a pauta de um desafio
-  for (let i = 0; i < 12; i++) {
-    if (await page.locator('.scorebox svg').first().isVisible().catch(() => false)) { sawSvg = true; break; }
-    await page.click('.snext');
-  }
-  expect(sawSvg, 'um desafio mostra a pauta (SVG pré-assado)').toBeTruthy();
+  await page.evaluate(() => document.querySelectorAll('.acc').forEach(a => a.classList.add('open')));   // abre todas as seções
+  await expect(page.locator('.scorebox svg').first()).toBeVisible();     // um desafio mostra a pauta (SVG pré-assado)
 
-  for (let i = 0; i < 8 && !(await page.locator('#rate').isVisible().catch(() => false)); i++) await page.click('.snext');
-  await expect(page.locator('#rate')).toBeVisible();                     // diário
-  await page.locator('#rate button').nth(3).click();                     // autoavaliação nível 4
+  await page.locator('#rate button').nth(3).click();                     // diário: autoavaliação nível 4
   await page.click('.snext');                                            // concluir
   await expect(page.locator('#story.on')).toBeHidden();
   await expect(page.locator('.node .inner.done').first()).toBeVisible(); // virou dominada (✓)
-  expect(errors, 'Story sem exceções').toEqual([]);
+  expect(errors, 'acordeão da música sem exceções').toEqual([]);
 });
 
 test('a síntese: o desafio leva ao tutor de escuta real (estudo.html)', async ({ page }) => {
