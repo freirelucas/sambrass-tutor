@@ -59,7 +59,8 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
     $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}${bAlc}`;
     if(BLK?.pecas?.[ID]){ const b = BLK.pecas[ID];          // selo do hero = o Lego (mesma língua); fallback grafismo
       if(window.legoMini && b.legos?.length) $('#selo').innerHTML = window.legoMini(b, {w:84, h:84, rhythm:true});
-      else if(window.grafismo) $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84); }
+      else if(window.grafismo) $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84);
+      const se = $('#selo'); if(se){ se.style.cursor='pointer'; se.title='como esse desenho é feito?'; se.onclick=()=>window.explicaDesenho&&window.explicaDesenho(); } }
     if(CUMBIA && esc){ const cb = {riff:1, sincopa:2, fogo:3}[esc.nivel_minimo];   // ponte reversa: aquece com o bloco do Cichowicz que prepara este lote
       if(cb) $('#badges').insertAdjacentHTML('beforeend', ` <a class="badge warm" href="./respira.html" title="Flow do Cichowicz que prepara este lote">🫁 aqueça: Bloco ${cb}</a>`); } }
   const cm = {}; (cells?.celulas_ritmicas||[]).forEach(c => cm[c.id]=c);
@@ -77,9 +78,10 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   if (window.lego && BLK?.pecas?.[ID]?.legos?.length) {
     const rec = BLK.pecas[ID], lb = $('#legoblk');
     if (lb) {
-      lb.innerHTML = '<div class="sec-h">os trechos que se repetem</div>' +
+      lb.innerHTML = '<div class="sec-h">os trechos que se repetem <button class="comofeito" type="button" id="legoexplica">ⓘ como é feito?</button></div>' +
         '<p class="lead">Cada peça é um trecho que <b>volta</b> na música: em cima o <b>contorno</b> (o desenho das notas), embaixo o <b>colar rítmico</b> (a célula). Toque uma peça — ela <b>acende no tempo</b>. São os mesmos Legos da trilha e da exploração.</p>' +
         window.lego(rec);
+      const ex = $('#legoexplica'); if(ex) ex.onclick = () => window.explicaDesenho && window.explicaDesenho();
       lb.querySelectorAll('.lego-pc').forEach(pc => pc.onclick = () => {
         lb.querySelectorAll('.lego-pc.on').forEach(e => e.classList.remove('on'));
         pc.classList.add('on'); audioUnlock();

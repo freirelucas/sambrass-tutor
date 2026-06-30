@@ -107,6 +107,7 @@ textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var
 <script src="./grafismo.js"></script>
 <script src="./vendor/abcjs.js"></script>
 <script src="./lego.js"></script>
+<script src="./explica.js"></script>
 <script>
 'use strict';
 const KEY='blocos_revisao_v1';
@@ -431,7 +432,7 @@ function renderLegos(){
   for(const [id,r] of Object.entries(DB)){ if(!r.legos||!r.legos.length)continue; (r.jornada==='cumbias'?cumb:samb).push([id,r]); }
   const byCor=(a,b)=>{const pa=COFPOS[PC[a[1].cor.tonica]]??99,pb=COFPOS[PC[b[1].cor.tonica]]??99;return pa-pb;};
   cumb.sort(byCor); samb.sort(byCor);
-  let h='<p class="hint">O <b>Lego</b> de cada peça: os <b>trechos que se repetem</b> viram peças encaixáveis. Cada peça mostra o <b>contorno</b> (a linha do arpejo) em cima e o <b>colar rítmico</b> (a célula) embaixo. Clique uma peça para <b>ouvir</b> o trecho — o contorno e o colar acendem no tempo. A <b>cor</b> é o tom (ciclo de quintas). É a mesma língua da trilha e do estudo.</p>';
+  let h='<p class="hint">O <b>Lego</b> de cada peça: os <b>trechos que se repetem</b> viram peças encaixáveis. Cada peça mostra o <b>contorno</b> (a linha do arpejo) em cima e o <b>colar rítmico</b> (a célula) embaixo. Clique uma peça para <b>ouvir</b> o trecho — o contorno e o colar acendem no tempo. A <b>cor</b> é o tom (ciclo de quintas). É a mesma língua da trilha e do estudo. <button class="comofeito" type="button" onclick="window.explicaDesenho&&window.explicaDesenho()">ⓘ como é feito?</button></p>';
   h+=`<div class="grphead">cumbia · chicha · ${cumb.length}</div><div id="legos-cumb">`;
   for(const [id,r] of cumb) h+=pieceLegoCard(id,r);
   h+=`</div><div class="grphead">samba · ${samb.length}</div>`

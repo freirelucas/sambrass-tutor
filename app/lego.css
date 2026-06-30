@@ -50,3 +50,8 @@
 /* mini (nó da trilha): só contorno+colar, sem moldura */
 .lego-mini{display:inline-flex;line-height:0;vertical-align:middle}
 .lego-mini svg{display:block}
+
+/* "ⓘ como é feito?" — abre o explainer; herda a cor da página (claro ou escuro) */
+.comofeito{font:inherit;font-size:12px;font-weight:700;color:inherit;opacity:.7;background:none;border:none;
+  cursor:pointer;padding:2px 6px;text-decoration:underline;text-underline-offset:3px;letter-spacing:0}
+.comofeito:hover{opacity:1}
