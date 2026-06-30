@@ -48,6 +48,7 @@ button.min{border-color:var(--cool)} button.min.on{background:var(--cool);color:
 button.ok{border-color:var(--verde)} button.ok.on{background:var(--verde);color:#fff}
 .prog{font-size:12.5px;color:var(--ouro);font-weight:700}
 a.volta{color:var(--suave);text-decoration:none;margin-left:auto}a.volta:hover{color:var(--ouro)}
+.backtop{display:inline-flex;align-items:center;min-height:40px;color:var(--suave);text-decoration:none;font-weight:700;font-size:14px}.backtop:hover{color:var(--ouro)}
 textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var(--linha);border-radius:9px;color:var(--tinta);padding:8px;font:12px/1.4 ui-monospace,monospace;margin-top:8px;display:none}
 /* Telar */
 .tctl{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin-bottom:14px;box-shadow:var(--sombra)}
@@ -75,6 +76,7 @@ textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var
 </head>
 <body>
 <header><div class="wrap">
+  <a class="backtop" href="./index.html">‹ voltar</a>
   <h1>Os Legos do acervo</h1>
   <p class="sub">Cada peça é um <b>Lego</b>: a <b>cor</b> vem do tom (ciclo de quintas), e cada trecho que se repete é uma <b>peça</b> com seu <b>contorno</b> (arpejo) e <b>colar rítmico</b> (célula). Clique uma peça para <b>ouvir</b> o trecho; as outras vistas abrem a mesma análise por outro ângulo. Atalhos (vista Cor): <b>Espaço</b> ouvir · <b>M</b> maior · <b>N</b> menor · <b>✓=Enter</b>.</p>
   <div class="tabs" id="tabs"></div>
@@ -100,7 +102,7 @@ textarea{width:100%;min-height:70px;background:var(--caixa);border:1px solid var
   <button class="act ok" id="bok">✓ confere</button>
   <span class="prog" id="prog"></span>
   <button class="act" id="bexport">📋 exportar</button>
-  <a class="volta" href="./index.html">‹ app</a>
+  <a class="volta" href="./index.html">‹ voltar</a>
 </div><div class="wrap"><textarea id="saida" readonly></textarea></div></div>
 
 <div id="scratch" style="display:none"></div>
