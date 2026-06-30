@@ -139,6 +139,8 @@ small{color:var(--suave)}
 .badge.warm{background:rgba(31,122,107,.18);color:#7fe0c0;border:1px solid #2f8f7e;text-decoration:none}
 .badge.warm:active{background:rgba(31,122,107,.35)}
 .toggle.prim{border-color:var(--ouro2);color:var(--ouro)}
+.bandvol{display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 12px;border-radius:12px;border:1px solid var(--linha);background:#211e17;font-size:13px}
+.bandvol input[type=range]{width:84px;accent-color:var(--ouro);height:24px}
 #desafios{margin:0 0 16px}
 .desafio{background:var(--pane);border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin:0 0 10px}
 .desafio h3{margin:0 0 4px;font-size:15px;color:var(--ouro)}
@@ -192,6 +194,7 @@ small{color:var(--suave)}
         <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
         <button class="toggle prim" id="tprat">▶ praticar</button>
         <button class="toggle" id="tband" title="liga o acompanhamento de cumbia (güira + baixo + naipe) no tom e no andamento — toque por cima">🪘 com a banda</button>
+        <label class="bandvol" id="bandvolwrap" title="volume da banda">🔊<input type="range" id="bandvol" min="0" max="100" aria-label="volume da banda"></label>
         <button class="toggle" id="tesp" title="o cursor só avança quando você acerta a nota (precisa do microfone)">⏳ esperar por mim</button>
         <div class="loopbox"><button class="toggle" id="tloop">🔁 loop</button>
           <span class="lstep">comp <button id="laMinus">−</button><span id="laVal">1</span><button id="laPlus">+</button>

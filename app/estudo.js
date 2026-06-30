@@ -140,11 +140,14 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#tmic').onclick = () => MICON ? disableMic() : enableMic();
   $('#tprat').onclick = () => PRACTON ? stopPractice() : startPractice();
   { const bandRoot = window.Groove ? Groove.rootFromKey(p?.key_concert) : 41;   // acompanhamento no tom de CONCERTO
-    const tb = $('#tband');
+    const tb = $('#tband'), bv = $('#bandvol');
+    let bvol = Math.max(0, Math.min(100, +(localStorage.getItem('bandvol') ?? 65)));
+    if(bv){ bv.value = bvol;
+      bv.oninput = () => { bvol = +bv.value; localStorage.setItem('bandvol', bvol); if(window.Groove) Groove.setVolume(bvol/100); }; }
     if(tb) tb.onclick = () => {
       if(!window.Groove) return;
       if(Groove.on){ Groove.stop(); tb.classList.remove('on'); tb.textContent = '🪘 com a banda'; }
-      else { audioUnlock(); Groove.start({audioContext: AC, bpm: BPM, root: bandRoot}); tb.classList.add('on'); tb.textContent = '⏹ parar a banda'; }
+      else { audioUnlock(); Groove.start({audioContext: AC, bpm: BPM, root: bandRoot, volume: bvol/100}); tb.classList.add('on'); tb.textContent = '⏹ parar a banda'; }
     }; }
   $('#tgo').onclick = async () => {   // um clique: admite o microfone + começa a praticar
     if(PRACTON){ stopPractice(); return; }

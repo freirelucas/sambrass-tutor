@@ -13,7 +13,7 @@
   var PC = { C: 0, 'C#': 1, Db: 1, D: 2, 'D#': 3, Eb: 3, E: 4, F: 5, 'F#': 6, Gb: 6,
              G: 7, 'G#': 8, Ab: 8, A: 9, 'A#': 10, Bb: 10, B: 11 };
   var ctx = null, master = null, timer = null, noiseBuf = null,
-      nextT = 0, step = 0, bpm = 96, rootMidi = 41, playing = false;
+      nextT = 0, step = 0, bpm = 96, rootMidi = 41, playing = false, vol = 0.7;
   var LOOKAHEAD = 0.12, TICK = 25;                         // scheduler "two clocks"
   function freq(m) { return 440 * Math.pow(2, (m - 69) / 12); }
   function s16() { return (60 / bpm) / 4; }                // segundos por semicolcheia
@@ -27,7 +27,7 @@
   function guira(t, accent) {                              // o raspador: ruído filtrado, curto
     var src = ctx.createBufferSource(); src.buffer = noise();
     var bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = accent ? 6800 : 5200; bp.Q.value = 0.7;
-    var g = ctx.createGain(), a = accent ? 0.15 : 0.085;
+    var g = ctx.createGain(), a = accent ? 0.17 : 0.11;
     g.gain.setValueAtTime(0.0001, t);
     g.gain.exponentialRampToValueAtTime(a, t + 0.004);
     g.gain.exponentialRampToValueAtTime(0.0001, t + (accent ? 0.075 : 0.05));
@@ -38,7 +38,7 @@
     var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 850;
     var g = ctx.createGain();
     g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(0.34, t + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.30, t + 0.012);
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.19);
     o.connect(lp).connect(g).connect(master); o.start(t); o.stop(t + 0.22);
   }
@@ -78,14 +78,17 @@
       } catch (e) { return; }
       if (o.bpm) bpm = o.bpm;
       if (o.root != null) rootMidi = o.root;
+      if (o.volume != null) vol = Math.max(0, Math.min(1, o.volume));
       if (playing) return;
-      if (!master) { master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination); }
+      if (!master) { master = ctx.createGain(); master.connect(ctx.destination); }
+      master.gain.value = vol;
       playing = true; step = 0; nextT = ctx.currentTime + 0.08;
       timer = setInterval(tick, TICK);
     },
     stop: function () { playing = false; if (timer) { clearInterval(timer); timer = null; } },
     setBpm: function (b) { if (b) bpm = b; },
     setRoot: function (m) { if (m != null) rootMidi = m; },
+    setVolume: function (v) { vol = Math.max(0, Math.min(1, v)); if (master && ctx) master.gain.setTargetAtTime(vol, ctx.currentTime, 0.04); },
     rootFromKey: function (key) {
       var pc = PC[(key || 'C').replace(/m$/, '')]; if (pc == null) pc = 0;
       return 36 + pc;                                      // tônica grave (C2..B2)
