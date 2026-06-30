@@ -167,6 +167,8 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#raMinus').onclick = () => { RTARGET = Math.max(60, RTARGET-4); $('#rampVal').textContent = RTARGET; };
   $('#raPlus').onclick  = () => { RTARGET = Math.min(180, RTARGET+4); $('#rampVal').textContent = RTARGET; };
   $('#tesp').onclick = e => { ESPERAR = e.currentTarget.classList.toggle('on'); if(!ESPERAR && WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } };
+  { const tm = $('#tmais'), mo = $('#maisopcoes');   // densidade: avançado colapsado, foco no primário
+    if(tm && mo) tm.onclick = () => { const show = mo.hidden; mo.hidden = !show; tm.setAttribute('aria-expanded', show ? 'true' : 'false'); tm.textContent = show ? '⚙ menos opções' : '⚙ mais opções'; }; }
   syncLoopUI(); $('#rampVal').textContent = RTARGET;
 
   const passos = $('#passos'); const done = JSON.parse(localStorage.getItem('passos-'+ID)||'[]');

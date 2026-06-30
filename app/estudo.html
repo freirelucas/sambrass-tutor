@@ -87,6 +87,9 @@ small{color:var(--suave)}
 .abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
 .abcjs-inline-audio .abcjs-btn svg path{fill:var(--tinta)}
 .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.controls.mais{margin-top:10px;padding-top:12px;border-top:1px dashed var(--linha)}
+.controls.mais[hidden]{display:none}
+#tmais[aria-expanded="true"]{background:var(--bg2);border-color:var(--ouro);color:var(--ouro)}
 .tempo{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--linha);border-radius:14px;padding:8px 12px}
 .tempo button{width:40px;height:40px;border-radius:10px;border:1px solid var(--linha);background:var(--pane);color:var(--tinta);font-size:20px;cursor:pointer}
 .tempo .bpm{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ouro);min-width:64px;text-align:center}
@@ -187,12 +190,15 @@ small{color:var(--suave)}
       </div>
       <div class="controls">
         <button class="toggle go" id="tgo">▶ Tocar com o tutor</button>
+        <button class="toggle prim" id="tprat">▶ praticar</button>
+        <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
         <div class="tempo"><button id="menos">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais">+</button></div>
+        <button class="toggle" id="tmais" aria-expanded="false" aria-controls="maisopcoes">⚙ mais opções</button>
+      </div>
+      <div class="controls mais" id="maisopcoes" hidden>
         <button class="toggle" id="tconcert">🎼 em concerto</button>
         <button class="toggle" id="toct" title="desce a melodia uma oitava — registro grave, pra alcançar o agudo ou aquecer">🎺 8ª abaixo</button>
         <button class="toggle" id="tfull">▶ tocar a peça inteira</button>
-        <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
-        <button class="toggle prim" id="tprat">▶ praticar</button>
         <button class="toggle" id="tband" title="liga o acompanhamento de cumbia (güira + baixo + naipe) no tom e no andamento — toque por cima">🪘 com a banda</button>
         <label class="bandvol" id="bandvolwrap" title="volume da banda">🔊<input type="range" id="bandvol" min="0" max="100" aria-label="volume da banda"></label>
         <button class="toggle" id="tesp" title="o cursor só avança quando você acerta a nota (precisa do microfone)">⏳ esperar por mim</button>
