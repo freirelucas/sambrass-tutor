@@ -243,24 +243,29 @@ function telaVocab() {
 }
 
 /* ---------- metrônomo (Web Audio) ---------- */
-const M = { ctx: null, on: false, bpm: 100, alvo: 160, rampa: false, beats: 2, beat: 0, next: 0, bars: 0, timer: null };
+const M = { ctx: null, on: false, bpm: 100, alvo: 160, rampa: false, beats: 2, beat: 0, next: 0, bars: 0, timer: null, sub: 1, groove: false, gflash: null };
+const SUBL = { 1: 'subdiv —', 2: 'subdiv ÷2', 4: 'subdiv ÷4' };
 function metroTela() {
   tela.innerHTML = `<h2 class="sec">Metrônomo</h2><div class="card metro">
     <div class="bpm"><span id="vbpm">${M.bpm}</span> <small>BPM</small></div>
     <input type="range" min="40" max="260" value="${M.bpm}" id="sbpm">
     <div class="beats" id="vbeats"></div>
     <div class="btnrow" style="margin:8px 0">
-      <button class="toggle" id="tcomp">2/4</button>
+      <button class="toggle" id="tcomp">${M.beats}/4</button>
+      <button class="toggle ${M.sub > 1 ? 'on' : ''}" id="tsub">${SUBL[M.sub]}</button>
+      <button class="toggle ${M.groove ? 'on' : ''}" id="tgroove">🪘 cumbia</button>
       <button class="toggle ${M.rampa ? 'on' : ''}" id="trampa">rampa → <span id="valvo">${M.alvo}</span></button>
     </div>
     <input type="range" min="60" max="260" value="${M.alvo}" id="salvo" ${M.rampa ? '' : 'disabled'}>
     <div class="btnrow"><button class="acao ${M.on ? 'parar' : ''}" id="bgo">${M.on ? 'parar' : 'iniciar'}</button>
       <button class="toggle" id="btap">tap</button></div>
-    <p class="meta" style="margin-top:10px">A rampa sobe 4 BPM a cada 4 compassos até o alvo — pratique a célula lenta e acelere.</p></div>`;
+    <p class="meta" style="margin-top:10px" id="metrohint">${M.groove ? 'Modo <b>cumbia</b>: güira + baixo + naipe (o tom é só pra dar corpo). Ajuste o BPM ao vivo.' : 'Subdivisão preenche colcheias/semicolcheias entre os tempos. A rampa sobe 4 BPM a cada 4 compassos até o alvo.'}</p></div>`;
   desenhaBeats();
-  $('#sbpm').oninput = e => { M.bpm = +e.target.value; $('#vbpm').textContent = M.bpm; };
+  $('#sbpm').oninput = e => { M.bpm = +e.target.value; $('#vbpm').textContent = M.bpm; if (M.groove && window.Groove && Groove.on) Groove.setBpm(M.bpm); };
   $('#salvo').oninput = e => { M.alvo = +e.target.value; $('#valvo').textContent = M.alvo; };
-  $('#tcomp').onclick = e => { M.beats = M.beats === 2 ? 4 : (M.beats === 4 ? 3 : 2); e.target.textContent = M.beats + '/4'; desenhaBeats(); };
+  $('#tcomp').onclick = e => { M.beats = M.beats === 2 ? 4 : (M.beats === 4 ? 3 : 2); e.target.textContent = M.beats + '/4'; M.beat = 0; desenhaBeats(); };
+  $('#tsub').onclick = e => { M.sub = M.sub === 1 ? 2 : (M.sub === 2 ? 4 : 1); e.target.textContent = SUBL[M.sub]; e.target.classList.toggle('on', M.sub > 1); };
+  $('#tgroove').onclick = e => { M.groove = !M.groove; e.target.classList.toggle('on', M.groove); const hint = $('#metrohint'); if (hint) hint.innerHTML = M.groove ? 'Modo <b>cumbia</b>: güira + baixo + naipe (o tom é só pra dar corpo). Ajuste o BPM ao vivo.' : 'Subdivisão preenche colcheias/semicolcheias entre os tempos. A rampa sobe 4 BPM a cada 4 compassos até o alvo.'; if (M.on) { pararMetro(); iniciarMetro(); } };
   $('#trampa').onclick = e => { M.rampa = !M.rampa; e.target.classList.toggle('on', M.rampa); $('#salvo').disabled = !M.rampa; };
   $('#bgo').onclick = toggleMetro;
   let taps = [];
@@ -270,25 +275,39 @@ function desenhaBeats() { const v = $('#vbeats'); if (v) v.innerHTML = Array.fro
 function toggleMetro() { M.on ? pararMetro() : iniciarMetro(); }
 function iniciarMetro() {
   M.ctx = M.ctx || new (window.AudioContext || window.webkitAudioContext)();
-  M.ctx.resume(); M.on = true; M.beat = 0; M.bars = 0; M.next = M.ctx.currentTime + 0.1;
-  M.timer = setInterval(scheduler, 25);
+  M.ctx.resume(); M.on = true; M.beat = 0; M.bars = 0;
+  if (M.groove && window.Groove) { Groove.start({ audioContext: M.ctx, bpm: M.bpm, root: 45, volume: 0.7 }); grooveFlash(); }   // root A2: só p/ dar corpo (metrônomo é tempo)
+  else { M.next = M.ctx.currentTime + 0.1; M.timer = setInterval(scheduler, 25); }
   const b = $('#bgo'); if (b) { b.textContent = 'parar'; b.classList.add('parar'); }
 }
-function pararMetro() { M.on = false; clearInterval(M.timer); const b = $('#bgo'); if (b) { b.textContent = 'iniciar'; b.classList.remove('parar'); } }
+function pararMetro() {
+  M.on = false; clearInterval(M.timer); clearTimeout(M.gflash);
+  if (window.Groove && Groove.on) Groove.stop();
+  document.querySelectorAll('.beat').forEach(b => b.classList.remove('on'));
+  const b = $('#bgo'); if (b) { b.textContent = 'iniciar'; b.classList.remove('parar'); }
+}
+function grooveFlash() {   // pulso visual dos tempos no modo cumbia (lê M.bpm a cada tique → segue mudanças)
+  if (!M.on || !M.groove) return;
+  document.querySelectorAll('.beat').forEach((b, j) => b.classList.toggle('on', j === M.beat));
+  M.beat = (M.beat + 1) % M.beats;
+  M.gflash = setTimeout(grooveFlash, 60000 / M.bpm);
+}
 function scheduler() {
   while (M.next < M.ctx.currentTime + 0.1) {
+    const beatDur = 60 / M.bpm;
     click(M.next, M.beat === 0);
+    for (let s = 1; s < M.sub; s++) click(M.next + s * beatDur / M.sub, false, true);   // subdivisão (ticks suaves)
     flash(M.beat);
-    M.next += 60 / M.bpm;
+    M.next += beatDur;
     M.beat = (M.beat + 1) % M.beats;
     if (M.beat === 0) { M.bars++; if (M.rampa && M.bars % 4 === 0 && M.bpm < M.alvo) { M.bpm = Math.min(M.alvo, M.bpm + 4); const v = $('#vbpm'); if (v) { v.textContent = M.bpm; $('#sbpm').value = M.bpm; } } }
   }
 }
-function click(t, acc) {
+function click(t, acc, soft) {
   const o = M.ctx.createOscillator(), g = M.ctx.createGain();
-  o.frequency.value = acc ? 1500 : 900; g.gain.value = acc ? 0.5 : 0.3;
+  o.frequency.value = acc ? 1500 : (soft ? 2400 : 900); g.gain.value = acc ? 0.5 : (soft ? 0.12 : 0.3);
   o.connect(g); g.connect(M.ctx.destination);
-  o.start(t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.04); o.stop(t + 0.05);
+  o.start(t); g.gain.exponentialRampToValueAtTime(0.001, t + (soft ? 0.025 : 0.04)); o.stop(t + 0.05);
 }
 function flash(i) { const at = M.next - M.ctx.currentTime; setTimeout(() => { document.querySelectorAll('.beat').forEach((b, j) => b.classList.toggle('on', j === i)); }, Math.max(0, at * 1000)); }
 
