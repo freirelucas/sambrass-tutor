@@ -236,6 +236,8 @@ function telaVocab() {
     <div class="card vocab"><h3>Articulação, forma e leitura</h3><p class="tags">${comp || '<span class="meta">—</span>'}</p></div>
     <p class="meta">${c24} peças em 2/4 e ${c44} em 4/4. Dominar este vocabulário é ler o caderno à primeira vista.</p>
     <h2 class="sec">Ferramentas</h2>
+    <div class="card" style="text-align:center"><a class="acao" style="width:100%;display:block;box-sizing:border-box;text-decoration:none" href="./afinar.html">🎯 Afinar &amp; primeiros sons</a>
+      <p class="meta" style="margin-top:8px">A porta de entrada: afinador + drone pra sons longos. Deixe o som afinado e firme antes de correr atrás das músicas.</p></div>
     <div class="card" style="text-align:center"><a class="acao" style="width:100%;display:block;box-sizing:border-box;text-decoration:none" href="./blocos.html">🔷 Explorar todos os Legos</a>
       <p class="meta" style="margin-top:8px">Cada peça em Legos: os trechos que se repetem (contorno + colar rítmico), tocáveis, na mesma língua da trilha e do estudo — e as geometrias do acervo (cor, groove, telar).</p></div>`;
 }

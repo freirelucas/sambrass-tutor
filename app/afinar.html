@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f4ee">
+<title>Afinar & primeiros sons — comece aqui · Sambrass</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<style>
+:root{--papel:#f7f4ee;--tinta:#221d18;--suave:#857a68;--linha:#e7e0d2;--brand:#8a2331;--brand2:#a83444;
+  --verde:#2f7d5b;--caixa:#f1ece1;--card:#fff;--azul:#2f6fb0;--sombra:0 2px 10px rgba(40,30,20,.08);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--serif:"Iowan Old Style",Palatino,Georgia,serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans);padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px}
+header{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:16px 0;border-radius:0 0 20px 20px;box-shadow:var(--sombra)}
+header .wrap{display:flex;align-items:center;gap:10px}
+.back{color:#fff;text-decoration:none;font-weight:700;font-size:14px;opacity:.92}
+h1{font-family:var(--serif);font-weight:600;font-size:21px;margin:0}
+.lead{color:var(--suave);font-size:14px;margin:14px 0 0}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:18px;margin:16px 0;box-shadow:var(--sombra)}
+.card h2{font-family:var(--serif);font-size:18px;margin:0 0 4px}
+.card .sub{color:var(--suave);font-size:13px;margin:0 0 14px}
+/* afinador */
+.note{font-family:var(--serif);font-size:64px;font-weight:600;text-align:center;line-height:1;margin:6px 0 2px;color:var(--tinta)}
+.note small{display:block;font-size:14px;color:var(--suave);font-family:var(--sans);font-weight:600;margin-top:4px}
+.scale{position:relative;height:12px;border-radius:8px;margin:14px 0 6px;
+  background:linear-gradient(90deg,var(--brand),#d9cbb5 42%,var(--verde) 50%,#d9cbb5 58%,var(--brand))}
+.needle{position:absolute;top:-5px;left:50%;width:4px;height:22px;background:var(--tinta);border-radius:2px;transform:translateX(-50%);transition:left .07s linear}
+.needle.intune{background:var(--verde);box-shadow:0 0 10px var(--verde)}
+.cents{text-align:center;font-size:13px;color:var(--suave);font-variant-numeric:tabular-nums;min-height:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:14px;border:none;
+  background:var(--verde);color:#fff;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(47,125,91,.3)}
+.btn.sec{background:var(--card);color:var(--tinta);border:1px solid var(--linha);box-shadow:none}
+.btn.on{background:var(--brand)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.hint{font-size:12.5px;color:var(--suave);background:var(--caixa);border-radius:10px;padding:9px 12px;margin-top:12px}
+.hint b{color:var(--tinta)}
+/* sons longos */
+.ladder{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.lnote{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--linha);
+  border-radius:14px;padding:10px 12px;min-width:74px;cursor:pointer}
+.lnote.on{border-color:var(--verde);box-shadow:0 0 0 2px var(--verde)}
+.lnote .nm{font-family:var(--serif);font-size:20px;font-weight:600}
+.lnote .esc{font-size:11px;color:var(--suave)}
+.valves{display:flex;gap:4px}
+.valves i{width:13px;height:18px;border-radius:4px;background:var(--caixa);border:1px solid var(--linha)}
+.valves i.f{background:var(--brand);border-color:var(--brand)}
+.dronebar{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="back" href="./index.html">‹ app</a><h1>Afinar &amp; primeiros sons</h1></div></header>
+<main class="wrap">
+  <p class="lead">A porta de entrada: deixe o som <b>afinado</b> e <b>firme</b> antes de correr atrás das músicas. Use o afinador pra centralizar a nota, e o <b>drone</b> pra segurar notas longas no tom.</p>
+
+  <section class="card">
+    <h2>Afinador</h2>
+    <p class="sub">Toque uma nota e segure. A agulha fica <b>verde no centro</b> quando está afinada.</p>
+    <div class="note" id="note">—<small id="freq">ligue o microfone</small></div>
+    <div class="scale"><div class="needle" id="needle"></div></div>
+    <div class="cents" id="cents">−50¢ &nbsp; afinado &nbsp; +50¢</div>
+    <div class="btnrow"><button class="btn" id="mic">🎤 ligar o microfone</button></div>
+    <div class="hint">No trompete <b>Sib</b>, o afinador mostra o <b>som real</b> (de concerto): o seu <b>Dó escrito soa Sib</b>. É normal — leia a nota escrita, ouça o nome de concerto.</div>
+  </section>
+
+  <section class="card">
+    <h2>Sons longos com drone</h2>
+    <p class="sub">Escolha uma nota (a digitação aparece nos pistões), ligue o <b>drone</b> e <b>segure</b> a nota junto — encaixando no som e mantendo firme.</p>
+    <div class="ladder" id="ladder"></div>
+    <div class="dronebar">
+      <button class="btn sec" id="drone">▶ ligar o drone</button>
+      <span class="cents" id="dronemeta" style="min-height:0"></span>
+    </div>
+    <div class="hint">Dica: respire fundo, ataque limpo com a sílaba <b>“tu”</b>, e segure o som <b>igual e cheio</b> do começo ao fim. 4 tempos por nota, descanse, repita.</div>
+  </section>
+</main>
+
+<script src="./vendor/pitch-detector.js"></script>
+<script>
+'use strict';
+const $=s=>document.querySelector(s);
+const NOMES=['Dó','Dó♯','Ré','Ré♯','Mi','Fá','Fá♯','Sol','Sol♯','Lá','Lá♯','Si'];
+let AC=null, DET=null, MIC=null, MICON=false, RAF=0;
+function unlock(){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended')AC.resume(); }catch(e){} }
+const freqOf=m=>440*Math.pow(2,(m-69)/12);
+
+// ---- afinador ----
+async function toggleMic(){
+  unlock();
+  if(MICON){ MICON=false; cancelAnimationFrame(RAF); try{DET&&DET.close();}catch(e){} DET=null; MIC=null;
+    $('#mic').classList.remove('on'); $('#mic').textContent='🎤 ligar o microfone'; $('#note').firstChild.textContent='—'; $('#freq').textContent='microfone desligado'; $('#needle').style.opacity=.3; return; }
+  try{
+    MIC=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+    DET=new PitchDetector(AC,MIC,{minHz:110,maxHz:1400}); MICON=true;
+    $('#mic').classList.add('on'); $('#mic').textContent='🎤 ouvindo — desligar'; RAF=requestAnimationFrame(tunerLoop);
+  }catch(e){ $('#freq').textContent='sem acesso ao microfone — permita e tente de novo'; }
+}
+function tunerLoop(){
+  if(!MICON) return;
+  let pp=null; try{ pp=DET?DET.detect():null; }catch(e){}
+  const nd=$('#needle');
+  if(pp){
+    $('#note').firstChild.textContent=NOMES[((pp.midi%12)+12)%12];
+    $('#freq').textContent=`${Math.round(freqOf(pp.midi))} Hz`;
+    nd.style.opacity=1; nd.style.left=Math.max(0,Math.min(100,50+pp.cents))+'%';
+    const tune=Math.abs(pp.cents)<=10; nd.classList.toggle('intune',tune);
+    $('#cents').textContent=`${pp.cents>=0?'+':''}${pp.cents}¢ ${tune?'✓ afinado':(pp.cents>0?'(agudo)':'(grave)')}`;
+  }else{ nd.style.opacity=.3; nd.classList.remove('intune'); $('#cents').textContent='−50¢   afinado   +50¢'; }
+  RAF=requestAnimationFrame(tunerLoop);
+}
+$('#mic').onclick=toggleMic;
+
+// ---- drone + sons longos ----
+// notas ESCRITAS confortáveis (registro médio) + digitação; o drone soa o tom de CONCERTO (escrito −2)
+const LADDER=[['Sol',67,'0'],['Lá',69,'12'],['Sib',70,'1'],['Dó',72,'0'],['Ré',74,'1'],['Mi',76,'0']];
+let pick=2, droneOn=false, droneNodes=null;
+function valvesHTML(f){ return '<div class="valves">'+[1,2,3].map(v=>`<i class="${f.includes(''+v)?'f':''}"></i>`).join('')+'</div>'; }
+function renderLadder(){
+  $('#ladder').innerHTML=LADDER.map(([nm,m,f],i)=>
+    `<button class="lnote${i===pick?' on':''}" data-i="${i}"><span class="nm">${nm}</span><span class="esc">${f==='0'?'sem pistão':'pistões '+f.split('').join('+')}</span>${valvesHTML(f)}</button>`).join('');
+  $('#ladder').querySelectorAll('.lnote').forEach(b=>b.onclick=()=>{ pick=+b.dataset.i; renderLadder(); if(droneOn) startDrone(); updateMeta(); });
+}
+function updateMeta(){ const [nm,m]=LADDER[pick]; $('#dronemeta').textContent=`${nm} escrito · soa ${NOMES[(((m-2)%12)+12)%12]} (concerto)`; }
+function stopDrone(){ if(droneNodes){ try{ const t=AC.currentTime; droneNodes.g.gain.cancelScheduledValues(t); droneNodes.g.gain.setTargetAtTime(0.0001,t,0.05); droneNodes.oscs.forEach(o=>o.stop(t+0.3)); droneNodes.lfo&&droneNodes.lfo.stop(t+0.3); }catch(e){} droneNodes=null; } }
+function startDrone(){
+  unlock(); stopDrone();
+  const m=LADDER[pick][1]-2, f=freqOf(m), t=AC.currentTime;     // tom de concerto
+  const g=AC.createGain(); g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.16,t+0.18); g.connect(AC.destination);
+  const lp=AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=1500; lp.connect(g);
+  const oscs=[-3,3].map(det=>{ const o=AC.createOscillator(); o.type='sawtooth'; o.frequency.value=f; o.detune.value=det; o.connect(lp); o.start(t); return o; });
+  const lfo=AC.createOscillator(); lfo.frequency.value=5; const lg=AC.createGain(); lg.gain.value=4; lfo.connect(lg); oscs.forEach(o=>lg.connect(o.detune)); lfo.start(t);
+  droneNodes={g,oscs,lfo};
+}
+$('#drone').onclick=()=>{ droneOn=!droneOn; const b=$('#drone'); if(droneOn){ startDrone(); b.classList.add('on'); b.textContent='⏹ parar o drone'; } else { stopDrone(); b.classList.remove('on'); b.textContent='▶ ligar o drone'; } };
+renderLadder(); updateMeta();
+['pointerdown','keydown'].forEach(ev=>document.addEventListener(ev,unlock,{once:true}));
+</script>
+</body>
+</html>
