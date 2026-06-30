@@ -97,6 +97,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
     const ol = $('#passos'); if(ol) ol.innerHTML = passosArr.map(t => `<li><span class="chk">✓</span><span class="txt">${t}</span></li>`).join(''); }
   if(pedag && pedag[p?.num]?.desafios){ const dz = $('#desafios');                 // P1③: a pedagogia da Story, aqui no fluxo
     if(dz) dz.innerHTML = pedag[p.num].desafios.map(d => `<div class="desafio"><h3>${d.t}</h3>${d.d?`<p>${d.d}</p>`:''}${d.w?`<p class="por">${d.w}</p>`:''}${d.svg||''}</div>`).join(''); }
+  { const dz = $('#desafios'); if(dz && p) dz.insertAdjacentHTML('beforeend', improvPanel(p.key_concert, BLK?.pecas?.[ID]?.cor?.modo)); }   // painel de improviso (escala + notas-alvo)
 
   const TEMA = abc?.[ID] || null;
   const FULL = (abcFull && abcFull[ID]) || null;        // peça inteira (só nas cumbias OMR)
@@ -170,6 +171,24 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   [...passos.children].forEach((li,i) => { if(done.includes(i)) li.classList.add('done');
     li.onclick = () => { li.classList.toggle('done'); const d = [...passos.children].map((x,k) => x.classList.contains('done')?k:-1).filter(k => k>=0); localStorage.setItem('passos-'+ID, JSON.stringify(d)); }; });
 })();
+
+// painel "para improvisar": a escala de concerto + as notas do acorde, dos dados (tom+modo)
+function improvPanel(keyConcert, modo){
+  const PCs = {C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,F:5,'F#':6,Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11};
+  const tpc = PCs[keyConcert]; if(tpc == null) return '';
+  const flat = ['F','Bb','Eb','Ab','Db','Gb','Cb'].includes(keyConcert);
+  const SH = ['Dó','Dó♯','Ré','Ré♯','Mi','Fá','Fá♯','Sol','Sol♯','Lá','Lá♯','Si'];
+  const FL = ['Dó','Ré♭','Ré','Mi♭','Mi','Fá','Sol♭','Sol','Lá♭','Lá','Si♭','Si'];
+  const nm = pc => (flat ? FL : SH)[((pc % 12) + 12) % 12];
+  const menor = modo === 'menor';
+  const steps = menor ? [0,2,3,5,7,8,10] : [0,2,4,5,7,9,11];
+  const scale = steps.map(s => nm((tpc + s) % 12));
+  const triad = [0, menor ? 3 : 4, 7].map(s => nm((tpc + s) % 12));
+  return `<div class="desafio"><h3>🎷 Para improvisar</h3>
+    <p>Tom <b>${nm(tpc)} ${menor ? 'menor' : 'maior'}</b> (concerto). Escala pra solar por cima do riff:</p>
+    <p class="por" style="font-size:15px;color:var(--tinta);letter-spacing:.3px">${scale.join(' · ')}</p>
+    <p class="por">Mire as <b>notas do acorde</b> (${triad.join(' ')}) nos tempos fortes e passe pelas outras como ligação. Na cumbia, frases curtas que <b>respondem</b> ao riff — deixe espaço.</p></div>`;
+}
 
 async function playOnce(abc){
   if(!abc || !window.ABCJS?.synth?.supportsAudio()) return; audioUnlock();
