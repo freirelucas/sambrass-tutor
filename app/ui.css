@@ -17,3 +17,14 @@
   color:var(--suave);background:none;border:none;cursor:pointer;
   text-decoration:none;font:700 14px/1 var(--sans-ui)}
 .ui-back:hover,.ui-back:active{color:var(--marca)}
+
+/* foco de teclado visível — a11y, no app inteiro (specificity 0 via :where, páginas podem sobrepor) */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:2px solid var(--marca);outline-offset:2px;border-radius:4px}
+
+/* componentes compartilhados (adoção incremental; mesmas convenções do app) */
+.ui-card{background:var(--card);border:1px solid var(--linha);border-radius:var(--raio);padding:16px;box-shadow:var(--sombra)}
+.ui-badge{display:inline-flex;align-items:center;gap:6px;background:var(--papel-2);border:1px solid var(--linha);border-radius:999px;padding:5px 12px;font:600 13px/1 var(--sans-ui)}
+.ui-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 16px;border-radius:12px;border:1px solid var(--linha);background:var(--card);color:var(--tinta);font:600 14px/1 var(--sans-ui);cursor:pointer}
+.ui-btn-primary{background:var(--verde);border-color:var(--verde);color:#fff}
+.ui-btn-ghost{background:none}
+.ui-btn.on,.ui-btn[aria-pressed="true"]{background:var(--marca);border-color:var(--marca);color:#fff}
