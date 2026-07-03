@@ -70,6 +70,13 @@ function telaProg() {
       <h3 style="margin-top:14px">Últimas praticadas</h3>${ult}</div>`;
   }
 
+  // ⭐ Meu repertório — peças marcadas no estudo (desta jornada), pra voltar fácil
+  const favs = (() => { try { return JSON.parse(localStorage.getItem('favs') || '[]'); } catch { return []; } })();
+  const myrep = (typeof idOf === 'function') ? ms.filter(m => favs.includes(idOf(m.num))) : [];
+  const repCard = myrep.length ? `<div class="card"><h3>⭐ Meu repertório</h3>
+    ${myrep.map(m => `<div class="crow"><a class="cname" style="color:inherit;text-decoration:none" href="./estudo.html?id=${idOf(m.num)}${JORNADA !== 'sambrass' ? '&jornada=' + JORNADA : ''}">${m.titulo}</a><span class="cval" style="min-width:auto">${m.tom || ''}${isDone(m.num) ? ' ✓' : ''}</span></div>`).join('')}
+    <p class="meta" style="margin-top:8px">Marque peças com <b>☆ repertório</b> no estudo pra voltar fácil aqui.</p></div>` : '';
+
   tela.innerHTML = `
     <div class="hud">
       <div><b>Seu progresso</b><div class="meta">reflexão honesta — não é placar</div></div>
@@ -81,6 +88,7 @@ function telaProg() {
       <div class="pcard"><div class="pnum">${diasTot}</div><div class="plab">dias praticados</div></div>
       <div class="pcard"><div class="pnum">${nivelMedio ? nivelMedio.toFixed(1) : '—'}</div><div class="plab">nível médio</div></div>
     </div>
+    ${repCard}
     <div class="card"><h3>Últimos 14 dias</h3><div class="spark">${spark}</div>
       <p class="meta">Cada barra = sessões concluídas no diário. Constância &gt; intensidade.</p></div>
     ${gradeCard}

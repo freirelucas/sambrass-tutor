@@ -56,7 +56,13 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
     const bNivel = esc ? `<span class="badge nivel-${esc.nivel_minimo}">nível <b>${NIVEL[esc.nivel_minimo]||esc.nivel_minimo}</b>${esc.requisito_orfao_book1?.length?` · destrava: ${esc.requisito_orfao_book1.join(', ')}`:''}</span>` : '';
     const perc = (percurso||[]).find(x => x.num === p.num) || {};   // alcance/registro: o que torna a cumbia difícil de verdade
     const bAlc = perc.agudo ? `<span class="badge alc${perc.agudo>=5?' hi':''}" title="${perc.agudo>=5?'registro alto — use 🎺 8ª abaixo se ainda não alcança':'registro confortável'}">🎺 agudo <b>${perc.agudo}/6</b>${perc.pico_nome?` · pico ${perc.pico_nome}`:''}</span>` : '';
-    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}${bAlc}`;
+    $('#badges').innerHTML = `<span class="badge">tom <b>${WR[p.key_concert]||p.key_concert} maior</b></span><span class="badge">compasso <b>${p.compasso}</b></span><span class="badge">forma <b>${(p.forma||[]).join('/')}</b></span><span class="badge">células <b>${(p.celulas||[]).join(' ')}</b></span>${bNivel}${bAlc}<button class="badge fav" id="tfav" type="button" aria-pressed="false">☆ repertório</button>`;
+    { const tf = $('#tfav'); if(tf){                       // ⭐ Meu repertório — marca a peça pra voltar (visível no Progresso)
+        const FAVS = () => { try { return JSON.parse(localStorage.getItem('favs')||'[]'); } catch { return []; } };
+        const paint = v => { tf.textContent = v ? '★ no repertório' : '☆ repertório'; tf.classList.toggle('on', v); tf.setAttribute('aria-pressed', v?'true':'false'); };
+        paint(FAVS().includes(ID));
+        tf.onclick = () => { let a = FAVS(); const has = a.includes(ID); a = has ? a.filter(x => x !== ID) : a.concat(ID); localStorage.setItem('favs', JSON.stringify(a)); paint(!has); };
+      } }
     if(BLK?.pecas?.[ID]){ const b = BLK.pecas[ID];          // selo do hero = o Lego (mesma língua); fallback grafismo
       if(window.legoMini && b.legos?.length) $('#selo').innerHTML = window.legoMini(b, {w:84, h:84, rhythm:true});
       else if(window.grafismo) $('#selo').innerHTML = grafismo({midis:b.riff&&b.riff.midis, onsets:b.onsets, meter:b.meter, tonica:b.cor.tonica, modo:b.cor.modo, conf:b.cor.conf}, 84);
