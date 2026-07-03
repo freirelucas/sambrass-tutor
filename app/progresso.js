@@ -43,6 +43,33 @@ function telaProg() {
         <span class="cbar"><i style="width:${Math.round(100 * v.d / v.t)}%"></i></span><span class="cval">${v.d}/${v.t}</span></div>`).join('')
     : '<p class="meta">Domine peças (nível 4+ no diário) para ver seus compositores aqui.</p>';
 
+  // precisão & regularidade — do practicelog persistido pelo estudo (o grader ao vivo virando histórico)
+  const plog = (() => { try { return JSON.parse(localStorage.getItem('practicelog') || '[]'); } catch { return []; } })();
+  const titById = {}; ms.forEach(m => { if (typeof idOf === 'function') titById[idOf(m.num)] = m.titulo; });
+  const nameOf = id => titById[id] || id;
+  let gradeCard;
+  if (!plog.length) {
+    gradeCard = `<div class="card"><h3>Precisão &amp; regularidade</h3>
+      <p class="meta">Pratique com o <b>microfone</b> ligado (no estudo → <b>praticar</b>) e o app mede sua <b>precisão de notas</b> e sua <b>regularidade rítmica</b> (pocket) — a evolução aparece aqui.</p></div>`;
+  } else {
+    const accs = plog.filter(x => x.acc != null).map(x => x.acc), regs = plog.filter(x => x.reg != null).map(x => x.reg);
+    const avg = a => a.length ? Math.round(a.reduce((s, v) => s + v, 0) / a.length) : null;
+    const mAcc = avg(accs), mReg = avg(regs), bReg = regs.length ? Math.max(...regs) : null;
+    const rspark = plog.slice(-14).map(x => { const v = x.reg == null ? 0 : x.reg;
+      return `<div class="spk" title="${x.d}: regularidade ${x.reg == null ? '—' : x.reg + '%'}"><i style="height:${v ? Math.max(8, v) : 0}%;background:var(--brand)"></i></div>`; }).join('');
+    const ult = plog.slice(-6).reverse().map(x => `<div class="crow"><span class="cname">${nameOf(x.id)}</span>
+      <span class="cval" style="min-width:auto;white-space:nowrap">${x.acc != null ? '✓ ' + x.acc + '%' : ''}${x.reg != null ? ' · ⏱ ' + x.reg + '%' : ''}</span></div>`).join('');
+    gradeCard = `<div class="card"><h3>Precisão &amp; regularidade</h3>
+      <div class="pgrid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="pcard"><div class="pnum">${mAcc != null ? mAcc + '%' : '—'}</div><div class="plab">precisão média</div></div>
+        <div class="pcard"><div class="pnum">${mReg != null ? mReg + '%' : '—'}</div><div class="plab">regularidade média</div></div>
+        <div class="pcard"><div class="pnum">${bReg != null ? bReg + '%' : '—'}</div><div class="plab">melhor regularidade</div></div>
+      </div>
+      <div class="spark" style="margin-top:8px">${rspark}</div>
+      <p class="meta">Barras = regularidade rítmica (pocket) das últimas sessões. <b>Precisão</b> = notas certas; <b>regularidade</b> = tempo constante.</p>
+      <h3 style="margin-top:14px">Últimas praticadas</h3>${ult}</div>`;
+  }
+
   tela.innerHTML = `
     <div class="hud">
       <div><b>Seu progresso</b><div class="meta">reflexão honesta — não é placar</div></div>
@@ -56,6 +83,7 @@ function telaProg() {
     </div>
     <div class="card"><h3>Últimos 14 dias</h3><div class="spark">${spark}</div>
       <p class="meta">Cada barra = sessões concluídas no diário. Constância &gt; intensidade.</p></div>
+    ${gradeCard}
     <div class="card"><h3>Progresso por lote</h3>${lotes}</div>
     <div class="card"><h3>Seus compositores</h3>${rankHtml}
       <p class="why" style="margin-top:10px">💡 Dominar (nível 4+) espalha o estudo pelo caderno inteiro — variar compositor treina mais sotaques rítmicos do samba.</p></div>`;

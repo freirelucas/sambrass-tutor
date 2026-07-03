@@ -224,6 +224,18 @@ function paintPocket(rel){
 }
 function resetPocket(){ TIMINGS = []; POCKET = { ok: 0, tot: 0 };
   const m = $('#pkmark'), l = $('#pklbl'); if(m) m.className = 'pk-mark'; if(l){ l.className = 'pk-lbl'; l.textContent = 'pocket: toque pra medir'; } }
+// persiste a sessão de prática (precisão de notas + regularidade) p/ o Progresso ver a evolução
+function logPractice(){
+  if((SCORE.tot||0) < 3 && (POCKET.tot||0) < 3) return;              // só sessões com substância
+  try{
+    const log = JSON.parse(localStorage.getItem('practicelog')||'[]');
+    log.push({ d: new Date().toISOString().slice(0,10), id: ID,
+      acc: SCORE.tot ? Math.round(100*SCORE.ok/SCORE.tot) : null,
+      reg: POCKET.tot ? Math.round(100*POCKET.ok/POCKET.tot) : null, n: SCORE.tot||0 });
+    while(log.length > 60) log.shift();
+    localStorage.setItem('practicelog', JSON.stringify(log));
+  }catch(e){}
+}
 
 // mostra a nota atual (highlight + nome + válvulas); grade=true arma a comparação do mic
 function showNote(ev, grade){
@@ -309,6 +321,7 @@ function startPractice(){
 }
 function stopPractice(){
   if(TIMER){ try{ TIMER.stop(); }catch{} TIMER = null; }
+  logPractice();                                                     // registra a sessão que acabou
   PRACTON = false; WAITING = false; EXP = null; clrHi(); clrGrade(); setValves('');
   $('#notaAtual').textContent = '·'; $('#dedoAtual').textContent = 'pronto';
   $('#tprat').classList.remove('on'); $('#tprat').textContent = '▶ praticar';
