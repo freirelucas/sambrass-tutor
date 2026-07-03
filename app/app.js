@@ -394,5 +394,35 @@ async function trocarJornada(id) {
 window.trocarJornada = trocarJornada;
 document.querySelectorAll('.abas button').forEach(b => b.onclick = () => ir(b.dataset.tela));
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
+// ---------- PWA: instalar (add to home) + atualizar quando sai versão nova ----------
+function pwaToast(msg, btnLabel, onGo) {
+  if (document.getElementById('pwatoast')) return;
+  const t = document.createElement('div'); t.id = 'pwatoast'; t.className = 'pwatoast';
+  const go = document.createElement('button'); go.className = 'pwatoast-go'; go.textContent = btnLabel;
+  go.onclick = () => { try { onGo(); } catch (e) {} t.remove(); };
+  const x = document.createElement('button'); x.className = 'pwatoast-x'; x.setAttribute('aria-label', 'fechar'); x.textContent = '✕';
+  x.onclick = () => t.remove();
+  const s = document.createElement('span'); s.textContent = msg;
+  t.append(s, go, x); document.body.appendChild(t);
+}
+if ('serviceWorker' in navigator) {
+  let updating = false;                                                // só recarrega numa atualização pedida pelo usuário
+  navigator.serviceWorker.register('./sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      const nw = reg.installing; if (!nw) return;
+      nw.addEventListener('statechange', () => {                       // versão nova pronta e esperando → oferece atualizar
+        if (nw.state === 'installed' && navigator.serviceWorker.controller)
+          pwaToast('Nova versão do Sambrass', 'atualizar', () => { updating = true; nw.postMessage('skipWaiting'); });
+      });
+    });
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (updating) location.reload(); });   // ignora o claim inicial
+}
+window.addEventListener('beforeinstallprompt', e => {                  // instalar no celular (add to home)
+  e.preventDefault(); const dp = e;
+  if (store.get('pwa-nudged', false)) return;
+  pwaToast('Instalar o Sambrass no celular', '📲 instalar', async () => {
+    store.set('pwa-nudged', true); try { dp.prompt(); await dp.userChoice; } catch (e) {}
+  });
+});
 carregar().then(() => ir('trilha')).catch(() => { tela.innerHTML = '<p class="carregando">erro ao carregar os dados.</p>'; });

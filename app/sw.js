@@ -1,16 +1,18 @@
 // Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
 // cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
-const CACHE = 'sambrass-v10';
-const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './app.js',
+const CACHE = 'sambrass-v11';
+const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './ui.css', './app.js',
   './config.js', './trilha.js', './story.js', './progresso.js',
+  './lego.js', './lego.css', './groove.js', './explica.js', './grafismo.js',
   './vendor/abcjs.js', './vendor/abcjs-audio.css', './vendor/pitch-detector.js',
   './manifest.webmanifest', './icon.svg'];
 // pedagogia.json/tecnica.json/aquecimento.json (grandes) ficam fora do SHELL: o network-first
 // abaixo os cacheia na 1ª visita a uma Story (offline depois).
 
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})).then(() => self.skipWaiting()));
+self.addEventListener('install', e => {   // NÃO faz skipWaiting: o novo SW espera o "atualizar" do toast
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})));
 });
+self.addEventListener('message', e => { if (e.data === 'skipWaiting') self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });

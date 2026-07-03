@@ -257,3 +257,13 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .jsel{display:flex;gap:6px;justify-content:center;margin:2px auto 14px;background:var(--caixa);border-radius:999px;padding:4px;max-width:300px}
 .jsel button{flex:1;min-height:38px;border:none;background:transparent;border-radius:999px;font-size:14px;font-weight:700;color:var(--suave);cursor:pointer;transition:background .15s}
 .jsel button.on{background:var(--brand);color:#fff;box-shadow:0 1px 5px rgba(138,35,49,.35)}
+
+/* PWA toast — instalar / atualizar */
+.pwatoast{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:40;
+  display:flex;align-items:center;gap:10px;background:var(--brand);color:#fff;border-radius:14px;
+  padding:10px 12px;box-shadow:0 8px 24px rgba(40,30,20,.28);font-size:13.5px;font-weight:600;
+  animation:pwarise .25s cubic-bezier(.2,.8,.2,1)}
+@keyframes pwarise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.pwatoast span{flex:1}
+.pwatoast-go{background:#fff;color:var(--brand);border:none;border-radius:10px;min-height:38px;padding:0 14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.pwatoast-x{background:none;border:none;color:#fff;font-size:16px;cursor:pointer;min-height:38px;min-width:32px;opacity:.85}
