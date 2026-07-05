@@ -42,12 +42,13 @@ function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webk
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag, percurso] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag, percurso, barsWarn] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
     JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
     j('quality.json'),
     fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null),   // índice de blocos (selo/grafismo)
     j('pedagogia.json'),                                                 // desafios da peça → dicas no fluxo (P1③)
-    j('percurso.json')]);                                                // pico/agudo p/ o badge de alcance
+    j('percurso.json'),                                                  // pico/agudo p/ o badge de alcance
+    j('bars_warn.json')]);                                               // compassos fora da métrica → aviso honesto
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
@@ -119,7 +120,9 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   // tier do TEMA praticado: lê o quality.json padrão (cumbias não têm _quality embutido no abc.json)
   const tier = (quality && quality[ID]) || abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
   OCTAVE_EXACT = (tier === 'conferida');
-  const RASC_TEMA = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
+  const bw = barsWarn && barsWarn[ID];                                 // compassos que não fecham a métrica (silêncio/duração errada)
+  const bwTxt = (bw && bw.length) ? ` <span class="nota-rasc" style="color:var(--vinho2)">⚠ ritmo em revisão: ${bw.length} compasso${bw.length>1?'s':''} (${bw.join(', ')}) não fecha${bw.length>1?'m':''} a métrica — a leitura desses trechos pode sair torta.</span>` : '';
+  const RASC_TEMA = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>') + bwTxt;
   $('#rasc').innerHTML = RASC_TEMA;
   { const rep = $('#reportar');
     if(rep) rep.onclick = e => { e.preventDefault(); if(window.reportarBeta) reportarBeta({ piece: `${ID}${p?' '+p.titulo:''}`, screen: 'estudo' }); }; }

@@ -17678,8 +17678,8 @@
     "tonica": "F#",
     "modo": "menor",
     "dica_modal": null,
-    "conf": 0.772,
-    "ks_corr": 0.941,
+    "conf": 0.745,
+    "ks_corr": 0.953,
     "armadura_bate": true
    },
    "forma": {
@@ -17707,7 +17707,7 @@
    },
    "bloco": "F# menor · misto",
    "celula_dominante": "-",
-   "dif": 15.4,
+   "dif": 16.0,
    "meter": 2.0,
    "onsets": [
     0.0,
@@ -17718,15 +17718,21 @@
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
-    "C2"
+    "C2",
+    "C4"
    ],
    "tags_nao_confirmadas": [],
-   "celulas_extra_candidatas": [],
+   "celulas_extra_candidatas": [
+    "C4"
+   ],
    "riff": {
-    "len": 4,
+    "len": 7,
     "x": 2,
-    "cobertura": 0.28,
+    "cobertura": 0.48,
     "midis": [
+     80,
+     80,
+     73,
      73,
      79,
      79,
@@ -17734,7 +17740,10 @@
     ],
     "durs": [
      0.25,
-     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
      0.25,
      1.0
     ]
@@ -17742,6 +17751,9 @@
    "legos": [
     {
      "midis": [
+      80,
+      80,
+      73,
       73,
       79,
       79,
@@ -17749,14 +17761,17 @@
      ],
      "durs": [
       0.25,
-      0.5,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
       0.25,
       1.0
      ],
      "x": 2
     }
    ],
-   "dif_norm": 4.5
+   "dif_norm": 4.9
   },
   "cu-016": {
    "jornada": "cumbias",

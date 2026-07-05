@@ -197,6 +197,11 @@ def main():
     dump("pieces.json", pieces); dump("percurso.json", percurso); dump("escada.json", escada)
     dump("lotes.json", lotes); dump("abc.json", abc); dump("quality.json", quality)
     dump("abc_full.json", {b["stem"]: b["abc_full"] for b in builds})   # peça inteira ("tocar inteira")
+    from check_bars import check_all                       # compassos que não fecham a métrica → o app avisa (honestidade)
+    bars_warn = check_all(abc)
+    dump("bars_warn.json", bars_warn)
+    if bars_warn:
+        print("  ⚠ ritmo em revisão (compassos fora da métrica):", {k: v for k, v in sorted(bars_warn.items())})
     dump("pedagogia.json", pedag); dump("tecnica.json", tecnica)
     shutil.copy(CONTENT / "cells.json", OUT / "cells.json")
     if (CONTENT / "pedagogia" / "app_prep.json").exists():
