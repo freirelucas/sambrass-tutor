@@ -193,6 +193,7 @@ function open(id){
     <p class="fl-panel-note">${s.note}</p>
     <video id="paudio" src="${s.audio}" preload="none" loop playsinline></video>
     <label class="fl-slow"><input type="checkbox" id="pslow"> tocar <b>0,75×</b> (devagar — sem mudar a afinação)</label>
+    <button class="fl-btn ghost" id="pfull" type="button" style="width:100%;margin-top:8px">⛶ tela cheia · pode deitar o celular</button>
     <div class="fl-ring" id="ring"><svg viewBox="0 0 200 200"><circle class="ring-bg" cx="100" cy="100" r="88"/>
       <circle class="ring-fg" id="ringfg" cx="100" cy="100" r="88" style="stroke-dasharray:${2*Math.PI*88}"/></svg>
       <div class="fl-ring-mid"><span class="fl-ring-phase" id="rphase">Tocar</span><span class="fl-ring-time" id="rtime">${fmt(s.dur)}</span></div></div>
@@ -200,6 +201,9 @@ function open(id){
     <div class="fl-controls" id="rctrl"></div></div></div>`;
   audioEl=$('#paudio'); try{ audioEl.preservesPitch = audioEl.mozPreservesPitch = audioEl.webkitPreservesPitch = true; }catch(_){}
   $('#pslow').onchange = e => { try{ audioEl.playbackRate = e.target.checked ? 0.75 : 1; }catch(_){} };
+  $('#pfull').onclick = () => { const v = audioEl; if(!v) return;   // tela cheia nativa do vídeo → permite deitar o celular
+    try{ v.play().catch(()=>{}); }catch(e){}
+    try{ (v.requestFullscreen || v.webkitRequestFullscreen || v.webkitEnterFullscreen || function(){}).call(v); }catch(e){} };
   $('#pclose').onclick=close;
   $('#pw').onclick=e=>{ if(e.target.id==='pw') close(); };
   paintPanel();
@@ -211,14 +215,16 @@ function paintPanel(){
   $('#rphase').textContent = phase==='play'?'Tocar':'Descansar';
   $('#rtime').textContent = fmt(left);
   let c='';
-  if(!running && left>0) c+=`<button class="fl-btn primary" id="bgo">${phase==='play'?'Começar':'Iniciar descanso'}</button>`;
+  if(!running && left>0) c+=`<button class="fl-btn primary" id="bgo">${phase==='play'?(left<s.dur?'Continuar':'Começar'):'Iniciar descanso'}</button>`;
   if(running) c+=`<button class="fl-btn" id="bpause">Pausar</button>`;
   if(left===0) c+=`<button class="fl-btn primary" id="bdone">Setor concluído ✓</button>`;
   c+=`<button class="fl-btn ghost" id="brestart">Reiniciar</button>`;
   $('#rctrl').innerHTML=c;
   const on=(id,fn)=>{const e=document.getElementById(id);if(e)e.onclick=fn;};
-  on('bgo',()=>{ st.running=true; if(st.phase==='play'){ try{audioEl.currentTime=0;audioEl.play().catch(()=>{});}catch(e){} } run(); paintPanel(); });
-  on('bpause',()=>{ st.running=false; clearTimer(); stopAudio(); paintPanel(); });
+  on('bgo',()=>{ st.running=true;
+    if(st.phase==='play'){ try{ if(st.left>=st.s.dur) audioEl.currentTime=0; audioEl.play().catch(()=>{}); }catch(e){} }  // fresh=reinicia; continuar=segue de onde parou
+    run(); paintPanel(); });
+  on('bpause',()=>{ st.running=false; clearTimer(); stopAudio(); paintPanel(); });   // Pausar: para vídeo + relógio juntos
   on('bdone',close);
   on('brestart',()=>open(st.s.id));
 }
