@@ -199,6 +199,7 @@ small{color:var(--suave)}
         <button class="toggle" id="tmais" aria-expanded="false" aria-controls="maisopcoes">⚙ mais opções</button>
       </div>
       <div class="controls mais" id="maisopcoes" hidden>
+        <button class="toggle" id="tcor" title="colore cada nota na cor do Chromatone (a mesma do Lego); a cor ajuda a fixar, mas é andaime — desligue quando já ler a pauta preta">🎨 cor: sim</button>
         <button class="toggle" id="tconcert">🎼 em concerto</button>
         <button class="toggle" id="toct" title="desce a melodia uma oitava — registro grave, pra alcançar o agudo ou aquecer">🎺 8ª abaixo</button>
         <button class="toggle" id="tfull">▶ tocar a peça inteira</button>
@@ -238,6 +239,7 @@ small{color:var(--suave)}
 
 <script src="./vendor/abcjs.js"></script>
 <script src="./config.js"></script>
+<script src="./chroma.js"></script>
 <script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./lego.js"></script>

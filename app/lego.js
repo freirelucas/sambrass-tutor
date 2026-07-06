@@ -1,6 +1,6 @@
 // lego.js — o "bloco de Lego" FUNCIONAL de uma peça: os trechos que se repetem,
 // cada peça com seu CONTORNO (arpejo/forma das notas) + COLAR RÍTMICO (a célula),
-// colorida pelo TOM (ciclo de quintas) e CLICÁVEL → toca aquele trecho e ANIMA no tempo.
+// colorida na cor do Chromatone (cromática, A=vermelho) e CLICÁVEL → toca e ANIMA no tempo.
 // Precisa de lego.css (a FORMA) e, p/ tocar, do abcjs (vendor).
 // API:
 //   el.innerHTML = lego(record)                  → as peças encaixáveis
@@ -10,11 +10,12 @@
 //   legoPlay(scopeEl, record, i, {audioContext}) → toca o trecho i e acende contorno+colar no tempo
 (function (root) {
   'use strict';
-  var COF = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5], CP = {};
-  COF.forEach(function (p, i) { CP[p] = i; });
   var PC = { C: 0, 'C#': 1, Db: 1, D: 2, 'D#': 3, Eb: 3, E: 4, F: 5, 'F#': 6, Gb: 6,
              G: 7, 'G#': 8, Ab: 8, A: 9, 'A#': 10, Bb: 10, B: 11 };
-  function hue(t) { var p = PC[t]; return (CP[p] == null ? 0 : CP[p]) * 30; }
+  // cor = padrão Chromatone (cromático, A=vermelho, +30°/semitom) — fonte única em chroma.js
+  function chrom(pc) { pc = ((pc % 12) + 12) % 12; return ((pc + 3) % 12) * 30; }
+  function hue(t) { if (root.chroma) return root.chroma.tonicHue(t); var p = PC[t]; return chrom(p == null ? 9 : p); }
+  function noteCol(m) { return root.chroma ? root.chroma.css(m, { s: 70, l: 45 }) : 'hsl(' + chrom(m) + ',70%,45%)'; }
   var NAMES = ['C', '^C', 'D', '^D', 'E', 'F', '^F', 'G', '^G', 'A', '^A', 'B'];
   function midiAbc(m) {
     var pc = ((m % 12) + 12) % 12, oct = Math.floor(m / 12) - 1, t = NAMES[pc], o;
@@ -46,7 +47,8 @@
     for (i = 0; i < midis.length; i++) {
       x = 8 + i * (W - 16) / (midis.length - 1); y = H - 5 - (midis[i] - lo) / rg * (H - 12);
       pts.push(x.toFixed(1) + ',' + y.toFixed(1));
-      dots += '<circle class="lp-dot" data-i="' + i + '" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="2.4" fill="' + col + '"/>';
+      // cada nó na cor da SUA nota (Chromatone) → bate com o notehead da pauta
+      dots += '<circle class="lp-dot" data-i="' + i + '" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="' + noteCol(midis[i]) + '"/>';
     }
     return '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + col + '" stroke-width="2.5" stroke-linejoin="round"/>' + dots;
   }

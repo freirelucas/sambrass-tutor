@@ -25,6 +25,7 @@ function fingerOf(midi){ return VALV[SHARP[((midi % 12) + 12) % 12] + (Math.floo
 const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200, POCKET_TOL = 70;   // ±70ms = "no tempo"
 
 let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, OCT = 0, VISUAL = null;
+let COLORON = localStorage.getItem('chroma-off') !== '1';   // noteheads na cor Chromatone (andaime fadeável)
 // tutor de escuta
 let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
@@ -135,6 +136,9 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#mais').onclick  = () => { BPM = Math.min(180, BPM+2); $('#bpm').textContent = BPM; syncBand(); PRACTON ? restartTimer() : setMel(); };
   $('#tconcert').onclick = e => { const c = e.currentTarget.classList.toggle('on'); TR = c?-2:0; e.currentTarget.textContent = c?'🎼 escrito (Sib)':'🎼 em concerto'; setMel(); if(PRACTON) restartTimer(); };
   $('#toct').onclick = e => { const c = e.currentTarget.classList.toggle('on'); OCT = c?-12:0; e.currentTarget.textContent = c?'🔼 voltar à 8ª':'🎺 8ª abaixo'; setMel(); if(PRACTON) restartTimer(); };   // registro grave: alcança o agudo / aquece
+  { const tc = $('#tcor'); if(tc){ tc.classList.toggle('on', COLORON); tc.textContent = COLORON ? '🎨 cor: sim' : '🎨 cor: não';
+      tc.onclick = () => { COLORON = !COLORON; localStorage.setItem('chroma-off', COLORON ? '0' : '1');
+        tc.classList.toggle('on', COLORON); tc.textContent = COLORON ? '🎨 cor: sim' : '🎨 cor: não'; paintNotes(); }; } }   // andaime de cor fadeável (Figurenotes)
   // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
   { const tFull = $('#tfull');
     if(tFull && !TEM_DOIS){ tFull.style.display = 'none'; }
@@ -264,6 +268,20 @@ function cursor(){ // modo OUVIR (SynthController) — sem graduar (evita o mic 
     onEvent(ev){ if(!ev) return; showNote(ev, false); } };
 }
 
+// colore cada notehead na cor da SUA nota (padrão Chromatone, em concerto → bate com o Lego).
+// Andaime FADEÁVEL: o toggle 🎨 desliga (volta ao preto). Cursor/acerto/erro (!important) vencem por cima.
+function paintNotes(){
+  const paper = document.getElementById('paper'); if(!paper) return;
+  const heads = paper.querySelectorAll('.abcjs-notehead');
+  let pcs = [];                                                       // classes de altura (concerto), na ordem escrita
+  try{ if(VISUAL){ if(VISUAL.setUpAudio) VISUAL.setUpAudio();        // resolve armadura + acidentes → midiPitches
+      if(VISUAL.setTiming) VISUAL.setTiming(BPM);
+      (VISUAL.noteTimings || []).forEach(ev => { if(ev.type === 'event' && ev.midiPitches && ev.midiPitches.length)
+        pcs.push(Math.round(ev.midiPitches[0].pitch) - TR); }); } }catch(e){ pcs = []; }
+  const paint = COLORON && window.chroma && pcs.length === heads.length;   // só se casar 1:1 (evita cor errada)
+  heads.forEach((h, i) => { h.style.fill = paint ? window.chroma.css(pcs[i]) : ''; });
+}
+
 function setMel(){
   if(!MELODIA) return; audioUnlock();
   const raw = (LOOPON && SLICE) ? SLICE : MELODIA;
@@ -271,6 +289,7 @@ function setMel(){
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
   const pw = Math.max(280, (($('#paper').clientWidth) || 340) - 26);
   try{ VISUAL = ABCJS.renderAbc('paper', abc, {add_classes:true, staffwidth:pw, visualTranspose:TR+OCT, scale:1, wrap:{preferredMeasuresPerLine:4, minSpacing:1, maxSpacing:1.8, lastLineLimit:true}})[0]; }catch{ return; }
+  paintNotes();                                                       // noteheads na cor Chromatone (andaime fadeável)
   if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML = '<p class="nota-rasc">áudio não suportado.</p>'; return; }
   try{ SYNTH = new ABCJS.synth.SynthController();
     SYNTH.load('#audio', cursor(), {displayPlay:true, displayProgress:true, displayLoop:true, displayRestart:true});

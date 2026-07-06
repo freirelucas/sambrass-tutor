@@ -1,6 +1,6 @@
 // grafismo.js — selo generativo de um bloco/frase, derivado SÓ dos dados.
 // Cada elemento mapeia uma medida (princípio: focado nos dados, nada decorativo):
-//   matiz        = tônica (posição no círculo de quintas)
+//   matiz        = tônica (cor cromática do Chromatone, A=vermelho)
 //   claro/escuro = modo (maior/menor)
 //   anel pontilhado = confiança baixa do modo (pede ouvido)
 //   ticks no anel = groove (ataques nas 1ªs barras, no relógio de tempos)
@@ -9,11 +9,12 @@
 // Uso: el.innerHTML = grafismo({midis,onsets,meter,tonica,modo,conf}, 96)
 (function (root) {
   'use strict';
-  var COF = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5];          // círculo de quintas
-  var COFPOS = {}; COF.forEach(function (pc, i) { COFPOS[pc] = i; });
   var PC = { C: 0, 'C#': 1, Db: 1, D: 2, 'D#': 3, Eb: 3, E: 4, F: 5, 'F#': 6, Gb: 6,
              G: 7, 'G#': 8, Ab: 8, A: 9, 'A#': 10, Bb: 10, B: 11 };
-  function hueOf(tonica) { var pc = PC[tonica]; return (COFPOS[pc] == null ? 0 : COFPOS[pc]) * 30; }
+  // matiz = padrão Chromatone (cromático, A=vermelho, +30°/semitom) — ver chroma.js
+  function chrom(pc) { pc = ((pc % 12) + 12) % 12; return ((pc + 3) % 12) * 30; }
+  function hueOf(tonica) { if (root.chroma) return root.chroma.tonicHue(tonica);
+    var pc = PC[tonica]; return chrom(pc == null ? 9 : pc); }
   function pol(cx, cy, r, deg) { var a = (deg - 90) * Math.PI / 180; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
 
   function grafismo(d, size) {
