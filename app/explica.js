@@ -28,19 +28,19 @@
       '.explica-foot{font-size:12.5px;color:#857a68;margin-top:12px}';
     var s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
 
-    // exemplo anotado: uma peça com contorno (altura) + colar (ritmo), colorida (tom)
+    // exemplo anotado: contorno (altura) + colar (ritmo), com cada nota na SUA cor (Chromatone)
     var svg =
       '<svg class="explica-svg" viewBox="0 0 300 150" role="img" aria-label="exemplo anotado de um Lego">' +
-      '<rect x="20" y="20" width="200" height="110" rx="10" fill="hsl(210,58%,95%)" stroke="hsl(210,70%,46%)" stroke-width="1.5"/>' +
-      '<rect x="36" y="14" width="15" height="9" rx="4" fill="hsl(210,70%,46%)"/><rect x="58" y="14" width="15" height="9" rx="4" fill="hsl(210,70%,46%)"/><rect x="80" y="14" width="15" height="9" rx="4" fill="hsl(210,70%,46%)"/>' +
-      '<polyline points="36,70 70,44 104,58 138,36 172,66 196,50" fill="none" stroke="hsl(210,70%,46%)" stroke-width="2.5" stroke-linejoin="round"/>' +
-      '<circle cx="36" cy="70" r="3" fill="hsl(210,70%,46%)"/><circle cx="70" cy="44" r="3" fill="hsl(210,70%,46%)"/><circle cx="104" cy="58" r="3" fill="hsl(210,70%,46%)"/><circle cx="138" cy="36" r="3" fill="hsl(210,70%,46%)"/><circle cx="172" cy="66" r="3" fill="hsl(210,70%,46%)"/><circle cx="196" cy="50" r="3" fill="hsl(210,70%,46%)"/>' +
-      '<rect x="36" y="98" width="28" height="9" rx="3" fill="hsl(210,70%,46%)" opacity=".6"/><rect x="68" y="98" width="14" height="9" rx="3" fill="hsl(210,70%,46%)" opacity=".6"/><rect x="86" y="98" width="40" height="9" rx="3" fill="hsl(210,70%,46%)" opacity=".6"/><rect x="130" y="98" width="20" height="9" rx="3" fill="hsl(210,70%,46%)" opacity=".6"/><rect x="154" y="98" width="42" height="9" rx="3" fill="hsl(210,70%,46%)" opacity=".6"/>' +
+      '<rect x="20" y="20" width="200" height="110" rx="10" fill="#faf7f1" stroke="#ddd3c1" stroke-width="1.5"/>' +
+      '<rect x="36" y="14" width="15" height="9" rx="4" fill="#c9bfad"/><rect x="58" y="14" width="15" height="9" rx="4" fill="#c9bfad"/><rect x="80" y="14" width="15" height="9" rx="4" fill="#c9bfad"/>' +
+      '<polyline points="36,70 70,44 104,58 138,36 172,66 196,50" fill="none" stroke="#8a7f6d" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<circle cx="36" cy="70" r="4" fill="hsl(0,72%,47%)"/><circle cx="70" cy="44" r="4" fill="hsl(60,72%,47%)"/><circle cx="104" cy="58" r="4" fill="hsl(120,72%,47%)"/><circle cx="138" cy="36" r="4" fill="hsl(210,72%,47%)"/><circle cx="172" cy="66" r="4" fill="hsl(270,72%,47%)"/><circle cx="196" cy="50" r="4" fill="hsl(30,72%,47%)"/>' +
+      '<rect x="36" y="98" width="28" height="9" rx="3" fill="#a99f8c"/><rect x="68" y="98" width="14" height="9" rx="3" fill="#a99f8c"/><rect x="86" y="98" width="40" height="9" rx="3" fill="#a99f8c"/><rect x="130" y="98" width="20" height="9" rx="3" fill="#a99f8c"/><rect x="154" y="98" width="42" height="9" rx="3" fill="#a99f8c"/>' +
       '<text x="232" y="40" font-size="11" fill="#5b5446">↑ altura</text>' +
       '<text x="232" y="54" font-size="9" fill="#857a68">(as notas)</text>' +
       '<text x="232" y="105" font-size="11" fill="#5b5446">ritmo</text>' +
       '<text x="232" y="118" font-size="9" fill="#857a68">(durações)</text>' +
-      '<text x="22" y="146" font-size="10" fill="#857a68">cor = o tom (ciclo de quintas)</text>' +
+      '<text x="22" y="146" font-size="10" fill="#857a68">cada nó = a cor da sua nota (Chromatone)</text>' +
       '</svg>';
 
     var d = document.createElement('div'); d.className = 'explica-back'; d.id = 'explica-back'; d.hidden = true;
@@ -49,11 +49,12 @@
       '<h3>Como esse desenho é feito</h3>' +
       '<p>Nada é decorativo — tudo sai das <b>notas da peça</b>, lidas automaticamente:</p>' + svg +
       '<ul class="explica-list">' +
-      '<li style="--dot:hsl(210,70%,46%)"><b>A cor</b> é o <b>tom</b> da peça, pela posição no <b>ciclo de quintas</b> — tons vizinhos ganham cores vizinhas (quente = maior, frio = menor).</li>' +
-      '<li style="--dot:#2f7d5b"><b>A linha</b> que sobe e desce é a <b>altura das notas</b> do trecho: o desenho da melodia no tempo.</li>' +
-      '<li style="--dot:#8a2331"><b>As barrinhas</b> embaixo são a <b>duração</b> de cada nota — a célula rítmica (o colar).</li>' +
+      '<li style="--dot:hsl(0,72%,47%)"><b>A cor</b> é a <b>nota</b>: as 12 notas viram 12 matizes (A no <b>vermelho</b>, subindo pela escala). A <b>mesma cor</b> aparece na pauta, no rolo e aqui — uma língua só.</li>' +
+      '<li style="--dot:#8a7f6d"><b>A linha</b> que sobe e desce é a <b>altura das notas</b> do trecho: o desenho da melodia no tempo.</li>' +
+      '<li style="--dot:#a99f8c"><b>As barrinhas</b> embaixo são a <b>duração</b> de cada nota — a célula rítmica (o colar).</li>' +
       '</ul>' +
       '<p class="explica-foot">Cada trecho que se repete na música vira uma peça de Lego. Toque uma peça pra <b>ouvir</b> aquele trecho.</p>' +
+      '<p class="explica-foot">As cores seguem o padrão aberto do <a href="https://chromatone.center" target="_blank" rel="noopener" style="color:#8a2331">Chromatone</a> — 12 notas, 12 cores.</p>' +
       '</div>';
     document.body.appendChild(d);
     d.addEventListener('click', function (e) { if (e.target === d || e.target.closest('.explica-x')) close(); });
