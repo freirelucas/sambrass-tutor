@@ -201,8 +201,12 @@ function improvPanel(keyConcert, modo){
   const nm = pc => (flat ? FL : SH)[((pc % 12) + 12) % 12];
   const menor = modo === 'menor';
   const steps = menor ? [0,2,3,5,7,8,10] : [0,2,4,5,7,9,11];
-  const scale = steps.map(s => nm((tpc + s) % 12));
-  const triad = [0, menor ? 3 : 4, 7].map(s => nm((tpc + s) % 12));
+  // escala como PALETA (Chromatone): cada grau na cor da sua nota
+  const cspan = pc => { const p = ((pc%12)+12)%12;
+    const c = window.chroma ? window.chroma.css(p,{s:80,l:38}) : 'var(--tinta)';
+    return `<span style="color:${c};font-weight:700">${nm(p)}</span>`; };
+  const scale = steps.map(s => cspan((tpc + s) % 12));
+  const triad = [0, menor ? 3 : 4, 7].map(s => cspan((tpc + s) % 12));
   return `<div class="desafio"><h3>🎷 Para improvisar</h3>
     <p>Tom <b>${nm(tpc)} ${menor ? 'menor' : 'maior'}</b> (concerto). Escala pra solar por cima do riff:</p>
     <p class="por" style="font-size:15px;color:var(--tinta);letter-spacing:.3px">${scale.join(' · ')}</p>
@@ -437,9 +441,10 @@ function updateNeedle(pp){
     nd.style.left = Math.max(0, Math.min(100, 50 + pp.cents)) + '%';
     nd.style.opacity = 1;
     rd.textContent = `você: ${NOMES[((pp.midi % 12) + 12) % 12]} ${pp.cents >= 0 ? '+' : ''}${pp.cents}¢`;
+    rd.style.color = (COLORON && window.chroma) ? window.chroma.css(pp.midi, {s:80, l:38}) : '';   // sua nota, na cor dela
     nd.classList.toggle('intune', Math.abs(pp.cents) <= CENTS_TOL && EXP && samePitch(pp.midi, EXP.midi));
   }else{
-    nd.style.opacity = .25; rd.textContent = 'você: —'; nd.classList.remove('intune');
+    nd.style.opacity = .25; rd.textContent = 'você: —'; rd.style.color = ''; nd.classList.remove('intune');
   }
 }
 function micLoop(){
