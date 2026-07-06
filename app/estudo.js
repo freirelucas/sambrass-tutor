@@ -423,7 +423,7 @@ function disableMic(){
   MICON = false; cancelAnimationFrame(RAF);
   if(DET){ try{ DET.close(); }catch{} DET = null; } MIC = null;
   $('#tmic').classList.remove('on'); $('#tmic').textContent = '🎤 ouvir meu som';
-  $('#tuner').classList.remove('ativo'); $('#micnota').textContent = 'você: —'; clrGrade();
+  $('#tuner').classList.remove('ativo'); $('#micnota').textContent = 'você: —'; clrGrade(); if(PROLL) PROLL.mirrorOff();
 }
 function paint(els, cls){ (els||[]).forEach(s => s.forEach(el => { el.classList.remove('abcjs-good','abcjs-bad'); el.classList.add('abcjs-' + cls); })); }
 function updateNeedle(pp){
@@ -443,6 +443,13 @@ function micLoop(){
   const now = performance.now();
   let pp = null; try{ pp = DET ? DET.detect() : null; }catch(e){}
   updateNeedle(pp);
+  if(PROLL){                                                          // Espelho: sua altura ao vivo no rolo
+    if(EXP && pp){
+      let dev = ((((pp.midi - EXP.midi) % 12) + 12) % 12); if(dev > 6) dev -= 12;   // semitom, dobrado à oitava
+      dev += (pp.cents || 0) / 100;
+      PROLL.mirror(dev, samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL);
+    }else PROLL.mirrorOff();
+  }
   if(EXP){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
     if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
