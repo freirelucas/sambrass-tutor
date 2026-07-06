@@ -110,6 +110,23 @@ small{color:var(--suave)}
 .roda-hub{fill:var(--marca)}
 .roda-hub.beat{animation:roda-beat .18s ease}
 @keyframes roda-beat{from{r:10}to{r:6.5}}
+/* jogo "monte o riff" — encaixar os blocos de Lego (cor + altura da nota) */
+.montariff-wrap[hidden]{display:none}
+.mr-slots{display:flex;gap:6px;flex-wrap:wrap;min-height:66px;padding:8px;background:#faf7f1;border:1px dashed var(--linha);border-radius:12px;margin:2px 0 10px}
+.mr-slot{position:relative;width:38px;height:52px;border-radius:8px;background:#fff;border:1px solid var(--linha)}
+.mr-slot.on{border:2px solid var(--c)}
+.mr-bag{display:flex;gap:8px;flex-wrap:wrap}
+.mr-piece{position:relative;width:44px;height:58px;border-radius:10px;border:2px solid var(--c);background:#fff;cursor:pointer;padding:0;box-shadow:0 2px 6px rgba(40,30,20,.08)}
+.mr-piece.used{opacity:0;pointer-events:none;transition:opacity .25s}
+.mr-stud{position:absolute;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--c)}
+.mr-nm{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-size:10px;color:var(--suave)}
+.mr-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.mr-btn{min-height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--linha);background:var(--pane);color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
+.mr-msg{font-size:12.5px;color:var(--suave)}
+.montariff.mr-win .mr-slot.on{animation:mr-pop .5s ease}
+@keyframes mr-pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+.mr-piece.shake{animation:mr-shake .3s}
+@keyframes mr-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .audio{margin-top:14px}
 .abcjs-inline-audio{background:var(--bg2);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
@@ -201,6 +218,11 @@ small{color:var(--suave)}
     <h2 id="celH2">A síncope que move o samba</h2>
     <p class="lead">Antes da melodia, sinta o tijolo. Toque a célula e deixe o acento cair no contratempo — é o gingado de toda a peça.</p>
     <div id="legoblk"></div>
+    <div id="montariff-wrap" class="montariff-wrap" hidden>
+      <div class="sec-h">🧩 monte o riff</div>
+      <p class="lead">Os blocos do riff vêm embaralhados — <b>encaixe na ordem certa</b> e ouça ele montado. Cada bloco na <b>cor</b> e na <b>altura</b> da sua nota: montar é reconstruir o contorno.</p>
+      <div id="montariff" class="montariff"></div>
+    </div>
     <div id="celulas"></div>
   </section>
 
@@ -273,6 +295,7 @@ small{color:var(--suave)}
 <script defer src="./lego.js"></script>
 <script defer src="./proll.js"></script>
 <script defer src="./roda.js"></script>
+<script defer src="./montariff.js"></script>
 <script defer src="./groove.js"></script>
 <script defer src="./explica.js"></script>
 <script defer src="./estudo.js"></script>

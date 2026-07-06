@@ -48,6 +48,11 @@ let SLICE = null, LOOPON = false, LO_A = 1, LO_B = 1, MCOUNT = 1;
 let RAMPON = false, RTARGET = 120;
 
 function audioUnlock(){ try{ if(!AC){ AC = new (window.AudioContext||window.webkitAudioContext)(); ABCJS.synth.registerAudioContext(AC); } if(AC.state==='suspended') AC.resume(); }catch(e){} }
+// nota curta (feedback do jogo "monte o riff")
+function toneNote(midi){ if(!AC) return; const t=AC.currentTime, o=AC.createOscillator(), g=AC.createGain();
+  o.type='triangle'; o.frequency.value=440*Math.pow(2,(midi-69)/12);
+  g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.26,t+0.01); g.gain.exponentialRampToValueAtTime(0.0001,t+0.32);
+  o.connect(g).connect(AC.destination); o.start(t); o.stop(t+0.36); }
 ['pointerdown','touchend','click'].forEach(ev => document.addEventListener(ev, audioUnlock, {capture:true}));
 
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
@@ -105,6 +110,17 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
         pc.classList.add('on'); audioUnlock();
         if (window.legoPlay) window.legoPlay(pc, rec, +pc.dataset.lego, { audioContext: AC, bpm: BPM });
       });
+    }
+    // JOGO "monte o riff": encaixe os blocos do riff na ordem → reconstrói o contorno e ouve montado
+    const mrEl = $('#montariff'), mrWrap = $('#montariff-wrap'), riff = rec.legos[0];
+    if (window.montaRiff && mrEl && riff?.midis?.length >= 2) {
+      window.montaRiff(mrEl, {
+        midis: riff.midis,
+        nameOf: m => NOMES[((m % 12) + 12) % 12],
+        playNote: m => { audioUnlock(); toneNote(m); },
+        playSeq: seq => { audioUnlock(); if (window.legoAbc) playOnce(window.legoAbc(seq, riff.durs || seq.map(() => 1), rec.meter, Math.min(BPM, 96))); }
+      });
+      if (mrWrap) mrWrap.hidden = false;
     }
   }
   { const formaTxt = (p?.forma||[]).join('/'), longa = (p?.forma||[]).length>=3, hn = cm[HEART]?.nome||HEART;
