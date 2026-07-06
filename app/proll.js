@@ -28,31 +28,40 @@
     el.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" class="proll-svg" role="img" ' +
       'aria-label="rolo de alturas colorido — a melodia no tempo, cada nota na sua cor">' +
       '<line class="pr-cursor" x1="0" y1="6" x2="0" y2="' + (H - 6) + '"/>' + rects +
-      '<circle class="pr-you" r="15" cx="0" cy="0"/></svg>';                    // o "Espelho": sua altura ao vivo
-    var cursor = el.querySelector('.pr-cursor'), you = el.querySelector('.pr-you');
+      '<g class="pr-trail"></g><circle class="pr-you" r="15" cx="0" cy="0"/></svg>';   // Espelho: rastro + sua altura ao vivo
+    var cursor = el.querySelector('.pr-cursor'), you = el.querySelector('.pr-you'), trailG = el.querySelector('.pr-trail');
     var cxOf = function (i) { var n = notes[i]; return xOf(n.ms + n.durMs / 2); };
-    var curIdx = null, curX = 0;
+    var curIdx = null, curX = 0, noteT0 = 0, trail = [];
+    var perfNow = function () { try { return performance.now(); } catch (e) { return 0; } };
     function clearOn() { var on = el.querySelectorAll('.pr-note.on'); for (var k = 0; k < on.length; k++) on[k].classList.remove('on'); }
+    function clearTrail() { trail = []; if (trailG) trailG.innerHTML = ''; }
     return {
       idxOf: function (sc) { return map[sc] == null ? null : map[sc]; },
       highlight: function (i) {
         clearOn();
         if (i == null) { curIdx = null; if (cursor) cursor.classList.remove('on'); return; }
-        curIdx = i; curX = cxOf(i);
+        curIdx = i; curX = cxOf(i); noteT0 = perfNow();                          // marca o início da nota p/ varrer no tempo
         var t = el.querySelector('.pr-note[data-i="' + i + '"]'); if (t) t.classList.add('on');
         if (cursor) { var cx = curX.toFixed(1); cursor.setAttribute('x1', cx); cursor.setAttribute('x2', cx); cursor.classList.add('on'); }
       },
-      // Espelho: dev = seu desvio (em semitons, dobrado à oitava) da nota-alvo; matched = encaixou.
-      // Ancorado no bloco atual → quando você acerta, o ponto pousa em cima do bloco e acende verde.
+      // Espelho completo (Chroma Roll): o ponto VARRE a nota no tempo (x = tempo decorrido) na SUA
+      // altura (y = alvo ± seu desvio) e deixa um RASTRO — verde onde você trava, escuro onde desliza.
       mirror: function (dev, matched) {
-        if (!you) return;
-        if (curIdx == null) { you.classList.remove('on'); return; }
+        if (!you || curIdx == null) { if (you) you.classList.remove('on'); return; }
+        var n = notes[curIdx];
+        var ex = Math.max(0, Math.min(perfNow() - noteT0, n.durMs));             // tempo decorrido na nota
+        var x = xOf(n.ms + ex);
         var cy = Math.max(6, Math.min(H - 6, ys[curIdx] - dev * semiPx));
-        you.setAttribute('cx', curX.toFixed(1)); you.setAttribute('cy', cy.toFixed(1));
+        you.setAttribute('cx', x.toFixed(1)); you.setAttribute('cy', cy.toFixed(1));
         you.classList.add('on'); you.classList.toggle('lock', !!matched);
+        trail.push({ x: x, y: cy, m: !!matched }); if (trail.length > 22) trail.shift();
+        var s = '';
+        for (var k = 0; k < trail.length; k++) { var p = trail[k], op = ((k + 1) / trail.length * 0.55).toFixed(2);
+          s += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="4" fill="' + (p.m ? '#2f7d5b' : '#6b6355') + '" opacity="' + op + '"/>'; }
+        if (trailG) trailG.innerHTML = s;
       },
-      mirrorOff: function () { if (you) you.classList.remove('on'); },
-      clear: function () { clearOn(); curIdx = null; if (cursor) cursor.classList.remove('on'); if (you) you.classList.remove('on'); }
+      mirrorOff: function () { if (you) you.classList.remove('on'); clearTrail(); },
+      clear: function () { clearOn(); curIdx = null; if (cursor) cursor.classList.remove('on'); if (you) you.classList.remove('on'); clearTrail(); }
     };
   }
   root.pitchRoll = build;

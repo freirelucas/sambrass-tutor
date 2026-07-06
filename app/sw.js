@@ -1,6 +1,6 @@
 // Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
 // cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
-const CACHE = 'sambrass-v15';
+const CACHE = 'sambrass-v16';
 const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './ui.css', './app.js',
   './config.js', './chroma.js', './trilha.js', './story.js', './progresso.js',
   './lego.js', './lego.css', './proll.js', './roda.js', './montariff.js', './groove.js', './explica.js', './grafismo.js',
