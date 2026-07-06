@@ -120,9 +120,10 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   // tier do TEMA praticado: lê o quality.json padrão (cumbias não têm _quality embutido no abc.json)
   const tier = (quality && quality[ID]) || abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
   OCTAVE_EXACT = (tier === 'conferida');
-  const bw = barsWarn && barsWarn[ID];                                 // compassos que não fecham a métrica (silêncio/duração errada)
-  const bwTxt = (bw && bw.length) ? ` <span class="nota-rasc" style="color:var(--vinho2)">⚠ ritmo em revisão: ${bw.length} compasso${bw.length>1?'s':''} (${bw.join(', ')}) não fecha${bw.length>1?'m':''} a métrica — a leitura desses trechos pode sair torta.</span>` : '';
-  const RASC_TEMA = (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>') + bwTxt;
+  const bw = barsWarn && barsWarn[ID];                                 // compassos que não fecham a métrica (silêncio/duração errada na transcrição)
+  const RASC_TEMA = (bw && bw.length)
+    ? `Melodia: <span class="ok">tom e notas conferidos</span>, mas <b style="color:var(--vinho2)">${bw.length} compasso${bw.length>1?'s':''} com ritmo/silêncio errado</b> (compasso${bw.length>1?'s':''} ${bw.join(', ')}) — em correção com a partitura. As células acima são exatas.`
+    : (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
   $('#rasc').innerHTML = RASC_TEMA;
   { const rep = $('#reportar');
     if(rep) rep.onclick = e => { e.preventDefault(); if(window.reportarBeta) reportarBeta({ piece: `${ID}${p?' '+p.titulo:''}`, screen: 'estudo' }); }; }
