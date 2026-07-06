@@ -78,6 +78,8 @@ small{color:var(--suave)}
   border-radius:6px 6px 3px 3px;background:var(--linha);transition:all .09s}
 .valve.press{background:linear-gradient(180deg,var(--ouro),var(--ouro2));color:#fff;transform:translateY(6px);box-shadow:0 0 18px rgba(138,35,49,.35)}
 .valve.press::before{background:var(--ouro);transform:translateX(-50%) translateY(5px)}
+.valve.press.chroma{background:var(--nc);box-shadow:0 0 18px var(--nc)}
+.valve.press.chroma::before{background:var(--nc)}
 .agora{text-align:center;min-height:50px}
 .agora .nota{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--tinta);line-height:1}
 .agora .dedo{font-size:12px;color:var(--ouro);letter-spacing:1px;text-transform:uppercase;font-weight:700}
@@ -96,6 +98,10 @@ small{color:var(--suave)}
 .pr-you{fill:#fff;stroke:var(--tinta);stroke-width:5;opacity:0;transition:opacity .1s,fill .1s,stroke .1s}
 .pr-you.on{opacity:.98}
 .pr-you.lock{fill:var(--verde);stroke:#1c5e43}
+.proll-leg{color:var(--suave);font-size:11.5px;line-height:1.55;margin:5px 2px 0}
+.proll-leg[hidden]{display:none}
+.proll-leg b{color:var(--tinta);font-weight:700}
+.proll-leg .lg-mut{opacity:.72}
 .audio{margin-top:14px}
 .abcjs-inline-audio{background:var(--bg2);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
@@ -227,6 +233,7 @@ small{color:var(--suave)}
       <p class="nota-rasc">🎤 <b>Praticar</b>: o app só marca a <b>clave</b> (sem melodia, pra escutar só você), você toca, e a nota fica <span class="ok">verde</span> quando acerta — sem precisar de fone.</p>
       <div id="paper" class="paper"></div>
       <div id="proll" class="proll" aria-label="rolo de alturas — a melodia no tempo, cada nota na sua cor"></div>
+      <p class="proll-leg" id="proll-leg" hidden>uma língua só — <b>cor</b> = a nota · <b>pauta</b> = a altura exata · <b>rolo</b> = a melodia no tempo <span class="lg-mut">(silêncio = vão)</span> · <b>●</b> = você <span class="lg-mut">(verde quando encaixa)</span></p>
       <div id="audio" class="audio"></div>
       <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
     </div>

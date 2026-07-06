@@ -217,7 +217,9 @@ async function playOnce(abc){
   }catch(e){}
 }
 
-function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).classList.toggle('press', f && f.includes(i)); } }
+function setValves(f, col){ for(const i of '123'){ const v = document.getElementById('v'+i), on = !!(f && f.includes(i));
+  v.classList.toggle('press', on);                                    // "mão cromática": o pistão pressionado ganha a cor da nota
+  if(on && col){ v.classList.add('chroma'); v.style.setProperty('--nc', col); } else { v.classList.remove('chroma'); v.style.removeProperty('--nc'); } } }
 function clrHi(){ document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight')); if(PROLL) PROLL.clear(); }
 function clrGrade(){ document.querySelectorAll('.abcjs-good,.abcjs-bad').forEach(el => el.classList.remove('abcjs-good','abcjs-bad')); }
 function paintScore(){ const e = $('#micscore'); if(e) e.textContent = SCORE.tot ? `sessão: ✓ ${SCORE.ok}/${SCORE.tot}` : ''; }
@@ -259,14 +261,15 @@ function showNote(ev, grade){
   if(PROLL && ev) PROLL.highlight(PROLL.idxOf(ev.startChar));         // acende o bloco do rolo no mesmo tempo
   const mp = ev.midiPitches && ev.midiPitches[0];
   if(mp){ const w = Math.round(mp.pitch) - TR; const f = fingerOf(w);
-    $('#notaAtual').textContent = NOMES[((w % 12) + 12) % 12];
-    $('#dedoAtual').textContent = (f === '0' ? 'solto (0)' : 'dedo ' + f) || '—'; setValves(f);
+    const col = (COLORON && window.chroma) ? window.chroma.css(w, {s:78, l:40}) : '';   // mão cromática
+    const na = $('#notaAtual'); na.textContent = NOMES[((w % 12) + 12) % 12]; na.style.color = col;
+    $('#dedoAtual').textContent = (f === '0' ? 'solto (0)' : 'dedo ' + f) || '—'; setValves(f, col);
     if(grade){ EXP = {midi: w - 2, els: ev.elements || [], matchedMs: 0, wrongMs: 0, lastTs: performance.now(), painted: null, cursorTs: performance.now(), onsetTs: null}; }
   }
 }
 function cursor(){ // modo OUVIR (SynthController) — sem graduar (evita o mic julgar o próprio app)
   return { onStart(){ EXP = null; },
-    onFinished(){ clrHi(); clrGrade(); setValves(''); $('#notaAtual').textContent = '·'; $('#dedoAtual').textContent = 'fim'; },
+    onFinished(){ clrHi(); clrGrade(); setValves(''); const na = $('#notaAtual'); na.textContent = '·'; na.style.color = ''; $('#dedoAtual').textContent = 'fim'; },
     onEvent(ev){ if(!ev) return; showNote(ev, false); } };
 }
 
@@ -312,6 +315,7 @@ function renderChannels(){
   }
   const proll = document.getElementById('proll');
   if(proll){ PROLL = (COLORON && window.pitchRoll) ? window.pitchRoll(proll, data, {}) : (proll.innerHTML = '', null); }
+  const leg = document.getElementById('proll-leg'); if(leg) leg.hidden = !(COLORON && PROLL);   // a legenda segue os canais
 }
 
 function setMel(){
@@ -384,7 +388,7 @@ function stopPractice(){
   if(TIMER){ try{ TIMER.stop(); }catch{} TIMER = null; }
   logPractice();                                                     // registra a sessão que acabou
   PRACTON = false; WAITING = false; EXP = null; clrHi(); clrGrade(); setValves('');
-  $('#notaAtual').textContent = '·'; $('#dedoAtual').textContent = 'pronto';
+  { const na = $('#notaAtual'); na.textContent = '·'; na.style.color = ''; } $('#dedoAtual').textContent = 'pronto';
   $('#tprat').classList.remove('on'); $('#tprat').textContent = '▶ praticar';
   const g = $('#tgo'); if(g){ g.classList.remove('on'); g.textContent = '▶ Tocar com o tutor'; }
 }
