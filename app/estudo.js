@@ -27,6 +27,15 @@ const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200, POCKET_TOL = 70;   // ±70m
 let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, OCT = 0, VISUAL = null;
 let COLORON = localStorage.getItem('chroma-off') !== '1';   // canais de cor Chromatone (noteheads + rolo) — andaime fadeável
 let PROLL = null;                                           // API do rolo de alturas (pitch-roll) atual
+let RODA = null;                                            // API da roda de ritmo (groove circular)
+// posição [0,1) no ciclo do groove, do relógio da BANDA (ou null se a banda está parada)
+function groovePhase(){
+  if(!window.Groove || !Groove.on) return null;
+  const c = Groove.clock(); if(!c.playing || !c.stepDur) return null;
+  let cs = c.step - (c.nextT - c.now) / c.stepDur;          // passo contínuo (16 por ciclo)
+  cs = ((cs % 16) + 16) % 16;
+  return cs / 16;
+}
 // tutor de escuta
 let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
@@ -158,14 +167,17 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#tmic').onclick = () => MICON ? disableMic() : enableMic();
   $('#tprat').onclick = () => PRACTON ? stopPractice() : startPractice();
   { const bandRoot = window.Groove ? Groove.rootFromKey(p?.key_concert) : 41;   // acompanhamento no tom de CONCERTO
-    const tb = $('#tband'), bv = $('#bandvol');
+    const tb = $('#tband'), bv = $('#bandvol'), rodaEl = $('#roda');
+    RODA = (window.RodaRitmo && rodaEl) ? window.RodaRitmo(rodaEl) : null;       // a roda de ritmo (aparece com a banda)
     let bvol = Math.max(0, Math.min(100, +(localStorage.getItem('bandvol') ?? 65)));
     if(bv){ bv.value = bvol;
       bv.oninput = () => { bvol = +bv.value; localStorage.setItem('bandvol', bvol); if(window.Groove) Groove.setVolume(bvol/100); }; }
     if(tb) tb.onclick = () => {
       if(!window.Groove) return;
-      if(Groove.on){ Groove.stop(); tb.classList.remove('on'); tb.textContent = '🪘 com a banda'; }
-      else { audioUnlock(); Groove.start({audioContext: AC, bpm: BPM, root: bandRoot, volume: bvol/100}); tb.classList.add('on'); tb.textContent = '⏹ parar a banda'; }
+      if(Groove.on){ Groove.stop(); tb.classList.remove('on'); tb.textContent = '🪘 com a banda';
+        if(RODA){ RODA.stop(); RODA.clear(); } if(rodaEl) rodaEl.hidden = true; }
+      else { audioUnlock(); Groove.start({audioContext: AC, bpm: BPM, root: bandRoot, volume: bvol/100}); tb.classList.add('on'); tb.textContent = '⏹ parar a banda';
+        if(rodaEl) rodaEl.hidden = false; if(RODA) RODA.start(groovePhase); }   // a roda gira no tempo da banda
     }; }
   $('#tgo').onclick = async () => {   // um clique: admite o microfone + começa a praticar
     if(PRACTON){ stopPractice(); return; }
@@ -462,7 +474,8 @@ function micLoop(){
   if(EXP){
     const dt = now - (EXP.lastTs || now); EXP.lastTs = now;
     if(pp && samePitch(pp.midi, EXP.midi) && Math.abs(pp.cents) <= CENTS_TOL){
-      if(EXP.onsetTs == null && EXP.cursorTs != null){ EXP.onsetTs = now; recordPocket(now - EXP.cursorTs); }   // 1º ataque certo → mede o tempo
+      if(EXP.onsetTs == null && EXP.cursorTs != null){ EXP.onsetTs = now; recordPocket(now - EXP.cursorTs);   // 1º ataque certo → mede o tempo
+        if(RODA && window.Groove && Groove.on) RODA.hit(); }                     // …e pousa o ponto na roda (trave no giro)
       EXP.matchedMs += dt;
       if(EXP.matchedMs >= HOLD_MS && EXP.painted !== 'good'){ paint(EXP.els, 'good'); EXP.painted = 'good'; SCORE.ok++; SCORE.tot++; paintScore();
         if(WAITING){ WAITING = false; if(TIMER) try{ TIMER.start(); }catch{} } }   // acertou → avança o cursor

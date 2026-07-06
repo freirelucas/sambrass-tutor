@@ -102,6 +102,14 @@ small{color:var(--suave)}
 .proll-leg[hidden]{display:none}
 .proll-leg b{color:var(--tinta);font-weight:700}
 .proll-leg .lg-mut{opacity:.72}
+/* roda de ritmo — a güira da banda girando; seus ataques pousam no anel */
+.roda{max-width:200px;margin:12px auto 2px}
+.roda[hidden]{display:none}
+.roda-svg{width:100%;height:auto;display:block}
+.roda-hand{stroke:var(--marca);stroke-width:4;stroke-linecap:round;opacity:.15;transition:opacity .2s}
+.roda-hub{fill:var(--marca)}
+.roda-hub.beat{animation:roda-beat .18s ease}
+@keyframes roda-beat{from{r:10}to{r:6.5}}
 .audio{margin-top:14px}
 .abcjs-inline-audio{background:var(--bg2);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
@@ -234,6 +242,7 @@ small{color:var(--suave)}
       <div id="paper" class="paper"></div>
       <div id="proll" class="proll" aria-label="rolo de alturas — a melodia no tempo, cada nota na sua cor"></div>
       <p class="proll-leg" id="proll-leg" hidden>uma língua só — <b>cor</b> = a nota · <b>pauta</b> = a altura exata · <b>rolo</b> = a melodia no tempo <span class="lg-mut">(silêncio = vão)</span> · <b>●</b> = você <span class="lg-mut">(verde quando encaixa)</span></p>
+      <div id="roda" class="roda" hidden aria-label="roda de ritmo — a güira da banda girando no tempo; trave seus ataques no giro"></div>
       <div id="audio" class="audio"></div>
       <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
     </div>
@@ -263,6 +272,7 @@ small{color:var(--suave)}
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./lego.js"></script>
 <script defer src="./proll.js"></script>
+<script defer src="./roda.js"></script>
 <script defer src="./groove.js"></script>
 <script defer src="./explica.js"></script>
 <script defer src="./estudo.js"></script>

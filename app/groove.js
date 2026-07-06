@@ -93,6 +93,8 @@
       var pc = PC[(key || 'C').replace(/m$/, '')]; if (pc == null) pc = 0;
       return 36 + pc;                                      // tônica grave (C2..B2)
     },
+    // relógio do groove p/ a RODA DE RITMO: posição contínua no ciclo de 16 passos.
+    clock: function () { return { playing: playing, step: step, stepDur: s16(), nextT: nextT, now: ctx ? ctx.currentTime : 0 }; },
     get on() { return playing; }
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = root.Groove;
