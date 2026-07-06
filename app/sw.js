@@ -3,7 +3,7 @@
 const CACHE = 'sambrass-v12';
 const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './ui.css', './app.js',
   './config.js', './chroma.js', './trilha.js', './story.js', './progresso.js',
-  './lego.js', './lego.css', './groove.js', './explica.js', './grafismo.js',
+  './lego.js', './lego.css', './proll.js', './groove.js', './explica.js', './grafismo.js',
   './vendor/abcjs.js', './vendor/abcjs-audio.css', './vendor/pitch-detector.js',
   './manifest.webmanifest', './icon.svg'];
 // pedagogia.json/tecnica.json/aquecimento.json (grandes) ficam fora do SHELL: o network-first

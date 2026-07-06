@@ -25,7 +25,8 @@ function fingerOf(midi){ return VALV[SHARP[((midi % 12) + 12) % 12] + (Math.floo
 const CENTS_TOL = 50, HOLD_MS = 120, WRONG_MS = 200, POCKET_TOL = 70;   // ±70ms = "no tempo"
 
 let AC = null, MELODIA = null, SYNTH = null, BPM = 92, TR = 0, OCT = 0, VISUAL = null;
-let COLORON = localStorage.getItem('chroma-off') !== '1';   // noteheads na cor Chromatone (andaime fadeável)
+let COLORON = localStorage.getItem('chroma-off') !== '1';   // canais de cor Chromatone (noteheads + rolo) — andaime fadeável
+let PROLL = null;                                           // API do rolo de alturas (pitch-roll) atual
 // tutor de escuta
 let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
@@ -138,7 +139,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#toct').onclick = e => { const c = e.currentTarget.classList.toggle('on'); OCT = c?-12:0; e.currentTarget.textContent = c?'🔼 voltar à 8ª':'🎺 8ª abaixo'; setMel(); if(PRACTON) restartTimer(); };   // registro grave: alcança o agudo / aquece
   { const tc = $('#tcor'); if(tc){ tc.classList.toggle('on', COLORON); tc.textContent = COLORON ? '🎨 cor: sim' : '🎨 cor: não';
       tc.onclick = () => { COLORON = !COLORON; localStorage.setItem('chroma-off', COLORON ? '0' : '1');
-        tc.classList.toggle('on', COLORON); tc.textContent = COLORON ? '🎨 cor: sim' : '🎨 cor: não'; paintNotes(); }; } }   // andaime de cor fadeável (Figurenotes)
+        tc.classList.toggle('on', COLORON); tc.textContent = COLORON ? '🎨 cor: sim' : '🎨 cor: não'; renderChannels(); }; } }   // andaime de cor fadeável (Figurenotes)
   // "os dois": pratica o TEMA; este botão toca/mostra a PEÇA INTEIRA (só quando há uma distinta)
   { const tFull = $('#tfull');
     if(tFull && !TEM_DOIS){ tFull.style.display = 'none'; }
@@ -217,7 +218,7 @@ async function playOnce(abc){
 }
 
 function setValves(f){ for(const i of '123'){ document.getElementById('v'+i).classList.toggle('press', f && f.includes(i)); } }
-function clrHi(){ document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight')); }
+function clrHi(){ document.querySelectorAll('.abcjs-highlight').forEach(el => el.classList.remove('abcjs-highlight')); if(PROLL) PROLL.clear(); }
 function clrGrade(){ document.querySelectorAll('.abcjs-good,.abcjs-bad').forEach(el => el.classList.remove('abcjs-good','abcjs-bad')); }
 function paintScore(){ const e = $('#micscore'); if(e) e.textContent = SCORE.tot ? `sessão: ✓ ${SCORE.ok}/${SCORE.tot}` : ''; }
 // --- grade rítmica (pocket): o ataque do aluno vs o cursor, relativo ao próprio baseline ---
@@ -255,6 +256,7 @@ function logPractice(){
 function showNote(ev, grade){
   clrHi();
   (ev.elements||[]).forEach(s => s.forEach(el => el.classList.add('abcjs-highlight')));
+  if(PROLL && ev) PROLL.highlight(PROLL.idxOf(ev.startChar));         // acende o bloco do rolo no mesmo tempo
   const mp = ev.midiPitches && ev.midiPitches[0];
   if(mp){ const w = Math.round(mp.pitch) - TR; const f = fingerOf(w);
     $('#notaAtual').textContent = NOMES[((w % 12) + 12) % 12];
@@ -268,18 +270,48 @@ function cursor(){ // modo OUVIR (SynthController) — sem graduar (evita o mic 
     onEvent(ev){ if(!ev) return; showNote(ev, false); } };
 }
 
-// colore cada notehead na cor da SUA nota (padrão Chromatone, em concerto → bate com o Lego).
-// Andaime FADEÁVEL: o toggle 🎨 desliga (volta ao preto). Cursor/acerto/erro (!important) vencem por cima.
-function paintNotes(){
-  const paper = document.getElementById('paper'); if(!paper) return;
-  const heads = paper.querySelectorAll('.abcjs-notehead');
-  let pcs = [];                                                       // classes de altura (concerto), na ordem escrita
-  try{ if(VISUAL){ if(VISUAL.setUpAudio) VISUAL.setUpAudio();        // resolve armadura + acidentes → midiPitches
-      if(VISUAL.setTiming) VISUAL.setTiming(BPM);
-      (VISUAL.noteTimings || []).forEach(ev => { if(ev.type === 'event' && ev.midiPitches && ev.midiPitches.length)
-        pcs.push(Math.round(ev.midiPitches[0].pitch) - TR); }); } }catch(e){ pcs = []; }
-  const paint = COLORON && window.chroma && pcs.length === heads.length;   // só se casar 1:1 (evita cor errada)
-  heads.forEach((h, i) => { h.style.fill = paint ? window.chroma.css(pcs[i]) : ''; });
+// lê a melodia renderizada do abcjs: cada nota com {midi (concerto), ms, durMs, startChar}.
+// setUpAudio resolve armadura + acidentes; as pausas viram vãos (midiPitches vazio → puladas).
+function melodyNotes(){
+  const out = { notes: [], totalMs: 0 };
+  try{ if(VISUAL){ if(VISUAL.setUpAudio) VISUAL.setUpAudio(); if(VISUAL.setTiming) VISUAL.setTiming(BPM);
+    const nt = VISUAL.noteTimings || []; if(!nt.length) return out;
+    out.totalMs = nt[nt.length-1].milliseconds || 0;
+    for(let k=0;k<nt.length;k++){ const ev = nt[k]; if(ev.type !== 'event') continue;
+      let nextMs = out.totalMs; for(let j=k+1;j<nt.length;j++){ if(nt[j].milliseconds != null){ nextMs = nt[j].milliseconds; break; } }
+      if(ev.midiPitches && ev.midiPitches.length)
+        out.notes.push({ midi: Math.round(ev.midiPitches[0].pitch) - TR, ms: ev.milliseconds || 0,
+                         durMs: Math.max(1, nextMs - (ev.milliseconds || 0)), startChar: ev.startChar });
+    }
+  } }catch(e){}
+  return out;
+}
+// desenha os canais de cor a partir da mesma fonte: (1) noteheads da pauta, (2) rolo de alturas.
+// Andaime FADEÁVEL: o toggle 🎨 desliga tudo (volta à pauta preta). Cursor/acerto/erro (!important) vencem.
+function renderChannels(){
+  const data = melodyNotes();                                         // popula VISUAL.noteTimings (setUpAudio)
+  const paper = document.getElementById('paper');
+  if(paper){
+    const heads = paper.querySelectorAll('.abcjs-notehead');
+    heads.forEach(h => { h.style.fill = ''; });                       // reset
+    if(COLORON && window.chroma && VISUAL){
+      // 1) cada evento sonoro colore o SEU notehead (por referência de DOM → robusto a ligaduras)
+      (VISUAL.noteTimings || []).forEach(ev => {
+        if(ev.type !== 'event' || !ev.midiPitches || !ev.midiPitches.length) return;
+        const col = window.chroma.css(Math.round(ev.midiPitches[0].pitch) - TR);
+        (ev.elements || []).forEach(s => s.forEach(el => {
+          if(!el) return;
+          if(el.classList && el.classList.contains('abcjs-notehead')) el.style.fill = col;
+          else if(el.querySelectorAll) el.querySelectorAll('.abcjs-notehead').forEach(h => { h.style.fill = col; });
+        }));
+      });
+      // 2) nota LIGADA (sem evento próprio) herda a cor da anterior em ordem de leitura — mesma altura
+      let last = '';
+      heads.forEach(h => { if(h.style.fill) last = h.style.fill; else if(last) h.style.fill = last; });
+    }
+  }
+  const proll = document.getElementById('proll');
+  if(proll){ PROLL = (COLORON && window.pitchRoll) ? window.pitchRoll(proll, data, {}) : (proll.innerHTML = '', null); }
 }
 
 function setMel(){
@@ -289,7 +321,7 @@ function setMel(){
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
   const pw = Math.max(280, (($('#paper').clientWidth) || 340) - 26);
   try{ VISUAL = ABCJS.renderAbc('paper', abc, {add_classes:true, staffwidth:pw, visualTranspose:TR+OCT, scale:1, wrap:{preferredMeasuresPerLine:4, minSpacing:1, maxSpacing:1.8, lastLineLimit:true}})[0]; }catch{ return; }
-  paintNotes();                                                       // noteheads na cor Chromatone (andaime fadeável)
+  renderChannels();                                                   // canais de cor: noteheads + rolo de alturas
   if(!window.ABCJS?.synth?.supportsAudio()){ $('#audio').innerHTML = '<p class="nota-rasc">áudio não suportado.</p>'; return; }
   try{ SYNTH = new ABCJS.synth.SynthController();
     SYNTH.load('#audio', cursor(), {displayPlay:true, displayProgress:true, displayLoop:true, displayRestart:true});

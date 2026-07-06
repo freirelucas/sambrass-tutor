@@ -85,6 +85,14 @@ small{color:var(--suave)}
 .paper svg{max-width:100%;height:auto;display:block;margin:0 auto}
 .abcjs-highlight{fill:var(--ouro)!important}
 .abcjs-cursor{stroke:var(--ouro)}
+/* rolo de alturas (pitch-roll): a melodia no tempo, cada nota na sua cor — silêncio = vão */
+.proll{margin-top:8px}
+.proll:empty{display:none}
+.proll-svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--linha);border-radius:12px;padding:2px}
+.pr-note{transition:opacity .12s}
+.pr-note.on{stroke:#15120b;stroke-width:3;paint-order:stroke}
+.pr-cursor{stroke:var(--tinta);stroke-width:2.5;opacity:0;stroke-linecap:round}
+.pr-cursor.on{opacity:.85}
 .audio{margin-top:14px}
 .abcjs-inline-audio{background:var(--bg2);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
@@ -215,6 +223,7 @@ small{color:var(--suave)}
       </div>
       <p class="nota-rasc">🎤 <b>Praticar</b>: o app só marca a <b>clave</b> (sem melodia, pra escutar só você), você toca, e a nota fica <span class="ok">verde</span> quando acerta — sem precisar de fone.</p>
       <div id="paper" class="paper"></div>
+      <div id="proll" class="proll" aria-label="rolo de alturas — a melodia no tempo, cada nota na sua cor"></div>
       <div id="audio" class="audio"></div>
       <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
     </div>
@@ -243,6 +252,7 @@ small{color:var(--suave)}
 <script src="./grafismo.js"></script>
 <script defer src="./vendor/pitch-detector.js"></script>
 <script defer src="./lego.js"></script>
+<script defer src="./proll.js"></script>
 <script defer src="./groove.js"></script>
 <script defer src="./explica.js"></script>
 <script defer src="./estudo.js"></script>
