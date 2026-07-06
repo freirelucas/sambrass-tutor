@@ -1,6 +1,6 @@
 {
-  "name": "Sambrass Tutor — Trompete",
-  "short_name": "Sambrass",
+  "name": "Tutor de Trompete",
+  "short_name": "Trompete",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

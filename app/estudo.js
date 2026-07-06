@@ -1,4 +1,4 @@
-/* Sambrass Tutor — página de estudo. Cursor + digitação ao vivo, e o TUTOR DE ESCUTA:
+/* Tutor de Trompete — página de estudo. Cursor + digitação ao vivo, e o TUTOR DE ESCUTA:
  * microfone → feedback play-along (verde/vermelho + agulha de cents), loop de trecho e
  * rampa de andamento. Sem dependências além do abcjs (vendor) e do pitch-detector (vendor).
  *

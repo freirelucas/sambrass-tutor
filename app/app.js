@@ -1,5 +1,5 @@
 'use strict';
-// Sambrass Tutor — PWA (vanilla). Lê ./data/*.json gerados de content/.
+// Tutor de Trompete — PWA (vanilla). Lê ./data/*.json gerados de content/.
 
 const DB = {};            // dados carregados
 const $ = (s, e = document) => e.querySelector(s);
@@ -412,7 +412,7 @@ if ('serviceWorker' in navigator) {
       const nw = reg.installing; if (!nw) return;
       nw.addEventListener('statechange', () => {                       // versão nova pronta e esperando → oferece atualizar
         if (nw.state === 'installed' && navigator.serviceWorker.controller)
-          pwaToast('Nova versão do Sambrass', 'atualizar', () => { updating = true; nw.postMessage('skipWaiting'); });
+          pwaToast('Nova versão do Tutor de Trompete', 'atualizar', () => { updating = true; nw.postMessage('skipWaiting'); });
       });
     });
   }).catch(() => {});
@@ -421,7 +421,7 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', e => {                  // instalar no celular (add to home)
   e.preventDefault(); const dp = e;
   if (store.get('pwa-nudged', false)) return;
-  pwaToast('Instalar o Sambrass no celular', '📲 instalar', async () => {
+  pwaToast('Instalar o Tutor de Trompete no celular', '📲 instalar', async () => {
     store.set('pwa-nudged', true); try { dp.prompt(); await dp.userChoice; } catch (e) {}
   });
 });
