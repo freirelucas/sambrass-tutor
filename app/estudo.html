@@ -128,9 +128,16 @@ small{color:var(--suave)}
 .mr-piece.shake{animation:mr-shake .3s}
 @keyframes mr-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .audio{margin-top:14px}
-.abcjs-inline-audio{background:var(--bg2);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.abcjs-inline-audio .abcjs-btn{background:var(--pane);border:1px solid var(--linha);border-radius:10px;min-height:46px;min-width:46px;cursor:pointer}
-.abcjs-inline-audio .abcjs-btn svg path{fill:var(--tinta)}
+/* player do abcjs re-tematizado p/ o papel: libera a ALTURA fixa (26px do vendor → estourava e
+   colava no rodapé), botões com alvo de toque, ícones/relógio/barra claros (venciam invisíveis) */
+.abcjs-inline-audio{height:auto!important;min-height:56px;background:var(--bg2);border-radius:12px;padding:9px 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;box-sizing:border-box}
+.abcjs-inline-audio .abcjs-btn{width:auto!important;min-width:48px;height:48px!important;padding:9px;background:var(--pane)!important;border:1px solid var(--linha);border-radius:12px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.abcjs-inline-audio .abcjs-btn svg{width:22px;height:22px}
+.abcjs-inline-audio .abcjs-btn g{fill:var(--tinta)!important;stroke:var(--tinta)!important}
+.abcjs-inline-audio .abcjs-btn:hover g{fill:var(--marca)!important;stroke:var(--marca)!important}
+.abcjs-inline-audio .abcjs-midi-progress-background{background:var(--linha)!important;border:none!important;height:12px;flex:1;min-width:90px;margin:0 6px}
+.abcjs-inline-audio .abcjs-midi-progress-indicator{background:var(--marca)!important;height:16px;top:-3px;border-radius:8px}
+.abcjs-inline-audio .abcjs-midi-clock{color:var(--tinta)!important;font-size:14px}
 .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
 .controls.mais{margin-top:10px;padding-top:12px;border-top:1px dashed var(--linha)}
 .controls.mais[hidden]{display:none}
