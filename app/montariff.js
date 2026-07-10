@@ -18,7 +18,7 @@
     var playNote = opt.playNote || function () {};
     var playSeq = opt.playSeq || function () {};
     var lo = Math.min.apply(null, midis), hi = Math.max.apply(null, midis), rg = Math.max(1, hi - lo);
-    var hPct = function (m) { return (6 + (m - lo) / rg * 68).toFixed(0); };   // 6..74% (altura da nota no bloco)
+    var hPct = function (m) { return (26 + (m - lo) / rg * 56).toFixed(0); };   // 26..82% — deixa a base livre p/ o nome
     var next = 0;
 
     function stud(m) { return '<span class="mr-stud" style="bottom:' + hPct(m) + '%"></span>'; }
@@ -32,7 +32,7 @@
       }).join('');
       el.innerHTML = '<div class="mr-slots">' + slots + '</div>' +
         '<div class="mr-bag">' + pieces + '</div>' +
-        '<div class="mr-foot"><button class="mr-btn" data-act="hear">🔊 ouvir o modelo</button>' +
+        '<div class="mr-foot"><button class="mr-btn prim" data-act="hear">🔊 ouvir o modelo</button>' +
         '<button class="mr-btn" data-act="shuffle">🔀 de novo</button>' +
         '<span class="mr-msg" aria-live="polite">encaixe na ordem do riff</span></div>';
     }

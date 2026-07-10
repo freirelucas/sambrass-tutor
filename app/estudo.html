@@ -125,6 +125,7 @@ small{color:var(--suave)}
 .mr-nm{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-size:10px;color:var(--suave)}
 .mr-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
 .mr-btn{min-height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--linha);background:var(--pane);color:var(--tinta);font-size:13px;font-weight:600;cursor:pointer}
+.mr-btn.prim{background:var(--verde);border-color:var(--verde);color:#fff}
 .mr-msg{font-size:12.5px;color:var(--suave)}
 .montariff.mr-win .mr-slot.on{animation:mr-pop .5s ease}
 @keyframes mr-pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
@@ -249,6 +250,7 @@ small{color:var(--suave)}
         <button class="toggle go" id="tgo">▶ Tocar com o tutor</button>
         <button class="toggle prim" id="tprat">▶ praticar</button>
         <button class="toggle prim" id="tmic">🎤 ouvir meu som</button>
+        <button class="toggle" id="tband" title="liga o acompanhamento de cumbia (güira + baixo + naipe) — a RODA DE RITMO aparece e gira no tempo; toque por cima">🪘 com a banda</button>
         <div class="tempo"><button id="menos" aria-label="diminuir andamento">−</button><div class="bpm"><span id="bpm">92</span><small>BPM</small></div><button id="mais" aria-label="aumentar andamento">+</button></div>
         <button class="toggle" id="tmais" aria-expanded="false" aria-controls="maisopcoes">⚙ mais opções</button>
       </div>
@@ -257,8 +259,7 @@ small{color:var(--suave)}
         <button class="toggle" id="tconcert">🎼 em concerto</button>
         <button class="toggle" id="toct" title="desce a melodia uma oitava — registro grave, pra alcançar o agudo ou aquecer">🎺 8ª abaixo</button>
         <button class="toggle" id="tfull">▶ tocar a peça inteira</button>
-        <button class="toggle" id="tband" title="liga o acompanhamento de cumbia (güira + baixo + naipe) no tom e no andamento — toque por cima">🪘 com a banda</button>
-        <label class="bandvol" id="bandvolwrap" title="volume da banda">🔊<input type="range" id="bandvol" min="0" max="100" aria-label="volume da banda"></label>
+        <label class="bandvol" id="bandvolwrap" title="volume da banda">🔊 banda<input type="range" id="bandvol" min="0" max="100" aria-label="volume da banda"></label>
         <button class="toggle" id="tesp" title="o cursor só avança quando você acerta a nota (precisa do microfone)">⏳ esperar por mim</button>
         <div class="loopbox"><button class="toggle" id="tloop">🔁 loop</button>
           <span class="lstep">comp <button id="laMinus">−</button><span id="laVal">1</span><button id="laPlus">+</button>
