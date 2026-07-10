@@ -12,7 +12,7 @@ function telaProg() {
   Object.values(logs).forEach(arr => (arr || []).forEach(x => {
     sessoes++; somaNiv += x.n; byDay[x.d] = (byDay[x.d] || 0) + 1;
   }));
-  const dom = countDone(), tot = ms.length || 110, streak = streakCount();
+  const dom = countDone(), tot = ms.length || 1, streak = streakCount();   // total DINÂMICO (nunca fixar 110/15)
   const diasTot = (store.get('days', []) || []).length;
   const nivelMedio = sessoes ? (somaNiv / sessoes) : 0;
 
