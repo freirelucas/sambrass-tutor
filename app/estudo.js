@@ -37,7 +37,9 @@ function groovePhase(){
   return cs / 16;
 }
 // tutor de escuta
-let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false;
+let MIC = null, DET = null, RAF = 0, MICON = false, EXP = null, OCTAVE_EXACT = false, LISTENING = false;
+// o "cockpit" (válvulas/nota/afinador/pocket) só ganha vida quando algo toca — senão fica dormente
+function refreshStage(){ const s = document.getElementById('stage'); if(s) s.classList.toggle('dormant', !(PRACTON || MICON || LISTENING)); }
 // grading: oitava exata só na melodia conferida; nos tiers provisórios (dedos/rascunho a
 // oitava do OMR não é confiável) avalia pela CLASSE DE ALTURA, evitando falsos vermelhos.
 function samePitch(a, b) { return OCTAVE_EXACT ? a === b : ((((a - b) % 12) + 12) % 12) === 0; }
@@ -300,8 +302,8 @@ function showNote(ev, grade){
   }
 }
 function cursor(){ // modo OUVIR (SynthController) — sem graduar (evita o mic julgar o próprio app)
-  return { onStart(){ EXP = null; },
-    onFinished(){ clrHi(); clrGrade(); setValves(''); const na = $('#notaAtual'); na.textContent = '·'; na.style.color = ''; $('#dedoAtual').textContent = 'fim'; },
+  return { onStart(){ EXP = null; LISTENING = true; refreshStage(); },
+    onFinished(){ LISTENING = false; refreshStage(); clrHi(); clrGrade(); setValves(''); const na = $('#notaAtual'); na.textContent = '·'; na.style.color = ''; $('#dedoAtual').textContent = 'fim'; },
     onEvent(ev){ if(!ev) return; showNote(ev, false); } };
 }
 
@@ -412,14 +414,14 @@ function newTimer(){
 function startPractice(){
   if(!VISUAL) return; audioUnlock();
   if(SYNTH){ try{ SYNTH.pause(); }catch{} }
-  SCORE = { ok: 0, tot: 0 }; paintScore(); resetPocket(); TIMER = newTimer(); TIMER.start(); PRACTON = true;
+  SCORE = { ok: 0, tot: 0 }; paintScore(); resetPocket(); TIMER = newTimer(); TIMER.start(); PRACTON = true; refreshStage();
   $('#tprat').classList.add('on'); $('#tprat').textContent = '⏸ parar';
   const g = $('#tgo'); if(g){ g.classList.add('on'); g.textContent = '⏸ parar'; }
 }
 function stopPractice(){
   if(TIMER){ try{ TIMER.stop(); }catch{} TIMER = null; }
   logPractice();                                                     // registra a sessão que acabou
-  PRACTON = false; WAITING = false; EXP = null; clrHi(); clrGrade(); setValves('');
+  PRACTON = false; WAITING = false; EXP = null; refreshStage(); clrHi(); clrGrade(); setValves('');
   { const na = $('#notaAtual'); na.textContent = '·'; na.style.color = ''; } $('#dedoAtual').textContent = 'pronto';
   $('#tprat').classList.remove('on'); $('#tprat').textContent = '▶ praticar';
   const g = $('#tgo'); if(g){ g.classList.remove('on'); g.textContent = '▶ Tocar com o tutor'; }
@@ -444,19 +446,19 @@ async function enableMic(){
   try{
     MIC = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false, noiseSuppression:false, autoGainControl:false}});
     DET = new PitchDetector(AC, MIC, {minHz:120, maxHz:1300});
-    MICON = true;
+    MICON = true; refreshStage();
     $('#tmic').classList.add('on'); $('#tmic').textContent = '🎤 ouvindo';
     $('#tuner').classList.add('ativo');
     RAF = requestAnimationFrame(micLoop);
   }catch(e){
-    MICON = false;
+    MICON = false; refreshStage();
     $('#tuner').classList.add('ativo');
     $('#micnota').innerHTML = 'sem acesso ao microfone — toque <b>🎤 ouvir meu som</b> de novo e <b>permita</b>; ou siga sem avaliar (clave + cursor funcionam).';
     $('#tmic').classList.remove('on'); $('#tmic').textContent = '🎤 ouvir meu som';
   }
 }
 function disableMic(){
-  MICON = false; cancelAnimationFrame(RAF);
+  MICON = false; refreshStage(); cancelAnimationFrame(RAF);
   if(DET){ try{ DET.close(); }catch{} DET = null; } MIC = null;
   $('#tmic').classList.remove('on'); $('#tmic').textContent = '🎤 ouvir meu som';
   $('#tuner').classList.remove('ativo'); $('#micnota').textContent = 'você: —'; clrGrade(); if(PROLL) PROLL.mirrorOff();

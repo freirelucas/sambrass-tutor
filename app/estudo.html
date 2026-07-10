@@ -69,7 +69,10 @@ small{color:var(--suave)}
 .mini svg{max-width:100%;height:auto;display:block;margin:0 auto}
 
 /* player */
-.stage{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 0 4px}
+.stage{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 0 4px;transition:opacity .25s}
+.stage.dormant{opacity:.5}
+.stage-hint{display:none;font-size:12.5px;color:var(--suave);text-align:center;margin:0 0 2px;padding:0 12px}
+.stage.dormant .stage-hint{display:block}
 .valves{display:flex;gap:14px;align-items:flex-end;height:78px}
 .valve{width:34px;height:62px;border-radius:12px;background:var(--bg2);border:1px solid var(--linha);
   position:relative;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;color:var(--suave);
@@ -238,13 +241,10 @@ small{color:var(--suave)}
     <h2>Toque junto — e veja a digitação</h2>
     <p class="lead">Enquanto toca (timbre de trompete), as <b>3 válvulas acendem a digitação</b> da nota atual e o cursor segue a partitura. Ajuste o beat e repita trechos.</p>
     <div class="pane">
-      <div class="stage">
-        <div class="valves"><div class="valve" id="v1">1</div><div class="valve" id="v2">2</div><div class="valve" id="v3">3</div></div>
-        <div class="agora"><div class="nota" id="notaAtual">·</div><div class="dedo" id="dedoAtual">pronto</div></div>
-        <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div><div class="micscore" id="micscore"></div>
-          <div class="pocket" id="pocket" title="o tempo é relativo ao seu próprio compasso (tira a latência do navegador) — mede a sua regularidade/pocket">
-            <div class="pk-scale"><i class="pk-zero"></i><i class="pk-mark" id="pkmark"></i></div><div class="pk-lbl" id="pklbl">pocket: toque pra medir</div></div></div>
-      </div>
+      <div id="paper" class="paper"></div>
+      <div id="proll" class="proll" aria-label="rolo de alturas — a melodia no tempo, cada nota na sua cor"></div>
+      <p class="proll-leg" id="proll-leg" hidden>uma língua só — <b>cor</b> = a nota · <b>pauta</b> = a altura exata · <b>rolo</b> = a melodia no tempo <span class="lg-mut">(silêncio = vão)</span> · <b>●</b> = você <span class="lg-mut">(verde quando encaixa)</span></p>
+      <div id="audio" class="audio"></div>
       <div class="controls">
         <button class="toggle go" id="tgo">▶ Tocar com o tutor</button>
         <button class="toggle prim" id="tprat">▶ praticar</button>
@@ -267,12 +267,16 @@ small{color:var(--suave)}
         <div class="rampbox"><button class="toggle" id="tramp">⏫ rampa</button>
           <span class="lstep">até <button id="raMinus">−</button><span id="rampVal">120</span><button id="raPlus">+</button> BPM</span></div>
       </div>
-      <p class="nota-rasc">🎤 <b>Praticar</b>: o app só marca a <b>clave</b> (sem melodia, pra escutar só você), você toca, e a nota fica <span class="ok">verde</span> quando acerta — sem precisar de fone.</p>
-      <div id="paper" class="paper"></div>
-      <div id="proll" class="proll" aria-label="rolo de alturas — a melodia no tempo, cada nota na sua cor"></div>
-      <p class="proll-leg" id="proll-leg" hidden>uma língua só — <b>cor</b> = a nota · <b>pauta</b> = a altura exata · <b>rolo</b> = a melodia no tempo <span class="lg-mut">(silêncio = vão)</span> · <b>●</b> = você <span class="lg-mut">(verde quando encaixa)</span></p>
       <div id="roda" class="roda" hidden aria-label="roda de ritmo — a güira da banda girando no tempo; trave seus ataques no giro"></div>
-      <div id="audio" class="audio"></div>
+      <div class="stage dormant" id="stage">
+        <p class="stage-hint">▶ toque pra ver a <b>digitação</b>, a afinação e o seu <b>pocket</b> ao vivo</p>
+        <div class="valves"><div class="valve" id="v1">1</div><div class="valve" id="v2">2</div><div class="valve" id="v3">3</div></div>
+        <div class="agora"><div class="nota" id="notaAtual">·</div><div class="dedo" id="dedoAtual">pronto</div></div>
+        <div class="tuner" id="tuner"><div class="scale"><div class="needle" id="needle"></div></div><div class="micnota" id="micnota">você: —</div><div class="micscore" id="micscore"></div>
+          <div class="pocket" id="pocket" title="o tempo é relativo ao seu próprio compasso (tira a latência do navegador) — mede a sua regularidade/pocket">
+            <div class="pk-scale"><i class="pk-zero"></i><i class="pk-mark" id="pkmark"></i></div><div class="pk-lbl" id="pklbl">pocket: toque pra medir</div></div></div>
+      </div>
+      <p class="nota-rasc">🎤 <b>Praticar</b>: o app só marca a <b>clave</b> (sem melodia, pra escutar só você), você toca, e a nota fica <span class="ok">verde</span> quando acerta — sem precisar de fone.</p>
       <p class="nota-rasc" id="rasc">Melodia: rascunho de leitura automática (tom conferido; notas em revisão). As células acima são exatas.</p>
     </div>
   </section>
