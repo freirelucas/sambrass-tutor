@@ -162,15 +162,36 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   $('#rasc').innerHTML = RASC_TEMA;
   // 🎙 gravações REAIS da banda (app/audio/): modelo no trompete por peça + ensaio completo.
   // Referência independente do dado transcrito — se a pauta soar diferente da gravação, a gravação manda.
+  // segmentos.json (tools/audio_segmenta.py) decompõe cada gravação em FRASES (cortadas nas
+  // respirações do modelo) e nas ocorrências dos LEGOS — tudo clicável: ouvir só o pedaço, em loop.
   (async () => {
     const el = $('#refaudio'); if(!el || !CUMBIA) return;
-    const ref = await fetch('./audio/referencia.json').then(r => r.ok ? r.json() : null).catch(() => null);
+    const [ref, seg] = await Promise.all([
+      fetch('./audio/referencia.json').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('./audio/segmentos.json').then(r => r.ok ? r.json() : null).catch(() => null)]);
     if(!ref) return;
     const own = (ref.pecas && ref.pecas[ID]) || [], ens = ref.ensaio || [];
     if(!own.length && !ens.length) return;
-    const player = a => `<figure class="refplay"><figcaption>${a.t}</figcaption>
+    const mmss = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+    const chips = a => {
+      const s = seg && seg[a.f]; if(!s) return '';
+      let h = '';
+      if(s.frases?.length) h += `<div class="refseg"><span class="refseg-l">frases <small>(respire onde o modelo respira)</small>:</span> ` +
+        s.frases.map((f,i) => `<button type="button" class="seg" data-t0="${f.t0}" data-t1="${f.t1}" title="${mmss(f.t0)}–${mmss(f.t1)} · ${f.grave}–${f.agudo}">${i+1}</button>`).join('') + `</div>`;
+      const legos = s.legos || [];
+      if(legos.length){
+        const byLego = {}; legos.forEach(o => (byLego[o.lego] = byLego[o.lego] || []).push(o));
+        h += `<div class="refseg"><span class="refseg-l">🧩 os trechos na gravação:</span> ` +
+          Object.entries(byLego).map(([li, occ]) => `<button type="button" class="seg lego" data-occ='${JSON.stringify(occ.map(o=>[o.t0,o.t1]))}' title="trecho ${+li+1}: ${occ.length}× — clique pra ouvir cada volta">trecho ${+li+1} ×${occ.length}</button>`).join('') + `</div>`;
+      }
+      if(s.secoes?.length) h += `<div class="refseg"><span class="refseg-l">seções:</span> ` +
+        s.secoes.map(o => `<button type="button" class="seg" data-t0="${o.t0}" data-t1="">${mmss(o.t0)}</button>`).join('') + `</div>`;
+      if(h && s.bpm) h += `<div class="refseg refbpm">~${s.bpm} BPM na gravação · 🔁 <button type="button" class="seg segloop">loop do trecho: não</button></div>`;
+      return h;
+    };
+    const player = a => `<figure class="refplay" data-f="${a.f}"><figcaption>${a.t}</figcaption>
       <audio controls preload="none" src="./audio/${a.f}"></audio>
-      <span class="refvel">devagar: <button type="button" data-rate="0.7">0.7×</button><button type="button" data-rate="0.85">0.85×</button><button type="button" data-rate="1" class="on">1×</button></span></figure>`;
+      <span class="refvel">devagar: <button type="button" data-rate="0.7">0.7×</button><button type="button" data-rate="0.85">0.85×</button><button type="button" data-rate="1" class="on">1×</button></span>${chips(a)}</figure>`;
     el.hidden = false;
     el.innerHTML = (own.length ? `<div class="refh">🎙 <b>a gravação real</b> — ouça como a parte soa de verdade, depois toque junto</div>` + own.map(player).join('') : '') +
       (ens.length ? `<details class="refens"><summary>🎧 ensaio da banda completo — play-along com a banda real</summary>${ens.map(player).join('')}</details>` : '');
@@ -182,6 +203,25 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
         au.playbackRate = +b.dataset.rate;
       });
       au.onplay = () => { au.playbackRate = rate(); };   // devagar mantém a altura (preservesPitch é o padrão)
+      // trechos clicáveis: toca [t0,t1] (e re-toca em loop se o 🔁 estiver ligado)
+      let span = null, loop = false;
+      au.addEventListener('timeupdate', () => {
+        if(span && au.currentTime >= span[1]){
+          if(loop){ au.currentTime = span[0]; } else { au.pause(); span = null; }
+        }
+      });
+      const playSpan = (t0, t1) => { span = t1 ? [t0, t1] : null; au.currentTime = t0; au.playbackRate = rate(); au.play(); };
+      const lb = fig.querySelector('.segloop');
+      if(lb) lb.onclick = () => { loop = !loop; lb.textContent = `loop do trecho: ${loop ? 'sim' : 'não'}`; lb.classList.toggle('on', loop); };
+      fig.querySelectorAll('.seg[data-t0]').forEach(b => b.onclick = () => {
+        fig.querySelectorAll('.seg.on').forEach(x => x !== lb && x.classList.remove('on')); b.classList.add('on');
+        playSpan(+b.dataset.t0, b.dataset.t1 ? +b.dataset.t1 : null);
+      });
+      fig.querySelectorAll('.seg.lego').forEach(b => { let i = 0; b.onclick = () => {
+        const occ = JSON.parse(b.dataset.occ);
+        fig.querySelectorAll('.seg.on').forEach(x => x !== lb && x.classList.remove('on')); b.classList.add('on');
+        const [t0, t1] = occ[i % occ.length]; i++; playSpan(t0, t1);
+      }; });
     });
   })();
   { const rep = $('#reportar');

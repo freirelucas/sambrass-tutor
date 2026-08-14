@@ -149,3 +149,10 @@ test('gravações reais: bloco de referência popula na Elsa (cumbias)', async (
   await expect(page.locator('#refaudio .refplay audio')).toHaveCount(4, { timeout: 10000 }); // 2 modelos + 2 ensaios
   await expect(page.locator('#refaudio .refh')).toContainText('a gravação real');
 });
+
+test('gravações reais: frases e legos clicáveis (segmentos.json)', async ({ page }) => {
+  await page.goto('/estudo.html?jornada=cumbias&id=cu-011');
+  const fig = page.locator('.refplay[data-f="cu-011-modelo-1.ogg"]');
+  await expect(fig.locator('.seg[data-t0]').first()).toBeAttached({ timeout: 10000 });
+  await expect(fig.locator('.seg.lego').first()).toBeAttached();
+});

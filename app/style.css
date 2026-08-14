@@ -278,3 +278,8 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .refvel button{border:1px solid rgba(0,0,0,.25);background:none;border-radius:8px;padding:2px 8px;cursor:pointer;font-size:.78rem}
 .refvel button.on{background:var(--brand,#7a1f1f);color:#fff;border-color:transparent}
 .refens summary{cursor:pointer;font-size:.9rem;margin:6px 0}
+.refseg{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:.78rem;margin-top:5px}
+.refseg-l{opacity:.85}
+.seg{border:1px solid rgba(0,0,0,.25);background:none;border-radius:8px;padding:2px 8px;cursor:pointer;font-size:.78rem}
+.seg.on{background:var(--brand,#7a1f1f);color:#fff;border-color:transparent}
+.refbpm{opacity:.9}
