@@ -1,0 +1,15 @@
+{
+  "_nota": "Gravações reais enviadas pela banda (2026-07). Os 'modelo' são trompete solo tocando a parte — referência independente da partitura. Identificação por casamento melódico (tools/audio_confere.py); 'a confirmar' = casamento ambíguo.",
+  "pecas": {
+    "cu-001": [{"f": "cu-001-modelo-1.ogg", "t": "modelo no trompete (1:09) · a confirmar: Sonido ou A Patrícia"}],
+    "cu-002": [{"f": "cu-002-modelo-1.ogg", "t": "modelo no trompete (1:14) · a confirmar: A Patrícia ou Sonido"}],
+    "cu-010": [{"f": "cu-010-modelo-1.ogg", "t": "modelo no trompete (1:01) · confere com a partitura", "conf": true},
+               {"f": "cu-010-modelo-2.ogg", "t": "trecho no registro grave (0:20) · a confirmar (2ª voz?)"}],
+    "cu-011": [{"f": "cu-011-modelo-1.ogg", "t": "modelo no trompete (1:18) · confere com a partitura", "conf": true},
+               {"f": "cu-011-modelo-2.ogg", "t": "trecho no registro grave (0:18) · a confirmar (2ª voz?)"}]
+  },
+  "ensaio": [
+    {"f": "ensaio-banda-1.ogg", "t": "ensaio da banda 1 (3:03, ~94 BPM) · música a identificar"},
+    {"f": "ensaio-banda-2.ogg", "t": "ensaio da banda 2 (3:48, ~156 BPM) · música a identificar"}
+  ]
+}
