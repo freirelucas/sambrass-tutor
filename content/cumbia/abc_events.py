@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""ABC (concert) → eventos compatíveis com build_notes/blocos.
+"""ABC (tom ESCRITO) → eventos compatíveis com build_notes/blocos.
 
 Existe para re-derivar os "legos" (células, riff, cor) da melodia CONFERIDA à mão
 (notes_manual/cu-*.abc), e não da transcrição OMR bruta. Eventos têm o mesmo schema
 que compile_file: written_midi, concert_midi, dur_beats (em semínimas), measure, rest.
 
-O .abc é concert; written_midi = concert + transpose (trompete Bb = +2, só afeta o
-perfil de agudo/dificuldade, não os legos).
+CONVENÇÃO DO PIPELINE: todo ABC (build_abc.to_abc e notes_manual/*.abc) está em tom
+ESCRITO da parte de trompete Bb — é o que o músico lê (K:C p/ peça em Bb concert).
+Logo o midi lido do .abc É o written_midi; concert = written − transpose (Bb = 2).
+(Antes daqui assumia-se ABC concert e somava-se +2 — o que empurrava riff/perfil/
+dificuldade um tom acima do real nas peças conferidas.)
 """
 import re
 
@@ -42,12 +45,12 @@ def _keysig(kfield):
     return acc
 
 
-def key_from_abc(abc):
-    """pc concert da tônica do campo K: (para detect_mode)."""
+def key_from_abc(abc, transpose=2):
+    """pc CONCERT da tônica do campo K: (K: está em tom escrito → −transpose)."""
     for line in abc.splitlines():
         if line.strip().startswith("K:"):
             tonic, _ = _split_key(line.split(":", 1)[1])
-            return _PC.get(tonic, 0)
+            return (_PC.get(tonic, 0) - transpose) % 12
     return 0
 
 
@@ -67,6 +70,7 @@ def _parselen(s):
 
 _TOK = re.compile(r"""
     (?P<bar>\|\]|\|\||:\||\|:|\|)
+  | (?P<trip>\(3)
   | (?P<rest>[zZx])(?P<rlen>\d*/?\d*)
   | (?P<acc>\^{1,2}|_{1,2}|=)?(?P<note>[A-Ga-g])(?P<oct>[,']*)(?P<len>\d*/?\d*)
   | (?P<other>.)
@@ -93,12 +97,19 @@ def events_from_abc(abc, transpose=2):
     events, measure = [], 1
     bar_acc = {}                                              # acidentes vigentes no compasso
     tie = False                                               # ligadura de valor pendente
+    trip = 0                                                  # tercina "(3": próximas 3 notas valem 2/3
     for mt in _TOK.finditer(" ".join(body)):
         if mt.group("bar"):
             measure += 1
             bar_acc = {}
+        elif mt.group("trip"):
+            trip = 3
         elif mt.group("rest"):
-            events.append({"measure": measure, "dur_beats": round(_parselen(mt.group("rlen")) * unit, 3), "rest": True})
+            d = _parselen(mt.group("rlen")) * unit
+            if trip:
+                d *= 2 / 3
+                trip -= 1
+            events.append({"measure": measure, "dur_beats": round(d, 3), "rest": True})
         elif mt.group("note"):
             letter = mt.group("note")
             up = letter.upper()
@@ -114,11 +125,15 @@ def events_from_abc(abc, transpose=2):
                 midi += bar_acc[up]
             elif up in ksig:
                 midi += ksig[up]
-            dur = round(_parselen(mt.group("len")) * unit, 3)
-            if tie and events and events[-1].get("concert_midi") == midi:   # ligadura: nota igual funde (1 ataque só)
+            dur = _parselen(mt.group("len")) * unit
+            if trip:
+                dur *= 2 / 3
+                trip -= 1
+            dur = round(dur, 3)
+            if tie and events and events[-1].get("written_midi") == midi:   # ligadura: nota igual funde (1 ataque só)
                 events[-1]["dur_beats"] = round(events[-1]["dur_beats"] + dur, 3)
             else:
-                events.append({"measure": measure, "written_midi": midi + transpose, "concert_midi": midi, "dur_beats": dur})
+                events.append({"measure": measure, "written_midi": midi, "concert_midi": midi - transpose, "dur_beats": dur})
             tie = False
         elif mt.group("other") == "-":                        # liga a próxima nota igual à anterior
             tie = True

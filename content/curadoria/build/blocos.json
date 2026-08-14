@@ -16292,39 +16292,39 @@
   "cu-004": {
    "jornada": "cumbias",
    "titulo": "Cariñito",
-   "armadura": "D",
+   "armadura": "C",
    "cor": {
-    "tonica": "D",
+    "tonica": "C",
     "modo": "maior",
     "dica_modal": null,
-    "conf": 0.112,
-    "ks_corr": 0.924,
+    "conf": 0.102,
+    "ks_corr": 0.922,
     "armadura_bate": true
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.43,
+     "uníssono": 0.45,
      "grau (2ª)": 0.26,
-     "3ª": 0.07,
-     "4ª": 0.22,
+     "3ª": 0.06,
+     "4ª": 0.21,
      "5ª": 0.02,
      "salto (≥6ª)": 0.0
     },
     "contorno": {
      "sobe": 0.26,
      "desce": 0.3,
-     "repete": 0.43
+     "repete": 0.45
     },
     "salto_max": 7,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "F#4",
-     "F#5"
+     "E4",
+     "E5"
     ],
     "ambito_semitons": 12,
     "classe": "misto"
    },
-   "bloco": "D maior · misto",
+   "bloco": "C maior · misto",
    "celula_dominante": "-",
    "dif": 21.0,
    "meter": 4.0,
@@ -16350,16 +16350,16 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.51,
+    "cobertura": 0.5,
     "midis": [
-     80,
-     80,
+     78,
      78,
      76,
-     76,
-     76,
-     76,
-     76
+     74,
+     74,
+     74,
+     74,
+     74
     ],
     "durs": [
      0.25,
@@ -16375,14 +16375,14 @@
    "legos": [
     {
      "midis": [
-      80,
-      80,
+      78,
       78,
       76,
-      76,
-      76,
-      76,
-      76
+      74,
+      74,
+      74,
+      74,
+      74
      ],
      "durs": [
       0.25,
@@ -16398,9 +16398,9 @@
     },
     {
      "midis": [
-      73,
-      68,
-      73
+      71,
+      66,
+      71
      ],
      "durs": [
       0.5,
@@ -16411,9 +16411,9 @@
     },
     {
      "midis": [
-      76,
-      71,
-      76
+      74,
+      69,
+      74
      ],
      "durs": [
       0.5,
@@ -16428,9 +16428,9 @@
   "cu-005": {
    "jornada": "cumbias",
    "titulo": "Llorando se Fue",
-   "armadura": "C",
+   "armadura": "Bb",
    "cor": {
-    "tonica": "C",
+    "tonica": "Bb",
     "modo": "maior",
     "dica_modal": null,
     "conf": 0.143,
@@ -16442,25 +16442,25 @@
      "uníssono": 0.05,
      "grau (2ª)": 0.17,
      "3ª": 0.05,
-     "4ª": 0.64,
-     "5ª": 0.07,
-     "salto (≥6ª)": 0.01
+     "4ª": 0.67,
+     "5ª": 0.05,
+     "salto (≥6ª)": 0.0
     },
     "contorno": {
-     "sobe": 0.45,
-     "desce": 0.5,
+     "sobe": 0.46,
+     "desce": 0.49,
      "repete": 0.05
     },
-    "salto_max": 17,
+    "salto_max": 7,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "D5",
-     "A6"
+     "C4",
+     "D5"
     ],
-    "ambito_semitons": 19,
+    "ambito_semitons": 14,
     "classe": "misto"
    },
-   "bloco": "C maior · misto",
+   "bloco": "Bb maior · misto",
    "celula_dominante": "-",
    "dif": 23.6,
    "meter": 4.0,
@@ -16495,92 +16495,92 @@
     "x": 2,
     "cobertura": 0.21,
     "midis": [
-     83,
-     78,
-     78,
-     83,
-     78,
-     83,
-     78,
-     81
+     64,
+     69,
+     64,
+     69,
+     64,
+     64,
+     69,
+     64
     ],
     "durs": [
+     0.25,
+     0.25,
+     0.25,
      0.25,
      0.75,
      0.25,
      0.25,
-     0.25,
-     0.25,
-     1.0,
      0.25
     ]
    },
    "legos": [
     {
      "midis": [
-      83,
-      78,
-      78,
-      83,
-      78,
-      83,
-      78,
-      81
+      64,
+      69,
+      64,
+      69,
+      64,
+      64,
+      69,
+      64
      ],
      "durs": [
+      0.25,
+      0.25,
+      0.25,
       0.25,
       0.75,
       0.25,
       0.25,
-      0.25,
-      0.25,
-      1.0,
       0.25
      ],
      "x": 2
     },
     {
      "midis": [
-      78,
-      83,
-      78,
-      81,
-      86,
-      81,
-      86,
-      81
+      64,
+      64,
+      69,
+      64,
+      69,
+      64,
+      67,
+      72
      ],
      "durs": [
+      0.75,
       0.25,
+      0.25,
+      0.25,
+      0.25,
+      1.0,
+      0.25,
+      0.25
+     ],
+     "x": 2
+    },
+    {
+     "midis": [
+      69,
+      64,
+      67,
+      72,
+      67,
+      72,
+      67,
+      67
+     ],
+     "durs": [
       0.25,
       1.0,
       0.25,
       0.25,
       0.25,
       0.25,
-      0.75
-     ],
-     "x": 2
-    },
-    {
-     "midis": [
-      86,
-      81,
-      86,
-      81,
-      81,
-      86,
-      81,
-      86
-     ],
-     "durs": [
-      0.25,
-      0.25,
-      0.25,
       0.75,
-      0.25,
-      0.25,
-      0.25,
       0.25
      ],
      "x": 2
@@ -16591,9 +16591,9 @@
   "cu-006": {
    "jornada": "cumbias",
    "titulo": "Danza de los Mirlos",
-   "armadura": "D",
+   "armadura": "C",
    "cor": {
-    "tonica": "B",
+    "tonica": "A",
     "modo": "menor",
     "dica_modal": null,
     "conf": 0.32,
@@ -16617,13 +16617,13 @@
     "salto_max": 8,
     "arpejo_frac": 0.06,
     "tessitura": [
-     "B4",
-     "A5"
+     "A4",
+     "G5"
     ],
     "ambito_semitons": 10,
     "classe": "arpejado"
    },
-   "bloco": "B menor · arpejado",
+   "bloco": "A menor · arpejado",
    "celula_dominante": "-",
    "dif": 23.3,
    "meter": 4.0,
@@ -16657,14 +16657,14 @@
     "x": 4,
     "cobertura": 0.34,
     "midis": [
-     73,
-     73,
-     73,
-     73,
+     71,
+     71,
+     71,
+     71,
+     74,
      76,
      78,
-     80,
-     80
+     78
     ],
     "durs": [
      0.25,
@@ -16680,14 +16680,14 @@
    "legos": [
     {
      "midis": [
-      73,
-      73,
-      73,
-      73,
+      71,
+      71,
+      71,
+      71,
+      74,
       76,
       78,
-      80,
-      80
+      78
      ],
      "durs": [
       0.25,
@@ -16703,14 +16703,14 @@
     },
     {
      "midis": [
+      74,
       76,
       78,
-      80,
-      80,
-      80,
-      80,
-      75,
-      78
+      78,
+      78,
+      78,
+      73,
+      76
      ],
      "durs": [
       0.5,
@@ -16726,12 +16726,12 @@
     },
     {
      "midis": [
-      75,
-      78,
-      73,
       73,
       76,
-      80
+      71,
+      71,
+      74,
+      78
      ],
      "durs": [
       0.5,
@@ -16749,9 +16749,9 @@
   "cu-007": {
    "jornada": "cumbias",
    "titulo": "La Danza del Petrolero",
-   "armadura": "A",
+   "armadura": "G",
    "cor": {
-    "tonica": "F#",
+    "tonica": "E",
     "modo": "menor",
     "dica_modal": null,
     "conf": 0.074,
@@ -16775,13 +16775,13 @@
     "salto_max": 11,
     "arpejo_frac": 0.11,
     "tessitura": [
-     "F#4",
-     "F#5"
+     "E4",
+     "E5"
     ],
     "ambito_semitons": 12,
     "classe": "arpejado"
    },
-   "bloco": "F# menor · arpejado",
+   "bloco": "E menor · arpejado",
    "celula_dominante": "-",
    "dif": 23.4,
    "meter": 4.0,
@@ -16818,14 +16818,14 @@
     "x": 3,
     "cobertura": 0.31,
     "midis": [
-     71,
-     75,
-     78,
-     70,
-     75,
-     79,
+     69,
+     73,
+     76,
      68,
-     68
+     73,
+     77,
+     66,
+     66
     ],
     "durs": [
      0.25,
@@ -16841,13 +16841,13 @@
    "legos": [
     {
      "midis": [
-      71,
-      75,
-      75,
-      75,
+      69,
       73,
-      70,
-      73
+      73,
+      73,
+      71,
+      68,
+      71
      ],
      "durs": [
       0.25,
@@ -16862,14 +16862,14 @@
     },
     {
      "midis": [
-      71,
-      75,
-      78,
-      70,
-      75,
-      79,
+      69,
+      73,
+      76,
       68,
-      68
+      73,
+      77,
+      66,
+      66
      ],
      "durs": [
       0.25,
@@ -16885,10 +16885,10 @@
     },
     {
      "midis": [
-      68,
-      68,
-      68,
-      68
+      66,
+      66,
+      66,
+      66
      ],
      "durs": [
       0.25,
@@ -16904,9 +16904,9 @@
   "cu-008": {
    "jornada": "cumbias",
    "titulo": "Cumbia Sobre el Mar",
-   "armadura": "G",
+   "armadura": "F",
    "cor": {
-    "tonica": "G",
+    "tonica": "F",
     "modo": "maior",
     "dica_modal": null,
     "conf": 0.231,
@@ -16930,15 +16930,15 @@
     "salto_max": 4,
     "arpejo_frac": 0.18,
     "tessitura": [
-     "D4",
-     "D5"
+     "C4",
+     "C5"
     ],
     "ambito_semitons": 12,
     "classe": "arpejado"
    },
-   "bloco": "G maior · arpejado",
+   "bloco": "F maior · arpejado",
    "celula_dominante": "-",
-   "dif": 14.1,
+   "dif": 12.1,
    "meter": 4.0,
    "onsets": [
     0.0,
@@ -16958,14 +16958,14 @@
     "x": 2,
     "cobertura": 0.44,
     "midis": [
-     66,
-     69,
-     73,
-     69,
-     66,
      64,
+     67,
+     71,
+     67,
      64,
-     68
+     62,
+     62,
+     66
     ],
     "durs": [
      1.0,
@@ -16981,14 +16981,14 @@
    "legos": [
     {
      "midis": [
-      66,
-      69,
-      73,
-      69,
-      66,
       64,
+      67,
+      71,
+      67,
       64,
-      68
+      62,
+      62,
+      66
      ],
      "durs": [
       1.0,
@@ -17004,12 +17004,12 @@
     },
     {
      "midis": [
-      64,
-      64,
-      68,
-      71,
-      68,
-      69
+      62,
+      62,
+      66,
+      69,
+      66,
+      67
      ],
      "durs": [
       3.0,
@@ -17022,82 +17022,81 @@
      "x": 2
     }
    ],
-   "dif_norm": 3.6
+   "dif_norm": 2.3
   },
   "cu-009": {
    "jornada": "cumbias",
    "titulo": "El Diablo",
-   "armadura": "G",
+   "armadura": "F",
    "cor": {
-    "tonica": "E",
+    "tonica": "D",
     "modo": "menor",
     "dica_modal": null,
-    "conf": 0.25,
-    "ks_corr": 0.811,
+    "conf": 0.159,
+    "ks_corr": 0.734,
     "armadura_bate": true
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.22,
-     "grau (2ª)": 0.39,
-     "3ª": 0.23,
-     "4ª": 0.1,
+     "uníssono": 0.23,
+     "grau (2ª)": 0.41,
+     "3ª": 0.21,
+     "4ª": 0.09,
      "5ª": 0.04,
      "salto (≥6ª)": 0.01
     },
     "contorno": {
      "sobe": 0.28,
-     "desce": 0.51,
-     "repete": 0.22
+     "desce": 0.49,
+     "repete": 0.23
     },
     "salto_max": 19,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "E3",
-     "E5"
+     "D3",
+     "D5"
     ],
     "ambito_semitons": 24,
-    "classe": "arpejado"
+    "classe": "misto"
    },
-   "bloco": "E menor · arpejado",
+   "bloco": "D menor · misto",
    "celula_dominante": "-",
-   "dif": 20.5,
+   "dif": 21.6,
    "meter": 4.0,
    "onsets": [
     0.0,
     0.25,
-    2.75,
     3.0,
-    3.5,
-    3.75
+    3.167,
+    3.334,
+    3.501,
+    3.751
    ],
    "celulas_marcadas": [],
    "celulas_detectadas": [
     "C1",
     "C2",
     "C3",
-    "C4",
     "C6"
    ],
    "tags_nao_confirmadas": [],
    "celulas_extra_candidatas": [
     "C3",
-    "C4",
     "C6"
    ],
    "riff": {
     "len": 8,
     "x": 2,
-    "cobertura": 0.23,
+    "cobertura": 0.21,
     "midis": [
-     66,
-     73,
-     76,
-     73,
+     64,
+     71,
+     74,
      71,
      69,
-     68,
-     66
+     67,
+     66,
+     64
     ],
     "durs": [
      0.25,
@@ -17113,14 +17112,14 @@
    "legos": [
     {
      "midis": [
-      66,
-      73,
-      76,
-      73,
+      64,
+      71,
+      74,
       71,
       69,
-      68,
-      66
+      67,
+      66,
+      64
      ],
      "durs": [
       0.25,
@@ -17136,12 +17135,29 @@
     },
     {
      "midis": [
-      73,
-      73,
-      73,
+      71,
       76,
       76,
-      76
+      74,
+      74
+     ],
+     "durs": [
+      0.167,
+      0.167,
+      0.167,
+      0.25,
+      0.25
+     ],
+     "x": 3
+    },
+    {
+     "midis": [
+      71,
+      71,
+      71,
+      74,
+      74,
+      74
      ],
      "durs": [
       0.25,
@@ -17152,31 +17168,16 @@
       0.5
      ],
      "x": 2
-    },
-    {
-     "midis": [
-      78,
-      78,
-      73,
-      78
-     ],
-     "durs": [
-      0.25,
-      0.75,
-      0.25,
-      1.0
-     ],
-     "x": 2
     }
    ],
-   "dif_norm": 7.9
+   "dif_norm": 8.7
   },
   "cu-010": {
    "jornada": "cumbias",
    "titulo": "Constelación",
-   "armadura": "C",
+   "armadura": "Bb",
    "cor": {
-    "tonica": "A",
+    "tonica": "G",
     "modo": "menor",
     "dica_modal": "dórico",
     "conf": 0.146,
@@ -17200,13 +17201,13 @@
     "salto_max": 6,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "G#4",
-     "F#5"
+     "F#4",
+     "E5"
     ],
     "ambito_semitons": 10,
     "classe": "escalar"
    },
-   "bloco": "A menor/dórico · escalar",
+   "bloco": "G menor/dórico · escalar",
    "celula_dominante": "-",
    "dif": 22.6,
    "meter": 2.0,
@@ -17236,13 +17237,13 @@
     "x": 2,
     "cobertura": 0.2,
     "midis": [
+     71,
      73,
-     75,
-     80,
      78,
-     80,
+     76,
      78,
-     73
+     76,
+     71
     ],
     "durs": [
      0.5,
@@ -17257,11 +17258,11 @@
    "legos": [
     {
      "midis": [
-      80,
       78,
-      80,
+      76,
       78,
-      73
+      76,
+      71
      ],
      "durs": [
       0.25,
@@ -17274,11 +17275,11 @@
     },
     {
      "midis": [
-      75,
       73,
-      75,
+      71,
       73,
-      70
+      71,
+      68
      ],
      "durs": [
       0.25,
@@ -17291,10 +17292,10 @@
     },
     {
      "midis": [
+      71,
       73,
-      75,
-      80,
-      78
+      78,
+      76
      ],
      "durs": [
       0.5,
@@ -17310,41 +17311,41 @@
   "cu-011": {
    "jornada": "cumbias",
    "titulo": "Elsa",
-   "armadura": "D",
+   "armadura": "C",
    "cor": {
-    "tonica": "B",
+    "tonica": "A",
     "modo": "menor",
     "dica_modal": null,
-    "conf": 0.11,
-    "ks_corr": 0.933,
+    "conf": 0.087,
+    "ks_corr": 0.889,
     "armadura_bate": true
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.34,
-     "grau (2ª)": 0.09,
-     "3ª": 0.38,
-     "4ª": 0.12,
-     "5ª": 0.03,
-     "salto (≥6ª)": 0.03
+     "uníssono": 0.37,
+     "grau (2ª)": 0.06,
+     "3ª": 0.39,
+     "4ª": 0.1,
+     "5ª": 0.04,
+     "salto (≥6ª)": 0.04
     },
     "contorno": {
-     "sobe": 0.34,
-     "desce": 0.31,
-     "repete": 0.34
+     "sobe": 0.35,
+     "desce": 0.28,
+     "repete": 0.37
     },
     "salto_max": 9,
-    "arpejo_frac": 0.07,
+    "arpejo_frac": 0.09,
     "tessitura": [
-     "F#4",
-     "F#5"
+     "E4",
+     "E5"
     ],
     "ambito_semitons": 12,
     "classe": "arpejado"
    },
-   "bloco": "B menor · arpejado",
+   "bloco": "A menor · arpejado",
    "celula_dominante": "-",
-   "dif": 21.7,
+   "dif": 22.3,
    "meter": 4.0,
    "onsets": [
     0.0,
@@ -17353,6 +17354,7 @@
     1.75,
     2.0,
     2.75,
+    3.0,
     3.25,
     3.5,
     3.75
@@ -17372,22 +17374,28 @@
     "C6"
    ],
    "riff": {
-    "len": 5,
-    "x": 2,
-    "cobertura": 0.17,
+    "len": 8,
+    "x": 3,
+    "cobertura": 0.33,
     "midis": [
      71,
      71,
      71,
-     68,
-     73
+     74,
+     78,
+     74,
+     78,
+     78
     ],
     "durs": [
-     0.5,
-     0.5,
+     0.25,
+     0.25,
+     0.25,
+     0.25,
      0.5,
      0.25,
-     0.5
+     0.5,
+     0.75
     ]
    },
    "legos": [
@@ -17396,10 +17404,62 @@
       71,
       71,
       71,
-      68,
-      73
+      74,
+      78,
+      74,
+      78,
+      78
      ],
      "durs": [
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.5,
+      0.25,
+      0.5,
+      0.75
+     ],
+     "x": 3
+    },
+    {
+     "midis": [
+      71,
+      71,
+      71,
+      74,
+      78,
+      69,
+      69,
+      69
+     ],
+     "durs": [
+      0.75,
+      0.5,
+      0.5,
+      0.5,
+      0.25,
+      0.5,
+      1.5,
+      0.5
+     ],
+     "x": 2
+    },
+    {
+     "midis": [
+      78,
+      69,
+      69,
+      69,
+      69,
+      69,
+      66,
+      71
+     ],
+     "durs": [
+      0.25,
+      0.5,
+      1.5,
       0.5,
       0.5,
       0.5,
@@ -17407,46 +17467,16 @@
       0.5
      ],
      "x": 2
-    },
-    {
-     "midis": [
-      76,
-      71,
-      75,
-      71
-     ],
-     "durs": [
-      0.75,
-      0.25,
-      0.75,
-      0.25
-     ],
-     "x": 2
-    },
-    {
-     "midis": [
-      73,
-      73,
-      73,
-      76
-     ],
-     "durs": [
-      0.25,
-      0.25,
-      0.25,
-      0.25
-     ],
-     "x": 2
     }
    ],
-   "dif_norm": 8.7
+   "dif_norm": 9.1
   },
   "cu-012": {
    "jornada": "cumbias",
    "titulo": "Cumbia da Praia",
-   "armadura": "G",
+   "armadura": "F",
    "cor": {
-    "tonica": "E",
+    "tonica": "D",
     "modo": "menor",
     "dica_modal": null,
     "conf": 0.47,
@@ -17470,13 +17500,13 @@
     "salto_max": 17,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "B3",
-     "E5"
+     "A3",
+     "D5"
     ],
     "ambito_semitons": 17,
     "classe": "escalar"
    },
-   "bloco": "E menor · escalar",
+   "bloco": "D menor · escalar",
    "celula_dominante": "-",
    "dif": 19.3,
    "meter": 2.0,
@@ -17502,14 +17532,14 @@
     "x": 2,
     "cobertura": 0.35,
     "midis": [
-     78,
      76,
-     78,
+     74,
      76,
-     78,
+     74,
      76,
-     78,
-     76
+     74,
+     76,
+     74
     ],
     "durs": [
      0.25,
@@ -17525,14 +17555,14 @@
    "legos": [
     {
      "midis": [
-      78,
       76,
-      78,
+      74,
       76,
-      78,
+      74,
       76,
-      78,
-      76
+      74,
+      76,
+      74
      ],
      "durs": [
       0.25,
@@ -17552,9 +17582,9 @@
   "cu-014": {
    "jornada": "cumbias",
    "titulo": "Lobos al Escape",
-   "armadura": "D",
+   "armadura": "C",
    "cor": {
-    "tonica": "B",
+    "tonica": "A",
     "modo": "menor",
     "dica_modal": "dórico",
     "conf": 0.187,
@@ -17578,13 +17608,13 @@
     "salto_max": 12,
     "arpejo_frac": 0.07,
     "tessitura": [
-     "F#4",
-     "A5"
+     "E4",
+     "G5"
     ],
     "ambito_semitons": 15,
     "classe": "misto"
    },
-   "bloco": "B menor/dórico · misto",
+   "bloco": "A menor/dórico · misto",
    "celula_dominante": "-",
    "dif": 12.9,
    "meter": 2.0,
@@ -17608,14 +17638,14 @@
     "x": 2,
     "cobertura": 0.55,
     "midis": [
-     68,
-     73,
-     76,
+     66,
+     71,
+     74,
+     78,
+     78,
+     81,
      80,
-     80,
-     83,
-     82,
-     80
+     78
     ],
     "durs": [
      0.5,
@@ -17631,14 +17661,14 @@
    "legos": [
     {
      "midis": [
-      68,
-      73,
-      76,
+      66,
+      71,
+      74,
+      78,
+      78,
+      81,
       80,
-      80,
-      83,
-      82,
-      80
+      78
      ],
      "durs": [
       0.5,
@@ -17654,10 +17684,10 @@
     },
     {
      "midis": [
-      73,
-      73,
       71,
-      71
+      71,
+      69,
+      69
      ],
      "durs": [
       0.75,
@@ -17673,9 +17703,9 @@
   "cu-015": {
    "jornada": "cumbias",
    "titulo": "Baião do Deserto",
-   "armadura": "A",
+   "armadura": "G",
    "cor": {
-    "tonica": "F#",
+    "tonica": "E",
     "modo": "menor",
     "dica_modal": null,
     "conf": 0.745,
@@ -17699,13 +17729,13 @@
     "salto_max": 12,
     "arpejo_frac": 0.0,
     "tessitura": [
-     "E4",
-     "F#5"
+     "D4",
+     "E5"
     ],
     "ambito_semitons": 14,
     "classe": "misto"
    },
-   "bloco": "F# menor · misto",
+   "bloco": "E menor · misto",
    "celula_dominante": "-",
    "dif": 16.0,
    "meter": 2.0,
@@ -17730,13 +17760,13 @@
     "x": 2,
     "cobertura": 0.48,
     "midis": [
-     80,
-     80,
-     73,
-     73,
-     79,
-     79,
-     80
+     78,
+     78,
+     71,
+     71,
+     77,
+     77,
+     78
     ],
     "durs": [
      0.25,
@@ -17751,13 +17781,13 @@
    "legos": [
     {
      "midis": [
-      80,
-      80,
-      73,
-      73,
-      79,
-      79,
-      80
+      78,
+      78,
+      71,
+      71,
+      77,
+      77,
+      78
      ],
      "durs": [
       0.25,
@@ -17776,9 +17806,9 @@
   "cu-016": {
    "jornada": "cumbias",
    "titulo": "Ya se ha Muerto mi Abuelo",
-   "armadura": "G",
+   "armadura": "F",
    "cor": {
-    "tonica": "E",
+    "tonica": "D",
     "modo": "menor",
     "dica_modal": null,
     "conf": 0.321,
@@ -17802,15 +17832,15 @@
     "salto_max": 5,
     "arpejo_frac": 0.14,
     "tessitura": [
-     "D4",
-     "B4"
+     "C4",
+     "A4"
     ],
     "ambito_semitons": 9,
     "classe": "arpejado"
    },
-   "bloco": "E menor · arpejado",
+   "bloco": "D menor · arpejado",
    "celula_dominante": "-",
-   "dif": 17.0,
+   "dif": 15.0,
    "meter": 2.0,
    "onsets": [
     0.0,
@@ -17836,14 +17866,14 @@
     "x": 2,
     "cobertura": 0.52,
     "midis": [
-     66,
-     69,
-     66,
-     69,
-     73,
-     68,
+     64,
+     67,
+     64,
+     67,
      71,
-     66
+     66,
+     69,
+     64
     ],
     "durs": [
      0.25,
@@ -17859,13 +17889,13 @@
    "legos": [
     {
      "midis": [
+      64,
+      67,
+      64,
+      67,
+      71,
       66,
-      69,
-      66,
-      69,
-      73,
-      68,
-      71
+      69
      ],
      "durs": [
       0.25,
@@ -17879,7 +17909,99 @@
      "x": 3
     }
    ],
-   "dif_norm": 5.6
+   "dif_norm": 4.2
+  },
+  "cu-017": {
+   "jornada": "cumbias",
+   "titulo": "Yekermo Sew",
+   "armadura": "Bb",
+   "cor": {
+    "tonica": "F",
+    "modo": "maior",
+    "dica_modal": null,
+    "conf": 0.033,
+    "ks_corr": 0.871,
+    "armadura_bate": false
+   },
+   "forma": {
+    "intervalos_pct": {
+     "uníssono": 0.17,
+     "grau (2ª)": 0.35,
+     "3ª": 0.35,
+     "4ª": 0.13,
+     "5ª": 0.0,
+     "salto (≥6ª)": 0.0
+    },
+    "contorno": {
+     "sobe": 0.3,
+     "desce": 0.52,
+     "repete": 0.17
+    },
+    "salto_max": 5,
+    "arpejo_frac": 0.0,
+    "tessitura": [
+     "C4",
+     "G5"
+    ],
+    "ambito_semitons": 19,
+    "classe": "arpejado"
+   },
+   "bloco": "F maior · arpejado",
+   "celula_dominante": "-",
+   "dif": 19.5,
+   "meter": 4.0,
+   "onsets": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5
+   ],
+   "celulas_marcadas": [],
+   "celulas_detectadas": [
+    "C1",
+    "C4",
+    "C6"
+   ],
+   "tags_nao_confirmadas": [],
+   "celulas_extra_candidatas": [
+    "C4",
+    "C6"
+   ],
+   "riff": {
+    "len": 3,
+    "x": 2,
+    "cobertura": 0.25,
+    "midis": [
+     74,
+     72,
+     69
+    ],
+    "durs": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "legos": [
+    {
+     "midis": [
+      74,
+      72,
+      69
+     ],
+     "durs": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "x": 2
+    }
+   ],
+   "dif_norm": 7.2
   }
  },
  "blocos": {
@@ -17916,6 +18038,16 @@
    "sb-085",
    "sb-098"
   ],
+  "F maior · arpejado": [
+   "sb-020",
+   "sb-071",
+   "sb-081",
+   "sb-082",
+   "cu-002",
+   "cu-003",
+   "cu-008",
+   "cu-017"
+  ],
   "C menor · misto": [
    "sb-001",
    "sb-022",
@@ -17932,7 +18064,7 @@
    "sb-052",
    "sb-070",
    "sb-103",
-   "cu-005"
+   "cu-004"
   ],
   "A menor · misto": [
    "sb-012",
@@ -17942,13 +18074,21 @@
    "sb-089",
    "sb-106"
   ],
-  "F maior · arpejado": [
-   "sb-020",
-   "sb-071",
-   "sb-081",
-   "sb-082",
-   "cu-002",
-   "cu-003"
+  "A menor · arpejado": [
+   "sb-023",
+   "sb-024",
+   "sb-054",
+   "sb-069",
+   "cu-006",
+   "cu-011"
+  ],
+  "Bb maior · misto": [
+   "sb-033",
+   "sb-055",
+   "sb-074",
+   "sb-086",
+   "sb-100",
+   "cu-005"
   ],
   "Ab maior · misto": [
    "sb-004",
@@ -17957,40 +18097,28 @@
    "sb-080",
    "sb-088"
   ],
-  "Bb maior · misto": [
-   "sb-033",
-   "sb-055",
-   "sb-074",
-   "sb-086",
-   "sb-100"
-  ],
-  "G maior · arpejado": [
-   "sb-010",
-   "sb-030",
-   "sb-087",
-   "cu-008"
-  ],
   "D menor · arpejado": [
    "sb-011",
    "sb-013",
    "sb-067",
-   "sb-092"
+   "sb-092",
+   "cu-016"
   ],
-  "A menor · arpejado": [
-   "sb-023",
-   "sb-024",
-   "sb-054",
-   "sb-069"
+  "D menor · misto": [
+   "sb-029",
+   "sb-034",
+   "sb-046",
+   "cu-009"
   ],
   "G maior · misto": [
    "sb-005",
    "sb-060",
    "sb-065"
   ],
-  "D menor · misto": [
-   "sb-029",
-   "sb-034",
-   "sb-046"
+  "G maior · arpejado": [
+   "sb-010",
+   "sb-030",
+   "sb-087"
   ],
   "D maior · arpejado": [
    "sb-036",
@@ -18001,11 +18129,6 @@
    "sb-099",
    "sb-104",
    "cu-001"
-  ],
-  "E menor · arpejado": [
-   "sb-108",
-   "cu-009",
-   "cu-016"
   ],
   "Db maior · misto": [
    "sb-007",
@@ -18031,13 +18154,13 @@
    "sb-072",
    "sb-101"
   ],
-  "D maior · misto": [
-   "sb-107",
-   "cu-004"
+  "E menor · misto": [
+   "sb-093",
+   "cu-015"
   ],
-  "B menor · arpejado": [
-   "cu-006",
-   "cu-011"
+  "E menor · arpejado": [
+   "sb-108",
+   "cu-007"
   ],
   "D maior/mixolídio · arpejado": [
    "sb-015"
@@ -18075,26 +18198,20 @@
   "C menor · arpejado": [
    "sb-091"
   ],
-  "E menor · misto": [
-   "sb-093"
+  "D maior · misto": [
+   "sb-107"
   ],
   "Bb menor · misto": [
    "sb-109"
   ],
-  "F# menor · arpejado": [
-   "cu-007"
-  ],
-  "A menor/dórico · escalar": [
+  "G menor/dórico · escalar": [
    "cu-010"
   ],
-  "E menor · escalar": [
+  "D menor · escalar": [
    "cu-012"
   ],
-  "B menor/dórico · misto": [
+  "A menor/dórico · misto": [
    "cu-014"
-  ],
-  "F# menor · misto": [
-   "cu-015"
   ]
  }
 }
