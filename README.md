@@ -13,32 +13,44 @@ O app tem **duas linhas** (jornadas). "Sambrass" deixou de ser o nome do app e �
 
 | Linha | O que é | Peças |
 |------|---------|------:|
-| **Cumbias** (principal, default) | cumbias / chicha latinas | **15** |
+| **Cumbias** (principal, default) | cumbias / chicha latinas (+ 1 ethio-jazz) | **16** |
 | **Sambrass** | sambas · Book 1 → Arban | **110** |
-| **Total** | | **125** |
+| **Total** | | **126** |
 
 Além das peças, cada linha traz **12 aquecimentos** (Flow do Cichowicz) e cartões
 de técnica.
 
 ## Números canônicos (a fonte da verdade são os dados)
 
-- **110 sambas** · **15 cumbias** · **125 peças no total**.
+- **110 sambas** · **16 cumbias** · **126 peças no total**.
 - As contagens exibidas na UI são **dinâmicas** — vêm de
   `app/data/**/pieces.json` (`ms.length`), então **nunca** ficam defasadas: some
   ou entre uma peça e a trilha, o HUD e o Progresso se ajustam sozinhos. Não há
   contagem de peça fixada no código.
 
-### Numeração das cumbias (por que vai até 16 mas são 15)
+### Numeração das cumbias (por que vai até 17 mas são 16)
 
-As cumbias são numeradas **1–12, 14, 15, 16** (15 peças; **o número 13 não
+As cumbias são numeradas **1–12, 14, 15, 16, 17** (16 peças; **o número 13 não
 existe**). Histórico:
 
-- **cu-013** e **cu-017** foram **removidas** (o OMR/Audiveris falhou de forma
-  irrecuperável na partitura — ver `content/cumbia/transcribe.py`).
-- **cu-016 "Ya se ha Muerto mi Abuelo"** **entrou** (é a mais recente).
+- **cu-013** foi **removida** (o OMR/Audiveris falhou de forma irrecuperável na
+  partitura — ver `content/cumbia/transcribe.py`).
+- **cu-017 "Yekermo Sew"** (Mulatu Astatke, ethio-jazz do repertório da banda)
+  também tinha caído no OMR (o PDF é foto de celular), mas **voltou em 2026-08**
+  transcrita à mão via DSL (tier rascunho, a conferir com a banda).
 
-Ou seja: o maior número é 16, mas a **contagem é 15**. Não é 16 nem 95 — é **15
-cumbias**.
+Ou seja: o maior número é 17, mas a **contagem é 16**.
+
+### Gravações reais (app/audio/)
+
+Oito gravações enviadas pela banda (2026-07): 6 **modelos no trompete**
+(cu-001, cu-002, cu-010 ×2, cu-011 ×2) e 2 **ensaios da banda completa** (peças a
+identificar). Aparecem na página de estudo das cumbias ("🎙 a gravação real" +
+"🎧 ensaio da banda", com controle de velocidade) e servem de **referência
+independente** para validar as transcrições: `tools/audio_confere.py` compara o
+pitch-track da gravação com o ABC (pega erro de oitava global do OMR — caso
+cu-005). Validação de alturas no build: `content/cumbia/check_pitch.py` →
+`pitch_warn.json` (tessitura/8ª/salto/tom).
 
 ## Rodar / buildar
 

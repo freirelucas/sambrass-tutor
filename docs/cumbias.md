@@ -35,10 +35,38 @@ content/notes/cumbia/cu-NNN.musicxml           (tema principal / riff — tier '
    │    ├─ build_notes.compile_file  → eventos (dedos, concerto)
    │    ├─ build_abc.to_abc          → ABC (player abcjs)
    │    ├─ phrases.extract_riff      → riff dominante (n-gramas) + cobertura
-   │    └─ features + ordenação por dificuldade → 3 tiers (riff → síncope → fogo)
+   │    ├─ features + ordenação por dificuldade → 3 tiers (riff → síncope → fogo)
+   │    ├─ check_bars.check_all      → bars_warn.json  (compassos que não fecham a métrica)
+   │    └─ check_pitch.check_all     → pitch_warn.json (tessitura/8ª/salto/tom — "notas absurdas")
    ▼
 content/cumbia/build/*.json   →  build_site.py  →  _site/data/cumbias/*.json
 ```
+
+### Convenção de altura do pipeline (IMPORTANTE)
+Todo ABC do pipeline (`build_abc.to_abc` e `notes_manual/*.abc`) está em **tom
+ESCRITO** da parte de trompete Bb (K:C p/ peça em Bb concert). `abc_events.
+events_from_abc` devolve `written_midi` = o midi lido e `concert_midi` = escrito − 2.
+(Até 2026-08 assumia-se ABC concert e somava-se +2 — riff/perfil/dificuldade das
+peças conferidas saíam um tom acima do real. Corrigido.)
+
+## Validação de alturas + gravações de referência
+Duas camadas contra "notas absurdas":
+- **`check_pitch.py`** (no build): tessitura escrita do trompete
+  (`content/instruments/trumpet_bb.json`, F#3–C6), outlier de oitava vs a mediana
+  da peça, salto > 8ª dentro do compasso, e tom do ABC vs `key_concert` do
+  catálogo. Sai em `pitch_warn.json`; o app mostra o aviso honesto na página de
+  estudo (junto do `bars_warn`). Avisos podem ser **herdados do arranjo** (ex.:
+  cu-009 El Diablo desce a Mi3 escrito no próprio PDF — abaixo da tessitura; toca-se
+  8ª acima) — o aviso documenta, não necessariamente indica transcrição errada.
+- **`tools/audio_confere.py`** (local; `pip install numpy soundfile`): compara o
+  ABC com as **gravações reais** de `app/audio/` (modelo no trompete enviado pela
+  banda) — desvio de mediana ≥7 semitons = oitava global errada (foi assim que o
+  cu-005 ficou 1 ano soando 8ª acima: o "modelo" sintetizado vem do MESMO dado, só
+  gravação independente denuncia). Entradas `"conf": true` em
+  `app/audio/referencia.json` reprovam o check se desviarem.
+
+As gravações aparecem no app (página de estudo das cumbias): "🎙 a gravação real"
+por peça + "🎧 ensaio da banda" (play-along, com controle devagar 0.7×/0.85×).
 
 ## Tema vs peça inteira ("os dois")
 Cada cumbia OMR tem **duas** representações: o **tema** (abertura, ~8–16 compassos — `abc.json`,
@@ -59,11 +87,17 @@ praticado**; a peça inteira é sempre leitura OMR crua.
 ## Qualidade (honestidade)
 Tiers: `rascunho` (leitura OMR/à-mão não conferida — o tutor avalia por **classe de altura**,
 tolerante a oitava) e `conferida` (tema conferido nota a nota contra a partitura — o tutor avalia
-por **oitava exata**). Estado atual: os **12 temas OMR estão `conferida`** (conferidos best-effort
-contra os PDFs; o botão "⚠ reportar erro" cobre resíduos); as **3 cumbias DSL seguem `rascunho`**.
+por **oitava exata**). Estado atual: os **12 temas OMR estão `conferida`**; as **4 cumbias DSL
+seguem `rascunho`** (cu-001/002/003 + cu-017 Yekermo, transcrita à mão de uma FOTO de partitura).
 A **peça inteira** (`abc_full.json`) é sempre OMR cru, qualquer que seja o tier do tema.
 Para conferir/promover: criar `content/cumbia/notes_manual/cu-NNN.abc` (vence o ABC do build e marca
 `conferida`); `build_cumbia.py` aplica o override (inerte enquanto o diretório não existe).
+
+**Definition of done de uma peça "conferida":**
+1. `check_bars` e `check_pitch` limpos (ou avisos justificados pelo arranjo, anotados);
+2. conferência visual em `app/revisar.html` (ABC lado a lado com o recorte do PDF);
+3. quando houver gravação da banda: `tools/audio_confere.py` sem desvio de oitava
+   (e aí marca-se `"conf": true` no `referencia.json`).
 
 ## Adicionar uma cumbia
 Coloque o PDF em `content/cumbia/pdfs/` e escolha a fonte da melodia:

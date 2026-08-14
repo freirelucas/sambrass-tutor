@@ -230,6 +230,21 @@
    "pdf": "Ya se ha muerto mi abuelo - Trompete Bb.pdf",
    "source": "omr",
    "quality": "rascunho"
+  },
+  {
+   "num": 17,
+   "id": "cu-017",
+   "titulo": "Yekermo Sew",
+   "compositor": "Mulatu Astatke (arr. Leon van Mil)",
+   "key_concert": "Bb",
+   "compasso": "4/4",
+   "forma": [
+    "A",
+    "B"
+   ],
+   "pdf": "Yekermo Sew - Trompete Bb.pdf",
+   "source": "dsl",
+   "quality": "rascunho"
   }
  ]
 }

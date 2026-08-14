@@ -19,6 +19,9 @@ module.exports = defineConfig({
     use: {
       browserName: 'chromium',
       launchOptions: {
+        // ambientes com chromium pré-instalado noutra revisão (ex.: CI remoto):
+        // PW_CHROMIUM=/opt/pw-browsers/chromium npx playwright test
+        executablePath: process.env.PW_CHROMIUM || undefined,
         args: [
           '--autoplay-policy=no-user-gesture-required',
           '--use-fake-device-for-media-stream',

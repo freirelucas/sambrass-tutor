@@ -134,11 +134,18 @@ test('a síntese: o desafio leva ao tutor de escuta real (estudo.html)', async (
 });
 
 /* ---- Cumbias agora é a LINHA PRINCIPAL (default, sem jornada salva) ---- */
-test('home padrão é Cumbias: seletor em Cumbias e 15 nós', async ({ page }) => {
+test('home padrão é Cumbias: seletor em Cumbias e 16 nós', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.goto('/index.html');                                       // sem jornada salva → default
   await expect(page.locator('.jsel button.on')).toContainText('Cumbias');
-  await expect(page.locator('.path .node')).toHaveCount(15, { timeout: 10000 });
+  await expect(page.locator('.path .node')).toHaveCount(16, { timeout: 10000 });
   expect(errors, 'home cumbias sem exceções').toEqual([]);
+});
+
+test('gravações reais: bloco de referência popula na Elsa (cumbias)', async ({ page }) => {
+  await page.goto('/estudo.html?jornada=cumbias&id=cu-011');
+  // dentro da seção "Frase" (pode estar noutro passo → checa presença, não visibilidade)
+  await expect(page.locator('#refaudio .refplay audio')).toHaveCount(4, { timeout: 10000 }); // 2 modelos + 2 ensaios
+  await expect(page.locator('#refaudio .refh')).toContainText('a gravação real');
 });

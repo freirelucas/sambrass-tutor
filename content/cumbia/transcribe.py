@@ -77,6 +77,19 @@ TUNES = [
              ["G4:1", "A4:1", "B4:1", "c5:1", "d5:2", "B4:2"],
              ["G4:4", "z:4"],
          ]),
+    dict(num=17, titulo="Yekermo Sew", compositor="Mulatu Astatke (arr. Leon van Mil)",
+         pdf="Yekermo Sew - Trompete Bb.pdf", source="dsl",
+         key_concert="Bb", fifths=0, beats=4, beat_type=4, forma=["A", "B"],
+         # Ethio-jazz do repertório da banda (o PDF é FOTO de celular — o OMR falhou; era a
+         # ex-cu-017). Tema A lido à mão da foto: pentatônica de Lá menor ESCRITA (concert Sol
+         # menor), pickup "mi mi lá" e frase descendo ao Sol grave. Tier rascunho até a banda
+         # conferir (revisar.html / gravação de referência).
+         measures=[
+             ["z:8", "z:2", "e5:2", "e5:2", "a5:2"],
+             ["e5:2", "g5:2", "e5:2", "e5:2", "d5:2", "d5:2", "c5:2", "A4:2"],
+             ["c5:2", "d5:2", "c5:2", "A4:2", "c5:1", "A4:1", "G4:1", "A4:1", "G4:2", "E4:2"],
+             ["E4:2", "D4:2", "G4:8", "z:4"],
+         ]),
 ]
 
 # Cumbias vindas do Audiveris (OMR): só METADATA aqui; o cu-NNN.musicxml vem do omr_import.py
@@ -84,8 +97,9 @@ TUNES = [
 # preenche-se e o omr_import injeta a armadura certa. compasso/compositor são melhor-esforço.
 CATALOG_EXTRA = [
     # key_concert vindo da revisão do OMR (omr_check + conferência do render).
-    # cu-013 e cu-017 foram REMOVIDAS: Audiveris falhou irrecuperavelmente — 013 perdeu a
-    # armadura (peça em 4 sustenidos → notas todas naturais); 017 é foto torta (não-cumbia).
+    # cu-013 foi REMOVIDA: Audiveris falhou irrecuperavelmente — perdeu a armadura (peça em
+    # 4 sustenidos → notas todas naturais). cu-017 (Yekermo Sew, foto torta que o OMR não leu)
+    # foi REINTRODUZIDA via DSL manual — está em TUNES acima, não aqui.
     dict(num=4,  titulo="Cariñito",                  compositor="Ángel Aníbal Rosado",       pdf="Carinito - Trompete Bb.pdf",                      source="omr", key_concert="C",  beats=4, beat_type=4, forma=["A", "B", "C", "D"]),
     dict(num=5,  titulo="Llorando se Fue",           compositor="Los Kjarkas (G. Hermosa)",  pdf="Llorando se Fue_Cumbias_TrompBb.pdf",             source="omr", key_concert="Bb", beats=4, beat_type=4, forma=["A", "B"]),
     dict(num=6,  titulo="Danza de los Mirlos",       compositor="Los Mirlos",                pdf="Danza de los mirlos - Trompete 1_melodia.pdf",    source="omr", key_concert="C",  beats=4, beat_type=4, forma=["A", "B"]),
