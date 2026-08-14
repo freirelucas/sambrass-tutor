@@ -2,7 +2,8 @@
 """Valida se cada compasso do ABC preenche a fórmula de compasso (M:).
 
 Compasso que não soma a métrica = erro de transcrição (silêncio/duração errada). As cumbias
-são MONOFÔNICAS e sem tercina/acorde (verificado), então a soma direta das durações vale.
+são MONOFÔNICAS e sem acorde (verificado), então a soma direta das durações vale — com o
+cuidado das TERCINAS `(3xyz` (3 notas no tempo de 2: cada uma vale 2/3 do escrito).
 O app usa isto para AVISAR honestamente ("ritmo/silêncio em revisão") em vez de fingir
 "conferida" num compasso quebrado.
 
@@ -12,8 +13,8 @@ import re
 import json
 import pathlib
 
-# nota (com acidentes ^_= e oitava ,') OU pausa (z/x/Z), capturando o comprimento
-_TOKEN = re.compile(r"(?:[\^_=]*[a-gA-G][,']*|[zxZ])(\d*/?\d*)")
+# tercina "(3" OU nota (com acidentes ^_= e oitava ,') OU pausa (z/x/Z), capturando o comprimento
+_TOKEN = re.compile(r"(?P<trip>\(3)|(?:[\^_=]*[a-gA-G][,']*|[zxZ])(\d*/?\d*)")
 
 
 def _plen(s):
@@ -42,7 +43,16 @@ def bad_bars(abc):
     body = body.replace("|]", "|").replace("|:", "|").replace(":|", "|")
     bad = []
     for i, bar in enumerate(b for b in re.split(r"\|", body) if b.strip()):
-        s = sum(_plen(mt.group(1)) for mt in _TOKEN.finditer(bar))
+        s, trip = 0.0, 0
+        for mt in _TOKEN.finditer(bar):
+            if mt.group("trip"):
+                trip = 3
+                continue
+            d = _plen(mt.group(2))
+            if trip:
+                d *= 2 / 3
+                trip -= 1
+            s += d
         if s > 0 and abs(s - target) > 0.01:
             bad.append(i + 1)
     return bad
