@@ -202,6 +202,16 @@ def main():
     dump("bars_warn.json", bars_warn)
     if bars_warn:
         print("  ⚠ ritmo em revisão (compassos fora da métrica):", {k: v for k, v in sorted(bars_warn.items())})
+    from check_pitch import check_all as check_pitch_all   # alturas absurdas (tessitura/8ª/salto/tom) → o app avisa
+    expected = {f"cu-{p['num']:03d}": p.get("key_concert", "") for p in cat.values()}
+    pitch_warn = check_pitch_all(abc, expected)
+    full_warn = check_pitch_all({b["stem"]: b["abc_full"] for b in builds}, expected)
+    for k, v in full_warn.items():                         # peça inteira (OMR cru): mesmos checks, rótulo distinto
+        pitch_warn.setdefault(k, []).extend(f"peça inteira: {m}" for m in v
+                                            if f"peça inteira: {m}" not in pitch_warn.get(k, []))
+    dump("pitch_warn.json", pitch_warn)
+    if pitch_warn:
+        print("  ⚠ alturas em revisão:", {k: len(v) for k, v in sorted(pitch_warn.items())})
     dump("pedagogia.json", pedag); dump("tecnica.json", tecnica)
     shutil.copy(CONTENT / "cells.json", OUT / "cells.json")
     if (CONTENT / "pedagogia" / "app_prep.json").exists():

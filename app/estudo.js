@@ -60,13 +60,14 @@ function toneNote(midi){ if(!AC) return; const t=AC.currentTime, o=AC.createOsci
 async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); }catch{ return null; } }
 
 (async function(){
-  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag, percurso, barsWarn] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
+  const [pieces, cells, abc, escada, abcFull, quality, BLK, pedag, percurso, barsWarn, pitchWarn] = await Promise.all([j('pieces.json'), j('cells.json'), j('abc.json'), j('escada.json'),
     JBASE === 'cumbias/' ? j('abc_full.json') : Promise.resolve(null),   // peça inteira só existe nas cumbias
     j('quality.json'),
     fetch('./data/blocos.json').then(r=>r.ok?r.json():null).catch(()=>null),   // índice de blocos (selo/grafismo)
     j('pedagogia.json'),                                                 // desafios da peça → dicas no fluxo (P1③)
     j('percurso.json'),                                                  // pico/agudo p/ o badge de alcance
-    j('bars_warn.json')]);                                               // compassos fora da métrica → aviso honesto
+    j('bars_warn.json'),                                                 // compassos fora da métrica → aviso honesto
+    j('pitch_warn.json')]);                                              // alturas fora do padrão (tessitura/8ª) → idem
   const WR = {C:'D',G:'A',D:'E',A:'B',F:'G',Bb:'C',Eb:'F',Ab:'Bb',E:'F#',Db:'Eb'};
   const NIVEL = {book1:'Book 1', book2:'Book 2', arban:'Arban', riff:'Riff & groove', sincopa:'Síncope', fogo:'Agudo & velocidade'};
   const p = (pieces?.pieces||[]).find(x => x.id===ID);
@@ -150,10 +151,39 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   const tier = (quality && quality[ID]) || abc?._quality?.[ID] || (abc?._verified?.includes?.(ID) ? 'conferida' : 'rascunho');
   OCTAVE_EXACT = (tier === 'conferida');
   const bw = barsWarn && barsWarn[ID];                                 // compassos que não fecham a métrica (silêncio/duração errada na transcrição)
-  const RASC_TEMA = (bw && bw.length)
-    ? `Melodia: <span class="ok">tom e notas conferidos</span>, mas <b style="color:var(--vinho2)">${bw.length} compasso${bw.length>1?'s':''} com ritmo/silêncio errado</b> (compasso${bw.length>1?'s':''} ${bw.join(', ')}) — em correção com a partitura. As células acima são exatas.`
+  const pwAll = (pitchWarn && pitchWarn[ID]) || [];                    // alturas fora do padrão (validador check_pitch)
+  const pwTema = pwAll.filter(m => !m.startsWith('peça inteira:'));    // só o TEMA entra no aviso (a peça inteira é OMR cru, avisada à parte)
+  const avisos = [];
+  if(bw && bw.length) avisos.push(`<b style="color:var(--vinho2)">${bw.length} compasso${bw.length>1?'s':''} com ritmo/silêncio errado</b> (compasso${bw.length>1?'s':''} ${bw.join(', ')})`);
+  if(pwTema.length) avisos.push(`<b style="color:var(--vinho2)" title="${pwTema.join(' · ').replace(/"/g,'&quot;')}">${pwTema.length} alerta${pwTema.length>1?'s':''} de altura</b> (${pwTema[0]}${pwTema.length>1?' …':''})`);
+  const RASC_TEMA = avisos.length
+    ? `Melodia: <span class="ok">conferida com a partitura</span>, mas ${avisos.join(' e ')} — herdado do arranjo ou em correção. As células acima são exatas.`
     : (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
   $('#rasc').innerHTML = RASC_TEMA;
+  // 🎙 gravações REAIS da banda (app/audio/): modelo no trompete por peça + ensaio completo.
+  // Referência independente do dado transcrito — se a pauta soar diferente da gravação, a gravação manda.
+  (async () => {
+    const el = $('#refaudio'); if(!el || !CUMBIA) return;
+    const ref = await fetch('./audio/referencia.json').then(r => r.ok ? r.json() : null).catch(() => null);
+    if(!ref) return;
+    const own = (ref.pecas && ref.pecas[ID]) || [], ens = ref.ensaio || [];
+    if(!own.length && !ens.length) return;
+    const player = a => `<figure class="refplay"><figcaption>${a.t}</figcaption>
+      <audio controls preload="none" src="./audio/${a.f}"></audio>
+      <span class="refvel">devagar: <button type="button" data-rate="0.7">0.7×</button><button type="button" data-rate="0.85">0.85×</button><button type="button" data-rate="1" class="on">1×</button></span></figure>`;
+    el.hidden = false;
+    el.innerHTML = (own.length ? `<div class="refh">🎙 <b>a gravação real</b> — ouça como a parte soa de verdade, depois toque junto</div>` + own.map(player).join('') : '') +
+      (ens.length ? `<details class="refens"><summary>🎧 ensaio da banda completo — play-along com a banda real</summary>${ens.map(player).join('')}</details>` : '');
+    el.querySelectorAll('.refplay').forEach(fig => {
+      const au = fig.querySelector('audio');
+      const rate = () => +(fig.querySelector('button[data-rate].on')?.dataset.rate || 1);
+      fig.querySelectorAll('button[data-rate]').forEach(b => b.onclick = () => {
+        fig.querySelectorAll('button[data-rate]').forEach(x => x.classList.toggle('on', x === b));
+        au.playbackRate = +b.dataset.rate;
+      });
+      au.onplay = () => { au.playbackRate = rate(); };   // devagar mantém a altura (preservesPitch é o padrão)
+    });
+  })();
   { const rep = $('#reportar');
     if(rep) rep.onclick = e => { e.preventDefault(); if(window.reportarBeta) reportarBeta({ piece: `${ID}${p?' '+p.titulo:''}`, screen: 'estudo' }); }; }
   if(MELODIA){ setMel(); MCOUNT = Math.max(1, measures(MELODIA).length); LO_A = 1; LO_B = MCOUNT; }
