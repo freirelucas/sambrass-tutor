@@ -155,7 +155,8 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
   const pwTema = pwAll.filter(m => !m.startsWith('peça inteira:'));    // só o TEMA entra no aviso (a peça inteira é OMR cru, avisada à parte)
   const avisos = [];
   if(bw && bw.length) avisos.push(`<b style="color:var(--vinho2)">${bw.length} compasso${bw.length>1?'s':''} com ritmo/silêncio errado</b> (compasso${bw.length>1?'s':''} ${bw.join(', ')})`);
-  if(pwTema.length) avisos.push(`<b style="color:var(--vinho2)" title="${pwTema.join(' · ').replace(/"/g,'&quot;')}">${pwTema.length} alerta${pwTema.length>1?'s':''} de altura</b> (${pwTema[0]}${pwTema.length>1?' …':''})`);
+  // detalhes por toque (tooltip de hover não existe no celular): <details> inline
+  if(pwTema.length) avisos.push(`<details class="pwdet"><summary><b style="color:var(--vinho2)">${pwTema.length} alerta${pwTema.length>1?'s':''} de altura</b> (toque para ver)</summary><ul>${pwTema.map(m=>`<li>${m}</li>`).join('')}</ul></details>`);
   const RASC_TEMA = avisos.length
     ? `Melodia: <span class="ok">conferida com a partitura</span>, mas ${avisos.join(' e ')} — herdado do arranjo ou em correção. As células acima são exatas.`
     : (RASC[tier] || RASC.rascunho) + (OCTAVE_EXACT ? '' : ' <span class="ok">O tutor avalia pela classe de altura (tolerante à oitava).</span>');
@@ -186,7 +187,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
       }
       if(s.secoes?.length) h += `<div class="refseg"><span class="refseg-l">seções:</span> ` +
         s.secoes.map(o => `<button type="button" class="seg" data-t0="${o.t0}" data-t1="">${mmss(o.t0)}</button>`).join('') + `</div>`;
-      if(h && s.bpm) h += `<div class="refseg refbpm">~${s.bpm} BPM na gravação · 🔁 <button type="button" class="seg segloop">loop do trecho: não</button></div>`;
+      if(h && s.bpm) h += `<div class="refseg refbpm"><span class="refseg-l">~${s.bpm} BPM na gravação</span> <button type="button" class="seg segloop">🔁 loop do trecho: não</button></div>`;
       return h;
     };
     const player = a => `<figure class="refplay" data-f="${a.f}"><figcaption>${a.t}</figcaption>
@@ -212,7 +213,7 @@ async function j(f){ try{ return await (await fetch('./data/'+JBASE+f)).json(); 
       });
       const playSpan = (t0, t1) => { span = t1 ? [t0, t1] : null; au.currentTime = t0; au.playbackRate = rate(); au.play(); };
       const lb = fig.querySelector('.segloop');
-      if(lb) lb.onclick = () => { loop = !loop; lb.textContent = `loop do trecho: ${loop ? 'sim' : 'não'}`; lb.classList.toggle('on', loop); };
+      if(lb) lb.onclick = () => { loop = !loop; lb.textContent = `🔁 loop do trecho: ${loop ? 'sim' : 'não'}`; lb.classList.toggle('on', loop); };
       fig.querySelectorAll('.seg[data-t0]').forEach(b => b.onclick = () => {
         fig.querySelectorAll('.seg.on').forEach(x => x !== lb && x.classList.remove('on')); b.classList.add('on');
         playSpan(+b.dataset.t0, b.dataset.t1 ? +b.dataset.t1 : null);
