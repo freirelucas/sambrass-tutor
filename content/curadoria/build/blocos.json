@@ -17032,23 +17032,23 @@
     "tonica": "D",
     "modo": "menor",
     "dica_modal": null,
-    "conf": 0.159,
+    "conf": 0.164,
     "ks_corr": 0.734,
     "armadura_bate": true
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.23,
-     "grau (2ª)": 0.41,
-     "3ª": 0.21,
+     "uníssono": 0.22,
+     "grau (2ª)": 0.42,
+     "3ª": 0.22,
      "4ª": 0.09,
      "5ª": 0.04,
      "salto (≥6ª)": 0.01
     },
     "contorno": {
      "sobe": 0.28,
-     "desce": 0.49,
-     "repete": 0.23
+     "desce": 0.5,
+     "repete": 0.22
     },
     "salto_max": 19,
     "arpejo_frac": 0.0,
@@ -17076,12 +17076,12 @@
    "celulas_detectadas": [
     "C1",
     "C2",
-    "C3",
+    "C5",
     "C6"
    ],
    "tags_nao_confirmadas": [],
    "celulas_extra_candidatas": [
-    "C3",
+    "C5",
     "C6"
    ],
    "riff": {
@@ -17139,16 +17139,20 @@
       76,
       76,
       74,
-      74
+      74,
+      76,
+      76
      ],
      "durs": [
       0.167,
       0.167,
       0.167,
       0.25,
-      0.25
+      0.25,
+      0.25,
+      0.75
      ],
-     "x": 3
+     "x": 2
     },
     {
      "midis": [
@@ -17180,25 +17184,25 @@
     "tonica": "G",
     "modo": "menor",
     "dica_modal": "dórico",
-    "conf": 0.146,
-    "ks_corr": -0.299,
+    "conf": 0.147,
+    "ks_corr": -0.34,
     "armadura_bate": true
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.01,
-     "grau (2ª)": 0.68,
+     "uníssono": 0.0,
+     "grau (2ª)": 0.69,
      "3ª": 0.12,
-     "4ª": 0.16,
-     "5ª": 0.03,
+     "4ª": 0.19,
+     "5ª": 0.0,
      "salto (≥6ª)": 0.0
     },
     "contorno": {
-     "sobe": 0.49,
+     "sobe": 0.51,
      "desce": 0.49,
-     "repete": 0.01
+     "repete": 0.0
     },
-    "salto_max": 6,
+    "salto_max": 5,
     "arpejo_frac": 0.0,
     "tessitura": [
      "F#4",
@@ -17209,7 +17213,7 @@
    },
    "bloco": "G menor/dórico · escalar",
    "celula_dominante": "-",
-   "dif": 22.6,
+   "dif": 21.5,
    "meter": 2.0,
    "onsets": [
     0.0,
@@ -17233,9 +17237,9 @@
     "C6"
    ],
    "riff": {
-    "len": 7,
+    "len": 8,
     "x": 2,
-    "cobertura": 0.2,
+    "cobertura": 0.24,
     "midis": [
      71,
      73,
@@ -17243,7 +17247,8 @@
      76,
      78,
      76,
-     71
+     71,
+     73
     ],
     "durs": [
      0.5,
@@ -17252,7 +17257,8 @@
      0.25,
      0.25,
      0.5,
-     0.25
+     0.25,
+     0.5
     ]
    },
    "legos": [
@@ -17306,7 +17312,7 @@
      "x": 2
     }
    ],
-   "dif_norm": 9.3
+   "dif_norm": 8.6
   },
   "cu-011": {
    "jornada": "cumbias",
@@ -17322,17 +17328,17 @@
    },
    "forma": {
     "intervalos_pct": {
-     "uníssono": 0.37,
+     "uníssono": 0.36,
      "grau (2ª)": 0.06,
-     "3ª": 0.39,
+     "3ª": 0.4,
      "4ª": 0.1,
      "5ª": 0.04,
      "salto (≥6ª)": 0.04
     },
     "contorno": {
-     "sobe": 0.35,
-     "desce": 0.28,
-     "repete": 0.37
+     "sobe": 0.36,
+     "desce": 0.29,
+     "repete": 0.36
     },
     "salto_max": 9,
     "arpejo_frac": 0.09,
@@ -17376,7 +17382,7 @@
    "riff": {
     "len": 8,
     "x": 3,
-    "cobertura": 0.33,
+    "cobertura": 0.34,
     "midis": [
      71,
      71,
@@ -17426,45 +17432,45 @@
      "midis": [
       71,
       71,
-      71,
       74,
       78,
+      69,
       69,
       69,
       69
      ],
      "durs": [
-      0.75,
       0.5,
       0.5,
       0.5,
       0.25,
       0.5,
       1.5,
+      0.5,
       0.5
      ],
      "x": 2
     },
     {
      "midis": [
-      78,
       69,
       69,
       69,
       69,
       69,
       66,
+      71,
       71
      ],
      "durs": [
-      0.25,
       0.5,
       1.5,
       0.5,
       0.5,
       0.5,
       0.25,
-      0.5
+      0.5,
+      1.5
      ],
      "x": 2
     }
