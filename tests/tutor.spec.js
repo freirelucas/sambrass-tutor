@@ -166,8 +166,11 @@ test('superchops: a aba abre com o plano do dia fechando em 15:00', async ({ pag
   await page.click('.abas button[data-tela="superchops"]');
   await expect(page.locator('#tela')).toContainText('Leia antes de começar');
   await expect(page.locator('.sc-ex')).toHaveCount(8);                      // fase 1 = 8 passos
+  await expect(page.locator('#tela')).toContainText('Isso encaixa na sua boca?');   // teste anatômico (Reinhardt)
+  await expect(page.locator('#tela')).toContainText('O que é evidência e o que é aposta');
   // a soma dos passos é o teto da sessão: 15:00 em TODA fase
   const soma = await page.evaluate(() => SC_FASES.map((f) => f.exs.reduce((a, e) => a + e.dur, 0)));
+  expect(soma.length, 'as 5 fases do método').toBe(5);
   expect(soma.every((s) => s === 900), 'toda fase fecha em 15:00').toBeTruthy();
   expect(errors, 'aba superchops sem exceções').toEqual([]);
 });
@@ -178,7 +181,8 @@ test('superchops: o passo abre com cronômetro, "pular" avança e o dia entra no
   await page.evaluate(() => ir('superchops'));
   await page.locator('.sc-ex').first().click();
   await expect(page.locator('.sc-onde')).toContainText('passo 1/8');
-  await expect(page.locator('#sctime')).toHaveText('1:30');
+  const dur1 = await page.evaluate(() => SC_FASES[0].exs[0].dur);           // relógio parte da duração do passo
+  await expect(page.locator('#sctime')).toHaveText(`${Math.floor(dur1 / 60)}:${String(dur1 % 60).padStart(2, '0')}`);
   await page.click('#scctrl .acao');                                        // começar → relógio correndo
   await expect(page.locator('#scctrl .toggle').first()).toHaveText('pausar');
   for (let i = 0; i < 8; i++) await page.locator('#scctrl .toggle').last().click();   // pular até o fim
@@ -191,12 +195,12 @@ test('superchops: trocar de fase troca o plano e o diário grava o nível do dia
   await page.goto('/index.html');
   await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
   await page.evaluate(() => ir('superchops'));
-  await page.getByRole('button', { name: 'Fase 4' }).click();
+  await page.getByRole('button', { name: 'Fase 5' }).click();
   await expect(page.locator('#tela')).toContainText('Levar pro repertório');
-  await expect(page.locator('.sc-ex')).toHaveCount(7);                      // fase 4 = 7 passos
+  await expect(page.locator('.sc-ex')).toHaveCount(7);                      // fase 5 = 7 passos
   await page.getByRole('button', { name: /^4 —/ }).click();                 // diário: nível 4
   await expect(page.locator('#tela')).toContainText('Dia registrado');
   const log = await page.evaluate(() => JSON.parse(localStorage.getItem('sc_logs') || '[]'));
   expect(log.at(-1).n).toBe(4);
-  expect(log.at(-1).fase).toBe(4);
+  expect(log.at(-1).fase).toBe(5);
 });

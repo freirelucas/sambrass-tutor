@@ -22,12 +22,18 @@ de técnica.
 
 ### Aba **Chops** — a conversão de embocadura (transversal às linhas)
 
-Plano **diário de 15 min** para treinar a embocadura de língua à frente (TCE) do
-método Super Chops, de Jerome Callet: 4 fases, cada sessão fechando em 15:00 exatos,
-com sessão guiada por cronômetro, diário 1–5 e streak. É uma rotina montada sobre os
-princípios do método (não o livro), com o aviso honesto no topo: conversão de
-embocadura **piora tudo antes de melhorar**, o método é controverso e não substitui
-professor. Detalhes e fontes em [`docs/superchops.md`](docs/superchops.md).
+Plano **diário de 15 min** para treinar a embocadura de língua à frente (TCE) de
+Jerome Callet: **5 fases** que espelham a progressão do livro de 1987 (set-up → cinco
+articulações e grave → escalas em *pp* → ligaduras e harmônicos → repertório), cada
+sessão fechando em 15:00 exatos, com sessão guiada por cronômetro, diário 1–5 e streak.
+
+É uma rotina montada sobre os princípios documentados do método (não o livro), e a aba
+carrega a pesquisa junto: o **teste de encaixe anatômico** (critério de Reinhardt), o
+card **"o que é evidência e o que é aposta"** — a ressonância em tempo real de 2019
+apoia a língua anterior como válvula de ar, mas não há evidência de que profissionais
+usem TCE, e análise em vídeo indica que **o próprio Callet não tocava como ensinava** —
+e prazos honestos (meses, não semanas; conversões documentadas levam 12–18 meses).
+Pesquisa completa, com citações e 12 fontes, em [`docs/superchops.md`](docs/superchops.md).
 
 ## Números canônicos (a fonte da verdade são os dados)
 

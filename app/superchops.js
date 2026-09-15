@@ -14,118 +14,158 @@
  * separado das jornadas — embocadura não é repertório.
  */
 
-/* ---------- as 4 fases (cada sessão fecha em 15:00 exatos) ---------- */
+/* ---------- as 5 fases (cada sessão fecha em 15:00 exatos) ----------
+ * A ordem espelha a do livro de 1987 (exercícios → escalas → estudos de controle →
+ * cromáticas → ligaduras → harmônicos → etudes → solos) e a instrução de Callet de
+ * começar SÓ pelo grave. As fases não são semanas: são estágios (ver `dias`, que é
+ * só a sugestão do app). Fontes em docs/superchops.md. */
 const SC_FASES = [
   {
-    n: 1, nome: 'A língua acha o lugar', quando: 'semanas 1–2', dias: 0,
-    alvo: 'Montar o set-up e sentir a ponta da língua entre os lábios em cada ataque. Som bonito NÃO é a meta aqui.',
-    sinal: 'Você consegue montar a embocadura no espelho sem pensar, e o "tu" cuspido sai sem que os cantos abram num sorriso.',
+    n: 1, nome: 'O set-up — a língua acha o lugar', quando: 'as primeiras semanas', dias: 0,
+    alvo: 'Montar a posição exata e conseguir o spit-buzz. Som bonito NÃO é a meta — nesta fase quase não se toca.',
+    sinal: 'Você monta a posição sem espelho e o spit-buzz sai com a ponta da língua firme no lábio de baixo, sem recuar.',
+    fonte: 'set-up: Trumpet Secrets (2002) · spit-buzz: imagem do próprio Callet · abertura dos molares: relatos de aulas com ele',
     exs: [
-      { id: 'f1a', nome: 'O espelho — montar a embocadura', dur: 90, onde: 'espelho',
-        como: ['Lábios <b>pra frente</b>, como quem diz "M" — nunca esticados num sorriso.',
-          'Cantos <b>pra dentro e pra frente</b>; o queixo empurra <b>pra cima</b> (aqui é o contrário do "queixo chato" que você aprendeu).',
-          'Maxilar inferior à frente até os dentes quase alinharem — é isso que abre espaço pra língua.',
-          'Avance a <b>ponta da língua</b> até ela tocar entre os lábios, apoiada na borda do lábio de baixo. Segure 10 s, solte, repita.'],
-        erro: 'Se o queixo esticar pra baixo e os cantos abrirem, você voltou pra embocadura antiga — desmonte e comece de novo.' },
-      { id: 'f1b', nome: 'Spit-buzz — sem bocal', dur: 120, onde: 'sem bocal',
-        como: ['Com a língua entre os lábios, sopre um <b>"tu"</b> como quem cospe um grão de arroz.',
-          'O som é um zumbido curto e sujo. <b>É pra ser.</b>',
-          '8 "tu" isolados · 10 s de pausa · repita até o tempo acabar.'],
-        erro: 'Apertar os lábios pra achar o zumbido. Quem comprime o ar aqui é a <b>língua</b>, não o lábio.' },
-      { id: 'f1c', nome: 'Descanso — lábios soltos', dur: 60, onde: 'descanso',
+      { id: 'f1a', nome: 'O espelho — a montagem exata', dur: 120, onde: 'espelho',
+        como: ['<b>Lábio de baixo</b> puxado pra cima, cobrindo de leve a borda dos dentes de baixo.',
+          '<b>A língua</b>: a face de baixo da ponta — uns <b>3 mm atrás da pontinha</b>, em toda a largura — apoia na <b>borda cortante dos dentes de baixo</b> e em cima do lábio de baixo. O resto da língua curva pra cima, em direção ao céu da boca.',
+          '<b>Os lábios</b> fecham em bico <b>em volta da língua</b> — e <b>não se tocam</b>: fica uma fresta por onde a língua aparece um pouquinho.',
+          '<b>Queixo</b> empurrado pra cima e amassadinho — o contrário do "queixo chato" do Farkas.'],
+        erro: 'A ponta da língua ir pra <b>trás</b> dos dentes. Callet dizia que esse é o maior erro de todos — junto com apertar os lábios pra subir.' },
+      { id: 'f1b', nome: 'A abertura dos molares — 12 a 16 mm', dur: 90, onde: 'espelho',
+        como: ['Os <b>molares</b> ficam abertos entre <b>12 e 16 mm</b> — é isso que dá espaço pra língua trabalhar.',
+          'Referência: dois dedos empilhados (indicador + médio) entre os molares ≈ essa medida.',
+          'Monte a embocadura da f1a <b>mantendo</b> essa abertura. Segure 10 s, solte, repita.'],
+        erro: 'Fechar os dentes ao montar. Sem espaço, a língua não tem como ficar à frente — e nada do resto funciona.' },
+      { id: 'f1c', nome: 'Spit-buzz — "cuspa um fio de cabelo"', dur: 150, onde: 'sem bocal',
+        como: ['A imagem é do Callet: <b>cuspa um fio de cabelo de cima da língua — mas o fio nunca sai da língua.</b>',
+          'O ar escapa pela <b>borda cortante dos dentes de cima</b>, enquanto a ponta da língua fica firme no lábio de baixo.',
+          '8 "cuspidas" isoladas · 10 s de pausa · repita.'],
+        erro: 'Virar um "hoo" soprado, ou virar zumbido de lábio. Nem sopro, nem buzz: é uma <b>cuspida</b>.' },
+      { id: 'f1d', nome: 'Descanso — lábios soltos', dur: 60, onde: 'descanso',
         como: ['Boca fechada, ar pelo nariz. Solte tudo — inclusive o queixo.',
-          'Descanso é parte do exercício: numa conversão, é ele que evita a inflamação.'], erro: '' },
-      { id: 'f1d', nome: 'Buzz no bocal — uma nota só', dur: 120, onde: 'bocal',
-        como: ['Mesmo set-up, agora no bocal.', 'Uma nota grave confortável, 4 tempos, ataque "tu" com a língua à frente.',
-          '6 repetições com pausa do mesmo tamanho.'],
-        erro: 'Glissando e caçada de nota. Hoje é <b>uma</b> nota — o que se treina é o ataque, não a altura.' },
-      { id: 'f1e', nome: 'Trompete — notas longas do Sol pra baixo', dur: 180, onde: 'trompete',
-        como: ['Sol → Fá → Mi → Ré → Dó (escritos), 4 tempos cada a ♩=60, com 4 tempos de pausa entre elas.',
-          'Ataque "tu" com a ponta da língua entre os lábios, e <b>deixe</b> a nota — não empurre.',
-          'O bocal quase não encosta: <b>pressão mínima</b>.'],
-        erro: 'Subir pro agudo "pra ver se dá". Na fase 1 o agudo não existe.' },
-      { id: 'f1f', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte. Respire fundo 4 vezes, devagar.'], erro: '' },
-      { id: 'f1g', nome: 'Ataques repetidos — quem manda é a língua', dur: 150, onde: 'trompete',
-        como: ['Dó – Ré – Mi – Ré – Dó (escritos), a ♩=60.', '<b>4 ataques "tu"</b> por nota, cada um começando com a língua à frente.',
-          'Entre os ataques, nada se mexe: nem maxilar, nem lábio. Só a língua vai e volta.'],
-        erro: 'Ataque vindo da garganta ("ha"). O som tem que nascer da língua saindo do lugar.' },
-      { id: 'f1h', nome: 'Fechar — anotar como foi', dur: 120, onde: 'descanso',
+          'Descanso é parte do exercício: numa conversão é ele que evita inflamação.'], erro: '' },
+      { id: 'f1e', nome: 'O mesmo spit-buzz — agora no bocal', dur: 150, onde: 'bocal',
+        como: ['Mesma montagem, bocal encostado de leve.', '6 cuspidas com pausa do mesmo tamanho.',
+          'É aqui que quase todo mundo escorrega: no bocal a tendência é a língua recuar. Confira no espelho.'],
+        erro: 'Enfiar o bocal pra "ajudar". Pressão mínima — quem comprime é a língua.' },
+      { id: 'f1f', nome: 'As primeiras notas — só o grave', dur: 180, onde: 'trompete',
+        como: ['Callet mandava começar <b>exclusivamente pelo registro grave</b> e não ir atrás do agudo no começo.',
+          'Dó grave (escrito) e vizinhas, ataque decidido, notas curtas com pausa igual.',
+          'Se sair sujo, tudo bem: o que se treina hoje é a <b>posição</b>, não o som.'],
+        erro: 'Testar o agudo "só pra ver". Nesta fase o agudo não existe.' },
+      { id: 'f1g', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte. Respire fundo 4 vezes, devagar.'], erro: '' },
+      { id: 'f1h', nome: 'Fechar — anotar como foi', dur: 90, onde: 'descanso',
         como: ['Guarde o trompete. Descanse os lábios de verdade.',
-          'Anote no diário abaixo como a língua se comportou hoje — é esse registro que diz a hora de subir de fase.'], erro: '' }
+          'Anote no diário abaixo — é esse registro que diz a hora de mudar de fase.'], erro: '' }
     ]
   },
   {
-    n: 2, nome: 'O som fica', quando: 'semanas 3–4', dias: 7,
-    alvo: 'Segurar um som limpo no registro médio com a língua à frente o tempo todo — inclusive ligando notas.',
-    sinal: 'A escala de Dó sobe e desce ligada, sem a língua recuar e sem o som quebrar no meio.',
+    n: 2, nome: 'As cinco articulações e o grave', quando: 'quando o set-up já para de pé', dias: 14,
+    alvo: 'A língua aguentar cinco ataques seguidos sem recuar, e o grave começar a encorpar.',
+    sinal: 'Cinco ataques seguidos numa nota só, rápidos, e o quinto sai igual ao primeiro.',
+    fonte: 'as "cinco articulações" e os pedais são o núcleo do que os alunos da linha Callet/Civiletti praticam primeiro',
     exs: [
       { id: 'f2a', nome: 'Espelho — recolocar', dur: 60, onde: 'espelho',
-        como: ['Monte a embocadura da fase 1. 3 séries de 10 s.', 'Confira: lábios à frente, queixo pra cima, língua entre os lábios.'], erro: '' },
-      { id: 'f2b', nome: 'Spit-buzz + bocal', dur: 120, onde: 'bocal',
-        como: ['1 min de spit-buzz sem bocal, 1 min no bocal, sempre com ataque "tu".', 'Uma nota grave, 4 tempos, pausa igual.'], erro: '' },
-      { id: 'f2c', nome: 'Notas longas com ar (sem apertar)', dur: 180, onde: 'trompete',
-        como: ['Sol → Dó escritos, 8 tempos cada a ♩=60.', 'Cresça e diminua o som <b>só com o ar</b>: a embocadura fica parada.',
-          'Pausa do mesmo tamanho entre as notas.'],
-        erro: 'Fazer o crescendo empurrando o bocal contra o lábio.' },
+        como: ['A montagem da fase 1, 3 séries de 10 s.', 'Confira o essencial: molares abertos, língua à frente, lábios sem se tocar.'], erro: '' },
+      { id: 'f2b', nome: 'Spit-buzz — sem bocal e no bocal', dur: 90, onde: 'bocal',
+        como: ['45 s sem bocal, 45 s no bocal. Só pra acordar a língua.'], erro: '' },
+      { id: 'f2c', nome: 'As cinco articulações', dur: 180, onde: 'trompete',
+        como: ['O exercício-chave da conversão: <b>5 ataques numa nota só</b>, o mais rápido que sair <b>limpo</b>.',
+          'Comece no Dó grave escrito; suba uma nota por vez, sem passar do Sol.',
+          'A régua é o <b>quinto</b> ataque: se ele sair mais fraco ou abafado, a língua recuou — pare e recomece mais devagar.',
+          'Pausa de 4 tempos entre cada nota.'],
+        erro: 'Correr antes de estar limpo. A velocidade vem da língua já estar firme, não o contrário.' },
       { id: 'f2d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte tudo. Nada de "só mais uma".'], erro: '' },
-      { id: 'f2e', nome: 'Escala de Dó ligada — a língua não recua', dur: 180, onde: 'trompete',
-        como: ['Dó maior escrito, uma oitava, <b>ligada</b>, ♩=60, subindo e descendo.',
-          'A ponta da língua fica à frente o tempo todo; quem muda de nota é o <b>ar</b> e o dorso da língua atrás.',
-          '2 vezes, descansa 30 s, mais 2 vezes.'],
-        erro: 'A língua recuar na subida. Se recuar, pare a escala em cima da nota em que recuou e recomece devagar.' },
-      { id: 'f2f', nome: 'Staccato leve — colcheias', dur: 150, onde: 'trompete',
-        como: ['Dó – Mi – Sol – Mi – Dó (escritos), colcheias a ♩=72.', 'Ataque curto e leve; o som para <b>com a língua voltando</b>, não com a garganta.'],
-        erro: 'Endurecer o ataque pra "ficar limpo". Leve vence duro.' },
+      { id: 'f2e', nome: 'Notas longas a partir do Dó grave', dur: 180, onde: 'trompete',
+        como: ['Dó grave (abaixo da pauta) e vizinhas, o mais longo que o ar deixar.',
+          'A meta de longo prazo dessa linha é sustentar <b>5 respirações cheias seguidas</b> nessa região — não hoje.',
+          'Descanse o mesmo tempo que tocou.'],
+        erro: 'Soprar demais. O erro mais comum de quem começa é <b>overblowing</b> — solte mais ar <i>antes</i> de atacar.' },
+      { id: 'f2f', nome: 'Pedais — construir músculo', dur: 120, onde: 'trompete',
+        como: ['Desça abaixo do Fá# grave, no território dos pedais, com a mesma montagem.',
+          'A língua <b>não sai do lugar</b>; quem desce é o dorso da língua, abrindo espaço.',
+          'Som feio é esperado. Aqui se constrói musculatura, não repertório.'], erro: '' },
       { id: 'f2g', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Boca fechada, ar pelo nariz.'], erro: '' },
-      { id: 'f2h', nome: 'Fechar — anotar', dur: 90, onde: 'descanso', como: ['Guarde o instrumento e registre o dia no diário abaixo.'], erro: '' }
+      { id: 'f2h', nome: 'Fechar — anotar', dur: 150, onde: 'descanso',
+        como: ['Guarde o instrumento e registre o dia no diário.', 'Se sobrar tempo, fique parado mesmo. O descanso conta.'], erro: '' }
     ]
   },
   {
-    n: 3, nome: 'Flexibilidade e agudo pela compressão', quando: 'semanas 5–8', dias: 21,
-    alvo: 'Mudar de harmônico e subir de registro sem apertar o lábio nem enfiar o bocal — a compressão vem da língua.',
-    sinal: 'Dó–Sol–Dó ligado sai limpo, e a nota mais aguda do dia sai sem você precisar empurrar o trompete contra a boca.',
+    n: 3, nome: 'Escalas em pp, controle e cromáticas', quando: 'quando as cinco articulações estão limpas', dias: 45,
+    alvo: 'Levar a posição pra dentro de escalas e cromáticas — no <i>pianíssimo</i>, que é onde o erro aparece.',
+    sinal: 'Uma oitava de Dó em pp, subindo e descendo, sem a língua recuar e sem o som quebrar.',
+    fonte: 'ordem do livro de 1987 (escalas → estudos de controle → cromáticas); o pp vem da linha Civiletti',
     exs: [
-      { id: 'f3a', nome: 'Espelho + spit-buzz', dur: 60, onde: 'espelho', como: ['30 s montando, 30 s de "tu" cuspido. Só pra recolocar a língua.'], erro: '' },
-      { id: 'f3b', nome: 'Bocal — intervalos de 5ª', dur: 120, onde: 'bocal',
-        como: ['No bocal: nota grave → 5ª acima → volta, <b>ligado</b>.', 'A ponta da língua não sai do lugar; muda só o dorso ("tu" → "ti").'], erro: '' },
-      { id: 'f3c', nome: 'Ligaduras de harmônico — Dó · Sol · Dó', dur: 180, onde: 'trompete',
-        como: ['Dedilhado fixo (0), ♩=60: Dó – Sol – Dó – Sol – Dó, tudo ligado.',
-          'Depois o mesmo com 1, 2, 12, 23 — descendo de dedilhado.', 'Descanse 20 s a cada dedilhado.'],
-        erro: 'Trocar de harmônico com o maxilar. O maxilar fica onde está.' },
+      { id: 'f3a', nome: 'Espelho + spit-buzz', dur: 60, onde: 'espelho', como: ['30 s montando, 30 s cuspindo. Só pra recolocar.'], erro: '' },
+      { id: 'f3b', nome: 'As cinco articulações — manutenção', dur: 120, onde: 'trompete',
+        como: ['Três notas do grave, 5 ataques em cada. Continua sendo a régua.'], erro: '' },
+      { id: 'f3c', nome: 'Escala em pianíssimo', dur: 180, onde: 'trompete',
+        como: ['Dó maior escrito, uma oitava, <b>pp</b>, ♩=60, subindo e descendo.',
+          'No pp você não consegue esconder nada: se a língua recuar, a nota morre.',
+          'Primeiro <b>1 ataque</b> por nota; depois <b>5</b> por nota.'],
+        erro: 'Compensar o pp com pressão de bocal. Se não sair no pp, desça de nota — não aperte.' },
       { id: 'f3d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte.'], erro: '' },
-      { id: 'f3e', nome: 'Subir por semitons — até a primeira nota que pedir força', dur: 180, onde: 'trompete',
-        como: ['Dó – Ré – Dó ligado; suba o padrão meio tom por vez.',
-          '<b>Pare</b> na primeira nota que você só consegue apertando ou empurrando o bocal. Essa é a nota do dia.',
-          'Anote qual foi: em duas semanas ela sobe sozinha.'],
-        erro: 'Insistir acima do limite. Nesta fase, cada nota forçada custa dias.' },
-      { id: 'f3f', nome: 'Língua rápida — repetições no médio', dur: 150, onde: 'trompete',
-        como: ['Sol escrito, 8 ataques "tu" por compasso a ♩=72; depois a ♩=84.', 'Curto, leve, todos iguais. Se sujar, volte o andamento.'], erro: '' },
+      { id: 'f3e', nome: 'Estudo de controle — uma nota, muitos ataques', dur: 150, onde: 'trompete',
+        como: ['Uma nota confortável do médio. Ataque, segure 4 tempos, pare com a <b>língua voltando ao lugar</b> — não com a garganta.',
+          'Depois 2 ataques por respiração, 3, 4… até sujar.'], erro: 'Parar a nota com a garganta ("hh"). O fim da nota é da língua.' },
+      { id: 'f3f', nome: 'Cromática lenta', dur: 150, onde: 'trompete',
+        como: ['Do Dó grave subindo cromático até o Sol, ♩=60, ligada.',
+          'Cada semitom é uma chance da língua recuar. Ela não recua.'], erro: '' },
       { id: 'f3g', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Boca fechada, ar pelo nariz.'], erro: '' },
-      { id: 'f3h', nome: 'Fechar — anotar (e a nota do dia)', dur: 90, onde: 'descanso',
-        como: ['Registre no diário. Se quiser, guarde junto qual foi a nota mais aguda que saiu <b>sem forçar</b>.'], erro: '' }
+      { id: 'f3h', nome: 'Fechar — anotar', dur: 120, onde: 'descanso', como: ['Registre o dia no diário.'], erro: '' }
     ]
   },
   {
-    n: 4, nome: 'Levar pro repertório', quando: 'da semana 9 em diante', dias: 42,
-    alvo: 'Tocar música de verdade com a embocadura nova — primeiro devagar, depois no andamento da banda.',
-    sinal: 'Um riff inteiro da trilha sai no andamento com a embocadura nova, e você para de pensar nela enquanto toca.',
+    n: 4, nome: 'Ligaduras, harmônicos e o agudo como consequência', quando: 'quando as escalas em pp saem limpas', dias: 90,
+    alvo: 'Trocar de harmônico e subir sem apertar os lábios — o agudo é resultado, nunca alvo.',
+    sinal: 'Grave → agudo → grave ligado, num fôlego, e a nota mais aguda do dia sai sem você empurrar o bocal.',
+    fonte: 'ordem do livro (ligaduras → harmônicos); o aquecimento grave→agudo→grave é o que Civiletti descreve',
     exs: [
-      { id: 'f4a', nome: 'Espelho — 45 s e pronto', dur: 45, onde: 'espelho', como: ['Só pra confirmar o set-up. A esta altura já é reflexo.'], erro: '' },
-      { id: 'f4b', nome: 'Aquecer — notas longas e uma ligadura', dur: 120, onde: 'trompete',
-        como: ['Sol → Dó escritos, 8 tempos, pressão mínima.', 'Fecha com Dó–Sol–Dó ligado, duas vezes.'], erro: '' },
-      { id: 'f4c', nome: 'Um riff da trilha — devagar', dur: 240, onde: 'trompete', trilha: true,
+      { id: 'f4a', nome: 'Espelho + spit-buzz', dur: 45, onde: 'espelho', como: ['45 s. A esta altura é só conferência.'], erro: '' },
+      { id: 'f4b', nome: 'Aquecer no grave', dur: 105, onde: 'trompete', como: ['Notas longas no grave + 5 articulações numa nota. Sem pressa.'], erro: '' },
+      { id: 'f4c', nome: 'Ligaduras de lábio', dur: 180, onde: 'trompete',
+        como: ['Dedilhado fixo (0): Dó – Sol – Dó – Sol – Dó, ligado, ♩=60. Depois 1, 2, 12, 23.',
+          'A <b>ponta</b> da língua não sai do lugar em nenhum momento; quem muda é o <b>dorso</b>: desce pro grave, curva mais pro agudo.',
+          '20 s de descanso a cada dedilhado.'],
+        erro: 'Trocar de harmônico com o maxilar. O maxilar fica onde está — e os molares, abertos.' },
+      { id: 'f4d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte.'], erro: '' },
+      { id: 'f4e', nome: 'Harmônicos — do mais grave ao mais agudo e volta', dur: 180, onde: 'trompete',
+        como: ['Comece na nota <b>mais grave</b> com um ataque forte e <b>ligue subindo</b> até a mais aguda que sair — e volte descendo.',
+          'É o aquecimento que a própria linha Callet/Civiletti descreve. Um fôlego por série, descanso igual.'], erro: '' },
+      { id: 'f4f', nome: 'A nota do dia', dur: 150, onde: 'trompete',
+        como: ['Dó – Ré – Dó ligado; suba o padrão meio tom por vez.',
+          '<b>Pare</b> na primeira nota que só sai apertando os lábios ou empurrando o bocal. Essa é a nota do dia — anote.',
+          'Apertar os lábios ao subir é, junto com a língua recuar, o erro que Callet mais reclamava.'],
+        erro: 'Insistir acima do limite. Nesta fase, cada nota forçada custa dias.' },
+      { id: 'f4g', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Boca fechada, ar pelo nariz.'], erro: '' },
+      { id: 'f4h', nome: 'Fechar — anotar (e a nota do dia)', dur: 120, onde: 'descanso',
+        como: ['Registre no diário e guarde qual foi a nota mais aguda que saiu <b>sem forçar</b>.'], erro: '' }
+    ]
+  },
+  {
+    n: 5, nome: 'Levar pro repertório', quando: 'quando o agudo médio já é confiável', dias: 150,
+    alvo: 'Tocar música de verdade com a embocadura nova — primeiro devagar, depois no andamento da banda.',
+    sinal: 'Um riff inteiro da trilha sai no andamento e você para de pensar na embocadura enquanto toca.',
+    fonte: 'etudes e solos fecham o livro; aqui o "solo" é o repertório real do app',
+    exs: [
+      { id: 'f5a', nome: 'Espelho — 45 s e pronto', dur: 45, onde: 'espelho', como: ['Só confirmação do set-up.'], erro: '' },
+      { id: 'f5b', nome: 'Aquecer — grave e uma ligadura', dur: 105, onde: 'trompete',
+        como: ['Notas longas no grave; fecha com grave→agudo→grave ligado, duas vezes.'], erro: '' },
+      { id: 'f5c', nome: 'Um riff da trilha — devagar', dur: 240, onde: 'trompete', trilha: true,
         como: ['Escolha <b>um</b> riff curto da trilha (4 a 8 compassos).',
-          'Toque a 60% do andamento, com a língua à frente em cada ataque.', 'Errou a embocadura? Pare, remonte, recomece a frase.'],
+          'Toque a 60% do andamento, com a língua no lugar em cada ataque.',
+          'Perdeu a embocadura? Pare, remonte, recomece a frase.'],
         erro: 'Tocar a peça inteira. Aqui é uma frase só, muitas vezes.' },
-      { id: 'f4d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte os lábios.'], erro: '' },
-      { id: 'f4e', nome: 'O mesmo riff — no andamento', dur: 180, onde: 'trompete', trilha: true,
-        como: ['Suba pro andamento real (use o metrônomo do app, com a rampa se quiser).',
+      { id: 'f5d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte os lábios.'], erro: '' },
+      { id: 'f5e', nome: 'O mesmo riff — no andamento', dur: 180, onde: 'trompete', trilha: true,
+        como: ['Suba pro andamento real (o metrônomo do app tem rampa).',
           'Se a embocadura antiga voltar, desça 10 BPM e fique lá.'], erro: '' },
-      { id: 'f4f', nome: 'Checagem A/B — antiga × nova', dur: 150, onde: 'trompete',
+      { id: 'f5f', nome: 'Checagem A/B — antiga × nova', dur: 150, onde: 'trompete',
         como: ['4 compassos do jeito antigo, 4 do jeito novo, alternando.',
-          'Não é competição: é pra você ouvir o que cada uma dá hoje — e decidir com informação.'],
-        erro: 'Fazer A/B todo dia. Uma vez por semana basta; alternar demais atrapalha a conversão.' },
-      { id: 'f4g', nome: 'Fechar — anotar', dur: 105, onde: 'descanso', como: ['Guarde o trompete e registre o dia.'], erro: '' }
+          'Não é competição: é pra você ouvir o que cada uma dá <b>hoje</b> e decidir com informação.'],
+        erro: 'Fazer A/B todo dia — <b>uma vez por semana basta</b>. Alternar demais atrapalha a conversão.' },
+      { id: 'f5g', nome: 'Fechar — anotar', dur: 120, onde: 'descanso', como: ['Guarde o trompete e registre o dia.'], erro: '' }
     ]
   }
 ];
@@ -184,7 +224,19 @@ function telaSuperchops() {
       <ul class="sc-ul"><li><b>15 minutos por dia, e só.</b> Conversão se faz em dose pequena e diária — mais tempo não acelera, inflama.</li>
       <li><b>Guarde a embocadura antiga para tocar.</b> Ensaio e roda continuam no jeito velho até o novo aguentar. Trocar no palco é o jeito mais rápido de desistir.</li>
       <li><b>Dor, dormência ou inchaço = parar no dia.</b> Cansaço é normal; dor não é.</li></ul></details>
+    <details class="sc-det"><summary>quanto tempo isso leva de verdade</summary>
+      <ul class="sc-ul"><li>O próprio Callet dizia ver <b>melhora em uma semana</b>, mas que leva <b>vários meses</b> pra começar a construir a embocadura de fato.</li>
+      <li>Trocas de embocadura documentadas por trompetistas levam <b>de 12 a 18 meses</b> até voltar a tocar naipe com segurança.</li>
+      <li>Por isso as fases aqui são <b>estágios, não semanas</b>. Os dias que o app usa pra sugerir (0 · 14 · 45 · 90 · 150) são chute conservador — quem manda é o sinal de cada fase.</li></ul></details>
   </div>
+
+  <div class="card"><h3>🦷 Isso encaixa na sua boca?</h3>
+    <p class="meta" style="margin-top:0">A TCE não é neutra do ponto de vista anatômico. A pesquisa de embocadura de <b>Donald Reinhardt</b> identificou a língua apoiada no lábio como viável sobretudo em quem tem <b>dentes inferiores curtos</b> e <b>lábio inferior carnudo</b> — o que não é a maioria das bocas.</p>
+    <details class="sc-det"><summary>o teste de 30 segundos</summary>
+      <ul class="sc-ul"><li>Puxe o lábio de baixo levemente por cima dos dentes de baixo. <b>Ele cobre a borda sem esforço?</b></li>
+      <li>Apoie a face de baixo da ponta da língua na borda dos dentes de baixo. <b>Ela fica lá sem empurrar?</b></li>
+      <li>Com os molares a 12–16 mm, <b>os lábios conseguem fazer bico em volta da língua sem se tocarem?</b></li></ul>
+      <p class="meta">Três "sim" = vale tentar. Um "não" que só se resolve forçando = o método provavelmente não é pra sua boca, e insistir cobra caro. Isso é informação, não veredito — professor presencial vê o que espelho nenhum mostra.</p></details></div>
 
   <div class="pgrid">
     <div class="pcard"><div class="pnum">${scDias()}</div><div class="plab">dias</div></div>
@@ -217,7 +269,11 @@ function telaSuperchops() {
     <div class="spark" style="margin-top:14px">${spark}</div>
     <p class="meta">últimos 14 dias · a altura é o seu nível no diário</p></div>
 
-  <p class="meta" style="margin:16px 4px 0">Fonte e limites deste plano: <b>docs/superchops.md</b> no repositório. Quem quiser o método na íntegra: <i>Super Chops</i> (1987) e <i>Trumpet Secrets</i>, de Jerome Callet.</p>`;
+  <h2 class="sec">O que é evidência e o que é aposta</h2>
+  <div class="card"><p style="margin-top:0"><b>A favor.</b> Ressonância magnética em tempo real (55 quadros/s, 2019) mostrou que trompetistas saudáveis mantêm a <b>língua anterior estável e bem posicionada</b>, estreitando a frente da boca pra acelerar o ar — a ideia de "língua como válvula" tem base. Há ainda uma carta de <b>Herbert L. Clarke</b> (1940) mencionando língua no lábio.</p>
+    <p><b>Contra.</b> Não há evidência de que a maioria dos profissionais use TCE. Análise em vídeo do <b>próprio Callet tocando</b> mostra uma embocadura comum, diferente do que ele ensinava. A claim anatômica dele de que o vermelhão do lábio "não tem músculo" é <b>falsa</b>. E há o risco de a língua virar muleta no lugar da força dos cantos.</p>
+    <p class="meta">A alternativa de menor risco, se isto travar: manter a língua <b>à frente mas atrás e embaixo dos dentes de baixo</b>, sem tocar o lábio. Pega boa parte do benefício sem o ponto mais contestado do método.</p>
+    <p class="meta" style="margin-top:10px">Fontes, citações e links: <b>docs/superchops.md</b> no repositório. O método na íntegra: <i>Superchops</i> (1987) e <i>Trumpet Secrets</i> (2002, com Bahb Civiletti), de Jerome Callet (1930–2019).</p></div>`;
   window.scrollTo(0, 0);
 }
 
