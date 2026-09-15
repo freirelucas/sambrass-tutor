@@ -30,10 +30,12 @@ const SC_FASES = [
         como: ['<b>Lábio de baixo</b> puxado pra cima, cobrindo de leve a borda dos dentes de baixo.',
           '<b>A língua</b>: a face de baixo da ponta — uns <b>3 mm atrás da pontinha</b>, em toda a largura — apoia na <b>borda cortante dos dentes de baixo</b> e em cima do lábio de baixo. O resto da língua curva pra cima, em direção ao céu da boca.',
           '<b>Os lábios</b> fecham em bico <b>em volta da língua</b> — e <b>não se tocam</b>: fica uma fresta por onde a língua aparece um pouquinho.',
-          '<b>Queixo</b> empurrado pra cima e amassadinho — o contrário do "queixo chato" do Farkas.'],
+          '<b>Queixo</b> empurrado pra cima e amassadinho — o contrário do "queixo chato" do Farkas.',
+          'Os <b>não</b> que eles listam: não apertar os lábios um contra o outro, não puxá-los contra os dentes, não empurrar o lábio de cima com o de baixo (careta de desdém), não fechar os cantos num sorriso. Ombros, braços e pescoço relaxados.'],
         erro: 'A ponta da língua ir pra <b>trás</b> dos dentes. Callet dizia que esse é o maior erro de todos — junto com apertar os lábios pra subir.' },
       { id: 'f1b', nome: 'A abertura dos molares — 12 a 16 mm', dur: 90, onde: 'espelho',
         como: ['Os <b>molares</b> ficam abertos entre <b>12 e 16 mm</b> — é isso que dá espaço pra língua trabalhar.',
+          'Nas palavras deles: <i>"mantenha os dentes bem abertos, para que toda a largura da língua possa ficar entre eles"</i>.',
           'Referência: dois dedos empilhados (indicador + médio) entre os molares ≈ essa medida.',
           'Monte a embocadura da f1a <b>mantendo</b> essa abertura. Segure 10 s, solte, repita.'],
         erro: 'Fechar os dentes ao montar. Sem espaço, a língua não tem como ficar à frente — e nada do resto funciona.' },
@@ -42,9 +44,10 @@ const SC_FASES = [
           'O ar escapa pela <b>borda cortante dos dentes de cima</b>, enquanto a ponta da língua fica firme no lábio de baixo.',
           '8 "cuspidas" isoladas · 10 s de pausa · repita.'],
         erro: 'Virar um "hoo" soprado, ou virar zumbido de lábio. Nem sopro, nem buzz: é uma <b>cuspida</b>.' },
-      { id: 'f1d', nome: 'Descanso — lábios soltos', dur: 60, onde: 'descanso',
-        como: ['Boca fechada, ar pelo nariz. Solte tudo — inclusive o queixo.',
-          'Descanso é parte do exercício: numa conversão é ele que evita inflamação.'], erro: '' },
+      { id: 'f1d', nome: 'Respirar pelo nariz — e descansar', dur: 60, onde: 'descanso',
+        como: ['Callet e Civiletti mandam <b>respirar pelo nariz</b>, e há um motivo mecânico: com a língua e os lábios montados, abrir a boca pra respirar <b>desmonta tudo</b>.',
+          'Treine agora: montado, inspire pelo nariz sem mexer nada. É assim que vai ser entre as frases.',
+          'Depois solte tudo e descanse — numa conversão é o descanso que evita inflamação.'], erro: '' },
       { id: 'f1e', nome: 'O mesmo spit-buzz — agora no bocal', dur: 150, onde: 'bocal',
         como: ['Mesma montagem, bocal encostado de leve.', '6 cuspidas com pausa do mesmo tamanho.',
           'É aqui que quase todo mundo escorrega: no bocal a tendência é a língua recuar. Confira no espelho.'],
@@ -79,9 +82,10 @@ const SC_FASES = [
       { id: 'f2d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte tudo. Nada de "só mais uma".'], erro: '' },
       { id: 'f2e', nome: 'Notas longas a partir do Dó grave', dur: 180, onde: 'trompete',
         como: ['Dó grave (abaixo da pauta) e vizinhas, o mais longo que o ar deixar.',
+          '<b>Pouco ar.</b> A língua ancorada é uma abordagem de baixo volume e alta compressão: entra pouco ar, justamente pra não "afogar" a embocadura.',
           'A meta de longo prazo dessa linha é sustentar <b>5 respirações cheias seguidas</b> nessa região — não hoje.',
           'Descanse o mesmo tempo que tocou.'],
-        erro: 'Soprar demais. O erro mais comum de quem começa é <b>overblowing</b> — solte mais ar <i>antes</i> de atacar.' },
+        erro: 'Soprar demais. <b>Overblowing</b> é o erro nº 1 de quem começa — e a correção é <i>exalar mais antes</i> de atacar, não soprar com mais força.' },
       { id: 'f2f', nome: 'Pedais — construir músculo', dur: 120, onde: 'trompete',
         como: ['Desça abaixo do Fá# grave, no território dos pedais, com a mesma montagem.',
           'A língua <b>não sai do lugar</b>; quem desce é o dorso da língua, abrindo espaço.',
@@ -126,7 +130,7 @@ const SC_FASES = [
       { id: 'f4b', nome: 'Aquecer no grave', dur: 105, onde: 'trompete', como: ['Notas longas no grave + 5 articulações numa nota. Sem pressa.'], erro: '' },
       { id: 'f4c', nome: 'Ligaduras de lábio', dur: 180, onde: 'trompete',
         como: ['Dedilhado fixo (0): Dó – Sol – Dó – Sol – Dó, ligado, ♩=60. Depois 1, 2, 12, 23.',
-          'A <b>ponta</b> da língua não sai do lugar em nenhum momento; quem muda é o <b>dorso</b>: desce pro grave, curva mais pro agudo.',
+          'A <b>ponta</b> da língua não sai do lugar em nenhum momento; quem muda é o <b>dorso</b>. Na formulação deles: <i>"quanto mais agudo você toca, mais grossa e mais larga a língua fica"</i> — e o lábio de cima se enrola pra dentro, por cima dela.',
           '20 s de descanso a cada dedilhado.'],
         erro: 'Trocar de harmônico com o maxilar. O maxilar fica onde está — e os molares, abertos.' },
       { id: 'f4d', nome: 'Descanso', dur: 60, onde: 'descanso', como: ['Solte.'], erro: '' },
@@ -168,6 +172,36 @@ const SC_FASES = [
       { id: 'f5g', nome: 'Fechar — anotar', dur: 120, onde: 'descanso', como: ['Guarde o trompete e registre o dia.'], erro: '' }
     ]
   }
+];
+/* ---------- vídeos curados ----------
+ * Todos conferidos um a um pelo oEmbed do YouTube (canal + título batem com o que está
+ * escrito aqui). São links externos de propósito: o app é offline-first e não vai
+ * embutir player de terceiros. Ordem = do método cru ao contraditório. */
+const SC_VIDEOS = [
+  { grupo: 'O método na fonte', desc: 'Callet ensinando, em vídeo. É a fonte primária — vale mais que qualquer descrição escrita, inclusive a desta aba.', itens: [
+    { id: 'anXDj7f9g0g', canal: '333aleksandro', tit: 'Master Superchops — Disc 1', por: 'O DVD de 2007 inteiro: as 3 aulas do Callet e as demonstrações.' },
+    { id: '-NtrvlRt0-g', canal: '333aleksandro', tit: 'Master Superchops — Disc 2', por: 'A continuação, com trombone, flauta e trompa.' },
+    { id: '67GgsDre3gc', canal: 'Chris Johnson', tit: 'Tongue Controlled Embouchure', por: 'Explicação curta do que é a TCE, se o DVD inteiro assustar.' }
+  ] },
+  { grupo: 'Os exercícios, em ordem', desc: 'A série de prática do Master Superchops. O protocolo do próprio material é repetir cada exercício várias vezes ao dia por <b>21 dias</b> antes de passar adiante — bem mais devagar que qualquer fase desta aba.', itens: [
+    { id: 'rdxxaS1XFIM', canal: "Trumpeter's Stuff", tit: 'Getting Started 01–04', por: 'O ponto de partida. Casa com a fase 1 daqui.' },
+    { id: '-ONiwcvOKHw', canal: "Trumpeter's Stuff", tit: 'Getting Started 05–07', por: 'Continuação do começo.' },
+    { id: 'nMJRkqpRz5c', canal: "Trumpeter's Stuff", tit: 'Intermediate 01–03', por: 'O passo seguinte — só depois que o grave estiver firme.' },
+    { id: '8qwCMFMnk3c', canal: 'Richard Boulger', tit: 'Ataques de língua "spit" no Dó grave', por: 'Demonstração isolada do ataque cuspido — o que a fase 1 mais treina.' },
+    { id: '4NX3BtAXIyM', canal: 'Jeff Lewis Trumpet', tit: 'Anchor tongue lip buzzing (curto)', por: '"Anchor tongue" é o nome acadêmico da língua ancorada. 30 s, direto ao ponto.' }
+  ] },
+  { grupo: 'Conversão de verdade', desc: 'O que ninguém filma: como é passar pelo processo, com o som feio que vem junto.', itens: [
+    { id: 'lO4lQgVvc9o', canal: 'Brass Practice', tit: 'TCE Practice Archive — primeiros dias da troca', por: 'O som real de quem acabou de começar. Assista <b>antes</b> de se assustar com o seu.' },
+    { id: '0t9kHO1Nq-o', canal: 'Brass Practice', tit: 'Explaining Superchops — E01', por: 'Série destrinchando o método na prática.' }
+  ] },
+  { grupo: 'A ciência — o que dá pra VER', desc: 'Ressonância magnética em tempo real mostrando a língua enquanto se toca. Não é sobre Callet, é sobre o que a língua realmente faz — e é o melhor material que existe pra entender o assunto.', itens: [
+    { id: 'LTMe38uOaT8', canal: 'MRI Horn Videos', tit: 'Episódio 1 — introdução ao projeto RT-MRI', por: 'Como filmaram a boca de instrumentista tocando dentro do aparelho.' },
+    { id: '7Cz5HoQ1fCI', canal: 'MRI Horn Videos', tit: 'Episódio 2 — o papel da língua e do maxilar na altura', por: '<b>Se você for ver um só, veja este.</b> A língua subindo e indo à frente pra subir de nota, filmada por dentro.' },
+    { id: '99iHTGvxTO0', canal: 'John Ericson', tit: 'Horn Notes Podcast 12 — com Peter Iltis (parte I)', por: 'O pesquisador explicando os achados. Partes II e III na sequência do canal.' }
+  ] },
+  { grupo: 'O contraditório', desc: 'Nenhuma aba que te empurra pra uma conversão de embocadura devia esconder isto.', itens: [
+    { id: 'SY1L1yXLuRU', canal: 'TRUMPETSIZZLE', tit: 'Se a TCE é o santo graal, por que não fazemos todos?', por: 'A pergunta cética, feita por quem toca. Veja junto com o card de evidência acima.' }
+  ] }
 ];
 const SC_ONDE = { espelho: '🪞 sem instrumento', 'sem bocal': '💨 só os lábios', bocal: '🔘 bocal', trompete: '🎺 trompete', descanso: '😮‍💨 descanso' };
 const SC_RATE = ['', 'a língua não ficou na frente', 'ficou, mas o som sumiu', 'som saiu, ainda instável', 'som firme no registro médio', 'saiu natural — esqueci de pensar 🎉'];
@@ -270,10 +304,20 @@ function telaSuperchops() {
     <p class="meta">últimos 14 dias · a altura é o seu nível no diário</p></div>
 
   <h2 class="sec">O que é evidência e o que é aposta</h2>
-  <div class="card"><p style="margin-top:0"><b>A favor.</b> Ressonância magnética em tempo real (55 quadros/s, 2019) mostrou que trompetistas saudáveis mantêm a <b>língua anterior estável e bem posicionada</b>, estreitando a frente da boca pra acelerar o ar — a ideia de "língua como válvula" tem base. Há ainda uma carta de <b>Herbert L. Clarke</b> (1940) mencionando língua no lábio.</p>
-    <p><b>Contra.</b> Não há evidência de que a maioria dos profissionais use TCE. Análise em vídeo do <b>próprio Callet tocando</b> mostra uma embocadura comum, diferente do que ele ensinava. A claim anatômica dele de que o vermelhão do lábio "não tem músculo" é <b>falsa</b>. E há o risco de a língua virar muleta no lugar da força dos cantos.</p>
-    <p class="meta">A alternativa de menor risco, se isto travar: manter a língua <b>à frente mas atrás e embaixo dos dentes de baixo</b>, sem tocar o lábio. Pega boa parte do benefício sem o ponto mais contestado do método.</p>
-    <p class="meta" style="margin-top:10px">Fontes, citações e links: <b>docs/superchops.md</b> no repositório. O método na íntegra: <i>Superchops</i> (1987) e <i>Trumpet Secrets</i> (2002, com Bahb Civiletti), de Jerome Callet (1930–2019).</p></div>`;
+  <div class="card"><p class="meta" style="margin-top:0">Levantamento da literatura em <b>docs/superchops-ciencia.md</b>. Em resumo:</p>
+    <p><b>O que a pesquisa apoia — e é muito.</b> Ressonância em tempo real de trompistas de elite mostrou que, ao subir de nota, eles <b>elevam e trazem a língua PRA FRENTE</b>, estreitando o canal de ar pra acelerá-lo. Quem <i>não</i> faz isso (o grupo com distonia) precisa compensar com <b>mais tensão nos músculos da embocadura</b>. Ou seja: "leva a língua à frente em vez de apertar os lábios pra subir" — o erro nº 1 que o Callet apontava — está <b>medido por imagem</b>. Um segundo estudo, em trompetistas, confirma língua anterior estável nos saudáveis.</p>
+    <p><b>O que a pesquisa NÃO apoia.</b> Nada disso exige a língua <b>tocando o lábio</b> — esse pedaço específico continua sem evidência. E um estudo acústico com 7 trompetistas achou que eles <b>não afinam as ressonâncias do trato vocal</b> (ao contrário dos saxofonistas): no trompete quem manda na altura é o lábio, sobre o qual o instrumentista já tem muito controle. A história de "a língua controla a nota" é, no mínimo, exagerada.</p>
+    <p><b>Contra, direto.</b> Não há evidência de que a maioria dos profissionais use TCE. Análise em vídeo do <b>próprio Callet tocando</b> mostra embocadura comum, diferente do que ele ensinava; e a claim dele de que o vermelhão do lábio "não tem músculo" é <b>falsa</b>. Eletromiografia em trompetistas de elite mostra que <b>cada um usa a musculatura de um jeito</b> — "alto nível se alcança por caminhos diferentes". Não existe A embocadura certa.</p>
+    <p class="meta">A alternativa de menor risco, se isto travar: manter a língua <b>à frente mas atrás e embaixo dos dentes de baixo</b>, sem tocar o lábio. Pega o benefício que a imagem confirma, sem o ponto que ninguém conseguiu demonstrar.</p>
+    <p class="meta" style="margin-top:10px">Fontes, citações e a revisão da literatura: <b>docs/superchops.md</b> e <b>docs/superchops-ciencia.md</b> no repositório. O método na íntegra: <i>Superchops</i> (1987) e <i>Trumpet Secrets</i> (2002, com Bahb Civiletti), de Jerome Callet (1930–2019).</p></div>
+
+  <h2 class="sec">Vídeos — ver vale mais que ler</h2>
+  <p class="meta" style="margin:0 4px 10px">Quando alunos tentaram tirar o spit-buzz <b>só do livro</b>, nenhum conseguiu. Texto não transmite isto — imagem em movimento chega mais perto. Links externos (YouTube), conferidos um a um.</p>
+  ${SC_VIDEOS.map(g => `<div class="card sc-vgrupo"><h3>${g.grupo}</h3><p class="meta" style="margin:0 0 10px">${g.desc}</p>
+    ${g.itens.map(v => `<a class="sc-vid" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+      <span class="sc-vplay">▶</span>
+      <span class="sc-vtxt"><b>${v.tit}</b><span class="sc-vcanal">${v.canal}</span><span class="sc-vpor">${v.por}</span></span></a>`).join('')}
+    </div>`).join('')}`;
   window.scrollTo(0, 0);
 }
 

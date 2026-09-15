@@ -168,6 +168,26 @@ test('superchops: a aba abre com o plano do dia fechando em 15:00', async ({ pag
   await expect(page.locator('.sc-ex')).toHaveCount(8);                      // fase 1 = 8 passos
   await expect(page.locator('#tela')).toContainText('Isso encaixa na sua boca?');   // teste anatômico (Reinhardt)
   await expect(page.locator('#tela')).toContainText('O que é evidência e o que é aposta');
+  expect(errors, 'aba superchops sem exceções').toEqual([]);
+});
+
+test('superchops: os vídeos curados abrem em nova aba e apontam pro YouTube', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/index.html');
+  await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+  await page.evaluate(() => ir('superchops'));
+  const vids = page.locator('.sc-vid');
+  const n = await page.evaluate(() => SC_VIDEOS.reduce((a, g) => a + g.itens.length, 0));
+  await expect(vids).toHaveCount(n);
+  expect(n, 'curadoria com pelo menos um punhado de vídeos').toBeGreaterThanOrEqual(10);
+  // todo link é YouTube, abre fora e não vaza referrer sem noopener
+  const links = await vids.evaluateAll((els) => els.map((e) => ({ href: e.href, t: e.target, rel: e.rel })));
+  expect(links.every((l) => /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11}$/.test(l.href)), 'links de vídeo bem formados').toBeTruthy();
+  expect(links.every((l) => l.t === '_blank' && l.rel.includes('noopener')), 'abrem fora, com noopener').toBeTruthy();
+  // os grupos incluem a ciência e o contraditório — não só o método
+  await expect(page.locator('#tela')).toContainText('A ciência — o que dá pra VER');
+  await expect(page.locator('#tela')).toContainText('O contraditório');
   // a soma dos passos é o teto da sessão: 15:00 em TODA fase
   const soma = await page.evaluate(() => SC_FASES.map((f) => f.exs.reduce((a, e) => a + e.dur, 0)));
   expect(soma.length, 'as 5 fases do método').toBe(5);

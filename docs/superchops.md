@@ -7,6 +7,11 @@ embouchure*) de **Jerome Callet** (1930–2019).
 > **Este documento é a pesquisa por trás da aba.** O que está aqui foi levantado das
 > fontes listadas no fim — não da memória de quem escreveu o código. Onde as fontes
 > divergem, o documento diz que divergem.
+>
+> **Companheiro:** [`superchops-ciencia.md`](superchops-ciencia.md) revisa a **literatura
+> acadêmica** (ressonância em tempo real, acústica, eletromiografia, e a única tese que
+> compara Callet com os outros métodos). A aba também traz uma **curadoria de vídeos**
+> (§9), porque texto comprovadamente não transmite o spit-buzz.
 
 ---
 
@@ -63,9 +68,16 @@ conversão do David:
 - **Bocal:** no grave, mais cobertura no lábio de cima, com o de baixo rolado pra fora;
   do médio pra cima vai pra ~50/50, com o de cima ainda rolado pra fora.
 - **Compressão, não volume:** Callet insistia em **compressão forte do ar** (barriga +
-  língua à frente), não em soprar mais. ⚠️ O livro de 1987, porém, manda usar *"much
-  more air (wind) power than ever before"* — a ênfase mudou entre 1987 e 2002, e as
-  fontes se contradizem nesse ponto.
+  língua à frente), não em soprar mais. O livro de 1987 manda usar *"much more air (wind)
+  power than ever before"*, o que parecia contradizer — mas a análise acadêmica de Weakley
+  resolve: a abordagem de língua ancorada **enfatiza pouca entrada de ar, para não afogar
+  a embocadura**. A formulação madura é **volume baixo, compressão alta**, e *overblowing*
+  é o erro nº 1 de quem começa.
+- **Respiração pelo nariz:** Callet e Civiletti são os únicos, entre os pedagogos
+  comparados por Weakley, a mandar respirar **pelo nariz** — os outros respiram pelos
+  cantos da boca. Faz sentido mecânico: abrir a boca **desmonta** o conjunto língua-lábio.
+- **O nome que ele dava ao mecanismo:** *tongue-lip isometric*, com a língua como
+  "amortecedor entre os lábios e a frente dos dentes".
 
 ### O spit-buzz
 
@@ -108,6 +120,9 @@ início, praticar **com espelho**, esperar que os lábios cansem rápido no come
   porque dá mais sensação de vibração; a linha do Civiletti trabalha faixa em ***pp***.
   A aba adota o **pp** (fase 3), porque no pianíssimo o erro aparece em vez de se
   esconder atrás do volume.
+- **Dosagem do DVD:** a série *Master Superchops* manda repetir cada exercício várias
+  vezes ao dia por **21 dias** antes de passar ao próximo — bem mais devagar que as fases
+  desta aba, que agrupa exercícios por estágio em vez de travar um por vez.
 
 **Mapeamento para as fases da aba:**
 
@@ -225,3 +240,21 @@ saber disso é receita de confusão.
 10. [Interview with Robert "Bahb" Civiletti — ojtrumpet.no](https://ojtrumpet.no/interview/civiletti/) — o aquecimento grave→agudo→grave.
 11. [Tongue involvement in embouchure dystonia: real-time MRI (PMC, 2019)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6852982/) — a língua anterior como válvula de ar; estabilidade nos saudáveis.
 12. [The Embouchure Change Chronicles — Blackwell's Trumpet Basics](https://blackwellstrumpetbasics.com/the-embouchure-change-chronicles-part-1-days-1-52/) — a realidade dia a dia de uma troca de embocadura.
+
+---
+
+## 9. Vídeos curados (na aba)
+
+Quando alunos tentaram passar o spit-buzz para o instrumento **só a partir do livro,
+nenhum conseguiu** — pouca abertura entre os dentes, sopro no lugar de cuspida, ou buzz
+demais. Por isso a aba traz uma seção de vídeos, agrupada por função. **Todos os links
+foram conferidos um a um** pelo oEmbed do YouTube (canal e título batem com o descrito);
+são links externos de propósito — o app é offline-first e não embute player de terceiros.
+
+| Grupo | O que tem | Por quê |
+|---|---|---|
+| **O método na fonte** | *Master Superchops* Disc 1 e 2 (o DVD de 2007 inteiro); uma explicação curta da TCE | Callet ensinando vale mais que qualquer descrição escrita — inclusive a desta aba |
+| **Os exercícios, em ordem** | *Getting Started* 01–04 e 05–07, *Intermediate* 01–03; demonstração isolada do ataque "spit"; anchor tongue em 30 s | É a série de prática do material original; o protocolo dele é 21 dias por exercício |
+| **Conversão de verdade** | arquivo de prática dos **primeiros dias** de uma troca; série *Explaining Superchops* | O som feio que ninguém filma. Ver **antes** de se assustar com o próprio |
+| **A ciência — o que dá pra ver** | RT-MRI: introdução ao projeto e **"o papel da língua e do maxilar na altura"**; podcast com o pesquisador Peter Iltis | A língua indo à frente e pra cima ao subir, **filmada por dentro**. Se for ver um só, veja este |
+| **O contraditório** | "Se a TCE é o santo graal, por que não fazemos todos?" | Nenhuma aba que empurra uma conversão de embocadura devia esconder a pergunta cética |

@@ -33,7 +33,16 @@ card **"o que é evidência e o que é aposta"** — a ressonância em tempo rea
 apoia a língua anterior como válvula de ar, mas não há evidência de que profissionais
 usem TCE, e análise em vídeo indica que **o próprio Callet não tocava como ensinava** —
 e prazos honestos (meses, não semanas; conversões documentadas levam 12–18 meses).
-Pesquisa completa, com citações e 12 fontes, em [`docs/superchops.md`](docs/superchops.md).
+A aba traz ainda **curadoria de vídeos** (o DVD do Callet, a série de exercícios, o som
+real de quem está no meio de uma conversão, os filmes de **ressonância magnética em tempo
+real** mostrando a língua por dentro, e o contraditório cético) — todos os links
+conferidos um a um.
+
+Duas pesquisas escritas: [`docs/superchops.md`](docs/superchops.md) (o método, com
+citações e 12 fontes) e [`docs/superchops-ciencia.md`](docs/superchops-ciencia.md)
+(**revisão da literatura acadêmica** — RM em tempo real de Göttingen/Max Planck, acústica
+do trato vocal na *JASA*, eletromiografia em *Med Probl Perform Art*, e a única tese que
+compara Callet com os demais métodos).
 
 ## Números canônicos (a fonte da verdade são os dados)
 
