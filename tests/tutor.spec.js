@@ -156,3 +156,47 @@ test('gravações reais: frases e legos clicáveis (segmentos.json)', async ({ p
   await expect(fig.locator('.seg[data-t0]').first()).toBeAttached({ timeout: 10000 });
   await expect(fig.locator('.seg.lego').first()).toBeAttached();
 });
+
+/* ---- Superchops: aba da conversão de embocadura (plano diário de 15 min) ---- */
+test('superchops: a aba abre com o plano do dia fechando em 15:00', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/index.html');
+  await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+  await page.click('.abas button[data-tela="superchops"]');
+  await expect(page.locator('#tela')).toContainText('Leia antes de começar');
+  await expect(page.locator('.sc-ex')).toHaveCount(8);                      // fase 1 = 8 passos
+  // a soma dos passos é o teto da sessão: 15:00 em TODA fase
+  const soma = await page.evaluate(() => SC_FASES.map((f) => f.exs.reduce((a, e) => a + e.dur, 0)));
+  expect(soma.every((s) => s === 900), 'toda fase fecha em 15:00').toBeTruthy();
+  expect(errors, 'aba superchops sem exceções').toEqual([]);
+});
+
+test('superchops: o passo abre com cronômetro, "pular" avança e o dia entra no streak', async ({ page }) => {
+  await page.goto('/index.html');
+  await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+  await page.evaluate(() => ir('superchops'));
+  await page.locator('.sc-ex').first().click();
+  await expect(page.locator('.sc-onde')).toContainText('passo 1/8');
+  await expect(page.locator('#sctime')).toHaveText('1:30');
+  await page.click('#scctrl .acao');                                        // começar → relógio correndo
+  await expect(page.locator('#scctrl .toggle').first()).toHaveText('pausar');
+  for (let i = 0; i < 8; i++) await page.locator('#scctrl .toggle').last().click();   // pular até o fim
+  await expect(page.locator('#scpanel .sc-panel')).toHaveCount(0);          // último "pular" fecha a sessão
+  const dias = await page.evaluate(() => JSON.parse(localStorage.getItem('sc_days') || '[]'));
+  expect(dias.length, 'o dia entrou no histórico').toBe(1);
+});
+
+test('superchops: trocar de fase troca o plano e o diário grava o nível do dia', async ({ page }) => {
+  await page.goto('/index.html');
+  await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+  await page.evaluate(() => ir('superchops'));
+  await page.getByRole('button', { name: 'Fase 4' }).click();
+  await expect(page.locator('#tela')).toContainText('Levar pro repertório');
+  await expect(page.locator('.sc-ex')).toHaveCount(7);                      // fase 4 = 7 passos
+  await page.getByRole('button', { name: /^4 —/ }).click();                 // diário: nível 4
+  await expect(page.locator('#tela')).toContainText('Dia registrado');
+  const log = await page.evaluate(() => JSON.parse(localStorage.getItem('sc_logs') || '[]'));
+  expect(log.at(-1).n).toBe(4);
+  expect(log.at(-1).fase).toBe(4);
+});

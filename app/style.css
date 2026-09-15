@@ -69,13 +69,16 @@ a.peca{color:inherit;text-decoration:none;display:block}
   border-radius:10px;padding:9px 12px;margin:6px 0}
 .rmin{display:inline-block;min-width:48px;font-weight:800;color:var(--verde)}
 
-/* abas */
-.abas{position:fixed;left:0;right:0;bottom:0;display:flex;gap:6px;justify-content:center;
+/* abas — 6 abas têm de caber num celular de 360px: fonte e folga menores no estreito */
+.abas{position:fixed;left:0;right:0;bottom:0;display:flex;gap:3px;justify-content:center;
   background:rgba(247,244,238,.96);backdrop-filter:blur(8px);border-top:1px solid var(--linha);
-  padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:20}
-.abas button{flex:1;max-width:150px;min-height:48px;border:none;background:transparent;
-  color:var(--suave);border-radius:12px;font-size:12px;font-weight:600;cursor:pointer}
+  padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:20}
+.abas button{flex:1 1 auto;min-width:0;max-width:150px;min-height:48px;padding:0 1px;border:none;background:transparent;
+  color:var(--suave);border-radius:12px;font-size:10.5px;font-weight:600;letter-spacing:-.35px;cursor:pointer;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .abas button.ativa{background:var(--brand);color:#fff;box-shadow:0 2px 8px rgba(138,35,49,.35)}
+@media(min-width:480px){.abas{gap:6px;padding-left:12px;padding-right:12px}
+  .abas button{font-size:12px;padding:0 8px;letter-spacing:normal}}
 
 /* botões */
 .btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}

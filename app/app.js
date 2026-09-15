@@ -378,8 +378,9 @@ window.tocarCell = cid => { const c = (DB.cells?.celulas_ritmicas || []).find(x 
 function ir(t) {
   pararSynth();
   if (t !== 'metronomo' && M.on) pararMetro();
+  if (t !== 'superchops' && typeof scPararSessao === 'function') scPararSessao();   // cronômetro da conversão não sobrevive à troca de aba
   document.querySelectorAll('.abas button').forEach(b => b.classList.toggle('ativa', b.dataset.tela === t));
-  ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab, progresso: telaProg }[t] || telaTrilha)();
+  ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab, progresso: telaProg, superchops: telaSuperchops }[t] || telaTrilha)();
   window.scrollTo(0, 0);
 }
 window.ir = ir; window.verPeca = verPeca; window.setProg = setProg;

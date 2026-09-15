@@ -20,6 +20,15 @@ O app tem **duas linhas** (jornadas). "Sambrass" deixou de ser o nome do app e �
 Além das peças, cada linha traz **12 aquecimentos** (Flow do Cichowicz) e cartões
 de técnica.
 
+### Aba **Chops** — a conversão de embocadura (transversal às linhas)
+
+Plano **diário de 15 min** para treinar a embocadura de língua à frente (TCE) do
+método Super Chops, de Jerome Callet: 4 fases, cada sessão fechando em 15:00 exatos,
+com sessão guiada por cronômetro, diário 1–5 e streak. É uma rotina montada sobre os
+princípios do método (não o livro), com o aviso honesto no topo: conversão de
+embocadura **piora tudo antes de melhorar**, o método é controverso e não substitui
+professor. Detalhes e fontes em [`docs/superchops.md`](docs/superchops.md).
+
 ## Números canônicos (a fonte da verdade são os dados)
 
 - **110 sambas** · **16 cumbias** · **126 peças no total**.
@@ -60,7 +69,7 @@ python3 app/build_site.py                # copia app/ → _site/ e injeta os dad
 python3 -m http.server 8099 --directory _site
 ```
 
-Testes (navegador): `npx playwright test` (9 specs) + `node tests/pitch-core.test.js`.
+Testes (navegador): `npx playwright test` (14 specs) + `node tests/pitch-core.test.js`.
 Deploy: GitHub Actions (`.github/workflows/pages.yml`) a cada push no `main` —
 roda os builds em Python e publica no Pages.
 
@@ -69,6 +78,6 @@ roda os builds em Python e publica no Pages.
 - `app/` — o site estático (HTML/CSS/JS vanilla). Módulos visuais: `chroma.js`
   (cor Chromatone), `proll.js` (rolo de alturas + Espelho), `roda.js` (roda de
   ritmo), `montariff.js` (jogo), `lego.js`/`grafismo.js` (Legos), `groove.js`
-  (banda de cumbia).
+  (banda de cumbia), `superchops.js` (conversão de embocadura).
 - `content/` — pipeline de dados em Python (transcrição, currículo, blocos).
 - `docs/` — planos e auditorias de UX/pedagogia.
