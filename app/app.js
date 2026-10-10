@@ -210,7 +210,7 @@ function telaVocab() {
   const c = DB.cells || {}, pieces = (DB.pieces?.pieces || []), tot = pieces.length;
   const lvlTag = id => { const l = CELL_LEVEL[id]; return l ? ` <span class="niv niv-${l}">${NIVEL[l]}</span>` : ''; };
   const li = (arr, play) => (arr || []).map(x =>
-    `<li>${play ? `<button class="prog" style="min-width:34px" onclick="tocarCell('${x.id}')">▶</button> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}${lvlTag(x.id)}</li>`).join('');
+    `<li>${play ? `<span class="prog"><button style="min-width:40px" onclick="tocarCell('${x.id}')">▶</button></span> ` : ''}<code>${x.id}</code> ${x.nome}${x.descricao ? ' — ' + x.descricao : ''}${lvlTag(x.id)}</li>`).join('');
   // tonalidades por nível da escada (pela armadura escrita), nomeadas em concerto
   const tk = { book1: {}, book2: {}, arban: {} };
   pieces.forEach(p => { const lk = LVLKEY[keyLevelOf(p.key_concert)], nm = TOM[p.key_concert] || p.key_concert; tk[lk][nm] = (tk[lk][nm] || 0) + 1; });

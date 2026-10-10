@@ -224,3 +224,45 @@ test('superchops: trocar de fase troca o plano e o diário grava o nível do dia
   expect(log.at(-1).n).toBe(4);
   expect(log.at(-1).fase).toBe(5);
 });
+
+/* ---- alvos de toque: piso da casa é 38px (auditoria de UX, 2026-10) ---- */
+// Mede a altura EFETIVA de toque, não a caixa: controles pequenos demais pra crescer
+// (.tecbtn, .reportar-top) ampliam a área com ::after, e getBoundingClientRect não vê isso.
+const PISO_TOQUE = 38;
+
+for (const jornada of ['cumbias', 'sambrass']) {
+  test(`alvos de toque na home (${jornada}): nenhum abaixo de ${PISO_TOQUE}px efetivos`, async ({ page }) => {
+    await page.addInitScript((j) => localStorage.setItem('jornada_ativa', j), jornada);
+    await page.setViewportSize({ width: 390, height: 844 });          // viewport de celular real
+    await page.goto('/index.html');
+    await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+
+    const pequenos = await page.evaluate((piso) => {
+      const SEL = 'a[href],button,input,select,summary,[role="button"],[onclick]';
+      const porSel = new Map();                                        // 1 amostra por classe: o pior caso
+      for (const el of document.querySelectorAll(SEL)) {
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height || getComputedStyle(el).visibility === 'hidden') continue;
+        const k = el.tagName.toLowerCase() + '.' + ((el.className || '').toString().split(' ')[0] || '—');
+        if (!porSel.has(k) || r.height < porSel.get(k).getBoundingClientRect().height) porSel.set(k, el);
+      }
+      const fora = [];
+      for (const [k, el] of porSel) {
+        const caixa = el.getBoundingClientRect().height;
+        if (caixa >= piso) continue;
+        // caixa pequena: sonda a área real (pode estar ampliada por ::after)
+        window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 300, behavior: 'instant' });
+        const b = el.getBoundingClientRect(), cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+        const acerta = (y) => { const t = document.elementFromPoint(cx, y); return t === el || el.contains(t); };
+        let c = 0, d = 0;
+        while (c < 60 && acerta(cy - c - 1)) c++;
+        while (d < 60 && acerta(cy + d + 1)) d++;
+        const efetivo = c + d + 1;
+        if (efetivo < piso) fora.push({ sel: k, caixa: Math.round(caixa), efetivo, txt: (el.textContent || '').trim().slice(0, 24) });
+      }
+      return fora;
+    }, PISO_TOQUE);
+
+    expect(pequenos, `alvos abaixo de ${PISO_TOQUE}px: ${JSON.stringify(pequenos)}`).toEqual([]);
+  });
+}

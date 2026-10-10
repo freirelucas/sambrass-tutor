@@ -17,7 +17,8 @@ body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sa
 .marca{font-weight:800;font-size:20px;letter-spacing:.3px}
 .marca b{font-weight:300;opacity:.95}
 .topo .sub{font-size:11px;opacity:.85;text-transform:uppercase;letter-spacing:1.5px}
-.reportar-top{margin-left:auto;font-size:11px;font-weight:700;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.reportar-top{position:relative;margin-left:auto;font-size:11px;font-weight:700;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.reportar-top::after{content:"";position:absolute;inset:-10px -6px}   /* idem: pílula continua pequena, o toque não */
 .reportar-top:active{background:rgba(255,255,255,.15)}
 .carregando{color:var(--suave);padding:36px 4px}
 
@@ -145,7 +146,9 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .lotehead .band{display:inline-block;background:var(--ll,var(--brand));color:#fff;font-weight:800;font-size:12px;
   letter-spacing:1.4px;text-transform:uppercase;padding:6px 18px;border-radius:20px}
 .lotehead .desc{font-size:12px;color:var(--suave);margin-top:6px;padding:0 20px}
-.tecbtn{border:none;background:none;color:var(--brand);font-weight:700;font-size:12px;cursor:pointer}
+.tecbtn{position:relative;border:none;background:none;color:var(--brand);font-weight:700;font-size:12px;cursor:pointer}
+/* alvo de toque de 44px sem mudar o desenho: a caixa visual continua 16px, a área clicável cresce */
+.tecbtn::after{content:"";position:absolute;inset:-22px -8px}
 .nivelhead{margin:30px 0 8px;padding:12px 16px;border-radius:var(--r);border:1px solid var(--linha);
   border-left:5px solid var(--nc,var(--brand));background:var(--card);box-shadow:var(--sombra)}
 .nivelhead.niv-book1{--nc:#1f7a4d}.nivelhead.niv-book2{--nc:#9a6a12}.nivelhead.niv-arban{--nc:#9a2738}
@@ -159,8 +162,8 @@ input#busca{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--
 .node.here{border-color:var(--ll,var(--brand));box-shadow:0 0 0 2px var(--ll,var(--brand)),var(--sombra)}
 .node .nlabel{flex:1;min-width:0}
 .node .flag{top:-9px;left:auto;right:12px;transform:none}
-.node .nlabel{cursor:pointer}
-.planobtn{flex:none;align-self:center;font:inherit;font-size:12px;font-weight:700;color:var(--suave);background:none;border:1px solid var(--linha);border-radius:999px;padding:6px 11px;min-height:36px;cursor:pointer;white-space:nowrap}
+.node .nlabel{cursor:pointer;display:flex;flex-direction:column;justify-content:center;min-height:40px}   /* alvo de toque: o rótulo do nó É clicável */
+.planobtn{flex:none;align-self:center;font:inherit;font-size:12px;font-weight:700;color:var(--suave);background:none;border:1px solid var(--linha);border-radius:999px;padding:6px 11px;min-height:40px;cursor:pointer;white-space:nowrap}
 .planobtn:active{color:var(--brand);border-color:var(--brand)}
 .node .inner{width:58px;height:58px;border-radius:50%;border:3px solid var(--ll,var(--brand));
   background:var(--card);color:var(--ll,var(--brand));font-size:24px;cursor:pointer;flex:none;
