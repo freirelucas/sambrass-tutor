@@ -85,6 +85,9 @@ python3 -m http.server 8099 --directory _site
 ```
 
 Testes (navegador): `npx playwright test` (14 specs) + `node tests/pitch-core.test.js`.
+Contrato pipeline↔app: `python3 tools/check_contrato.py` (roda no CI, depois do build —
+pega JSON que o app pede e o build deixou de escrever, e chave de topo renomeada;
+sem ele o `.catch()` de cada fetch engole o 404 e a tela só aparece vazia).
 Deploy: GitHub Actions (`.github/workflows/pages.yml`) a cada push no `main` —
 roda os builds em Python e publica no Pages.
 

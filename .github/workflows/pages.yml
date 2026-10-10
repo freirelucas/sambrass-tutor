@@ -29,6 +29,7 @@ jobs:
       - run: pip install verovio             # pauta do riff nas Stories das cumbias
       - run: python3 content/cumbia/build_cumbia.py   # regenera a Jornada das Cumbias (riffs + pedagogia)
       - run: python3 app/build_site.py
+      - run: python3 tools/check_contrato.py   # contrato pipeline↔app: nenhum JSON pedido pelo app some em silêncio
       - uses: actions/configure-pages@v5
         with: { enablement: true }
       - uses: actions/upload-pages-artifact@v3
