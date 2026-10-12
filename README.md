@@ -84,10 +84,12 @@ python3 app/build_site.py                # copia app/ → _site/ e injeta os dad
 python3 -m http.server 8099 --directory _site
 ```
 
-Testes (navegador): `npx playwright test` (17 specs) + `node tests/pitch-core.test.js`.
+Testes (navegador): `npx playwright test` (21 specs) + `node tests/pitch-core.test.js`.
 Auditoria de engenharia e UX: [`docs/auditoria-engenharia-ux.md`](docs/auditoria-engenharia-ux.md)
 (app renderizado em navegador real, 8 páginas × 3 viewports + passe de interação).
-Contrato pipeline↔app: `python3 tools/check_contrato.py` (roda no CI, depois do build —
+Guardas estáticos (rodam no CI, depois do build): `python3 tools/check_css.py` (nenhuma página
+usa classe que a folha dela não define — `style.css` só é carregado pelo `index.html`) ·
+`python3 tools/check_contrato.py` (roda no CI, depois do build —
 pega JSON que o app pede e o build deixou de escrever, e chave de topo renomeada;
 sem ele o `.catch()` de cada fetch engole o 404 e a tela só aparece vazia).
 Deploy: GitHub Actions (`.github/workflows/pages.yml`) a cada push no `main` —

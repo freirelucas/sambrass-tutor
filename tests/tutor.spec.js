@@ -266,3 +266,64 @@ for (const jornada of ['cumbias', 'sambrass']) {
     expect(pequenos, `alvos abaixo de ${PISO_TOQUE}px: ${JSON.stringify(pequenos)}`).toEqual([]);
   });
 }
+
+/* ---- smoke das 4 páginas que não tinham teste nenhum (auditoria de UX, 2026-10) ----
+ * 636 linhas de JS embutido sem rede. Cada spec: carrega, zero exceção, o conteúdo
+ * que vem de dado popula, e o controle principal responde ao toque. */
+
+test('smoke afinar.html: afinador monta mostrador e drone', async ({ page, context }) => {
+  await context.grantPermissions(['microphone']);
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/afinar.html');
+  for (const id of ['#mic', '#needle', '#note', '#cents', '#freq', '#drone', '#ladder'])
+    await expect(page.locator(id), `${id} existe`).toHaveCount(1);
+  await page.click('#mic');                                        // liga o microfone (fake device)
+  await expect(page.locator('#note')).toBeVisible();
+  expect(errors, 'afinar sem exceções').toEqual([]);
+});
+
+test('smoke blocos.html: as 4 vistas trocam e os Legos populam dos dados', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/blocos.html');
+  // as cumbias vêm na carga; os 110 sambas ficam atrás de um botão — caminho preguiçoso, exercitado aqui
+  await expect(page.locator('#legos-cumb .lego').first()).toBeAttached({ timeout: 10000 });
+  const nCumb = await page.locator('#legos-cumb .lego').count();
+  expect(nCumb, 'legos das cumbias populam').toBeGreaterThan(0);
+  await expect(page.locator('#legos-samb .lego')).toHaveCount(0);           // ainda não pedidos
+  await page.click('#legos-more');
+  await expect(page.locator('#legos-samb .lego').first()).toBeAttached({ timeout: 10000 });
+  expect(await page.locator('#legos-samb .lego').count(), 'legos dos sambas populam ao pedir').toBeGreaterThan(nCumb);
+  const vistas = page.locator('button').filter({ hasText: /^(Legos|Tons|Contorno|Groove)/ });
+  await expect(vistas).toHaveCount(4);
+  for (let i = 0; i < 4; i++) {
+    await vistas.nth(i).click();
+    await expect(vistas.nth(i)).toHaveClass(/on/);                 // a vista clicada vira a ativa
+  }
+  expect(errors, 'blocos sem exceções').toEqual([]);
+});
+
+test('smoke respira.html: 10 setores e o cronômetro do painel anda', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/respira.html');
+  await expect(page.locator('.fl-card')).toHaveCount(10);          // A–J
+  await page.locator('.fl-card').first().click();
+  await expect(page.locator('#rtime')).toHaveText('1:48');         // setor A = 108 s
+  await page.click('#bgo');
+  await expect(page.locator('#rphase')).toHaveText('Tocar');
+  await expect(page.locator('#rtime')).not.toHaveText('1:48', { timeout: 4000 });   // relógio correu
+  expect(errors, 'respira sem exceções').toEqual([]);
+});
+
+test('smoke revisar.html: lista as cumbias e o diário de revisão responde', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/revisar.html');
+  await expect(page.locator('#lista')).not.toBeEmpty({ timeout: 10000 });
+  for (const id of ['#copiar', '#limpar', '#saida', '#prog'])
+    await expect(page.locator(id), `${id} existe`).toHaveCount(1);
+  await page.click('#copiar');                                      // não deve explodir sem seleção
+  expect(errors, 'revisar sem exceções').toEqual([]);
+});

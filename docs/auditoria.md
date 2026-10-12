@@ -1,19 +1,21 @@
 # Auditoria de qualidade dos dados
 
-Gerada por `content/curadoria/auditoria.py` (re-rode a qualquer momento; snapshot em
-`content/curadoria/build/auditoria.json`). Roda **checagens contra os dados** — não opinião.
+Os números vêm de `content/curadoria/auditoria.py`, que escreve o snapshot em
+`content/curadoria/build/auditoria.json` — **este texto é mantido à mão a partir dele**, então
+re-rodar o script não atualiza esta página sozinha. Roda **checagens contra os dados** — não opinião.
+Última sincronia: 2026-10.
 
 > **Veredito:** a base tem **integridade estrutural alta** e **verificação baixa**. Ou seja:
 > não está *suja/corrompida* — está *sub-conferida*. O risco mora na proveniência (OMR/dedos
 > provisórios), não na consistência.
 
-## Placar (125 peças = 110 sambrass + 15 cumbias)
+## Placar (126 peças = 110 sambrass + 16 cumbias)
 
 | Eixo | Estado |
 |---|---|
-| Conferidas por ouvido | **13/125 (10,4%)** ← eixo crítico |
-| Cobertura de melodia (tema ABC) | 125/125 (100%) |
-| Blocos extraídos (cor/forma/groove) | 125/125, com riff + onsets |
+| Conferidas por ouvido | **13/126 (10,3%)** ← eixo crítico |
+| Cobertura de melodia (tema ABC) | 126/126 (100%) |
+| Blocos extraídos (cor/forma/groove) | 126/126, com riff + onsets |
 | ids duplicados · escada quebrada · tags órfãs | 0 · 0 · 0 |
 
 ## O que está saudável (não mexer)

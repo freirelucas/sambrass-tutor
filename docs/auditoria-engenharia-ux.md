@@ -67,7 +67,12 @@ por teste negativo: revertendo a correção do `.tecbtn`, a spec fica vermelha.
 
 ---
 
-## 🟠 Achados estruturais (não corrigidos — exigem decisão)
+## ✅ Resolvido na rodada de melhorias (2026-10-12)
+
+Os achados 5 a 10 foram endereçados. **Um deles mudou de solução no meio do caminho** e vale
+registrar por quê — está logo abaixo, no 5.
+
+## 🟠 Achados estruturais
 
 ### 5. `style.css` só é carregado pelo `index.html`
 
@@ -96,9 +101,27 @@ fonte canônica, uma só" — na prática o cartão do app tem quatro aparência
 divergem pouco (`--sombra` .07 vs .08, `--card` `#fff` vs `#ffffff`); o `--warm` do Respira
 é outra cor de propósito, tema próprio.
 
-**Sugestão:** promover para `ui.css` o punhado que já é comum (`.card`, `.wrap`, `.prog`,
-`.btnrow`, `.meta`, `.sec`) e apagar as cópias — é a continuação natural do trabalho de
-unificação que `ui.css` começou, e fecha o 5 e o 6 de uma vez.
+**✅ Resolvido — mas não como estava sugerido aqui.** A promoção para `ui.css` foi *tentada*
+e **revertida**: mover as 15 regras compartilhadas mudou 12 das 22 telas, e no `estudo.html`
+chegou a introduzir **overflow horizontal** (390 px → 1047 px de largura no celular). O motivo
+é estrutural e vale guardar: **preencher a lacuna necessariamente muda as páginas que viviam
+sem aquele estilo.** Não existe unificação "de graça" aqui — ou se aceita o redesenho das
+telas, ou não se unifica.
+
+Como a decisão foi *não mexer na aparência*, o objetivo real (que o bug de agosto não se
+repita) foi entregue por outro caminho, sem mover um pixel: **`tools/check_css.py`**, que roda
+no CI e falha quando uma página usa classe que nenhuma folha carregada por ela define. Junta
+os `<link>`, o `<style>` interno **e o CSS que os scripts da página injetam em runtime**
+(`config.js` e `explica.js` criam `<style>` na marra — sem isso o checador acusaria 12
+falso-positivos). As 5 classes que legitimamente não têm regra — ganchos de JS e marcadores —
+estão **declaradas com motivo**, e a declaração se autolimpa: se a classe sumir do código, o
+checador falha pedindo pra tirar a linha.
+
+Conferido por teste negativo: fazer `revisar.html` usar `.acao` (classe que só existe no
+`style.css`, que ela não carrega) deixa o CI vermelho — que é exatamente o bug de agosto.
+
+A duplicação do `.card` em 4 lugares **continua de pé**, por escolha. Ela agora é visível e
+inofensiva: nenhuma página pode acabar sem estilo sem o CI reclamar.
 
 ### 7. Quatro páginas sem nenhum teste
 
@@ -109,29 +132,46 @@ unificação que `ui.css` começou, e fecha o 5 e o 6 de uma vez.
 | `revisar.html` | 98 | **0** |
 | `afinar.html` | 59 | **0** |
 
-São 636 linhas de lógica sem rede. Esta auditoria dirigiu as quatro à mão e elas funcionam,
-mas nada impede uma regressão silenciosa amanhã. O barato aqui é um *smoke test* por página:
-carrega, sem erro de console, o controle principal responde.
+São 636 linhas de lógica sem rede.
+
+**✅ Resolvido:** quatro *smoke tests*, um por página — carrega, zero exceção, o conteúdo que
+vem de dado popula, e o controle principal responde. O do `blocos.html` cobre de quebra um
+**caminho preguiçoso** que nada exercitava: os 16 Legos das cumbias vêm na carga, mas os 110
+dos sambas só existem depois de clicar "▸ mostrar os Legos dos sambas".
+
+Todos conferidos por **teste negativo** — e isso pegou um erro meu: a primeira versão da spec
+do `blocos` usava um seletor com `OR` (`#legos-samb .lego, #legos-cumb .lego`), então matar um
+dos dois lados ainda passava. Só a tentativa de quebrar de propósito revelou que o teste não
+testava nada.
 
 ### 8. Offline incompleto
 
 `afinar.html`, `blocos.html`, `respira.html` e `revisar.html` estão **fora do SHELL** do
 service worker. Como ele é network-first com cache de primeira visita, elas funcionam offline
-**só depois de visitadas uma vez**. Instalar a PWA e abrir "Respira" sem rede falha. Decisão
-defensável (o Respira depende de 10 `.mp4` que também não estão no cache), mas hoje é
-implícita — vale escolher: entram no shell, ou o app avisa.
+**só depois de visitadas uma vez**. Instalar a PWA e abrir "Respira" sem rede falha. **✅ Resolvido:** `afinar.html`, `blocos.html` e `revisar.html` entraram no SHELL (cache `v23`)
+e passam a abrir offline sem visita prévia. O **Respira ficou fora de propósito**: a página é
+pequena, mas depende de 10 `.mp4` (~25 MB) impossíveis de pré-cachear — abrir offline sem os
+play-alongs seria pior que não abrir.
+
+Como a própria página não carrega offline, o aviso foi para **onde o link está**: o cartão do
+Respira na aba *Aquecer* mostra, só quando não há conexão, que aquela tela precisa de internet.
+Reage nos dois sentidos (conferido ligando e desligando a rede com a tela aberta).
 
 ---
 
 ## 🟡 Menor
 
-9. **13,8 MB de zip versionado.** `sambrass_course (1).zip` está rastreado — o `(1)` no nome
-   denuncia download de navegador. Com o PDF de 23,5 MB, são **37 MB** num repo cujo código
-   todo tem ~10 mil linhas. O `.gitignore` já exclui o material *extraído*; o zip escapou.
-   Tirar do histórico é destrutivo — fica como decisão sua.
-10. **`docs/auditoria.md` está defasado:** fala em "125 peças = 110 sambrass + 15 cumbias";
-    hoje são 126 e 16. É gerado por `content/curadoria/auditoria.py` — basta re-rodar.
-    Os mesmos números velhos aparecem em `plano-ux-unificacao.md` e `ux-simulacao.md`.
+9. **✅ 13,8 MB de zip, destrastreado.** `sambrass_course (1).zip` saiu do versionamento
+   (`git rm --cached` + `.gitignore`) — o conteúdo já vive em `content/`. Some de qualquer
+   clone novo; o histórico segue carregando os bytes, o que é reversível e não reescreve
+   `main`. O `.gitignore` registra como recuperar: `git show <commit>:'sambrass_course (1).zip'`.
+10. **✅ `docs/auditoria.md` sincronizado** com o snapshot fresco: 126 peças, 13 conferidas
+    (10,3%), 126 blocos. E foi corrigida uma afirmação errada no cabeçalho dele: dizia ser
+    "gerada por `auditoria.py`", mas o script só escreve o JSON — **o texto é mantido à mão**,
+    então re-rodar não atualizava a página. Agora o cabeçalho diz isso.
+    As menções a "15 cumbias" em `plano-ux-unificacao.md` e `ux-simulacao.md` **ficam como
+    estão**: são documentos de planejamento descrevendo o estado da época, não placar vivo —
+    reescrevê-los falsearia o histórico.
 11. **Seletor de jornada a 38 px** — exatamente no piso, não abaixo. Fica como está.
 
 ---

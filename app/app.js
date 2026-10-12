@@ -221,7 +221,8 @@ function telaVocab() {
   const comp = COMP_CHIPS.filter(([k]) => cnt[k]).map(([k, lab]) => `<span class="tag">${lab} <b>${cnt[k]}</b></span>`).join(' ');
   const c44 = pieces.filter(p => p.compasso === '4/4').length, c24 = tot - c44;
   tela.innerHTML = `<div class="card" style="text-align:center"><a class="acao" style="width:100%;display:block;box-sizing:border-box;text-decoration:none" href="./respira.html">🫁 Respira — Flow do Cichowicz</a>
-      <p class="meta" style="margin-top:8px">10 setores (A→J, ♩=100→160) com play-along e descanso embutido. <b>Som antes de velocidade.</b> <span style="opacity:.7">Vídeo com a partitura passando — carrega só ao tocar cada setor.</span></p></div>
+      <p class="meta" style="margin-top:8px">10 setores (A→J, ♩=100→160) com play-along e descanso embutido. <b>Som antes de velocidade.</b> <span style="opacity:.7">Vídeo com a partitura passando — carrega só ao tocar cada setor.</span></p>
+      <p class="meta offaviso" hidden style="margin-top:6px;color:var(--brand);font-weight:600">⚠ sem internet: o Respira precisa de conexão (são 10 vídeos, grandes demais pra guardar no celular).</p></div>
     <div class="card" style="text-align:center"><button class="toggle" style="width:100%;min-height:46px" onclick="openPrep()">🌬️ Instruções de aquecimento — 12 passos${prepDone() ? ' ✓' : ''}</button>
       <p class="meta" style="margin-top:8px">Referência passo a passo (ar → bocal → som → registro → articulação) em acordeão — mas o aquecimento de verdade é o <b>Cichowicz</b> acima.</p></div>
     <h2 class="sec">Vocabulário do caderno</h2>
@@ -381,8 +382,11 @@ function ir(t) {
   if (t !== 'superchops' && typeof scPararSessao === 'function') scPararSessao();   // cronômetro da conversão não sobrevive à troca de aba
   document.querySelectorAll('.abas button').forEach(b => b.classList.toggle('ativa', b.dataset.tela === t));
   ({ trilha: telaTrilha, banco: telaBanco, metronomo: metroTela, vocab: telaVocab, progresso: telaProg, superchops: telaSuperchops }[t] || telaTrilha)();
+  pintaOffline();
   window.scrollTo(0, 0);
 }
+function pintaOffline() { document.querySelectorAll('.offaviso').forEach(e => e.hidden = navigator.onLine); }
+['online', 'offline'].forEach(ev => addEventListener(ev, pintaOffline));
 window.ir = ir; window.verPeca = verPeca; window.setProg = setProg;
 async function trocarJornada(id) {
   if (!JORNADAS[id] || id === JORNADA) return;

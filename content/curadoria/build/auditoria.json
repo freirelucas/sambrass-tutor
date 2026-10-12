@@ -1,9 +1,9 @@
 {
  "resumo": {
-  "pecas_total": 125,
+  "pecas_total": 126,
   "conferidas_total": 13,
-  "pct_conferida": 10.4,
-  "blocos": 125,
+  "pct_conferida": 10.3,
+  "blocos": 126,
   "achados_por_severidade": {
    "alto": 2,
    "médio": 3,
@@ -21,12 +21,12 @@
     "celulas_marcadas": 110
    },
    "cumbias": {
-    "pecas": 15,
-    "tema_abc": 15,
-    "blocos": 15,
-    "riff": 15,
-    "onsets": 15,
-    "celulas_marcadas": 15
+    "pecas": 16,
+    "tema_abc": 16,
+    "blocos": 16,
+    "riff": 16,
+    "onsets": 16,
+    "celulas_marcadas": 16
    }
   },
   "verificacao": {
@@ -42,25 +42,25 @@
    },
    "cumbias": {
     "tiers": {
-     "rascunho": 3,
+     "rascunho": 4,
      "conferida": 12
     },
     "conferida": 12,
-    "pct_conferida": 80.0,
-    "provisorias": 3
+    "pct_conferida": 75.0,
+    "provisorias": 4
    }
   },
   "confianca_extracao": {
-   "n_blocos": 125,
-   "modo_baixa_conf": 36,
+   "n_blocos": 126,
+   "modo_baixa_conf": 37,
    "modo_desconhecido": 0,
-   "armadura_nao_bate": 39,
+   "armadura_nao_bate": 40,
    "modo_no_catalogo": 0
   },
   "consistencia": {
-   "recuperacao_relativo_menor_ok": 29,
+   "recuperacao_relativo_menor_ok": 38,
    "tags_marcadas_nao_detectadas": 11,
-   "celulas_detectadas_nao_marcadas": 117
+   "celulas_detectadas_nao_marcadas": 119
   },
   "completude": {
    "sambrass": {
@@ -145,7 +145,7 @@
   {
    "sev": "alto",
    "dim": "confiança",
-   "msg": "modo musical não existe no catálogo (0%) — 100% derivado; 36 com confiança baixa (<0.06) pedem ouvido.",
+   "msg": "modo musical não existe no catálogo (0%) — 100% derivado; 37 com confiança baixa (<0.06) pedem ouvido.",
    "ids": [
     "sb-001",
     "sb-003",
@@ -173,12 +173,12 @@
     "sb-074",
     "sb-076"
    ],
-   "n": 36
+   "n": 37
   },
   {
    "sev": "médio",
    "dim": "consistência",
-   "msg": "39 blocos cuja armadura detectada NÃO bate com a do catálogo.",
+   "msg": "40 blocos cuja armadura detectada NÃO bate com a do catálogo.",
    "ids": [
     "sb-005",
     "sb-006",
@@ -206,7 +206,7 @@
     "sb-063",
     "sb-073"
    ],
-   "n": 39
+   "n": 40
   },
   {
    "sev": "médio",

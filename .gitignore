@@ -1,4 +1,7 @@
-# Extração temporária do zip do curso (regenerável)
+# Pacote original do curso e sua extração: o conteúdo já vive versionado em content/.
+# Tirado do versionamento em 2026-10 (13,8 MB num repo de ~10 mil linhas). Continua
+# recuperável do histórico: git show <commit anterior>:'sambrass_course (1).zip' > curso.zip
+sambrass_course (1).zip
 _extracted/
 
 # PDF-fonte das 110 partituras: já versionado no branch main; mantido local p/ recorte/leitura
