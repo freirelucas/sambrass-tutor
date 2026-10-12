@@ -220,6 +220,12 @@ const scFeitos = () => scStore.get('feitos_' + scHoje(), {});
 const scMarcar = id => { const f = scFeitos(); f[id] = true; scStore.set('feitos_' + scHoje(), f); };
 const scStreak = () => { const days = (scStore.get('days', []) || []).slice().sort(); let s = 0, d = new Date(); for (; ;) { const k = d.toISOString().slice(0, 10); if (days.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; };
 const scTempo = f => f.exs.reduce((a, e) => a + e.dur, 0);
+/* O riff da fase 5. Guarda a jornada junto: embocadura é transversal, mas repertório não —
+   escolher na trilha das cumbias e ver o nome do samba seria mentira. */
+const scRiff = () => { const r = scStore.get('riff', null); return r && r.jornada === JORNADA ? r : null; };
+const scRiffPeca = () => { const r = scRiff(); return r ? (DB.percByNum || {})[r.num] : null; };
+const scUrlEstudo = n => './estudo.html?id=' + idOf(n) + (JORNADA !== 'sambrass' ? '&jornada=' + JORNADA : '');
+function scSetRiff(num) { scStore.set('riff', num ? { jornada: JORNADA, num: +num } : null); telaSuperchops(); }
 const scFmt = s => `${Math.floor(s / 60)}:${String(Math.max(0, s % 60)).padStart(2, '0')}`;
 function scDiaFeito() {                                  // fecha o dia: entra no streak
   const days = scStore.get('days', []); const t = scHoje();
@@ -288,6 +294,21 @@ function telaSuperchops() {
     <p class="meta" style="margin-top:8px;text-align:center">${nFeitos}/${f.exs.length} passos feitos hoje · o cronômetro conduz, você só toca.</p>
   </div>
 
+  ${f.n === 5 ? (() => {
+    const ms = DB.percurso || [], p = scRiffPeca();
+    if (!ms.length) return '<div class="card"><p class="meta" style="margin:0">A trilha ainda não carregou — abra a aba <b>Trilha</b> uma vez e volte.</p></div>';
+    return `<div class="card"><h3>🎺 O riff desta fase</h3>
+      <p class="meta" style="margin-top:0">A fase 5 é uma frase só, muitas vezes. Escolha uma e <b>fique nela</b> — trocar de música toda sessão é o jeito de não converter nada.</p>
+      <select id="scriff" onchange="scSetRiff(this.value)" style="width:100%;min-height:44px;margin-top:10px;border:1px solid var(--linha);border-radius:12px;padding:0 10px;font:inherit;background:var(--card);color:var(--tinta)">
+        <option value="">— escolher um riff da ${JCFG().curto} —</option>
+        ${ms.map(m => `<option value="${m.num}" ${p && p.num === m.num ? 'selected' : ''}>${String(m.num).padStart(3, '0')} · ${m.titulo}</option>`).join('')}
+      </select>
+      ${p ? `<div class="btnrow" style="justify-content:flex-start;margin-top:12px;gap:8px">
+        <a class="acao" style="text-decoration:none" href="${scUrlEstudo(p.num)}"><span>🎤 abrir <b>${p.titulo}</b> no tutor</span></a>
+        <button class="toggle" onclick="scSetRiff('')">trocar</button></div>`
+      : '<p class="meta" style="margin-top:8px">Sem riff escolhido, os passos 3 e 5 ficam no vago.</p>'}</div>`;
+  })() : ''}
+
   <h2 class="sec">Os passos de hoje</h2>
   <div class="sc-list">${cards}</div>
   <p class="meta" style="margin:8px 4px">Os descansos <b>fazem parte</b> do plano — não pule. O total fecha em ${scFmt(tot)} de propósito: o teto é ${scFmt(SC_LIMITE)}.</p>
@@ -341,7 +362,9 @@ function scAbrir(i, seguido) {
     <h3 class="sc-titulo">${e.nome}</h3>
     <ul class="sc-ul">${e.como.map(c => `<li>${c}</li>`).join('')}</ul>
     ${e.erro ? `<p class="sc-erro"><b>erro clássico:</b> ${e.erro}</p>` : ''}
-    ${e.trilha ? '<p class="sc-erro" style="border-color:var(--verde);color:#1d5c42"><b>dica:</b> abra a <b>Trilha</b> noutra aba do app pra escolher o riff — e volte pra cá com ele na cabeça.</p>' : ''}
+    ${e.trilha ? (() => { const p = scRiffPeca();
+      return p ? `<p class="sc-erro" style="border-color:var(--verde);color:#1d5c42"><b>o riff de hoje:</b> ${p.titulo}${p.tom ? ' · ' + p.tom : ''} — <a href="${scUrlEstudo(p.num)}" style="color:inherit">abrir no tutor ›</a></p>`
+        : '<p class="sc-erro"><b>falta escolher o riff:</b> feche este painel e escolha um em <b>O riff desta fase</b>, logo acima da lista de passos.</p>'; })() : ''}
     <div class="sc-ring"><svg viewBox="0 0 200 200"><circle class="sc-bg" cx="100" cy="100" r="88"/>
       <circle class="sc-fg" id="scfg" cx="100" cy="100" r="88" style="stroke-dasharray:${2 * Math.PI * 88}"/></svg>
       <div class="sc-mid"><span class="sc-time" id="sctime">${scFmt(e.dur)}</span></div></div>
@@ -391,4 +414,4 @@ function scBip() {                                   // sinal curto entre passos
 }
 window.telaSuperchops = telaSuperchops; window.scAbrir = scAbrir; window.scSetFase = scSetFase;
 window.scRodar = scRodar; window.scPausar = scPausar; window.scProximo = scProximo;
-window.scFechar = scFechar; window.scLog = scLog; window.scPararSessao = scPararSessao;
+window.scSetRiff = scSetRiff; window.scFechar = scFechar; window.scLog = scLog; window.scPararSessao = scPararSessao;

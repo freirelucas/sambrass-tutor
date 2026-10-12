@@ -327,3 +327,38 @@ test('smoke revisar.html: lista as cumbias e o diário de revisão responde', as
   await page.click('#copiar');                                      // não deve explodir sem seleção
   expect(errors, 'revisar sem exceções').toEqual([]);
 });
+
+test('superchops: a fase 5 escolhe um riff da trilha, e ele chega no passo e no tutor', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('/index.html');                                    // cumbias (default)
+  await page.waitForFunction(() => document.querySelector('#tela').textContent.length > 40);
+  await page.evaluate(() => ir('superchops'));
+  await expect(page.locator('#scriff'), 'o seletor é só da fase 5').toHaveCount(0);
+
+  await page.getByRole('button', { name: 'Fase 5' }).click();
+  await expect(page.locator('#scriff')).toHaveCount(1);
+  const nPecas = await page.evaluate(() => (DB.percurso || []).length);
+  await expect(page.locator('#scriff option')).toHaveCount(nPecas + 1);          // + a opção vazia
+
+  // sem riff, o passo diz o que falta em vez de mandar "abrir a trilha noutra aba"
+  await page.evaluate(() => scAbrir(2));
+  await expect(page.locator('#scpanel .sc-erro').last()).toContainText('falta escolher o riff');
+  await page.evaluate(() => scFechar());
+
+  await page.selectOption('#scriff', '11');
+  const link = page.locator('a.acao[href*="estudo.html"]').first();
+  await expect(link).toContainText('Elsa');
+  await expect(link).toHaveAttribute('href', './estudo.html?id=cu-011&jornada=cumbias');
+  await page.evaluate(() => scAbrir(2));
+  await expect(page.locator('#scpanel .sc-erro').last()).toContainText('o riff de hoje: Elsa');
+  await page.evaluate(() => scFechar());
+
+  // repertório é por jornada: o riff das cumbias não pode vazar no Sambrass
+  await page.evaluate(() => trocarJornada('sambrass'));
+  await page.waitForFunction(() => (DB.percurso || []).length > 100);
+  await page.evaluate(() => ir('superchops'));
+  await page.getByRole('button', { name: 'Fase 5' }).click();
+  await expect(page.locator('a.acao[href*="estudo.html"]'), 'riff da outra jornada não aparece').toHaveCount(0);
+  expect(errors, 'sem exceções').toEqual([]);
+});
