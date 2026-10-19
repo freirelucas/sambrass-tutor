@@ -27,3 +27,11 @@ playwright-report/
 
 # Cheatsheet: HTML intermediário (regenerável; o PDF é o entregável versionado)
 content/cumbia/build/cheatsheet.html
+
+# Curso interativo: o gerador (codebase-to-course) não publica licença, então o CSS/JS dele
+# não entra no versionamento. docs/curso/README.md tem o comando para buscá-los e montar.
+docs/curso/styles.css
+docs/curso/main.js
+docs/curso/index.html
+# Saídas de trabalho do Archify (o entregue fica em docs/arquitetura/)
+.archify/

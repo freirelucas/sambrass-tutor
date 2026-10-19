@@ -1,0 +1,141 @@
+<section class="module" id="module-3" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title">A fronteira que explica tudo</h1>
+      <p class="module-subtitle">Metade deste repositório nunca chega ao seu celular. Entender onde fica essa linha explica quase toda decisão do projeto.</p>
+    </header>
+
+    <div class="module-body">
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Cozinha de restaurante? Não. Pense num luthier.</h2>
+        <p>O luthier tem bancada, goiva, verniz, estufa. Nada disso vai junto com o instrumento quando você o leva pra casa — você leva só o trompete pronto.</p>
+        <p>As 43 ferramentas em Python deste repositório são a bancada. O que chega no seu celular é o instrumento.</p>
+
+        <div class="flow-steps">
+          <div class="flow-step"><div class="flow-step-num">1</div><p><strong>Você faz um push</strong> no GitHub</p></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step"><div class="flow-step-num">2</div><p>O <span class="term" data-definition="CI (integração contínua) é um computador na nuvem que roda tarefas automaticamente a cada mudança no código: testes, builds, publicação. Aqui, é o GitHub Actions.">CI</span> acorda e roda o Python</p></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step"><div class="flow-step-num">3</div><p>Sai a pasta <code>_site/</code> pronta</p></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step"><div class="flow-step-num">4</div><p>Vira site no GitHub Pages</p></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step"><div class="flow-step-num">5</div><p><strong>Seu celular</strong> só baixa arquivos</p></div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title">O nome disso</strong>
+            <p>É um <span class="term" data-definition="Site estático é um site feito de arquivos prontos (HTML, CSS, JS, JSON) entregues como estão, sem nenhum programa rodando no servidor para montá-los na hora. O oposto é um site dinâmico, com servidor e banco de dados.">site estático</span>. Não existe servidor rodando código, nem banco de dados, nem conta de usuário. Dizer a uma IA “este é um site estático, não proponha backend” corta metade das sugestões erradas de uma vez.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O arquivo que atravessa a fronteira</h2>
+        <p><code>build_site.py</code> tem 74 linhas e um trabalho só: pegar os dois lados e juntar numa pasta.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · app/build_site.py:59</span>
+            <pre><code>
+<span class="code-line">    <span class="code-keyword">if</span> SITE.<span class="code-function">exists</span>():</span>
+<span class="code-line">        shutil.<span class="code-function">rmtree</span>(SITE)</span>
+<span class="code-line">    <span class="code-comment"># 1) shell da PWA inteiro (inclui vendor/abcjs), menos este script</span></span>
+<span class="code-line">    shutil.<span class="code-function">copytree</span>(APP, SITE, <span class="code-property">ignore</span>=shutil.<span class="code-function">ignore_patterns</span>(<span class="code-string">"build_site.py"</span>, <span class="code-string">"__pycache__"</span>))</span>
+<span class="code-line">    <span class="code-comment"># 2) dados por jornada</span></span>
+<span class="code-line">    <span class="code-function">emit_sambrass</span>()</span>
+<span class="code-line">    tem_cumbia = <span class="code-function">emit_cumbias</span>()</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">Se já existe uma pasta de site de antes, apaga.</p>
+              <p class="tl">Começar do zero toda vez evita o pior bug de build: sobra de versão antiga.</p>
+              <p class="tl">Copia a pasta <code>app/</code> inteira — é o app, do jeito que está.</p>
+              <p class="tl">Menos ele mesmo: o script não precisa ir junto para o celular.</p>
+              <p class="tl">Depois enfia os dados de cada jornada em sua subpasta.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">🧹</div>
+          <div class="callout-content">
+            <strong class="callout-title">Por que apagar tudo antes</strong>
+            <p>Se o build só sobrescrevesse, um arquivo que você <em>removeu</em> do projeto continuaria vivo no site publicado — às vezes por meses. “Build limpo” é uma expressão que vale usar com a IA.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Duas jornadas, um código só</h2>
+        <p>Cumbias e Sambrass não são dois apps. É o mesmo código lendo pastas diferentes — e a troca é literalmente um prefixo no caminho.</p>
+
+        <div class="icon-rows">
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-1)">🪘</div>
+            <div>
+              <strong>Cumbias — 16 peças</strong>
+              <p>Busca em <code>./data/cumbias/</code> · guarda o progresso em chaves <code>cu2_*</code></p>
+            </div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-2)">🥁</div>
+            <div>
+              <strong>Sambrass — 110 peças</strong>
+              <p>Busca em <code>./data/</code> · guarda o progresso em chaves <code>sb2_*</code></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-content">
+            <strong class="callout-title">Onde isso morde</strong>
+            <p>As duas jornadas não têm os mesmos arquivos. As cumbias não têm <code>curriculum.json</code>; o Sambrass não tem <code>pitch_warn.json</code>. O app pede os dois de qualquer jeito — e <strong>seis pedidos falham em silêncio, toda vez que alguém abre o app</strong>. Isso não é bug: é decisão. O próximo módulo mostra como ela foi domada.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Teste rápido</h2>
+        <div class="quiz-container" id="quiz-m3">
+          <div class="quiz-question-block"
+               data-correct="c"
+               data-explanation-right="Não existe servidor rodando nada: o Pages só entrega arquivos. Qualquer proposta com banco de dados, login ou API própria esbarra nessa parede."
+               data-explanation-wrong="Olhe de novo o caminho do módulo: o Python roda no CI, antes de publicar. Depois disso, o que existe no ar são arquivos parados.">
+            <h3 class="quiz-question">Uma IA sugere “guardar o progresso dos alunos num banco de dados PostgreSQL”. Por que isso não encaixa aqui?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Porque PostgreSQL é pago e o projeto é pessoal</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Porque o Python do projeto não sabe falar com bancos</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Porque não há servidor nenhum rodando: o site é estático</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="b"
+               data-explanation-right="É trabalho de preparo, roda uma vez no CI e o celular recebe o resultado pronto. A regra prática: se o resultado é igual para todo mundo, calcule antes."
+               data-explanation-wrong="Pense no luthier: transposição é cálculo de bancada ou de palco? O resultado é o mesmo para todos os usuários — logo, não precisa ser refeito em cada celular.">
+            <h3 class="quiz-question">Você quer transpor todas as peças para outro instrumento. Build ou runtime?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Runtime: o app transpõe ao abrir cada peça</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Build: o pipeline gera os dados já transpostos</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Tanto faz — dá na mesma para o usuário</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-m3')">Conferir</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-m3')">Tentar de novo</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,164 @@
+<section class="module" id="module-4" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">04</span>
+      <h1 class="module-title">O acoplamento invisível</h1>
+      <p class="module-subtitle">Duas metades do projeto combinaram nomes de arquivo por escrito. Ninguém confere se continuam combinando — até alguém conferir.</p>
+    </header>
+
+    <div class="module-body">
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Duas pessoas, uma chave embaixo do tapete</h2>
+        <p>Você combina com alguém: “deixo a chave embaixo do vaso da direita”. Funciona por anos. Um dia alguém troca o vaso de lugar — <strong>e ninguém avisa</strong>.</p>
+        <p>Não há erro, não há alarme. Só uma pessoa parada na porta, sem entender.</p>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">🔑</div>
+          <div class="callout-content">
+            <strong class="callout-title">O vaso deste projeto</strong>
+            <p>O pipeline escreve <code>pieces.json</code>. O app pede <code>pieces.json</code>. Os dois nomes são <span class="term" data-definition="String é texto puro no código, escrito entre aspas. O computador não entende o que ele significa — para ele, 'pieces.json' é só uma sequência de letras, igual a 'xyz123'.">strings</span> digitadas à mão, em arquivos diferentes, em linguagens diferentes. Nada liga uma à outra.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">E por que ninguém percebe quando quebra</h2>
+        <p>Por causa de quatro caracteres. Olhe de novo a linha do módulo 1 — agora só o pedaço que importa:</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · app/app.js:20</span>
+            <pre><code>
+<span class="code-line">  <span class="code-keyword">const</span> get = <span class="code-keyword">async</span> (f) =&gt; { <span class="code-keyword">try</span> { <span class="code-keyword">return await</span> (<span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'./data/'</span> + <span class="code-function">JCFG</span>().base + f)).<span class="code-function">json</span>(); } <span class="code-keyword">catch</span> { <span class="code-keyword">return null</span>; } };</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">Monta o caminho juntando pedaços de texto: pasta + jornada + nome do arquivo.</p>
+              <p class="tl">O <span class="term" data-definition="try/catch é uma estrutura que diz: “tente isto; se der erro, faça aquilo em vez de quebrar o programa”. Útil — e perigoso quando o “aquilo” é não fazer nada.">try/catch</span> aqui significa: “se falhar, devolva nada e siga em frente”.</p>
+              <p class="tl">Resultado: um arquivo que sumiu vira <code>null</code>. E <code>null</code> vira <strong>tela vazia</strong>.</p>
+              <p class="tl">Sem erro vermelho. Sem aviso. Sem pista.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title">A lição que vale para qualquer projeto</strong>
+            <p>Um <code>catch</code> que engole o erro em silêncio troca um <em>problema barulhento</em> por um <em>problema invisível</em>. Às vezes vale a pena — aqui vale, porque alguns arquivos faltam de propósito. Mas então <strong>alguém precisa conferir noutro lugar</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">A solução: transformar a ausência em decisão escrita</h2>
+        <p>Existe um script que lê os <em>dois</em> lados e compara. E as ausências legítimas viraram uma lista com <strong>motivo escrito</strong>:</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · tools/check_contrato.py:30</span>
+            <pre><code>
+<span class="code-line">OPCIONAIS = {</span>
+<span class="code-line">    (<span class="code-string">"cumbias"</span>, <span class="code-string">"curriculum.json"</span>): <span class="code-string">"as cumbias não têm currículo de 6 semanas (isso é do Sambrass)"</span>,</span>
+<span class="code-line">    (<span class="code-string">"cumbias"</span>, <span class="code-string">"rotina.json"</span>): <span class="code-string">"rotina diária vem do currículo, que as cumbias não têm"</span>,</span>
+<span class="code-line">    (<span class="code-string">"sambrass"</span>, <span class="code-string">"pitch_warn.json"</span>): <span class="code-string">"validação de alturas só roda no pipeline das cumbias"</span>,</span>
+<span class="code-line">}</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">Uma lista das faltas que são <em>intencionais</em>.</p>
+              <p class="tl">Cada linha diz <strong>por que</strong> aquele arquivo não existe naquela jornada.</p>
+              <p class="tl">Se não dá para escrever o motivo, provavelmente é bug — não escolha.</p>
+              <p class="tl">E se o arquivo passar a existir, o script <strong>falha pedindo para tirar a linha</strong>: a justificativa não envelhece virando mentira.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-4)">
+            <div class="pattern-icon" style="background: var(--color-actor-4)">42</div>
+            <h4 class="pattern-title">checagens</h4>
+            <p class="pattern-desc">16 arquivos × 2 jornadas, mais 5 chaves de topo que o app lê lá dentro.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-4)">
+            <div class="pattern-icon" style="background: var(--color-actor-4)">6</div>
+            <h4 class="pattern-title">faltas declaradas</h4>
+            <p class="pattern-desc">Cada uma com motivo. Um 404 virou decisão registrada em vez de surpresa.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-4)">
+            <div class="pattern-icon" style="background: var(--color-actor-4)">⛔</div>
+            <h4 class="pattern-title">falha o deploy</h4>
+            <p class="pattern-desc">Roda no CI logo depois do build. Nada quebrado chega ao ar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O mesmo problema, outro disfarce: o CSS</h2>
+        <p>Das seis páginas do app, <strong>só uma carrega o <code>style.css</code></strong>. As outras cinco têm o próprio estilo embutido.</p>
+        <p>Resultado: 157 classes existem só na home. Usar qualquer uma delas noutra página renderiza <em>sem estilo nenhum</em> — e, de novo, sem erro.</p>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">🧪</div>
+          <div class="callout-content">
+            <strong class="callout-title">Como se prova que um guard funciona</strong>
+            <p>Não basta ele passar. É preciso <strong>quebrar de propósito</strong> e ver ficar vermelho. Fazer uma página usar uma classe que ela não tem derruba o CI — foi assim que esse guard foi validado. Peça isso às IAs: “escreva o teste e depois mostre ele falhando”.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Teste rápido</h2>
+        <div class="quiz-container" id="quiz-m4">
+          <div class="quiz-question-block"
+               data-correct="c"
+               data-explanation-right="O nome velho continua sendo pedido, o fetch falha, o catch devolve null e a tela fica vazia. Nada no app avisa — por isso o guard existe."
+               data-explanation-wrong="Lembre do catch: ele engole o erro. O app não quebra nem avisa; ele simplesmente desenha o nada.">
+            <h3 class="quiz-question">Você pede a uma IA para renomear <code>percurso.json</code> para <code>trilha_nodes.json</code>. Ela muda o pipeline e esquece do app. O que você vê?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Um erro vermelho no console dizendo qual arquivo faltou</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>O app não abre de jeito nenhum</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>A trilha abre vazia, sem nenhum aviso</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="a"
+               data-explanation-right="O guard compara os dois lados: ele acusa o arquivo que o app pede e o build não escreve. É o único lugar do projeto que sabe das duas metades ao mesmo tempo."
+               data-explanation-wrong="Pense em qual ferramenta enxerga as DUAS pontas. Testes de navegador veem a tela; o validador de dados vê os dados. Só o check_contrato cruza o que o app pede com o que o build escreve.">
+            <h3 class="quiz-question">No cenário acima, qual peça do projeto pega o erro antes de ir ao ar?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span><code>check_contrato.py</code>, no CI, logo depois do build</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>O service worker, ao tentar cachear o arquivo</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Ninguém — só o usuário, semanas depois</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="b"
+               data-explanation-right="Declarar com motivo transforma uma falha silenciosa numa decisão auditável — e o guard ainda reclama se a justificativa ficar velha."
+               data-explanation-wrong="Silenciar sem registrar é como colar fita no aviso do painel do carro: o barulho some, o problema não. A declaração com motivo é o que separa uma escolha de um descuido.">
+            <h3 class="quiz-question">Qual é o princípio por trás da lista <code>OPCIONAIS</code>?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Esconder erros conhecidos para o CI parar de reclamar</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Tornar cada ausência uma decisão escrita, com motivo e prazo de validade</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Listar arquivos que ainda serão criados no futuro</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-m4')">Conferir</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-m4')">Tentar de novo</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

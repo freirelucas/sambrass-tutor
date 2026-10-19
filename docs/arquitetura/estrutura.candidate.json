@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Tutor de Trompete — do MusicXML ao som no celular",
+    "locale": "pt-BR",
+    "output": "estrutura.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/freirelucas/sambrass-tutor",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "1de3381ca78ad58e056e85a68910a06158931e81"
+    },
+    "translations": {
+      "page.title": "Diagrama · {title}",
+      "diagram.description.architecture": "Diagrama de arquitetura gerado pelo Archify.",
+      "node.context.architecture": "Componente da arquitetura",
+      "legend.title": "Legenda",
+      "legend.architecture.frontend": "No celular",
+      "legend.architecture.backend": "Script Python",
+      "legend.architecture.database": "Arquivo / armazenamento",
+      "legend.architecture.cloud": "Nuvem (GitHub)",
+      "legend.architecture.security": "Portão de qualidade",
+      "legend.architecture.messagebus": "Fila de mensagens",
+      "legend.architecture.external": "Pessoa",
+      "viewer.kind.frontend": "No celular",
+      "viewer.kind.backend": "Script Python",
+      "viewer.kind.database": "Arquivo / armazenamento",
+      "viewer.kind.cloud": "Nuvem (GitHub)",
+      "viewer.kind.security": "Portão de qualidade",
+      "viewer.kind.external": "Pessoa",
+      "viewer.theme.dark": "Escuro",
+      "viewer.theme.light": "Claro",
+      "viewer.theme.toggle": "Trocar o tema",
+      "viewer.toolbar.actions": "Ações do diagrama"
+    }
+  },
+  "components": [
+    {
+      "id": "fontes",
+      "type": "database",
+      "label": "Partituras-fonte",
+      "sublabel": "content/notes_* · .musicxml",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        130,
+        72
+      ],
+      "sources": [
+        {
+          "path": "content/cumbia/build_cumbia.py",
+          "line": 146,
+          "label": "lê cada cu-NNN.musicxml"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "type": "backend",
+      "label": "Pipeline (Python)",
+      "sublabel": "build_cumbia.py · build_abc.py",
+      "pos": [
+        255,
+        60
+      ],
+      "size": [
+        130,
+        72
+      ],
+      "sources": [
+        {
+          "path": "content/cumbia/build_cumbia.py",
+          "line": 139,
+          "end_line": 196,
+          "label": "compila eventos → ABC → JSON"
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "type": "backend",
+      "label": "build_site.py",
+      "sublabel": "app/ + dados por jornada",
+      "pos": [
+        470,
+        60
+      ],
+      "size": [
+        130,
+        72
+      ],
+      "sources": [
+        {
+          "path": "app/build_site.py",
+          "line": 62,
+          "label": "copia app/ → _site/"
+        },
+        {
+          "path": "app/build_site.py",
+          "line": 21,
+          "end_line": 57,
+          "label": "emit_sambrass / emit_cumbias"
+        }
+      ]
+    },
+    {
+      "id": "dados",
+      "type": "database",
+      "label": "_site/data/",
+      "sublabel": "16 JSON × 2 jornadas",
+      "pos": [
+        685,
+        60
+      ],
+      "size": [
+        130,
+        72
+      ],
+      "sources": [
+        {
+          "path": "app/build_site.py",
+          "line": 45,
+          "end_line": 57,
+          "label": "data/ e data/cumbias/"
+        }
+      ]
+    },
+    {
+      "id": "guards",
+      "type": "security",
+      "label": "Guards de CI",
+      "sublabel": "check_css · check_contrato",
+      "tag": "falham o build",
+      "pos": [
+        470,
+        270
+      ],
+      "size": [
+        130,
+        76
+      ],
+      "sources": [
+        {
+          "path": "tools/check_contrato.py",
+          "line": 80,
+          "end_line": 138,
+          "label": "contrato pipeline↔app"
+        },
+        {
+          "path": "tools/check_css.py",
+          "line": 52,
+          "end_line": 96,
+          "label": "classe sem estilo na página"
+        },
+        {
+          "path": ".github/workflows/pages.yml",
+          "line": 32,
+          "end_line": 33,
+          "label": "rodam depois do build"
+        }
+      ]
+    },
+    {
+      "id": "pages",
+      "type": "cloud",
+      "label": "GitHub Pages",
+      "sublabel": "deploy a cada push no main",
+      "pos": [
+        900,
+        60
+      ],
+      "size": [
+        130,
+        72
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/pages.yml",
+          "line": 36,
+          "end_line": 47,
+          "label": "upload-pages + deploy-pages"
+        }
+      ]
+    },
+    {
+      "id": "pwa",
+      "type": "frontend",
+      "label": "PWA (vanilla JS)",
+      "sublabel": "6 abas · offline-first",
+      "tag": "service worker v23",
+      "pos": [
+        900,
+        270
+      ],
+      "size": [
+        130,
+        84
+      ],
+      "sources": [
+        {
+          "path": "app/app.js",
+          "line": 379,
+          "end_line": 386,
+          "label": "roteador das abas"
+        },
+        {
+          "path": "app/app.js",
+          "line": 20,
+          "end_line": 26,
+          "label": "busca data/ da jornada ativa"
+        },
+        {
+          "path": "app/sw.js",
+          "line": 4,
+          "end_line": 31,
+          "label": "SHELL + network-first"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "database",
+      "label": "localStorage",
+      "sublabel": "diário, streak, escolhas",
+      "pos": [
+        1095,
+        270
+      ],
+      "size": [
+        130,
+        76
+      ],
+      "sources": [
+        {
+          "path": "app/app.js",
+          "line": 36,
+          "label": "progresso por jornada (sb2_/cu2_)"
+        }
+      ]
+    },
+    {
+      "id": "lucas",
+      "type": "external",
+      "label": "Trompetista",
+      "sublabel": "toca com o microfone ligado",
+      "pos": [
+        685,
+        444
+      ],
+      "size": [
+        130,
+        76
+      ],
+      "sources": [
+        {
+          "path": "app/estudo.js",
+          "line": 60,
+          "end_line": 70,
+          "label": "tutor de escuta carrega a peça"
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "type": "frontend",
+      "label": "Tutor de escuta",
+      "sublabel": "estudo.html · microfone + YIN",
+      "tag": "nota certa ao vivo",
+      "pos": [
+        900,
+        440
+      ],
+      "size": [
+        130,
+        84
+      ],
+      "sources": [
+        {
+          "path": "app/estudo.js",
+          "line": 60,
+          "end_line": 70,
+          "label": "carrega ABC, avisos e gravações"
+        },
+        {
+          "path": "app/vendor/pitch-detector.js",
+          "line": 1,
+          "label": "detecção de tom no navegador"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "GitHub Actions · pages.yml (nada disso roda no celular)",
+      "wraps": [
+        "fontes",
+        "pipeline",
+        "build",
+        "dados",
+        "guards"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "fonte-pipe",
+      "from": "fontes",
+      "to": "pipeline",
+      "label": "compila",
+      "variant": "emphasis"
+    },
+    {
+      "id": "pipe-build",
+      "from": "pipeline",
+      "to": "build",
+      "label": "JSON"
+    },
+    {
+      "id": "build-dados",
+      "from": "build",
+      "to": "dados",
+      "label": "monta",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build-guards",
+      "from": "build",
+      "to": "guards",
+      "label": "confere o que saiu",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "dados-pages",
+      "from": "dados",
+      "to": "pages",
+      "label": "publica"
+    },
+    {
+      "id": "pages-pwa",
+      "from": "pages",
+      "to": "pwa",
+      "label": "serve data/*.json",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "pwa-store",
+      "from": "pwa",
+      "to": "store",
+      "label": "salva"
+    },
+    {
+      "id": "pwa-tutor",
+      "from": "pwa",
+      "to": "tutor",
+      "label": "abre a peça",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "lucas-tutor",
+      "from": "lucas",
+      "to": "tutor",
+      "label": "sopra",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "A fronteira que explica tudo",
+      "items": [
+        "Python só roda no CI: o celular recebe JSON pronto",
+        "O app não tem build — é vanilla, abre direto",
+        "Duas jornadas (Cumbias, Sambrass) com o mesmo código e dados separados"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "O que o app faz sozinho",
+      "items": [
+        "Service worker: network-first p/ código, cache-first p/ soundfont e gravações",
+        "Microfone → detecção de tom (YIN) no tutor de escuta",
+        "Progresso só no aparelho: não há backend nem conta"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Por que existem guards",
+      "items": [
+        "Todo fetch do app tem .catch(): um JSON que some não dá erro, só tela vazia",
+        "check_contrato confere 42 pares arquivo/chave entre o pipeline e o app",
+        "check_css pega classe usada numa página cuja folha não a define"
+      ]
+    }
+  ]
+}

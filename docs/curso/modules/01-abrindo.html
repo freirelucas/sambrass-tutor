@@ -1,0 +1,169 @@
+<section class="module" id="module-1" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">01</span>
+      <h1 class="module-title">O que acontece quando você toca em “Trilha”</h1>
+      <p class="module-subtitle">Um toque na tela, e um caminho inteiro de código acontece em menos de um segundo. Vamos segui-lo.</p>
+    </header>
+
+    <div class="module-body">
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Primeiro: o que é esse app?</h2>
+        <p>É um tutor de trompete que roda no navegador. Você escolhe uma música, ele mostra a partitura, toca junto e — com o microfone ligado — <strong>escuta se você acertou a nota</strong>.</p>
+        <p>São duas trilhas de repertório: 16 cumbias e 110 sambas. Mesma interface, dados separados.</p>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">🎺</div>
+            <h4 class="pattern-title">126 peças</h4>
+            <p class="pattern-desc">Cada uma com partitura, digitação, células rítmicas e nível de dificuldade.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+            <div class="pattern-icon" style="background: var(--color-actor-2)">🎙</div>
+            <h4 class="pattern-title">Ouve você tocar</h4>
+            <p class="pattern-desc">O microfone vira um afinador que sabe qual nota deveria sair naquele momento.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">📵</div>
+            <h4 class="pattern-title">Funciona sem internet</h4>
+            <p class="pattern-desc">Depois da primeira visita, o app abre no avião. Nenhum servidor é consultado.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O caminho de um toque</h2>
+        <p>Você abre o app. Antes de qualquer coisa aparecer, ele precisa buscar os dados das músicas. Avance passo a passo:</p>
+
+        <div class="flow-animation" data-steps='[
+          {"highlight":"flow-actor-1","label":"Você abre o app no celular"},
+          {"highlight":"flow-actor-1","label":"O app pede os 9 arquivos de dados da jornada ativa","packet":true,"from":"actor-1","to":"actor-2"},
+          {"highlight":"flow-actor-2","label":"O GitHub Pages devolve os JSON prontos","packet":true,"from":"actor-2","to":"actor-3"},
+          {"highlight":"flow-actor-3","label":"O app guarda tudo numa variável chamada DB"},
+          {"highlight":"flow-actor-3","label":"A função da aba Trilha desenha os 16 nós na tela","packet":true,"from":"actor-3","to":"actor-4"},
+          {"highlight":"flow-actor-4","label":"Você vê a trilha. Nada disso envolveu um servidor rodando código."}
+        ]'>
+          <div class="flow-actors">
+            <div class="flow-actor" id="flow-actor-1"><div class="flow-actor-icon">👆</div><span>Seu toque</span></div>
+            <div class="flow-actor" id="flow-actor-2"><div class="flow-actor-icon">☁️</div><span>GitHub Pages</span></div>
+            <div class="flow-actor" id="flow-actor-3"><div class="flow-actor-icon">{ }</div><span>app.js</span></div>
+            <div class="flow-actor" id="flow-actor-4"><div class="flow-actor-icon">🎨</div><span>A tela</span></div>
+          </div>
+          <div class="flow-packet" id="flow-packet"></div>
+          <div class="flow-step-label" id="flow-label">Toque em “Próximo passo” para começar</div>
+          <div class="flow-controls">
+            <button class="btn flow-next-btn">Próximo passo</button>
+            <button class="btn flow-reset-btn">Recomeçar</button>
+            <span class="flow-progress"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O código que faz isso</h2>
+        <p>Esta é a função que busca os dados — o <span class="term" data-definition="Entry point é a porta de entrada do programa: o primeiro código que roda quando algo começa. Quando você pedir ajuda a uma IA, dizer “comece pelo entry point” economiza muita explicação.">ponto de partida</span> de tudo que você vê.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · app/app.js:19</span>
+            <pre><code>
+<span class="code-line"><span class="code-keyword">async function</span> <span class="code-function">carregar</span>() {</span>
+<span class="code-line">  <span class="code-keyword">const</span> get = <span class="code-keyword">async</span> (f) =&gt; { <span class="code-keyword">try</span> { <span class="code-keyword">return await</span> (<span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'./data/'</span> + <span class="code-function">JCFG</span>().base + f)).<span class="code-function">json</span>(); } <span class="code-keyword">catch</span> { <span class="code-keyword">return null</span>; } };</span>
+<span class="code-line">  [DB.pieces, DB.curriculo, DB.trilha, DB.cells, DB.rotina, DB.quality, DB.escada, DB.percurso, DB.lotes] = <span class="code-keyword">await</span> Promise.<span class="code-function">all</span>(</span>
+<span class="code-line">    [<span class="code-string">'pieces.json'</span>, <span class="code-string">'curriculum.json'</span>, <span class="code-string">'trilha.json'</span>, <span class="code-string">'cells.json'</span>, <span class="code-string">'rotina.json'</span>, <span class="code-string">'quality.json'</span>, <span class="code-string">'escada.json'</span>, <span class="code-string">'percurso.json'</span>, <span class="code-string">'lotes.json'</span>].<span class="code-function">map</span>(get));</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">“Carregar” é a função que prepara tudo antes da primeira tela.</p>
+              <p class="tl">Cria um ajudante que busca um arquivo e, <strong>se der erro, devolve “nada” em silêncio</strong>. Guarde esse detalhe — ele volta no módulo 4.</p>
+              <p class="tl">Pede os nove arquivos <em>ao mesmo tempo</em>, não um depois do outro. Por isso abre rápido.</p>
+              <p class="tl">A lista de nomes é literal: estão escritos no código, como texto solto.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title">Vocabulário que vale levar</strong>
+            <p><span class="term" data-definition="Fetch é o comando que o navegador usa para buscar um arquivo pela internet. “Fazer um fetch” = “ir buscar isso no servidor”.">fetch</span> busca um arquivo. <span class="term" data-definition="Promise.all dispara várias tarefas de uma vez e só continua quando todas terminam. O contrário seria esperar uma, depois outra — bem mais lento.">Promise.all</span> dispara vários fetches em paralelo. Pedir a uma IA “faça esses fetches em paralelo com Promise.all” é uma instrução precisa — e costuma ser a diferença entre um app rápido e um lento.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">E quem decide qual tela desenhar?</h2>
+        <p>Uma função de três letras. Ela é o <span class="term" data-definition="Router (roteador) é a parte do código que decide qual tela mostrar. Em apps grandes é uma biblioteca inteira; aqui são seis linhas.">roteador</span> do app inteiro.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · app/app.js:379</span>
+            <pre><code>
+<span class="code-line"><span class="code-keyword">function</span> <span class="code-function">ir</span>(t) {</span>
+<span class="code-line">  <span class="code-function">pararSynth</span>();</span>
+<span class="code-line">  <span class="code-keyword">if</span> (t !== <span class="code-string">'metronomo'</span> &amp;&amp; M.on) <span class="code-function">pararMetro</span>();</span>
+<span class="code-line">  document.<span class="code-function">querySelectorAll</span>(<span class="code-string">'.abas button'</span>).<span class="code-function">forEach</span>(b =&gt; b.classList.<span class="code-function">toggle</span>(<span class="code-string">'ativa'</span>, b.dataset.tela === t));</span>
+<span class="code-line">  ({ <span class="code-property">trilha</span>: telaTrilha, <span class="code-property">banco</span>: telaBanco, <span class="code-property">metronomo</span>: metroTela, <span class="code-property">vocab</span>: telaVocab, <span class="code-property">progresso</span>: telaProg, <span class="code-property">superchops</span>: telaSuperchops }[t] || telaTrilha)();</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">“ir” recebe o nome da aba que você tocou.</p>
+              <p class="tl">Antes de trocar, cala o que estava tocando — senão o som da tela anterior continuaria.</p>
+              <p class="tl">O metrônomo é a exceção: ele só para se você estiver <em>saindo</em> da aba dele.</p>
+              <p class="tl">Pinta de vermelho o botão da aba escolhida.</p>
+              <p class="tl">E chama a função que desenha aquela tela. Se o nome não existir, cai na Trilha.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">🔎</div>
+          <div class="callout-content">
+            <strong class="callout-title">Repare no padrão</strong>
+            <p>Cada aba é só uma função que devolve HTML. Não há framework, não há <span class="term" data-definition="Build é uma etapa de preparo que transforma o código que você escreve em código que o navegador entende. Muitos apps precisam disso; este, no front-end, não.">etapa de build</span> no app. Isso é raro — e é uma decisão, não um descuido. O módulo 3 explica por quê.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Teste rápido</h2>
+        <div class="quiz-container" id="quiz-m1">
+          <div class="quiz-question-block"
+               data-correct="b"
+               data-explanation-right="Os nove fetches saem juntos e o app só continua quando todos voltam — por isso a tela aparece de uma vez, e não aos pedaços."
+               data-explanation-wrong="Olhe de novo o Promise.all: ele dispara tudo ao mesmo tempo. Se fosse um de cada vez, o app esperaria nove viagens em fila.">
+            <h3 class="quiz-question">Você pede a uma IA para adicionar um décimo arquivo de dados ao carregamento inicial. O que acontece com o tempo de abertura?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Fica 10% mais lento, porque é mais um arquivo na fila</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Quase não muda: ele sai junto com os outros, em paralelo</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Dobra, porque o app recarrega tudo duas vezes</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="c"
+               data-explanation-right="O try/catch devolve null e o app segue como se o arquivo não existisse: tela vazia, zero erro. É o bug mais traiçoeiro desta base — módulo 4."
+               data-explanation-wrong="Repare no `catch { return null; }`: o erro é engolido de propósito. O app não quebra — ele finge que não havia nada ali.">
+            <h3 class="quiz-question">Um dos nove arquivos some do servidor. O que o usuário vê?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Uma mensagem de erro explicando qual arquivo faltou</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>O app trava numa tela de carregamento</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Uma tela normal, só que vazia — sem aviso nenhum</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-m1')">Conferir</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-m1')">Tentar de novo</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

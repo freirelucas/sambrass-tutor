@@ -1,0 +1,169 @@
+<section class="module" id="module-5" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">05</span>
+      <h1 class="module-title">Quando quebra</h1>
+      <p class="module-subtitle">Cada sintoma deste app tem um endereço provável. Saber esse mapa é a diferença entre consertar em cinco minutos e ficar preso num loop com a IA.</p>
+    </header>
+
+    <div class="module-body">
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Diagnóstico por sintoma</h2>
+        <p>Um mecânico não abre o carro inteiro: ele ouve o barulho e já sabe onde olhar. Aqui funciona igual.</p>
+
+        <div class="icon-rows">
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-1)">🫥</div>
+            <div><strong>Tela abre vazia, sem erro</strong>
+              <p>Um JSON sumiu ou mudou de nome. Rode <code>python3 tools/check_contrato.py</code> — ele compara os dois lados.</p></div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-2)">🎨</div>
+            <div><strong>Botão aparece “cru”, sem estilo</strong>
+              <p>A página usa uma classe que a folha dela não define. <code>python3 tools/check_css.py</code>.</p></div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-3)">🔇</div>
+            <div><strong>Mudei o código e nada mudou no celular</strong>
+              <p>Service worker servindo a versão guardada. Suba o número do cache em <code>sw.js</code>.</p></div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-4)">🎵</div>
+            <div><strong>A nota está errada na partitura</strong>
+              <p>Não é bug de código: é dado. O problema nasceu na transcrição, em <code>content/</code>.</p></div>
+          </div>
+          <div class="icon-row">
+            <div class="icon-circle" style="background: var(--color-actor-5)">📵</div>
+            <div><strong>Funciona online, falha offline</strong>
+              <p>A página não está no <code>SHELL</code> do service worker — só entra no cache depois da primeira visita.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">A rede que segura a queda</h2>
+        <p>O projeto tem três guardas diferentes, e cada um pega uma família de erro:</p>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-4)">
+            <div class="pattern-icon" style="background: var(--color-actor-4)">🧾</div>
+            <h4 class="pattern-title">Guards estáticos</h4>
+            <p class="pattern-desc">Leem o código sem rodar nada. Pegam contrato de dados e classe sem estilo. Rápidos, rodam no CI.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+            <div class="pattern-icon" style="background: var(--color-actor-2)">🌐</div>
+            <h4 class="pattern-title">22 testes de navegador</h4>
+            <p class="pattern-desc">Abrem o app de verdade num Chromium e clicam. Pegam o que só aparece na tela.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">🎼</div>
+            <h4 class="pattern-title">Validadores de dados</h4>
+            <p class="pattern-desc">Conferem compassos, alturas e referências das 126 peças. Pegam erro musical, não de código.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title">A regra de ouro para usar IA aqui</strong>
+            <p>Um teste que <strong>só passa</strong> não prova nada. Peça sempre: “quebre de propósito e me mostre o teste ficando vermelho”. Nesta base, essa exigência já revelou um teste que usava <code>OR</code> no seletor e, por isso, <em>passava mesmo com metade da tela morta</em>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O que dizer para a IA — e o que não dizer</h2>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">✅</div>
+            <h4 class="pattern-title">Instruções que funcionam</h4>
+            <p class="pattern-desc">“Isto é um site estático no GitHub Pages — não proponha backend nem banco.”</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">✅</div>
+            <h4 class="pattern-title">Onde fazer a conta</h4>
+            <p class="pattern-desc">“O resultado é igual para todo mundo: calcule no pipeline Python, não no app.”</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">✅</div>
+            <h4 class="pattern-title">A premissa do front</h4>
+            <p class="pattern-desc">“O app é vanilla, sem build e sem framework. Não adicione dependências.”</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">❌</div>
+            <h4 class="pattern-title">“Adicione login de usuário”</h4>
+            <p class="pattern-desc">Não há servidor para autenticar ninguém. O progresso vive só no aparelho.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">❌</div>
+            <h4 class="pattern-title">“Só renomeia esse JSON”</h4>
+            <p class="pattern-desc">Renomear um lado só falha em silêncio. Os dois lados, sempre — e rode o guard.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">❌</div>
+            <h4 class="pattern-title">“Os testes passaram, pode subir”</h4>
+            <p class="pattern-desc">Passar não é prova. Peça o teste falhando antes de acreditar nele.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Teste final</h2>
+        <div class="quiz-container" id="quiz-m5">
+          <div class="quiz-question-block"
+               data-correct="b"
+               data-explanation-right="Classe sem estilo é exatamente o que o check_css pega: ele junta tudo que a página carrega — folhas, style interno e até o CSS que os scripts injetam — e acusa o que ficou órfão."
+               data-explanation-wrong="Botão “cru” é sintoma de estilo que não chegou, não de dado faltando. Dado faltando dá tela vazia; estilo faltando dá elemento sem forma.">
+            <h3 class="quiz-question">Você reaproveita um botão da home numa página de ferramenta. Ele aparece sem borda e minúsculo. Por onde começar?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>check_contrato.py — deve ser um JSON faltando</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>check_css.py — a página provavelmente não carrega a folha daquela classe</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Limpar o cache do service worker</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="c"
+               data-explanation-right="Só o navegador mostra isso. Nenhum guard estático mede pixel — por isso o projeto tira screenshot e mede alvo de toque de verdade."
+               data-explanation-wrong="Nenhum script que apenas LÊ o código consegue saber a altura final de um botão: isso depende do CSS aplicado, da fonte e da tela. Precisa renderizar.">
+            <h3 class="quiz-question">Um botão fica com 16px de altura — difícil de acertar no celular. Que tipo de verificação pega isso?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Um guard estático lendo o CSS</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>O validador de dados das peças</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Um teste que abre o app num navegador real e mede</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="a"
+               data-explanation-right="É dado, não código: a nota errada veio da transcrição. Mexer no app só esconderia o problema para uma peça e deixaria as outras 125 erradas."
+               data-explanation-wrong="Se a nota está errada para todo mundo, o problema está na fonte do dado, não na tela que o exibe. Consertar na tela trata o sintoma de uma peça só.">
+            <h3 class="quiz-question">Uma peça mostra um Dó onde deveria ser um Ré, para todos os usuários. Onde está o bug?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Nos dados — a transcrição em <code>content/</code></span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>No <code>app.js</code>, que desenha a partitura</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>No service worker, servindo versão antiga</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-m5')">Conferir</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-m5')">Tentar de novo</button>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">🎺</div>
+          <div class="callout-content">
+            <strong class="callout-title">Chegou ao fim</strong>
+            <p>Você viu o caminho de um toque, conheceu o elenco, entendeu a fronteira entre bancada e palco, achou o acoplamento invisível e ganhou um mapa de sintomas. É o suficiente para dirigir uma IA neste repositório sem ser levado por ela.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

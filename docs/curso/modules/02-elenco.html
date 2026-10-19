@@ -1,0 +1,183 @@
+<section class="module" id="module-2" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">02</span>
+      <h1 class="module-title">O elenco</h1>
+      <p class="module-subtitle">Seis personagens, cada um com um trabalho só. Saber quem é quem é o que te deixa dizer “põe isso no X, não no Y”.</p>
+    </header>
+
+    <div class="module-body">
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Pense numa gráfica</h2>
+        <p>Uma gráfica tem quem <em>prepara a chapa</em> e quem <em>folheia a revista pronta</em>. São mundos separados: o leitor nunca entra na sala das máquinas.</p>
+        <p>Este repositório é igual. Metade dele prepara; a outra metade é folheada.</p>
+
+        <div class="pattern-cards">
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">🐍</div>
+            <h4 class="pattern-title">O pipeline Python</h4>
+            <p class="pattern-desc"><code>content/</code> — lê as partituras em MusicXML e cospe JSON. É a sala das máquinas.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-5)">
+            <div class="pattern-icon" style="background: var(--color-actor-5)">📦</div>
+            <h4 class="pattern-title">build_site.py</h4>
+            <p class="pattern-desc">Junta o app e os dados numa pasta <code>_site/</code>. É quem monta a revista.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-3)">
+            <div class="pattern-icon" style="background: var(--color-actor-3)">📄</div>
+            <h4 class="pattern-title">Os JSON</h4>
+            <p class="pattern-desc">16 arquivos × 2 jornadas. Dado puro, sem lógica. A revista impressa.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-1)">
+            <div class="pattern-icon" style="background: var(--color-actor-1)">📱</div>
+            <h4 class="pattern-title">app.js</h4>
+            <p class="pattern-desc">As seis abas. Lê os JSON e desenha. Nunca calcula nada pesado.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-2)">
+            <div class="pattern-icon" style="background: var(--color-actor-2)">🎙</div>
+            <h4 class="pattern-title">estudo.js</h4>
+            <p class="pattern-desc">Página separada: partitura, play-along e o microfone que escuta você.</p>
+          </div>
+          <div class="pattern-card" style="border-top: 3px solid var(--color-actor-4)">
+            <div class="pattern-icon" style="background: var(--color-actor-4)">🛡</div>
+            <h4 class="pattern-title">sw.js</h4>
+            <p class="pattern-desc">O <span class="term" data-definition="Service worker é um script que fica entre o app e a internet, interceptando cada pedido de arquivo. É ele que permite abrir o app offline.">service worker</span>: guarda cópias para o app abrir sem internet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Se eles conversassem num grupo</h2>
+        <p>É assim que uma música sai do papel e chega ao seu celular. Avance mensagem por mensagem:</p>
+
+        <div class="chat-window" id="chat-m2">
+          <div class="chat-messages">
+            <div class="chat-message" data-msg="0" data-sender="musicxml" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-3)">♪</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-3)">MusicXML</span>
+                <p>Cheguei. Sou a partitura da Elsa, com todas as notas e durações. Meio ilegível pra humano, confesso.</p></div>
+            </div>
+            <div class="chat-message" data-msg="1" data-sender="pipeline" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-5)">🐍</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-5)">build_cumbia.py</span>
+                <p>Deixa comigo. Vou extrair o riff, calcular a dificuldade, montar o ABC pro player e conferir se os compassos fecham.</p></div>
+            </div>
+            <div class="chat-message" data-msg="2" data-sender="pipeline" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-5)">🐍</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-5)">build_cumbia.py</span>
+                <p>Pronto: <code>pieces.json</code>, <code>abc.json</code>, <code>percurso.json</code>… treze arquivos. Tudo mastigado.</p></div>
+            </div>
+            <div class="chat-message" data-msg="3" data-sender="build" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-5)">📦</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-5)">build_site.py</span>
+                <p>Recolho os seus e os do Sambrass, copio o app inteiro e monto a pasta <code>_site/</code>. Uma pasta, pronta pra publicar.</p></div>
+            </div>
+            <div class="chat-message" data-msg="4" data-sender="guards" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-4)">🛡</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-4)">Guards</span>
+                <p>Peraí. Antes de publicar: o app pede 16 arquivos por jornada — todos estão aí? E as chaves dentro deles?</p></div>
+            </div>
+            <div class="chat-message" data-msg="5" data-sender="build" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-5)">📦</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-5)">build_site.py</span>
+                <p>42 checagens. Todas passaram.</p></div>
+            </div>
+            <div class="chat-message" data-msg="6" data-sender="app" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-1)">📱</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-1)">app.js</span>
+                <p>Do meu lado é só ler e desenhar. Não sei o que é MusicXML, nunca vi um. Pra mim o mundo começa no JSON.</p></div>
+            </div>
+            <div class="chat-message" data-msg="7" data-sender="sw" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-4)">🛡</div>
+              <div class="chat-bubble"><span class="chat-sender" style="color: var(--color-actor-4)">sw.js</span>
+                <p>E eu guardo cópia de tudo. Da próxima vez, mesmo no avião, ele abre.</p></div>
+            </div>
+          </div>
+          <div class="chat-typing" id="chat-typing" style="display:none">
+            <div class="chat-avatar" id="typing-avatar">?</div>
+            <div class="chat-typing-dots"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>
+          </div>
+          <div class="chat-controls">
+            <button class="btn chat-next-btn">Próxima</button>
+            <button class="btn chat-all-btn">Tocar tudo</button>
+            <button class="btn chat-reset-btn">Repetir</button>
+            <span class="chat-progress"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">O personagem mais estranho: o service worker</h2>
+        <p>Ele se senta <em>entre</em> o app e a internet e decide, pedido a pedido, se vai à rede ou abre a cópia guardada.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">CÓDIGO · app/sw.js:31</span>
+            <pre><code>
+<span class="code-line">  e.<span class="code-function">respondWith</span>(                                     <span class="code-comment">// resto: network-first</span></span>
+<span class="code-line">    <span class="code-function">fetch</span>(e.request).<span class="code-function">then</span>(r =&gt; {</span>
+<span class="code-line">      <span class="code-keyword">if</span> (r &amp;&amp; r.ok &amp;&amp; r.type === <span class="code-string">'basic'</span>) { <span class="code-keyword">const</span> cp = r.<span class="code-function">clone</span>(); caches.<span class="code-function">open</span>(CACHE).<span class="code-function">then</span>(c =&gt; c.<span class="code-function">put</span>(e.request, cp)); }</span>
+<span class="code-line">      <span class="code-keyword">return</span> r;</span>
+<span class="code-line">    }).<span class="code-function">catch</span>(() =&gt; caches.<span class="code-function">match</span>(e.request))</span>
+<span class="code-line">  );</span>
+            </code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">EM PORTUGUÊS</span>
+            <div class="translation-lines">
+              <p class="tl">“Eu respondo por este pedido” — o service worker intercepta.</p>
+              <p class="tl">Tenta a internet primeiro. Esta é a estratégia <span class="term" data-definition="Network-first: tenta a rede antes e só usa a cópia guardada se a rede falhar. O contrário, cache-first, abre instantâneo mas pode mostrar conteúdo velho.">network-first</span>.</p>
+              <p class="tl">Deu certo? Guarda uma cópia para a próxima — mas devolve a versão fresca agora.</p>
+              <p class="tl">Entrega a resposta da rede.</p>
+              <p class="tl">Deu errado (sem sinal)? Aí sim, abre a cópia guardada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-accent">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong class="callout-title">A escolha que importa</strong>
+            <p>Código e dados usam <strong>network-first</strong>: você sempre vê a versão nova. Mas os sons do trompete e as gravações da banda usam <strong>cache-first</strong> — são grandes e nunca mudam. Saber nomear essas duas estratégias é exatamente o tipo de vocabulário que faz uma IA acertar de primeira.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Teste rápido</h2>
+        <div class="quiz-container" id="quiz-m2">
+          <div class="quiz-question-block"
+               data-correct="b"
+               data-explanation-right="Calcular dificuldade é trabalho de preparo: roda uma vez, no pipeline, e o resultado vira dado. O app só lê."
+               data-explanation-wrong="Pense na gráfica: isso é preparo de chapa ou folhear revista? O celular não deveria recalcular algo que é igual para todo mundo, toda vez.">
+            <h3 class="quiz-question">Você quer que cada peça ganhe uma nota de dificuldade calculada a partir das notas. Onde esse cálculo deve morar?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>No app.js, calculado toda vez que a tela abre</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>No pipeline Python, virando mais um campo no JSON</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>No service worker, junto com o cache</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="a"
+               data-explanation-right="Network-first sempre tenta a rede primeiro: a versão nova chega assim que houver sinal. O que fica velho de propósito é o soundfont, que é cache-first."
+               data-explanation-wrong="Olhe o código de novo: o fetch da rede vem primeiro, e o cache só entra no catch. Então o conteúdo novo chega — o cache é a rede de segurança, não a fonte principal.">
+            <h3 class="quiz-question">Você publica uma correção às 10h. Um usuário com internet abre o app às 10h05. O que ele vê?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="a" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>A versão corrigida — a rede foi tentada primeiro</span></button>
+              <button class="quiz-option" data-value="b" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>A versão antiga, até limpar o cache do navegador</span></button>
+              <button class="quiz-option" data-value="c" onclick="selectOption(this)"><div class="quiz-option-radio"></div><span>Metade nova, metade antiga, de forma imprevisível</span></button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-m2')">Conferir</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-m2')">Tentar de novo</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

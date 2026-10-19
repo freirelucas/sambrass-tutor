@@ -85,6 +85,9 @@ python3 -m http.server 8099 --directory _site
 ```
 
 Testes (navegador): `npx playwright test` (21 specs) + `node tests/pitch-core.test.js`.
+Entender o projeto sem ler o código: [`docs/arquitetura/estrutura.html`](docs/arquitetura/)
+(diagrama interativo da estrutura, gerado com Archify) e [`docs/curso/`](docs/curso/)
+(curso de 5 módulos sobre como o app funciona por dentro).
 Auditoria de engenharia e UX: [`docs/auditoria-engenharia-ux.md`](docs/auditoria-engenharia-ux.md)
 (app renderizado em navegador real, 8 páginas × 3 viewports + passe de interação).
 Guardas estáticos (rodam no CI, depois do build): `python3 tools/check_css.py` (nenhuma página
