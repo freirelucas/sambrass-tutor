@@ -1,8 +1,10 @@
 // Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
 // cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
-const CACHE = 'sambrass-v23';
+const CACHE = 'sambrass-v24';
 const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './ui.css', './app.js',
   './afinar.html', './blocos.html', './revisar.html',   // leves: passam a abrir offline sem visita prévia
+  './estudos.html', './estudos.js', './estudos.css',   // painel multi-domínio (Hoje · Prática · Revisão · Histórico)
+  './estudos/dominios.json', './estudos/baralhos/index.json',
   // respira.html fica DE PROPÓSITO fora: a página é pequena, mas depende de 10 .mp4 (~25MB) que não dá
   // pra pré-cachear — abrir offline sem os play-alongs seria pior que não abrir. A aba Aquecer avisa.
   './config.js', './chroma.js', './trilha.js', './story.js', './progresso.js',

@@ -430,4 +430,8 @@ window.addEventListener('beforeinstallprompt', e => {                  // instal
     store.set('pwa-nudged', true); try { dp.prompt(); await dp.userChoice; } catch (e) {}
   });
 });
-carregar().then(() => ir('trilha')).catch(() => { tela.innerHTML = '<p class="carregando">erro ao carregar os dados.</p>'; });
+// abertura: #aba na URL manda (o painel Estudos entra por ./index.html#chops), senão Trilha
+const ABAS_VALIDAS = ['trilha', 'banco', 'vocab', 'superchops', 'metronomo', 'progresso'];
+const abaDaURL = () => { const h = location.hash.replace('#', ''); return h === 'chops' ? 'superchops' : (ABAS_VALIDAS.includes(h) ? h : 'trilha'); };
+carregar().then(() => ir(abaDaURL())).catch(() => { tela.innerHTML = '<p class="carregando">erro ao carregar os dados.</p>'; });
+addEventListener('hashchange', () => ir(abaDaURL()));

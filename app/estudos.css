@@ -1,0 +1,118 @@
+/* estudos.css — o painel multi-domínio. Estrutura vinda do protótipo de Claude Design
+ * (Hoje · Prática · Revisão · Histórico); a PELE é a da casa: papel quente e vinho,
+ * não o roxo escuro do protótipo — o app já tem identidade e ela ganha. */
+:root{
+  --papel:#f7f4ee; --papel-2:#f1ece1; --card:#fff; --tinta:#221d18; --suave:#857a68;
+  --linha:#e7e0d2; --marca:#8a2331; --verde:#2f7d5b; --sombra:0 2px 10px rgba(40,30,20,.08);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.5 var(--sans)}
+body{padding-bottom:88px;-webkit-text-size-adjust:100%}
+.es-wrap{max-width:780px;margin:0 auto;padding:0 16px}
+
+/* cabeçalho de tela */
+.es-top{padding:22px 0 6px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.es-h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.5px;line-height:1}
+.es-data{font-size:13px;color:var(--suave);white-space:nowrap}
+.es-sub{margin:4px 0 0;font-size:13.5px;color:var(--suave)}
+
+/* meta do dia */
+.es-meta{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:16px;margin:14px 0;box-shadow:var(--sombra)}
+.es-metanum{font-size:34px;font-weight:800;line-height:1}
+.es-metanum small{font-size:14px;font-weight:600;color:var(--suave);margin-left:6px}
+.es-barra{height:8px;border-radius:999px;background:var(--papel-2);overflow:hidden;margin-top:12px}
+.es-barra i{display:block;height:100%;background:var(--marca);border-radius:999px;transition:width .4s}
+
+.es-sec{font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--marca);font-weight:800;
+  margin:22px 4px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.es-sec span{color:var(--suave);font-weight:600;letter-spacing:.3px;text-transform:none;font-size:12.5px}
+
+/* tarefa do plano */
+.es-tarefa{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;
+  background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:12px 14px;margin-bottom:9px;
+  box-shadow:var(--sombra);cursor:pointer;font:inherit;color:var(--tinta);min-height:64px}
+.es-tarefa:active{transform:translateY(1px)}
+.es-tarefa.feita{opacity:.6;background:var(--papel-2)}
+.es-tarefa.es-extra{border-style:dashed}   /* atalho, não tarefa do plano */
+.es-tarefa.feita .es-tt{text-decoration:line-through}
+.es-sigla{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:19px;font-weight:800;color:#fff}
+.es-tt{display:block;font-size:15.5px;font-weight:700;line-height:1.25}
+.es-ts{display:block;font-size:12.5px;color:var(--suave);margin-top:2px}
+.es-min{font-size:13px;font-weight:700;color:var(--suave);white-space:nowrap}
+
+/* números */
+.es-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.es-num{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:14px 8px;text-align:center;box-shadow:var(--sombra)}
+.es-nv{font-size:22px;font-weight:800;color:var(--marca);line-height:1}
+.es-nr{font-size:11.5px;color:var(--suave);margin-top:4px}
+
+/* cronômetro */
+.es-anel{position:relative;width:240px;max-width:72vw;aspect-ratio:1;margin:18px auto 6px}
+.es-anel svg{width:100%;height:100%;transform:rotate(-90deg)}
+.es-abg{fill:none;stroke:var(--linha);stroke-width:9}
+.es-afg{fill:none;stroke:var(--verde);stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .9s linear}
+.es-amid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.es-relogio{font-size:42px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.es-alvo{font-size:12.5px;color:var(--suave)}
+.es-modo{display:flex;gap:4px;background:var(--papel-2);border-radius:12px;padding:4px;margin:14px auto;max-width:300px}
+.es-modo button{flex:1;min-height:42px;border:none;border-radius:9px;background:none;font:inherit;font-weight:700;
+  font-size:14px;color:var(--suave);cursor:pointer}
+.es-modo button.on{background:var(--card);color:var(--tinta);box-shadow:var(--sombra)}
+.es-blocos{display:grid;gap:7px;margin:12px 0}
+.es-bloco{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);
+  border:1px solid var(--linha);border-radius:11px;padding:10px 13px;font-size:14px;min-height:46px}
+.es-bloco.ativo{border-color:var(--verde);background:#f2f8f4;font-weight:700}
+.es-bloco.ok{opacity:.55}
+.es-acoes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.es-btn{min-height:52px;padding:0 26px;border-radius:14px;border:none;background:var(--verde);color:#fff;
+  font:inherit;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(47,125,91,.3)}
+.es-btn.sec{background:var(--card);color:var(--tinta);border:1px solid var(--linha);box-shadow:none}
+.es-dica{font-size:12.5px;color:var(--suave);text-align:center;margin:12px auto 0;max-width:46ch}
+.es-voltar{font:inherit;font-size:14px;font-weight:700;color:var(--marca);background:none;border:none;
+  cursor:pointer;padding:12px 0;min-height:44px}
+
+/* cartas */
+.es-carta{background:var(--card);border:1px solid var(--linha);border-radius:18px;padding:30px 20px;margin:14px 0;
+  box-shadow:var(--sombra);text-align:center;min-height:210px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;cursor:pointer}
+.es-cf{font-size:30px;font-weight:800;line-height:1.2}
+.es-cl{font-size:13.5px;color:var(--suave)}
+.es-ct{font-size:19px;font-weight:600;line-height:1.35;border-top:1px solid var(--linha);padding-top:14px;width:100%}
+.es-cex{font-size:14px;color:var(--suave);font-style:italic}
+.es-revele{font-size:12.5px;color:var(--suave);letter-spacing:.3px}
+.es-quali{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.es-quali button{min-height:52px;border-radius:13px;border:1px solid var(--linha);background:var(--card);
+  font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--tinta)}
+.es-quali button b{display:block;font-size:11px;font-weight:600;color:var(--suave);margin-top:2px}
+.es-quali button.q0{border-color:#c98b8b}.es-quali button.q2{border-color:var(--verde)}
+.es-vazio{text-align:center;color:var(--suave);padding:40px 16px}
+
+/* calendário */
+.es-cal{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:16px;box-shadow:var(--sombra)}
+.es-grade{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}
+.es-dow{font-size:10.5px;color:var(--suave);text-align:center;font-weight:700}
+.es-dia{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;color:var(--suave);background:var(--papel-2)}
+.es-dia.n1{background:#e6d6d9;color:#6b4a50}.es-dia.n2{background:#c99aa3;color:#fff}
+.es-dia.n3{background:var(--marca);color:#fff;font-weight:700}
+.es-dia.hoje{outline:2px solid var(--marca);outline-offset:1px}
+.es-dia.fora{background:transparent}
+.es-legenda{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-top:10px;font-size:11px;color:var(--suave)}
+.es-legenda i{width:13px;height:13px;border-radius:4px;display:inline-block;background:var(--papel-2)}
+.es-legenda i.n1{background:#e6d6d9}.es-legenda i.n2{background:#c99aa3}.es-legenda i.n3{background:var(--marca)}
+.es-sessao{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 2px;border-bottom:1px solid var(--linha)}
+.es-sessao:last-child{border-bottom:none}
+.es-pt{width:9px;height:9px;border-radius:50%;flex:none}
+
+/* abas */
+.es-abas{position:fixed;left:0;right:0;bottom:0;display:flex;gap:4px;justify-content:center;
+  background:rgba(247,244,238,.96);backdrop-filter:blur(8px);border-top:1px solid var(--linha);
+  padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:20;max-width:780px;margin:0 auto}
+.es-abas button{flex:1 1 auto;min-width:0;min-height:50px;border:none;background:none;color:var(--suave);
+  border-radius:12px;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.es-abas button.on{background:var(--marca);color:#fff}
+.es-abas .es-ic{font-size:16px;line-height:1}
+@media(prefers-reduced-motion:reduce){.es-barra i,.es-afg{transition:none}}

@@ -362,3 +362,74 @@ test('superchops: a fase 5 escolhe um riff da trilha, e ele chega no passo e no 
   await expect(page.locator('a.acao[href*="estudo.html"]'), 'riff da outra jornada não aparece').toHaveCount(0);
   expect(errors, 'sem exceções').toEqual([]);
 });
+
+/* ---- Estudos: o painel multi-domínio (trompete, violão, piano, cibernética, línguas) ---- */
+
+test('estudos: Hoje lista o plano dos 5 domínios e soma a meta do dia', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/estudos.html');
+  await expect(page.locator('.es-tarefa').first()).toBeVisible({ timeout: 10000 });
+
+  const dom = await page.evaluate(() => fetch('./estudos/dominios.json').then((r) => r.json()));
+  const nTarefas = dom.dominios.reduce((a, d) => a + d.tarefas.length, 0);
+  await expect(page.locator('.es-tarefa:not(.es-extra)'), 'uma linha por tarefa de cada domínio').toHaveCount(nTarefas);
+  expect(dom.dominios.map((d) => d.id)).toEqual(['trompete', 'violao', 'piano', 'cibernetica', 'linguas']);
+  await expect(page.locator('#tela')).toContainText(`de ${dom.metaDiaria} min`);
+  expect(errors, 'sem exceções').toEqual([]);
+});
+
+test('estudos: uma sessão cronometrada soma minutos, marca feito e entra no histórico', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/estudos.html');
+  await expect(page.locator('.es-tarefa').first()).toBeVisible({ timeout: 10000 });
+
+  await page.locator('.es-tarefa').nth(3).click();                 // Violão · Técnica — tem blocos
+  await expect(page.locator('.es-modo button.on')).toHaveText('Blocos');
+  await expect(page.locator('.es-bloco')).toHaveCount(3);
+  await page.locator('.es-btn').first().click();                    // Começar
+  await expect(page.locator('.es-relogio')).not.toHaveText('00:00', { timeout: 4000 });
+  await page.getByText('Encerrar').click();
+
+  await expect(page.locator('#tela'), 'a tarefa feita fica riscada').toContainText('feito');
+  const min = await page.evaluate(() => JSON.parse(localStorage.getItem('est_min_' + new Date().toISOString().slice(0, 10))));
+  expect(min, 'minutos do dia somados').toBeGreaterThan(0);
+  await page.locator('.es-abas button[data-t="historico"]').click();
+  await expect(page.locator('.es-sessao')).toHaveCount(1);
+  await expect(page.locator('.es-dia.hoje'), 'o dia de hoje marcado no calendário').toHaveCount(1);
+});
+
+test('estudos: a revisão espaçada vira e agenda a carta', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/estudos.html');
+  await page.locator('.es-abas button[data-t="revisao"]').click();
+  await expect(page.locator('.es-cf')).toBeVisible({ timeout: 10000 });
+
+  await expect(page.locator('.es-ct'), 'o verso começa escondido').toHaveCount(0);
+  await page.locator('.es-carta').click();
+  await expect(page.locator('.es-ct')).toBeVisible();
+
+  const antes = await page.locator('.es-cf').textContent();
+  await page.locator('.es-quali button.q2').click();                // fácil → sai da fila
+  await expect(page.locator('.es-cf')).not.toHaveText(antes);
+  const cards = await page.evaluate(() => JSON.parse(localStorage.getItem('est_cards')));
+  const [e] = Object.values(cards);
+  expect(e.n, 'subiu de caixa').toBe(1);
+  expect(e.prox > new Date().toISOString().slice(0, 10), 'foi agendada para o futuro').toBeTruthy();
+
+  await page.locator('.es-carta').click();
+  await page.locator('.es-quali button.q0').click();                // de novo → volta pro fim de hoje
+  const cards2 = await page.evaluate(() => JSON.parse(localStorage.getItem('est_cards')));
+  const nova = Object.values(cards2).find((x) => x.n === 0);
+  expect(nova.prox, 'de novo = hoje mesmo').toBe(new Date().toISOString().slice(0, 10));
+});
+
+test('estudos: o link do painel abre a aba certa do app de trompete', async ({ page }) => {
+  await page.goto('/index.html#chops');
+  await expect(page.locator('.abas button.ativa')).toHaveText('Chops', { timeout: 10000 });
+  await page.goto('/index.html#lixo');                              // hash inválido cai na Trilha
+  await expect(page.locator('.abas button.ativa')).toHaveText('Trilha', { timeout: 10000 });
+  await page.goto('/index.html');
+  await expect(page.locator('a[href="./estudos.html"]'), 'caminho de volta no cabeçalho').toHaveCount(1);
+});

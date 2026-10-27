@@ -6,6 +6,13 @@ repertório real, com uma **língua visual** única (cor por nota — padrão
 ritmo e o jogo "monte o riff"). Publicado no GitHub Pages:
 https://freirelucas.github.io/sambrass-tutor/
 
+## Estudos — o painel multi-domínio
+
+[`app/estudos.html`](app/estudos.html) é a casa nova: plano diário atravessando **cinco
+domínios** (trompete, violão, piano, cibernética e línguas), com cronômetro Foco/Blocos,
+revisão espaçada por cartas e histórico em calendário. O app de trompete segue inteiro em
+`index.html` e entra como um dos domínios. Ver [`docs/estudos.md`](docs/estudos.md).
+
 ## As duas linhas
 
 O app tem **duas linhas** (jornadas). "Sambrass" deixou de ser o nome do app e é
@@ -84,7 +91,7 @@ python3 app/build_site.py                # copia app/ → _site/ e injeta os dad
 python3 -m http.server 8099 --directory _site
 ```
 
-Testes (navegador): `npx playwright test` (21 specs) + `node tests/pitch-core.test.js`.
+Testes (navegador): `npx playwright test` (26 specs) + `node tests/pitch-core.test.js`.
 Entender o projeto sem ler o código: [`docs/arquitetura/estrutura.html`](docs/arquitetura/)
 (diagrama interativo da estrutura, gerado com Archify) e [`docs/curso/`](docs/curso/)
 (curso de 5 módulos sobre como o app funciona por dentro).

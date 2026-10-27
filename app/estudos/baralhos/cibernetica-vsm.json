@@ -1,0 +1,24 @@
+{
+  "id": "cibernetica-vsm",
+  "dominio": "cibernetica",
+  "nome": "VSM e variedade",
+  "sub": "Beer, Ashby, Bratman — o núcleo",
+  "_nota": "Semente escrita à mão para o app não nascer vazio. Edite, corte, acrescente: o formato é frente (f), leitura/fonte (l), trás (t) e exemplo (ex).",
+  "cards": [
+    { "f": "Sistema 1", "l": "Beer · VSM", "t": "As unidades que fazem o trabalho primário e lidam com o próprio ambiente.", "ex": "Numa editora: cada selo que de fato publica livros." },
+    { "f": "Sistema 2", "l": "Beer · VSM", "t": "Coordenação: amortece a oscilação entre os S1 que disputam o mesmo recurso.", "ex": "A agenda compartilhada que impede dois times de marcarem a mesma sala." },
+    { "f": "Sistema 3", "l": "Beer · VSM", "t": "Controle do agora: aloca recursos entre os S1 e negocia o que cada um entrega.", "ex": "A diretoria de operações fechando o orçamento do trimestre." },
+    { "f": "Sistema 3*", "l": "Beer · VSM", "t": "Auditoria esporádica por canal direto — contorna o relato do próprio S1.", "ex": "Visitar a fábrica sem avisar, em vez de ler o relatório que ela escreveu." },
+    { "f": "Sistema 4", "l": "Beer · VSM", "t": "Inteligência: olha para FORA e para o FUTURO, não para a operação de hoje.", "ex": "Quem percebe que a tecnologia que sustenta o negócio vai virar commodity." },
+    { "f": "Sistema 5", "l": "Beer · VSM", "t": "Política e identidade: decide o que o sistema É e arbitra a briga entre S3 e S4.", "ex": "Aceitar perder margem agora para não deixar de ser o que se é." },
+    { "f": "Canal algedônico", "l": "Beer · do grego dor/prazer", "t": "Alerta que SALTA a hierarquia e vai direto ao S5 quando algo é grave demais para a via normal.", "ex": "O operador que para a linha inteira puxando um cabo." },
+    { "f": "Variedade requisita", "l": "Ashby · 1956", "t": "Só variedade absorve variedade: o controlador precisa de pelo menos tanta variedade quanto aquilo que perturba.", "ex": "Um menu de 3 botões não dá conta de um problema com 50 estados possíveis." },
+    { "f": "Atenuar e amplificar", "l": "Ashby · engenharia de variedade", "t": "As duas formas de equilibrar variedade: reduzir a do ambiente, ou aumentar a sua.", "ex": "Formulário padronizado atenua; contratar um especialista amplifica." },
+    { "f": "Recursão", "l": "Beer · VSM", "t": "Todo sistema viável contém sistemas viáveis e está contido em um — a mesma estrutura em cada nível.", "ex": "A célula, o órgão, o corpo. Ou: o time, a área, a empresa." },
+    { "f": "Homeostato", "l": "Ashby", "t": "Mecanismo que mantém uma variável essencial dentro de limites, apesar das perturbações.", "ex": "A temperatura do corpo a 37 °C, faça frio ou calor." },
+    { "f": "POSIWID", "l": "Beer", "t": "\"O propósito de um sistema é o que ele faz\" — não o que ele declara fazer.", "ex": "Se o processo sempre atrasa a aprovação, atrasar é o propósito dele." },
+    { "f": "Intenção estável", "l": "Bratman · 1987", "t": "Planos são compromissos que RESISTEM a reconsideração — é isso que dá coerência ao longo do tempo.", "ex": "Decidir e não re-decidir a cada manhã é o que permite terminar algo grande." },
+    { "f": "Autonomia × coesão", "l": "o dilema que o VSM endereça", "t": "Dar liberdade real ao S1 sem que o todo se desfaça. Centralizar mata a resposta local; soltar mata a identidade.", "ex": "Franquia: cardápio livre demais deixa de ser a mesma rede." },
+    { "f": "Homo gubernator", "l": "a figura do timoneiro", "t": "Quem governa pela realimentação, não pelo comando: corrige o rumo lendo o desvio, em vez de prever tudo antes.", "ex": "O timoneiro não calcula a rota inteira — ele sente o leme e ajusta." }
+  ]
+}

@@ -73,7 +73,7 @@ def pedidos_caminho_fixo():
         if "vendor" in f.parts:
             continue
         txt = f.read_text(encoding="utf-8", errors="replace")
-        alvos |= set(re.findall(r"'\./((?:data|audio)/(?:cumbias/)?[\w.-]+\.json)'", txt))
+        alvos |= set(re.findall(r"'\./((?:data|audio|estudos)/(?:cumbias/|baralhos/)?[\w.-]+\.json)'", txt))
     return alvos
 
 
@@ -116,6 +116,36 @@ def main():
                 continue
             if not isinstance(dados, dict) or chave not in dados:
                 erros.append(f"{jornada}: {nome} não tem a chave de topo '{chave}' — o app lê isso em {onde}")
+
+    # --- Estudos: o índice de baralhos e os domínios que eles citam ---
+    est = SITE / "estudos"
+    if est.exists():
+        import json as _json
+        idx = est / "baralhos" / "index.json"
+        if not idx.exists():
+            erros.append("estudos: falta baralhos/index.json (o app lista os baralhos por ele)")
+        else:
+            nomes = _json.load(open(idx, encoding="utf-8"))
+            dom_ids = {d["id"] for d in _json.load(open(est / "dominios.json", encoding="utf-8"))["dominios"]}
+            for n in nomes:
+                f = est / "baralhos" / n
+                if not f.exists():
+                    erros.append(f"estudos: index.json lista {n} e o arquivo não existe")
+                    continue
+                b = _json.load(open(f, encoding="utf-8"))
+                if b.get("dominio") not in dom_ids:
+                    erros.append(f"estudos: baralho {n} aponta para o domínio '{b.get('dominio')}', que não existe em dominios.json")
+                if not b.get("cards"):
+                    erros.append(f"estudos: baralho {n} não tem cartas")
+            soltos = sorted({p.name for p in (est / "baralhos").glob("*.json")} - set(nomes) - {"index.json"})
+            for n in soltos:
+                erros.append(f"estudos: {n} existe mas não está no index.json — o app nunca vai carregá-lo")
+            for d in _json.load(open(est / "dominios.json", encoding="utf-8"))["dominios"]:
+                for t in d["tarefas"]:
+                    a = t.get("abre", "")
+                    alvo = a.split("#")[0]
+                    if alvo and not a.startswith("#") and not (SITE / alvo.lstrip("./")).exists():
+                        erros.append(f"estudos: a tarefa '{d['id']}/{t['titulo']}' abre {a}, que não existe")
 
     # órfãos: escritos e nunca pedidos (só aviso; pode ser material de outra tela)
     fixos = {pathlib.PurePosixPath(a).name for a in pedidos_caminho_fixo()}
