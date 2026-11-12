@@ -13,6 +13,10 @@ domínios** (trompete, violão, piano, cibernética e línguas), com cronômetro
 revisão espaçada por cartas e histórico em calendário. O app de trompete segue inteiro em
 `index.html` e entra como um dos domínios. Ver [`docs/estudos.md`](docs/estudos.md).
 
+Para o domínio de línguas há uma revisão da literatura por trás do método:
+[`docs/linguas-ciencia.md`](docs/linguas-ciencia.md) — idade, horas, espaçamento,
+pronúncia, vários idiomas ao mesmo tempo e atrito, com 38 DOIs conferidos.
+
 ## As duas linhas
 
 O app tem **duas linhas** (jornadas). "Sambrass" deixou de ser o nome do app e é
