@@ -41,10 +41,10 @@ inclusive se o arquivo existir e não estar no índice, caso em que o app nunca 
 - **`cibernetica-vsm`** — 15 cartas escritas à mão: os sistemas 1 a 5, canal algedônico,
   variedade requisita, atenuar/amplificar, recursão, homeostato, POSIWID, intenção estável
   (Bratman) e o próprio *homo gubernator*. São semente: corte e acrescente à vontade.
-- **`linguas-exemplo`** — 4 cartas que só mostram o formato. **Troque.** Diga qual idioma
-  e eu monto o baralho de verdade. O método que o baralho vai seguir está levantado em
-  [`linguas-ciencia.md`](linguas-ciencia.md) — revisão da literatura sobre o que funciona
-  para um adulto aprendendo vários idiomas.
+- **`chines-tons`** — os quatro tons com ma e shi, 9 cartas. As primeiras palavras do HSK
+  entram depois de conferidas contra a lista oficial.
+- **`japones-kana`** — hiragana completo (46), leitura romaji, botão "ouvir" pela voz do
+  navegador. Katakana ainda não.
 
 ## A revisão espaçada
 

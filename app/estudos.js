@@ -16,7 +16,7 @@ const tela = $('#tela');
 const DB = { dom: null, baralhos: [] };
 
 /* ---------- estado ---------- */
-const hoje = () => new Date().toISOString().slice(0, 10);
+const hoje = () => diaLocal();
 const st = {
   get(k, d) { try { const v = JSON.parse(localStorage.getItem('est_' + k)); return v == null ? d : v; } catch { return d; } },
   set(k, v) { try { localStorage.setItem('est_' + k, JSON.stringify(v)); } catch {} }
@@ -25,8 +25,7 @@ const minDia = d => st.get('min_' + (d || hoje()), 0);
 const feitas = () => st.get('feitas_' + hoje(), {});
 const dias = () => st.get('dias', []);
 function marcaDia() { const l = dias(); if (!l.includes(hoje())) { l.push(hoje()); st.set('dias', l); } }
-function streak() { const l = dias().slice().sort(); let s = 0, d = new Date();
-  for (; ;) { const k = d.toISOString().slice(0, 10); if (l.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; }
+const streak = () => sequenciaDias(dias());
 
 /* ---------- revisão espaçada (Leitner: caixa 0–5, intervalo em dias) ---------- */
 const INTERVALO = [0, 1, 2, 4, 8, 16];
@@ -37,7 +36,7 @@ function responde(b, i, q) {                       // q: 0 de novo · 1 quase ·
   const m = estCartas(), k = chaveCarta(b, i), e = m[k] || { n: 0 };
   const n = q === 0 ? 0 : q === 1 ? e.n : Math.min(5, e.n + 1);
   const dd = new Date(); dd.setDate(dd.getDate() + (q === 0 ? 0 : Math.max(1, INTERVALO[n])));
-  m[k] = { n, prox: dd.toISOString().slice(0, 10) };
+  m[k] = { n, prox: diaLocal(dd) };
   st.set('cards', m);
 }
 const vencidas = () => DB.baralhos.flatMap(b => b.cards.map((_, i) => ({ b, i })).filter(x => venceHoje(x.b, x.i)));
@@ -53,7 +52,7 @@ function telaHoje() {
   const meta = DB.dom.metaDiaria || 60, min = minDia(), f = feitas();
   const plano = planoDoDia(), nf = plano.filter(x => f[chaveTarefa(x.d, x.t)]).length;
   const venc = vencidas().length;
-  const semana = [...Array(7)].reduce((a, _, k) => { const d = new Date(); d.setDate(d.getDate() - k); return a + minDia(d.toISOString().slice(0, 10)); }, 0);
+  const semana = [...Array(7)].reduce((a, _, k) => { const d = new Date(); d.setDate(d.getDate() - k); return a + minDia(diaLocal(d)); }, 0);
   const praticados = dias().length;
   const d = new Date(), MES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 
@@ -176,11 +175,14 @@ function telaRevisao() {
     return;
   }
   const { b, i } = fila[0], c = b.cards[i];
+  // baralho com 'lang' (ex.: ja-JP) ganha botão de voz; sem voz instalada o botão não faz nada
+  const ouvir = b.lang && 'speechSynthesis' in window ? '<button class="es-ouvir" onclick="event.stopPropagation();falarCarta()">ouvir</button>' : '';
   tela.innerHTML = `
   <div class="es-top"><h1 class="es-h1">Revisão</h1><span class="es-data">${fila.length} restante${fila.length > 1 ? 's' : ''}</span></div>
   <p class="es-sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</p>
   <div class="es-carta" onclick="virar()">
     <div class="es-cf">${c.f}</div>
+    ${ouvir}
     ${c.l ? `<div class="es-cl">${c.l}</div>` : ''}
     ${virada ? `<div class="es-ct">${c.t}</div>${c.ex ? `<div class="es-cex">${c.ex}</div>` : ''}`
              : '<div class="es-revele">toque para revelar</div>'}
@@ -190,6 +192,10 @@ function telaRevisao() {
     <button onclick="responder(1)">quase<b>amanhã</b></button>
     <button class="q2" onclick="responder(2)">fácil<b>mais longe</b></button></div>`
     : '<p class="es-dica">Tente lembrar antes de virar — é a tentativa que fixa, não a leitura.</p>'}`;
+}
+function falarCarta() {
+  const { b, i } = fila[0], u = new SpeechSynthesisUtterance(b.cards[i].f);
+  u.lang = b.lang; speechSynthesis.cancel(); speechSynthesis.speak(u);
 }
 function virar() { virada = !virada; telaRevisao(); }
 function responder(q) {

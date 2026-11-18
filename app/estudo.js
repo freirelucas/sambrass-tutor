@@ -351,7 +351,7 @@ function logPractice(){
   if((SCORE.tot||0) < 3 && (POCKET.tot||0) < 3) return;              // só sessões com substância
   try{
     const log = JSON.parse(localStorage.getItem('practicelog')||'[]');
-    log.push({ d: new Date().toISOString().slice(0,10), id: ID,
+    log.push({ d: diaLocal(), id: ID,
       acc: SCORE.tot ? Math.round(100*SCORE.ok/SCORE.tot) : null,
       reg: POCKET.tot ? Math.round(100*POCKET.ok/POCKET.tot) : null, n: SCORE.tot||0 });
     while(log.length > 60) log.shift();

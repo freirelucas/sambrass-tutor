@@ -212,13 +212,13 @@ const scStore = {
   get(k, d) { try { const v = JSON.parse(localStorage.getItem('sc_' + k)); return v == null ? d : v; } catch { return d; } },
   set(k, v) { try { localStorage.setItem('sc_' + k, JSON.stringify(v)); } catch {} }
 };
-const scHoje = () => new Date().toISOString().slice(0, 10);
+const scHoje = () => diaLocal();
 const scDias = () => (scStore.get('days', []) || []).length;
 const scFaseSugerida = () => { const d = scDias(); return SC_FASES.filter(f => d >= f.dias).pop() || SC_FASES[0]; };
 const scFase = () => SC_FASES.find(f => f.n === scStore.get('fase', 0)) || scFaseSugerida();
 const scFeitos = () => scStore.get('feitos_' + scHoje(), {});
 const scMarcar = id => { const f = scFeitos(); f[id] = true; scStore.set('feitos_' + scHoje(), f); };
-const scStreak = () => { const days = (scStore.get('days', []) || []).slice().sort(); let s = 0, d = new Date(); for (; ;) { const k = d.toISOString().slice(0, 10); if (days.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; };
+const scStreak = () => sequenciaDias(scStore.get('days', []) || []);
 const scTempo = f => f.exs.reduce((a, e) => a + e.dur, 0);
 /* O riff da fase 5. Guarda a jornada junto: embocadura é transversal, mas repertório não —
    escolher na trilha das cumbias e ver o nome do samba seria mentira. */
@@ -252,7 +252,7 @@ function telaSuperchops() {
       ${feitos[e.id] ? '<span class="sc-ex-ok">✓</span>' : ''}</button>`).join('');
 
   // últimos 14 dias
-  const dias = []; for (let i = 13; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); dias.push(d.toISOString().slice(0, 10)); }
+  const dias = []; for (let i = 13; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); dias.push(diaLocal(d)); }
   const byDay = {}; logs.forEach(l => byDay[l.d] = Math.max(byDay[l.d] || 0, l.n));
   const spark = dias.map(d => `<div class="spk" title="${d}${byDay[d] ? ': nível ' + byDay[d] : ''}"><i style="height:${byDay[d] ? byDay[d] * 20 : 0}%;background:${byDay[d] >= 4 ? 'var(--verde)' : 'var(--brand)'}"></i></div>`).join('');
 

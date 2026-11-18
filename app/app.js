@@ -41,8 +41,8 @@ const bestLevel = n => { const l = store.get('logs', {})[n]; return (!l || !l.le
 const isDone = n => bestLevel(n) >= 4;
 const countDone = () => (DB.percurso || []).filter(m => isDone(m.num)).length;
 const prepDone = () => store.get('prepdone', false);
-const markDay = () => { const days = store.get('days', []); const t = new Date().toISOString().slice(0, 10); if (!days.includes(t)) { days.push(t); store.set('days', days); } };
-const streakCount = () => { const days = store.get('days', []).slice().sort(); let s = 0, d = new Date(); for (; ;) { const k = d.toISOString().slice(0, 10); if (days.includes(k)) { s++; d.setDate(d.getDate() - 1); } else break; } return s; };
+const markDay = () => { const days = store.get('days', []); const t = diaLocal(); if (!days.includes(t)) { days.push(t); store.set('days', days); } };
+const streakCount = () => sequenciaDias(store.get('days', []));
 // repetição espaçada: um "treino" = uma sessão concluída no diário; uma dominada volta p/ revisão após 7 treinos
 const treinoCount = () => store.get('treinos', 0);
 const reviewDue = n => { if (!isDone(n)) return false; const lt = store.get('lastT', {})[n]; return lt != null && (treinoCount() - lt) >= 7; };
@@ -51,7 +51,7 @@ const nextReview = () => { const lt = store.get('lastT', {}); const due = (DB.pe
 (function migrarProg() {
   if (JORNADA !== 'sambrass') return;   // PROG legado é só do Sambrass
   if (store.get('migrado', false)) return;
-  const logs = store.get('logs', {}), hoje = new Date().toISOString().slice(0, 10);
+  const logs = store.get('logs', {}), hoje = diaLocal();
   Object.keys(PROG).forEach(n => { if (PROG[n] === 'dominada' && !(logs[n] || []).some(x => x.n >= 4)) (logs[n] = logs[n] || []).push({ d: hoje, n: 4 }); });
   store.set('logs', logs); store.set('migrado', true);
 })();

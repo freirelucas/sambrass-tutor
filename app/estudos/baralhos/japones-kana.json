@@ -1,0 +1,286 @@
+{
+ "id": "japones-kana",
+ "dominio": "japones",
+ "nome": "Hiragana",
+ "sub": "uma fileira por vez; a leitura é romaji",
+ "lang": "ja-JP",
+ "_nota": "Hiragana básico, 46 caracteres. Todas as cartas vencem no primeiro dia; se pesar, separe por fileira (a, ka, sa…) em arquivos próprios. A frente é o caractere, o trás é a leitura, o exemplo é uma palavra conhecida.",
+ "cards": [
+  {
+   "f": "あ",
+   "l": "hiragana",
+   "t": "a",
+   "ex": "あめ — ame: chuva"
+  },
+  {
+   "f": "い",
+   "l": "hiragana",
+   "t": "i",
+   "ex": "いぬ — inu: cachorro"
+  },
+  {
+   "f": "う",
+   "l": "hiragana",
+   "t": "u",
+   "ex": "うみ — umi: mar"
+  },
+  {
+   "f": "え",
+   "l": "hiragana",
+   "t": "e",
+   "ex": "えき — eki: estação"
+  },
+  {
+   "f": "お",
+   "l": "hiragana",
+   "t": "o",
+   "ex": "おと — oto: som"
+  },
+  {
+   "f": "か",
+   "l": "hiragana",
+   "t": "ka",
+   "ex": "かさ — kasa: guarda-chuva"
+  },
+  {
+   "f": "き",
+   "l": "hiragana",
+   "t": "ki",
+   "ex": "きいろ — kiiro: amarelo"
+  },
+  {
+   "f": "く",
+   "l": "hiragana",
+   "t": "ku",
+   "ex": "くるま — kuruma: carro"
+  },
+  {
+   "f": "け",
+   "l": "hiragana",
+   "t": "ke",
+   "ex": "けしき — keshiki: paisagem"
+  },
+  {
+   "f": "こ",
+   "l": "hiragana",
+   "t": "ko",
+   "ex": "こども — kodomo: criança"
+  },
+  {
+   "f": "さ",
+   "l": "hiragana",
+   "t": "sa",
+   "ex": "さかな — sakana: peixe"
+  },
+  {
+   "f": "し",
+   "l": "hiragana",
+   "t": "shi",
+   "ex": "しお — shio: sal"
+  },
+  {
+   "f": "す",
+   "l": "hiragana",
+   "t": "su",
+   "ex": "すし — sushi"
+  },
+  {
+   "f": "せ",
+   "l": "hiragana",
+   "t": "se",
+   "ex": "せんせい — sensei: professor"
+  },
+  {
+   "f": "そ",
+   "l": "hiragana",
+   "t": "so",
+   "ex": "そら — sora: céu"
+  },
+  {
+   "f": "た",
+   "l": "hiragana",
+   "t": "ta",
+   "ex": "たまご — tamago: ovo"
+  },
+  {
+   "f": "ち",
+   "l": "hiragana",
+   "t": "chi",
+   "ex": "ちず — chizu: mapa"
+  },
+  {
+   "f": "つ",
+   "l": "hiragana",
+   "t": "tsu",
+   "ex": "つき — tsuki: lua"
+  },
+  {
+   "f": "て",
+   "l": "hiragana",
+   "t": "te",
+   "ex": "てがみ — tegami: carta"
+  },
+  {
+   "f": "と",
+   "l": "hiragana",
+   "t": "to",
+   "ex": "とり — tori: pássaro"
+  },
+  {
+   "f": "な",
+   "l": "hiragana",
+   "t": "na",
+   "ex": "なつ — natsu: verão"
+  },
+  {
+   "f": "に",
+   "l": "hiragana",
+   "t": "ni",
+   "ex": "にほん — nihon: Japão"
+  },
+  {
+   "f": "ぬ",
+   "l": "hiragana",
+   "t": "nu",
+   "ex": "ぬの — nuno: tecido"
+  },
+  {
+   "f": "ね",
+   "l": "hiragana",
+   "t": "ne",
+   "ex": "ねこ — neko: gato"
+  },
+  {
+   "f": "の",
+   "l": "hiragana",
+   "t": "no",
+   "ex": "のり — nori: alga"
+  },
+  {
+   "f": "は",
+   "l": "hiragana",
+   "t": "ha",
+   "ex": "はな — hana: flor"
+  },
+  {
+   "f": "ひ",
+   "l": "hiragana",
+   "t": "hi",
+   "ex": "ひと — hito: pessoa"
+  },
+  {
+   "f": "ふ",
+   "l": "hiragana",
+   "t": "fu",
+   "ex": "ふね — fune: barco"
+  },
+  {
+   "f": "へ",
+   "l": "hiragana",
+   "t": "he",
+   "ex": "へや — heya: quarto"
+  },
+  {
+   "f": "ほ",
+   "l": "hiragana",
+   "t": "ho",
+   "ex": "ほん — hon: livro"
+  },
+  {
+   "f": "ま",
+   "l": "hiragana",
+   "t": "ma",
+   "ex": "まど — mado: janela"
+  },
+  {
+   "f": "み",
+   "l": "hiragana",
+   "t": "mi",
+   "ex": "みず — mizu: água"
+  },
+  {
+   "f": "む",
+   "l": "hiragana",
+   "t": "mu",
+   "ex": "むし — mushi: inseto"
+  },
+  {
+   "f": "め",
+   "l": "hiragana",
+   "t": "me",
+   "ex": "め — me: olho"
+  },
+  {
+   "f": "も",
+   "l": "hiragana",
+   "t": "mo",
+   "ex": "もも — momo: pêssego"
+  },
+  {
+   "f": "や",
+   "l": "hiragana",
+   "t": "ya",
+   "ex": "やま — yama: montanha"
+  },
+  {
+   "f": "ゆ",
+   "l": "hiragana",
+   "t": "yu",
+   "ex": "ゆき — yuki: neve"
+  },
+  {
+   "f": "よ",
+   "l": "hiragana",
+   "t": "yo",
+   "ex": "よる — yoru: noite"
+  },
+  {
+   "f": "ら",
+   "l": "hiragana",
+   "t": "ra",
+   "ex": "らいおん — raion: leão"
+  },
+  {
+   "f": "り",
+   "l": "hiragana",
+   "t": "ri",
+   "ex": "りんご — ringo: maçã"
+  },
+  {
+   "f": "る",
+   "l": "hiragana",
+   "t": "ru",
+   "ex": "るり — ruri: lápis-lazúli"
+  },
+  {
+   "f": "れ",
+   "l": "hiragana",
+   "t": "re",
+   "ex": "れもん — remon: limão"
+  },
+  {
+   "f": "ろ",
+   "l": "hiragana",
+   "t": "ro",
+   "ex": "ろば — roba: burro"
+  },
+  {
+   "f": "わ",
+   "l": "hiragana",
+   "t": "wa",
+   "ex": "わたし — watashi: eu"
+  },
+  {
+   "f": "を",
+   "l": "hiragana",
+   "t": "wo",
+   "ex": "パンを食べる — pan o taberu: comer pão (partícula を)"
+  },
+  {
+   "f": "ん",
+   "l": "hiragana",
+   "t": "n",
+   "ex": "みかん — mikan: tangerina"
+  }
+ ]
+}

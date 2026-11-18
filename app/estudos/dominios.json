@@ -2,38 +2,95 @@
   "_edite": "Este arquivo é SEU. Mexa à vontade: minutos, blocos, ordem, cores. Nada aqui é gerado por script.",
   "metaDiaria": 75,
   "dominios": [
-    { "id": "trompete", "nome": "Trompete", "sub": "cumbias · sambas · embocadura",
-      "sigla": "🎺", "cor": "#8a2331", "app": "./index.html",
+    {
+      "id": "trompete",
+      "sigla": "🎺",
+      "cor": "#8a2331",
+      "nome": "Trompete",
+      "app": "./index.html",
       "tarefas": [
-        { "titulo": "Aquecer", "sub": "Cichowicz — 3 setores", "min": 12, "abre": "./respira.html" },
-        { "titulo": "Superchops", "sub": "a conversão, 15 min e só", "min": 15, "abre": "./index.html#chops" },
-        { "titulo": "Repertório", "sub": "o riff da vez, no tutor de escuta", "min": 20, "abre": "./index.html" }
-      ] },
-    { "id": "violao", "nome": "Violão", "sub": "técnica · repertório",
-      "sigla": "🎸", "cor": "#9a6b2f",
+        {
+          "titulo": "Superchops",
+          "min": 15,
+          "sub": "a conversão, 15 min e só",
+          "abre": "./index.html#chops"
+        }
+      ]
+    },
+    {
+      "id": "violao",
+      "sigla": "🎸",
+      "cor": "#9a6b2f",
+      "nome": "Violão",
       "tarefas": [
-        { "titulo": "Técnica", "sub": "escalas e arpejos", "min": 15,
-          "blocos": [["Aquecimento", 5], ["Escalas", 6], ["Arpejos", 4]] },
-        { "titulo": "Repertório", "sub": "a peça da semana", "min": 20,
-          "blocos": [["Leitura lenta", 8], ["Trecho difícil", 8], ["Inteira", 4]] }
-      ] },
-    { "id": "piano", "nome": "Piano", "sub": "leitura · harmonia",
-      "sigla": "🎹", "cor": "#2f6b7d",
+        {
+          "titulo": "Técnica",
+          "min": 15,
+          "sub": "escalas e arpejos",
+          "blocos": [
+            [
+              "Aquecimento",
+              5
+            ],
+            [
+              "Escalas",
+              6
+            ],
+            [
+              "Arpejos",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piano",
+      "sigla": "🎹",
+      "cor": "#2f6b7d",
+      "nome": "Piano",
       "tarefas": [
-        { "titulo": "Leitura à primeira vista", "sub": "8 compassos novos", "min": 10 },
-        { "titulo": "Harmonia ao teclado", "sub": "cifras e condução de vozes", "min": 15 }
-      ] },
-    { "id": "cibernetica", "nome": "Cibernética", "sub": "homo gubernator",
-      "sigla": "⟳", "cor": "#4e6b8c",
+        {
+          "titulo": "Piano",
+          "min": 15,
+          "sub": "leitura e harmonia — conteúdo a definir"
+        }
+      ]
+    },
+    {
+      "id": "chines",
+      "sigla": "中",
+      "cor": "#a8452e",
+      "nome": "Chinês",
       "tarefas": [
-        { "titulo": "Leitura", "sub": "Beer, Ashby, Bratman — o trecho do dia", "min": 20 },
-        { "titulo": "Fichamento", "sub": "virar o que leu em carta", "min": 10, "abre": "#revisao" }
-      ] },
-    { "id": "linguas", "nome": "Línguas", "sub": "vocabulário · escuta",
-      "sigla": "語", "cor": "#3f7d5e",
+        {
+          "titulo": "Tons",
+          "min": 15,
+          "sub": "pinyin: os quatro tons",
+          "abre": "#revisao"
+        }
+      ]
+    },
+    {
+      "id": "japones",
+      "sigla": "日",
+      "cor": "#6b4f8c",
+      "nome": "Japonês",
       "tarefas": [
-        { "titulo": "Vocabulário", "sub": "as cartas que venceram hoje", "min": 10, "abre": "#revisao" },
-        { "titulo": "Escuta", "sub": "15 min sem legenda", "min": 15 }
-      ] }
+        {
+          "titulo": "Hiragana",
+          "min": 15,
+          "sub": "uma fileira por vez, leitura em romaji",
+          "abre": "#revisao"
+        }
+      ]
+    },
+    {
+      "id": "cibernetica",
+      "sigla": "⟳",
+      "cor": "#4e6b8c",
+      "nome": "Cibernética",
+      "tarefas": []
+    }
   ]
 }

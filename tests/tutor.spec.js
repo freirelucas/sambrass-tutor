@@ -375,9 +375,35 @@ test('estudos: Hoje lista o plano dos 5 domínios e soma a meta do dia', async (
   const dom = await page.evaluate(() => fetch('./estudos/dominios.json').then((r) => r.json()));
   const nTarefas = dom.dominios.reduce((a, d) => a + d.tarefas.length, 0);
   await expect(page.locator('.es-tarefa:not(.es-extra)'), 'uma linha por tarefa de cada domínio').toHaveCount(nTarefas);
-  expect(dom.dominios.map((d) => d.id)).toEqual(['trompete', 'violao', 'piano', 'cibernetica', 'linguas']);
+  expect(dom.dominios.map((d) => d.id)).toEqual(['trompete', 'violao', 'piano', 'chines', 'japones', 'cibernetica']);
   await expect(page.locator('#tela')).toContainText(`de ${dom.metaDiaria} min`);
   expect(errors, 'sem exceções').toEqual([]);
+});
+
+test('estudos: a rotina 5 × 15 soma exatamente a meta diária', async ({ page }) => {
+  await page.goto('/estudos.html');
+  const dom = await page.evaluate(() => fetch('./estudos/dominios.json').then((r) => r.json()));
+  const tarefas = dom.dominios.flatMap((d) => d.tarefas.map((t) => ({ d: d.id, ...t })));
+  const rotina = tarefas.filter((t) => t.min > 0);
+  expect(rotina.map((t) => t.d), 'trompete, violão, piano, chinês, japonês').toEqual(['trompete', 'violao', 'piano', 'chines', 'japones']);
+  expect(rotina.every((t) => t.min === 15), 'cada bloco são 15 minutos').toBeTruthy();
+  expect(tarefas.reduce((a, t) => a + t.min, 0), 'soma = meta').toBe(dom.metaDiaria);
+});
+
+test('estudos: carta de baralho com idioma mostra "ouvir", e tocar nele não vira a carta', async ({ page }) => {
+  await page.goto('/estudos.html');
+  // cibernética agendada para o futuro: a primeira carta vencida passa a ser a do japonês
+  await page.evaluate(() => {
+    const m = {};
+    for (let i = 0; i < 15; i++) m['cibernetica-vsm#' + i] = { n: 0, prox: '2099-01-01' };
+    localStorage.setItem('est_cards', JSON.stringify(m));
+  });
+  await page.reload();
+  await page.locator('.es-abas button[data-t="revisao"]').click();
+  await expect(page.locator('.es-cf')).toHaveText('あ');
+  await expect(page.locator('.es-ouvir'), 'botão de voz no baralho com lang').toBeVisible();
+  await page.locator('.es-ouvir').click();
+  await expect(page.locator('.es-revele'), 'o toque no botão não vira a carta').toBeVisible();
 });
 
 test('estudos: uma sessão cronometrada soma minutos, marca feito e entra no histórico', async ({ page }) => {
@@ -385,7 +411,7 @@ test('estudos: uma sessão cronometrada soma minutos, marca feito e entra no his
   await page.goto('/estudos.html');
   await expect(page.locator('.es-tarefa').first()).toBeVisible({ timeout: 10000 });
 
-  await page.locator('.es-tarefa').nth(3).click();                 // Violão · Técnica — tem blocos
+  await page.locator('.es-tarefa').nth(1).click();                 // Violão · Técnica — tem blocos
   await expect(page.locator('.es-modo button.on')).toHaveText('Blocos');
   await expect(page.locator('.es-bloco')).toHaveCount(3);
   await page.locator('.es-btn').first().click();                    // Começar
@@ -393,7 +419,7 @@ test('estudos: uma sessão cronometrada soma minutos, marca feito e entra no his
   await page.getByText('Encerrar').click();
 
   await expect(page.locator('#tela'), 'a tarefa feita fica riscada').toContainText('feito');
-  const min = await page.evaluate(() => JSON.parse(localStorage.getItem('est_min_' + new Date().toISOString().slice(0, 10))));
+  const min = await page.evaluate(() => JSON.parse(localStorage.getItem('est_min_' + diaLocal())));
   expect(min, 'minutos do dia somados').toBeGreaterThan(0);
   await page.locator('.es-abas button[data-t="historico"]').click();
   await expect(page.locator('.es-sessao')).toHaveCount(1);
@@ -416,13 +442,13 @@ test('estudos: a revisão espaçada vira e agenda a carta', async ({ page }) => 
   const cards = await page.evaluate(() => JSON.parse(localStorage.getItem('est_cards')));
   const [e] = Object.values(cards);
   expect(e.n, 'subiu de caixa').toBe(1);
-  expect(e.prox > new Date().toISOString().slice(0, 10), 'foi agendada para o futuro').toBeTruthy();
+  expect(e.prox > await page.evaluate(() => diaLocal()), 'foi agendada para o futuro').toBeTruthy();
 
   await page.locator('.es-carta').click();
   await page.locator('.es-quali button.q0').click();                // de novo → volta pro fim de hoje
   const cards2 = await page.evaluate(() => JSON.parse(localStorage.getItem('est_cards')));
   const nova = Object.values(cards2).find((x) => x.n === 0);
-  expect(nova.prox, 'de novo = hoje mesmo').toBe(new Date().toISOString().slice(0, 10));
+  expect(nova.prox, 'de novo = hoje mesmo').toBe(await page.evaluate(() => diaLocal()));
 });
 
 test('estudos: o link do painel abre a aba certa do app de trompete', async ({ page }) => {

@@ -1,0 +1,64 @@
+{
+ "id": "chines-tons",
+ "dominio": "chines",
+ "nome": "Tons",
+ "sub": "pinyin: os quatro tons com a mesma sílaba",
+ "lang": "zh-CN",
+ "_nota": "Parte 1 de chinês: os quatro tons, com ma e shi. As primeiras palavras do HSK 1 só entram depois de conferidas contra a lista oficial — não de memória.",
+ "cards": [
+  {
+   "f": "mā · má · mǎ · mà",
+   "l": "os quatro tons",
+   "t": "1º alto e plano · 2º sobe · 3º desce e sobe · 4º cai",
+   "ex": "a mesma sílaba muda de sentido com o tom"
+  },
+  {
+   "f": "mā",
+   "l": "1º tom · alto e plano",
+   "t": "妈 — mãe",
+   "ex": "妈妈 māma: mamãe"
+  },
+  {
+   "f": "má",
+   "l": "2º tom · sobe",
+   "t": "麻 — cânhamo",
+   "ex": "麻 má, não 妈 mā: um tom muda o sentido"
+  },
+  {
+   "f": "mǎ",
+   "l": "3º tom · desce e sobe",
+   "t": "马 — cavalo",
+   "ex": "马 mǎ"
+  },
+  {
+   "f": "mà",
+   "l": "4º tom · cai",
+   "t": "骂 — xingar",
+   "ex": "骂 mà"
+  },
+  {
+   "f": "shī",
+   "l": "1º tom",
+   "t": "狮 — leão",
+   "ex": "狮子 shīzi: leão"
+  },
+  {
+   "f": "shí",
+   "l": "2º tom",
+   "t": "十 — dez",
+   "ex": "十 shí"
+  },
+  {
+   "f": "shǐ",
+   "l": "3º tom",
+   "t": "史 — história",
+   "ex": "历史 lìshǐ: história"
+  },
+  {
+   "f": "shì",
+   "l": "4º tom",
+   "t": "是 — ser / estar",
+   "ex": "是 shì"
+  }
+ ]
+}

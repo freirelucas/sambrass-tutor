@@ -10,8 +10,8 @@ retomar (você ou uma sessão nova) começa por aqui. Atualize ao fim de cada se
 | App de trompete (trilha, banco, Chops, metrônomo, progresso) | `app/index.html` | no ar, intacto |
 | Aba Superchops — plano diário de 15:00, 5 fases, 14 vídeos | `app/superchops.js` · [`superchops.md`](superchops.md) · [`superchops-ciencia.md`](superchops-ciencia.md) | no ar |
 | Painel de Estudos — Hoje · Prática · Revisão · Histórico | `app/estudos.html` · [`estudos.md`](estudos.md) | no ar |
-| Plano editável à mão | `app/estudos/dominios.json` | 5 domínios, 11 tarefas, meta de 75 min |
-| Baralhos | `app/estudos/baralhos/` | cibernética: 15 cartas · línguas: 4 de exemplo |
+| Plano editável à mão | `app/estudos/dominios.json` | rotina 5 × 15: 5 tarefas, 75 min = meta |
+
 | Revisão da literatura sobre virar poliglota adulto | [`linguas-ciencia.md`](linguas-ciencia.md) | 32 seções, 59 DOIs conferidos |
 | Guards de CI | `tools/check_contrato.py` · `tools/check_css.py` | 44 checagens, verdes |
 | Testes | `tests/tutor.spec.js` | 26 specs, verdes |
@@ -26,54 +26,38 @@ Para rodar os testes num contêiner novo: `python3 app/build_site.py` e depois
 procura uma revisão do Chromium que não está instalada e as 26 falham por isso, não por
 defeito.
 
-## 2. O plano em andamento: rotina 5 × 15
+## 2. A rotina 5 × 15
 
 Pedido de 2026-11-18: **15 min de trompete, 15 de violão, 15 de piano, 15 de chinês, 15 de
-japonês.** Fecha em 75 minutos, que já é a `metaDiaria` do painel.
+japonês.** Está no `dominios.json` como as cinco tarefas do plano diário, somando a meta
+de 75 min. Medido em `tests/tutor.spec.js`: a soma é igual a `metaDiaria`.
 
-**Nada disso foi construído ainda.** O que há de conteúdo para cada bloco:
-
-| bloco | o que existe | o que falta |
+| bloco | o que está no app | o que falta |
 |---|---|---|
-| Trompete | Pronto: o Superchops fecha em exatamente 15:00 | nada |
-| Violão | Só cronômetro e rótulos (Aquecimento 5, Escalas 6, Arpejos 4) | exercícios de verdade |
-| Piano | Dois rótulos de tarefa, sem blocos | tudo |
-| Chinês | Nada | baralho, áudio, treino de tons |
-| Japonês | Nada | baralho, áudio |
+| Trompete · Superchops | pronto (15:00 exatos) | nada |
+| Violão · Técnica | rótulos de bloco (Aquecimento 5, Escalas 6, Arpejos 4), sem exercício | exercícios de verdade — depende de resposta, seção 3 |
+| Piano · Piano | uma tarefa de 15 min, sem blocos | conteúdo — depende de resposta, seção 3 |
+| Chinês · Tons | baralho `chines-tons`: os quatro tons, ma e shi (9 cartas) | as primeiras palavras do HSK 1 — **conferir contra a lista oficial antes** |
+| Japonês · Hiragana | baralho `japones-kana`: os 46 básicos, leitura romaji, exemplo com palavra conhecida | katakana; treino de ouvido |
 
-### O que construir, na ordem
+**Feito nesta sessão:**
+- Os baralhos de chinês e japonês, com botão "ouvir" nas cartas que declaram `lang`
+  (voz do navegador, `speechSynthesis`). **Não testado em aparelho:** o ambiente de teste
+  não tem voz de chinês nem de japonês. Conferir no celular.
+- O placeholder `linguas-exemplo` saiu, junto com o domínio `linguas`.
+- A cibernética saiu do plano diário, mas as 15 cartas continuam vencendo na Revisão.
+  **Provisório** — a decisão é sua (seção 3, item 1).
 
-1. **Corrigir os dois defeitos da seção 4.** Uma rotina diária depende da sequência e das
-   datas estarem certas.
-2. **A rotina no `dominios.json`**: cinco tarefas de 15 minutos, cada uma com blocos
-   cronometrados. Trocar o domínio `linguas` por dois, `chines` e `japones`. O
-   `check_contrato.py` vai exigir que cada baralho aponte para um domínio que existe.
-3. **Japonês**: baralho de hiragana (46 básicos), depois katakana, com a leitura no campo
-   `l` da carta. Depois as primeiras palavras.
-4. **Chinês**: pinyin e os quatro tons primeiro; depois as primeiras palavras do HSK 1,
-   **conferidas contra a lista oficial** antes de entrar — não escrever de memória.
-5. **Áudio das cartas** pela voz do navegador (`speechSynthesis`, `zh-CN` e `ja-JP`).
-   Depende de o aparelho ter as vozes instaladas e precisa ser testado no celular real;
-   o app é offline-first, então não dá para depender de serviço externo.
-6. **Treino de ouvido para tons**: pares mínimos com resposta e correção imediata. É o
-   que a revisão sustenta para som novo em adulto (§14 de `linguas-ciencia.md`).
-7. **Violão e piano**: só depois da resposta da seção 3.
+**Ainda não feito:**
+- Treino de ouvido para tons (pares mínimos com correção imediata, §14 de
+  `linguas-ciencia.md`).
+- Katakana.
+- Violão e piano de verdade (seção 3, item 2).
+- As primeiras palavras do HSK 1, conferidas contra a lista oficial.
 
-O formato de carta que já existe serve sem mudança: `f` (frente), `l` (leitura — pinyin
-ou romaji), `t` (trás), `ex` (exemplo). O Leitner de cinco caixas também fica como está;
-a revisão não achou ganho em trocar de algoritmo (§13).
-
-### O aviso que foi dado e fica registrado
-
-Quinze minutos por dia são cerca de 91 horas por ano. Conversa limitada (S-2/R-2) em
-língua da Categoria IV custa ~1.100 horas de aula pela tabela do FSI: **cerca de doze anos
-por idioma nesse ritmo**. E dois idiomas do zero ao mesmo tempo é o caso para o qual a
-revisão não achou evidência; para chinês + japonês há só relato de que os caracteres
-ajudam no reconhecimento e atrapalham nas leituras (§32).
-
-A recomendação foi um dos dois como principal (~25 min) e o outro em manutenção, ou em
-sequência. **O dono do plano ouviu e não decidiu mudar** — a rotina 5 × 15 é o pedido
-vigente. Não reabrir a discussão; construir o que foi pedido.
+A recomendação sobre horas e sobre dois idiomas do zero ao mesmo tempo (§32 de
+`linguas-ciencia.md`) foi dada e ouvida. **O pedido vigente é a rotina 5 × 15.** Não
+reabrir a discussão a cada sessão; construir o que foi pedido.
 
 ## 3. Decisões que são do dono do repo
 
@@ -83,8 +67,9 @@ Em aberto, nenhuma respondida ainda:
    baralho na Revisão (as 15 cartas continuam vencendo), ou vira sexto bloco.
 2. **Violão e piano: qual o nível e o que você toca?** Sem isso os blocos continuam só
    com rótulo.
-3. **Corrigir sequência e datas (seção 4)?** Foi oferecido e não respondido. Recomendo
-   que sim, antes de tudo.
+3. **Migrar os dias gravados em UTC? Recorde e reparo na sequência?** A correção de data
+   e sequência está feita (seção 4); a migração foi decidida como não feita, e recorde e
+   reparo não foram construídos. Confirmar se está bem assim.
 4. **`start_url` do manifesto** — hoje abre o app de trompete. Trocar para
    `estudos.html` muda o que abre no celular de quem já instalou.
 5. **Nome do repositório** — `sambrass-tutor` ficou estreito.
@@ -92,44 +77,35 @@ Em aberto, nenhuma respondida ainda:
    porque vêm do codebase-to-course, que não tem arquivo de licença. O README da pasta
    tem o comando para buscá-los. Versionar ou não é escolha sua.
 
-## 4. Dois defeitos conhecidos, reproduzidos, não corrigidos
+## 4. Defeitos de data e sequência — corrigidos
 
-Achados ao comparar o painel com o estudo de Silverman & Barasch sobre sequências
-(§26 de `linguas-ciencia.md`).
+Eram dois: a sequência zerava antes da prática do dia (`streak()` parava no primeiro dia em
+branco, que de manhã é hoje), e as datas eram gravadas em UTC (prática às 22h30 em
+Brasília caía no dia seguinte).
 
-**a) A sequência zera antes da prática do dia.** `streak()` conta a partir de hoje para
-trás e para no primeiro dia sem prática — que, de manhã, é hoje. Com 30 dias seguidos até
-ontem, às 10h ela devolve 0 e a tela Hoje mostra "Primeiro dia — comece por onde der
-vontade". É a sequência quebrada em destaque sem estar quebrada.
+**Correção:** `app/dia.js` tem `diaLocal()` e `sequenciaDias()`, carregado antes de
+qualquer script que grave ou leia dias (`index.html`, `estudo.html`, `estudos.html`). Os
+13 pontos que usavam `toISOString()` para dia passaram a usar `diaLocal()`. A sequência
+conta até **ontem** enquanto o dia de hoje está em aberto. O cache do service worker subiu
+para `sambrass-v25`.
 
-**b) As datas são gravadas em UTC.** `new Date().toISOString().slice(0, 10)` devolve a
-data de Greenwich. Em Brasília (UTC−3), a partir das 21h o "hoje" já é amanhã.
+**Como foi provado:** `tests/datas.spec.js` tem três specs, com o fuso fixado em
+`America/Sao_Paulo`. Com o código antigo reposto, as duas que tratam do defeito falham — a
+da data, e a da sequência, que mostra "Primeiro dia" exatamente como você viu. A terceira
+(quem realmente não praticou ontem nem hoje recomeça do zero) passa nos dois casos: é o
+controle contra corrigir de mais.
 
-Onde está o mesmo código: `app/estudos.js` (linhas 19, 29, 40, 56), `app/superchops.js`
-(215, 221, 255) e `app/app.js` (44, 45, 54). O de `app.js` é anterior a este trabalho.
+**Decisão: não migrei os dias já gravados.** Quem praticou depois das 21h, antes da
+correção, tem esse dia gravado no seguinte. Um desvio de um dia, só nessas sessões. Migrar
+exigiria distinguir `2026-11-19` gravado às 22h30 do dia 18 de `2026-11-19` gravado à 0h30
+do dia 19 — e a chave não guarda a hora. Não tenho como separar os dois casos. Se isso
+incomodar alguém, a sequência dessa pessoa pode aparecer um dia maior ou menor até
+quebrar.
 
-Reprodução, com `TZ=America/Sao_Paulo node`:
-
-```js
-const real = Date;
-function relogio(iso) { const t = new real(iso).getTime();
-  global.Date = class extends real { constructor(...a) { super(...(a.length ? a : [t])); } static now() { return t; } }; }
-const hoje = () => new Date().toISOString().slice(0, 10);
-relogio('2026-11-18T22:30:00-03:00');
-console.log(hoje());            // 2026-11-19  ← errado
-```
-
-**A correção proposta:**
-- Uma função única de data local (`getFullYear`/`getMonth`/`getDate`), usada nos três
-  arquivos.
-- Sequência contada até **ontem** enquanto o dia de hoje está em aberto.
-- Depois de uma falha, mostrar recorde e dias praticados no mês, não um zero.
-- Alguma forma de **reparo** — o efeito negativo da quebra é atenuado quando ela pode ser
-  consertada.
-
-**Cuidado ao corrigir:** quem já usa o app tem dias gravados com chave UTC. Práticas
-feitas depois das 21h estão registradas no dia seguinte. Trocar a função sem migrar pode
-abrir um buraco falso no histórico de alguém. Decidir se migra, e escrever o teste antes.
+**Ainda não feito, e era parte da proposta de Silverman & Barasch (§26):**
+- Depois de uma falha, mostrar recorde e dias do mês em vez de um zero.
+- Reparo: permitir consertar uma sequência quebrada (o efeito negativo da quebra é
+  atenuado quando ela pode ser consertada).
 
 ## 5. O curso de Brasília
 

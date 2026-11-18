@@ -1,7 +1,7 @@
 // Service worker — network-first p/ código/dados (sempre atualiza; cache só p/ offline),
 // cache-first só p/ o soundfont (grande e estático). Bump da versão limpa caches velhos.
-const CACHE = 'sambrass-v24';
-const SHELL = ['./', './index.html', './estudo.html', './estudo.js', './style.css', './ui.css', './app.js',
+const CACHE = 'sambrass-v25';
+const SHELL = ['./', './index.html', './estudo.html', './dia.js', './estudo.js', './style.css', './ui.css', './app.js',
   './afinar.html', './blocos.html', './revisar.html',   // leves: passam a abrir offline sem visita prévia
   './estudos.html', './estudos.js', './estudos.css',   // painel multi-domínio (Hoje · Prática · Revisão · Histórico)
   './estudos/dominios.json', './estudos/baralhos/index.json',

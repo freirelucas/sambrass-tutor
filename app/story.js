@@ -168,7 +168,7 @@ function finishStory() {
   if (S.music) {
     if (!S.rate) { const l = document.getElementById('ratelbl'); if (l) l.textContent = 'no Diário, escolha de 1 a 5 para concluir'; return; }
     const logs = store.get('logs', {}), num = S.music.num;
-    (logs[num] = logs[num] || []).push({ d: new Date().toISOString().slice(0, 10), n: S.rate });
+    (logs[num] = logs[num] || []).push({ d: diaLocal(), n: S.rate });
     store.set('logs', logs); markDay();
     const t = treinoCount() + 1; store.set('treinos', t);   // conta o treino p/ repetição espaçada
     const lt = store.get('lastT', {}); lt[num] = t; store.set('lastT', lt);

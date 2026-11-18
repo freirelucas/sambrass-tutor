@@ -18,7 +18,7 @@ function telaProg() {
 
   // sparkline dos últimos 14 dias (sessões/dia)
   const dias = [];
-  for (let i = 13; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); dias.push(d.toISOString().slice(0, 10)); }
+  for (let i = 13; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); dias.push(diaLocal(d)); }
   const maxDay = Math.max(1, ...dias.map(d => byDay[d] || 0));
   const spark = dias.map(d => {
     const v = byDay[d] || 0, hp = v ? Math.max(8, Math.round(100 * v / maxDay)) : 0;
