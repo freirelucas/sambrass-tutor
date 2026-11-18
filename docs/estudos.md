@@ -80,7 +80,8 @@ trompete não lia `location.hash`, e a classe `.q1` existia sem estilo.
 
 ## Em aberto
 
-- **Qual idioma** para o baralho de línguas.
+- ~~Qual idioma~~ — chinês e japonês. O plano da rotina 5 × 15 e o que falta construir
+  estão em [`proximos-passos.md`](proximos-passos.md).
 - **`start_url` do manifesto** ainda aponta para o app de trompete. Trocar para
   `estudos.html` muda o que abre no celular de quem já instalou — decisão sua.
 - **O nome do repositório** (`sambrass-tutor`) ficou estreito para o que isto virou.

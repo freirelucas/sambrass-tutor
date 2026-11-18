@@ -809,6 +809,56 @@ reconhecimento de fala e pares mínimos (§14); **prosódia** é com shadowing (
 
 ---
 
+## Parte VII — Duas perguntas que vieram depois
+
+### 31. Krashen e o input compreensível: o que ficou e o que caiu
+
+**Lichtman K, VanPatten B (2021). "Was Krashen right? Forty years later." *Foreign
+Language Annals*.** (165 citações)
+→ [doi:10.1111/flan.12552](https://doi.org/10.1111/flan.12552)
+
+A Teoria do Monitor foi amplamente criticada e descartada nos anos 80. Os autores
+argumentam que três das cinco hipóteses **sobreviveram com outros nomes**: a distinção
+aquisição/aprendizagem virou aprendizagem implícita × explícita; a ordem natural virou
+desenvolvimento ordenado; e a hipótese do input virou **"um papel central para o input
+comunicativamente inserido em todas as teorias de aquisição de segunda língua"**.
+
+**O que caiu** é a versão forte — input sozinho basta. Uma revisão sistemática recente
+conclui que input sozinho é insuficiente para níveis mais altos e que saída e interação
+fazem o aprendiz notar as próprias lacunas
+→ [Francisco et al. 2026, via Consensus](https://consensus.app/papers/details/w:f1f64367-97ae-4f81-a1a6-46ef5d76c072/?utm_source=claude_desktop)
+(fonte fraca: periódico pequeno, ainda sem citações). A crítica clássica à definição —
+"i+1" é relativo a um "i" que ninguém mede — vi só em fontes secundárias.
+
+**Onde isto já estava no documento, sem o nome:** as seções 10 a 12 e a 16. Input extensivo
+funciona e é lento (9–18% das palavras-alvo); combinado com estudo deliberado ganha dos
+dois isolados. É Krashen sem a exclusividade.
+
+**A restrição prática para idioma distante:** do zero, em chinês ou japonês, **nada é
+compreensível**. O input só entra depois de uma base de sons, escrita e algumas centenas
+de palavras — e essa base é carta e treino de ouvido (§13, §14).
+
+### 32. Chinês e japonês ao mesmo tempo
+
+É o caso do §19 — dois idiomas do zero — na pior configuração da tabela do §7: os dois
+são Categoria IV. **Não achei estudo controlado de quem estuda os dois juntos.** O que há:
+
+- Um trabalho de congresso (Obataya, IAFOR 2018) comparando 1.078 kanji com os caracteres
+  simplificados chineses: **alta semelhança gráfica**, que o autor apresenta como motivo
+  para ter menos medo de interferência. Cobre só a forma — não significado nem pronúncia.
+  → [papers.iafor.org](https://papers.iafor.org/submission39660/)
+- Relatos de fórum, convergentes: os caracteres compartilhados **ajudam no
+  reconhecimento** e **atrapalham nas leituras**, porque o mesmo caractere se lê diferente
+  em cada língua (e em japonês, de mais de um jeito). O conselho que mais se repete é
+  levar um dos dois a nível avançado antes do outro. É relato, não achado.
+
+**A conta de horas, que é o dado duro:** 15 minutos por dia são ~91 horas por ano. O
+objetivo S-2/R-2 da Categoria IV custa 44 semanas de aula, ~1.100 horas (§7). Nesse ritmo,
+**cerca de doze anos por idioma**. Quinze minutos sustentam hábito e constroem leitura de
+kana, pinyin e vocabulário básico; não chegam a conversa em horizonte razoável.
+
+---
+
 ## O que isto manda fazer
 
 Traduzindo tudo acima em decisões, com a seção que sustenta cada uma:
@@ -857,12 +907,20 @@ Traduzindo tudo acima em decisões, com a seção que sustenta cada uma:
 18. **Julgar qualquer aplicativo depois de dez semanas, não de quatro** (§23, §25). No
     primeiro mês tudo funciona.
 
+**E para chinês e japonês:**
+
+19. **Carta e ouvido antes de input** (§31). Do zero nada é compreensível; kana, pinyin,
+    tons e as primeiras centenas de palavras vêm primeiro.
+20. **Um principal, outro em manutenção — ou em sequência** (§20, §32). Quinze minutos
+    para cada um é hábito, não caminho para conversar. A decisão é do dono do plano.
+
 ---
 
 ## Em aberto
 
-- **Qual idioma.** Decide quase tudo acima: horas (§7), proximidade e armadilha (§8, §18),
-  e se o plano é "construir" ou "manter".
+- ~~Qual idioma.~~ **Decidido em 2026-11-18: chinês e japonês**, 15 minutos cada, dentro de
+  uma rotina de 5 × 15. O plano e o que falta construir estão em
+  [`proximos-passos.md`](proximos-passos.md).
 - A pergunta "dois ao mesmo tempo funciona?" **não tem resposta de pesquisa decente**
   (§19). Quem disser que tem, está vendendo.
 - **Sequência → aprendizado** não está medido em lugar nenhum que eu tenha achado (§26).
