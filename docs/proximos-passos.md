@@ -28,36 +28,40 @@ defeito.
 
 ## 2. A rotina 5 × 15
 
-Pedido de 2026-11-18: **15 min de trompete, 15 de violão, 15 de piano, 15 de chinês, 15 de
-japonês.** Está no `dominios.json` como as cinco tarefas do plano diário, somando a meta
-de 75 min. Medido em `tests/tutor.spec.js`: a soma é igual a `metaDiaria`.
+Pedido de 2026-11-18: 15 min de trompete, violão, piano, chinês e japonês. Está no
+`dominios.json` como as cinco tarefas do plano diário, somando a meta de 75 min (medido
+no teste).
 
 | bloco | o que está no app | o que falta |
 |---|---|---|
 | Trompete · Superchops | pronto (15:00 exatos) | nada |
-| Violão · Técnica | rótulos de bloco (Aquecimento 5, Escalas 6, Arpejos 4), sem exercício | exercícios de verdade — depende de resposta, seção 3 |
-| Piano · Piano | uma tarefa de 15 min, sem blocos | conteúdo — depende de resposta, seção 3 |
-| Chinês · Tons | baralho `chines-tons`: os quatro tons, ma e shi (9 cartas) | as primeiras palavras do HSK 1 — **conferir contra a lista oficial antes** |
-| Japonês · Hiragana | baralho `japones-kana`: os 46 básicos, leitura romaji, exemplo com palavra conhecida | katakana; treino de ouvido |
+| Violão · Técnica | 4 blocos com instrução: agilidade, escalas, campo harmônico, ritmo | conferir os exercícios na prática, por você |
+| Piano · Técnica | 4 blocos com instrução: Hanon nº 1, escalas com dedilhado, campo harmônico, ritmo | idem |
+| Chinês · Tons | 9 cartas: quatro tons, ma e shi | — |
+| Chinês · Sons parecidos | 8 pares mínimos (z/c/s, zh/ch/sh, j/q/x, tons) | — |
+| Japonês · Hiragana | 46 caracteres, leitura romaji, botão "ouvir" | katakana |
 
-**Feito nesta sessão:**
-- Os baralhos de chinês e japonês, com botão "ouvir" nas cartas que declaram `lang`
-  (voz do navegador, `speechSynthesis`). **Não testado em aparelho:** o ambiente de teste
-  não tem voz de chinês nem de japonês. Conferir no celular.
-- O placeholder `linguas-exemplo` saiu, junto com o domínio `linguas`.
-- A cibernética saiu do plano diário, mas as 15 cartas continuam vencendo na Revisão.
-  **Provisório** — a decisão é sua (seção 3, item 1).
+**Fora do plano diário, na Revisão:**
+- **Inglês** (`ingles-sons`): 10 pares mínimos com IPA, para os contrastes que o português
+  costuma não separar (ship/sheep, cat/cut, think/sink…).
+- **Coreano** (`coreano-hangul`, `coreano-palavras`): 24 cartas de consoantes e vogais,
+  e 10 palavras do dia a dia.
+- **Violão** (`violao-teoria`) e **piano** (`piano-teoria`): escalas, fórmulas, campo
+  harmônico, funções, cadências, subdivisões e agilidade, em 15 cartas cada.
 
 **Ainda não feito:**
-- Treino de ouvido para tons (pares mínimos com correção imediata, §14 de
-  `linguas-ciencia.md`).
+- **Chinês além dos sons:** as palavras do HSK 1 **não** foram escritas. Tentei a lista
+  oficial: o site do HSK tem um PDF do HSK 3.0, mas o arquivo veio criptografado e não
+  consegui lê-lo. As listas de terceiros divergem sobre a versão. Enquanto não houver a
+  lista oficial, não escrevo palavra de memória.
+- **Inglês e coreano na rotina diária:** não estão no plano. Entrar na rotina é um
+  aumento de meta (de 75 para 105 min) — decisão sua (seção 3).
+- Treino de ouvido para tons com correção imediata (§14 de `linguas-ciencia.md`).
 - Katakana.
-- Violão e piano de verdade (seção 3, item 2).
-- As primeiras palavras do HSK 1, conferidas contra a lista oficial.
 
 A recomendação sobre horas e sobre dois idiomas do zero ao mesmo tempo (§32 de
-`linguas-ciencia.md`) foi dada e ouvida. **O pedido vigente é a rotina 5 × 15.** Não
-reabrir a discussão a cada sessão; construir o que foi pedido.
+`linguas-ciencia.md`) foi dada e ouvida. O pedido vigente é a rotina 5 × 15, e os
+idiomas extras entram na Revisão.
 
 ## 3. Decisões que são do dono do repo
 
@@ -65,11 +69,14 @@ Em aberto, nenhuma respondida ainda:
 
 1. **Cibernética sai do plano diário?** A rotina nova não a inclui. Opções: fica só como
    baralho na Revisão (as 15 cartas continuam vencendo), ou vira sexto bloco.
-2. **Violão e piano: qual o nível e o que você toca?** Sem isso os blocos continuam só
-   com rótulo.
+2. **Violão e piano: os exercícios estão certos para o seu nível?** Os blocos foram
+   escritos com as informações que você deu (sabe acordes e formatos; quer escala, campo
+   harmônico, ritmo e agilidade). Ajuste à vontade no `dominios.json`.
 3. **Migrar os dias gravados em UTC? Recorde e reparo na sequência?** A correção de data
    e sequência está feita (seção 4); a migração foi decidida como não feita, e recorde e
    reparo não foram construídos. Confirmar se está bem assim.
+7. **Inglês e coreano na rotina diária?** Hoje ficam na Revisão. Entrar no plano sobe a meta
+   de 75 para 105 min. Qual dos dois, ou os dois, e qual meta?
 4. **`start_url` do manifesto** — hoje abre o app de trompete. Trocar para
    `estudos.html` muda o que abre no celular de quem já instalou.
 5. **Nome do repositório** — `sambrass-tutor` ficou estreito.

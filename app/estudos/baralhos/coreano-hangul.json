@@ -1,0 +1,154 @@
+{
+ "id": "coreano-hangul",
+ "dominio": "coreano",
+ "nome": "Hangul",
+ "sub": "consoantes e vogais: a escrita inteira",
+ "lang": "ko-KR",
+ "_nota": "As consoantes mudam de som entre início e fim de sílaba (ㄱ é g no início, k no fim). A romanização é a Revisada oficial; a pronúncia é o que o cartão mostra no 'ex'.",
+ "cards": [
+  {
+   "f": "ㄱ",
+   "l": "consoante",
+   "t": "g no início · k no fim",
+   "ex": "가 ga · 악 ak"
+  },
+  {
+   "f": "ㄴ",
+   "l": "consoante",
+   "t": "n",
+   "ex": "나 na"
+  },
+  {
+   "f": "ㄷ",
+   "l": "consoante",
+   "t": "d no início · t no fim",
+   "ex": "다 da"
+  },
+  {
+   "f": "ㄹ",
+   "l": "consoante",
+   "t": "r no início · l no fim",
+   "ex": "라 ra · 발 bal"
+  },
+  {
+   "f": "ㅁ",
+   "l": "consoante",
+   "t": "m",
+   "ex": "마 ma"
+  },
+  {
+   "f": "ㅂ",
+   "l": "consoante",
+   "t": "b no início · p no fim",
+   "ex": "바 ba"
+  },
+  {
+   "f": "ㅅ",
+   "l": "consoante",
+   "t": "s (ch antes de i)",
+   "ex": "사 sa · 시 si"
+  },
+  {
+   "f": "ㅇ",
+   "l": "consoante",
+   "t": "silencioso no início · ng no fim",
+   "ex": "아 a · 강 gang"
+  },
+  {
+   "f": "ㅈ",
+   "l": "consoante",
+   "t": "j",
+   "ex": "자 ja"
+  },
+  {
+   "f": "ㅊ",
+   "l": "consoante",
+   "t": "ch",
+   "ex": "차 cha"
+  },
+  {
+   "f": "ㅋ",
+   "l": "consoante aspirada",
+   "t": "k forte, com sopro",
+   "ex": "카 ka"
+  },
+  {
+   "f": "ㅌ",
+   "l": "consoante aspirada",
+   "t": "t forte, com sopro",
+   "ex": "타 ta"
+  },
+  {
+   "f": "ㅍ",
+   "l": "consoante aspirada",
+   "t": "p forte, com sopro",
+   "ex": "파 pa"
+  },
+  {
+   "f": "ㅎ",
+   "l": "consoante",
+   "t": "h",
+   "ex": "하 ha"
+  },
+  {
+   "f": "ㅏ",
+   "l": "vogal",
+   "t": "a",
+   "ex": "아 a"
+  },
+  {
+   "f": "ㅓ",
+   "l": "vogal",
+   "t": "eo (o de 'cor', mais aberto)",
+   "ex": "어 eo"
+  },
+  {
+   "f": "ㅗ",
+   "l": "vogal",
+   "t": "o",
+   "ex": "오 o"
+  },
+  {
+   "f": "ㅜ",
+   "l": "vogal",
+   "t": "u",
+   "ex": "우 u"
+  },
+  {
+   "f": "ㅡ",
+   "l": "vogal",
+   "t": "eu (lábios esticados, como 'i' com boca de 'u')",
+   "ex": "으 eu"
+  },
+  {
+   "f": "ㅣ",
+   "l": "vogal",
+   "t": "i",
+   "ex": "이 i"
+  },
+  {
+   "f": "ㅑ",
+   "l": "vogal",
+   "t": "ya",
+   "ex": "야 ya"
+  },
+  {
+   "f": "ㅕ",
+   "l": "vogal",
+   "t": "yeo",
+   "ex": "여 yeo"
+  },
+  {
+   "f": "ㅛ",
+   "l": "vogal",
+   "t": "yo",
+   "ex": "요 yo"
+  },
+  {
+   "f": "ㅠ",
+   "l": "vogal",
+   "t": "yu",
+   "ex": "유 yu"
+  }
+ ]
+}

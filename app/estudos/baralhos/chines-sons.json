@@ -1,0 +1,58 @@
+{
+ "id": "chines-sons",
+ "dominio": "chines",
+ "nome": "Sons parecidos",
+ "sub": "pares mínimos: escute e diga qual é",
+ "lang": "zh-CN",
+ "_nota": "Pares que se distinguem por uma consoante ou um tom. Treino perceptivo: ouça, decida, e só então vire a carta. Os caracteres são de palavras comuns; confira no dicionário antes de cobrar de cor.",
+ "cards": [
+  {
+   "f": "sī · shī",
+   "l": "z/c/s × zh/ch/sh",
+   "t": "丝 seda · 狮 leão",
+   "ex": "sī é a sibilante plana; shī, com a ponta da língua para trás"
+  },
+  {
+   "f": "zì · cì",
+   "l": "z × c",
+   "t": "字 caractere · 次 vez",
+   "ex": "zì com z suave; cì com c aspirado"
+  },
+  {
+   "f": "zǒu · shǒu",
+   "l": "z × sh",
+   "t": "走 andar · 手 mão",
+   "ex": "zǒu: z não aspirado; shǒu: sh com a língua curvada"
+  },
+  {
+   "f": "chī · shī",
+   "l": "ch × sh",
+   "t": "吃 comer · 诗 poema",
+   "ex": "chī é aspirado; shī não"
+  },
+  {
+   "f": "jī · qī",
+   "l": "j × q",
+   "t": "鸡 galinha · 七 sete",
+   "ex": "j sem aspiração; q aspirado"
+  },
+  {
+   "f": "xī · jī",
+   "l": "x × j",
+   "t": "西 oeste · 鸡 galinha",
+   "ex": "x é como um s com a língua na frente, mais alto"
+  },
+  {
+   "f": "mā · mǎ",
+   "l": "1º × 3º tom",
+   "t": "妈 mãe · 马 cavalo",
+   "ex": "o tom muda a palavra; o 3º desce e sobe"
+  },
+  {
+   "f": "mǎi · mài",
+   "l": "3º × 4º tom",
+   "t": "买 comprar · 卖 vender",
+   "ex": "3º desce e sobe; 4º cai forte"
+  }
+ ]
+}

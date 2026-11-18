@@ -375,7 +375,7 @@ test('estudos: Hoje lista o plano dos 5 domínios e soma a meta do dia', async (
   const dom = await page.evaluate(() => fetch('./estudos/dominios.json').then((r) => r.json()));
   const nTarefas = dom.dominios.reduce((a, d) => a + d.tarefas.length, 0);
   await expect(page.locator('.es-tarefa:not(.es-extra)'), 'uma linha por tarefa de cada domínio').toHaveCount(nTarefas);
-  expect(dom.dominios.map((d) => d.id)).toEqual(['trompete', 'violao', 'piano', 'chines', 'japones', 'cibernetica']);
+  expect(dom.dominios.map((d) => d.id)).toEqual(['trompete', 'violao', 'piano', 'chines', 'japones', 'cibernetica', 'ingles', 'coreano']);
   await expect(page.locator('#tela')).toContainText(`de ${dom.metaDiaria} min`);
   expect(errors, 'sem exceções').toEqual([]);
 });
@@ -388,6 +388,16 @@ test('estudos: a rotina 5 × 15 soma exatamente a meta diária', async ({ page }
   expect(rotina.map((t) => t.d), 'trompete, violão, piano, chinês, japonês').toEqual(['trompete', 'violao', 'piano', 'chines', 'japones']);
   expect(rotina.every((t) => t.min === 15), 'cada bloco são 15 minutos').toBeTruthy();
   expect(tarefas.reduce((a, t) => a + t.min, 0), 'soma = meta').toBe(dom.metaDiaria);
+});
+
+test('estudos: violão e piano — o bloco ativo mostra a instrução do exercício', async ({ page }) => {
+  await page.goto('/estudos.html');
+  await expect(page.locator('.es-tarefa').first()).toBeVisible({ timeout: 10000 });
+  await page.locator('.es-tarefa').nth(2).click();                  // Piano · Técnica
+  await expect(page.locator('.es-modo button.on')).toHaveText('Blocos');
+  await expect(page.locator('.es-dica').first(), 'instrução do primeiro bloco').toContainText('Hanon');
+  await page.getByText('próximo bloco').click();
+  await expect(page.locator('.es-dica').first()).toContainText('Dedilhado');
 });
 
 test('estudos: carta de baralho com idioma mostra "ouvir", e tocar nele não vira a carta', async ({ page }) => {
@@ -413,7 +423,7 @@ test('estudos: uma sessão cronometrada soma minutos, marca feito e entra no his
 
   await page.locator('.es-tarefa').nth(1).click();                 // Violão · Técnica — tem blocos
   await expect(page.locator('.es-modo button.on')).toHaveText('Blocos');
-  await expect(page.locator('.es-bloco')).toHaveCount(3);
+  await expect(page.locator('.es-bloco')).toHaveCount(4);
   await page.locator('.es-btn').first().click();                    // Começar
   await expect(page.locator('.es-relogio')).not.toHaveText('00:00', { timeout: 4000 });
   await page.getByText('Encerrar').click();

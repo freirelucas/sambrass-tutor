@@ -45,6 +45,15 @@ inclusive se o arquivo existir e não estar no índice, caso em que o app nunca 
   entram depois de conferidas contra a lista oficial.
 - **`japones-kana`** — hiragana completo (46), leitura romaji, botão "ouvir" pela voz do
   navegador. Katakana ainda não.
+- **`chines-sons`** — 8 pares mínimos (z/c/s, zh/ch/sh, j/q/x, tons). Palavras do HSK ainda
+  não: a lista oficial não foi lida.
+- **`ingles-sons`** — 10 pares mínimos com IPA, pronúncia americana.
+- **`coreano-hangul`** e **`coreano-palavras`** — consoantes, vogais e 10 palavras.
+- **`violao-teoria`** e **`piano-teoria`** — escalas, campo harmônico, funções, ritmo e
+  agilidade, 15 cartas cada.
+
+Inglês e coreano estão na Revisão, fora do plano diário. Os blocos de violão e piano
+trazem a instrução do exercício, que aparece na tela de prática.
 
 ## A revisão espaçada
 

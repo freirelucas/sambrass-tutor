@@ -125,6 +125,7 @@ function telaPratica() {
     <div class="es-amid"><span class="es-relogio">${mmss(seg)}</span>
       <span class="es-alvo">${modo === 'blocos' && blocos ? blocos[bloco][0] + ' · ' + blocos[bloco][1] + ' min' : 'meta da sessão ' + x.t.min + ' min'}</span></div></div>
 
+  ${modo === 'blocos' && blocos && blocos[bloco][2] ? `<p class="es-dica">${blocos[bloco][2]}</p>` : ''}
   ${modo === 'blocos' && blocos ? `<div class="es-blocos">${blocos.map((b, i) =>
     `<div class="es-bloco ${i === bloco ? 'ativo' : ''} ${i < bloco ? 'ok' : ''}"><span>${b[0]}</span><span>${b[1]} min</span></div>`).join('')}</div>` : ''}
 

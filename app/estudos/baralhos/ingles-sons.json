@@ -1,0 +1,70 @@
+{
+ "id": "ingles-sons",
+ "dominio": "ingles",
+ "nome": "Sons do inglês",
+ "sub": "pares mínimos com IPA: ouça antes de virar",
+ "lang": "en-US",
+ "_nota": "Contrastes que falantes de português costumam não separar. A transcrição é a de dicionário, pronúncia americana. O treino perceptivo funciona melhor com voz diferente a cada rodada.",
+ "cards": [
+  {
+   "f": "ship · sheep",
+   "l": "/ʃɪp/ · /ʃiːp/",
+   "t": "navio · ovelha",
+   "ex": "ɪ curto e frouxo; iː longo e tenso"
+  },
+  {
+   "f": "bit · beat",
+   "l": "/bɪt/ · /biːt/",
+   "t": "pedacinho · batida",
+   "ex": "a diferença é a duração e a tensão, não só a vogal"
+  },
+  {
+   "f": "full · fool",
+   "l": "/fʊl/ · /fuːl/",
+   "t": "cheio · tolo",
+   "ex": "ʊ com os lábios menos arredondados que uː"
+  },
+  {
+   "f": "cat · cut",
+   "l": "/kæt/ · /kʌt/",
+   "t": "gato · cortar",
+   "ex": "æ abre a boca mais que ʌ, que é central e curto"
+  },
+  {
+   "f": "bad · bed",
+   "l": "/bæd/ · /bed/",
+   "t": "ruim · cama",
+   "ex": "æ (abre) × e (meio); o ouvido muitas vezes não separa"
+  },
+  {
+   "f": "think · sink",
+   "l": "/θɪŋk/ · /sɪŋk/",
+   "t": "pensar · afundar",
+   "ex": "θ: a ponta da língua entre os dentes, sem voz"
+  },
+  {
+   "f": "this · dis",
+   "l": "/ðɪs/ · /dɪs/",
+   "t": "isto · (desrespeitar)",
+   "ex": "ð com voz, entre os dentes"
+  },
+  {
+   "f": "thin · tin",
+   "l": "/θɪn/ · /tɪn/",
+   "t": "fino · lata",
+   "ex": "θ no início; t tem um estouro de ar que θ não tem"
+  },
+  {
+   "f": "bird · bored",
+   "l": "/bɜːrd/ · /bɔːrd/",
+   "t": "pássaro · entediado",
+   "ex": "ɜːr é a vogal de 'hera' com r; ɔːr é 'ó' com r"
+  },
+  {
+   "f": "light · right",
+   "l": "/laɪt/ · /raɪt/",
+   "t": "luz · certo",
+   "ex": "l com a ponta da língua no céu da boca; r sem tocar"
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "id": "piano-teoria",
+ "dominio": "piano",
+ "nome": "Teoria",
+ "sub": "escalas, campo harmônico, ritmo e agilidade — piano",
+ "_nota": "Revisão de teoria aplicada ao instrumento. Fórmulas em tons (T) e semitons (S). Os exercícios concretos estão nas instruções dos blocos do plano.",
+ "cards": [
+  {
+   "f": "Escala maior",
+   "l": "fórmula",
+   "t": "T T S T T T S",
+   "ex": "Dó: dó ré mi fá sol lá si dó"
+  },
+  {
+   "f": "Escala menor natural",
+   "l": "fórmula",
+   "t": "T S T T S T T",
+   "ex": "Lá menor: lá si dó ré mi fá sol lá"
+  },
+  {
+   "f": "Menor harmônica",
+   "l": "fórmula",
+   "t": "a menor natural com a 7ª elevada meio tom",
+   "ex": "Lá menor harmônica: ...sol# lá"
+  },
+  {
+   "f": "Pentatônica maior",
+   "l": "graus",
+   "t": "1 2 3 5 6",
+   "ex": "Dó maior pentatônica: dó ré mi sol lá"
+  },
+  {
+   "f": "Pentatônica menor",
+   "l": "graus",
+   "t": "1 b3 4 5 b7",
+   "ex": "Lá menor pentatônica: lá dó ré mi sol"
+  },
+  {
+   "f": "Campo harmônico maior",
+   "l": "tríades · tonalidade de Dó",
+   "t": "I (Dó) · ii (Ré m) · iii (Mi m) · IV (Fá) · V (Sol) · vi (Lá m) · viiº (Si°)",
+   "ex": "maiúsculo = maior; minúsculo = menor; º = diminuto"
+  },
+  {
+   "f": "Funções",
+   "l": "tônica · subdominante · dominante",
+   "t": "T = I, vi · S = ii, IV · D = V, viiº",
+   "ex": "a progressão típica vai de T a S a D e volta a T"
+  },
+  {
+   "f": "Cadência perfeita",
+   "l": "V → I",
+   "t": "a resolução que fecha uma frase",
+   "ex": "Sol → Dó em Dó maior"
+  },
+  {
+   "f": "Cadência ii–V–I",
+   "l": "jazz e MPB",
+   "t": "Dm7 → G7 → Cmaj7 em Dó",
+   "ex": "a mais usada depois do V–I"
+  },
+  {
+   "f": "Colcheia",
+   "l": "subdivisão",
+   "t": "metade da semínima: duas por tempo",
+   "ex": "semicolcheia: quatro por tempo"
+  },
+  {
+   "f": "Tercina",
+   "l": "subdivisão",
+   "t": "três notas no tempo de duas",
+   "ex": "1-2-3 dentro de uma batida"
+  },
+  {
+   "f": "Síncope",
+   "l": "ritmo",
+   "t": "acento deslocado para um tempo fraco",
+   "ex": "a nota que cai entre as batidas 2 e 3 de 4/4"
+  },
+  {
+   "f": "Contratempo",
+   "l": "ritmo",
+   "t": "o tempo 'e' entre as batidas",
+   "ex": "conte 1-e-2-e-3-e-4-e; toque no e"
+  },
+  {
+   "f": "Hanon nº 1",
+   "l": "agilidade · piano",
+   "t": "dedos 1-2-3-4-5 subindo e descendo, mão a mão",
+   "ex": "metrônomo baixo; cada nota igual de volume"
+  },
+  {
+   "f": "Cromático com 4 dedos",
+   "l": "agilidade",
+   "t": "1-2-3-4 em semitons, todas as casas",
+   "ex": "suba um traste ou tecla por vez"
+  },
+  {
+   "f": "Arpejo 1-3-5-8",
+   "l": "agilidade",
+   "t": "tríade quebrada, subindo e descendo",
+   "ex": "Dó: dó mi sol dó"
+  }
+ ]
+}

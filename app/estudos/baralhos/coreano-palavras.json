@@ -1,0 +1,70 @@
+{
+ "id": "coreano-palavras",
+ "dominio": "coreano",
+ "nome": "Palavras",
+ "sub": "palavras do dia a dia, lidas em hangul",
+ "lang": "ko-KR",
+ "_nota": "Dez palavras de uso cotidiano, escolhidas porque são curtas e se leem com o hangul da outra pasta. Ampliar com cuidado: confirmar a grafia num dicionário antes de cobrar.",
+ "cards": [
+  {
+   "f": "사과",
+   "l": "palavra",
+   "t": "sagwa · maçã",
+   "ex": "사 + 과"
+  },
+  {
+   "f": "바다",
+   "l": "palavra",
+   "t": "bada · mar",
+   "ex": "바 + 다"
+  },
+  {
+   "f": "고양이",
+   "l": "palavra",
+   "t": "goyangi · gato",
+   "ex": "고 + 양 + 이"
+  },
+  {
+   "f": "나무",
+   "l": "palavra",
+   "t": "namu · árvore",
+   "ex": "나 + 무"
+  },
+  {
+   "f": "학교",
+   "l": "palavra",
+   "t": "hakgyo · escola",
+   "ex": "학 + 교"
+  },
+  {
+   "f": "친구",
+   "l": "palavra",
+   "t": "chingu · amigo",
+   "ex": "친 + 구"
+  },
+  {
+   "f": "가방",
+   "l": "palavra",
+   "t": "gabang · mochila",
+   "ex": "가 + 방"
+  },
+  {
+   "f": "물",
+   "l": "palavra",
+   "t": "mul · água",
+   "ex": "물: ㅁ + ㅜ + ㄹ"
+  },
+  {
+   "f": "아빠",
+   "l": "palavra",
+   "t": "appa · papai",
+   "ex": "아 + 빠"
+  },
+  {
+   "f": "엄마",
+   "l": "palavra",
+   "t": "eomma · mamãe",
+   "ex": "엄 + 마"
+  }
+ ]
+}

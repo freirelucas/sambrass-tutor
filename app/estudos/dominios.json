@@ -26,19 +26,27 @@
         {
           "titulo": "Técnica",
           "min": 15,
-          "sub": "escalas e arpejos",
+          "sub": "escalas, campo harmônico, ritmo e agilidade",
           "blocos": [
             [
-              "Aquecimento",
-              5
+              "Agilidade",
+              4,
+              "1-2-3-4 da mão esquerda em cada corda, sem palhetar mais rápido do que você limpa. Metrônomo a 60; sobe 4 bpm a cada 2 min."
             ],
             [
               "Escalas",
-              6
+              5,
+              "Dó maior em duas oitavas, uma nota por batida, sem olhar a mão. Depois pentatônica menor de lá."
             ],
             [
-              "Arpejos",
-              4
+              "Campo harmônico",
+              3,
+              "Tonalidade de Dó: I – vi – IV – V. Diga a função de cada acorde (T, S, D) antes de tocar."
+            ],
+            [
+              "Ritmo",
+              3,
+              "Semicolcheias a 80 bpm com palhetada alternada. Depois síncope: acentue as batidas 2 e 4."
             ]
           ]
         }
@@ -51,9 +59,31 @@
       "nome": "Piano",
       "tarefas": [
         {
-          "titulo": "Piano",
+          "titulo": "Técnica",
           "min": 15,
-          "sub": "leitura e harmonia — conteúdo a definir"
+          "sub": "escalas, campo harmônico, ritmo e agilidade",
+          "blocos": [
+            [
+              "Agilidade",
+              4,
+              "Hanon nº 1 em Dó, mão a mão. Metrônomo a 60, cada nota com o mesmo volume, sem tensão no pulso."
+            ],
+            [
+              "Escalas",
+              5,
+              "Dó e Sol maiores, duas oitavas, mãos separadas. Dedilhado da mão direita: 1-2-3-1-2-3-4-5."
+            ],
+            [
+              "Campo harmônico",
+              3,
+              "Tonalidade de Sol: I – ii – iii – IV – V – vi – viiº. Acordes em bloco; depois a cadência V – I."
+            ],
+            [
+              "Ritmo",
+              3,
+              "Mão esquerda marca o pulso, a direita toca tercinas por cima. Depois troque para colcheias no mesmo compasso 4/4."
+            ]
+          ]
         }
       ]
     },
@@ -90,6 +120,20 @@
       "sigla": "⟳",
       "cor": "#4e6b8c",
       "nome": "Cibernética",
+      "tarefas": []
+    },
+    {
+      "id": "ingles",
+      "sigla": "EN",
+      "cor": "#2d5f8a",
+      "nome": "Inglês",
+      "tarefas": []
+    },
+    {
+      "id": "coreano",
+      "sigla": "한",
+      "cor": "#7a4a2e",
+      "nome": "Coreano",
       "tarefas": []
     }
   ]
