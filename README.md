@@ -15,7 +15,8 @@ revisão espaçada por cartas e histórico em calendário. O app de trompete seg
 
 Para o domínio de línguas há uma revisão da literatura por trás do método:
 [`docs/linguas-ciencia.md`](docs/linguas-ciencia.md) — idade, horas, espaçamento,
-pronúncia, vários idiomas ao mesmo tempo e atrito, com 38 DOIs conferidos.
+pronúncia, vários idiomas ao mesmo tempo, atrito, e o que a evidência diz de apps,
+gamificação e jogos — com 58 DOIs conferidos.
 
 ## As duas linhas
 

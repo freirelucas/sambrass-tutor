@@ -5,9 +5,9 @@ aprender idioma depois de adulto" (dá), é **o que, exatamente, um adulto deve 
 as horas que tem** — e o que muda quando são vários idiomas ao mesmo tempo.
 
 > **Método.** Busca em base de artigos revisados por pares (Consensus/Semantic Scholar,
-> ~400M registros) mais busca web para as fontes práticas. **Os 38 DOIs abaixo foram
+> ~400M registros) mais busca web para as fontes práticas. **Os DOIs abaixo foram
 > resolvidos no Crossref pelo título e conferidos um a um** — nenhum link daqui aponta
-> para lugar nenhum. Quatro trabalhos ficaram sem DOI no Crossref e vão pelo agregador,
+> para lugar nenhum. Os poucos trabalhos sem DOI no Crossref vão pelo agregador,
 > marcados. Onde li só o resumo, está dito. Onde as fontes se contradizem, as duas estão
 > aqui — não escolhi a que me convinha. Onde um número é folclore repetido sem fonte
 > primária, está dito que é. Nada citado de memória.
@@ -560,6 +560,255 @@ fala. Nenhuma avaliação grande e totalmente independente apareceu na busca.
 
 ---
 
+## Parte VI — Apps e jogos
+
+A pergunta aqui é dupla: **o que usar** e **o que copiar** para dentro do painel. A
+resposta curta é que quase tudo "funciona" no papel, e que o papel é pior do que parece.
+
+### 23. Apps funcionam — e a evidência é mais fraca do que os números
+
+**Burston J, Giannakou K (2021). "MALL language learning outcomes: A comprehensive
+meta-analysis 1994–2019." *ReCALL*.**
+→ [doi:10.1017/S0958344021000240](https://doi.org/10.1017/S0958344021000240)
+
+Partiram de 1.144 referências; **700** traziam resultado quantitativo; **só 84 passaram
+nas condições mínimas** de desenho e estatística. Nesses 84 o efeito é grande — 0,72
+entre grupos, 1,16 pré/pós. E os próprios autores travam a conclusão: **viés de publicação
+óbvio e heterogeneidade que frequentemente se aproxima de 100%**.
+
+**Mihaylova M, Gorin S, Reber TP, Rothen N (2022). "A Meta-Analysis on Mobile-Assisted
+Language Learning Applications: Benefits and Risks." *Psychologica Belgica*.**
+→ [doi:10.5334/pb.1146](https://doi.org/10.5334/pb.1146)
+
+g=0,88 a favor dos aplicativos contra método tradicional — com **alto risco de viés e
+baixa qualidade de evidência em todos os estudos incluídos**.
+
+**Peng H, Jager S, Lowie W (2020). "Narrative review and meta-analysis of MALL research
+on L2 skills." *ReCALL*.**
+→ [doi:10.1017/S0958344020000221](https://doi.org/10.1017/S0958344020000221)
+
+Efeito grande, e a confirmação de dois fenômenos que voltam nesta parte inteira: um
+**efeito de redundância** e um **efeito novidade**.
+
+**Onde o aplicativo é mais forte: vocabulário, e com prazo.** **Zhou Y, Zhou M (2025)**,
+*ReCALL*, 65 estudos: efeito de **1,28** — quando a análise é restrita a tratamentos de
+**10 semanas ou mais**.
+→ [doi:10.1017/S0958344025100335](https://doi.org/10.1017/S0958344025100335)
+
+**E o estudo de caso que mostra a textura disso.** **Loewen S, Crowther D, Isbell DR, Kim
+KM et al. (2019). "Mobile-assisted language learning: A Duolingo case study."
+*ReCALL*** — nove pessoas aprendendo turco por um semestre: melhoraram, houve correlação
+positiva moderada entre tempo de uso e ganho, gostaram da flexibilidade e da gamificação;
+mas **a motivação para estudar variou e ficaram frustrados com o material**. (Li o
+resumo, não o texto.)
+→ [doi:10.1017/S0958344019000065](https://doi.org/10.1017/S0958344019000065)
+
+**Leitura:** a direção é positiva e a magnitude está inflada. Ninguém sabe o tamanho real.
+O que dá para afirmar é modesto: aplicativo serve para **vocabulário**, ao longo de
+**meses**, e some do mapa quando a pergunta é fala (§22).
+
+### 24. Gamificação: efeito pequeno, e instável justamente onde se vende
+
+**Sailer M, Homner L (2019). "The Gamification of Learning: a Meta-analysis."
+*Educational Psychology Review*.** (3.114 citações)
+→ [doi:10.1007/s10648-019-09498-w](https://doi.org/10.1007/s10648-019-09498-w)
+
+A referência do campo. Três efeitos, todos **pequenos**: cognitivo g=0,49, motivacional
+g=0,36, comportamental g=0,25. E o detalhe decisivo: restringindo aos estudos de **alto
+rigor metodológico**, o efeito cognitivo se mantém — e **os efeitos motivacional e
+comportamental ficam menos estáveis**. Ou seja: a gamificação é vendida como ferramenta de
+motivação e engajamento, e é exatamente aí que a evidência balança.
+
+O que ajudou no comportamento: **ficção de jogo** (uma narrativa, não só pontos) e
+**competição combinada com colaboração**.
+
+**Luo Z (2023). "The Effectiveness of Gamified Tools for Foreign Language Learning: A
+Systematic Review." *Behavioral Sciences*.** (150 citações)
+→ [doi:10.3390/bs13040331](https://doi.org/10.3390/bs13040331)
+
+Só idioma, 21 estudos empíricos. Resultado **misto**: uns positivos, **outros negativos**,
+outros sem diferença. Entre as causas listadas, uma que vale guardar como critério:
+**"falha em alcançar gamificação significativa"** — pontos e medalhas colados por cima de
+exercício que continua o mesmo.
+
+**Azzouz Boudadi N, Gutiérrez-Colón M (2020)**, *The EuroCALL Review*: de 68 artigos, 15
+aproveitáveis; resultados predominantemente positivos para motivação e engajamento, mas
+**poucos confirmam ligação clara com aprendizado**.
+→ [doi:10.4995/eurocall.2020.12974](https://doi.org/10.4995/eurocall.2020.12974)
+
+Isso fecha com o §21: motivação prevê intenção, não desempenho. Gamificação mexe na
+primeira.
+
+### 25. O efeito novidade tem prazo: quatro semanas
+
+**Rodrigues L, Pereira FD, Toda AM, Palomino PT et al. (2022). "Gamification suffers from
+the novelty effect but benefits from the familiarization effect: Findings from a
+longitudinal study." *International Journal of Educational Technology in Higher
+Education*.**
+→ [doi:10.1186/s41239-021-00314-6](https://doi.org/10.1186/s41239-021-00314-6)
+
+Catorze semanas, N=756, com grupo controle. **O efeito da gamificação começou a cair
+depois de quatro semanas, e a queda durou de duas a seis semanas** — seguida de
+recuperação parcial, que os autores chamam de efeito de familiarização. Uma curva em U.
+
+**Hanus MD, Fox J (2015). "Assessing the effects of gamification in the classroom: A
+longitudinal study." *Computers & Education*.**
+→ [doi:10.1016/j.compedu.2014.08.019](https://doi.org/10.1016/j.compedu.2014.08.019)
+
+Dezesseis semanas, medalhas, moedas e ranking. Os alunos da turma gamificada mostraram
+**menos motivação e nota final mais baixa** que a turma comum. Amostra pequena (71), e
+existe um *corrigendum* de 2018 que não li — trate como indício, não como veredito.
+
+**O que os dois dizem juntos:** qualquer coisa nova funciona por um mês. Um estudo de
+quatro semanas de um aplicativo gamificado mede a lua de mel. É por isso que o corte de
+"10 semanas ou mais" do §23 importa tanto.
+
+### 26. Sequências: o que está medido é engajamento, e como ela quebra
+
+**Silverman J, Barasch A (2022). "On or Off Track: How (Broken) Streaks Affect Consumer
+Decisions." *Journal of Consumer Research*.**
+→ [doi:10.1093/jcr/ucac029](https://doi.org/10.1093/jcr/ucac029)
+
+Sete estudos. Sequência **intacta** destacada no registro aumenta o engajamento
+subsequente, em relação a quando a sequência **quebrada** é destacada. E três refinamentos
+que são instruções de projeto:
+
+- O efeito **independe do comportamento passado real** — depende só de como ele está
+  **representado** no registro.
+- É **amplificado** quando a pessoa atribui a quebra **a si mesma**, e não a fator
+  externo.
+- É **atenuado** quando a pessoa pode **"consertar"** a sequência quebrada.
+
+> Os números que circulam sobre o Duolingo ("7 dias de sequência = 2,3× mais engajamento",
+> "28 milhões de usuários") aparecem **só em blogs de fornecedor, sem fonte primária**.
+> Folclore. E, mesmo se verdadeiros, medem **retorno ao aplicativo**, não idioma
+> aprendido. Não achei estudo ligando sequência a aprendizado.
+
+**O painel hoje viola isto, e foi ao medir que descobri.** Reproduzi a função `streak()`
+num relógio de Brasília: com **30 dias seguidos até ontem, às 10h da manhã de hoje ela
+devolve 0** — e a tela Hoje mostra "Primeiro dia — comece por onde der vontade". É
+exatamente a sequência quebrada em destaque, e nem quebrada ela está. Há um segundo
+defeito na mesma família: as datas são gravadas em UTC, então **prática às 22h30 em
+Brasília cai no dia seguinte**. Os dois estão descritos em "O que isto manda fazer".
+
+### 27. Jogos: os de entretenimento ganham dos educativos
+
+**Dixon DH, Dixon T, Jordan E (2022). "Second language (L2) gains through digital
+game-based language learning (DGBLL): A meta-analysis." *Language Learning &
+Technology*.** (147 citações)
+→ [doi:10.64152/10125/73464](https://doi.org/10.64152/10125/73464)
+
+Só jogos disponíveis ao público. Efeito pequeno-a-médio entre grupos (**d=0,50**) e médio
+pré/pós (d=0,95). E o achado que contraria a intuição: **jogos feitos para entretenimento
+foram mais eficazes que os feitos para ensinar idioma** — com a ressalva dos autores de
+que os intervalos de confiança se sobrepõem em parte.
+
+**Liu S, Zhang S, Dai Y (2025). "Do mobile games improve language learning? A
+meta-analysis." *Computer Assisted Language Learning*.** — 38 estudos, N=4.102, g=0,962.
+Mas os moderadores recortam bem o que isso vale: efeito claro em **vocabulário e
+pronúncia** e com **inglês** como alvo; **menos claro** em fala, leitura, escrita,
+gramática e **em outras línguas-alvo**. Jogos de aventura acima dos outros gêneros;
+intervenções de duração **intermediária** acima das curtas e das longas — a assinatura do
+efeito novidade de novo.
+→ [doi:10.1080/09588221.2025.2528786](https://doi.org/10.1080/09588221.2025.2528786)
+
+**Sylvén LK, Sundqvist P (2012). "Gaming as extramural English L2 learning and L2
+proficiency among young learners." *ReCALL*.**
+→ [doi:10.1017/S095834401200016X](https://doi.org/10.1017/S095834401200016X)
+
+86 crianças suecas de 11–12 anos: quem jogava **5 horas ou mais por semana** superou os
+jogadores moderados, que superaram os não jogadores; variáveis de contexto não explicaram
+a diferença. Os autores avisam que **não podem atribuir o ganho ao jogo em si**.
+
+**Sundqvist P (2019). "Commercial-off-the-shelf games in the digital wild and L2 learner
+vocabulary." *Language Learning & Technology*.** — 1.069 adolescentes: **tempo jogado**
+permaneceu preditor significativo de vocabulário, e **o efeito do tipo de jogo
+desapareceu** quando o tempo entrou no modelo.
+→ [doi:10.64152/10125/44674](https://doi.org/10.64152/10125/44674)
+
+**Os limites, sem enfeite:** são crianças e adolescentes, o alvo é inglês, o desenho é
+correlacional, e quem joga muito em inglês talvez já fosse bom em inglês. O que sustenta
+uma decisão prática é o conjunto: jogo comum **é input**, a variável é **tempo**, e não há
+motivo para preferir jogo "educativo".
+
+> **Sobre jogos feitos para ensinar idioma** (Noun Town, Influent, Wagotabi, Lingotopia):
+> a busca só devolveu listas escritas **pelos próprios fabricantes** ou por sites de
+> afiliados. **Não achei avaliação independente de nenhum.** Podem ser bons; não há como
+> saber daqui. A meta-análise acima sugere que o ônus da prova é deles.
+
+### 28. Legendas no idioma-alvo: o recurso barato com evidência forte
+
+**Montero Perez M, Van Den Noortgate W, Desmet P (2013). "Captioned video for L2
+listening and vocabulary learning: A meta-analysis." *System*.**
+→ [doi:10.1016/j.system.2013.07.013](https://doi.org/10.1016/j.system.2013.07.013)
+
+15 estudos de compreensão oral e 10 de vocabulário: **efeito grande nos dois**. Nível de
+proficiência **não moderou** — serve do iniciante ao avançado. (Os valores exatos de g não
+vieram no resumo.)
+
+**Kurokawa S, Hein AM, Uchihara T (2024). "Incidental Vocabulary Acquisition Through
+Captioned Viewing: A Meta-Analysis." *Language Learning*.** — 89 tamanhos de efeito, 49
+experimentos, comparando ganho com e sem legenda: **g=0,56**.
+→ [doi:10.1111/lang.12697](https://doi.org/10.1111/lang.12697)
+
+Isto conserta um buraco do §10: lá, **vídeo sem texto era o pior input de todos** (7% das
+palavras, contra 15–17% de leitura e escuta). Legenda **no idioma-alvo** — não tradução —
+devolve o vídeo ao jogo. É a versão em tela do "ler e ouvir ao mesmo tempo" do §16.
+
+### 29. Conversar com máquina: funciona, com dois asteriscos
+
+**Wang F, Cheung ACK, Neitzel AJ, Chai CS (2024). "Does Chatting with Chatbots Improve
+Language Learning Performance? A Meta-Analysis." *Review of Educational Research*.**
+→ [doi:10.3102/00346543241255621](https://doi.org/10.3102/00346543241255621)
+
+70 tamanhos de efeito de 28 estudos, com estimação robusta de variância: **g=0,484**
+contra condições sem chatbot.
+
+**Bibauw S, Van den Noortgate W, François T, Desmet P (2022). "Dialogue systems for
+language learning: A meta-analysis." *Language Learning & Technology*.**
+→ [doi:10.64152/10125/73488](https://doi.org/10.64152/10125/73488)
+
+d=0,58, e a análise de moderadores é a parte útil: os sistemas eficazes são os **focados
+em forma e orientados a objetivo**, com **interação guiada pelo sistema** e **feedback
+corretivo**. Efeito estabelecido para **aprendizes de nível mais baixo**. Esta é também a
+única fonte desta parte em que recursos de gamificação aparecem entre os que funcionam.
+
+Uma terceira meta-análise chega a g=0,608 (31 estudos) e aponta que o efeito varia com
+modalidade e com o uso ou não de IA generativa.
+→ [Lyu et al. 2024, via Consensus](https://consensus.app/papers/details/w:8676c710-7a85-4fa3-a83c-50ab73a9bc18/?utm_source=claude_desktop)
+
+**Os asteriscos:** a revisão mais citada do tema lista o **efeito novidade** entre os
+desafios, ao lado de limitação técnica e carga cognitiva
+→ [Huang et al., via Consensus](https://consensus.app/papers/details/w:fa96ff80-1356-4762-b565-6823e924b592/?utm_source=claude_desktop);
+e outra revisão (Lai et al., 2024, 32 artigos) registra que **100% dos estudos** que
+examinou eram de contexto asiático de inglês como língua estrangeira. Quase nada disso foi medido com adulto autodidata
+aprendendo outra língua que não inglês.
+
+**Tradução:** bate-papo livre não é o que a evidência sustenta. O que ela sustenta é
+**tarefa com objetivo e correção** — o que casa com o §15: a mesma tarefa oral, repetida.
+
+### 30. Reconhecimento de fala: feedback explícito, e melhor acompanhado
+
+**Ngo TT-N, Chen HH-J, Lai KK-W (2023). "The effectiveness of automatic speech
+recognition in ESL/EFL pronunciation: A meta-analysis." *ReCALL*.** (193 citações)
+→ [doi:10.1017/S0958344023000113](https://doi.org/10.1017/S0958344023000113)
+
+15 estudos, 38 tamanhos de efeito, g=0,69 — e cinco moderadores que valem mais que o
+número:
+
+1. Com **feedback corretivo explícito** o efeito é grande; com feedback indireto (ditar e
+   ver o que saiu) é moderado.
+2. Efeito **grande em segmentos, pequeno em prosódia**.
+3. Duração média-a-longa funciona; **curta não difere de não usar**.
+4. Praticando **com pares** o efeito é grande; **sozinho, pequeno**.
+5. Funciona bem para **adultos**.
+
+Isto reparte o trabalho com o que já estava no documento: **segmento** é com
+reconhecimento de fala e pares mínimos (§14); **prosódia** é com shadowing (§15). E o item
+4 é um aviso para quem estuda sozinho: a ferramenta rende menos sem ninguém do outro lado.
+
+---
+
 ## O que isto manda fazer
 
 Traduzindo tudo acima em decisões, com a seção que sustenta cada uma:
@@ -585,6 +834,29 @@ Traduzindo tudo acima em decisões, com a seção que sustenta cada uma:
 10. **Projetar para o calendário, não para a vontade** (§21). Motivação prevê intenção,
     não aprendizado. Meta diária, registro, histórico — é literalmente o que o painel faz.
 
+**E em termos de app e jogos:**
+
+11. **Não gamificar o painel além do que ele já tem** (§24, §25). Anel, minutos, calendário
+    e sequência são registro, e registro é o que funciona (§16, §21). Pontos, medalhas e
+    ranking têm efeito instável, caem em quatro semanas, e num estudo pioraram a nota.
+12. **Consertar a sequência do painel** (§26). Hoje ela zera às 0h e mostra "Primeiro dia"
+    a quem tem 30 dias seguidos e ainda não praticou. O certo: contar a sequência até
+    **ontem** enquanto o dia de hoje está em aberto; depois de uma falha, mostrar o
+    recorde e os dias praticados no mês em vez de um zero; e permitir **reparo** — o
+    efeito negativo da quebra é atenuado quando ela pode ser consertada.
+13. **Datas no fuso local, não em UTC.** Prática às 22h30 em Brasília está sendo gravada
+    no dia seguinte, no painel, no Chops e no app de trompete. Não é achado de pesquisa,
+    é defeito — mas é ele que decide se a sequência do item 12 é verdadeira.
+14. **Jogo comum no idioma-alvo conta como estudo** (§27). Vira tarefa do plano, com
+    minutos. A variável é tempo, não gênero, e jogo "educativo" não tem vantagem medida.
+15. **Vídeo só com legenda no idioma-alvo** (§28). Sem texto, é o pior input do documento.
+16. **IA de conversa como tarefa guiada, com objetivo e correção** (§29), repetida (§15).
+    Bate-papo livre não é o que a evidência sustenta.
+17. **Reconhecimento de fala para segmentos, com correção explícita** (§30); prosódia fica
+    com o shadowing.
+18. **Julgar qualquer aplicativo depois de dez semanas, não de quatro** (§23, §25). No
+    primeiro mês tudo funciona.
+
 ---
 
 ## Em aberto
@@ -593,3 +865,9 @@ Traduzindo tudo acima em decisões, com a seção que sustenta cada uma:
   e se o plano é "construir" ou "manter".
 - A pergunta "dois ao mesmo tempo funciona?" **não tem resposta de pesquisa decente**
   (§19). Quem disser que tem, está vendendo.
+- **Sequência → aprendizado** não está medido em lugar nenhum que eu tenha achado (§26).
+  Só sequência → voltar ao aplicativo.
+- **Jogos feitos para ensinar idioma** não têm avaliação independente (§27).
+- Quase toda a evidência de apps, chatbots e jogos é de **inglês como alvo**, com
+  estudantes, em intervenções curtas. Adulto autodidata aprendendo outra língua é
+  extrapolação.
